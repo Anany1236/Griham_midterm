@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "32ecea47-2f6a-480a-8624-273a852fd80f",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e812f961-7307-452a-82b9-2ffa7440e2ec",
+                            "roomName": "kitchen",
+                            "roomId": "e812f961-7307-452a-82b9-2ffa7440e2ec"
+                        }
+                    },
+                    {
+                        "deviceId": "232bfe62-158c-4af8-9bf3-fdb8323e5f71",
+                        "deviceName": "freezer",
+                        "deviceType": "freezer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "garage",
+                            "locationId": "b4761981-f976-47d0-aecc-472532654ede",
+                            "roomName": "garage",
+                            "roomId": "b4761981-f976-47d0-aecc-472532654ede"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you activate the defrost mode on the freezer in the garage?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scene_show",
+                            "arguments": {
+                                "device": "232bfe62-158c-4af8-9bf3-fdb8323e5f71",
+                                "room": "garage"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The defrost mode has been activated on the freezer in the garage."
+        }
+    ],
+    "tools": []
+}

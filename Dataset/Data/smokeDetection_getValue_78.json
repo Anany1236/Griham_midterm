@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c28e6ff4-9db7-4e6f-8ad1-f130b5b13c4e",
+                        "deviceName": "smoke detector",
+                        "deviceType": "smoke detector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "b89017ca-a3cb-4c41-8488-85f470a34493",
+                            "roomName": "kitchen",
+                            "roomId": "b89017ca-a3cb-4c41-8488-85f470a34493"
+                        }
+                    },
+                    {
+                        "deviceId": "996a4c2c-6067-4a0d-9d14-31148ca44fb5",
+                        "deviceName": "fire alarm",
+                        "deviceType": "fire alarm",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "88442fc9-73e9-49f3-b7c9-c9f99f534c97",
+                            "roomName": "living room",
+                            "roomId": "88442fc9-73e9-49f3-b7c9-c9f99f534c97"
+                        }
+                    },
+                    {
+                        "deviceId": "28fad17b-a784-4092-b9d1-77bff5619070",
+                        "deviceName": "smoke detector",
+                        "deviceType": "smoke detector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "86354d79-c80b-48be-af81-d4b0da657611",
+                            "roomName": "hallway",
+                            "roomId": "86354d79-c80b-48be-af81-d4b0da657611"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is there smoke detected in the area?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "smokeDetection_getValue",
+                            "arguments": {
+                                "device": "c28e6ff4-9db7-4e6f-8ad1-f130b5b13c4e",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "No smoke detected, the status is {status}."
+        }
+    ],
+    "tools": []
+}

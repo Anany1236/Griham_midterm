@@ -1,0 +1,133 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5e34da19-8af5-4f37-a8e1-34194c2298ec",
+                        "deviceName": "airconditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "guest room",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "4f218e34-581d-470d-895d-5c542c39e8c5",
+                        "deviceName": "Dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "guest room",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "bf4f9695-ff53-46c8-8cff-85964e5d9008",
+                        "deviceName": "airpurifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "guest room",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "378e3004-1777-43c0-84bd-91d125a8d105",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "guest room",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "378e3009-1777-43c0-84bd-91d125a8d105",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "guest room",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get room ready a festive and joyful environment for celebrating a holiday with friends"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mode_setValue",
+                            "arguments": {
+                                "device": "5e34da19-8af5-4f37-a8e1-34194c2298ec",
+                                "mode": "cool"
+                            }
+                        },
+                        {
+                            "name": " device_turnOn",
+                            "arguments": {
+                                "device": "4f218e34-581d-470d-895d-5c542c39e8c5"
+                            }
+                        },
+                        {
+                            "name": " mode_setValue",
+                            "arguments": {
+                                "device": "bf4f9695-ff53-46c8-8cff-85964e5d9008",
+                                "mode": "cool"
+                            }
+                        },
+                        {
+                            "name": " volume_setHalf",
+                            "arguments": {
+                                "device": "378e3004-1777-43c0-84bd-91d125a8d105"
+                            }
+                        },
+                        {
+                            "name": " channel_setByName",
+                            "arguments": {
+                                "device": "378e3009-1777-43c0-84bd-91d125a8d105",
+                                "channel": "star plus"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can set the air conditioner mode to cool, activate the Dehumidifier, set the air conditioner to the cool mode, set airpurifier to cool mode, set the channel of the Tv to play festive music or movies and turn off the speaker. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2a56bc68-fb3a-44d6-8849-59b0ab10a99a",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "97261c6f-c0de-4edc-bbc3-517ebbd5a3c2",
+                            "roomName": "living room",
+                            "roomId": "97261c6f-c0de-4edc-bbc3-517ebbd5a3c2"
+                        }
+                    },
+                    {
+                        "deviceId": "b2a2061d-2c0c-4211-a6ef-f9e14298e986",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office",
+                            "locationId": "1fac5e7e-0bc4-4b2b-960e-9cc07360c4dc",
+                            "roomName": "office",
+                            "roomId": "1fac5e7e-0bc4-4b2b-960e-9cc07360c4dc"
+                        }
+                    },
+                    {
+                        "deviceId": "f30e5929-0bad-4ac6-9b7e-3834eb87f9c4",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater room",
+                            "locationId": "1c0cf976-9a41-4fd9-b2bb-8ead49af876b",
+                            "roomName": "home theater room",
+                            "roomId": "1c0cf976-9a41-4fd9-b2bb-8ead49af876b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Activate color inversion on the television."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "colorInversion_turnOn",
+                            "arguments": {
+                                "device": "2a56bc68-fb3a-44d6-8849-59b0ab10a99a",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Color inversion on the television is now on."
+        }
+    ],
+    "tools": []
+}

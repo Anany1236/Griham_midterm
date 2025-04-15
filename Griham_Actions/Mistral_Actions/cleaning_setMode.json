@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cleaning_setMode",
+            "description": "This function is used to set the cleaning mode of a vacuum cleaner.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the cleaning mode."
+                    },
+                    "predefinedCleaningMode": {
+                        "type": "string",
+                        "description": "The predefined cleaning mode to set for the vacuum cleaner."
+                    }
+                },
+                "required": [
+                    "predefinedCleaningMode"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a732d559-af8d-4d14-9335-7eabe76aab87",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9d14e943-38c2-406e-b2ea-e71359b157bc",
+                            "roomName": "Kitchen",
+                            "roomId": "7c7da057-4b34-4a69-9175-c2f35d1784bf"
+                        }
+                    },
+                    {
+                        "deviceId": "edd820b1-e5b7-468b-accf-f0aee10d2555",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9d14e943-38c2-406e-b2ea-e71359b157bc",
+                            "roomName": "Kitchen",
+                            "roomId": "7c7da057-4b34-4a69-9175-c2f35d1784bf"
+                        }
+                    },
+                    {
+                        "deviceId": "179f2441-fb2d-4233-91d6-c4a6e854e589",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9d14e943-38c2-406e-b2ea-e71359b157bc",
+                            "roomName": "Kitchen",
+                            "roomId": "7c7da057-4b34-4a69-9175-c2f35d1784bf"
+                        }
+                    },
+                    {
+                        "deviceId": "7ebb07ca-f120-4226-bb25-b4a167cb1771",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9d14e943-38c2-406e-b2ea-e71359b157bc",
+                            "roomName": "Kitchen",
+                            "roomId": "7c7da057-4b34-4a69-9175-c2f35d1784bf"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Pause the cooking in the ricecooker"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_pause",
+                            "arguments": {
+                                "device": "179f2441-fb2d-4233-91d6-c4a6e854e589"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have paused the cooking in the ricecooker"
+        }
+    ],
+    "tools": []
+}

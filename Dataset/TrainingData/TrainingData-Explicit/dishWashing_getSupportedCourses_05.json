@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4a7f784f-fc07-4bb0-a23c-b0a8483a0e50",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5fbbb2a0-64c6-4f76-a40b-6959be3365ce",
+                            "roomName": "living room",
+                            "roomId": "04278111-9ee3-4427-9638-64bb9d140965"
+                        }
+                    },
+                    {
+                        "deviceId": "138d9161-2b24-4c3b-8d8e-2d6f81345d4d",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5fbbb2a0-64c6-4f76-a40b-6959be3365ce",
+                            "roomName": "living room",
+                            "roomId": "04278111-9ee3-4427-9638-64bb9d140965"
+                        }
+                    },
+                    {
+                        "deviceId": "35cdd5ec-631a-408f-83f5-c8bc00321207",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5fbbb2a0-64c6-4f76-a40b-6959be3365ce",
+                            "roomName": "kitchen",
+                            "roomId": "34b42afe-32a5-43e3-8867-bb6f05467d66"
+                        }
+                    },
+                    {
+                        "deviceId": "a6aec6a8-301a-4a66-8523-e802a52abd91",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5fbbb2a0-64c6-4f76-a40b-6959be3365ce",
+                            "roomName": "laundry room",
+                            "roomId": "259482e8-2b9e-43c7-99aa-fdb72acb173e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Specify the supported courses of lower dishwasher in kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_getSupportedCourses",
+                            "arguments": {
+                                "device": "35cdd5ec-631a-408f-83f5-c8bc00321207",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "List of supported courses for dishwasher are Auto, Standard, Heavy Duty, Rinse Dry."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,135 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+		{
+            "role": "context",
+            "content": 
+			{
+				"homecontext": 
+				[
+					{
+						"deviceId": "tv1",
+						"deviceName": "TV",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": 
+						{
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}
+					},
+					{
+						"deviceId": "ac1",
+						"deviceName": "AC",
+						"deviceType": "ac",
+						"deviceStatus": "on",
+						"location": 
+						{
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}						
+					},
+					{
+						"deviceId": "rvc1",
+						"deviceName": "Robo Vaccum Cleaner",
+						"deviceType": "rvc",
+						"deviceStatus": "on",
+						"location": 
+						{
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}						
+					},
+					{
+						"deviceId": "l1",
+						"deviceName": "Light 1",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": 
+						{
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}						
+					}
+				]
+			}
+        },
+        {
+            "role": "user",
+            "content": "Get the room ready for candle light dinner with my wife at 8 PM."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+						{
+							"name": "media_play",
+							"arguments":
+								{
+									"device": "tv1",
+									"appname": "Youtube",
+									"title": "romantic music"
+								}
+						},
+						{
+							"name": "cleaning_pause",
+							"arguments":
+								{
+									"device": "rvc1"
+								}
+						},
+						{
+							"name": "airConditioningMode_setValue",
+							"arguments":
+								{
+									"device": "ac1",
+									"mode": "WindFree"
+								}
+						},
+						{
+							"name": "colorMode_setValue",
+							"arguments":
+								{
+									"device": "l1",
+									"mode": "cozy"
+								}
+						},
+						{
+							"name": "condition_scheduleOnce",
+							"arguments": {
+								"cron": "0 0 20 23 9 *"
+							}
+						}
+					]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content":
+				{
+					"status": "success"
+				}
+        },
+        {
+            "role": "assistant",
+            "content": "I can play romantic music on tv, pause the rvc, set the air conditioner to WindFree mode and set light to cozy mode. Would you like me to proceed with these actions?"
+        }
+    ],
+    "tools": [
+       
+    ]
+}

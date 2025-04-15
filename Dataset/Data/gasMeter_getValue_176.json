@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "45871346-a443-4b4a-a257-adeda741ed61",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5db65bcf-617e-4719-a631-76e8e4a2f801",
+                            "roomName": "bedroom",
+                            "roomId": "5db65bcf-617e-4719-a631-76e8e4a2f801"
+                        }
+                    },
+                    {
+                        "deviceId": "9c36e10b-0607-48b7-9e48-0fd2964c65d0",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cddeefa2-2660-41eb-aac1-fed6de564cb9",
+                            "roomName": "living Room",
+                            "roomId": "cddeefa2-2660-41eb-aac1-fed6de564cb9"
+                        }
+                    },
+                    {
+                        "deviceId": "edf331cf-120e-4b35-ba18-ad893ae05598",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "90f197fa-6823-4e1b-9d61-732f55d072d7",
+                            "roomName": "guest Room",
+                            "roomId": "90f197fa-6823-4e1b-9d61-732f55d072d7"
+                        }
+                    },
+                    {
+                        "deviceId": "81a266ba-6fa5-4470-9612-b238f7309515",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c292fa9b-f277-4372-b5d0-7b7645d8b5cb",
+                            "roomName": "kitchen",
+                            "roomId": "c292fa9b-f277-4372-b5d0-7b7645d8b5cb"
+                        }
+                    },
+                    {
+                        "deviceId": "dfdc7af3-3e3e-491d-9fb7-aed2b2c3a60e",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dad6a27b-f49a-4229-a785-85d59ce4cc9c",
+                            "roomName": "utility Room",
+                            "roomId": "dad6a27b-f49a-4229-a785-85d59ce4cc9c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the gas meter reading of the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "gasMeter_getValue",
+                            "arguments": {
+                                "device": "45871346-a443-4b4a-a257-adeda741ed61",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The gas meter reading of the air conditioner in the bedroom is shown"
+        }
+    ],
+    "tools": []
+}

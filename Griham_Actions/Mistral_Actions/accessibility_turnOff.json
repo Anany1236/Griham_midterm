@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "accessibility_turnOff",
+            "description": "This function is used to turn off the accessibility feature of SmartThings devices using speech.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn off the accessibility feature."
+                    },
+                    "predefinedAccessibilityMenu": {
+                        "type": "string",
+                        "description": "The predefined accessibility menu option to turn off."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

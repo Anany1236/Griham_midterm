@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cb6f7d96-317a-4c75-acd3-ce07e43633cb",
+                        "deviceName": "sound system",
+                        "deviceType": "sound system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "a44810b9-3aef-49d1-b32c-5025aace679a",
+                            "roomName": "living room",
+                            "roomId": "a44810b9-3aef-49d1-b32c-5025aace679a"
+                        }
+                    },
+                    {
+                        "deviceId": "636dc85d-0cfa-437d-8a6b-7afe1a486685",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "a2792b09-4618-4382-978c-4d58296dd08f",
+                            "roomName": "home theater",
+                            "roomId": "a2792b09-4618-4382-978c-4d58296dd08f"
+                        }
+                    },
+                    {
+                        "deviceId": "69ec74e8-b552-4122-b0ce-61b60a78efc7",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "905b39d2-157e-4c97-ae2f-24d8134654ce",
+                            "roomName": "office room",
+                            "roomId": "905b39d2-157e-4c97-ae2f-24d8134654ce"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the multi-output function."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "multiOutput_turnOn",
+                            "arguments": {
+                                "device": "cb6f7d96-317a-4c75-acd3-ce07e43633cb",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Multi-output has been turned on."
+        }
+    ],
+    "tools": []
+}

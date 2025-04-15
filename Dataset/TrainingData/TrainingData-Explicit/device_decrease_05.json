@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bffef3b5-ce76-4bb7-8d51-11c69c195827",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6433c9a-7854-4e3f-89c9-67cf386512d2",
+                            "roomName": "hall",
+                            "roomId": "55c3ad5c-505b-4399-8e50-86e4aa408356"
+                        }
+                    },
+                    {
+                        "deviceId": "4a50f6e3-9843-40b7-b8eb-1fce6a780157",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6433c9a-7854-4e3f-89c9-67cf386512d2",
+                            "roomName": "living room",
+                            "roomId": "7c3fbe23-030d-4f5c-95c0-1ac63420d1c3"
+                        }
+                    },
+                    {
+                        "deviceId": "f6171ce9-3178-4d25-b53a-fe6ef91cb543",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6433c9a-7854-4e3f-89c9-67cf386512d2",
+                            "roomName": "laundry room",
+                            "roomId": "f46b29c4-9995-40e6-8bac-3581ea187223"
+                        }
+                    },
+                    {
+                        "deviceId": "172286c6-e580-4971-8aa6-5030c40bf90e",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6433c9a-7854-4e3f-89c9-67cf386512d2",
+                            "roomName": "bedroom",
+                            "roomId": "81f5ea3b-01a2-4294-ba13-9fd659da77ac"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Reduce the ac in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_decrease",
+                            "arguments": {
+                                "device": "4a50f6e3-9843-40b7-b8eb-1fce6a780157",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The ac is reduced in the living room."
+        }
+    ],
+    "tools": []
+}

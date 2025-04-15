@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Increase the brightness of the living room light by 5"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "brightness_increase",
+                            "arguments": {
+                                "device": "light",
+                                "brightness": 5,
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Increasing the brightness for light by 5."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "99234623-af4c-4c95-a5e0-59ddfb38a7fc",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "c72bd52d-fb69-4260-8719-d054122c92b0",
+                            "roomName": "living room",
+                            "roomId": "c72bd52d-fb69-4260-8719-d054122c92b0"
+                        }
+                    },
+                    {
+                        "deviceId": "54df9355-a462-41f1-b3b1-d01cc4652553",
+                        "deviceName": "HVAC system",
+                        "deviceType": "HVAC system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "b6364da4-366b-4a71-95f6-0fbb1164209a",
+                            "roomName": "bedroom",
+                            "roomId": "b6364da4-366b-4a71-95f6-0fbb1164209a"
+                        }
+                    },
+                    {
+                        "deviceId": "101d2f60-ea7b-47c3-bc10-0cac3511ce31",
+                        "deviceName": "thermostat,",
+                        "deviceType": "thermostat,",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "11c142f2-bab6-449e-a377-9fc6ca4d9ff4",
+                            "roomName": "office room",
+                            "roomId": "11c142f2-bab6-449e-a377-9fc6ca4d9ff4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you enable the thermostat mode?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "thermostatMode_turnOn",
+                            "arguments": {
+                                "device": "99234623-af4c-4c95-a5e0-59ddfb38a7fc",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The thermostat mode is now active."
+        }
+    ],
+    "tools": []
+}

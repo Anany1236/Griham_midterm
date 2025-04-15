@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c42512c2-025e-426a-9b5e-edc97e801aa5",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "9a157e25-623a-442f-bfbb-0711378760d1",
+                            "roomName": "living room",
+                            "roomId": "9a157e25-623a-442f-bfbb-0711378760d1"
+                        }
+                    },
+                    {
+                        "deviceId": "d27eb3c3-fea0-4826-b6a1-71a712c9bb13",
+                        "deviceName": "purifier fan",
+                        "deviceType": "purifier fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "8ed1a760-9f14-4f82-9bd1-e6e0042e1096",
+                            "roomName": "bedroom",
+                            "roomId": "8ed1a760-9f14-4f82-9bd1-e6e0042e1096"
+                        }
+                    },
+                    {
+                        "deviceId": "5aafc9ab-6da0-460c-b4c6-54271e3eb7f7",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "562949c6-742f-4af8-a67d-f12159dca333",
+                            "roomName": "office room",
+                            "roomId": "562949c6-742f-4af8-a67d-f12159dca333"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please turn off the air purifier."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "purifying_turnOff",
+                            "arguments": {
+                                "device": "c42512c2-025e-426a-9b5e-edc97e801aa5",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Purifying is now turned off."
+        }
+    ],
+    "tools": []
+}

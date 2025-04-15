@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "04c877b4-34f0-4911-93a8-e6b76f6f9469",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3d163e99-dd8c-48e8-96f7-efc5582cdf56",
+                            "roomName": "master bedroom",
+                            "roomId": "24f0d571-2bd6-43bc-8305-3378804219cf"
+                        }
+                    },
+                    {
+                        "deviceId": "a0a59ce8-afb8-4901-be3c-2d9cf704e509",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3d163e99-dd8c-48e8-96f7-efc5582cdf56",
+                            "roomName": "washroom",
+                            "roomId": "c19e444e-a837-4cf0-9223-4fc5a672df22"
+                        }
+                    },
+                    {
+                        "deviceId": "84a1567b-ace5-4792-afd7-d4cc9cfb776e",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3d163e99-dd8c-48e8-96f7-efc5582cdf56",
+                            "roomName": "Living room",
+                            "roomId": "5fcd74a1-036b-4f25-a846-b11b3c129da5"
+                        }
+                    },
+                    {
+                        "deviceId": "65922fea-bf14-4d1d-a923-6e8982ca1ee9",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3d163e99-dd8c-48e8-96f7-efc5582cdf56",
+                            "roomName": "bedroom",
+                            "roomId": "b11bd945-8623-47da-bf98-e399bf4c0c2f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you remove the map for the robot cleaner at our house?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaningMap_remove",
+                            "arguments": {
+                                "device": "65922fea-bf14-4d1d-a923-6e8982ca1ee9",
+                                "location":"house"
+
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, I have removed the cleaning map for the robot cleaner"
+        }
+    ],
+    "tools": []
+}

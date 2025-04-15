@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f8723593-ed72-4a9b-aaea-16cd8b961408",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "82106b76-cba0-4fa2-b461-29a28ae3da35",
+                            "roomName": "living room",
+                            "roomId": "c0d1cdbe-19a3-450b-a624-6d6673c622d4"
+                        }
+                    },
+                    {
+                        "deviceId": "cac3dd86-b828-435a-8e54-f099e1685e9f",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "82106b76-cba0-4fa2-b461-29a28ae3da35",
+                            "roomName": "living room",
+                            "roomId": "c0d1cdbe-19a3-450b-a624-6d6673c622d4"
+                        }
+                    },
+                    {
+                        "deviceId": "0a32f0fe-3297-4713-875e-7cdeb02abdae",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "82106b76-cba0-4fa2-b461-29a28ae3da35",
+                            "roomName": "kitchen",
+                            "roomId": "755e77c3-dd57-4150-b679-e4b841ee428a"
+                        }
+                    },
+                    {
+                        "deviceId": "d0a05f97-b1cc-491e-b5a7-ac13f60a3ebe",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "82106b76-cba0-4fa2-b461-29a28ae3da35",
+                            "roomName": "laundry room",
+                            "roomId": "770ea2b2-d368-43a5-b088-6267149d9024"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "How much time is remaining in lower area of dishwasher?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_getRemainingTime",
+                            "arguments": {
+                                "device": "0a32f0fe-3297-4713-875e-7cdeb02abdae",
+                                "predefinedCompartment": "lower"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The remaining time in lower area of dishwasher is 30 minutes."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c86b5c20-40a4-43b3-8896-e8d35a39a254",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "2f55c884-02cb-4068-b206-f5a34515a53b",
+                            "roomName": "bedroom",
+                            "roomId": "2f55c884-02cb-4068-b206-f5a34515a53b"
+                        }
+                    },
+                    {
+                        "deviceId": "972552fc-6c59-4385-b9b5-638b3b4f708f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "c048b16c-b440-4acb-8da8-0e5ec1e17cf9",
+                            "roomName": "living Room",
+                            "roomId": "c048b16c-b440-4acb-8da8-0e5ec1e17cf9"
+                        }
+                    },
+                    {
+                        "deviceId": "4217a885-0ea5-4d86-9b66-0b056568d3b7",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "18945afd-1a9e-43aa-9bba-5bb1fec4f76b",
+                            "roomName": "guest Room",
+                            "roomId": "18945afd-1a9e-43aa-9bba-5bb1fec4f76b"
+                        }
+                    },
+                    {
+                        "deviceId": "dedd9a42-1e3e-4b6d-824f-426539afbcac",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "1e4fff6a-fc68-471d-9dc6-33af675c9c49",
+                            "roomName": "kitchen",
+                            "roomId": "1e4fff6a-fc68-471d-9dc6-33af675c9c49"
+                        }
+                    },
+                    {
+                        "deviceId": "a5e32fbe-f4ed-478a-a15a-4168f063e49a",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "73ad4c20-979e-4a55-8bef-fea19f48d420",
+                            "roomName": "utility Room",
+                            "roomId": "73ad4c20-979e-4a55-8bef-fea19f48d420"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the status of the unknown location for the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "location_unknown",
+                            "arguments": {
+                                "device": "c86b5c20-40a4-43b3-8896-e8d35a39a254",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the unknown location for the air conditioner in the bedroom is displayed"
+        }
+    ],
+    "tools": []
+}

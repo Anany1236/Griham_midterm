@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a176526d-d6ef-4e7b-93c6-694900ffeb13",
+                        "deviceName": "stick cleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2b49abc-0cfa-4993-a530-fc84a6f0472e",
+                            "roomName": "bedroom",
+                            "roomId": "c07f9a0b-dd69-4f86-9aa8-b22afeea158a"
+                        }
+                    },
+                    {
+                        "deviceId": "79484b6e-7647-4b29-81c4-0073b5dc9477",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2b49abc-0cfa-4993-a530-fc84a6f0472e",
+                            "roomName": "master bedroom",
+                            "roomId": "096b7c36-cfee-4349-9789-04c7ec5447bb"
+                        }
+                    },
+                    {
+                        "deviceId": "eade6bce-5433-4926-a278-0b9d5486371f",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2b49abc-0cfa-4993-a530-fc84a6f0472e",
+                            "roomName": "kitchen",
+                            "roomId": "e85dc968-cd25-4877-a72d-d1bf27d8ad2c"
+                        }
+                    },
+                    {
+                        "deviceId": "0e668835-01e1-488f-8d2f-6a5c7fe85e36",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2b49abc-0cfa-4993-a530-fc84a6f0472e",
+                            "roomName": "kitchen",
+                            "roomId": "e85dc968-cd25-4877-a72d-d1bf27d8ad2c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Shift the stick cleaner to living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_move",
+                            "arguments": {
+                                "device": "a176526d-d6ef-4e7b-93c6-694900ffeb13",
+                                "rvcLocation": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have shifted the stick cleaner to living room."
+        }
+    ],
+    "tools": []
+}

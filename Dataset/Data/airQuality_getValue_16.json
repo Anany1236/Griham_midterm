@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8d7d67c7-68a1-4945-a996-decf9bcedd7e",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d5bec758-2643-4e10-b13f-7863a306a166",
+                            "roomName": "bedroom",
+                            "roomId": "d5bec758-2643-4e10-b13f-7863a306a166"
+                        }
+                    },
+                    {
+                        "deviceId": "38792858-8e59-4942-b82c-9edbb19b0a7e",
+                        "deviceName": "airqualitysensor",
+                        "deviceType": "airqualitysensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a1255d3b-8d78-4d77-acdc-94077ab39ae5",
+                            "roomName": "living Room",
+                            "roomId": "a1255d3b-8d78-4d77-acdc-94077ab39ae5"
+                        }
+                    },
+                    {
+                        "deviceId": "8a944fb5-9869-4f18-9ef1-77315b99b9ed",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "72f5c28e-476f-471e-8e84-775d543252d7",
+                            "roomName": "guest Room",
+                            "roomId": "72f5c28e-476f-471e-8e84-775d543252d7"
+                        }
+                    },
+                    {
+                        "deviceId": "4aaf8671-8863-462c-92b0-67e3d9768d0e",
+                        "deviceName": "airqualitysensor",
+                        "deviceType": "airqualitysensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "58808239-03cf-4c9a-ba70-f083cf858b21",
+                            "roomName": "kitchen",
+                            "roomId": "58808239-03cf-4c9a-ba70-f083cf858b21"
+                        }
+                    },
+                    {
+                        "deviceId": "8890a4f4-ca55-44f1-af40-7e4278e79897",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3dee25f0-205d-4e81-9c48-8965b3bb88af",
+                            "roomName": "utility Room",
+                            "roomId": "3dee25f0-205d-4e81-9c48-8965b3bb88af"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you tell me the air quality from the air purifier in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "airQuality_getValue",
+                            "arguments": {
+                                "device": "8d7d67c7-68a1-4945-a996-decf9bcedd7e",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air quality from the air purifier is good in the bedroom"
+        }
+    ],
+    "tools": []
+}

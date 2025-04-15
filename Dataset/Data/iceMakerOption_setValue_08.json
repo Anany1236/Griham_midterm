@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1af22c7d-b960-46ed-8412-b53a55e4af2c",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "3802e58d-308a-40c7-90ac-37a714489e54",
+                            "roomName": "living room",
+                            "roomId": "3802e58d-308a-40c7-90ac-37a714489e54"
+                        }
+                    },
+                    {
+                        "deviceId": "68a2d730-02a2-43a6-b44b-7ce5cf07d939",
+                        "deviceName": "audio system",
+                        "deviceType": "audio system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "140c91e8-493f-4b66-8404-d641441c43bc",
+                            "roomName": "bedroom",
+                            "roomId": "140c91e8-493f-4b66-8404-d641441c43bc"
+                        }
+                    },
+                    {
+                        "deviceId": "f3afe4a4-07d7-485c-b66a-ea7525dbec14",
+                        "deviceName": "smart speaker",
+                        "deviceType": "smart speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "3f306b74-e031-4dd9-93e4-73275bef2431",
+                            "roomName": "office room",
+                            "roomId": "3f306b74-e031-4dd9-93e4-73275bef2431"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please stop the voice guide function for the smart speaker in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "iceMakerOption_setValue",
+                            "arguments": {
+                                "device": "f3afe4a4-07d7-485c-b66a-ea7525dbec14",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The voice guide function for the smart speaker in the office room has been stopped."
+        }
+    ],
+    "tools": []
+}

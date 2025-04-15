@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "46c56e02-1720-4135-9d2b-e410ec6cb82b",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8f959f1c-083e-4a82-874e-148c7cbccb4b",
+                            "roomName": "bedroom",
+                            "roomId": "8f959f1c-083e-4a82-874e-148c7cbccb4b"
+                        }
+                    },
+                    {
+                        "deviceId": "d9899bdf-58ad-4314-87cb-3db3c330853e",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0c77d147-5af5-40c4-8d7f-9a809dd35d62",
+                            "roomName": "living Room",
+                            "roomId": "0c77d147-5af5-40c4-8d7f-9a809dd35d62"
+                        }
+                    },
+                    {
+                        "deviceId": "2ca64ef2-6097-4ddb-ad4d-87cc893dcc8b",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b5794b78-23e4-49f1-879f-87d9b7b38228",
+                            "roomName": "guest Room",
+                            "roomId": "b5794b78-23e4-49f1-879f-87d9b7b38228"
+                        }
+                    },
+                    {
+                        "deviceId": "06fe560c-abea-413c-888e-184c0553132a",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5d3c2692-c6f7-4c41-95a8-9968d64b6fcb",
+                            "roomName": "kitchen",
+                            "roomId": "5d3c2692-c6f7-4c41-95a8-9968d64b6fcb"
+                        }
+                    },
+                    {
+                        "deviceId": "9f8fc102-6b99-4145-b187-c135c4900f61",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "52f361af-79fb-4651-a0c4-44d526638a39",
+                            "roomName": "utility Room",
+                            "roomId": "52f361af-79fb-4651-a0c4-44d526638a39"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Change the language setting for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "language_setValue",
+                            "arguments": {
+                                "device": "46c56e02-1720-4135-9d2b-e410ec6cb82b",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The language setting for the air conditioner in the bedroom has been changed"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "60aa2887-e861-4689-b234-22057d6c079d",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "d3090bb9-61c0-425f-b607-c4b7a8976025",
+                            "roomName": "laundry room",
+                            "roomId": "d3090bb9-61c0-425f-b607-c4b7a8976025"
+                        }
+                    },
+                    {
+                        "deviceId": "d4996895-e686-4ebd-b542-1d0b60abc4e1",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "9ff621cd-3e5a-4653-bb10-b43dc24012ce",
+                            "roomName": "kitchen",
+                            "roomId": "9ff621cd-3e5a-4653-bb10-b43dc24012ce"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please tell me the available courses for the washing machine in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washing_getSupportedCourses",
+                            "arguments": {
+                                "device": "60aa2887-e861-4689-b234-22057d6c079d",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washing machine in the bathroom has the following available courses."
+        }
+    ],
+    "tools": []
+}

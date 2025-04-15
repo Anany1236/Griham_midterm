@@ -1,0 +1,58 @@
+{
+    "name": "cooking_startCourse",
+    "description": "This function is used to start a specific cooking course on a cooking appliance.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to be controlled.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The mode to start the cooking course.",
+            "optional": true
+        },
+        {
+            "name": "temperatureUnit",
+            "type": "string",
+            "description": "The unit of temperature to be used.",
+            "optional": true
+        },
+        {
+            "name": "temperature",
+            "type": "integer",
+            "description": "The temperature to start the cooking course.",
+            "optional": true
+        },
+        {
+            "name": "timer",
+            "type": "string",
+            "description": "The duration of the cooking course.",
+            "optional": true
+        },
+        {
+            "name": "compartment",
+            "type": "string",
+            "description": "The predefined compartment to start the cooking course on.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "device_turnOn"
+    ],
+    "output": []
+}

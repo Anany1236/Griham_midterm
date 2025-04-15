@@ -1,0 +1,38 @@
+{
+    "name": "cookingTemperature_getValue",
+    "description": "This function is used to retrieve the current temperature of a specified compartment in a cooking appliance.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to get the temperature.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "A group action identifier if applicable.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The specific compartment within the device to get the temperature.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

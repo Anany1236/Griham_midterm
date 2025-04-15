@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "389ecaee-61a1-4e53-9a64-fba9a66ba5db",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "399a8531-81d8-41fa-8b05-9ba085795b56",
+                            "roomName": "bedroom",
+                            "roomId": "399a8531-81d8-41fa-8b05-9ba085795b56"
+                        }
+                    },
+                    {
+                        "deviceId": "8eacf39b-0187-408e-9dc4-35e40c574818",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9bf52a2b-9eb1-488e-a3b6-b7e05784a281",
+                            "roomName": "living Room",
+                            "roomId": "9bf52a2b-9eb1-488e-a3b6-b7e05784a281"
+                        }
+                    },
+                    {
+                        "deviceId": "968a40a0-8945-4caa-b889-1651e7a1eed6",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "012b9fe0-1aa2-4661-913c-c60241678b35",
+                            "roomName": "guest Room",
+                            "roomId": "012b9fe0-1aa2-4661-913c-c60241678b35"
+                        }
+                    },
+                    {
+                        "deviceId": "3ae8ec2f-67e1-4dd9-8a4b-972f53dcabbe",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0c5f9d5e-84f6-48fd-a36c-733f2c4043fc",
+                            "roomName": "kitchen",
+                            "roomId": "0c5f9d5e-84f6-48fd-a36c-733f2c4043fc"
+                        }
+                    },
+                    {
+                        "deviceId": "961ab96c-0d8c-4f78-bbfd-d53c83910072",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5185b211-47c4-4a20-a31b-cc3cc28fdd27",
+                            "roomName": "utility Room",
+                            "roomId": "5185b211-47c4-4a20-a31b-cc3cc28fdd27"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you tell me the gas meter reading for the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "gasMeter_getValue",
+                            "arguments": {
+                                "device": "968a40a0-8945-4caa-b889-1651e7a1eed6",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The gas meter reading for the light in the guest room is available"
+        }
+    ],
+    "tools": []
+}

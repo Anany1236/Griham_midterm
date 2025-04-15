@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bc85296e-4526-4ced-a6f9-3503dd3f1810",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c5c3900c-71af-4924-b551-6fe0f240c660",
+                            "roomName": "bedroom",
+                            "roomId": "c5c3900c-71af-4924-b551-6fe0f240c660"
+                        }
+                    },
+                    {
+                        "deviceId": "a53c6e40-8cce-467a-8741-a41b554d790b",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e1ad4945-77b1-480c-a212-77799cf9d348",
+                            "roomName": "living Room",
+                            "roomId": "e1ad4945-77b1-480c-a212-77799cf9d348"
+                        }
+                    },
+                    {
+                        "deviceId": "9f7e7db9-bcc1-4e98-a04e-2c804ed02e57",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9ae191f7-ec6c-4879-a278-4976a475c1be",
+                            "roomName": "guest Room",
+                            "roomId": "9ae191f7-ec6c-4879-a278-4976a475c1be"
+                        }
+                    },
+                    {
+                        "deviceId": "11de13a1-4117-4fed-87ab-eaf8a0cdd4f9",
+                        "deviceName": "Microwave",
+                        "deviceType": "Microwave",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "414f25eb-6d5a-423c-a222-1bc7655b2f7a",
+                            "roomName": "kitchen",
+                            "roomId": "414f25eb-6d5a-423c-a222-1bc7655b2f7a"
+                        }
+                    },
+                    {
+                        "deviceId": "ff987935-6aaa-45ce-af3a-c3efc4b5f1e1",
+                        "deviceName": "Refrigerator",
+                        "deviceType": "Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "748ed17c-8c97-426d-8d38-04b3c75d6c55",
+                            "roomName": "utility Room",
+                            "roomId": "748ed17c-8c97-426d-8d38-04b3c75d6c55"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Make the microwave beep in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "beepControl_beep",
+                            "arguments": {
+                                "device": "11de13a1-4117-4fed-87ab-eaf8a0cdd4f9",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The microwave in the kitchen has beeped"
+        }
+    ],
+    "tools": []
+}

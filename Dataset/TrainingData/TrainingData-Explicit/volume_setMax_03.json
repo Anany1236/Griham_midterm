@@ -1,0 +1,71 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "65613c7c-a428-473c-8ae8-9c9f2731097a",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "f056bd52-eeb4-44ac-98df-d808ba3c656f",
+							"roomName": "Living room",
+							"roomId": "8ae06647-c8cd-4f91-8723-e85ca7abdf9f"
+						}
+					},
+					{
+						"deviceId": "7ec87140-d6c5-466d-a031-08a2e276521f",
+						"deviceName": "light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "f056bd52-eeb4-44ac-98df-d808ba3c656f",
+							"roomName": "Kitchen",
+							"roomId": "dfbcc8f4-ae83-4bca-b7e5-e658329dbcc2"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Set the volume to maximum of living room speaker"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMax",
+							"arguments": {
+								"device": "65613c7c-a428-473c-8ae8-9c9f2731097a",
+								"room": "living room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to maximum of living room speaker."
+		}
+	],
+	"tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ce1ba725-b497-4921-92de-6f4d8fea07e4",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "deff24b7-ec30-421b-8078-6dde35804a6f",
+                            "roomName": "bedroom",
+                            "roomId": "deff24b7-ec30-421b-8078-6dde35804a6f"
+                        }
+                    },
+                    {
+                        "deviceId": "df90537d-1638-4ac5-b2f0-65f5dd3733a1",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4fc9b36a-ac28-46a5-9e1e-baf69e393b9a",
+                            "roomName": "living Room",
+                            "roomId": "4fc9b36a-ac28-46a5-9e1e-baf69e393b9a"
+                        }
+                    },
+                    {
+                        "deviceId": "15a1446d-89ef-45d7-b339-08f3d983a394",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7127ffdb-15ec-4238-ba82-db769fc75ba6",
+                            "roomName": "guest Room",
+                            "roomId": "7127ffdb-15ec-4238-ba82-db769fc75ba6"
+                        }
+                    },
+                    {
+                        "deviceId": "f6c7ba5f-d9e0-4ad7-af81-0ccbc38b4ea7",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "26231424-1c6a-4cb6-8a0b-67e4beeb626f",
+                            "roomName": "kitchen",
+                            "roomId": "26231424-1c6a-4cb6-8a0b-67e4beeb626f"
+                        }
+                    },
+                    {
+                        "deviceId": "09fb5aad-7b5d-4aff-8480-45bf53492920",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "842f0bc0-6a8f-4ccc-95c9-3c6de0541393",
+                            "roomName": "utility Room",
+                            "roomId": "842f0bc0-6a8f-4ccc-95c9-3c6de0541393"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the chair position of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chairPosition_setValue",
+                            "arguments": {
+                                "device": "f6c7ba5f-d9e0-4ad7-af81-0ccbc38b4ea7",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The chair position of the washer in the kitchen has been set to 30\u00b0"
+        }
+    ],
+    "tools": []
+}

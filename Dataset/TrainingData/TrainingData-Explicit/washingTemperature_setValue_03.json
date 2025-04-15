@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cb34e2cf-ac5a-4da3-bc3e-79296fe0ce12",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f5848dda-0e93-4b51-ad6b-0b21f46f8460",
+                            "roomName": "utility room",
+                            "roomId": "10cd05b2-b24b-4dcd-a5b6-3e8969ef0f94"
+                        }
+                    },
+                    {
+                        "deviceId": "33fad854-0e3b-4e49-b4e8-e441b7277b2b",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f5848dda-0e93-4b51-ad6b-0b21f46f8460",
+                            "roomName": "living room",
+                            "roomId": "8949a4e6-dd8a-483b-aead-6ae64e211ae7"
+                        }
+                    },
+                    {
+                        "deviceId": "3ebe8370-0c71-478e-be91-d26ac1fe9dba",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f5848dda-0e93-4b51-ad6b-0b21f46f8460",
+                            "roomName": "utility room",
+                            "roomId": "10cd05b2-b24b-4dcd-a5b6-3e8969ef0f94"
+                        }
+                    },
+                    {
+                        "deviceId": "a51cb611-8ba2-4877-99ff-97092ed4052c",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f5848dda-0e93-4b51-ad6b-0b21f46f8460",
+                            "roomName": "bedroom",
+                            "roomId": "00090522-6d9f-4e95-9f92-b57d421c64f9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the temperature of upper compartment of washer to 30 degrees"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_setValue",
+                            "arguments": {
+                                "device": "cb34e2cf-ac5a-4da3-bc3e-79296fe0ce12",
+                                "predefinedCompartment": "upper",
+                                "washingTemperature": 30
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the temperature of upper compartment of washer to 30 degrees."
+        }
+    ],
+    "tools": []
+}

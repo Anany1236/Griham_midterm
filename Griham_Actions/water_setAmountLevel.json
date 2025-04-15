@@ -1,0 +1,32 @@
+{
+    "name": "water_setAmountLevel",
+    "description": "This function is used to adjust the water usage level of a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to adjust the water usage level.",
+            "optional": true
+        },
+        {
+            "name": "predefinedWaterAmountLevel",
+            "type": "string",
+            "description": "The predefined water usage level to be set.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

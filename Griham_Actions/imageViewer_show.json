@@ -1,0 +1,38 @@
+{
+    "name": "imageViewer_show",
+    "description": "This function is used to display content from one SmartThings device on another video_capable SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the source device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the source device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the source device to display its content.",
+            "optional": true
+        },
+        {
+            "name": "consumerLocation",
+            "type": "string",
+            "description": "The location where the consumer device is located.",
+            "optional": true
+        },
+        {
+            "name": "consumerDevice",
+            "type": "string",
+            "description": "The name or type of the consumer device to display the content on.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

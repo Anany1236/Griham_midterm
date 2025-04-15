@@ -1,0 +1,38 @@
+{
+    "name": "dryingTime_increase",
+    "description": "This function is used to increase the operating time of the dryer.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to increase the drying time.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The predefined compartment to increase the drying time.",
+            "optional": true
+        },
+        {
+            "name": "dryingTimer",
+            "type": "integer",
+            "description": "The amount of time in minutes to increase the drying timer.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

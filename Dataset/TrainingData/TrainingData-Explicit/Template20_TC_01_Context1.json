@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ac1",
+                        "deviceName": "AC",
+                        "deviceType": "ac",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Living Room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "b1",
+                        "deviceName": "Blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Living Room",
+                            "roomId": "r1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the AC"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOff",
+                            "arguments": {
+                                "device": "b1"
+                            }
+                        },
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "ac1"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The AC is turned on, blind is turned off."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                
+            ]
+        }
+    ]
+}

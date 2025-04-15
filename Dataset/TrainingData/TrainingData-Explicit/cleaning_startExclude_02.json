@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "89be2148-f684-4527-acdd-fe1b572015d7",
+                        "deviceName": "Outside light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "79c64c98-882b-4880-afa6-1f9989a0f863",
+                            "roomName": "Balcony",
+                            "roomId": "ce952f26-04fe-4dc5-8261-30c47f60c8ab"
+                        }
+                    },
+                    {
+                        "deviceId": "23338967-b116-4316-8065-bc1d018d4c5e",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "79c64c98-882b-4880-afa6-1f9989a0f863",
+                            "roomName": "Living room",
+                            "roomId": "e296be31-cd63-4487-b525-ab1c34e37b02"
+                        }
+                    },
+                    {
+                        "deviceId": "7ebe8f16-724e-42d0-a690-75c7445b7f2d",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "79c64c98-882b-4880-afa6-1f9989a0f863",
+                            "roomName": "Living room",
+                            "roomId": "e296be31-cd63-4487-b525-ab1c34e37b02"
+                        }
+                    },
+                    {
+                        "deviceId": "71114cb6-3720-44bd-9a11-10cf5d701a67",
+                        "deviceName": "rvc",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "79c64c98-882b-4880-afa6-1f9989a0f863",
+                            "roomName": "Kitchen",
+                            "roomId": "a600823a-327b-4664-a90f-80189d768bbd"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Clean all areas except the master bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_startExclude",
+                            "arguments": {
+                               
+                                "rvcLocations": "master bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started cleaning everything except master bedroom"
+        }
+    ],
+    "tools": []
+}

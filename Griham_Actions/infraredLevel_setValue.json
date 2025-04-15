@@ -1,0 +1,32 @@
+{
+    "name": "infraredLevel_setValue",
+    "description": "This function is used to adjust the infrared sensor level of a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the infrared sensor level.",
+            "optional": true
+        },
+        {
+            "name": "infraredLevel",
+            "type": "integer",
+            "description": "The new infrared sensor level to be set.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

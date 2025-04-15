@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "db818462-c452-48b2-9d6b-5f8083e1c7c0",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e5d0f66-0cb5-4c8b-93d9-5c33fffb021e",
+                            "roomName": "living room",
+                            "roomId": "ff852ed2-1bfa-48df-8a33-4d77b25b960b"
+                        }
+                    },
+                    {
+                        "deviceId": "c5aedc2f-f648-4620-a94b-f2bbdf1a2cb0",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e5d0f66-0cb5-4c8b-93d9-5c33fffb021e",
+                            "roomName": "master bedroom",
+                            "roomId": "362db43f-f28d-44a8-a57a-64ee1c8b7e80"
+                        }
+                    },
+                    {
+                        "deviceId": "51977806-af67-41f9-8bad-1dfd33f0faf9",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e5d0f66-0cb5-4c8b-93d9-5c33fffb021e",
+                            "roomName": "laundry room",
+                            "roomId": "cd6cd39b-54e3-45db-afbf-0538b1dc4e35"
+                        }
+                    },
+                    {
+                        "deviceId": "7f7597f1-9cce-4043-af10-618c585dca1e",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e5d0f66-0cb5-4c8b-93d9-5c33fffb021e",
+                            "roomName": "kitchen",
+                            "roomId": "f2e33349-898f-4f32-9e69-7a510ffd94a7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the update status of refrigerator"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_getUpdateStatus",
+                            "arguments": {
+                                "device": "7f7597f1-9cce-4043-af10-618c585dca1e"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator needs an update."
+        }
+    ],
+    "tools": []
+}

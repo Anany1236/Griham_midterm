@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Decrease the TV channel by 2 on the right screen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "channel_decrease",
+                            "arguments": {
+                                "device": "TV",
+                                "channel": 2,
+                                "predefinedScreenPosition": "rightScreen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Decreasing the channel for TV by 2."
+        }
+    ],
+    "tools": []
+}

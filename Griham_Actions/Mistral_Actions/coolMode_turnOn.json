@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "coolMode_turnOn",
+            "description": "This function is used to activate the cooling mode of an air conditioner.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to activate the cooling mode."
+                    },
+                    "coolingTemperature": {
+                        "type": "number",
+                        "description": "The temperature to set for the cooling mode."
+                    },
+                    "predefinedCoolingTemperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of the temperature for the cooling mode (e.g., Celsius, Fahrenheit)."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "name": "deviceTemperatureSetting_setValue",
+    "description": "This function is used to set the temperature of a specified SmartThings device or its compartment.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to be used to set the temperature on.",
+            "optional": true
+        },
+        {
+            "name": "compartment",
+            "type": "string",
+            "description": "The predefined compartment to set the temperature on.",
+            "optional": true
+        },
+        {
+            "name": "temperature",
+            "type": "integer",
+            "description": "The temperature to be set.",
+            "optional": false
+        },
+        {
+            "name": "temperatureUnit",
+            "type": "string",
+            "description": "The unit of temperature to be used.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "device_turnOn"
+    ],
+    "output": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0d1cb240-428f-4381-a851-fcf2614ab4d8",
+                        "deviceName": "dryer0",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b4528e62-dfce-4dea-b1dc-c5aa0fb74a09",
+                            "roomName": "laundry room",
+                            "roomId": "af00ef8c-bc01-42f0-aa8f-6ed5551caa8c"
+                        }
+                    },
+                    {
+                        "deviceId": "8a38ef94-d86f-4354-8260-2b5994a0d080",
+                        "deviceName": "dryer1",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b4528e62-dfce-4dea-b1dc-c5aa0fb74a09",
+                            "roomName": "bathroom",
+                            "roomId": "78bb415f-b3d8-4091-8bfc-d5243af4a98e"
+                        }
+                    },
+                    {
+                        "deviceId": "e1dbcbf6-8f8e-41c3-b9bb-65f43ce5d353",
+                        "deviceName": "dryer2",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b4528e62-dfce-4dea-b1dc-c5aa0fb74a09",
+                            "roomName": "laundry room",
+                            "roomId": "af00ef8c-bc01-42f0-aa8f-6ed5551caa8c"
+                        }
+                    },
+                    {
+                        "deviceId": "a5011b23-2c60-4df0-9207-b61273344b7a",
+                        "deviceName": "dryer3",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b4528e62-dfce-4dea-b1dc-c5aa0fb74a09",
+                            "roomName": "laundry room",
+                            "roomId": "af00ef8c-bc01-42f0-aa8f-6ed5551caa8c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Run the dryer for 45 minutes now"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryingTime_setValue",
+                            "arguments": {
+                                "device": "e1dbcbf6-8f8e-41c3-b9bb-65f43ce5d353",
+                                "dryingTimer": "45"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, I have set the dryer to run for 45 minutes now"
+        }
+    ],
+    "tools": []
+}

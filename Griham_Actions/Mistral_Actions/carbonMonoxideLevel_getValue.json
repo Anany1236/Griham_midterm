@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "carbonMonoxideLevel_getValue",
+            "description": "This function is used to retrieve the carbon monoxide concentration in the house from a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the carbon monoxide concentration is being retrieved."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the carbon monoxide concentration is being retrieved."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to retrieve the carbon monoxide concentration."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

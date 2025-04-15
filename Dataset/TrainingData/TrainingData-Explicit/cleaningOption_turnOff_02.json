@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f31abc97-090e-4c12-9d23-aa5df9e7d651",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4f197c40-3278-4691-88bb-9aaab1b93afd",
+                            "roomName": "kids room",
+                            "roomId": "3abdd66a-114c-4dd4-82b7-463baa4bbb48"
+                        }
+                    },
+                    {
+                        "deviceId": "2f5c7370-c97a-4c0f-a71d-ceaddea84618",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4f197c40-3278-4691-88bb-9aaab1b93afd",
+                            "roomName": "living room",
+                            "roomId": "31c90c1b-6f7c-4bae-b78b-2972ea74d7b7"
+                        }
+                    },
+                    {
+                        "deviceId": "3fa25467-a226-4cd6-b721-0ec679677c2d",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4f197c40-3278-4691-88bb-9aaab1b93afd",
+                            "roomName": "living room",
+                            "roomId": "31c90c1b-6f7c-4bae-b78b-2972ea74d7b7"
+                        }
+                    },
+                    {
+                        "deviceId": "f9093075-c729-48d8-8226-f652b3d752eb",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4f197c40-3278-4691-88bb-9aaab1b93afd",
+                            "roomName": "kitchen",
+                            "roomId": "03d3f536-b6d8-419f-a277-550e48e0177d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the mop function of the robot cleaner in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaningOption_turnOff",
+                            "arguments": {
+                                "device": "3fa25467-a226-4cd6-b721-0ec679677c2d",
+                                "room": "living room",
+                                "mode": "mop"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have turned off the mop function of the robot cleaner"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "33668e9d-841f-4db5-9788-2a1d2f1c5104",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d3aa58e7-4055-4000-8529-cb2e46c34d82",
+                            "roomName": "bedroom",
+                            "roomId": "5aff6ec7-aa2a-4d93-a4c4-03cd4b615c4e"
+                        }
+                    },
+                    {
+                        "deviceId": "f0840bff-b6be-441b-a95a-221735e622be",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d3aa58e7-4055-4000-8529-cb2e46c34d82",
+                            "roomName": "utility room",
+                            "roomId": "9a0d0f4c-20fa-4a88-859f-42b8da49bc62"
+                        }
+                    },
+                    {
+                        "deviceId": "4cd6034d-ff16-4685-ae40-72d971179997",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d3aa58e7-4055-4000-8529-cb2e46c34d82",
+                            "roomName": "kitchen",
+                            "roomId": "333b55f0-9416-4528-814f-444e8d8b5bc3"
+                        }
+                    },
+                    {
+                        "deviceId": "0e99036f-6c0c-4b21-8d70-54682609a350",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d3aa58e7-4055-4000-8529-cb2e46c34d82",
+                            "roomName": "kitchen",
+                            "roomId": "333b55f0-9416-4528-814f-444e8d8b5bc3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Could you pause bedroom ac?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_pause",
+                            "arguments": {
+                                "device": "33668e9d-841f-4db5-9788-2a1d2f1c5104",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have paused bedroom ac."
+        }
+    ],
+    "tools": []
+}

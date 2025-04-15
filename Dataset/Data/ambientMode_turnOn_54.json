@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0f3daec9-a822-4940-82a9-16b575e6a777",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "4167fe74-e891-404f-9887-631b0d03ef7c",
+                            "roomName": "living room",
+                            "roomId": "4167fe74-e891-404f-9887-631b0d03ef7c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the ambient mode in the TV in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ambientMode_turnOn",
+                            "arguments": {
+                                "device": "0f3daec9-a822-4940-82a9-16b575e6a777",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The ambient mode in the living room in TV has been turned on."
+        }
+    ],
+    "tools": []
+}

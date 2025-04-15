@@ -1,0 +1,40 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Set the TV to channel 190"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "channel_setByNumber",
+                            "arguments": {
+                                "device": "TV",
+                                "channel": "190"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I'm changing to channel 190."
+        }
+    ],
+    "tools": []
+}

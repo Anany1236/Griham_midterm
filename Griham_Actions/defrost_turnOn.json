@@ -1,0 +1,38 @@
+{
+    "name": "defrost_turnOn",
+    "description": "This function is used to turn on the defrost mode of a refrigerator.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to turn on the defrost mode.",
+            "optional": true
+        },
+        {
+            "name": "weight",
+            "type": "number",
+            "description": "The weight value associated with the defrost mode.",
+            "optional": true
+        },
+        {
+            "name": "weightUnit",
+            "type": "string",
+            "description": "The unit of the weight value associated with the defrost mode.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

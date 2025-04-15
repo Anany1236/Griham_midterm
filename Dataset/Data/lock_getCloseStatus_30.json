@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f97ba73b-503d-479d-8f1c-7b204c68e89d",
+                        "deviceName": "smart lock",
+                        "deviceType": "smart lock",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "front door",
+                            "locationId": "c6ee3891-6650-458d-bc8c-388b64ee059d",
+                            "roomName": "front door",
+                            "roomId": "c6ee3891-6650-458d-bc8c-388b64ee059d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the close status of the front door."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "lock_getCloseStatus",
+                            "arguments": {
+                                "device": "f97ba73b-503d-479d-8f1c-7b204c68e89d",
+                                "room": "front door"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The close status of the front door has been retrieved."
+        }
+    ],
+    "tools": []
+}

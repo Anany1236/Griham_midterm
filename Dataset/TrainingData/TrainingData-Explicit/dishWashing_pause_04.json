@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fdc13387-5636-43a0-8129-10858456cceb",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32f0f092-edd7-43a4-8854-b140fa5acd5d",
+                            "roomName": "living room",
+                            "roomId": "ea91891b-386f-4d01-9c27-ed9f956ca41e"
+                        }
+                    },
+                    {
+                        "deviceId": "2beeff54-75f1-4c5b-adda-1dff61e326b8",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32f0f092-edd7-43a4-8854-b140fa5acd5d",
+                            "roomName": "living room",
+                            "roomId": "ea91891b-386f-4d01-9c27-ed9f956ca41e"
+                        }
+                    },
+                    {
+                        "deviceId": "9bf54ea7-864f-4cf2-a021-60ba54b53027",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32f0f092-edd7-43a4-8854-b140fa5acd5d",
+                            "roomName": "kitchen",
+                            "roomId": "483da8ed-4496-4069-9ca3-365615800fdd"
+                        }
+                    },
+                    {
+                        "deviceId": "762940db-f008-44a0-ad3e-7a9f197c98c6",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32f0f092-edd7-43a4-8854-b140fa5acd5d",
+                            "roomName": "laundry room",
+                            "roomId": "3c78cda3-d237-4822-9a52-6ed5b246b314"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you pause the dishwasher right now?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_pause",
+                            "arguments": {
+                                "device": "9bf54ea7-864f-4cf2-a021-60ba54b53027"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have paused the dishwasher right now."
+        }
+    ],
+    "tools": []
+}

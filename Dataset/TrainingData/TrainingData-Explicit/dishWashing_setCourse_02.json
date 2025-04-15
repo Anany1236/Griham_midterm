@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "32160e5e-4b7d-407d-84aa-1a9bcf5e923d",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c43418af-2a93-49cc-9690-e1f379825e65",
+                            "roomName": "kitchen",
+                            "roomId": "c1322dc5-9fea-420a-bbcc-bbf161fa9f9a"
+                        }
+                    },
+                    {
+                        "deviceId": "0a2b46f8-3627-41ba-a307-9b4cdf5af572",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c43418af-2a93-49cc-9690-e1f379825e65",
+                            "roomName": "living room",
+                            "roomId": "de05c523-a125-4572-ba55-df7fccf94399"
+                        }
+                    },
+                    {
+                        "deviceId": "6cfcacab-e23f-45c4-8e83-be853fa34fd0",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c43418af-2a93-49cc-9690-e1f379825e65",
+                            "roomName": "living room",
+                            "roomId": "de05c523-a125-4572-ba55-df7fccf94399"
+                        }
+                    },
+                    {
+                        "deviceId": "5029b064-6ee8-4f83-b4f5-84556797ae3c",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c43418af-2a93-49cc-9690-e1f379825e65",
+                            "roomName": "kitchen",
+                            "roomId": "c1322dc5-9fea-420a-bbcc-bbf161fa9f9a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the dishwasher to eco-friendly mode"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_setCourse",
+                            "arguments": {
+                                "device": "32160e5e-4b7d-407d-84aa-1a9bcf5e923d",
+                                "mode": "eco-friendly"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the dishwasher to eco-friendly mode."
+        }
+    ],
+    "tools": []
+}

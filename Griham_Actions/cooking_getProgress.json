@@ -1,0 +1,40 @@
+{
+    "name": "cooking_getProgress",
+    "description": "This function is used to get the progress of the cooking happening on a device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device which needs to be turned on is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device which needs to be turned on is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The device on which action needs to be performed.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "The groupAction that needs to be performed on the device.",
+            "optional": true
+        },
+        {
+            "name": "compartment",
+            "type": "string",
+            "description": "The predefined compartment of the device, in which action needs to be performed.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "powerSwitch_getStatus"
+    ],
+    "output": []
+}

@@ -1,0 +1,97 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "92e595f5-14d8-4619-8de8-81f29911a824",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dbddd619-add9-4b91-b095-dfb12eda6281",
+                            "roomName": "Kitchen",
+                            "roomId": "9a95b6b5-75b4-414f-92d7-38e12daf3640"
+                        }
+                    },
+                    {
+                        "deviceId": "4d1234de-c84e-4ecf-a538-52d3573b4c4c",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dbddd619-add9-4b91-b095-dfb12eda6281",
+                            "roomName": "Kitchen",
+                            "roomId": "9a95b6b5-75b4-414f-92d7-38e12daf3640"
+                        }
+                    },
+                    {
+                        "deviceId": "97b24ba2-2a0e-4183-ac2b-a86d4f1297c2",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dbddd619-add9-4b91-b095-dfb12eda6281",
+                            "roomName": "Kitchen",
+                            "roomId": "9a95b6b5-75b4-414f-92d7-38e12daf3640"
+                        }
+                    },
+                    {
+                        "deviceId": "ad3e801f-1043-4bcb-9822-ac990db7cd9c",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dbddd619-add9-4b91-b095-dfb12eda6281",
+                            "roomName": "Kitchen",
+                            "roomId": "9a95b6b5-75b4-414f-92d7-38e12daf3640"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set oven to bake at 160 degrees for 60 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_setCourse",
+                            "arguments": {
+                                "device": "92e595f5-14d8-4619-8de8-81f29911a824",
+                                "mode": "bake",
+                                "cookingTemperature": 160,
+                                "cookingTimer": "60 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set oven to bake at 160 degrees for 60 minutes"
+        }
+    ],
+    "tools": []
+}

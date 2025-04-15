@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e01c95dc-2f5b-4293-9ffa-23e7e2d09534",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3866ab35-8866-431d-86f4-446144ffea75",
+                            "roomName": "laundry room",
+                            "roomId": "a129c81f-eadc-4586-ba6d-89b0897f0f6a"
+                        }
+                    },
+                    {
+                        "deviceId": "2ef35bcf-f412-43e5-a757-97475d3ee9fe",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3866ab35-8866-431d-86f4-446144ffea75",
+                            "roomName": "living room",
+                            "roomId": "5796d37e-a51e-4a02-8dd1-95d90381b2dc"
+                        }
+                    },
+                    {
+                        "deviceId": "8ea0acb4-5043-4cce-b3ad-268d8c6a5471",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3866ab35-8866-431d-86f4-446144ffea75",
+                            "roomName": "kitchen",
+                            "roomId": "d3824da6-e8f4-4737-b486-c0c094fe8f47"
+                        }
+                    },
+                    {
+                        "deviceId": "4e81150f-4c02-4f1f-becb-b5af13b71c47",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3866ab35-8866-431d-86f4-446144ffea75",
+                            "roomName": "bedroom",
+                            "roomId": "07b1e685-412a-4300-bc88-f766d41bea85"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you reduce the heater temperature value of boiler?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_decrease",
+                            "arguments": {
+                                "device": "e01c95dc-2f5b-4293-9ffa-23e7e2d09534",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current temperature value of the boiler is decreased to 10 degrees in the laundry room"
+        }
+    ],
+    "tools": []
+}

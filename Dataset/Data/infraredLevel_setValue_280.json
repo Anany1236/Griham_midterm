@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3de021a7-0112-495a-b272-e5c78bbe49c2",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "a4b9c8e3-c760-4bc0-81fc-67687c7a6156",
+                            "roomName": "living room",
+                            "roomId": "a4b9c8e3-c760-4bc0-81fc-67687c7a6156"
+                        }
+                    },
+                    {
+                        "deviceId": "e5f6a866-cadc-4b93-a447-4d68dd275e58",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "7890602f-8c5d-49e4-867e-393c4e9437f6",
+                            "roomName": "bedroom",
+                            "roomId": "7890602f-8c5d-49e4-867e-393c4e9437f6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the infrared level to 3 on the air conditioner."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "infraredLevel_setValue",
+                            "arguments": {
+                                "device": "3de021a7-0112-495a-b272-e5c78bbe49c2",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The infrared level on the air conditioner is now set to 3."
+        }
+    ],
+    "tools": []
+}

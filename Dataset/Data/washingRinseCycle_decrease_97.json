@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "abad2da6-2a74-45ee-bc62-f82a125a12a8",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "b46d8d3a-3cee-495c-84dd-e6591bc23499",
+                            "roomName": "laundry room",
+                            "roomId": "b46d8d3a-3cee-495c-84dd-e6591bc23499"
+                        }
+                    },
+                    {
+                        "deviceId": "bb1b3a92-180b-4ba1-974b-0b73be546a4c",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "1456cd83-4d59-432a-90d1-5084eddfe584",
+                            "roomName": "kitchen",
+                            "roomId": "1456cd83-4d59-432a-90d1-5084eddfe584"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you lower the rinse cycle on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingRinseCycle_decrease",
+                            "arguments": {
+                                "device": "bb1b3a92-180b-4ba1-974b-0b73be546a4c",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rinse cycle on the washer in the kitchen is now lower."
+        }
+    ],
+    "tools": []
+}

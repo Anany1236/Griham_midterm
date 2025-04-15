@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "939c90e6-291e-4307-8c03-a4c27d7f8c9b",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "86a96317-2161-4d5f-9250-b1361c76a8c1",
+                            "roomName": "guest room",
+                            "roomId": "86a96317-2161-4d5f-9250-b1361c76a8c1"
+                        }
+                    },
+                    {
+                        "deviceId": "fdd8826a-274c-4592-9c70-fa3ef01a585d",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "d2b27867-55ac-4b8a-b432-aea6ab02c27f",
+                            "roomName": "kitchen",
+                            "roomId": "d2b27867-55ac-4b8a-b432-aea6ab02c27f"
+                        }
+                    },
+                    {
+                        "deviceId": "6ca915aa-c1bc-4938-b3fa-d3c1577b6281",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robot cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d958b8ba-d827-4435-b24f-6ea946288c77",
+                            "roomName": "living room",
+                            "roomId": "d958b8ba-d827-4435-b24f-6ea946288c77"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is the robot cleaner active in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getStatus",
+                            "arguments": {
+                                "device": "6ca915aa-c1bc-4938-b3fa-d3c1577b6281",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The robot cleaner in the living room is currently charging."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4ede39bd-1c0a-4454-8e0e-0b3b7ab027f5",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "162e8316-eec3-408d-890d-37238da69ffe",
+                            "roomName": "bedroom",
+                            "roomId": "162e8316-eec3-408d-890d-37238da69ffe"
+                        }
+                    },
+                    {
+                        "deviceId": "57b0bf7b-96c3-49b7-a5a5-55719ab3a78d",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ac1e8c17-94b8-4e06-a407-a0600a9b56e9",
+                            "roomName": "living Room",
+                            "roomId": "ac1e8c17-94b8-4e06-a407-a0600a9b56e9"
+                        }
+                    },
+                    {
+                        "deviceId": "b829e2c5-a9a2-47d0-954d-0239e3721067",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "50d7c4b3-def9-4efd-bdce-e548d4ffefca",
+                            "roomName": "guest Room",
+                            "roomId": "50d7c4b3-def9-4efd-bdce-e548d4ffefca"
+                        }
+                    },
+                    {
+                        "deviceId": "97993ae0-45a7-406b-939f-4d6dfabb0b0e",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c14c572c-ef5c-483e-9dc2-e95b6977700c",
+                            "roomName": "kitchen",
+                            "roomId": "c14c572c-ef5c-483e-9dc2-e95b6977700c"
+                        }
+                    },
+                    {
+                        "deviceId": "5a2da96c-ba9d-4985-9fb2-3f8706e497d6",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c36dbe7b-2f40-41ba-baca-14036e3df067",
+                            "roomName": "utility Room",
+                            "roomId": "c36dbe7b-2f40-41ba-baca-14036e3df067"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the finish time for the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "finishTime_setValue",
+                            "arguments": {
+                                "device": "57b0bf7b-96c3-49b7-a5a5-55719ab3a78d",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The finish time for the air purifier in the living room is updated"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "12a55d6b-caa8-4523-8a53-c043ff863105",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a75ec137-c38c-4b6d-836d-93eaa1a4f38b",
+                            "roomName": "bedroom",
+                            "roomId": "a75ec137-c38c-4b6d-836d-93eaa1a4f38b"
+                        }
+                    },
+                    {
+                        "deviceId": "524b0c55-b9e2-475b-b46b-61ff78d5dcdb",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19a37c61-8146-489a-871f-651ae96552cb",
+                            "roomName": "living Room",
+                            "roomId": "19a37c61-8146-489a-871f-651ae96552cb"
+                        }
+                    },
+                    {
+                        "deviceId": "dbfe7629-8be6-4646-a89d-5efbaeebf904",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e74245c-ca28-41fc-ae45-6a9988a9b3d6",
+                            "roomName": "guest Room",
+                            "roomId": "0e74245c-ca28-41fc-ae45-6a9988a9b3d6"
+                        }
+                    },
+                    {
+                        "deviceId": "257b8595-f742-4bc0-a93a-98d2a8bdde11",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e410fee2-73c8-4060-9f3b-ed2a46b278bf",
+                            "roomName": "kitchen",
+                            "roomId": "e410fee2-73c8-4060-9f3b-ed2a46b278bf"
+                        }
+                    },
+                    {
+                        "deviceId": "00c0df43-945d-4fa2-ab23-4fbfc6c6be5f",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c1faf837-dea2-4e6a-8b8d-bd07e0929f21",
+                            "roomName": "utility Room",
+                            "roomId": "c1faf837-dea2-4e6a-8b8d-bd07e0929f21"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the consumable state status of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "consumableState_getStatus",
+                            "arguments": {
+                                "device": "dbfe7629-8be6-4646-a89d-5efbaeebf904",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The consumable state status of the light in the guest room is displayed"
+        }
+    ],
+    "tools": []
+}

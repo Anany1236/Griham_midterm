@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cf21765f-9163-4022-843b-a8654a1058b4",
+                        "deviceName": "hood camera",
+                        "deviceType": "hood camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "9445dcf9-fb7f-4f91-84b8-a892a784240a",
+                            "roomName": "kitchen",
+                            "roomId": "9445dcf9-fb7f-4f91-84b8-a892a784240a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show me the live feed from the hood camera in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodCamera_show",
+                            "arguments": {
+                                "device": "cf21765f-9163-4022-843b-a8654a1058b4",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The live feed from the hood camera in the kitchen is now displayed."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8aa76e35-4bfb-4e88-bca8-32874c439de6",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d6c08b7a-9936-4a7f-98e9-eee2e52d7ad7",
+                            "roomName": "living room",
+                            "roomId": "d6c08b7a-9936-4a7f-98e9-eee2e52d7ad7"
+                        }
+                    },
+                    {
+                        "deviceId": "d104821f-0b55-4a2c-9cad-701547c5588f",
+                        "deviceName": "sensor.motion",
+                        "deviceType": "sensor.motion",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hall",
+                            "locationId": "5fd1a624-508b-486a-9f80-830e5038d65f",
+                            "roomName": "hall",
+                            "roomId": "5fd1a624-508b-486a-9f80-830e5038d65f"
+                        }
+                    },
+                    {
+                        "deviceId": "26fba01d-c0c5-400c-a3d0-acc3b31450b8",
+                        "deviceName": "object detector",
+                        "deviceType": "object detector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kids room",
+                            "locationId": "6ceb9fdb-308a-42ce-9f9b-5ad35e530ced",
+                            "roomName": "kids room",
+                            "roomId": "6ceb9fdb-308a-42ce-9f9b-5ad35e530ced"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check if the object detection is enabled?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "objectDetection_getStatus",
+                            "arguments": {
+                                "device": "8aa76e35-4bfb-4e88-bca8-32874c439de6",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The object detection system is {status} right now."
+        }
+    ],
+    "tools": []
+}

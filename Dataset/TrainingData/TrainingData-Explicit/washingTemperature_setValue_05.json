@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "07e3ae4c-6aea-4574-8a61-e7c85571acfa",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ab8f0b8-1993-4935-ae6a-474a81faf2f5",
+                            "roomName": "utility room",
+                            "roomId": "a60f873f-b93c-4546-a615-8860f2fa0302"
+                        }
+                    },
+                    {
+                        "deviceId": "d8d44d81-ca04-48c8-a7ff-92afb80de2ba",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ab8f0b8-1993-4935-ae6a-474a81faf2f5",
+                            "roomName": "living room",
+                            "roomId": "3637482d-88b9-4b19-866f-4b9a820ba5ae"
+                        }
+                    },
+                    {
+                        "deviceId": "ad0192c4-b1d3-4f21-b13a-b48c64efc8a1",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ab8f0b8-1993-4935-ae6a-474a81faf2f5",
+                            "roomName": "utility room",
+                            "roomId": "a60f873f-b93c-4546-a615-8860f2fa0302"
+                        }
+                    },
+                    {
+                        "deviceId": "ac884a44-078a-4df1-b958-3fa8d437916c",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ab8f0b8-1993-4935-ae6a-474a81faf2f5",
+                            "roomName": "bedroom",
+                            "roomId": "5f5d5c09-0d15-478a-aa49-14f263586d9e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the water temperature of washing machine to 30 degrees in utility room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_setValue",
+                            "arguments": {
+                                "device": "07e3ae4c-6aea-4574-8a61-e7c85571acfa",
+                                "room": "utility room",
+                                "washingTemperature": 30
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the water temperature of washing machine to 30 degrees in utility room."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "aa1ce750-e11e-440c-8da8-0152da0a21f9",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ba5aef4-2e29-4c7f-bc7c-56587ef9a3d2",
+                            "roomName": "Bedroom",
+                            "roomId": "b920c2a2-718c-42a3-89cd-c0d1045479c5"
+                        }
+                    },
+                    {
+                        "deviceId": "5901a593-60ab-46fe-bc17-a6fd02f5f847",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ba5aef4-2e29-4c7f-bc7c-56587ef9a3d2",
+                            "roomName": "kitchen",
+                            "roomId": "64664c91-c990-492e-8ebc-f1d77324fb90"
+                        }
+                    },
+                    {
+                        "deviceId": "8fe7282c-e0dc-4672-95ac-80e4dd370e64",
+                        "deviceName": "stick cleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ba5aef4-2e29-4c7f-bc7c-56587ef9a3d2",
+                            "roomName": "living room",
+                            "roomId": "e3e4062e-797b-4764-ac15-91cf7e81ce19"
+                        }
+                    },
+                    {
+                        "deviceId": "13a58048-5b34-41a2-9c48-b33fe165fadb",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ba5aef4-2e29-4c7f-bc7c-56587ef9a3d2",
+                            "roomName": "bedroom",
+                            "roomId": "fbd4cf1e-2b5f-4ea3-a285-490b245d2681"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the partial cleaning mode on robot cleaner"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_setMode",
+                            "arguments": {
+                                "device": "13a58048-5b34-41a2-9c48-b33fe165fadb",
+                                "predefinedCleaningMode": "part"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the partial cleaning mode on robot cleaner."
+        }
+    ],
+    "tools": []
+}

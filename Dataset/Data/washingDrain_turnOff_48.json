@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8b3c5051-fe59-4cf5-874d-96c58a3ae40f",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "3b341e0a-5dd6-4033-8686-dec00f1d0c6d",
+                            "roomName": "laundry room",
+                            "roomId": "3b341e0a-5dd6-4033-8686-dec00f1d0c6d"
+                        }
+                    },
+                    {
+                        "deviceId": "c9d87e33-93d8-4bf6-a382-fdb6f33a48a3",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "a83e5d36-eaee-4038-aa04-72f888087eea",
+                            "roomName": "kitchen",
+                            "roomId": "a83e5d36-eaee-4038-aa04-72f888087eea"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the drain function on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingDrain_turnOff",
+                            "arguments": {
+                                "device": "c9d87e33-93d8-4bf6-a382-fdb6f33a48a3",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The drain function on the washer in the kitchen is now disabled."
+        }
+    ],
+    "tools": []
+}

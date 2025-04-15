@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "642a0517-d308-41b1-82a7-7eac086bd662",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "9c6af473-f117-4e3e-9fda-b50beed216be",
+                            "roomName": "living room",
+                            "roomId": "9c6af473-f117-4e3e-9fda-b50beed216be"
+                        }
+                    },
+                    {
+                        "deviceId": "f2cf36be-7e62-4a9f-99b7-3e77b6b34d3d",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home office",
+                            "locationId": "1e65e9b3-d513-42e4-9553-3de7937b8850",
+                            "roomName": "home office",
+                            "roomId": "1e65e9b3-d513-42e4-9553-3de7937b8850"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the screen orientation to landscape."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "screenRotation_setHorizontal",
+                            "arguments": {
+                                "device": "642a0517-d308-41b1-82a7-7eac086bd662",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The screen is now in horizontal mode."
+        }
+    ],
+    "tools": []
+}

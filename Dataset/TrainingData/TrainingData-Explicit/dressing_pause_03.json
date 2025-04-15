@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1a61a676-cf9e-4e93-9d72-8de6427abbe4",
+                        "deviceName": "steamcloset1",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c6a0b86-98da-45c0-89c8-7f09418ef968",
+                            "roomName": "guest room",
+                            "roomId": "34e10e98-18ff-4ff9-a049-1943c3ab9ee1"
+                        }
+                    },
+                    {
+                        "deviceId": "3ae4117c-8ce6-4fcb-81e9-3459c99892c8",
+                        "deviceName": "steamcloset2",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c6a0b86-98da-45c0-89c8-7f09418ef968",
+                            "roomName": "Living room",
+                            "roomId": "deb77c13-a241-41fd-a042-c4d4071db680"
+                        }
+                    },
+                    {
+                        "deviceId": "d436640d-3448-413c-a794-b1315102b84c",
+                        "deviceName": "steamcloset3",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c6a0b86-98da-45c0-89c8-7f09418ef968",
+                            "roomName": "hall",
+                            "roomId": "fc8b4286-9524-4045-8eb1-4472073a9151"
+                        }
+                    },
+                    {
+                        "deviceId": "82bfcb7b-4294-432f-a811-de7326da3b23",
+                        "deviceName": "steamcloset4",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c6a0b86-98da-45c0-89c8-7f09418ef968",
+                            "roomName": "bedroom",
+                            "roomId": "a500a0ea-21eb-4980-b1a8-310aa87d61b5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you pause the air dresser in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_pause",
+                            "arguments": {
+                                "device": "3ae4117c-8ce6-4fcb-81e9-3459c99892c8",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air dresser is paused in the living room"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d64bb1c4-2277-4f92-8f29-b8f5b3e191d3",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "0a890a49-64f2-45b9-a386-2ce363e976c6",
+                            "roomName": "kitchen",
+                            "roomId": "0a890a49-64f2-45b9-a386-2ce363e976c6"
+                        }
+                    },
+                    {
+                        "deviceId": "8f98a6d2-d7f7-4780-9720-42d33054e2f5",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "7c8414ac-bc8b-4ec2-9bf3-51c00ab2a80f",
+                            "roomName": "living room",
+                            "roomId": "7c8414ac-bc8b-4ec2-9bf3-51c00ab2a80f"
+                        }
+                    },
+                    {
+                        "deviceId": "29bc2b0a-ecf5-4ea0-ac08-866acd9e942b",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "b9621af6-77ad-43dc-8d09-d66fd860dccb",
+                            "roomName": "office room",
+                            "roomId": "b9621af6-77ad-43dc-8d09-d66fd860dccb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable shuffle for the playlist on the TV in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaShuffle_turnOff",
+                            "arguments": {
+                                "device": "8f98a6d2-d7f7-4780-9720-42d33054e2f5",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Shuffle has been disabled for the playlist on the TV in the living room."
+        }
+    ],
+    "tools": []
+}

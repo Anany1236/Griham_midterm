@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8d9884d0-7b68-46bd-b70b-679b35c2549c",
+                        "deviceName": "ac1",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "48d0f220-b9a5-4a01-8c68-e6baa31fb4ae",
+                            "roomName": "living room",
+                            "roomId": "2f8d1520-434e-4542-83e8-011d0a55fbcc"
+                        }
+                    },
+                    {
+                        "deviceId": "cdae2af6-1e34-403c-ba77-a224dad32bf7",
+                        "deviceName": "sensor1",
+                        "deviceType": "sensor.multifunction",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "48d0f220-b9a5-4a01-8c68-e6baa31fb4ae",
+                            "roomName": "bedroom",
+                            "roomId": "2ac60b2c-3b41-44b9-9233-f5e3c56c1855"
+                        }
+                    },
+                    {
+                        "deviceId": "cd91c69a-c31f-4a62-b154-e84e5347ad3a",
+                        "deviceName": "boiler1",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "48d0f220-b9a5-4a01-8c68-e6baa31fb4ae",
+                            "roomName": "laundry room",
+                            "roomId": "6494b8e1-8b4d-4b93-beda-bacba3194ac2"
+                        }
+                    },
+                    {
+                        "deviceId": "98735ac3-71c5-43d1-83a3-ee32b5648a04",
+                        "deviceName": "ac2",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "48d0f220-b9a5-4a01-8c68-e6baa31fb4ae",
+                            "roomName": "bedroom",
+                            "roomId": "2ac60b2c-3b41-44b9-9233-f5e3c56c1855"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the temperature of the ac in bedroom to max"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperatureSetting_setMax",
+                            "arguments": {
+                                "device": "98735ac3-71c5-43d1-83a3-ee32b5648a04",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Now the temperature of the bedroom ac is 34 degree Celsius"
+        }
+    ],
+    "tools": []
+}

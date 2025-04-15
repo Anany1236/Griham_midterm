@@ -1,0 +1,42 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Set the right screen TV volume to 2 in living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "volume_setValue",
+                            "arguments": {
+                                "device": "TV",
+                                "volume": 2,
+                                "predefinedScreenPosition": "rightScreen",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I'm setting the volume to 2 for TV."
+        }
+    ],
+    "tools": []
+}

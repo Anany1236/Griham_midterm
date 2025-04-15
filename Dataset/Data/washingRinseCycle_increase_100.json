@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "20eb48cd-c6c1-4a90-a819-59793ed262c3",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "4f76a389-b401-48a9-abcd-95124cb604e4",
+                            "roomName": "laundry room",
+                            "roomId": "4f76a389-b401-48a9-abcd-95124cb604e4"
+                        }
+                    },
+                    {
+                        "deviceId": "a5edb1ab-8c5e-4d93-bef2-d0f85fda08af",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "ad5e6aaa-e318-4805-ba21-e223e68446a8",
+                            "roomName": "kitchen",
+                            "roomId": "ad5e6aaa-e318-4805-ba21-e223e68446a8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you raise the rinse cycle on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingRinseCycle_increase",
+                            "arguments": {
+                                "device": "a5edb1ab-8c5e-4d93-bef2-d0f85fda08af",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rinse cycle on the washer in the kitchen is now higher."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c4765ef8-61a2-4ad9-be24-d7e1a7d9ac78",
+                        "deviceName": "display",
+                        "deviceType": "display",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ca7f3cfd-23ff-4d17-a49e-851168102b8c",
+                            "roomName": "living room",
+                            "roomId": "ca7f3cfd-23ff-4d17-a49e-851168102b8c"
+                        }
+                    },
+                    {
+                        "deviceId": "6faf624b-8828-41b7-afe2-fe6109af70a9",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "16a6a674-f1c3-4e20-8e48-7cd8a5885cf5",
+                            "roomName": "bedroom",
+                            "roomId": "16a6a674-f1c3-4e20-8e48-7cd8a5885cf5"
+                        }
+                    },
+                    {
+                        "deviceId": "61fd734b-5e71-4df3-9bd8-15999f99b25d",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "ef81a2e8-c915-453f-8847-b49c421ce834",
+                            "roomName": "office room",
+                            "roomId": "ef81a2e8-c915-453f-8847-b49c421ce834"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you lower the backlight?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "backlight_decrease",
+                            "arguments": {
+                                "device": "c4765ef8-61a2-4ad9-be24-d7e1a7d9ac78",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Backlight level is now lower."
+        }
+    ],
+    "tools": []
+}

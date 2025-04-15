@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1c7ee4a9-b07c-40e2-af9e-c772a6bb6eb8",
+                        "deviceName": "sound sensor",
+                        "deviceType": "sound sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "899ac8ea-29e1-449b-be58-f10749ec66a2",
+                            "roomName": "living room",
+                            "roomId": "899ac8ea-29e1-449b-be58-f10749ec66a2"
+                        }
+                    },
+                    {
+                        "deviceId": "3cc5814e-a5fd-479f-839e-44b55c6e91dc",
+                        "deviceName": "microphone",
+                        "deviceType": "microphone",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "cf39e471-5d0a-4d2d-8713-2477047a0038",
+                            "roomName": "kitchen",
+                            "roomId": "cf39e471-5d0a-4d2d-8713-2477047a0038"
+                        }
+                    },
+                    {
+                        "deviceId": "7cf432a2-eea6-4741-a989-48285307a2bf",
+                        "deviceName": "microphone",
+                        "deviceType": "microphone",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "b55e9d80-c1c0-4f81-959a-0e736cdd79eb",
+                            "roomName": "hallway",
+                            "roomId": "b55e9d80-c1c0-4f81-959a-0e736cdd79eb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please tell me if the sound sensor is activated."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "soundSensor_getValue",
+                            "arguments": {
+                                "device": "1c7ee4a9-b07c-40e2-af9e-c772a6bb6eb8",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sound sensor status is {status}."
+        }
+    ],
+    "tools": []
+}

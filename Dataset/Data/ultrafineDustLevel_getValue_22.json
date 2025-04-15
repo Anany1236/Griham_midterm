@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "90022bcd-c33e-4359-adcd-7231c5295af6",
+                        "deviceName": "air quality sensor",
+                        "deviceType": "air quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "eed1748c-5a94-4080-8436-4161f1e4aeb0",
+                            "roomName": "living room",
+                            "roomId": "eed1748c-5a94-4080-8436-4161f1e4aeb0"
+                        }
+                    },
+                    {
+                        "deviceId": "600307bb-d0c1-4d6e-84bb-e7a4f1dc8f5d",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "28325654-bf87-41c9-aee4-6cb514692735",
+                            "roomName": "bedroom",
+                            "roomId": "28325654-bf87-41c9-aee4-6cb514692735"
+                        }
+                    },
+                    {
+                        "deviceId": "229a703e-2f4e-4430-9263-4a3a51c5e4a6",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e0fdfdb5-27ac-477e-820e-d7ff6c683615",
+                            "roomName": "kitchen",
+                            "roomId": "e0fdfdb5-27ac-477e-820e-d7ff6c683615"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check the ultrafine dust level?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ultrafineDustLevel_getValue",
+                            "arguments": {
+                                "device": "90022bcd-c33e-4359-adcd-7231c5295af6",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The ultrafine dust level is {value}."
+        }
+    ],
+    "tools": []
+}

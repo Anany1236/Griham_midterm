@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e42a9e8c-df55-4f23-a218-097be2e28b04",
+                        "deviceName": "dryer1",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a9f770bb-0f41-4629-9182-502f5a51c6f4",
+                            "roomName": "utility room",
+                            "roomId": "abec193a-1b88-4221-97a5-f164ed3b6962"
+                        }
+                    },
+                    {
+                        "deviceId": "76f40fa1-41f4-4e72-beb7-89654b1332be",
+                        "deviceName": "dryer2",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a9f770bb-0f41-4629-9182-502f5a51c6f4",
+                            "roomName": "living room",
+                            "roomId": "239c0a16-f92a-4b1d-8877-ccc89278940a"
+                        }
+                    },
+                    {
+                        "deviceId": "38e9c189-cf21-4370-be15-5f9144a91518",
+                        "deviceName": "dryer3",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a9f770bb-0f41-4629-9182-502f5a51c6f4",
+                            "roomName": "bedroom",
+                            "roomId": "cf0d5ea9-23cb-437c-8462-f3bd37912194"
+                        }
+                    },
+                    {
+                        "deviceId": "66b100df-4f49-4a43-aad7-973a4238c30a",
+                        "deviceName": "dryer4",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a9f770bb-0f41-4629-9182-502f5a51c6f4",
+                            "roomName": "guest room",
+                            "roomId": "b79ec223-0822-4bb2-84c6-f0ae874ec96e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn up the drying time of the dryer to 10 minutes in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryingTime_increase",
+                            "arguments": {
+                                "device": "76f40fa1-41f4-4e72-beb7-89654b1332be",
+                                "room": "living room",
+                                "dryingTimer": "00:10:00"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, turning up the drying time of the dryer by 10 min in the living room"
+        }
+    ],
+    "tools": []
+}

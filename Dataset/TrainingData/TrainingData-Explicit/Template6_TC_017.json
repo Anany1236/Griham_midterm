@@ -1,0 +1,68 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Set brightness in Bed room Light to 70"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "brightness_setValue",
+                            "arguments": {
+                                "device": "Light",
+                                "room": "Bed room",
+                                "brightness": 70
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The bed room Light brightness is set to 70."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "brightness_setValue",
+                    "description": "This function is used to set a brightness on Light device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "brightness": {
+                                "type": "string",
+                                "description": "Target brightness to be used"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "brightness"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

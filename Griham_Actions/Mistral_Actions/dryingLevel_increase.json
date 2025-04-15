@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "dryingLevel_increase",
+            "description": "This function is used to increase the drying level in a dryer.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to increase the drying level."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to increase the drying level."
+                    },
+                    "dryingLevelDelta": {
+                        "type": "integer",
+                        "description": "The amount by which to increase the drying level."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

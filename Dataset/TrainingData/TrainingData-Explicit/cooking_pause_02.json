@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "66758573-2364-4843-a3f7-984da59e23ee",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6c9808d-f521-4a61-bf45-3f00715b7e5d",
+                            "roomName": "Kitchen",
+                            "roomId": "031f4b71-a2b0-4e65-8fda-2cfb092207a7"
+                        }
+                    },
+                    {
+                        "deviceId": "960cdf48-c46d-47c9-a41c-3baeacd3a32b",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6c9808d-f521-4a61-bf45-3f00715b7e5d",
+                            "roomName": "Kitchen",
+                            "roomId": "031f4b71-a2b0-4e65-8fda-2cfb092207a7"
+                        }
+                    },
+                    {
+                        "deviceId": "281b1837-e64f-4e63-8aa9-ed18697a2d24",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6c9808d-f521-4a61-bf45-3f00715b7e5d",
+                            "roomName": "Kitchen",
+                            "roomId": "031f4b71-a2b0-4e65-8fda-2cfb092207a7"
+                        }
+                    },
+                    {
+                        "deviceId": "09425a80-a7a4-4bf2-b484-5aca80e66a4f",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6c9808d-f521-4a61-bf45-3f00715b7e5d",
+                            "roomName": "Kitchen",
+                            "roomId": "031f4b71-a2b0-4e65-8fda-2cfb092207a7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you pause the cooking in the microwave?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_pause",
+                            "arguments": {
+                                "device": "960cdf48-c46d-47c9-a41c-3baeacd3a32b"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sure, I have paused the cooking in the microwave"
+        }
+    ],
+    "tools": []
+}

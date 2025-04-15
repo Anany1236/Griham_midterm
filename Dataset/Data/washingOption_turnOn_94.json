@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1e837192-01b2-488d-b369-27c38c4f7c00",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "6bf172d5-c045-4d7c-a0f6-2e3ca8d207b6",
+                            "roomName": "laundry room",
+                            "roomId": "6bf172d5-c045-4d7c-a0f6-2e3ca8d207b6"
+                        }
+                    },
+                    {
+                        "deviceId": "82ef0578-9090-4872-a685-13b43d4fe2b0",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "c2790e8f-6e17-4c75-a2a0-b95117c44104",
+                            "roomName": "kitchen",
+                            "roomId": "c2790e8f-6e17-4c75-a2a0-b95117c44104"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you activate the washing cycle on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingOption_turnOn",
+                            "arguments": {
+                                "device": "82ef0578-9090-4872-a685-13b43d4fe2b0",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washing cycle on the washer in the kitchen has been activated."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e5798a2a-5039-4254-94f8-b807e5ca9d0f",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "017a216f-e021-49bd-86d7-9c8de2c27a83",
+                            "roomName": "Kitchen",
+                            "roomId": "db0a87c6-1366-477f-903d-3ed2924cf7f9"
+                        }
+                    },
+                    {
+                        "deviceId": "ce90ee4b-c153-4ca2-8f94-d9cd56137c7d",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "017a216f-e021-49bd-86d7-9c8de2c27a83",
+                            "roomName": "Kitchen",
+                            "roomId": "db0a87c6-1366-477f-903d-3ed2924cf7f9"
+                        }
+                    },
+                    {
+                        "deviceId": "ae42dde9-6e61-49dd-98d8-9d446792117c",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "017a216f-e021-49bd-86d7-9c8de2c27a83",
+                            "roomName": "Kitchen",
+                            "roomId": "db0a87c6-1366-477f-903d-3ed2924cf7f9"
+                        }
+                    },
+                    {
+                        "deviceId": "26be7ea1-3fce-4a85-b554-3c4c7126d025",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "017a216f-e021-49bd-86d7-9c8de2c27a83",
+                            "roomName": "Kitchen",
+                            "roomId": "db0a87c6-1366-477f-903d-3ed2924cf7f9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Stop cooking in the microwave"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_cancel",
+                            "arguments": {
+                                "device": "ce90ee4b-c153-4ca2-8f94-d9cd56137c7d"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have stopped cooking in the microwave."
+        }
+    ],
+    "tools": []
+}

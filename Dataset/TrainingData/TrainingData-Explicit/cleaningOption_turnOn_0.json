@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Turn on the dust suction setting of the robot vacuum cleaner in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaningOption_turnOn",
+                            "arguments": {
+                                "device": "robot vacuum cleaner",
+                                "room": "living room",
+                                "mode": "dust suction"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I'm turning on the dust suction setting for robot vacuum cleaner."
+        }
+    ],
+    "tools": []
+}

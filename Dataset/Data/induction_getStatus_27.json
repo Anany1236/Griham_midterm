@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5a496c75-e17b-467e-8d7d-be00ec9de329",
+                        "deviceName": "induction cooktop",
+                        "deviceType": "induction cooktop",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "8a9a5210-7b6c-4b72-b1f0-b69f52f6f2e2",
+                            "roomName": "kitchen",
+                            "roomId": "8a9a5210-7b6c-4b72-b1f0-b69f52f6f2e2"
+                        }
+                    },
+                    {
+                        "deviceId": "3a43d5b8-a75f-42e8-a080-e5b668256e69",
+                        "deviceName": "stove",
+                        "deviceType": "stove",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "dining room",
+                            "locationId": "d2f96c0b-4b63-44c6-b88c-c9f3e54ee3be",
+                            "roomName": "dining room",
+                            "roomId": "d2f96c0b-4b63-44c6-b88c-c9f3e54ee3be"
+                        }
+                    },
+                    {
+                        "deviceId": "1a520825-f440-4fe3-b52a-c572814f1fa9",
+                        "deviceName": "stove",
+                        "deviceType": "stove",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "a0b88aee-7add-4f0b-bcf7-5b76cd86131b",
+                            "roomName": "utility room",
+                            "roomId": "a0b88aee-7add-4f0b-bcf7-5b76cd86131b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the status of the induction cooktop?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "induction_getStatus",
+                            "arguments": {
+                                "device": "5a496c75-e17b-467e-8d7d-be00ec9de329",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The induction cooktop is {status}."
+        }
+    ],
+    "tools": []
+}

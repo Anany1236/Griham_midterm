@@ -1,0 +1,44 @@
+{
+    "name": "device_increase",
+    "description": "This function is used to increase the setting of a specified SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to increase.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "The group action to perform on the device.",
+            "optional": true
+        },
+        {
+            "name": "levelDelta",
+            "type": "integer",
+            "description": "The level delta to increase the device setting.",
+            "optional": true
+        },
+        {
+            "name": "predefinedUnit",
+            "type": "string",
+            "description": "The predefined unit related to the device setting.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

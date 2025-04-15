@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e3e453c5-6fd2-4a92-9120-abb8d9eb7b19",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "2541c83a-6979-426e-9ce1-ac1d7d4bafab",
+                            "roomName": "living room",
+                            "roomId": "2541c83a-6979-426e-9ce1-ac1d7d4bafab"
+                        }
+                    },
+                    {
+                        "deviceId": "621bcc5f-e76a-476d-8bc7-661f3d743344",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home office",
+                            "locationId": "2ce46818-b773-4901-8396-6dc7372b6755",
+                            "roomName": "home office",
+                            "roomId": "2ce46818-b773-4901-8396-6dc7372b6755"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please change the screen to portrait mode."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "screenRotation_setVertical",
+                            "arguments": {
+                                "device": "e3e453c5-6fd2-4a92-9120-abb8d9eb7b19",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive set the screen to portrait orientation."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "654a93dd-9bbc-4d53-8111-815562478322",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "081d72b8-dd67-4ede-8502-6f272a4e3efe",
+                            "roomName": "living room",
+                            "roomId": "ae947e28-4f11-4730-aae6-ac823d7939bd"
+                        }
+                    },
+                    {
+                        "deviceId": "79bb52e6-b3de-4228-a9fb-477b2bd4dc85",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "081d72b8-dd67-4ede-8502-6f272a4e3efe",
+                            "roomName": "kids room",
+                            "roomId": "70fefd08-6483-41a7-afec-74622f5d9a19"
+                        }
+                    },
+                    {
+                        "deviceId": "59505cf4-2548-442e-b32a-c584fcb5984a",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "081d72b8-dd67-4ede-8502-6f272a4e3efe",
+                            "roomName": "bedroom",
+                            "roomId": "15c446fb-a101-41d6-8b6d-7ca36e31dc8e"
+                        }
+                    },
+                    {
+                        "deviceId": "94211967-63e8-4eaf-be5a-4a2e71972164",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "081d72b8-dd67-4ede-8502-6f272a4e3efe",
+                            "roomName": "guest room",
+                            "roomId": "78dac356-237a-4213-add2-fcf180813d2d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you decrease the fan speed of the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeed_decrease",
+                            "arguments": {
+                                "device": "654a93dd-9bbc-4d53-8111-815562478322",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed of the living room has been decreased."
+        }
+    ],
+    "tools": []
+}

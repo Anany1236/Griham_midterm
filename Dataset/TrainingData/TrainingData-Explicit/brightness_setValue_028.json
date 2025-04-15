@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Set the brightness of the Light in the Master Bedroom to 70"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "brightness_setValue",
+                            "arguments": {
+                                "device": "light",
+                                "brightness": 70,
+                                "room": "Master Bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the brightness of the Light in the Master Bedroom to 70."
+        }
+    ],
+    "tools": []
+}

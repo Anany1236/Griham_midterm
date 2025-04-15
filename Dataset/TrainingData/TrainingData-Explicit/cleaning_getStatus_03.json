@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "913c8061-b2fa-41ca-9309-23881f222518",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9d7598b7-92c4-400a-b4ff-854c9da922c4",
+                            "roomName": "Bedroom",
+                            "roomId": "a2a6f6b5-ed10-4167-ad7a-0d42626e4a92"
+                        }
+                    },
+                    {
+                        "deviceId": "65361b21-16df-4c5a-9d3f-9bd7f62b7e2d",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9d7598b7-92c4-400a-b4ff-854c9da922c4",
+                            "roomName": "kitchen",
+                            "roomId": "500085fd-e0dd-4e71-870c-35a4d1b92444"
+                        }
+                    },
+                    {
+                        "deviceId": "9bb3d927-2575-4e07-abf1-7f854c26aa05",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9d7598b7-92c4-400a-b4ff-854c9da922c4",
+                            "roomName": "living room",
+                            "roomId": "a0b9e85e-026e-4bab-9f9b-96f6c48648df"
+                        }
+                    },
+                    {
+                        "deviceId": "fc5245bd-9360-4f58-99a6-08eda0f8c5ed",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9d7598b7-92c4-400a-b4ff-854c9da922c4",
+                            "roomName": "bedroom",
+                            "roomId": "a4ded1bb-0dfe-43e5-afff-6783419477b8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is the robot cleaner in on state in bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_getStatus",
+                            "arguments": {
+                                "device": "fc5245bd-9360-4f58-99a6-08eda0f8c5ed",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, the robot cleaner is in on state in bedroom."
+        }
+    ],
+    "tools": []
+}

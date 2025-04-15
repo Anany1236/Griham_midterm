@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "77c9d77a-0c88-4aba-885d-e0a1352b571c",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "45a776e1-7211-419c-be78-2c09869d6346",
+                            "roomName": "bathroom",
+                            "roomId": "45a776e1-7211-419c-be78-2c09869d6346"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What are the supported modes for the water heater in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeating_getSupportedModes",
+                            "arguments": {
+                                "device": "77c9d77a-0c88-4aba-885d-e0a1352b571c",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The supported modes for the water heater in the bathroom have been retrieved."
+        }
+    ],
+    "tools": []
+}

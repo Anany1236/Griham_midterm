@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "contactSensor_getStatus",
+            "description": "This function is used to check the contact state of a sensor.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the sensor is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the sensor is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to check the contact state."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

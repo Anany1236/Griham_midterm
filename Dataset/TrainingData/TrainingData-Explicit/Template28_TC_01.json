@@ -1,0 +1,61 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Tell me the progress of cooking in kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_getProgress",
+                            "arguments": {
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking is 90% complete."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "cooking_getProgress",
+                    "description": "This function is used to get the progress of the cooking.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            }
+                        },
+                        "required": [
+                            "device"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

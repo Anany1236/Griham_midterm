@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9c011d5c-abaf-4bcd-92aa-2a6c890f8383",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "b4009aef-046c-416f-a8e1-79690d87e714",
+                            "roomName": "kitchen",
+                            "roomId": "b4009aef-046c-416f-a8e1-79690d87e714"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you activate the power freeze mode on the freezer?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerFreezeMode_turnOn",
+                            "arguments": {
+                                "device": "9c011d5c-abaf-4bcd-92aa-2a6c890f8383",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive activated the power freeze mode for the freezer."
+        }
+    ],
+    "tools": []
+}

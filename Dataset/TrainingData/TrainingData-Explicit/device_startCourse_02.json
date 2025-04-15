@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "844eac73-a0b1-4a87-951d-785d9e6bf5c1",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "efa9980f-d168-4451-934b-0ca247514173",
+                            "roomName": "kids room",
+                            "roomId": "e4116870-cb9d-4337-a020-fd280553924c"
+                        }
+                    },
+                    {
+                        "deviceId": "85500590-aa07-4a56-9e18-7c8f40973711",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "efa9980f-d168-4451-934b-0ca247514173",
+                            "roomName": "kids room",
+                            "roomId": "e4116870-cb9d-4337-a020-fd280553924c"
+                        }
+                    },
+                    {
+                        "deviceId": "5fabc3a8-69b6-4df1-a49c-e248507b5c3e",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "efa9980f-d168-4451-934b-0ca247514173",
+                            "roomName": "kitchen",
+                            "roomId": "31f79e43-d101-474b-9dac-8de9f6da9519"
+                        }
+                    },
+                    {
+                        "deviceId": "72387da0-bb59-4da8-ab01-1389eb3d1715",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "efa9980f-d168-4451-934b-0ca247514173",
+                            "roomName": "kitchen",
+                            "roomId": "31f79e43-d101-474b-9dac-8de9f6da9519"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Initiate the oven at 200 degree celsius"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_startCourse",
+                            "arguments": {
+                                "device": "72387da0-bb59-4da8-ab01-1389eb3d1715",
+                                "temperature": "200",
+                                "temperatureUnit": "c"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have initiated the oven at 200 degree celsius."
+        }
+    ],
+    "tools": []
+}

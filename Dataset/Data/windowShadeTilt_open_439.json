@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "34044f56-76a7-4c86-a1e2-62dade2c09ad",
+                        "deviceName": "window shade",
+                        "deviceType": "window shade",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "e2e464fd-aef4-447e-8e28-12d9ac3e67b7",
+                            "roomName": "bathroom",
+                            "roomId": "e2e464fd-aef4-447e-8e28-12d9ac3e67b7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you open the window shade in the bathroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windowShadeTilt_open",
+                            "arguments": {
+                                "device": "34044f56-76a7-4c86-a1e2-62dade2c09ad",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The window shade in the bathroom has been opened."
+        }
+    ],
+    "tools": []
+}

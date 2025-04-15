@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c6164db8-3946-4f62-a749-791edd6690b2",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1dff7165-c02f-4df3-8d0a-c7f8396f8eb1",
+                            "roomName": "living room",
+                            "roomId": "6ef43861-b29d-49d8-bf1c-9ce5463968a6"
+                        }
+                    },
+                    {
+                        "deviceId": "33d38388-8506-4ae8-b07a-1f28e2dfefeb",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1dff7165-c02f-4df3-8d0a-c7f8396f8eb1",
+                            "roomName": "bedroom",
+                            "roomId": "4de44fc8-36ab-44aa-a324-93ae066d9c9c"
+                        }
+                    },
+                    {
+                        "deviceId": "950f3aeb-5d52-496d-b7c4-289f600f33e2",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1dff7165-c02f-4df3-8d0a-c7f8396f8eb1",
+                            "roomName": "laundry room",
+                            "roomId": "e8a8b38d-2225-4a20-b160-79cdb675adcc"
+                        }
+                    },
+                    {
+                        "deviceId": "046c064f-3e2d-4d88-9799-cf7ec81799df",
+                        "deviceName": "cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1dff7165-c02f-4df3-8d0a-c7f8396f8eb1",
+                            "roomName": "bedroom",
+                            "roomId": "4de44fc8-36ab-44aa-a324-93ae066d9c9c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Raise the cleaners in bedroom by 3"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_increase",
+                            "arguments": {
+                                "device": "046c064f-3e2d-4d88-9799-cf7ec81799df",
+                                "room": "bedroom",
+                                "levelDelta": "3"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have raised the cleaners in bedroom by 3."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b0852a6e-fbd3-4c17-94c0-60acacd665f6",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "60d37451-4c35-4e42-a6f0-2b807ead56d5",
+                            "roomName": "Kitchen",
+                            "roomId": "16218c5b-f70d-4805-a2f2-ad6969d95c1b"
+                        }
+                    },
+                    {
+                        "deviceId": "00957ea6-3512-4987-97b2-f4b879ae8334",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "60d37451-4c35-4e42-a6f0-2b807ead56d5",
+                            "roomName": "Kitchen",
+                            "roomId": "16218c5b-f70d-4805-a2f2-ad6969d95c1b"
+                        }
+                    },
+                    {
+                        "deviceId": "3395b8f6-38cb-4eaf-bf3a-429dac4ba605",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "60d37451-4c35-4e42-a6f0-2b807ead56d5",
+                            "roomName": "Kitchen",
+                            "roomId": "16218c5b-f70d-4805-a2f2-ad6969d95c1b"
+                        }
+                    },
+                    {
+                        "deviceId": "4dfe3412-1642-4fe9-ad50-d6f660c0f6dc",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "60d37451-4c35-4e42-a6f0-2b807ead56d5",
+                            "roomName": "Kitchen",
+                            "roomId": "16218c5b-f70d-4805-a2f2-ad6969d95c1b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What's the cooking status of the kitchen's oven?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_getStatus",
+                            "arguments": {
+                                "device": "b0852a6e-fbd3-4c17-94c0-60acacd665f6",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "10 mins are left until cooking is done in the kitchen's oven."
+        }
+    ],
+    "tools": []
+}

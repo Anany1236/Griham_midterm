@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0a1c18b5-af59-4adb-85a5-d5c70d529cca",
+                        "deviceName": "smart assistant",
+                        "deviceType": "smart assistant",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "79812209-b803-422c-9897-abd9b6226a8a",
+                            "roomName": "living room",
+                            "roomId": "79812209-b803-422c-9897-abd9b6226a8a"
+                        }
+                    },
+                    {
+                        "deviceId": "27c9d68b-c6e6-4485-a6eb-a460ae29b8fa",
+                        "deviceName": "home automation hub",
+                        "deviceType": "home automation hub",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "3591c1ff-0c89-41dd-9e55-c57c344b13c8",
+                            "roomName": "kitchen",
+                            "roomId": "3591c1ff-0c89-41dd-9e55-c57c344b13c8"
+                        }
+                    },
+                    {
+                        "deviceId": "4edcdbf6-bf77-44be-a733-b11188506ceb",
+                        "deviceName": "smart assistant",
+                        "deviceType": "smart assistant",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hall",
+                            "locationId": "11308f6d-e75e-4f0d-b1fc-436c3c82173b",
+                            "roomName": "hall",
+                            "roomId": "11308f6d-e75e-4f0d-b1fc-436c3c82173b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please confirm if smart control is active."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "smartControl_getStatus",
+                            "arguments": {
+                                "device": "0a1c18b5-af59-4adb-85a5-d5c70d529cca",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Smart control is currently {status}."
+        }
+    ],
+    "tools": []
+}

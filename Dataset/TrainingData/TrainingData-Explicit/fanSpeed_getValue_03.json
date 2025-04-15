@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4ee29665-5376-4e67-ba18-725c91e3f277",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1d698bde-3bfa-43fa-b4ce-8a79358e9a7f",
+                            "roomName": "living room",
+                            "roomId": "0068131c-418e-4ca7-8158-2a56858667d6"
+                        }
+                    },
+                    {
+                        "deviceId": "a5d1a5b6-b509-4067-b698-012c2fc1907c",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1d698bde-3bfa-43fa-b4ce-8a79358e9a7f",
+                            "roomName": "kids room",
+                            "roomId": "27e2465b-300e-4804-a23e-7820cecd016c"
+                        }
+                    },
+                    {
+                        "deviceId": "1721708b-23a5-4e0e-9ccc-86dc734ce9a5",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1d698bde-3bfa-43fa-b4ce-8a79358e9a7f",
+                            "roomName": "bedroom",
+                            "roomId": "9381af90-45bd-4141-9d3e-d2c16c4f1c48"
+                        }
+                    },
+                    {
+                        "deviceId": "e19af69f-c6d0-4ce4-a3b7-16d9106de51e",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1d698bde-3bfa-43fa-b4ce-8a79358e9a7f",
+                            "roomName": "guest room",
+                            "roomId": "933e6282-650b-4bb4-8a59-111375133d7e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the fan speed of the kids room fan"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeed_getValue",
+                            "arguments": {
+                                "device": "a5d1a5b6-b509-4067-b698-012c2fc1907c",
+                                "room": "kids room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed of the kids room fan is 30"
+        }
+    ],
+    "tools": []
+}

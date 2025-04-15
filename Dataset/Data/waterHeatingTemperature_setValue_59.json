@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "662071a9-53ba-41a5-8123-00b54b198a18",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "84b76c6b-c01f-424f-9074-d1a3b66385b2",
+                            "roomName": "bathroom",
+                            "roomId": "84b76c6b-c01f-424f-9074-d1a3b66385b2"
+                        }
+                    },
+                    {
+                        "deviceId": "a568291a-d270-4d42-86e7-08058161faa8",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "0e6bf89f-7671-4500-8f53-078a46ae2623",
+                            "roomName": "utility room",
+                            "roomId": "0e6bf89f-7671-4500-8f53-078a46ae2623"
+                        }
+                    },
+                    {
+                        "deviceId": "a9e613f2-3146-4fa7-9ded-6b6c9bbbb09f",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e6ab23a4-1f15-47e9-b514-096aff369549",
+                            "roomName": "kitchen",
+                            "roomId": "e6ab23a4-1f15-47e9-b514-096aff369549"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the water heating temperature to {value}."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeatingTemperature_setValue",
+                            "arguments": {
+                                "device": "662071a9-53ba-41a5-8123-00b54b198a18",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Water heating temperature is now at {value}."
+        }
+    ],
+    "tools": []
+}

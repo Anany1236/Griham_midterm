@@ -1,0 +1,32 @@
+{
+    "name": "backlight_setValue",
+    "description": "This function is used to set the screen brightness of a SmartThings device to a specific value.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the screen brightness.",
+            "optional": true
+        },
+        {
+            "name": "brightness",
+            "type": "integer",
+            "description": "The specific value to set the screen brightness to.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

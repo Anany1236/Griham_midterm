@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fb07b5ab-8bc8-4bfe-9c85-02f75c6c794f",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6b47bdc6-54c3-45ac-9173-f74a08a2d0fc",
+                            "roomName": "bedroom",
+                            "roomId": "6b47bdc6-54c3-45ac-9173-f74a08a2d0fc"
+                        }
+                    },
+                    {
+                        "deviceId": "c7673aa6-ed56-445e-a29f-db5c83ce9d04",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "04fdda5c-e537-49f1-a791-3122f4927ab3",
+                            "roomName": "living Room",
+                            "roomId": "04fdda5c-e537-49f1-a791-3122f4927ab3"
+                        }
+                    },
+                    {
+                        "deviceId": "6277de7c-6d2b-432d-9b4e-8d5dde575730",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "131c39d8-c78f-440f-9ee9-ee6515003a57",
+                            "roomName": "guest Room",
+                            "roomId": "131c39d8-c78f-440f-9ee9-ee6515003a57"
+                        }
+                    },
+                    {
+                        "deviceId": "c28da3da-f872-4393-8a1c-219320ac3667",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "042a8baa-853d-4963-aaa9-bfe62c54a5a9",
+                            "roomName": "kitchen",
+                            "roomId": "042a8baa-853d-4963-aaa9-bfe62c54a5a9"
+                        }
+                    },
+                    {
+                        "deviceId": "4cf91762-d295-440f-adc1-db90627d36c7",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "47c20d7b-3e8c-4aab-80ff-a604a7b8afa1",
+                            "roomName": "utility Room",
+                            "roomId": "47c20d7b-3e8c-4aab-80ff-a604a7b8afa1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the bypass state status of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bypassState_getStatus",
+                            "arguments": {
+                                "device": "6277de7c-6d2b-432d-9b4e-8d5dde575730",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The bypass state status of the light in the guest room is available"
+        }
+    ],
+    "tools": []
+}

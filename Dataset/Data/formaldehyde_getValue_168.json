@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3f7936ef-de6d-4620-989f-93e720111c87",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7aedc49c-41f9-4546-94c0-0d4021bcd018",
+                            "roomName": "bedroom",
+                            "roomId": "7aedc49c-41f9-4546-94c0-0d4021bcd018"
+                        }
+                    },
+                    {
+                        "deviceId": "2ce8d988-916f-4ed7-b277-000daaac9283",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7af5a24a-728a-4dc0-ae72-19966040a039",
+                            "roomName": "living Room",
+                            "roomId": "7af5a24a-728a-4dc0-ae72-19966040a039"
+                        }
+                    },
+                    {
+                        "deviceId": "aa6b3262-c28c-4f53-a634-797effb8352c",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1785021b-afab-4867-96d6-cfa8f2233023",
+                            "roomName": "guest Room",
+                            "roomId": "1785021b-afab-4867-96d6-cfa8f2233023"
+                        }
+                    },
+                    {
+                        "deviceId": "19549140-8a2c-448e-8aab-bfd9802fc827",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8d3453d2-ad9f-43d9-b4ec-be2949140f3c",
+                            "roomName": "kitchen",
+                            "roomId": "8d3453d2-ad9f-43d9-b4ec-be2949140f3c"
+                        }
+                    },
+                    {
+                        "deviceId": "6cd34c8b-6cb6-4912-8933-495bee7717b1",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8ae4f93d-49b5-41f7-b7a0-62439b1c3ba9",
+                            "roomName": "utility Room",
+                            "roomId": "8ae4f93d-49b5-41f7-b7a0-62439b1c3ba9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you tell me the formaldehyde level in the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "formaldehyde_getValue",
+                            "arguments": {
+                                "device": "aa6b3262-c28c-4f53-a634-797effb8352c",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The formaldehyde level in the light in the guest room is available"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a49973ac-9841-4819-9c76-eddde369f003",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ce16d1bc-8afa-4b0a-b0f3-578c7e5d22c8",
+                            "roomName": "living room",
+                            "roomId": "ce16d1bc-8afa-4b0a-b0f3-578c7e5d22c8"
+                        }
+                    },
+                    {
+                        "deviceId": "ee4ee8cc-a135-4387-bece-93682f142c53",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home office",
+                            "locationId": "81890bfb-de0e-4c36-9ff7-9827ed63e62b",
+                            "roomName": "home office",
+                            "roomId": "81890bfb-de0e-4c36-9ff7-9827ed63e62b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the screen rotation to horizontal?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "screenRotation_setHorizontal",
+                            "arguments": {
+                                "device": "a49973ac-9841-4819-9c76-eddde369f003",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The screen has been set to horizontal mode."
+        }
+    ],
+    "tools": []
+}

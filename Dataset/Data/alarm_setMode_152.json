@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2d244f94-cc87-4ab5-9e3b-be3749172966",
+                        "deviceName": "siren",
+                        "deviceType": "siren",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "057eaf79-6965-4dc3-84c4-3478033a91f0",
+                            "roomName": "bedroom",
+                            "roomId": "057eaf79-6965-4dc3-84c4-3478033a91f0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you switch the alarm to morning mode?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "alarm_setMode",
+                            "arguments": {
+                                "device": "2d244f94-cc87-4ab5-9e3b-be3749172966",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have switched the alarm to morning mode."
+        }
+    ],
+    "tools": []
+}

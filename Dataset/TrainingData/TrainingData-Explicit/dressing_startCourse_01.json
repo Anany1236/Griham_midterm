@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "23502de0-3795-4e35-a85e-caaabdab608d",
+                        "deviceName": "steamcloset1",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a8a07a09-b47b-43cf-95ba-f94987eeaddb",
+                            "roomName": "utility room",
+                            "roomId": "6023d71d-0733-4cbe-8cfb-6ca56d3eacd2"
+                        }
+                    },
+                    {
+                        "deviceId": "626e7bf3-e759-48ba-9276-72d7513cb1d6",
+                        "deviceName": "steamcloset2",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a8a07a09-b47b-43cf-95ba-f94987eeaddb",
+                            "roomName": "living room",
+                            "roomId": "05649d3d-c24f-4664-97ee-3a47264d9359"
+                        }
+                    },
+                    {
+                        "deviceId": "79b013fa-2642-4141-8398-bad139c05e94",
+                        "deviceName": "airdresser",
+                        "deviceType": "airdresser",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a8a07a09-b47b-43cf-95ba-f94987eeaddb",
+                            "roomName": "living room",
+                            "roomId": "05649d3d-c24f-4664-97ee-3a47264d9359"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start the air dresser in time dry mode in my room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_startCourse",
+                            "arguments": {
+                                "device": "79b013fa-2642-4141-8398-bad139c05e94",
+                                "mode": "dry"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started the air dresser in dry mode in the room."
+        }
+    ],
+    "tools": []
+}

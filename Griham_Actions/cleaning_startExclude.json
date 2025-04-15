@@ -1,0 +1,38 @@
+{
+    "name": "cleaning_startExclude",
+    "description": "This function is used to initiate cleaning with a robot vacuum cleaner, excluding specified areas.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to start cleaning.",
+            "optional": true
+        },
+        {
+            "name": "rvcLocations",
+            "type": "array<string>",
+            "description": "The list of locations to exclude from cleaning.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The cleaning mode to use.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

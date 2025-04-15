@@ -1,0 +1,67 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "device_startCourse",
+            "description": "This function is used to initiate a specific mode or course on a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to initiate the mode or course."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action for initiating the mode or course."
+                    },
+                    "predefinedMode": {
+                        "type": "string",
+                        "description": "The predefined mode to initiate."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode to initiate."
+                    },
+                    "temperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of temperature for the mode or course."
+                    },
+                    "temperature": {
+                        "type": "string",
+                        "description": "The temperature value for the mode or course."
+                    },
+                    "duration": {
+                        "type": "string",
+                        "description": "The duration for the mode or course."
+                    },
+                    "weight": {
+                        "type": "string",
+                        "description": "The weight value for the mode or course."
+                    },
+                    "weightUnit": {
+                        "type": "string",
+                        "description": "The unit of weight for the mode or course."
+                    },
+                    "number": {
+                        "type": "integer",
+                        "description": "An integer value for the mode or course."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment for the mode or course."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a9a3eba3-9268-4e28-aedb-e11981221f06",
+                        "deviceName": "humidifier",
+                        "deviceType": "humidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "8f993f88-fdde-4823-a892-37d1d451a19e",
+                            "roomName": "bathroom",
+                            "roomId": "8f993f88-fdde-4823-a892-37d1d451a19e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you increase the humidity in the bathroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "humidity_increase",
+                            "arguments": {
+                                "device": "a9a3eba3-9268-4e28-aedb-e11981221f06",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The humidity in the bathroom has been increased."
+        }
+    ],
+    "tools": []
+}

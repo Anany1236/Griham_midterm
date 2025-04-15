@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "979007f3-2bb7-4f46-977b-78ec6343bbdb",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c9c64c0a-0634-401d-8b8a-6c1e96fa0523",
+                            "roomName": "bedroom",
+                            "roomId": "c9c64c0a-0634-401d-8b8a-6c1e96fa0523"
+                        }
+                    },
+                    {
+                        "deviceId": "855e2566-698e-436d-bf96-625d75b43622",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e22d4b48-ae70-49ff-86e5-3bf7184534e9",
+                            "roomName": "living Room",
+                            "roomId": "e22d4b48-ae70-49ff-86e5-3bf7184534e9"
+                        }
+                    },
+                    {
+                        "deviceId": "52ceacb3-0370-44a4-901e-66d519fe6bf8",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d62369f6-6c26-4ea3-a322-297572fc8481",
+                            "roomName": "guest Room",
+                            "roomId": "d62369f6-6c26-4ea3-a322-297572fc8481"
+                        }
+                    },
+                    {
+                        "deviceId": "4be9e71c-362a-46a3-9d4b-5dec8608c082",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "26398a6d-3c23-4ae7-a229-7243227f6599",
+                            "roomName": "kitchen",
+                            "roomId": "26398a6d-3c23-4ae7-a229-7243227f6599"
+                        }
+                    },
+                    {
+                        "deviceId": "be4df85c-f3ad-43b5-b4d9-56ff20a6f76b",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ff7d2235-2526-48e0-9159-d49c77f7cdc4",
+                            "roomName": "utility Room",
+                            "roomId": "ff7d2235-2526-48e0-9159-d49c77f7cdc4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the detected sound type for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "detectedSoundType_getValue",
+                            "arguments": {
+                                "device": "979007f3-2bb7-4f46-977b-78ec6343bbdb",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The detected sound type for the air conditioner in the bedroom is shown"
+        }
+    ],
+    "tools": []
+}

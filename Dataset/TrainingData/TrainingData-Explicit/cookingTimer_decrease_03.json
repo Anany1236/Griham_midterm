@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "25769e1b-644e-4e9d-b488-4df0fcdf6d1e",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "722774d7-4e29-4371-979b-a16010c4d1d9",
+                            "roomName": "Kitchen",
+                            "roomId": "7c8f8ae2-b507-4d5e-9e8d-a0b2ea667577"
+                        }
+                    },
+                    {
+                        "deviceId": "f86c407b-ceb5-4fed-a261-1fb98ef3720b",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "722774d7-4e29-4371-979b-a16010c4d1d9",
+                            "roomName": "Kitchen",
+                            "roomId": "7c8f8ae2-b507-4d5e-9e8d-a0b2ea667577"
+                        }
+                    },
+                    {
+                        "deviceId": "6e60ce62-5df0-4db8-9ea3-7b2ec45c4968",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "722774d7-4e29-4371-979b-a16010c4d1d9",
+                            "roomName": "Kitchen",
+                            "roomId": "7c8f8ae2-b507-4d5e-9e8d-a0b2ea667577"
+                        }
+                    },
+                    {
+                        "deviceId": "dc59c9c3-ec37-47f9-81c4-0a320573e88b",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "722774d7-4e29-4371-979b-a16010c4d1d9",
+                            "roomName": "Kitchen",
+                            "roomId": "7c8f8ae2-b507-4d5e-9e8d-a0b2ea667577"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you reduce the cooking time on the ricecooker by 5 minutes?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTimer_decrease",
+                            "arguments": {
+                                "device": "6e60ce62-5df0-4db8-9ea3-7b2ec45c4968",
+                                "cookingTimer": "5 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have reduced the cooking time on the ricecooker by 5 minutes"
+        }
+    ],
+    "tools": []
+}

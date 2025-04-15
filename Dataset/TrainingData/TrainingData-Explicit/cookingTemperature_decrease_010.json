@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Decrease the temperature of the oven in the kitchen by 10 degrees"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTemperature_decrease",
+                            "arguments": {
+                                "device": "oven",
+                                "cookingTemperatureDelta": 10,
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, I have decreased the temperature of the oven in the kitchen by 10 degrees."
+        }
+    ],
+    "tools": []
+}

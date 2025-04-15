@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "deefd6fe-6fe9-4fa3-9cf9-fbf58d30a0eb",
+                        "deviceName": "door lock",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "af801cc5-6df8-4f52-93db-399cf6aeced4",
+                            "roomName": "living room",
+                            "roomId": "af801cc5-6df8-4f52-93db-399cf6aeced4"
+                        }
+                    },
+                    {
+                        "deviceId": "21258167-2b18-4faa-be57-c2e4db6c532e",
+                        "deviceName": "door lock",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "45b111e9-75c6-40c4-a4d4-a1772a9752aa",
+                            "roomName": "office room",
+                            "roomId": "45b111e9-75c6-40c4-a4d4-a1772a9752aa"
+                        }
+                    },
+                    {
+                        "deviceId": "b8ca47cb-2484-4917-b8c7-30a8d0910087",
+                        "deviceName": "door lock",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "41b510ca-720b-4d04-a2fa-1503d0f7729b",
+                            "roomName": "utility room",
+                            "roomId": "41b510ca-720b-4d04-a2fa-1503d0f7729b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please tell me if there is any abnormal operation to door in living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "abnormalOperation_getStatus",
+                            "arguments": {
+                                "device": "deefd6fe-6fe9-4fa3-9cf9-fbf58d30a0eb",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "There is no abnormal operation to smart lock in living room."
+        }
+    ],
+    "tools": []
+}

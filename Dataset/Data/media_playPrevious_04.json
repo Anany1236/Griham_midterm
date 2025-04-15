@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a63ed23a-d293-4963-9f1c-d511291f7da4",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ad729466-a5b4-4546-987c-7c31be0a8f6d",
+                            "roomName": "living room",
+                            "roomId": "ad729466-a5b4-4546-987c-7c31be0a8f6d"
+                        }
+                    },
+                    {
+                        "deviceId": "e84227ce-fa55-40a7-960f-e4d4e8a81ac6",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "8a81f635-d436-4f47-9bfa-a27174e754f7",
+                            "roomName": "bedroom",
+                            "roomId": "8a81f635-d436-4f47-9bfa-a27174e754f7"
+                        }
+                    },
+                    {
+                        "deviceId": "913fe749-8218-47be-8bcd-14a4a23227c3",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "dd89fa97-e268-42a8-904d-1355923e0735",
+                            "roomName": "office room",
+                            "roomId": "dd89fa97-e268-42a8-904d-1355923e0735"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please play the previous media on the music system in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_playPrevious",
+                            "arguments": {
+                                "device": "913fe749-8218-47be-8bcd-14a4a23227c3",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The previous media has started on the music system in the office room."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e4efd827-2eb9-4d27-9662-49cb51426d93",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8641467d-1550-4cff-b881-42bc5023ccba",
+                            "roomName": "kids room",
+                            "roomId": "bda41cb7-df9e-4f12-95ca-95e869c35ff9"
+                        }
+                    },
+                    {
+                        "deviceId": "a163b195-b3b1-4625-9241-1b7f38a15db7",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8641467d-1550-4cff-b881-42bc5023ccba",
+                            "roomName": "laundry room",
+                            "roomId": "d80d84b8-67e9-4503-9974-a3451ca462c6"
+                        }
+                    },
+                    {
+                        "deviceId": "4eec518a-9505-4df6-b12a-ea5c89e4bcd0",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8641467d-1550-4cff-b881-42bc5023ccba",
+                            "roomName": "kitchen",
+                            "roomId": "b38e30bb-cfd7-47f6-a36a-0c85c58d3569"
+                        }
+                    },
+                    {
+                        "deviceId": "0cd5c7d8-a105-4e67-b8e2-58951bb475ca",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8641467d-1550-4cff-b881-42bc5023ccba",
+                            "roomName": "kitchen",
+                            "roomId": "b38e30bb-cfd7-47f6-a36a-0c85c58d3569"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you start the microwave on convection mode"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_startCourse",
+                            "arguments": {
+                                "device": "0cd5c7d8-a105-4e67-b8e2-58951bb475ca",
+                                "mode": "convection"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started the microwave on convection mode."
+        }
+    ],
+    "tools": []
+}

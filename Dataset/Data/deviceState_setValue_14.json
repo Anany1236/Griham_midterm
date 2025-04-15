@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0fff58a3-e476-4496-8f9b-c948b5697181",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "364f9053-e6eb-427b-b5ff-be2e597fd29e",
+                            "roomName": "office room",
+                            "roomId": "364f9053-e6eb-427b-b5ff-be2e597fd29e"
+                        }
+                    },
+                    {
+                        "deviceId": "11e098cc-41e5-441e-826e-d7163711dedf",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "e30b925e-7db8-4c49-8b31-a0e3d16aace0",
+                            "roomName": "living room",
+                            "roomId": "e30b925e-7db8-4c49-8b31-a0e3d16aace0"
+                        }
+                    },
+                    {
+                        "deviceId": "13db3903-fe37-476e-b633-995caee6081f",
+                        "deviceName": "humidifier",
+                        "deviceType": "humidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "2e616214-1c26-4b7a-9c84-e3af6de11b6e",
+                            "roomName": "bedroom",
+                            "roomId": "2e616214-1c26-4b7a-9c84-e3af6de11b6e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the current value for the thermostat in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setValue",
+                            "arguments": {
+                                "device": "0fff58a3-e476-4496-8f9b-c948b5697181",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current value for the thermostat in the office room has been set."
+        }
+    ],
+    "tools": []
+}

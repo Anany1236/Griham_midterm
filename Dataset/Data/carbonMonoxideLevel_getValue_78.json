@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "47c7181a-057e-457e-ada2-df5c9e2324c4",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a96988fb-6ea8-4790-905a-3983cd25477b",
+                            "roomName": "bedroom",
+                            "roomId": "a96988fb-6ea8-4790-905a-3983cd25477b"
+                        }
+                    },
+                    {
+                        "deviceId": "626c9665-bdcb-4e27-8563-f6341d28e9c3",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4703492f-5d97-499a-a58f-a5ecad53624f",
+                            "roomName": "living Room",
+                            "roomId": "4703492f-5d97-499a-a58f-a5ecad53624f"
+                        }
+                    },
+                    {
+                        "deviceId": "f60902ea-858f-481b-9c1c-5037c533fbf4",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "095f7ee8-3e14-4e18-b52e-7f834c345586",
+                            "roomName": "guest Room",
+                            "roomId": "095f7ee8-3e14-4e18-b52e-7f834c345586"
+                        }
+                    },
+                    {
+                        "deviceId": "a396cc3e-2965-43c8-a9ae-6883765fedf9",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ffc35983-98c6-4b17-8846-f786a3b2033e",
+                            "roomName": "kitchen",
+                            "roomId": "ffc35983-98c6-4b17-8846-f786a3b2033e"
+                        }
+                    },
+                    {
+                        "deviceId": "f133e8a6-126b-4750-822b-6a1ccdad8bba",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3bd03c86-3b7e-47e6-8168-7cfcb0fa780f",
+                            "roomName": "utility Room",
+                            "roomId": "3bd03c86-3b7e-47e6-8168-7cfcb0fa780f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the carbon monoxide level of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "carbonMonoxideLevel_getValue",
+                            "arguments": {
+                                "device": "f60902ea-858f-481b-9c1c-5037c533fbf4",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The carbon monoxide level of the light in the guest room is available"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "channel_increase",
+            "description": "This function is used to increase the channel of a TV device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device for which channel needs to be increased is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the air conditioner is located. e.g. living room, bedroom, bathroom, etc."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device on which the channel needs to be increased."
+                    },
+                    "channel": {
+                        "type": "string",
+                        "description": "The amount by which the channel needs to be increased for the device."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

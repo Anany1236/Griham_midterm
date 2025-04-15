@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2d43ac13-6325-4638-89ea-9fcee8f23cc1",
+                        "deviceName": "robotcleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "188f9822-8fba-4aff-b606-e3f867050778",
+                            "roomName": "laundry room",
+                            "roomId": "188f9822-8fba-4aff-b606-e3f867050778"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Disable auto-empty mode in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "autoEmptyMode_turnOff",
+                            "arguments": {
+                                "device": "2d43ac13-6325-4638-89ea-9fcee8f23cc1",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have disabled auto-empty mode in the laundry room."
+        }
+    ],
+    "tools": []
+}

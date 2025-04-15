@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "24ae82cc-edba-4b0e-b496-9c6768d80643",
+                        "deviceName": "security system",
+                        "deviceType": "security system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "main entrance",
+                            "locationId": "4a89945c-de05-48a4-ab5c-5caa98c620cf",
+                            "roomName": "main entrance",
+                            "roomId": "4a89945c-de05-48a4-ab5c-5caa98c620cf"
+                        }
+                    },
+                    {
+                        "deviceId": "f0c8829f-daec-490c-a8da-54a7db98b4ee",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "6c856ca3-8181-4929-9700-a560df1736a2",
+                            "roomName": "living room",
+                            "roomId": "6c856ca3-8181-4929-9700-a560df1736a2"
+                        }
+                    },
+                    {
+                        "deviceId": "5aec0a07-cc8d-4782-a36c-a99c91d163b7",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "764e6caa-a980-4100-ae86-53f50abdb74f",
+                            "roomName": "hallway",
+                            "roomId": "764e6caa-a980-4100-ae86-53f50abdb74f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please switch the security mode to {mode}."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "securityMode_setValue",
+                            "arguments": {
+                                "device": "24ae82cc-edba-4b0e-b496-9c6768d80643",
+                                "room": "main entrance"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The system is now in {mode} mode."
+        }
+    ],
+    "tools": []
+}

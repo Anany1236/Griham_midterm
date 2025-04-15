@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "07e2b6cb-90dd-497e-8a2c-dd7055327a8d",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "5d10aba1-d7a1-4606-ac49-353b9abbbc7b",
+                            "roomName": "bathroom",
+                            "roomId": "5d10aba1-d7a1-4606-ac49-353b9abbbc7b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the water heating temperature in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeatingTemperature_decrease",
+                            "arguments": {
+                                "device": "07e2b6cb-90dd-497e-8a2c-dd7055327a8d",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water heating temperature in the bathroom has been decreased."
+        }
+    ],
+    "tools": []
+}

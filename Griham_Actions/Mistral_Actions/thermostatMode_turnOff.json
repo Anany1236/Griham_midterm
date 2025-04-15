@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "thermostatMode_turnOff",
+            "description": "This function is used to turn off the thermostat mode.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn off the thermostat mode."
+                    },
+                    "predefinedThermostatMode": {
+                        "type": "string",
+                        "description": "The predefined thermostat mode to be turned off."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode to be turned off."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "washing_startCourse",
+            "description": "This function is used to start the washing process of the washing machine on a specific course.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device which needs to be turned on is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device which needs to be turned on is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The device on which action needs to be performed."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment of the device, in which action needs to be performed."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode in which device needs to be set."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

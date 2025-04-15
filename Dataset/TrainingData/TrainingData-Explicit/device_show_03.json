@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "32e5c652-1fdb-412b-b3e0-8da710407c57",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e219e801-0dbd-48c0-ab42-2794579ef2f3",
+                            "roomName": "living room",
+                            "roomId": "9cd4c28d-c576-4f23-99c3-00c634899735"
+                        }
+                    },
+                    {
+                        "deviceId": "80d73d20-4328-41c3-9208-e46468c2702d",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e219e801-0dbd-48c0-ab42-2794579ef2f3",
+                            "roomName": "kitchen",
+                            "roomId": "1c7646ec-4b45-4089-908c-f273580d4e7a"
+                        }
+                    },
+                    {
+                        "deviceId": "d5c7e761-f6d5-4d46-abc2-b6688ef2a7ae",
+                        "deviceName": "kimchi refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e219e801-0dbd-48c0-ab42-2794579ef2f3",
+                            "roomName": "kitchen",
+                            "roomId": "1c7646ec-4b45-4089-908c-f273580d4e7a"
+                        }
+                    },
+                    {
+                        "deviceId": "8f6f6025-55d4-439a-a19e-33caca0c983e",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e219e801-0dbd-48c0-ab42-2794579ef2f3",
+                            "roomName": "bedroom",
+                            "roomId": "58a15f1e-a09b-444b-bfe1-be4bcdac7e29"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show me the kitchen's kimchi refrigerator "
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_show",
+                            "arguments": {
+                                "device": "d5c7e761-f6d5-4d46-abc2-b6688ef2a7ae",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Here is your kimchi refrigerator and its relevant detail"
+        }
+    ],
+    "tools": []
+}

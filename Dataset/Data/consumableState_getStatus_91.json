@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7dbc65d5-c0bf-498c-9804-8fdfafbe94fa",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4dfaf526-66f3-44a0-a9bd-8987527376ff",
+                            "roomName": "bedroom",
+                            "roomId": "4dfaf526-66f3-44a0-a9bd-8987527376ff"
+                        }
+                    },
+                    {
+                        "deviceId": "bb21ec80-553b-4009-9951-757f5a51ee0f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "48aa472f-60ba-4d7a-ae95-3f426241e854",
+                            "roomName": "living Room",
+                            "roomId": "48aa472f-60ba-4d7a-ae95-3f426241e854"
+                        }
+                    },
+                    {
+                        "deviceId": "f4d85642-faf8-4b6f-a02e-c1742dde4ad7",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0a3b90cd-3993-4921-8a7f-dd0bfc94d384",
+                            "roomName": "guest Room",
+                            "roomId": "0a3b90cd-3993-4921-8a7f-dd0bfc94d384"
+                        }
+                    },
+                    {
+                        "deviceId": "77ebbe45-4505-4498-9543-fefb15cc2939",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d3b08cdc-f414-4908-9147-35d8df47ad9d",
+                            "roomName": "kitchen",
+                            "roomId": "d3b08cdc-f414-4908-9147-35d8df47ad9d"
+                        }
+                    },
+                    {
+                        "deviceId": "0dc15004-d947-4823-81e4-551e65dcb99b",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "52da0d00-480d-463f-9bba-5a4e73518074",
+                            "roomName": "utility Room",
+                            "roomId": "52da0d00-480d-463f-9bba-5a4e73518074"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the consumable state status for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "consumableState_getStatus",
+                            "arguments": {
+                                "device": "7dbc65d5-c0bf-498c-9804-8fdfafbe94fa",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The consumable state status for the air conditioner in the bedroom is good"
+        }
+    ],
+    "tools": []
+}

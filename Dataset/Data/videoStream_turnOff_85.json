@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "75f9c4e8-8ade-4c04-88fd-4328ea07d022",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "0c94abf7-77ed-4f83-9c7d-0fbee89b49d7",
+                            "roomName": "living room",
+                            "roomId": "0c94abf7-77ed-4f83-9c7d-0fbee89b49d7"
+                        }
+                    },
+                    {
+                        "deviceId": "ba7c09c9-5c3e-4b05-bb2e-d57da965c4e7",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "c3e41f9a-6d6d-444e-83a4-9006ee2511ad",
+                            "roomName": "home theater",
+                            "roomId": "c3e41f9a-6d6d-444e-83a4-9006ee2511ad"
+                        }
+                    },
+                    {
+                        "deviceId": "ebd0838f-ddd5-4f37-8b6e-d5501cdda127",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "bc9fb422-6df8-4243-9752-5d9ebac23429",
+                            "roomName": "office room",
+                            "roomId": "bc9fb422-6df8-4243-9752-5d9ebac23429"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the video stream on the projector in the home theater."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "videoStream_turnOff",
+                            "arguments": {
+                                "device": "ba7c09c9-5c3e-4b05-bb2e-d57da965c4e7",
+                                "room": "home theater"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Video stream on the projector in the home theater is now disabled."
+        }
+    ],
+    "tools": []
+}

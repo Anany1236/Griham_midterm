@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6f128a0b-8506-4755-981d-4a7a171225c7",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "34e5c59e-dba1-47d9-acff-a47b51d2b3f8",
+                            "roomName": "kitchen",
+                            "roomId": "34e5c59e-dba1-47d9-acff-a47b51d2b3f8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please pause the cooking process on the cooktop."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_pause",
+                            "arguments": {
+                                "device": "6f128a0b-8506-4755-981d-4a7a171225c7",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking process on the cooktop is paused."
+        }
+    ],
+    "tools": []
+}

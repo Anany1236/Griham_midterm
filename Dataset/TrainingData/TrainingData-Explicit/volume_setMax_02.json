@@ -1,0 +1,71 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "ce7f548a-9bca-43b8-aa7b-24948d1465e8",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "a5988f85-b409-4b69-81fb-9ed53d45fb9c",
+							"roomName": "Bedroom",
+							"roomId": "31a4d518-cb31-40a4-bae3-1c90937f159a"
+						}
+					},
+					{
+						"deviceId": "52bb139e-b8fb-490a-98a9-18df44dfa51b",
+						"deviceName": "light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "a5988f85-b409-4b69-81fb-9ed53d45fb9c",
+							"roomName": "Kitchen",
+							"roomId": "3a1da5f8-3aa4-4605-9175-ab273509420c"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Set the volume to maximum of tv in bedroom"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMax",
+							"arguments": {
+								"device": "ce7f548a-9bca-43b8-aa7b-24948d1465e8",
+								"room": "bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to maximum of tv in the bedroom."
+		}
+	],
+	"tools": []
+}

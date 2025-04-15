@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "14450554-bffd-422c-b0d9-31641e6ffd15",
+                        "deviceName": "power switch",
+                        "deviceType": "power switch",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "90400809-e5e2-44a1-916c-d00500e0f4f1",
+                            "roomName": "utility room",
+                            "roomId": "90400809-e5e2-44a1-916c-d00500e0f4f1"
+                        }
+                    },
+                    {
+                        "deviceId": "2c1c89ce-f64d-409e-83e1-120bc6238003",
+                        "deviceName": "generator",
+                        "deviceType": "generator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "e1f516ff-0060-4ffa-856c-22bf58f1b44a",
+                            "roomName": "basement",
+                            "roomId": "e1f516ff-0060-4ffa-856c-22bf58f1b44a"
+                        }
+                    },
+                    {
+                        "deviceId": "be656d91-6d4b-4c94-bcad-0d4ae412d916",
+                        "deviceName": "UPS",
+                        "deviceType": "UPS",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "4107aaae-2d9b-4be7-a5c3-f0c9b2439cb8",
+                            "roomName": "living room",
+                            "roomId": "4107aaae-2d9b-4be7-a5c3-f0c9b2439cb8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is the power source active?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerSource_getStatus",
+                            "arguments": {
+                                "device": "14450554-bffd-422c-b0d9-31641e6ffd15",
+                                "room": "utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The power source is {status} right now."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "adc29761-28e1-49ec-bebb-b8d8e223124a",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9e6a5af8-926c-44b3-b0e5-cccc642bf94f",
+                            "roomName": "bedroom",
+                            "roomId": "16272612-d0bc-4efa-bcf9-50f0f993cc0a"
+                        }
+                    },
+                    {
+                        "deviceId": "2d07c69f-83a5-48ef-89c3-835a2c2d7294",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9e6a5af8-926c-44b3-b0e5-cccc642bf94f",
+                            "roomName": "Living room",
+                            "roomId": "f0f65e4c-6ace-44f1-bafd-66d201e61d37"
+                        }
+                    },
+                    {
+                        "deviceId": "00293ef1-28e6-4a13-9bcf-dbe1cd0e6d01",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9e6a5af8-926c-44b3-b0e5-cccc642bf94f",
+                            "roomName": "Living room",
+                            "roomId": "f0f65e4c-6ace-44f1-bafd-66d201e61d37"
+                        }
+                    },
+                    {
+                        "deviceId": "c8338159-4fb5-4aa0-ad14-796bb7287e90",
+                        "deviceName": "rvc",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9e6a5af8-926c-44b3-b0e5-cccc642bf94f",
+                            "roomName": "Kitchen",
+                            "roomId": "82e22277-059c-42f6-820a-488c358b5150"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Use rvc to start clean everything except for the hall"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_startExclude",
+                            "arguments": {
+                                "device": "c8338159-4fb5-4aa0-ad14-796bb7287e90",
+                                "rvcLocations": "hall"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started cleaning everything except hall."
+        }
+    ],
+    "tools": []
+}

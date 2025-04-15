@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1072c442-7f10-4426-a64c-0cd99c8cb779",
+                        "deviceName": "door",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "93775123-a65a-446d-92f8-d5d809547b87",
+                            "roomName": "bathroom",
+                            "roomId": "79fa55d9-b7f8-41dc-81fb-9d5fd582a933"
+                        }
+                    },
+                    {
+                        "deviceId": "d7b97c21-7b4a-4b5b-ae67-80ee40721eee",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "93775123-a65a-446d-92f8-d5d809547b87",
+                            "roomName": "living room",
+                            "roomId": "79fa55d9-b7f8-41dc-81fb-9d5fd582a933"
+                        }
+                    },
+                    {
+                        "deviceId": "a4946875-19f4-47a5-be12-65279af3a27a",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "93775123-a65a-446d-92f8-d5d809547b87",
+                            "roomName": "living room",
+                            "roomId": "79fa55d9-b7f8-41dc-81fb-9d5fd582a933"
+                        }
+                    },
+                    {
+                        "deviceId": "5f302f39-b1e7-48a6-8c2b-ed4b9adbd63b",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "93775123-a65a-446d-92f8-d5d809547b87",
+                            "roomName": "living room",
+                            "roomId": "79fa55d9-b7f8-41dc-81fb-9d5fd582a933"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Open the bathroom door"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_open",
+                            "arguments": {
+                                "device": "1072c442-7f10-4426-a64c-0cd99c8cb779"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have open the door in the bathroom."
+        }
+    ],
+    "tools": []
+}

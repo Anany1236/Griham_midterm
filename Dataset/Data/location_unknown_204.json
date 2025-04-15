@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3ad9b4ec-4cf4-4eee-9384-8692ddc2394e",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b9a1839e-590b-48f3-b14b-a8a56d9ecdff",
+                            "roomName": "bedroom",
+                            "roomId": "b9a1839e-590b-48f3-b14b-a8a56d9ecdff"
+                        }
+                    },
+                    {
+                        "deviceId": "230e24b3-45d1-4bca-b779-81c33004cf9b",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "45c52cfa-9880-4292-a1dc-275fdcf47a11",
+                            "roomName": "living Room",
+                            "roomId": "45c52cfa-9880-4292-a1dc-275fdcf47a11"
+                        }
+                    },
+                    {
+                        "deviceId": "4a03a075-eef6-45c3-9419-287d590ccaed",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "60a331d4-9a83-4bcd-a25a-f14111416cd5",
+                            "roomName": "guest Room",
+                            "roomId": "60a331d4-9a83-4bcd-a25a-f14111416cd5"
+                        }
+                    },
+                    {
+                        "deviceId": "58f4c48d-823f-456c-badd-2153ab9bf99b",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a12f41b2-0e2b-4d50-b3f5-878ac2affd35",
+                            "roomName": "kitchen",
+                            "roomId": "a12f41b2-0e2b-4d50-b3f5-878ac2affd35"
+                        }
+                    },
+                    {
+                        "deviceId": "eba314cb-9fd4-4731-8cee-48f0e2f5d1ba",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "63ad9353-43f8-4669-b5a1-8a043fca9d71",
+                            "roomName": "utility Room",
+                            "roomId": "63ad9353-43f8-4669-b5a1-8a043fca9d71"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the status of the unknown location for the washer in the kitchen?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "location_unknown",
+                            "arguments": {
+                                "device": "58f4c48d-823f-456c-badd-2153ab9bf99b",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the unknown location for the washer in the kitchen is available"
+        }
+    ],
+    "tools": []
+}

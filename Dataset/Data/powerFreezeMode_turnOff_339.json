@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "07d50627-efb0-402f-adb3-09b80a4c26fd",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e0abed08-f09d-47ac-bf2e-0329a9ff7b5c",
+                            "roomName": "kitchen",
+                            "roomId": "e0abed08-f09d-47ac-bf2e-0329a9ff7b5c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please turn off the freezing mode on the refrigerator."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerFreezeMode_turnOff",
+                            "arguments": {
+                                "device": "07d50627-efb0-402f-adb3-09b80a4c26fd",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive turned off the power freeze mode on the refrigerator."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "heatMode-turnOn",
+            "description": "This function is used to turn on the heating mode of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn on the heating mode."
+                    },
+                    "heatingTemperature": {
+                        "type": "integer",
+                        "description": "The desired temperature for the heating mode."
+                    },
+                    "predefinedHeatingTemperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of the heating temperature (e.g., Celsius, Fahrenheit)."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

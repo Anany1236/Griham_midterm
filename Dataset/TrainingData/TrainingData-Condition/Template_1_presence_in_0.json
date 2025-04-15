@@ -1,0 +1,50 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "user",
+			"content": "Turn on the light when i reach home"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "device_turnOn",
+							"arguments": {
+								"device": "light"
+							}
+						},
+						{
+							"name": "condition_presenceIn",
+							"arguments": {
+								"presenceLocation": "home"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "Routine is saved."
+		}
+	],
+	"tools": [
+		{
+			"type": "function",
+			"function": []
+		}
+	]
+}

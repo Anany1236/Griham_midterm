@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1263e517-6965-4f7a-99a0-d9eb9f587765",
+                        "deviceName": "charger",
+                        "deviceType": "charger",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "146819c0-e891-4638-bf89-e7b1fee861b8",
+                            "roomName": "bedroom",
+                            "roomId": "146819c0-e891-4638-bf89-e7b1fee861b8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "The lamp of the air purifier in the living room has been turned on."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chargerLamp_turnOff",
+                            "arguments": {
+                                "device": "1263e517-6965-4f7a-99a0-d9eb9f587765",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lamp of the charger in the bedroom has been turned off."
+        }
+    ],
+    "tools": []
+}

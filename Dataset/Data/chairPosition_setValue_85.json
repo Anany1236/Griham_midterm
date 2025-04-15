@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "efb1e19e-af6c-4044-85d8-5ecad217f5d9",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6823af9f-ad62-471f-8e6c-6fe54cc09f49",
+                            "roomName": "bedroom",
+                            "roomId": "6823af9f-ad62-471f-8e6c-6fe54cc09f49"
+                        }
+                    },
+                    {
+                        "deviceId": "b2a2ea08-7aa5-4ef4-8f46-e771135d52de",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c728b2e4-ef7d-403c-90db-da4f55f176a7",
+                            "roomName": "living Room",
+                            "roomId": "c728b2e4-ef7d-403c-90db-da4f55f176a7"
+                        }
+                    },
+                    {
+                        "deviceId": "361e0699-e48f-40d8-9a29-561edda5bd78",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "232bddf7-0057-4077-a5b0-67dc1c4502c6",
+                            "roomName": "guest Room",
+                            "roomId": "232bddf7-0057-4077-a5b0-67dc1c4502c6"
+                        }
+                    },
+                    {
+                        "deviceId": "bf248477-a5ff-423e-b89f-e3575d82b1a1",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bd9ea07f-0a24-4f7d-b9e2-f3c4f1fc1a48",
+                            "roomName": "kitchen",
+                            "roomId": "bd9ea07f-0a24-4f7d-b9e2-f3c4f1fc1a48"
+                        }
+                    },
+                    {
+                        "deviceId": "0b212879-ccfe-42a3-8aeb-d5968087be59",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "16f12910-c7f0-4e90-b244-dc9744de0a0e",
+                            "roomName": "utility Room",
+                            "roomId": "16f12910-c7f0-4e90-b244-dc9744de0a0e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the chair position of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chairPosition_setValue",
+                            "arguments": {
+                                "device": "0b212879-ccfe-42a3-8aeb-d5968087be59",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The chair position of the hood in the utility room is adjusted"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a9462f56-ab94-4c4a-8541-2a3f96b54fbc",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "6aafc50f-91ba-4429-807f-de061305899a",
+                            "roomName": "living room",
+                            "roomId": "6aafc50f-91ba-4429-807f-de061305899a"
+                        }
+                    },
+                    {
+                        "deviceId": "5f52e9d0-e642-49ae-ba3b-1ccd644b20ef",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "d2e3a31b-81f0-42ee-be2a-620079463999",
+                            "roomName": "home theater",
+                            "roomId": "d2e3a31b-81f0-42ee-be2a-620079463999"
+                        }
+                    },
+                    {
+                        "deviceId": "60b156d3-58d0-4361-b263-16423934c9a5",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "52a0193b-c35d-4b62-a2c6-60487c7a6c00",
+                            "roomName": "office room",
+                            "roomId": "52a0193b-c35d-4b62-a2c6-60487c7a6c00"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please stop the video on the monitor in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "video_stop",
+                            "arguments": {
+                                "device": "60b156d3-58d0-4361-b263-16423934c9a5",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The video on the monitor in the office room has been stopped."
+        }
+    ],
+    "tools": []
+}

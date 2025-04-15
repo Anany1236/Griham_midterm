@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b39bc52f-8415-4f59-a022-0fffa1493acd",
+                        "deviceName": "door",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "295bd663-ba6a-47d5-9ea8-af543c65dc06",
+                            "roomName": "basement",
+                            "roomId": "9f533411-428d-4838-adb0-c902adb2e66b"
+                        }
+                    },
+                    {
+                        "deviceId": "926d1317-6259-4931-805f-12378c819c8a",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "295bd663-ba6a-47d5-9ea8-af543c65dc06",
+                            "roomName": "living room",
+                            "roomId": "9f533411-428d-4838-adb0-c902adb2e66b"
+                        }
+                    },
+                    {
+                        "deviceId": "be7b61ff-654a-46d5-8f1b-0b1cdc4787ad",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "295bd663-ba6a-47d5-9ea8-af543c65dc06",
+                            "roomName": "living room",
+                            "roomId": "9f533411-428d-4838-adb0-c902adb2e66b"
+                        }
+                    },
+                    {
+                        "deviceId": "e3ee92c9-3bdb-40b6-999e-278a59ee8b96",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "295bd663-ba6a-47d5-9ea8-af543c65dc06",
+                            "roomName": "living room",
+                            "roomId": "9f533411-428d-4838-adb0-c902adb2e66b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Open the living room door"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_open",
+                            "arguments": {
+                                "device": "b39bc52f-8415-4f59-a022-0fffa1493acd",
+                                "room": "basement"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The basement room door has been open."
+        }
+    ],
+    "tools": []
+}

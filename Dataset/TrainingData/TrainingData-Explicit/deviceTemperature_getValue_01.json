@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8bffe742-eb0e-4da3-8f4d-78f6053bea44",
+                        "deviceName": "ac1",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2f6f9e38-697e-4680-8eff-a2dc24b4c450",
+                            "roomName": "living room",
+                            "roomId": "882621fe-f98f-4b38-9ae8-de84035cef38"
+                        }
+                    },
+                    {
+                        "deviceId": "648a535e-9699-41fb-b6af-c72ed53c18dc",
+                        "deviceName": "sensor1",
+                        "deviceType": "sensor.multifunction",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2f6f9e38-697e-4680-8eff-a2dc24b4c450",
+                            "roomName": "bedroom",
+                            "roomId": "1dc84551-9cf4-4b8c-9604-cdace7230936"
+                        }
+                    },
+                    {
+                        "deviceId": "f9bbb288-f2f7-4b91-9964-529a7d6eef61",
+                        "deviceName": "boiler1",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2f6f9e38-697e-4680-8eff-a2dc24b4c450",
+                            "roomName": "laundry room",
+                            "roomId": "56ed42e4-3b09-4317-a5c6-2a40d702425a"
+                        }
+                    },
+                    {
+                        "deviceId": "2dafad5e-a1a6-497f-9a1f-8ab17695bfca",
+                        "deviceName": "ac2",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2f6f9e38-697e-4680-8eff-a2dc24b4c450",
+                            "roomName": "bedroom",
+                            "roomId": "1dc84551-9cf4-4b8c-9604-cdace7230936"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the temperature of the bedroom sensor"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperature_getValue",
+                            "arguments": {
+                                "device": "648a535e-9699-41fb-b6af-c72ed53c18dc",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The temperature of the bedroom sensor is 24 degree Celsius"
+        }
+    ],
+    "tools": []
+}

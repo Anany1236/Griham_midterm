@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "276b8364-b931-4369-adf9-e57afd925fb0",
+                        "deviceName": "Dryer,Dryer,Dryer",
+                        "deviceType": "Dryer,Dryer,Dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "Laundry room,Bathroom,Garage,",
+                            "locationId": "870b8a2c-c45c-48b3-a7f3-d10857bb2b69",
+                            "roomName": "Laundry room,Bathroom,Garage,",
+                            "roomId": "870b8a2c-c45c-48b3-a7f3-d10857bb2b69"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Enable the dryer lamp in the garage."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryerLamp_turnOn",
+                            "arguments": {
+                                "device": "276b8364-b931-4369-adf9-e57afd925fb0",
+                                "room": "Laundry room,Bathroom,Garage,"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dryer lamp in the garage has been enabled."
+        }
+    ],
+    "tools": []
+}

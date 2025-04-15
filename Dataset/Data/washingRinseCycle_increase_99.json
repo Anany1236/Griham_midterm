@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8693299b-614d-47cb-b1e3-38d0ea4d8dd8",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "5342ebed-8cf8-4ec6-974d-1f2af115cf16",
+                            "roomName": "laundry room",
+                            "roomId": "5342ebed-8cf8-4ec6-974d-1f2af115cf16"
+                        }
+                    },
+                    {
+                        "deviceId": "28be9c53-7777-4b99-8777-5585e7b300a0",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "5cd54764-506c-43aa-b489-89030d2108ba",
+                            "roomName": "kitchen",
+                            "roomId": "5cd54764-506c-43aa-b489-89030d2108ba"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the rinse cycle on the washing machine in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingRinseCycle_increase",
+                            "arguments": {
+                                "device": "8693299b-614d-47cb-b1e3-38d0ea4d8dd8",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rinse cycle on the washing machine in the laundry room has been increased."
+        }
+    ],
+    "tools": []
+}

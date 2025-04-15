@@ -1,0 +1,44 @@
+{
+    "name": "freezerTemperature_setValue",
+    "description": "This function is used to set the freezer temperature of a refrigerator.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the freezer temperature.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The predefined compartment to set the temperature for.",
+            "optional": true
+        },
+        {
+            "name": "settingTemperature",
+            "type": "number",
+            "description": "The temperature value to set for the freezer.",
+            "optional": false
+        },
+        {
+            "name": "predefinedSettingTemperatureUnit",
+            "type": "string",
+            "description": "The unit of the temperature value to set for the freezer.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

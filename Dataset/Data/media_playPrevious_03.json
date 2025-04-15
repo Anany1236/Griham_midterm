@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ba570950-8aa7-437b-bd2d-ca05bdc7d321",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "18bdc196-f743-4a88-bf1e-584b17f88a3f",
+                            "roomName": "living room",
+                            "roomId": "18bdc196-f743-4a88-bf1e-584b17f88a3f"
+                        }
+                    },
+                    {
+                        "deviceId": "ad5e2797-fa8e-401d-833c-d06f423a6657",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "5edd855e-8421-426c-a129-56c50ad38d30",
+                            "roomName": "bedroom",
+                            "roomId": "5edd855e-8421-426c-a129-56c50ad38d30"
+                        }
+                    },
+                    {
+                        "deviceId": "e50a213c-f1f0-404c-bcc7-137dd5baba6e",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "498421db-3e89-4b91-be8d-4de8666177db",
+                            "roomName": "office room",
+                            "roomId": "498421db-3e89-4b91-be8d-4de8666177db"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you go back to the last song on the TV in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_playPrevious",
+                            "arguments": {
+                                "device": "ad5e2797-fa8e-401d-833c-d06f423a6657",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The last song is playing on the TV in the bedroom."
+        }
+    ],
+    "tools": []
+}

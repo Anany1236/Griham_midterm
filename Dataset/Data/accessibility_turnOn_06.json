@@ -1,0 +1,108 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "120aedb3-230e-46ce-99d1-ac4299662cbd",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3c04b423-311b-4ede-b63b-f5aee8f56cd0",
+                            "roomName": "bedroom",
+                            "roomId": "3c04b423-311b-4ede-b63b-f5aee8f56cd0"
+                        }
+                    },
+                    {
+                        "deviceId": "0c304243-d221-47c0-a648-4e2d7f107efe",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "be34e483-105d-4b85-abc2-6922450f0d64",
+                            "roomName": "living Room",
+                            "roomId": "be34e483-105d-4b85-abc2-6922450f0d64"
+                        }
+                    },
+                    {
+                        "deviceId": "d8d256ef-53b5-4042-a210-215a20e1e541",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19984eaf-a443-4ee4-95eb-014265221e83",
+                            "roomName": "guest Room",
+                            "roomId": "19984eaf-a443-4ee4-95eb-014265221e83"
+                        }
+                    },
+                    {
+                        "deviceId": "87962221-8946-49d7-bf3c-ad86ae637d12",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8e07ac33-5998-4436-b872-c1b2c4db01e7",
+                            "roomName": "kitchen",
+                            "roomId": "8e07ac33-5998-4436-b872-c1b2c4db01e7"
+                        }
+                    },
+                    {
+                        "deviceId": "e74340a3-5ed5-4bc2-9245-86d196940794",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9fe7012a-5c58-4cff-997b-7dddf7c3755f",
+                            "roomName": "utility Room",
+                            "roomId": "9fe7012a-5c58-4cff-997b-7dddf7c3755f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the accessibility mode of the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "accessibility_turnOn",
+                            "arguments": {
+                                "device": "120aedb3-230e-46ce-99d1-ac4299662cbd",
+                                "room": "bedroom",
+                                "mode": "accessibility"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Accessibility mode has been turned on for the air conditioner in the bedroom"
+        }
+    ],
+    "tools": []
+}

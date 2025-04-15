@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d1b50ce4-808f-4ffd-a88b-6752467bf3e7",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6f78bc3f-fba0-4e67-b910-59fdddacfda1",
+                            "roomName": "living room",
+                            "roomId": "8cdfafd0-7be7-4495-84f6-4fbac79ec68a"
+                        }
+                    },
+                    {
+                        "deviceId": "66eba26c-25e9-43a3-86e8-90bee09659fe",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6f78bc3f-fba0-4e67-b910-59fdddacfda1",
+                            "roomName": "bedroom",
+                            "roomId": "4ff93c21-f2a1-4a2b-953a-9da561f9c27d"
+                        }
+                    },
+                    {
+                        "deviceId": "8ff593e4-cc44-4634-b188-27c2f66934a2",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6f78bc3f-fba0-4e67-b910-59fdddacfda1",
+                            "roomName": "laundry room",
+                            "roomId": "c58a0f4a-cd28-46cd-8462-7607415fab8d"
+                        }
+                    },
+                    {
+                        "deviceId": "552b597b-4887-498e-8439-36da5572a6fb",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6f78bc3f-fba0-4e67-b910-59fdddacfda1",
+                            "roomName": "bedroom",
+                            "roomId": "4ff93c21-f2a1-4a2b-953a-9da561f9c27d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Kindly increase the ac"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_increase",
+                            "arguments": {
+                                "device": "d1b50ce4-808f-4ffd-a88b-6752467bf3e7"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have increased the ac."
+        }
+    ],
+    "tools": []
+}

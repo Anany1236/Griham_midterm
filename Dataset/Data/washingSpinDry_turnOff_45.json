@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2a1159f0-f641-42c5-8990-e4724dc25e6b",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "999c8fe9-34b5-4f2c-8919-5e9a05433041",
+                            "roomName": "laundry room",
+                            "roomId": "999c8fe9-34b5-4f2c-8919-5e9a05433041"
+                        }
+                    },
+                    {
+                        "deviceId": "830724cb-ebd6-4fe2-9cb1-2bc108e85d68",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "c8f8e279-2c70-43f6-b2d6-e175ac590868",
+                            "roomName": "kitchen",
+                            "roomId": "c8f8e279-2c70-43f6-b2d6-e175ac590868"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the spin dry feature on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingSpinDry_turnOff",
+                            "arguments": {
+                                "device": "830724cb-ebd6-4fe2-9cb1-2bc108e85d68",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The spin dry feature on the washer in the kitchen is now disabled."
+        }
+    ],
+    "tools": []
+}

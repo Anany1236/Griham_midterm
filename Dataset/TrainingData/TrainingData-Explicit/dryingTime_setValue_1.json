@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Change the dryer in the laundry room to dry for 30 minutes."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryingTime_setValue",
+                            "arguments": {
+                                "device": "dryer",
+                                "room": "laundry room",
+                                "dryingTimer": "00:30:00"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I'm setting the drying time to 30 minutes for dryer."
+        }
+    ],
+    "tools": []
+}

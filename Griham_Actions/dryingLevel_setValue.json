@@ -1,0 +1,38 @@
+{
+    "name": "dryingLevel_setValue",
+    "description": "This function is used to set the drying level of a dryer.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the drying level.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The predefined compartment to set the drying level.",
+            "optional": true
+        },
+        {
+            "name": "dryingLevel",
+            "type": "integer",
+            "description": "The value to set as the drying level.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

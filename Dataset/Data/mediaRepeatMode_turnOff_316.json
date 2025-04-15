@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0cce918d-ab4b-4101-8d98-55c1c5b41f82",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "cbf4e897-7ff7-49d5-bde3-2e42531a1998",
+                            "roomName": "living room",
+                            "roomId": "cbf4e897-7ff7-49d5-bde3-2e42531a1998"
+                        }
+                    },
+                    {
+                        "deviceId": "d42f3f55-febc-43d0-af4a-462b5a8aef38",
+                        "deviceName": "music player",
+                        "deviceType": "music player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "eebdb67e-0f49-4fdf-9b36-b0d15625ba70",
+                            "roomName": "home theater",
+                            "roomId": "eebdb67e-0f49-4fdf-9b36-b0d15625ba70"
+                        }
+                    },
+                    {
+                        "deviceId": "fd1055b1-c8fb-4f3c-92b3-4f112dcbe063",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "ee7066a3-3f81-48b0-82cf-593cebd0dbdc",
+                            "roomName": "bedroom",
+                            "roomId": "ee7066a3-3f81-48b0-82cf-593cebd0dbdc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the repeat mode for the TV show."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaRepeatMode_turnOff",
+                            "arguments": {
+                                "device": "0cce918d-ab4b-4101-8d98-55c1c5b41f82",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The repeat mode for the TV show has been turned off."
+        }
+    ],
+    "tools": []
+}

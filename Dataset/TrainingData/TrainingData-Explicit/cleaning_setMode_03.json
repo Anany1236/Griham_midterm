@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b1c05617-d861-423b-8f86-dc4e6931b484",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "01bf050c-8d28-4caf-9bc6-a470b7da72f4",
+                            "roomName": "Bedroom",
+                            "roomId": "4e4c8fb7-fd43-4d60-9c71-3858d1930020"
+                        }
+                    },
+                    {
+                        "deviceId": "180e151f-062f-45ee-b18f-ba4edb40b9a6",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "01bf050c-8d28-4caf-9bc6-a470b7da72f4",
+                            "roomName": "kitchen",
+                            "roomId": "307210b8-4073-4a2a-bbad-8c93a28e24e0"
+                        }
+                    },
+                    {
+                        "deviceId": "c49d0eff-e757-4b3a-a2b8-42d4aa3a5bcd",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "01bf050c-8d28-4caf-9bc6-a470b7da72f4",
+                            "roomName": "living room",
+                            "roomId": "e14bdb78-2df6-48b6-85ab-95f3ce5ed452"
+                        }
+                    },
+                    {
+                        "deviceId": "4e809c60-1b73-4244-ab22-4c24eb5aa946",
+                        "deviceName": "stick cleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "01bf050c-8d28-4caf-9bc6-a470b7da72f4",
+                            "roomName": "bedroom",
+                            "roomId": "6f453816-c1ff-4467-ac91-e0f23d936805"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Change the mode of robot cleaner in living room to repeat"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_setMode",
+                            "arguments": {
+                                "device": "c49d0eff-e757-4b3a-a2b8-42d4aa3a5bcd",
+                                "room": "living room",
+                                "predefinedCleaningMode": "repeat"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have changed the mode of robot cleaner in living room to repeat."
+        }
+    ],
+    "tools": []
+}

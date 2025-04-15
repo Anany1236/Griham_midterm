@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "deaf851e-7d2f-4ac9-a9ae-275468c97069",
+                        "deviceName": "washer1",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbea93fd-71df-439d-b2af-4d6dcc6471c5",
+                            "roomName": "laundry room",
+                            "roomId": "a6250677-2b00-44a0-a280-e0609bee33c6"
+                        }
+                    },
+                    {
+                        "deviceId": "c4a33a59-5732-419d-9264-fe1a8eb6f6d4",
+                        "deviceName": "washer2",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbea93fd-71df-439d-b2af-4d6dcc6471c5",
+                            "roomName": "bathroom1",
+                            "roomId": "0efb7924-c94e-48d3-b6be-af0397554164"
+                        }
+                    },
+                    {
+                        "deviceId": "c6488b2a-affb-4984-866b-f4b23217cea6",
+                        "deviceName": "washer3",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbea93fd-71df-439d-b2af-4d6dcc6471c5",
+                            "roomName": "utility room",
+                            "roomId": "0b68a06c-08d2-4f4b-ae84-bad1fc9e7b67"
+                        }
+                    },
+                    {
+                        "deviceId": "381740d0-c105-4b4b-8d43-52b17da5cd52",
+                        "deviceName": "washer4",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbea93fd-71df-439d-b2af-4d6dcc6471c5",
+                            "roomName": "bathroom2",
+                            "roomId": "ef2f52eb-551e-4cb1-9360-3a1a2f454bed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Pause the washing machine now in bathroom2"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washing_pause",
+                            "arguments": {
+                                "device": "381740d0-c105-4b4b-8d43-52b17da5cd52",
+                                "room": "bathroom2"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washer in the bathroom has been paused now "
+        }
+    ],
+    "tools": []
+}

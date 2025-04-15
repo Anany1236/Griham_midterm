@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2612555b-e707-486d-adb5-a518b1197b65",
+                        "deviceName": "ricecooker1",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a80bbf37-4768-4a6b-853b-24a9f7f86ced",
+                            "roomName": "kitchen",
+                            "roomId": "6e47d933-4764-48cc-80e6-1233161a991b"
+                        }
+                    },
+                    {
+                        "deviceId": "48d68161-b3c5-454e-b119-b7c5a27dc02a",
+                        "deviceName": "cooktop1",
+                        "deviceType": "cooktop",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a80bbf37-4768-4a6b-853b-24a9f7f86ced",
+                            "roomName": "kitchen",
+                            "roomId": "6e47d933-4764-48cc-80e6-1233161a991b"
+                        }
+                    },
+                    {
+                        "deviceId": "9bb851d8-9841-46d8-82b8-d2a650843b17",
+                        "deviceName": "microwave1",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a80bbf37-4768-4a6b-853b-24a9f7f86ced",
+                            "roomName": "kitchen",
+                            "roomId": "6e47d933-4764-48cc-80e6-1233161a991b"
+                        }
+                    },
+                    {
+                        "deviceId": "989dd162-bef7-45fd-9986-6c5fb69f585e",
+                        "deviceName": "oven1",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a80bbf37-4768-4a6b-853b-24a9f7f86ced",
+                            "roomName": "kitchen",
+                            "roomId": "6e47d933-4764-48cc-80e6-1233161a991b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the cooking temperature of the oven"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTemperature_increase",
+                            "arguments": {
+                                "device": "989dd162-bef7-45fd-9986-6c5fb69f585e"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking temperature of the oven is 100 degree Celsius"
+        }
+    ],
+    "tools": []
+}

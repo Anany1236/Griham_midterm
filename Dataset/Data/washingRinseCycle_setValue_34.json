@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "52e6c1cf-5228-4c88-94d0-e47d0b80cbdf",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "623704ba-37d5-4e32-a039-7eb232ff5dcc",
+                            "roomName": "laundry room",
+                            "roomId": "623704ba-37d5-4e32-a039-7eb232ff5dcc"
+                        }
+                    },
+                    {
+                        "deviceId": "e60c1178-f2b9-44d9-8fba-6d415df2d452",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "703da40c-4ac9-4169-9491-f75191acded5",
+                            "roomName": "kitchen",
+                            "roomId": "703da40c-4ac9-4169-9491-f75191acded5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the rinse cycle for the washing machine in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingRinseCycle_setValue",
+                            "arguments": {
+                                "device": "52e6c1cf-5228-4c88-94d0-e47d0b80cbdf",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rinse cycle for the washing machine in the bathroom has been configured."
+        }
+    ],
+    "tools": []
+}

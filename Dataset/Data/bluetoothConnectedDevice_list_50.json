@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "47afc150-3a5a-45c6-88fc-a591e6afd6e5",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9a2eacf7-7cd5-4b1e-8a7a-97849a7a64b6",
+                            "roomName": "bedroom",
+                            "roomId": "9a2eacf7-7cd5-4b1e-8a7a-97849a7a64b6"
+                        }
+                    },
+                    {
+                        "deviceId": "f2dd2e3a-0f49-4a9f-827b-d8d5e1cd00a6",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29d0ee6c-b7d4-469b-ad9f-64657a74187a",
+                            "roomName": "living Room",
+                            "roomId": "29d0ee6c-b7d4-469b-ad9f-64657a74187a"
+                        }
+                    },
+                    {
+                        "deviceId": "128c2395-5f5b-4c69-915c-bfbb59408892",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "51d325ba-0605-4145-9ce3-14a38485960d",
+                            "roomName": "guest Room",
+                            "roomId": "51d325ba-0605-4145-9ce3-14a38485960d"
+                        }
+                    },
+                    {
+                        "deviceId": "6d6007ac-9d20-4b87-b4a0-bf9a265fdbdb",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1b4e9b67-3d2b-4a57-ab3b-598d0f477513",
+                            "roomName": "kitchen",
+                            "roomId": "1b4e9b67-3d2b-4a57-ab3b-598d0f477513"
+                        }
+                    },
+                    {
+                        "deviceId": "def1440f-25ae-416b-9d14-1dea155d0821",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "35978ff8-2d97-4dfb-8b5e-e96f9248d3b9",
+                            "roomName": "utility Room",
+                            "roomId": "35978ff8-2d97-4dfb-8b5e-e96f9248d3b9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "List the Bluetooth-connected devices on the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bluetoothConnectedDevice_list",
+                            "arguments": {
+                                "device": "def1440f-25ae-416b-9d14-1dea155d0821",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The list of Bluetooth-connected devices on the hood in the utility room is shown"
+        }
+    ],
+    "tools": []
+}

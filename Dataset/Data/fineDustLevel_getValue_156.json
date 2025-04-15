@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "50e7f1ee-a635-4929-b861-bd56efaaff01",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d153e048-bc87-4dc5-917d-528c80cc580b",
+                            "roomName": "bedroom",
+                            "roomId": "d153e048-bc87-4dc5-917d-528c80cc580b"
+                        }
+                    },
+                    {
+                        "deviceId": "699cd125-c882-44b8-bdfb-243bebe91ce8",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a4f7a769-da68-4c83-810d-f448ea17b844",
+                            "roomName": "living Room",
+                            "roomId": "a4f7a769-da68-4c83-810d-f448ea17b844"
+                        }
+                    },
+                    {
+                        "deviceId": "95adcc9b-c08a-42fd-a349-22f9a7f93720",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "71bbe95f-0e8e-4ef7-a5d7-4863335e5a32",
+                            "roomName": "guest Room",
+                            "roomId": "71bbe95f-0e8e-4ef7-a5d7-4863335e5a32"
+                        }
+                    },
+                    {
+                        "deviceId": "447dbe13-2417-4b5b-8f53-b37cf58cf73f",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ab7d7859-4bc7-4fcd-bb0c-29c172834e9b",
+                            "roomName": "kitchen",
+                            "roomId": "ab7d7859-4bc7-4fcd-bb0c-29c172834e9b"
+                        }
+                    },
+                    {
+                        "deviceId": "77074102-faa6-4e7f-a312-be857f3058e2",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "773521e9-01db-4749-9c2a-40ef1d1a5517",
+                            "roomName": "utility Room",
+                            "roomId": "773521e9-01db-4749-9c2a-40ef1d1a5517"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the fine dust level of the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fineDustLevel_getValue",
+                            "arguments": {
+                                "device": "50e7f1ee-a635-4929-b861-bd56efaaff01",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fine dust level of the air conditioner in the bedroom is shown"
+        }
+    ],
+    "tools": []
+}

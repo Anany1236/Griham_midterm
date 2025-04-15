@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "boosterWindStrengthMode_setValue",
+            "description": "This function is used to set the wind strength mode on a connected SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the wind strength mode."
+                    },
+                    "predefinedBoosterWindStrengthMode": {
+                        "type": "string",
+                        "description": "The predefined wind strength mode to set."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

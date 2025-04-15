@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5fc3b0be-772d-4207-8eee-92d88856a1b1",
+                        "deviceName": "ac1",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f17fa8cb-c202-49ee-8729-1ce179a36cad",
+                            "roomName": "living room",
+                            "roomId": "3aca2123-dfdc-457c-8b5a-29b16afb666d"
+                        }
+                    },
+                    {
+                        "deviceId": "14c29466-ebec-4e45-988d-0cee2845f5d4",
+                        "deviceName": "sensor1",
+                        "deviceType": "sensor.multifunction",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f17fa8cb-c202-49ee-8729-1ce179a36cad",
+                            "roomName": "bedroom",
+                            "roomId": "a0166658-4d6c-4f13-a77a-c02a28622cf5"
+                        }
+                    },
+                    {
+                        "deviceId": "325ac8bd-6813-4194-b579-211194366da6",
+                        "deviceName": "boiler1",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f17fa8cb-c202-49ee-8729-1ce179a36cad",
+                            "roomName": "laundry room",
+                            "roomId": "d65bec96-8deb-4578-b45e-ad4d46ea0880"
+                        }
+                    },
+                    {
+                        "deviceId": "93669825-3fac-429d-b7e6-991c0d72d824",
+                        "deviceName": "ac2",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f17fa8cb-c202-49ee-8729-1ce179a36cad",
+                            "roomName": "bedroom",
+                            "roomId": "a0166658-4d6c-4f13-a77a-c02a28622cf5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the temperature of the boiler?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperature_getValue",
+                            "arguments": {
+                                "device": "325ac8bd-6813-4194-b579-211194366da6"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The temperature of the boiler is 28 degree Celsius"
+        }
+    ],
+    "tools": []
+}

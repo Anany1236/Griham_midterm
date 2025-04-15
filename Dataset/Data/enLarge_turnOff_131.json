@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e4fdd0c9-ffa1-4752-9fe2-bdc5fd502810",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5c22ca81-4e8a-46d8-9f25-4256997876d0",
+                            "roomName": "bedroom",
+                            "roomId": "5c22ca81-4e8a-46d8-9f25-4256997876d0"
+                        }
+                    },
+                    {
+                        "deviceId": "ac7e3122-dfcb-4a2c-92e4-94173758785c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "382dd85f-12cb-49fb-a391-3c189de1598e",
+                            "roomName": "living Room",
+                            "roomId": "382dd85f-12cb-49fb-a391-3c189de1598e"
+                        }
+                    },
+                    {
+                        "deviceId": "7aad7274-201b-4c66-ac4a-11c2bf02e232",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "808da58d-177f-48f8-9f0f-11bbffa934d1",
+                            "roomName": "guest Room",
+                            "roomId": "808da58d-177f-48f8-9f0f-11bbffa934d1"
+                        }
+                    },
+                    {
+                        "deviceId": "84a10615-1bb3-4e9e-a8b4-cd2cceac8024",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7c301c99-118e-493c-bc1a-1370cd88f857",
+                            "roomName": "kitchen",
+                            "roomId": "7c301c99-118e-493c-bc1a-1370cd88f857"
+                        }
+                    },
+                    {
+                        "deviceId": "84a6aa16-9426-4f56-bb17-a77385d832de",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9c433ba1-2e3d-4bd2-9e93-ee28fa2f0ebc",
+                            "roomName": "utility Room",
+                            "roomId": "9c433ba1-2e3d-4bd2-9e93-ee28fa2f0ebc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the enlarge mode for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "enLarge_turnOff",
+                            "arguments": {
+                                "device": "e4fdd0c9-ffa1-4752-9fe2-bdc5fd502810",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The enlarge mode for the air conditioner in the bedroom is turned off"
+        }
+    ],
+    "tools": []
+}

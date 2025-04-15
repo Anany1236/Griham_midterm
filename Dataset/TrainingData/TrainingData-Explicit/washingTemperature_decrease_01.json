@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4ff04bff-4b36-4154-9edc-6fb508b0b737",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6d069cf6-1476-4708-8930-238933dbd837",
+                            "roomName": "laundry room",
+                            "roomId": "d0cf4238-ed79-4bc3-9d39-b0148d32c17f"
+                        }
+                    },
+                    {
+                        "deviceId": "9bb1facb-d45b-4156-b8bb-f5de45cc240e",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6d069cf6-1476-4708-8930-238933dbd837",
+                            "roomName": "kitchen",
+                            "roomId": "7e197cdf-05ef-48dd-8cba-3b3d6df93a83"
+                        }
+                    },
+                    {
+                        "deviceId": "60897bf4-1b01-43d4-ad3b-1ce3c8420e36",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6d069cf6-1476-4708-8930-238933dbd837",
+                            "roomName": "kitchen",
+                            "roomId": "7e197cdf-05ef-48dd-8cba-3b3d6df93a83"
+                        }
+                    },
+                    {
+                        "deviceId": "ca15950b-98f6-4687-bd1b-4ca674131e3e",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6d069cf6-1476-4708-8930-238933dbd837",
+                            "roomName": "bedroom",
+                            "roomId": "edf0c2de-8e01-4ee2-a3dc-8f59b603f15c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Lower the washing temperature of the washer by 5 degrees in the laundry room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_decrease",
+                            "arguments": {
+                                "device": "60897bf4-1b01-43d4-ad3b-1ce3c8420e36",
+                                "room": "laundry room",
+                                "washingTemperatureDelta": 5
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have turned down the washing temperature by 5 degrees for washer"
+        }
+    ],
+    "tools": []
+}

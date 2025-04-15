@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "57fb50af-548f-4034-a2c8-08be21742b8d",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a66b855b-29ab-4137-991c-3c794ad6a724",
+                            "roomName": "bedroom",
+                            "roomId": "a66b855b-29ab-4137-991c-3c794ad6a724"
+                        }
+                    },
+                    {
+                        "deviceId": "10990290-58bf-4791-bb02-67097a5a963f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d9cc7bcf-cf9c-4c4c-933e-f9f3d0cc0e15",
+                            "roomName": "living Room",
+                            "roomId": "d9cc7bcf-cf9c-4c4c-933e-f9f3d0cc0e15"
+                        }
+                    },
+                    {
+                        "deviceId": "82bc2d5f-305c-485a-b94c-ece536fea1a9",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "406535e4-ef94-401e-966b-dedc4e9d2fdd",
+                            "roomName": "guest Room",
+                            "roomId": "406535e4-ef94-401e-966b-dedc4e9d2fdd"
+                        }
+                    },
+                    {
+                        "deviceId": "17c33f14-0c5a-411a-b288-e2563a517308",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8e9c66bd-32d3-458e-ac48-058bd0a8ed8f",
+                            "roomName": "kitchen",
+                            "roomId": "8e9c66bd-32d3-458e-ac48-058bd0a8ed8f"
+                        }
+                    },
+                    {
+                        "deviceId": "6405cbe5-ef96-4307-8859-d4e2181cad5f",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d02be35f-2eca-4c53-a497-979c7cd850a6",
+                            "roomName": "utility Room",
+                            "roomId": "d02be35f-2eca-4c53-a497-979c7cd850a6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the enlarge mode for the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "enLarge_turnOn",
+                            "arguments": {
+                                "device": "6405cbe5-ef96-4307-8859-d4e2181cad5f",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The enlarge mode for the hood in the utility room is now on"
+        }
+    ],
+    "tools": []
+}

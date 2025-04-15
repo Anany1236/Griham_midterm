@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "85e79662-29ee-4d97-ab45-fc6e1cf95edb",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "7f81b103-8c43-4fd4-9b91-364d89480976",
+                            "roomName": "living room",
+                            "roomId": "7f81b103-8c43-4fd4-9b91-364d89480976"
+                        }
+                    },
+                    {
+                        "deviceId": "8374c964-348e-4ac6-b0e7-1a93b51302e0",
+                        "deviceName": "HVAC system",
+                        "deviceType": "HVAC system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "62599bf5-addc-4c7b-b070-4b4f9ad11114",
+                            "roomName": "bedroom",
+                            "roomId": "62599bf5-addc-4c7b-b070-4b4f9ad11114"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the ventilation system in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "feeding_start",
+                            "arguments": {
+                                "device": "85e79662-29ee-4d97-ab45-fc6e1cf95edb",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The ventilation system has been turned on in the living room."
+        }
+    ],
+    "tools": []
+}

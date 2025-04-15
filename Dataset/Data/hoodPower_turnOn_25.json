@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4c42afca-dc67-43af-8c8f-566eed9daefb",
+                        "deviceName": "Hood,Hood,Hood",
+                        "deviceType": "Hood,Hood,Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Dining room,Utility room",
+                            "locationId": "425e1c7f-03aa-45e2-b546-cb4dcaf478ec",
+                            "roomName": "kitchen,Dining room,Utility room",
+                            "roomId": "425e1c7f-03aa-45e2-b546-cb4dcaf478ec"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Enable the hood lamp in the utility room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodPower_turnOn",
+                            "arguments": {
+                                "device": "4c42afca-dc67-43af-8c8f-566eed9daefb",
+                                "room": "kitchen,Dining room,Utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The hood lamp in the utility room has been enabled."
+        }
+    ],
+    "tools": []
+}

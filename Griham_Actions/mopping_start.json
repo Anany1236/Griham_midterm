@@ -1,0 +1,38 @@
+{
+    "name": "mopping_start",
+    "description": "This function is used to initiate mop cleaning with a robot vacuum around designated rooms or objects.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to initiate mop cleaning.",
+            "optional": true
+        },
+        {
+            "name": "rvcLocations",
+            "type": "string",
+            "description": "The locations around which the robot vacuum should perform mop cleaning.",
+            "optional": true
+        },
+        {
+            "name": "rvcObjects",
+            "type": "string",
+            "description": "The objects around which the robot vacuum should perform mop cleaning.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

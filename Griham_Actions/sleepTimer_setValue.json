@@ -1,0 +1,32 @@
+{
+    "name": "sleepTimer_setValue",
+    "description": "This function is used to set a sleep timer for a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the sleep timer.",
+            "optional": true
+        },
+        {
+            "name": "duration",
+            "type": "integer",
+            "description": "The duration in minutes for the sleep timer.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

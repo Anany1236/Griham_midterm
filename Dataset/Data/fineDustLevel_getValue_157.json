@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "481df33c-49b6-48b5-877f-a7cddb30ab84",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "96c73939-375b-468e-b838-030dd67c4523",
+                            "roomName": "bedroom",
+                            "roomId": "96c73939-375b-468e-b838-030dd67c4523"
+                        }
+                    },
+                    {
+                        "deviceId": "f47a2118-a046-41d8-b010-e1451680fd3f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2b40e502-01d1-4d12-ac36-60f45c2b9285",
+                            "roomName": "living Room",
+                            "roomId": "2b40e502-01d1-4d12-ac36-60f45c2b9285"
+                        }
+                    },
+                    {
+                        "deviceId": "68f1712a-a3a2-444d-a75d-e230dad2ba11",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4b2e466f-4a41-4e6b-be3f-49240039e9c2",
+                            "roomName": "guest Room",
+                            "roomId": "4b2e466f-4a41-4e6b-be3f-49240039e9c2"
+                        }
+                    },
+                    {
+                        "deviceId": "9f9228d6-211d-4cdd-8d4e-79d415a3eaf0",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "48c91f53-e2b1-49a3-b218-b752c933e1d5",
+                            "roomName": "kitchen",
+                            "roomId": "48c91f53-e2b1-49a3-b218-b752c933e1d5"
+                        }
+                    },
+                    {
+                        "deviceId": "df147adf-f762-4c66-9b84-e38aa54797c9",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7494b16b-39ee-44d7-86a0-ff1bfd548bdb",
+                            "roomName": "utility Room",
+                            "roomId": "7494b16b-39ee-44d7-86a0-ff1bfd548bdb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the fine dust level of the air purifier in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fineDustLevel_getValue",
+                            "arguments": {
+                                "device": "f47a2118-a046-41d8-b010-e1451680fd3f",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fine dust level of the air purifier in the living room is 35 \u00b5g/m\u00b3"
+        }
+    ],
+    "tools": []
+}

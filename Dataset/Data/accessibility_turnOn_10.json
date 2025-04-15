@@ -1,0 +1,108 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "310eca30-e971-43c6-bc60-998ff49fca3f",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ffc2f26b-d25e-4263-9aff-57b9919dde36",
+                            "roomName": "bedroom",
+                            "roomId": "ffc2f26b-d25e-4263-9aff-57b9919dde36"
+                        }
+                    },
+                    {
+                        "deviceId": "6a510bc7-d4fd-475e-839b-7c178874b9b7",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "399bc7de-68be-4d1a-9ed0-2eb761c9a246",
+                            "roomName": "living Room",
+                            "roomId": "399bc7de-68be-4d1a-9ed0-2eb761c9a246"
+                        }
+                    },
+                    {
+                        "deviceId": "c239cfcf-7350-4612-8600-066dd2b15c31",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3e72e721-ed85-4164-a30d-a313b1f63e3d",
+                            "roomName": "guest Room",
+                            "roomId": "3e72e721-ed85-4164-a30d-a313b1f63e3d"
+                        }
+                    },
+                    {
+                        "deviceId": "271c6123-ab74-4bc9-90fc-00d04743f2f0",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95fdd5f6-6881-47b7-80bd-084976eccf01",
+                            "roomName": "kitchen",
+                            "roomId": "95fdd5f6-6881-47b7-80bd-084976eccf01"
+                        }
+                    },
+                    {
+                        "deviceId": "71ca7337-8948-49b6-af58-51c670eb1ec2",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5589d903-1589-45ff-9e14-aff4c58e5e71",
+                            "roomName": "utility Room",
+                            "roomId": "5589d903-1589-45ff-9e14-aff4c58e5e71"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the accessibility mode of the washer in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "accessibility_turnOn",
+                            "arguments": {
+                                "device": "71ca7337-8948-49b6-af58-51c670eb1ec2",
+                                "room": "utility Room",
+                                "mode": "accessibility"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Accessibility mode is on for the washer in the utility room"
+        }
+    ],
+    "tools": []
+}

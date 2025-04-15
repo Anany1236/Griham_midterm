@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6dbe0858-0d27-402b-94cb-d9c92b6bc455",
+                        "deviceName": "smart door",
+                        "deviceType": "smart door",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "entrance",
+                            "locationId": "912d475b-9176-4801-a02c-bb5b384e9995",
+                            "roomName": "entrance",
+                            "roomId": "912d475b-9176-4801-a02c-bb5b384e9995"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the auto door opening in the entrance."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "autoDoorOpen_turnOff",
+                            "arguments": {
+                                "device": "6dbe0858-0d27-402b-94cb-d9c92b6bc455",
+                                "room": "entrance"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The auto door opening in the entrance has been turned off."
+        }
+    ],
+    "tools": []
+}

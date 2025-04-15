@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b23bffd7-7659-4b7a-bc07-db5e22cd94bb",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f99aa100-f7a4-4012-99f7-10cab470a77e",
+                            "roomName": "bedroom",
+                            "roomId": "f99aa100-f7a4-4012-99f7-10cab470a77e"
+                        }
+                    },
+                    {
+                        "deviceId": "cab3411a-eb01-4550-b13e-e7fcbc0ec717",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "819205f4-fe5a-42c1-80ad-556f59ee938e",
+                            "roomName": "living Room",
+                            "roomId": "819205f4-fe5a-42c1-80ad-556f59ee938e"
+                        }
+                    },
+                    {
+                        "deviceId": "8c2565b8-61c0-429a-96d7-e7674393607c",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbf53608-9746-49a5-96f6-ed2287ce78d9",
+                            "roomName": "guest Room",
+                            "roomId": "bbf53608-9746-49a5-96f6-ed2287ce78d9"
+                        }
+                    },
+                    {
+                        "deviceId": "43306338-8068-45b0-b374-212526d6897d",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9cffb30c-0215-4911-a0fb-d2f60e6f729a",
+                            "roomName": "kitchen",
+                            "roomId": "9cffb30c-0215-4911-a0fb-d2f60e6f729a"
+                        }
+                    },
+                    {
+                        "deviceId": "6af04f5e-ba86-46db-93db-3762ccaecc2f",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1da5e5f8-7807-4f63-a447-e41e61d0f6dc",
+                            "roomName": "utility Room",
+                            "roomId": "1da5e5f8-7807-4f63-a447-e41e61d0f6dc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the contact sensor status of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "contactSensor_getStatus",
+                            "arguments": {
+                                "device": "8c2565b8-61c0-429a-96d7-e7674393607c",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The contact sensor status of the light in the guest room is displayed"
+        }
+    ],
+    "tools": []
+}

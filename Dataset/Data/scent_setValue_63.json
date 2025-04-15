@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0bcf5da7-4bb5-44cb-965f-f8bb4fda5c06",
+                        "deviceName": "air freshener",
+                        "deviceType": "air freshener",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "1a8bc868-3fca-4c9d-83c3-f2d1e3f69f64",
+                            "roomName": "bathroom",
+                            "roomId": "1a8bc868-3fca-4c9d-83c3-f2d1e3f69f64"
+                        }
+                    },
+                    {
+                        "deviceId": "09c8cc23-9709-43a6-b31f-706cdecf1acb",
+                        "deviceName": "scent diffuser",
+                        "deviceType": "scent diffuser",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "06e9e189-5736-4eee-8618-cd4e7bed4c98",
+                            "roomName": "living room",
+                            "roomId": "06e9e189-5736-4eee-8618-cd4e7bed4c98"
+                        }
+                    },
+                    {
+                        "deviceId": "a5c951d2-71ca-4e96-b34b-56d975486d53",
+                        "deviceName": "air freshener",
+                        "deviceType": "air freshener",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "9d5818be-3495-4609-8700-735381e3ea52",
+                            "roomName": "kitchen",
+                            "roomId": "9d5818be-3495-4609-8700-735381e3ea52"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the scent to {value}."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scent_setValue",
+                            "arguments": {
+                                "device": "0bcf5da7-4bb5-44cb-965f-f8bb4fda5c06",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The scent level is now {value}."
+        }
+    ],
+    "tools": []
+}

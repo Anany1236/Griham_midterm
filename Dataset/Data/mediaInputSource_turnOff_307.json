@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cc85e3e1-734b-4425-9066-b87ad433df20",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "084defbf-961e-4760-82fc-8931fa20e6ae",
+                            "roomName": "living room",
+                            "roomId": "084defbf-961e-4760-82fc-8931fa20e6ae"
+                        }
+                    },
+                    {
+                        "deviceId": "d9909642-bc9c-4abe-9166-1ba94acad584",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "68349a8e-0efd-47d4-a909-c5b122618e26",
+                            "roomName": "home theater",
+                            "roomId": "68349a8e-0efd-47d4-a909-c5b122618e26"
+                        }
+                    },
+                    {
+                        "deviceId": "6ccf47b6-6f96-400c-8930-4082e6285aed",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "95cb0940-694e-423f-8fde-7e1c15986c63",
+                            "roomName": "bedroom",
+                            "roomId": "95cb0940-694e-423f-8fde-7e1c15986c63"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the input source on the TV."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaInputSource_turnOff",
+                            "arguments": {
+                                "device": "cc85e3e1-734b-4425-9066-b87ad433df20",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The input source on the TV has been turned off."
+        }
+    ],
+    "tools": []
+}

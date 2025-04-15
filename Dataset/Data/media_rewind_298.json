@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f3d7e812-003b-4624-8341-d703bf59e590",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "5cc85d09-28c8-401c-9724-be4cbfd8dad6",
+                            "roomName": "living room",
+                            "roomId": "5cc85d09-28c8-401c-9724-be4cbfd8dad6"
+                        }
+                    },
+                    {
+                        "deviceId": "16bf8ef9-0610-4ee2-bca6-0482e387ef8c",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "120a88c3-31ad-40e2-8926-1cb54d4e854a",
+                            "roomName": "home theater",
+                            "roomId": "120a88c3-31ad-40e2-8926-1cb54d4e854a"
+                        }
+                    },
+                    {
+                        "deviceId": "40ba1f16-6b68-45ac-9cfb-0823ca947513",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "62f8bba8-091f-4421-b232-c9a891da4095",
+                            "roomName": "bedroom",
+                            "roomId": "62f8bba8-091f-4421-b232-c9a891da4095"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you rewind the movie on the TV?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_rewind",
+                            "arguments": {
+                                "device": "f3d7e812-003b-4624-8341-d703bf59e590",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The movie on the TV has been rewound."
+        }
+    ],
+    "tools": []
+}

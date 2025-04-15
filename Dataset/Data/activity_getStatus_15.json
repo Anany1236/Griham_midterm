@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3312e1c4-fd58-4b1b-aac3-0887208287a6",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fd671a7d-69ed-4bd7-b885-432be948c1a5",
+                            "roomName": "bedroom",
+                            "roomId": "fd671a7d-69ed-4bd7-b885-432be948c1a5"
+                        }
+                    },
+                    {
+                        "deviceId": "fced02ac-8bea-46d8-b89f-f7b3f4814190",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7ea1bc02-f2dd-4771-8afc-c23ee22d1aa6",
+                            "roomName": "living Room",
+                            "roomId": "7ea1bc02-f2dd-4771-8afc-c23ee22d1aa6"
+                        }
+                    },
+                    {
+                        "deviceId": "70c12b21-69fb-46ff-9bb3-24baf6c2f5e4",
+                        "deviceName": "Robot Cleaner",
+                        "deviceType": "Robot Cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7fec6a59-6d08-4b11-bb5d-23c8de1417fc",
+                            "roomName": "guest Room",
+                            "roomId": "7fec6a59-6d08-4b11-bb5d-23c8de1417fc"
+                        }
+                    },
+                    {
+                        "deviceId": "1f376ff3-c969-468d-b355-fa0f1b51456a",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0a94adbe-a768-464c-b8e6-9b50ed6e8453",
+                            "roomName": "kitchen",
+                            "roomId": "0a94adbe-a768-464c-b8e6-9b50ed6e8453"
+                        }
+                    },
+                    {
+                        "deviceId": "4eda7cc2-2092-42ee-8d16-ed0edeee7471",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a3c1b651-758b-4d80-bead-2ac35a762080",
+                            "roomName": "utility Room",
+                            "roomId": "a3c1b651-758b-4d80-bead-2ac35a762080"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the current status of the washer activity in the utility room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "activity_getStatus",
+                            "arguments": {
+                                "device": "4eda7cc2-2092-42ee-8d16-ed0edeee7471",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washer activity status is shown in the utility room"
+        }
+    ],
+    "tools": []
+}

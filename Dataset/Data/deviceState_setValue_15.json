@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6ceb7ab5-7ad4-45e9-8737-03c2894c8e2f",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "af9528c8-d07b-4ec7-999b-15e07fe6bdd0",
+                            "roomName": "office room",
+                            "roomId": "af9528c8-d07b-4ec7-999b-15e07fe6bdd0"
+                        }
+                    },
+                    {
+                        "deviceId": "7430d199-0286-4dc9-9429-dd67227f5c6d",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "b563971d-7aeb-4327-939e-bd81e29717f2",
+                            "roomName": "living room",
+                            "roomId": "b563971d-7aeb-4327-939e-bd81e29717f2"
+                        }
+                    },
+                    {
+                        "deviceId": "fbf4d21a-e616-47f4-a6ee-bfd9619ca7c8",
+                        "deviceName": "humidifier",
+                        "deviceType": "humidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "471fce9b-d85b-450e-b6b0-fc856f0fd473",
+                            "roomName": "bedroom",
+                            "roomId": "471fce9b-d85b-450e-b6b0-fc856f0fd473"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the value for the heater in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setValue",
+                            "arguments": {
+                                "device": "7430d199-0286-4dc9-9429-dd67227f5c6d",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The value for the heater in the living room is now adjusted."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,37 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "channel_setByName",
+            "description": "This function is used to turn on a specified television channel by name.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located. e.g. home, office, etc."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located.  e.g. living room, bedroom, bathroom, etc."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device on which the channel needs to be set. e.g. TV, smart monitor, etc."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "A predefined compartment associated with the device."
+                    },
+                    "channel": {
+                        "type": "string",
+                        "description": "The name of the channel to be turned on. e.g. HBO, MTV, etc."
+                    }
+                },
+                "required": [
+                    "channel"
+                ]
+            }
+        }
+    ]
+}

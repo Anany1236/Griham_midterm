@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "27ff9c2c-bbcc-4299-9ee6-38ac6e52079f",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "e588e169-7dec-474a-9d69-902a2e3304cb",
+                            "roomName": "bedroom",
+                            "roomId": "e588e169-7dec-474a-9d69-902a2e3304cb"
+                        }
+                    },
+                    {
+                        "deviceId": "84fe1eaf-817e-4dd5-9dcf-d68a41d8a646",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "f040d1ab-96cb-4121-a0fc-2001737fed3e",
+                            "roomName": "living Room",
+                            "roomId": "f040d1ab-96cb-4121-a0fc-2001737fed3e"
+                        }
+                    },
+                    {
+                        "deviceId": "ad88fa74-228f-4b3d-8ae9-bda3ee74270a",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "dc050058-7fe4-4b3e-a07d-dd4ba1b06229",
+                            "roomName": "guest Room",
+                            "roomId": "dc050058-7fe4-4b3e-a07d-dd4ba1b06229"
+                        }
+                    },
+                    {
+                        "deviceId": "55ac602d-a74b-47e1-aea5-b3ec6eab1239",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "c71aa2de-70e9-4e50-9c5d-20e55a79f0e1",
+                            "roomName": "kitchen",
+                            "roomId": "c71aa2de-70e9-4e50-9c5d-20e55a79f0e1"
+                        }
+                    },
+                    {
+                        "deviceId": "533e6602-a9c2-484f-961c-74b1ff973f5a",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "b022508e-5c69-4385-9cd0-13fc001b64d0",
+                            "roomName": "utility Room",
+                            "roomId": "b022508e-5c69-4385-9cd0-13fc001b64d0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start washing the mop with the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mopWashing_start",
+                            "arguments": {
+                                "device": "55ac602d-a74b-47e1-aea5-b3ec6eab1239",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Washing the mop with the washer in the kitchen is in progress"
+        }
+    ],
+    "tools": []
+}

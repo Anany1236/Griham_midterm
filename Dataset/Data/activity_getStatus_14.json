@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "64c6e637-00e9-41e5-bf02-77fffaad881f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2549246a-2d52-4a29-934d-6d9d3ef4bc2c",
+                            "roomName": "bedroom",
+                            "roomId": "2549246a-2d52-4a29-934d-6d9d3ef4bc2c"
+                        }
+                    },
+                    {
+                        "deviceId": "169cdb1c-71b5-486e-84b8-9ad69e8ab040",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "07100870-b363-4b0b-b52d-b3cc43e6bb09",
+                            "roomName": "living Room",
+                            "roomId": "07100870-b363-4b0b-b52d-b3cc43e6bb09"
+                        }
+                    },
+                    {
+                        "deviceId": "53429105-8cab-438c-99d4-dd0c51d0ced3",
+                        "deviceName": "Robot Cleaner",
+                        "deviceType": "Robot Cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9af29426-e692-4a79-85fd-7b729ccf6754",
+                            "roomName": "guest Room",
+                            "roomId": "9af29426-e692-4a79-85fd-7b729ccf6754"
+                        }
+                    },
+                    {
+                        "deviceId": "6404c29b-d9c2-4e38-9547-5f1482ae333a",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "79ead04e-22bd-4a47-bbcd-c58fddf370e1",
+                            "roomName": "kitchen",
+                            "roomId": "79ead04e-22bd-4a47-bbcd-c58fddf370e1"
+                        }
+                    },
+                    {
+                        "deviceId": "282e465b-711c-4b43-a503-61d323fa61d0",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f050c22c-dbc4-4b7e-9384-35c11700c5cb",
+                            "roomName": "utility Room",
+                            "roomId": "f050c22c-dbc4-4b7e-9384-35c11700c5cb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the status of the light activity in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "activity_getStatus",
+                            "arguments": {
+                                "device": "6404c29b-d9c2-4e38-9547-5f1482ae333a",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the light activity is available in the kitchen"
+        }
+    ],
+    "tools": []
+}

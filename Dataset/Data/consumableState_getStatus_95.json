@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0463f29b-6924-4422-a91d-f5c09ee764d3",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "da1f3d1b-8d9a-46e3-92f6-ea7d2f88d65b",
+                            "roomName": "bedroom",
+                            "roomId": "da1f3d1b-8d9a-46e3-92f6-ea7d2f88d65b"
+                        }
+                    },
+                    {
+                        "deviceId": "5428236e-7a7a-4841-b528-4bada41945c4",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9616bec5-87e2-4012-b3c5-5e8a98d275d5",
+                            "roomName": "living Room",
+                            "roomId": "9616bec5-87e2-4012-b3c5-5e8a98d275d5"
+                        }
+                    },
+                    {
+                        "deviceId": "0ea9c484-6fba-4562-8063-31804411acc2",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "912fa4cf-6635-4242-b2f5-bb8e2f2b07eb",
+                            "roomName": "guest Room",
+                            "roomId": "912fa4cf-6635-4242-b2f5-bb8e2f2b07eb"
+                        }
+                    },
+                    {
+                        "deviceId": "e445e54a-c84b-4a15-8dcd-41b4b8772d26",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32e4f0ae-f569-4dad-b290-a0639a294e76",
+                            "roomName": "kitchen",
+                            "roomId": "32e4f0ae-f569-4dad-b290-a0639a294e76"
+                        }
+                    },
+                    {
+                        "deviceId": "4067bc8d-f20b-47c1-8f60-bb61112ad268",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7479004a-430a-4add-bfc8-2f797d5c0986",
+                            "roomName": "utility Room",
+                            "roomId": "7479004a-430a-4add-bfc8-2f797d5c0986"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the consumable state status of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "consumableState_getStatus",
+                            "arguments": {
+                                "device": "4067bc8d-f20b-47c1-8f60-bb61112ad268",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The consumable state status of the hood in the utility room is shown"
+        }
+    ],
+    "tools": []
+}

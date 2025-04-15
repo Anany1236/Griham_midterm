@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1e32011f-437d-4859-8c74-72da6aa70504",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1428d51-63b1-4419-8bfa-cf579aecf92d",
+                            "roomName": "bedroom",
+                            "roomId": "d1428d51-63b1-4419-8bfa-cf579aecf92d"
+                        }
+                    },
+                    {
+                        "deviceId": "943046a6-e04a-46f6-a57e-3caf0b9309c8",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2a332995-a232-41b3-aa71-4b77518e7737",
+                            "roomName": "living Room",
+                            "roomId": "2a332995-a232-41b3-aa71-4b77518e7737"
+                        }
+                    },
+                    {
+                        "deviceId": "7c26182e-6dbc-44b1-be05-722944d7e3ec",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2c76bdfe-4c49-4342-a5c1-3c87da9383ae",
+                            "roomName": "guest Room",
+                            "roomId": "2c76bdfe-4c49-4342-a5c1-3c87da9383ae"
+                        }
+                    },
+                    {
+                        "deviceId": "3958c31a-e18a-4fb0-adc5-68a294f7e21a",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cc777f84-a2a4-40b3-984f-1078fd98ac66",
+                            "roomName": "kitchen",
+                            "roomId": "cc777f84-a2a4-40b3-984f-1078fd98ac66"
+                        }
+                    },
+                    {
+                        "deviceId": "49fae1bd-bf1d-4ffb-9074-ddab2a162f01",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19537dab-3a7a-447b-b56b-3e9fb2b64699",
+                            "roomName": "utility Room",
+                            "roomId": "19537dab-3a7a-447b-b56b-3e9fb2b64699"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you change the language setting for the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "language_setValue",
+                            "arguments": {
+                                "device": "943046a6-e04a-46f6-a57e-3caf0b9309c8",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The language setting for the air purifier in the living room is updated"
+        }
+    ],
+    "tools": []
+}

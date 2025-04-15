@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e53ba09c-1351-4b1c-9c0e-008568375bfe",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kid's room",
+                            "locationId": "a8d75c54-8418-42ed-b0e7-82bc4875c6e0",
+                            "roomName": "kid's room",
+                            "roomId": "a8d75c54-8418-42ed-b0e7-82bc4875c6e0"
+                        }
+                    },
+                    {
+                        "deviceId": "19daea83-0c6b-488f-9bba-44d226b9ad74",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "56bf706d-42d8-4154-aa26-776669396f37",
+                            "roomName": "kitchen",
+                            "roomId": "56bf706d-42d8-4154-aa26-776669396f37"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the child lock on the refrigerator."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "childLock_turnOff",
+                            "arguments": {
+                                "device": "e53ba09c-1351-4b1c-9c0e-008568375bfe",
+                                "room": "kid's room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The child lock on the refrigerator is now off."
+        }
+    ],
+    "tools": []
+}

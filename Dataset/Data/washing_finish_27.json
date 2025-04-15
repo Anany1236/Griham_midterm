@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6c4317c1-9735-4ef2-bae5-ee02305b7c81",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "8953fda3-43c7-443b-af04-1c4d02da7f7b",
+                            "roomName": "laundry room",
+                            "roomId": "8953fda3-43c7-443b-af04-1c4d02da7f7b"
+                        }
+                    },
+                    {
+                        "deviceId": "eb0c07c9-71c3-4400-bd3c-4d5fe8103d03",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "fcca8419-165a-4fe3-afab-716a277f24e5",
+                            "roomName": "kitchen",
+                            "roomId": "fcca8419-165a-4fe3-afab-716a277f24e5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "The main entrance door is open."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washing_finish",
+                            "arguments": {
+                                "device": "6c4317c1-9735-4ef2-bae5-ee02305b7c81",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washer in the kitchen is done."
+        }
+    ],
+    "tools": []
+}

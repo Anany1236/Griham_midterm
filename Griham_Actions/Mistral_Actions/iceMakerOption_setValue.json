@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "iceMakerOption_setValue",
+            "description": "This function is used to initiate ice production in the machine with a specified number of ice cubes.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to initiate ice production."
+                    },
+                    "ice": {
+                        "type": "number",
+                        "description": "The number of ice cubes to produce."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

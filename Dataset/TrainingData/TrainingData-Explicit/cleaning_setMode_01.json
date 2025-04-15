@@ -1,0 +1,82 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c2c40095-7ca8-4d29-bd28-50039f5fe705",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f0fec7a8-3094-4f2e-a09c-8c22eb0fc5eb",
+                            "roomName": "Bedroom",
+                            "roomId": "3dd263f8-a7e6-42d1-88c8-4c2991a6dfc4"
+                        }
+                    },
+                    {
+                        "deviceId": "71c9db83-9406-43b0-9ed6-2be276e44120",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f0fec7a8-3094-4f2e-a09c-8c22eb0fc5eb",
+                            "roomName": "kitchen",
+                            "roomId": "ebe396be-b06c-4ce2-820c-10379e19435f"
+                        }
+                    },
+                    {
+                        "deviceId": "26f68d25-62f2-44ad-92ac-442d183a5a29",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f0fec7a8-3094-4f2e-a09c-8c22eb0fc5eb",
+                            "roomName": "bedroom",
+                            "roomId": "dc74bbfa-38ca-4f52-b30f-e3edc3d71ebb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you switch to turbo mode?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_setMode",
+                            "arguments": {
+                                "device": "26f68d25-62f2-44ad-92ac-442d183a5a29"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have switched to turbo mode."
+        }
+    ],
+    "tools": []
+}

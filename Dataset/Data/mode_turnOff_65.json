@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "91f1ef7d-bb07-44a4-a67a-baf4b4533f9c",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "2968af16-e23c-4fa8-a227-592df6f01281",
+                            "roomName": "guest room",
+                            "roomId": "2968af16-e23c-4fa8-a227-592df6f01281"
+                        }
+                    },
+                    {
+                        "deviceId": "b4dc8a27-722f-4c1b-8753-8927c383b8e2",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ae786a1a-5db1-41b9-98d2-1ebea925233e",
+                            "roomName": "living room",
+                            "roomId": "ae786a1a-5db1-41b9-98d2-1ebea925233e"
+                        }
+                    },
+                    {
+                        "deviceId": "1942aabe-9aa5-4222-af5f-3ac2c87af7b5",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "2592d96c-cbf8-4300-82f3-520fadd4732c",
+                            "roomName": "kitchen",
+                            "roomId": "2592d96c-cbf8-4300-82f3-520fadd4732c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please switch off the eco mode on the refrigerator in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mode_turnOff",
+                            "arguments": {
+                                "device": "1942aabe-9aa5-4222-af5f-3ac2c87af7b5",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Eco mode on the refrigerator in the kitchen has been switched off."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,40 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Increase the drying time on the dryer by 10 minutes."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryingTime_increase",
+                            "arguments": {
+                                "device": "dryer",
+                                "dryingTimer": "00:10:00"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I'm turning up the drying time for dryer by 10 minutes."
+        }
+    ],
+    "tools": []
+}

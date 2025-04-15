@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ae73d7bd-402c-469b-9a3a-9c4d625947c0",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "9c262985-cb1e-4b86-ac3d-347371961311",
+                            "roomName": "living room",
+                            "roomId": "9c262985-cb1e-4b86-ac3d-347371961311"
+                        }
+                    },
+                    {
+                        "deviceId": "52ca789c-e66e-499c-8cfa-310c55a27555",
+                        "deviceName": "audio system",
+                        "deviceType": "audio system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "c6e20170-2973-442e-9e3e-e49bd0016235",
+                            "roomName": "bedroom",
+                            "roomId": "c6e20170-2973-442e-9e3e-e49bd0016235"
+                        }
+                    },
+                    {
+                        "deviceId": "549d0fff-0eea-4d8e-af26-efab744b7bd4",
+                        "deviceName": "smart speaker",
+                        "deviceType": "smart speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "0d8e03d1-1d28-4dfb-b973-6b56efe8237b",
+                            "roomName": "office room",
+                            "roomId": "0d8e03d1-1d28-4dfb-b973-6b56efe8237b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the voice guide feature on the smart TV in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "iceMakerOption_setValue",
+                            "arguments": {
+                                "device": "ae73d7bd-402c-469b-9a3a-9c4d625947c0",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The voice guide feature has been turned off on the smart TV in the living room."
+        }
+    ],
+    "tools": []
+}

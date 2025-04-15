@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e490483f-2cbe-4c9f-ad4c-6487d7f61d75",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "af535826-8165-43da-82e7-4d3da7a2a59d",
+                            "roomName": "bathroom",
+                            "roomId": "af535826-8165-43da-82e7-4d3da7a2a59d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the water heating in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeating_turnOn",
+                            "arguments": {
+                                "device": "e490483f-2cbe-4c9f-ad4c-6487d7f61d75",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water heating in the bathroom has been turned on."
+        }
+    ],
+    "tools": []
+}

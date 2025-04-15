@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "304116f6-efa5-4fd4-b291-efb031f509b3",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a82080f3-0518-4de2-b6c0-ec2d29e7f416",
+                            "roomName": "bedroom",
+                            "roomId": "a82080f3-0518-4de2-b6c0-ec2d29e7f416"
+                        }
+                    },
+                    {
+                        "deviceId": "50e2764b-5cb2-4759-b987-3585c9ebed19",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "28e62b52-2bda-4d28-8841-73eade0c8339",
+                            "roomName": "living Room",
+                            "roomId": "28e62b52-2bda-4d28-8841-73eade0c8339"
+                        }
+                    },
+                    {
+                        "deviceId": "49fb77b7-0fd4-49f1-9952-9c275f23be87",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2bb902f5-0bae-4792-9182-1c1cb619957c",
+                            "roomName": "guest Room",
+                            "roomId": "2bb902f5-0bae-4792-9182-1c1cb619957c"
+                        }
+                    },
+                    {
+                        "deviceId": "98ad0f75-6ebd-4b26-bd45-38ab97b27676",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b37a69f8-700e-4501-98b0-82ccf0b0daf8",
+                            "roomName": "kitchen",
+                            "roomId": "b37a69f8-700e-4501-98b0-82ccf0b0daf8"
+                        }
+                    },
+                    {
+                        "deviceId": "3f77a8ef-d263-45e8-95ac-78f6f68dab62",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3852b30d-3402-427e-93da-9a7a27f66dfb",
+                            "roomName": "utility Room",
+                            "roomId": "3852b30d-3402-427e-93da-9a7a27f66dfb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you show the automation settings of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "automation_show",
+                            "arguments": {
+                                "device": "49fb77b7-0fd4-49f1-9952-9c275f23be87",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The automation settings for the light in the guest room have been displayed"
+        }
+    ],
+    "tools": []
+}

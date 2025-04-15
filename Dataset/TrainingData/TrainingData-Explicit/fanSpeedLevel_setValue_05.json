@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "14bd2761-a65f-4b04-940e-226fb3af4640",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4ad9bfa6-bb06-4046-b8d1-2151148a481e",
+                            "roomName": "Living room",
+                            "roomId": "15af6ae0-0129-4e42-8f90-0327e6fcde6b"
+                        }
+                    },
+                    {
+                        "deviceId": "e622dd57-6b1f-4c02-9a84-240ee43f39ed",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4ad9bfa6-bb06-4046-b8d1-2151148a481e",
+                            "roomName": "kids room",
+                            "roomId": "9044aa27-9c03-4eb3-b089-34a9182f4ff3"
+                        }
+                    },
+                    {
+                        "deviceId": "6634c705-0023-4d04-a629-b87693b2ce47",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4ad9bfa6-bb06-4046-b8d1-2151148a481e",
+                            "roomName": "bedroom",
+                            "roomId": "e8328348-dcbc-47b3-a711-27032c9c21e4"
+                        }
+                    },
+                    {
+                        "deviceId": "d9fc44e1-175b-4ec5-8828-fcdb2f8d6759",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4ad9bfa6-bb06-4046-b8d1-2151148a481e",
+                            "roomName": "guest room",
+                            "roomId": "6084c1b9-7a74-4fe5-a0a2-3c88aa72e4aa"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the fan speed level value of the kids room to 3"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeedLevel_setValue",
+                            "arguments": {
+                                "device": "e622dd57-6b1f-4c02-9a84-240ee43f39ed",
+                                "room": "kids room",
+                                "fanSpeedLevel": "3"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed level value of the kids is switched to 3"
+        }
+    ],
+    "tools": []
+}

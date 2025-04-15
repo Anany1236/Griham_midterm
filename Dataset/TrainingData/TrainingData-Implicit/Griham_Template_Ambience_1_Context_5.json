@@ -1,0 +1,98 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4f228e34-581d-470d-895d-5c542c39e8c5",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Living Room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "ef5a18ad-ffb5-4dd3-895f-624cb0b1a026",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Living Room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "2f806971-9928-439e-85ac-3239249d19d0",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Living Room",
+                            "roomId": "r1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set up a calming ambience"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_play",
+                            "arguments": {
+                                "device": "4f218e34-581d-470d-895d-5c542c39e8c5",
+                                "appname": "Youtube",
+                                "title": "calming music"
+                            }
+                        },
+                        {
+                            "name": "airConditioningMode_setValue",
+                            "arguments": {
+                                "device": "ef5a18ad-ffb5-4dd3-895f-624cb0b1a026",
+                                "mode": "WindFree"
+                            }
+                        },
+                        {
+                            "name": "colorMode_setValue",
+                            "arguments": {
+                                "device": "2f7806971-9928-439e-85ac-3239249d19d0",
+                                "mode": "calming"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Would you like me to play calming music on the TV, set the air conditioner to WindFree mode, and set the lights to calming mode?"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,38 @@
+{
+    "name": "windDirection_setValue",
+    "description": "This function is used to adjust the wind direction on SmartThings devices like fans and air conditioners.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to adjust the wind direction.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The mode to set for the wind direction (e.g., fixed, up, down, left, right).",
+            "optional": true
+        },
+        {
+            "name": "windAngle",
+            "type": "number",
+            "description": "The angle at which to set the wind direction.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

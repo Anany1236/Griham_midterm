@@ -1,0 +1,97 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5fccf8b1-e75c-4226-8cd8-cfdff44e2a1e",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "193d6209-add7-4233-bda2-089140415d41",
+                            "roomName": "bedroom",
+                            "roomId": "e90ea88c-39a6-46cb-bafc-d6741e970a87"
+                        }
+                    },
+                    {
+                        "deviceId": "c208d041-0020-4a95-bfc1-c32ecd7b8908",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "193d6209-add7-4233-bda2-089140415d41",
+                            "roomName": "laundry room",
+                            "roomId": "d13616cd-ad86-4220-951c-013e5057f5eb"
+                        }
+                    },
+                    {
+                        "deviceId": "be651acb-90a3-4ff3-a40e-e18686595ff9",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "193d6209-add7-4233-bda2-089140415d41",
+                            "roomName": "utility room",
+                            "roomId": "8a9b70e2-158f-4d9c-aa7d-8e80f902e30c"
+                        }
+                    },
+                    {
+                        "deviceId": "bd642cd7-5ffd-45d7-bdf0-d4f88ff594a1",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "193d6209-add7-4233-bda2-089140415d41",
+                            "roomName": "kitchen",
+                            "roomId": "cb82d35f-ebde-42e0-ac85-e8a177ee16af"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Kindly start the lower dryer in laundry room to cotton cycle"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_startCourse",
+                            "arguments": {
+                                "device": "c208d041-0020-4a95-bfc1-c32ecd7b8908",
+                                "room": "laundry room",
+                                "predefinedCompartment": "lower",
+                                "mode": "cotton"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started the lower dryer in laundry room to cotton cycle."
+        }
+    ],
+    "tools": []
+}

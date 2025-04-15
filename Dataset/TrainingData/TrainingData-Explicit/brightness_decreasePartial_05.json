@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "fb34cbfe-e842-4eb3-8dd8-76bb47d87330",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "91d9a065-bff3-411e-aa6b-46d98f12c520",
+							"roomName": "Living room",
+							"roomId": "ae2f26c6-3015-4d29-a931-9071c3fae931"
+						}
+					},
+					{
+						"deviceId": "e099e7ed-8bf9-4b38-9585-d3c7a1344fa6",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "91d9a065-bff3-411e-aa6b-46d98f12c520",
+							"roomName": "bedroom",
+							"roomId": "606d0564-261d-4a39-a1f2-9ee0deb5723d"
+						}
+					},
+					{
+						"deviceId": "4497c7b3-60bc-46fc-9a10-87bb69ebe9e2",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "91d9a065-bff3-411e-aa6b-46d98f12c520",
+							"roomName": "kids room",
+							"roomId": "28fc01a6-8d8a-4f0e-a933-cf4622c9ff9f"
+						}
+					},
+					{
+						"deviceId": "2a147923-2f3c-4bb0-bc10-83d2da5ac288",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "91d9a065-bff3-411e-aa6b-46d98f12c520",
+							"roomName": "Kitchen",
+							"roomId": "5bb14ab1-e4df-4458-943c-331c9b98cfa5"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Partially reduce the brightness of the kids room projector"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_decreasePartial",
+							"arguments": {
+								"device": "4497c7b3-60bc-46fc-9a10-87bb69ebe9e2",
+								"room": "kids room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have decreased the brightness partially of the kids room projector."
+		}
+	],
+	"tools": []
+}

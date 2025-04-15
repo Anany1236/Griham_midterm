@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1e0854cf-0277-4f58-b369-2814216d3ad0",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee7b2f7a-42e0-40c3-9dac-30192976e01c",
+                            "roomName": "Living room",
+                            "roomId": "415fa451-1e58-4937-8ca4-02dd0434e345"
+                        }
+                    },
+                    {
+                        "deviceId": "9528d75d-dac4-49d5-acea-9238db989a1d",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee7b2f7a-42e0-40c3-9dac-30192976e01c",
+                            "roomName": "kids room",
+                            "roomId": "54779e16-9709-4746-b9cd-b9acd6833fab"
+                        }
+                    },
+                    {
+                        "deviceId": "1cee55bb-a3be-412c-ac93-6c6d6f437148",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee7b2f7a-42e0-40c3-9dac-30192976e01c",
+                            "roomName": "bedroom",
+                            "roomId": "aaaf06e1-2da2-4ce7-a7eb-1d279b357cd6"
+                        }
+                    },
+                    {
+                        "deviceId": "6573e4a2-3f5d-42fa-b201-b598986d14eb",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee7b2f7a-42e0-40c3-9dac-30192976e01c",
+                            "roomName": "guest room",
+                            "roomId": "6adff951-d72e-4f4e-9188-d95bdfd1f88a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the fan speed mode of the bedroom fan to 1"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeedMode_setValue",
+                            "arguments": {
+                                "device": "1cee55bb-a3be-412c-ac93-6c6d6f437148",
+                                "room": "bedroom",
+                                "predefinedFanSpeedMode": "1"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed mode value of the bedroom fan is switched to 1"
+        }
+    ],
+    "tools": []
+}

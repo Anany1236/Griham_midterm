@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cookingTimer_increase",
+            "description": "This function is used to increase the cooking time of a cooker by a specified duration.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device whose cooking time is being increased."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The specific compartment of the device whose cooking time is being increased."
+                    },
+                    "cookingTimer": {
+                        "type": "integer",
+                        "description": "The additional duration to be added to the existing cooking time."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

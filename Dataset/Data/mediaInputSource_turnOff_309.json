@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0499ab33-dceb-44da-bc10-ef0a65975e96",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "79126fcb-a77f-4b23-9095-f9fa0f1f967b",
+                            "roomName": "living room",
+                            "roomId": "79126fcb-a77f-4b23-9095-f9fa0f1f967b"
+                        }
+                    },
+                    {
+                        "deviceId": "4c8d0660-0371-433c-82d7-7cbe4e0fcac1",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "2032483b-4d40-401b-9a42-436618b8155c",
+                            "roomName": "home theater",
+                            "roomId": "2032483b-4d40-401b-9a42-436618b8155c"
+                        }
+                    },
+                    {
+                        "deviceId": "1cc6eb66-ca9a-4395-924f-e29c801864d2",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "93e9989f-0ac5-47cb-a5fa-bf02f187b395",
+                            "roomName": "bedroom",
+                            "roomId": "93e9989f-0ac5-47cb-a5fa-bf02f187b395"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please turn off the input source on the media player."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaInputSource_turnOff",
+                            "arguments": {
+                                "device": "0499ab33-dceb-44da-bc10-ef0a65975e96",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The input source on the media player is now off."
+        }
+    ],
+    "tools": []
+}

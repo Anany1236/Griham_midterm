@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fde44fd9-7b39-421d-b02f-e161ea122a2d",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5ca4572b-31f7-43cb-bc16-18d7527495cd",
+                            "roomName": "Kitchen",
+                            "roomId": "68821713-e80a-4915-8e5b-de84f0784996"
+                        }
+                    },
+                    {
+                        "deviceId": "ed4092ed-1dbb-4adf-a436-3f9624e520c8",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5ca4572b-31f7-43cb-bc16-18d7527495cd",
+                            "roomName": "Kitchen",
+                            "roomId": "68821713-e80a-4915-8e5b-de84f0784996"
+                        }
+                    },
+                    {
+                        "deviceId": "ec4bf31d-a840-4204-87b0-1a660e79a544",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5ca4572b-31f7-43cb-bc16-18d7527495cd",
+                            "roomName": "Kitchen",
+                            "roomId": "68821713-e80a-4915-8e5b-de84f0784996"
+                        }
+                    },
+                    {
+                        "deviceId": "594e88bb-c41c-4c35-9cb1-4e4329d03453",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5ca4572b-31f7-43cb-bc16-18d7527495cd",
+                            "roomName": "Kitchen",
+                            "roomId": "68821713-e80a-4915-8e5b-de84f0784996"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Pause the cooking in the oven"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_pause",
+                            "arguments": {
+                                "device": "fde44fd9-7b39-421d-b02f-e161ea122a2d"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have paused the cooking in the oven"
+        }
+    ],
+    "tools": []
+}

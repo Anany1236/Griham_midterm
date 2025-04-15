@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9197995b-a3da-408d-858e-d3efcb99891e",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "4692ccef-b02d-4573-947e-0240f794714a",
+                            "roomName": "living room",
+                            "roomId": "4692ccef-b02d-4573-947e-0240f794714a"
+                        }
+                    },
+                    {
+                        "deviceId": "6adc5351-7151-4020-886f-7ba703cc5411",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "d2acd811-b9d5-42c4-9dae-00e86261638f",
+                            "roomName": "home theater",
+                            "roomId": "d2acd811-b9d5-42c4-9dae-00e86261638f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Play the movie on the living room TV."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "video_play",
+                            "arguments": {
+                                "device": "9197995b-a3da-408d-858e-d3efcb99891e",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The movie is now playing on the TV in the living room."
+        }
+    ],
+    "tools": []
+}

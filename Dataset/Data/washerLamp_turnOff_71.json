@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7e4d79d6-281a-49c2-b9a0-93a550521371",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "bcfdcd14-e077-41f6-b842-d2f00bfe2c87",
+                            "roomName": "laundry room",
+                            "roomId": "bcfdcd14-e077-41f6-b842-d2f00bfe2c87"
+                        }
+                    },
+                    {
+                        "deviceId": "38cb6724-29b6-491c-95ba-0134086d8cbe",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "c6f5e5de-5230-4f39-8f32-09ff6f9c4b76",
+                            "roomName": "utility room",
+                            "roomId": "c6f5e5de-5230-4f39-8f32-09ff6f9c4b76"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please turn off the lamp inside the washer."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washerLamp_turnOff",
+                            "arguments": {
+                                "device": "7e4d79d6-281a-49c2-b9a0-93a550521371",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lamp in the washer is now off."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "355da9ff-c147-4182-9f79-a046bec890f5",
+                        "deviceName": "smart light",
+                        "deviceType": "smart light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ea1c098b-e4ea-4bda-b61a-338fb842ad17",
+                            "roomName": "living room",
+                            "roomId": "ea1c098b-e4ea-4bda-b61a-338fb842ad17"
+                        }
+                    },
+                    {
+                        "deviceId": "fc38db01-0acc-4d94-a88d-3a3eda336013",
+                        "deviceName": "kitchen lights",
+                        "deviceType": "kitchen lights",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "265cef9a-34aa-462e-85bd-88858de07811",
+                            "roomName": "kitchen",
+                            "roomId": "265cef9a-34aa-462e-85bd-88858de07811"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the current lighting mode in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "lightingMode_getValue",
+                            "arguments": {
+                                "device": "355da9ff-c147-4182-9f79-a046bec890f5",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current lighting mode in the living room is ambient."
+        }
+    ],
+    "tools": []
+}

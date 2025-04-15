@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "35200946-6f37-4159-bba1-791dc1214b18",
+                        "deviceName": "robotcleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "fb2798ab-eb41-4123-af70-b407a8a466ed",
+                            "roomName": "kitchen",
+                            "roomId": "fb2798ab-eb41-4123-af70-b407a8a466ed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on auto-empty mode in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "autoEmptyMode_turnOn",
+                            "arguments": {
+                                "device": "35200946-6f37-4159-bba1-791dc1214b18",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have activated auto-empty mode in the kitchen."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a4f9184f-0193-4853-9fea-c3d85b2a3505",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "caafb5f8-5a4a-4b90-9dce-51996f877de9",
+                            "roomName": "bedroom",
+                            "roomId": "caafb5f8-5a4a-4b90-9dce-51996f877de9"
+                        }
+                    },
+                    {
+                        "deviceId": "3f382798-1956-421e-8b94-30a4a114721a",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4d4b31b0-5160-41e8-9087-6d76567eb211",
+                            "roomName": "living Room",
+                            "roomId": "4d4b31b0-5160-41e8-9087-6d76567eb211"
+                        }
+                    },
+                    {
+                        "deviceId": "8235e152-b167-433c-b5b2-95c93207988d",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ff729df-986a-4b5e-ba59-3194d61efb39",
+                            "roomName": "guest Room",
+                            "roomId": "1ff729df-986a-4b5e-ba59-3194d61efb39"
+                        }
+                    },
+                    {
+                        "deviceId": "de1d2dd5-b725-40c8-b7d2-a22f13d18cf7",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d9eee6f3-9d1a-4cc5-8327-4fc82908aa86",
+                            "roomName": "kitchen",
+                            "roomId": "d9eee6f3-9d1a-4cc5-8327-4fc82908aa86"
+                        }
+                    },
+                    {
+                        "deviceId": "44a3bcb7-09c2-48c5-bd91-2af16ebce09c",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1daf900-2dce-457e-8eda-2402db34323c",
+                            "roomName": "utility Room",
+                            "roomId": "d1daf900-2dce-457e-8eda-2402db34323c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the carbon dioxide level of the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "carbonDioxideLevel_getValue",
+                            "arguments": {
+                                "device": "3f382798-1956-421e-8b94-30a4a114721a",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The carbon dioxide level of the air purifier in the living room is shown"
+        }
+    ],
+    "tools": []
+}

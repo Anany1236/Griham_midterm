@@ -1,0 +1,70 @@
+{
+    "name": "mode_setValue",
+    "description": "This function is used to change the mode or course of a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the SmartThings device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the SmartThings device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the SmartThings device that needs to change mode or course.",
+            "optional": true
+        },
+        {
+            "name": "compartment",
+            "type": "string",
+            "description": "The predefined compartment of the SmartThings device that needs to change mode or course.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The mode that the SmartThings device should switch to.",
+            "optional": true
+        },
+        {
+            "name": "temperature",
+            "type": "integer",
+            "description": "The temperature setting for the SmartThings device.",
+            "optional": true
+        },
+        {
+            "name": "temperatureUnit",
+            "type": "string",
+            "description": "The unit of temperature for the SmartThings device.",
+            "optional": true
+        },
+        {
+            "name": "duration",
+            "type": "string",
+            "description": "The duration for the mode or course change.",
+            "optional": true
+        },
+        {
+            "name": "weight",
+            "type": "integer",
+            "description": "The weight setting for the SmartThings device.",
+            "optional": true
+        },
+        {
+            "name": "weightUnit",
+            "type": "string",
+            "description": "The unit of weight for the SmartThings device.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "device_turnOn"
+    ],
+    "output": []
+}

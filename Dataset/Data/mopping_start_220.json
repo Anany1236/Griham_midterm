@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d7010dcb-2cbd-45ef-9306-10995fe441c8",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0a9ee63a-688d-449e-b3a0-979a7da9e2bb",
+                            "roomName": "bedroom",
+                            "roomId": "0a9ee63a-688d-449e-b3a0-979a7da9e2bb"
+                        }
+                    },
+                    {
+                        "deviceId": "6e00e783-7e1d-44c9-a41d-84afb4c283ed",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "41a7b066-6201-4d9c-accf-824939d1db5e",
+                            "roomName": "living Room",
+                            "roomId": "41a7b066-6201-4d9c-accf-824939d1db5e"
+                        }
+                    },
+                    {
+                        "deviceId": "9e67f049-747c-4f0a-9ffc-58087d424860",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9e3d7fe0-8499-4b69-aefd-954699e518c9",
+                            "roomName": "guest Room",
+                            "roomId": "9e3d7fe0-8499-4b69-aefd-954699e518c9"
+                        }
+                    },
+                    {
+                        "deviceId": "3134ba18-557b-42d3-a035-7119027b32ac",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b646435c-f93e-4303-9fa5-cc9edc933226",
+                            "roomName": "kitchen",
+                            "roomId": "b646435c-f93e-4303-9fa5-cc9edc933226"
+                        }
+                    },
+                    {
+                        "deviceId": "1923c595-17b9-42b9-b2d3-a2e075356e8c",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0a9c09f5-9e60-4b7c-9269-f918cbbafef8",
+                            "roomName": "utility Room",
+                            "roomId": "0a9c09f5-9e60-4b7c-9269-f918cbbafef8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start mopping with the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mopping_start",
+                            "arguments": {
+                                "device": "1923c595-17b9-42b9-b2d3-a2e075356e8c",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Mopping with the hood in the utility room has started"
+        }
+    ],
+    "tools": []
+}

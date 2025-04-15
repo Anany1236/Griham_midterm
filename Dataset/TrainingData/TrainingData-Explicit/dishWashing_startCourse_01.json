@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7b237adb-ae56-43c8-8b57-c0d189e2ce30",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29731440-aae9-466f-8523-48731957401f",
+                            "roomName": "Kitchen",
+                            "roomId": "c35b0500-7fc0-4821-b722-bb29387eeb92"
+                        }
+                    },
+                    {
+                        "deviceId": "9bb7d6b4-4902-48a4-b2c5-a0a81714857f",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29731440-aae9-466f-8523-48731957401f",
+                            "roomName": "Living room",
+                            "roomId": "35a98a74-dd16-47f9-a5be-109cf47c67a0"
+                        }
+                    },
+                    {
+                        "deviceId": "610e6c06-ddeb-4bf6-afcf-0abad0a342be",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29731440-aae9-466f-8523-48731957401f",
+                            "roomName": "Living room",
+                            "roomId": "35a98a74-dd16-47f9-a5be-109cf47c67a0"
+                        }
+                    },
+                    {
+                        "deviceId": "fcff997b-a50d-4d82-a673-b6f59c1fb0ce",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29731440-aae9-466f-8523-48731957401f",
+                            "roomName": "Kitchen",
+                            "roomId": "c35b0500-7fc0-4821-b722-bb29387eeb92"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you start the kitchen dishwasher in standard course?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_startCourse",
+                            "arguments": {
+                                "device": "7b237adb-ae56-43c8-8b57-c0d189e2ce30",
+                                "room": "kitchen",
+                                "mode": "standard"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started the kitchen dishwasher in the standard course"
+        }
+    ],
+    "tools": []
+}

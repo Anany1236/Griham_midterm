@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d3e3c61d-f5e3-4aeb-90b5-145b19a96054",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "76953dd6-e718-4ad6-a935-75b4286600f6",
+                            "roomName": "living room",
+                            "roomId": "76953dd6-e718-4ad6-a935-75b4286600f6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the thermostat mode value in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "thermostatMode_getValue",
+                            "arguments": {
+                                "device": "d3e3c61d-f5e3-4aeb-90b5-145b19a96054",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The thermostat mode in the living room has been retrieved."
+        }
+    ],
+    "tools": []
+}

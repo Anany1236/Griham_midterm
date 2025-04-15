@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fcae444c-a049-464a-8661-1a761a0b74bd",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "05b5e274-6c60-4c01-b27a-08e6d51a3703",
+                            "roomName": "living room",
+                            "roomId": "05b5e274-6c60-4c01-b27a-08e6d51a3703"
+                        }
+                    },
+                    {
+                        "deviceId": "b5096d56-a90b-4eaf-bdad-30fc73c5610a",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "6f5747d9-9921-4b4c-8cff-10e003f8ea9f",
+                            "roomName": "bedroom",
+                            "roomId": "6f5747d9-9921-4b4c-8cff-10e003f8ea9f"
+                        }
+                    },
+                    {
+                        "deviceId": "e2c6d40a-30bd-456d-9fcb-c2aeb5b0ca80",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "308ebb9b-7f15-4373-a3b0-82abbb241dce",
+                            "roomName": "office room",
+                            "roomId": "308ebb9b-7f15-4373-a3b0-82abbb241dce"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the cool mode?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "coolMode_turnOff",
+                            "arguments": {
+                                "device": "fcae444c-a049-464a-8661-1a761a0b74bd",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooling mode is now disabled."
+        }
+    ],
+    "tools": []
+}

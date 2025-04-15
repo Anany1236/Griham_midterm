@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1c4331eb-d065-4f87-a85b-236258814ba5",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "10c36729-717a-4c6b-98ec-8b5191a64367",
+                            "roomName": "laundry room",
+                            "roomId": "10c36729-717a-4c6b-98ec-8b5191a64367"
+                        }
+                    },
+                    {
+                        "deviceId": "647aa523-a111-4599-9994-2788c6966e8c",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "b0ee5127-183c-4f75-bc08-127e01d30360",
+                            "roomName": "kitchen",
+                            "roomId": "b0ee5127-183c-4f75-bc08-127e01d30360"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you show me the supported washing programs on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washing_getSupportedCourses",
+                            "arguments": {
+                                "device": "647aa523-a111-4599-9994-2788c6966e8c",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The supported washing programs on the washer in the kitchen are shown."
+        }
+    ],
+    "tools": []
+}

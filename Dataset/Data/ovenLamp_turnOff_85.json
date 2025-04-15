@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d7169c9a-887c-48e2-beb7-1ade2b661243",
+                        "deviceName": "Oven,Oven,Oven",
+                        "deviceType": "Oven,Oven,Oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Living room,Dining room",
+                            "locationId": "0719c598-f76d-4270-a6f3-79cedd35c05e",
+                            "roomName": "kitchen,Living room,Dining room",
+                            "roomId": "0719c598-f76d-4270-a6f3-79cedd35c05e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Switch off the oven lamp in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ovenLamp_turnOff",
+                            "arguments": {
+                                "device": "d7169c9a-887c-48e2-beb7-1ade2b661243",
+                                "room": "kitchen,Living room,Dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The oven lamp in the living room is now off."
+        }
+    ],
+    "tools": []
+}

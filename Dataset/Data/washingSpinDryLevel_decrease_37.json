@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b9d7e6ca-48bc-4178-9725-8455992e0830",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "f68477c3-21ef-41cd-a804-09fceddc57b7",
+                            "roomName": "laundry room",
+                            "roomId": "f68477c3-21ef-41cd-a804-09fceddc57b7"
+                        }
+                    },
+                    {
+                        "deviceId": "d91435d8-0e61-43e7-8950-2de2c7b60d5e",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "af19cb3a-0ae4-4a76-94e0-a599c7a31406",
+                            "roomName": "kitchen",
+                            "roomId": "af19cb3a-0ae4-4a76-94e0-a599c7a31406"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please reduce the spin dry level for the washing machine in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingSpinDryLevel_decrease",
+                            "arguments": {
+                                "device": "b9d7e6ca-48bc-4178-9725-8455992e0830",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The spin dry level for the washing machine in the bathroom has been reduced."
+        }
+    ],
+    "tools": []
+}

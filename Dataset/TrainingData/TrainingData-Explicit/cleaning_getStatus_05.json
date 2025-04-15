@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fe7a9b12-3330-4757-b4e5-c46bad769285",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3e67f636-acc7-41d0-b28f-9e29acd3d186",
+                            "roomName": "Bedroom",
+                            "roomId": "6fa002b5-5270-4740-aff9-16631a3a9c47"
+                        }
+                    },
+                    {
+                        "deviceId": "ff105c20-7412-465a-989d-38eb977c4a60",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3e67f636-acc7-41d0-b28f-9e29acd3d186",
+                            "roomName": "kitchen",
+                            "roomId": "a9b93482-1928-4034-a5e1-aaf996eed1a2"
+                        }
+                    },
+                    {
+                        "deviceId": "6fd51a55-f1b2-47c9-b096-708dd3353717",
+                        "deviceName": "stick cleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3e67f636-acc7-41d0-b28f-9e29acd3d186",
+                            "roomName": "living room",
+                            "roomId": "e63eec3e-8cfd-4969-a1be-0940050de088"
+                        }
+                    },
+                    {
+                        "deviceId": "841f1b17-a1e9-447b-93b5-b57dc371c4e9",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3e67f636-acc7-41d0-b28f-9e29acd3d186",
+                            "roomName": "bedroom",
+                            "roomId": "7eaf5e53-7106-4e45-8065-f304bda4a2c9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the status of stick cleaner"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_getStatus",
+                            "arguments": {
+                                "device": "6fd51a55-f1b2-47c9-b096-708dd3353717"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The stick cleaner is in on state."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "578f0d70-4230-4bf9-90b0-e4ea91cb436b",
+                        "deviceName": "gas valve",
+                        "deviceType": "gasvalve",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "db69a498-3a26-4b8a-b8a1-17f601083aef",
+                            "roomName": "kitchen",
+                            "roomId": "02eb082d-dc41-45da-b1b3-8c913a57352f"
+                        }
+                    },
+                    {
+                        "deviceId": "031be1b8-5fc5-4794-bc90-922421f608a0",
+                        "deviceName": "door lock",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "db69a498-3a26-4b8a-b8a1-17f601083aef",
+                            "roomName": "bedroom",
+                            "roomId": "8e49500d-c815-49c1-9801-be93b80745f9"
+                        }
+                    },
+                    {
+                        "deviceId": "1e851783-b534-4311-a451-42740aa125a5",
+                        "deviceName": "water valve",
+                        "deviceType": "watervalve",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "db69a498-3a26-4b8a-b8a1-17f601083aef",
+                            "roomName": "laundry room",
+                            "roomId": "7f005e9f-d9d8-4607-8f60-860c5bb23582"
+                        }
+                    },
+                    {
+                        "deviceId": "fc108973-551e-4048-9880-091320c0ed29",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "db69a498-3a26-4b8a-b8a1-17f601083aef",
+                            "roomName": "living room",
+                            "roomId": "0c8acb53-37fe-4c3c-81bb-33305aeb714c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is the gas valve open?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getOpenStatus",
+                            "arguments": {
+                                "device": "578f0d70-4230-4bf9-90b0-e4ea91cb436b"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, the gas valve is open."
+        }
+    ],
+    "tools": []
+}

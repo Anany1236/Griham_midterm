@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "574f34db-281d-4f6c-aab8-77ae60bdf653",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d708daa0-af96-4efe-94a3-ebca2065c80a",
+                            "roomName": "living room",
+                            "roomId": "d708daa0-af96-4efe-94a3-ebca2065c80a"
+                        }
+                    },
+                    {
+                        "deviceId": "4976cc33-2e49-4605-928b-376697955560",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "9dfeff52-fe03-4542-b836-4aa73b2a6b31",
+                            "roomName": "bedroom",
+                            "roomId": "9dfeff52-fe03-4542-b836-4aa73b2a6b31"
+                        }
+                    },
+                    {
+                        "deviceId": "eda13b59-3bca-40a7-be75-edf6d39e6565",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "c716a104-3b71-41c2-83c0-e1793d6267fd",
+                            "roomName": "office room",
+                            "roomId": "c716a104-3b71-41c2-83c0-e1793d6267fd"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you start playing my playlist on the TV in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "music_play",
+                            "arguments": {
+                                "device": "4976cc33-2e49-4605-928b-376697955560",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Your playlist has started on the TV in the bedroom."
+        }
+    ],
+    "tools": []
+}

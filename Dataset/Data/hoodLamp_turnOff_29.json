@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7a3fdefd-088c-42b0-a2b3-fc6f8dd5180d",
+                        "deviceName": "Hood,Hood,Hood",
+                        "deviceType": "Hood,Hood,Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Dining room,Utility room",
+                            "locationId": "b9dcc38d-5cba-485a-aefc-cb6575112121",
+                            "roomName": "kitchen,Dining room,Utility room",
+                            "roomId": "b9dcc38d-5cba-485a-aefc-cb6575112121"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the hood lamp in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodLamp_turnOff",
+                            "arguments": {
+                                "device": "7a3fdefd-088c-42b0-a2b3-fc6f8dd5180d",
+                                "room": "kitchen,Dining room,Utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "\u00a0The hood lamp in the kitchen has been turned off."
+        }
+    ],
+    "tools": []
+}

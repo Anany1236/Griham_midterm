@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5e45301d-3e56-4a73-bfae-c3265f378461",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "94c790be-4d35-4b56-bf43-4a2601b33e7f",
+                            "roomName": "bathroom",
+                            "roomId": "94c790be-4d35-4b56-bf43-4a2601b33e7f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the water heating temperature in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeatingTemperature_increase",
+                            "arguments": {
+                                "device": "5e45301d-3e56-4a73-bfae-c3265f378461",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water heating temperature in the bathroom has been increased."
+        }
+    ],
+    "tools": []
+}

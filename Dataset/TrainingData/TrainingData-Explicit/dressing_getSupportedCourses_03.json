@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fea66c1a-4834-41d4-a5ac-016762b5438b",
+                        "deviceName": "steamcloset1",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1383d0a-0336-4937-8682-a1e157a30871",
+                            "roomName": "guest room",
+                            "roomId": "2613093d-90b8-4b61-9b41-7fe9e96a4146"
+                        }
+                    },
+                    {
+                        "deviceId": "d14b3ff2-7372-4bb6-af95-0b931e9a01ac",
+                        "deviceName": "steamcloset2",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1383d0a-0336-4937-8682-a1e157a30871",
+                            "roomName": "Living room",
+                            "roomId": "44befb16-feb0-4c15-a5c1-dc8b8c85bb86"
+                        }
+                    },
+                    {
+                        "deviceId": "484211b2-1649-48fe-8e6a-68b4cc6e0e42",
+                        "deviceName": "steamcloset3",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1383d0a-0336-4937-8682-a1e157a30871",
+                            "roomName": "hall",
+                            "roomId": "d6cc6151-aa83-407a-9adb-6205be08dcf4"
+                        }
+                    },
+                    {
+                        "deviceId": "c7979392-771c-4fa7-b9a1-a39b81cd018f",
+                        "deviceName": "steamcloset4",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1383d0a-0336-4937-8682-a1e157a30871",
+                            "roomName": "bedroom",
+                            "roomId": "9e14bed9-e7c7-4009-864a-9f573d0c33c3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me all supported courses of the air dresser in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_getSupportedCourses",
+                            "arguments": {
+                                "device": "c7979392-771c-4fa7-b9a1-a39b81cd018f",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Here are all supported courses of the steamcloset in the bedroom."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "12d7336b-ddf3-48e2-ad65-977a0a0f98a2",
+                        "deviceName": "chime",
+                        "deviceType": "chime",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "2631cef4-6e51-4a5a-9173-3ad84ce608c0",
+                            "roomName": "hallway",
+                            "roomId": "2631cef4-6e51-4a5a-9173-3ad84ce608c0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please mute the chime in the entryway."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chime_turnOff",
+                            "arguments": {
+                                "device": "12d7336b-ddf3-48e2-ad65-977a0a0f98a2",
+                                "room": "hallway"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The chime in the entryway is now muted."
+        }
+    ],
+    "tools": []
+}

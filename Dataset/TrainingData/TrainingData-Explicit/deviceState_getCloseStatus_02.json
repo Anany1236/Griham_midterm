@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "445fdedd-9865-487d-8c09-53a159f8612c",
+                        "deviceName": "water valve",
+                        "deviceType": "watervalve",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c63ac2ad-2e19-40e6-928e-7ad55cdd3be2",
+                            "roomName": "kitchen",
+                            "roomId": "bb716127-de6c-44e5-8c42-448456930c23"
+                        }
+                    },
+                    {
+                        "deviceId": "cceba78c-5621-44e4-a5db-100de7536505",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c63ac2ad-2e19-40e6-928e-7ad55cdd3be2",
+                            "roomName": "kitchen",
+                            "roomId": "bb716127-de6c-44e5-8c42-448456930c23"
+                        }
+                    },
+                    {
+                        "deviceId": "07c662b0-954f-44f6-8850-d31b5569e96b",
+                        "deviceName": "range",
+                        "deviceType": "range",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c63ac2ad-2e19-40e6-928e-7ad55cdd3be2",
+                            "roomName": "kitchen",
+                            "roomId": "bb716127-de6c-44e5-8c42-448456930c23"
+                        }
+                    },
+                    {
+                        "deviceId": "902a0e1e-f26a-425a-af26-2952ead22ebe",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c63ac2ad-2e19-40e6-928e-7ad55cdd3be2",
+                            "roomName": "living room",
+                            "roomId": "60b05e99-b5cf-4292-a199-24700c57b836"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know if water valve closed"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getCloseStatus",
+                            "arguments": {
+                                "device": "445fdedd-9865-487d-8c09-53a159f8612c"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, water valve is closed."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "95220ab6-1c42-43fd-9fb6-b7db8a1c6ccc",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2994f163-9a90-4c32-8dc6-d1dbcec0e38c",
+                            "roomName": "utility room",
+                            "roomId": "9ec28514-9842-4e20-bb49-06ddaefd9137"
+                        }
+                    },
+                    {
+                        "deviceId": "2284ce61-c729-44ac-ba2a-f761e650dc7a",
+                        "deviceName": "roof air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2994f163-9a90-4c32-8dc6-d1dbcec0e38c",
+                            "roomName": "living room",
+                            "roomId": "3e735779-d8b6-40f3-bc78-4cc13b2af1e2"
+                        }
+                    },
+                    {
+                        "deviceId": "2963d4c8-2de3-4bff-a412-8300d808dddf",
+                        "deviceName": "floor air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2994f163-9a90-4c32-8dc6-d1dbcec0e38c",
+                            "roomName": "bedroom",
+                            "roomId": "6f64fc3c-4216-4057-9173-68b5aafabc10"
+                        }
+                    },
+                    {
+                        "deviceId": "c2837ad5-58e9-4494-9341-4522ede44461",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2994f163-9a90-4c32-8dc6-d1dbcec0e38c",
+                            "roomName": "guest room",
+                            "roomId": "be41c207-a90c-45f8-99b3-1eeea8267649"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the cooling temperature of the ac to 25 degrees in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "coolingTemperature_setValue",
+                            "arguments": {
+                                "device": "c2837ad5-58e9-4494-9341-4522ede44461",
+                                "room": "guest room",
+                                "coolingTemperature": "25"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooling temperature of the ac is now 25 degrees in the guest room."
+        }
+    ],
+    "tools": []
+}

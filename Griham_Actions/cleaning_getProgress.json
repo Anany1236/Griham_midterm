@@ -1,0 +1,32 @@
+{
+    "name": "cleaning_getProgress",
+    "description": "This function is used to check the cleaning progress of a robot vacuum cleaner.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located. e.g. home, office, etc.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.  e.g. living room, bedroom, bathroom, etc.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device whose cleaning progress needs to be checked. ### CHECK ###",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "A group action associated with the device.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

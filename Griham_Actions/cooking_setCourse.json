@@ -1,0 +1,62 @@
+{
+    "name": "cooking_setCourse",
+    "description": "This function is used to set a specific cooking course on an appliance without starting it.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device whose cooking course is being set.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The specific compartment of the device whose cooking course is being set.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The cooking mode to be set on the device.",
+            "optional": true
+        },
+        {
+            "name": "predefinedMode",
+            "type": "string",
+            "description": "The cooking predefined mode to be set on the device.",
+            "optional": true
+        },
+        {
+            "name": "temperatureUnit",
+            "type": "string",
+            "description": "The unit of temperature (e.g., Celsius, Fahrenheit).",
+            "optional": true
+        },
+        {
+            "name": "cookingTemperature",
+            "type": "integer",
+            "description": "The temperature to be set for the cooking course.",
+            "optional": true
+        },
+        {
+            "name": "cookingTimer",
+            "type": "integer",
+            "description": "The duration to be set for the cooking course.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

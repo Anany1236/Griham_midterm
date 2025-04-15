@@ -1,0 +1,32 @@
+{
+    "name": "turboCleaningMode_setValue",
+    "description": "This function is used to activate the turbo cleaning mode on a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to activate the turbo cleaning mode.",
+            "optional": true
+        },
+        {
+            "name": "predefinedTurboCleaningMode",
+            "type": "string",
+            "description": "The predefined turbo cleaning mode to activate.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b21c9c36-297e-45dd-aa7a-0101776a957e",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "e477b522-550e-4deb-b375-69f31920e124",
+                            "roomName": "laundry room",
+                            "roomId": "e477b522-550e-4deb-b375-69f31920e124"
+                        }
+                    },
+                    {
+                        "deviceId": "36e5eb78-517d-4278-a92e-508a7fffbef3",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "9657eab5-fb28-4a44-b1a1-0d372923cf6f",
+                            "roomName": "utility room",
+                            "roomId": "9657eab5-fb28-4a44-b1a1-0d372923cf6f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you switch on the lamp in the washer?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washerLamp_turnOn",
+                            "arguments": {
+                                "device": "b21c9c36-297e-45dd-aa7a-0101776a957e",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Washer lamp is now on."
+        }
+    ],
+    "tools": []
+}

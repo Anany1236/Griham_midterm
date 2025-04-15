@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "aec49590-67b2-4eef-9827-4a18a20377ad",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5db0cc77-99cb-4707-9e28-2dc36a44bfa0",
+                            "roomName": "bedroom",
+                            "roomId": "5db0cc77-99cb-4707-9e28-2dc36a44bfa0"
+                        }
+                    },
+                    {
+                        "deviceId": "3937a0f4-28e2-4346-a9a4-7e4036f2d3d1",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4b57f0eb-7352-4636-a3eb-8483ac6497a5",
+                            "roomName": "living Room",
+                            "roomId": "4b57f0eb-7352-4636-a3eb-8483ac6497a5"
+                        }
+                    },
+                    {
+                        "deviceId": "64e06b0b-fef5-42e0-a61c-4aed15b75341",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "abf87b5b-c84f-4e73-b88f-c8f078fd344c",
+                            "roomName": "guest Room",
+                            "roomId": "abf87b5b-c84f-4e73-b88f-c8f078fd344c"
+                        }
+                    },
+                    {
+                        "deviceId": "1220da63-4bb4-4e50-a227-83687bec7887",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "983f8312-12fc-4324-b50f-0e7c3b18e0c6",
+                            "roomName": "kitchen",
+                            "roomId": "983f8312-12fc-4324-b50f-0e7c3b18e0c6"
+                        }
+                    },
+                    {
+                        "deviceId": "351ddc7b-361d-4021-be07-7cf330274967",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ca451b55-8b66-4f8b-80cb-f4b2aa11119b",
+                            "roomName": "utility Room",
+                            "roomId": "ca451b55-8b66-4f8b-80cb-f4b2aa11119b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the formaldehyde level in the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "formaldehyde_getValue",
+                            "arguments": {
+                                "device": "aec49590-67b2-4eef-9827-4a18a20377ad",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The formaldehyde level in the air conditioner in the bedroom is displayed"
+        }
+    ],
+    "tools": []
+}

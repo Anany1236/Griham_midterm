@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b67f84b6-bae7-4eeb-931f-22f3d6c4bfee",
+                        "deviceName": "ceiling fan",
+                        "deviceType": "ceiling fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "1d0df873-d97d-4011-b63e-5c3879078b7e",
+                            "roomName": "living room",
+                            "roomId": "1d0df873-d97d-4011-b63e-5c3879078b7e"
+                        }
+                    },
+                    {
+                        "deviceId": "9b48c9a0-2f93-4e3a-8ce1-2d3b01edfcf4",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "a19c8014-8408-471c-be0a-52a237e826d3",
+                            "roomName": "bedroom",
+                            "roomId": "a19c8014-8408-471c-be0a-52a237e826d3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Enable the rotation function for the fan."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "rotation_turnOn",
+                            "arguments": {
+                                "device": "b67f84b6-bae7-4eeb-931f-22f3d6c4bfee",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Enable the rotation function for the fan."
+        }
+    ],
+    "tools": []
+}

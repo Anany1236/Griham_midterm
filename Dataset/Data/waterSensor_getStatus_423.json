@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "403fd58f-91ae-4a8f-85ea-fcc624cdb817",
+                        "deviceName": "water sensor",
+                        "deviceType": "water sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "ce09ec19-4a44-4fe6-989c-b100449b4ce6",
+                            "roomName": "basement",
+                            "roomId": "ce09ec19-4a44-4fe6-989c-b100449b4ce6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me if the water sensor is active."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterSensor_getStatus",
+                            "arguments": {
+                                "device": "403fd58f-91ae-4a8f-85ea-fcc624cdb817",
+                                "room": "basement"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water sensor is currently turned off."
+        }
+    ],
+    "tools": []
+}

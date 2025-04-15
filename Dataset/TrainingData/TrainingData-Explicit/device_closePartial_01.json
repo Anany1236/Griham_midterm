@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e361054b-15e2-455b-9781-ffa04000fe6f",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d42368f2-4baf-49bd-b971-397bf90f1de9",
+                            "roomName": "hall",
+                            "roomId": "76a56d7d-44b4-48e4-9b66-8fdb9d3d353c"
+                        }
+                    },
+                    {
+                        "deviceId": "0a24245b-7cb0-42cf-aaf8-26d6ff927cd8",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d42368f2-4baf-49bd-b971-397bf90f1de9",
+                            "roomName": "Living room",
+                            "roomId": "d7795c4e-8959-4806-b2bd-f1f4b727454a"
+                        }
+                    },
+                    {
+                        "deviceId": "63e5083b-2691-4d63-91a3-e47c2e15cfc3",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d42368f2-4baf-49bd-b971-397bf90f1de9",
+                            "roomName": "Living room",
+                            "roomId": "d7795c4e-8959-4806-b2bd-f1f4b727454a"
+                        }
+                    },
+                    {
+                        "deviceId": "921bf9ee-c173-43c0-b7ea-64ba84e7f105",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d42368f2-4baf-49bd-b971-397bf90f1de9",
+                            "roomName": "bedroom",
+                            "roomId": "2480bb89-1121-4086-8c7d-3976093c3775"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Close all the blinds a little"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_closePartial",
+                            "arguments": {
+                                "device": "e361054b-15e2-455b-9781-ffa04000fe6f"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "All the blinds are closed a little."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "mediaInputSource_setValue",
+            "description": "This function is used to change the input source of a TV or monitor.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to change the input source."
+                    },
+                    "mediaInputSource": {
+                        "type": "string",
+                        "description": "The new input source to set."
+                    },
+                    "predefinedMediaInputSource": {
+                        "type": "string",
+                        "description": "A predefined media input source."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

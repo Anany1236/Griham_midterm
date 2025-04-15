@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Set the heating temperature in the bedroom to 26 degrees Celsius"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_setValue",
+                            "arguments": {
+                                "room": "bedroom",
+                                "heatingTemperature": 26,
+                                "predefinedHeatingTemperatureUnit": "c"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I set the heating temperature to 26 degrees Celsius."
+        }
+    ],
+    "tools": []
+}

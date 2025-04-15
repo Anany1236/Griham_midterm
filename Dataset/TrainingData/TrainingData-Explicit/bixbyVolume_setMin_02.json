@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6e2772c1-61bc-4f46-981a-eec30b105f6f",
+                        "deviceName": "tv1",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cbd604a1-7a29-4e2e-8379-fc017d42180a",
+                            "roomName": "living room",
+                            "roomId": "0299ed9d-acd3-4346-8e7f-3fd235856a0b"
+                        }
+                    },
+                    {
+                        "deviceId": "d4eb955e-6357-4907-a9ac-4cb35ec2115b",
+                        "deviceName": "speaker1",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cbd604a1-7a29-4e2e-8379-fc017d42180a",
+                            "roomName": "bedroom",
+                            "roomId": "f37654d6-e397-4974-8a6e-6fbdce22ee92"
+                        }
+                    },
+                    {
+                        "deviceId": "3ff8bff4-a391-4687-90ed-1e6cf8c43d38",
+                        "deviceName": "refrigerator1",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cbd604a1-7a29-4e2e-8379-fc017d42180a",
+                            "roomName": "kitchen",
+                            "roomId": "401a6440-0bbf-4c8e-9a44-6883c8989499"
+                        }
+                    },
+                    {
+                        "deviceId": "fa88abee-e023-4e63-8bfa-0339939121f4",
+                        "deviceName": "monitor1",
+                        "deviceType": "monitor",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cbd604a1-7a29-4e2e-8379-fc017d42180a",
+                            "roomName": "bedroom",
+                            "roomId": "f37654d6-e397-4974-8a6e-6fbdce22ee92"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the bixby volume of the refrigerator to min"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bixbyVolume_setMin",
+                            "arguments": {
+                                "device": "3ff8bff4-a391-4687-90ed-1e6cf8c43d38"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The volume of the refrigerator is set to 0"
+        }
+    ],
+    "tools": []
+}

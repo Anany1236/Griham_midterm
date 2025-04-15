@@ -1,0 +1,51 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cooking_setCourse",
+            "description": "This function is used to set a specific cooking course on an appliance without starting it.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device whose cooking course is being set."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The specific compartment of the device whose cooking course is being set."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The cooking mode to be set on the device."
+                    },
+                    "predefinedMode": {
+                        "type": "string",
+                        "description": "The cooking predefined mode to be set on the device."
+                    },
+                    "temperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of temperature (e.g., Celsius, Fahrenheit)."
+                    },
+                    "cookingTemperature": {
+                        "type": "integer",
+                        "description": "The temperature to be set for the cooking course."
+                    },
+                    "cookingTimer": {
+                        "type": "integer",
+                        "description": "The duration to be set for the cooking course."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

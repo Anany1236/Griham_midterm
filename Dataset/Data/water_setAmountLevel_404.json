@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "447b0a17-ee05-49f1-adf1-46dfecc6b1e8",
+                        "deviceName": "water dispenser",
+                        "deviceType": "water dispenser",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "dcf8e6c9-fa3d-409c-8d6a-975600a4e327",
+                            "roomName": "kitchen",
+                            "roomId": "dcf8e6c9-fa3d-409c-8d6a-975600a4e327"
+                        }
+                    },
+                    {
+                        "deviceId": "8b5ee1e5-644f-4d26-a07f-face7f1283b4",
+                        "deviceName": "water purifier",
+                        "deviceType": "water purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "8f30c129-fd24-4c0d-9bfd-e9d3de99c39c",
+                            "roomName": "utility room",
+                            "roomId": "8f30c129-fd24-4c0d-9bfd-e9d3de99c39c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please adjust the water level to 3 liters."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "water_setAmountLevel",
+                            "arguments": {
+                                "device": "447b0a17-ee05-49f1-adf1-46dfecc6b1e8",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive adjusted the water level to 3 liters."
+        }
+    ],
+    "tools": []
+}

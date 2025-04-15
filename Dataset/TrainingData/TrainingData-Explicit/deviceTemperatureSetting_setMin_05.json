@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6e481bb5-0b2b-4a34-91a8-a0514fd41602",
+                        "deviceName": "ac1",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6dbf807c-c5f7-4f85-a2c1-bb10ac23a34d",
+                            "roomName": "living room",
+                            "roomId": "3e9e1c72-4a39-4aca-8119-847d0a25799a"
+                        }
+                    },
+                    {
+                        "deviceId": "cd0e8dfc-e348-413e-ab52-e872f5f7a1cc",
+                        "deviceName": "sensor1",
+                        "deviceType": "sensor.multifunction",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6dbf807c-c5f7-4f85-a2c1-bb10ac23a34d",
+                            "roomName": "bedroom",
+                            "roomId": "58943d6a-3b6e-42fa-92bf-e65fcec9e79c"
+                        }
+                    },
+                    {
+                        "deviceId": "61e8b645-2372-4118-b1ff-7923fa398b07",
+                        "deviceName": "boiler1",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6dbf807c-c5f7-4f85-a2c1-bb10ac23a34d",
+                            "roomName": "laundry room",
+                            "roomId": "bad2fe0b-e253-463f-a0db-761a120fdfab"
+                        }
+                    },
+                    {
+                        "deviceId": "c363391c-be7f-41c8-b7cd-1705067f6fb3",
+                        "deviceName": "ac2",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6dbf807c-c5f7-4f85-a2c1-bb10ac23a34d",
+                            "roomName": "bedroom",
+                            "roomId": "58943d6a-3b6e-42fa-92bf-e65fcec9e79c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the temperature of the living room ac to min?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperatureSetting_setMin",
+                            "arguments": {
+                                "device": "6e481bb5-0b2b-4a34-91a8-a0514fd41602",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Now the temperature of the ac is 14 degree Celsius"
+        }
+    ],
+    "tools": []
+}

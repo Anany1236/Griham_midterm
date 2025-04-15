@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1dd2a470-2039-49ad-b678-1e84b8637599",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f66fa48a-127d-4738-abab-4736d2cf408d",
+                            "roomName": "bedroom",
+                            "roomId": "f66fa48a-127d-4738-abab-4736d2cf408d"
+                        }
+                    },
+                    {
+                        "deviceId": "ef3ee488-61e7-49ab-9e91-6743a085a58b",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "15c9d977-f718-42c5-9efb-503195b85d2a",
+                            "roomName": "living Room",
+                            "roomId": "15c9d977-f718-42c5-9efb-503195b85d2a"
+                        }
+                    },
+                    {
+                        "deviceId": "7a93e05f-8b06-4b17-8d2b-a40b12fec1ab",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "41c9a9e7-bd78-407a-a688-dda5fe9976c2",
+                            "roomName": "guest Room",
+                            "roomId": "41c9a9e7-bd78-407a-a688-dda5fe9976c2"
+                        }
+                    },
+                    {
+                        "deviceId": "dc4c5a2f-22a9-430e-a53e-600c0a025336",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "109c616c-9885-43a2-8c1c-7f0c5b85ede2",
+                            "roomName": "kitchen",
+                            "roomId": "109c616c-9885-43a2-8c1c-7f0c5b85ede2"
+                        }
+                    },
+                    {
+                        "deviceId": "cbf0211a-71ff-4cc0-acfd-dca4535db650",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bc19e029-239e-40ec-84f2-97762c7bd1a9",
+                            "roomName": "utility Room",
+                            "roomId": "bc19e029-239e-40ec-84f2-97762c7bd1a9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the gas detection status of the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "gasDetection_getValue",
+                            "arguments": {
+                                "device": "1dd2a470-2039-49ad-b678-1e84b8637599",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The gas detection status of the air conditioner in the bedroom is normal"
+        }
+    ],
+    "tools": []
+}

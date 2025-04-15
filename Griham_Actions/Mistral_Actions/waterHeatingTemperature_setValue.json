@@ -1,0 +1,37 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "waterHeatingTemperature_setValue",
+            "description": "This function is used to set the hot water temperature of a boiler's hot water function to a specific value.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the hot water temperature."
+                    },
+                    "waterHeatingTemperature": {
+                        "type": "number",
+                        "description": "The specific value to set the hot water temperature to."
+                    },
+                    "predefinedWaterHeatingTemperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of the temperature value (e.g., Celsius, Fahrenheit)."
+                    }
+                },
+                "required": [
+                    "waterHeatingTemperature"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "smartControl-getStatus",
+            "description": "This function is used to check the smart control status of a specific compartment in SmartThings devices.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to check the smart control status."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The specific compartment to check the smart control status."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

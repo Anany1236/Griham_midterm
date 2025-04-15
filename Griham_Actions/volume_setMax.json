@@ -1,0 +1,38 @@
+{
+    "name": "volume_setMax",
+    "description": "This function is used to set the volume of a smart home appliance or device to its maximum level.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device which needs to be adjusted is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device which needs to be adjusted is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to adjust the volume.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The predefined compartment where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "predefinedScreenPosition",
+            "type": "string",
+            "description": "The predefined screen position of the device.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

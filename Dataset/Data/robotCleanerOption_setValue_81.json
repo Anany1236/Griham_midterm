@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "923f16c0-76ea-47f8-888c-0e5ef96d5d33",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robot cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ec914e37-82a0-4efc-8bab-4ed7361459fd",
+                            "roomName": "living room",
+                            "roomId": "ec914e37-82a0-4efc-8bab-4ed7361459fd"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the cleaning mode for the robot cleaner in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "robotCleanerOption_setValue",
+                            "arguments": {
+                                "device": "923f16c0-76ea-47f8-888c-0e5ef96d5d33",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cleaning mode for the robot cleaner in the living room has been set."
+        }
+    ],
+    "tools": []
+}

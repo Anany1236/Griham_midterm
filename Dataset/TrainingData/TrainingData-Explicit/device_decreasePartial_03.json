@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cb3114de-2dff-4f07-89d6-04eeceb1fc70",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "584b158b-0b85-47c8-ac70-5d52aa80c9f5",
+                            "roomName": "living room",
+                            "roomId": "24ef87cb-6af4-40ec-8bc5-09cb863eb9b0"
+                        }
+                    },
+                    {
+                        "deviceId": "ef3f7a26-ed61-4d6a-8308-a007cda71648",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "584b158b-0b85-47c8-ac70-5d52aa80c9f5",
+                            "roomName": "bedroom",
+                            "roomId": "21a42b14-9745-4a7c-b275-0830fbb7cb63"
+                        }
+                    },
+                    {
+                        "deviceId": "cdf69af5-44b2-4b67-a9e6-cb7fc40edf78",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "584b158b-0b85-47c8-ac70-5d52aa80c9f5",
+                            "roomName": "utility room",
+                            "roomId": "53a797d6-f9cf-448e-91d1-c1e15df8bf5a"
+                        }
+                    },
+                    {
+                        "deviceId": "3871980f-5c7b-4267-9d19-c0de41978f34",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "584b158b-0b85-47c8-ac70-5d52aa80c9f5",
+                            "roomName": "living room",
+                            "roomId": "24ef87cb-6af4-40ec-8bc5-09cb863eb9b0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the speaker partially in living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_decreasePartial",
+                            "arguments": {
+                                "device": "3871980f-5c7b-4267-9d19-c0de41978f34",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have partially decreased the speaker in living room."
+        }
+    ],
+    "tools": []
+}

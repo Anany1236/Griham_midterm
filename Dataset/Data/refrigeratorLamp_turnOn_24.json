@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3cc767f3-5360-4ac1-8fa6-d77b9caf0a27",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "7d9a8879-ec94-43c6-abe2-049c0427dcd9",
+                            "roomName": "kitchen",
+                            "roomId": "7d9a8879-ec94-43c6-abe2-049c0427dcd9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the lamp of the refrigerator in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorLamp_turnOn",
+                            "arguments": {
+                                "device": "3cc767f3-5360-4ac1-8fa6-d77b9caf0a27",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lamp of the refrigerator in the kitchen has been turned on."
+        }
+    ],
+    "tools": []
+}

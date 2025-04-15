@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "390faf57-c785-4e62-83a4-fa62d6b24f05",
+                        "deviceName": "hood",
+                        "deviceType": "hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e7440482-bd33-4086-8aef-e296c76dd37d",
+                            "roomName": "kitchen",
+                            "roomId": "e7440482-bd33-4086-8aef-e296c76dd37d"
+                        }
+                    },
+                    {
+                        "deviceId": "833cef47-76aa-4569-8824-af4808d17aec",
+                        "deviceName": "range hood",
+                        "deviceType": "range hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "dining room",
+                            "locationId": "336d1e3b-f61e-4ecf-8353-8b8b9d8660cd",
+                            "roomName": "dining room",
+                            "roomId": "336d1e3b-f61e-4ecf-8353-8b8b9d8660cd"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the fan speed mode on the range hood in the dining room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodFanSpeedMode_setValue",
+                            "arguments": {
+                                "device": "833cef47-76aa-4569-8824-af4808d17aec",
+                                "room": "dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed mode on the range hood in the dining room is now adjusted."
+        }
+    ],
+    "tools": []
+}

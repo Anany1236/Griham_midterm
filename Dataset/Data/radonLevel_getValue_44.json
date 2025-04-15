@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fc1f0bc0-2d82-4623-8e83-ba1dbbde435a",
+                        "deviceName": "radon detector",
+                        "deviceType": "radon detector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "7be3b910-4f20-4f35-9087-36b289bf8125",
+                            "roomName": "basement",
+                            "roomId": "7be3b910-4f20-4f35-9087-36b289bf8125"
+                        }
+                    },
+                    {
+                        "deviceId": "9d2f822f-9c3d-4170-88ef-dbd52897fc6f",
+                        "deviceName": "air quality sensor",
+                        "deviceType": "air quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "dd2b05ec-38d5-47a5-8c41-223f928e6b04",
+                            "roomName": "living room",
+                            "roomId": "dd2b05ec-38d5-47a5-8c41-223f928e6b04"
+                        }
+                    },
+                    {
+                        "deviceId": "271af26f-9733-482d-876f-191c25107109",
+                        "deviceName": "air quality sensor",
+                        "deviceType": "air quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "e3fd9aaf-dc87-4167-ae19-1450e8127724",
+                            "roomName": "utility room",
+                            "roomId": "e3fd9aaf-dc87-4167-ae19-1450e8127724"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check the radon level in the room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "radonLevel_getValue",
+                            "arguments": {
+                                "device": "fc1f0bc0-2d82-4623-8e83-ba1dbbde435a",
+                                "room": "basement"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current radon level is {value}."
+        }
+    ],
+    "tools": []
+}

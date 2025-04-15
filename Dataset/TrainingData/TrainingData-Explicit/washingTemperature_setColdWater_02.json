@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9a2d2188-cb02-4c06-afdf-44ff887f93ee",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "db24881c-5176-42fd-bd05-40ed2fa0bbcf",
+                            "roomName": "laundry room",
+                            "roomId": "7b38efc6-f182-4e2b-8910-904f0d7a36dc"
+                        }
+                    },
+                    {
+                        "deviceId": "9f95a22f-f0ce-48b2-803c-0a3e730510c9",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "db24881c-5176-42fd-bd05-40ed2fa0bbcf",
+                            "roomName": "living room",
+                            "roomId": "3dc700fe-8abe-4921-a8d7-50f80ae1b67e"
+                        }
+                    },
+                    {
+                        "deviceId": "728a1bc7-efa5-4717-a234-f6d3b44e590e",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "db24881c-5176-42fd-bd05-40ed2fa0bbcf",
+                            "roomName": "utility room",
+                            "roomId": "3871d7d0-16e3-4ff4-b5c8-8d8bb9411cf6"
+                        }
+                    },
+                    {
+                        "deviceId": "ac23abd8-a70d-455f-974f-3d85f504c83a",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "db24881c-5176-42fd-bd05-40ed2fa0bbcf",
+                            "roomName": "bedroom",
+                            "roomId": "1873cded-a370-4cf3-adfa-db19acac862b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the laundry room washer temperature to cold water"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_setColdWater",
+                            "arguments": {
+                                "device": "9a2d2188-cb02-4c06-afdf-44ff887f93ee",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the laundry room washer temperature to cold water."
+        }
+    ],
+    "tools": []
+}

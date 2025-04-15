@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b81f27e6-36cd-47bc-a6a1-aa0aec0e28df",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "cbcc2acc-0d65-4574-b3c4-c6c14ea0b027",
+                            "roomName": "bedroom",
+                            "roomId": "cbcc2acc-0d65-4574-b3c4-c6c14ea0b027"
+                        }
+                    },
+                    {
+                        "deviceId": "84499851-b1b9-443e-a589-b991689ec99d",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "50857e52-6729-4896-818b-c39502617629",
+                            "roomName": "living Room",
+                            "roomId": "50857e52-6729-4896-818b-c39502617629"
+                        }
+                    },
+                    {
+                        "deviceId": "3a2bf49a-8afe-46a2-85b8-5e8640f161c6",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "3532de5b-ad19-4de5-ab85-b97a0ae90846",
+                            "roomName": "guest Room",
+                            "roomId": "3532de5b-ad19-4de5-ab85-b97a0ae90846"
+                        }
+                    },
+                    {
+                        "deviceId": "7894a9a3-696d-42fd-a1e2-f935d12f669a",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "9471e86e-bfcf-4fcc-ac82-21cc4569d291",
+                            "roomName": "kitchen",
+                            "roomId": "9471e86e-bfcf-4fcc-ac82-21cc4569d291"
+                        }
+                    },
+                    {
+                        "deviceId": "84e44d4c-fef2-4b69-816d-e923d835d7e8",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "3bba12cc-0a7a-43db-ab44-9194a3b7e6ea",
+                            "roomName": "utility Room",
+                            "roomId": "3bba12cc-0a7a-43db-ab44-9194a3b7e6ea"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start mopping with the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mopping_start",
+                            "arguments": {
+                                "device": "3a2bf49a-8afe-46a2-85b8-5e8640f161c6",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Mopping with the light in the guest room has been initiated"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,97 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6099fb91-8dfb-48a9-93cb-eb50a1fc534b",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7403d9aa-da19-4831-a96d-5abf17afc1e6",
+                            "roomName": "bedroom",
+                            "roomId": "0dd01911-941d-4372-bca6-66591d0aff10"
+                        }
+                    },
+                    {
+                        "deviceId": "ed0b4e95-06c3-4536-b25a-fdd8dbc801b6",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7403d9aa-da19-4831-a96d-5abf17afc1e6",
+                            "roomName": "laundry room",
+                            "roomId": "44b2c4c2-004b-4177-be71-8ed2f5d66c68"
+                        }
+                    },
+                    {
+                        "deviceId": "f18f9e68-f3d8-42d2-b35b-f553b830f489",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7403d9aa-da19-4831-a96d-5abf17afc1e6",
+                            "roomName": "kitchen",
+                            "roomId": "257a633e-8b0d-4aae-bebd-37eff5d918e1"
+                        }
+                    },
+                    {
+                        "deviceId": "b70c4f49-92b0-4d31-aaa1-d30597960016",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7403d9aa-da19-4831-a96d-5abf17afc1e6",
+                            "roomName": "kitchen",
+                            "roomId": "257a633e-8b0d-4aae-bebd-37eff5d918e1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Kindly set the lower dryer in laundry room to cotton cycle"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_setCourse",
+                            "arguments": {
+                                "device": "ed0b4e95-06c3-4536-b25a-fdd8dbc801b6",
+                                "room": "laundry room",
+                                "predefinedCompartment": "lower",
+                                "mode": "cotton"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the lower dryer in laundry room to cotton cycle."
+        }
+    ],
+    "tools": []
+}

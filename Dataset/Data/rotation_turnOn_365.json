@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5d81ceb2-879f-459a-9c66-26b0adaa5812",
+                        "deviceName": "ceiling fan",
+                        "deviceType": "ceiling fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "f626f892-a808-4270-8c19-4fbedf3dda48",
+                            "roomName": "living room",
+                            "roomId": "f626f892-a808-4270-8c19-4fbedf3dda48"
+                        }
+                    },
+                    {
+                        "deviceId": "953b92c8-09ef-4812-82ab-63197f7f1499",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "438f5b44-f28d-436b-815e-14f82335677e",
+                            "roomName": "bedroom",
+                            "roomId": "438f5b44-f28d-436b-815e-14f82335677e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the rotation for the TV screen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "rotation_turnOn",
+                            "arguments": {
+                                "device": "5d81ceb2-879f-459a-9c66-26b0adaa5812",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Turn on the rotation for the TV screen."
+        }
+    ],
+    "tools": []
+}

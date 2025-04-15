@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "airConditioningMode_getValue",
+            "description": "This function is used to retrieve the current operation mode of the air conditioner via a voice command. E.g. auto, windfree, etc",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the air conditioner is located. e.g. home, office, etc."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the air conditioner is located. e.g. living room, bedroom, bathroom, etc."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name of the air conditioner whose operation mode needs to be checked. e.g. AC1, standing air conditioner, etc."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "name": "thermostatMode_setValue",
+    "description": "This function is used to change the thermostat's temperature control mode.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to change the thermostat's temperature control mode.",
+            "optional": true
+        },
+        {
+            "name": "predefinedThermostatMode",
+            "type": "string",
+            "description": "The predefined thermostat mode to be set (e.g., automatic, outing, emergency heating, standard).",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The mode to which the thermostat should be set.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

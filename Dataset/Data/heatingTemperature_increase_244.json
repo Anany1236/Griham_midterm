@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "74aaf0bf-7342-46e2-ac03-ff0be95bf7f4",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "2aba57a3-3b65-4a1d-8c69-2526de1c5971",
+                            "roomName": "bedroom",
+                            "roomId": "2aba57a3-3b65-4a1d-8c69-2526de1c5971"
+                        }
+                    },
+                    {
+                        "deviceId": "d059c8e8-f301-4f2a-a231-546127e8a17d",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "225f907d-bbfc-4a59-bdba-b8472f6aa582",
+                            "roomName": "living room",
+                            "roomId": "225f907d-bbfc-4a59-bdba-b8472f6aa582"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the heating temperature on the air conditioner."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_increase",
+                            "arguments": {
+                                "device": "74aaf0bf-7342-46e2-ac03-ff0be95bf7f4",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The heating temperature on the air conditioner has been increased."
+        }
+    ],
+    "tools": []
+}

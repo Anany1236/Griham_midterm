@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "813a22ce-31c6-4e63-be6b-7c99a7ecc87f",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "de2b9298-6c8a-4919-91b2-1887ede00a07",
+                            "roomName": "master bedroom",
+                            "roomId": "749b898d-62c6-48c6-8943-167eb342a869"
+                        }
+                    },
+                    {
+                        "deviceId": "7080ece3-557c-4035-b939-bc9dcc9ad6d2",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "de2b9298-6c8a-4919-91b2-1887ede00a07",
+                            "roomName": "washroom",
+                            "roomId": "d71f0c44-ba43-4a45-b6ae-da9ea5ac1733"
+                        }
+                    },
+                    {
+                        "deviceId": "ab7570ea-d044-407c-b225-6704deda943c",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "de2b9298-6c8a-4919-91b2-1887ede00a07",
+                            "roomName": "Living room",
+                            "roomId": "02be004d-16c0-4b12-8e6e-fd7918784d99"
+                        }
+                    },
+                    {
+                        "deviceId": "fcde3d0d-aa25-4626-ba08-09082b2ba94a",
+                        "deviceName": "robot vacuum cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "de2b9298-6c8a-4919-91b2-1887ede00a07",
+                            "roomName": "Kitchen",
+                            "roomId": "b8704add-23a3-4005-820d-654f6d034d0c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Create a map of the cleaning area in robot vacuum cleaner"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaningMap_create",
+                            "arguments": {
+                                "device": "fcde3d0d-aa25-4626-ba08-09082b2ba94a"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, I have started creating map for cleaning area"
+        }
+    ],
+    "tools": []
+}

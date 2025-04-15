@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d67113a2-1bf0-4d39-8aa4-0fe49641addb",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f55c282c-8d8a-4e74-9d75-49e9fa2b2a95",
+                            "roomName": "bedroom",
+                            "roomId": "f55c282c-8d8a-4e74-9d75-49e9fa2b2a95"
+                        }
+                    },
+                    {
+                        "deviceId": "ab837cb9-9f92-4ed3-89fa-8d156349408e",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ebfb3e73-11b6-4308-a240-27a7828768a4",
+                            "roomName": "living Room",
+                            "roomId": "ebfb3e73-11b6-4308-a240-27a7828768a4"
+                        }
+                    },
+                    {
+                        "deviceId": "e048c8c6-bbf3-46e0-a108-c9081bd7ba51",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ecd69026-711c-49e4-9209-55b0d186e470",
+                            "roomName": "guest Room",
+                            "roomId": "ecd69026-711c-49e4-9209-55b0d186e470"
+                        }
+                    },
+                    {
+                        "deviceId": "787608fb-c857-4163-a97f-e0ba31906fcc",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4d532121-e1aa-47d5-a63d-f9f1788eaee1",
+                            "roomName": "kitchen",
+                            "roomId": "4d532121-e1aa-47d5-a63d-f9f1788eaee1"
+                        }
+                    },
+                    {
+                        "deviceId": "acfe2253-f72a-405a-bfca-28bca6c6af39",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ed8ed14-02ed-4c37-9490-0eb4fbee982d",
+                            "roomName": "utility Room",
+                            "roomId": "1ed8ed14-02ed-4c37-9490-0eb4fbee982d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start the mop drying process for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mopDrying_start",
+                            "arguments": {
+                                "device": "d67113a2-1bf0-4d39-8aa4-0fe49641addb",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The mop drying process for the air conditioner in the bedroom has started"
+        }
+    ],
+    "tools": []
+}

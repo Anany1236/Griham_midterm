@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3395858f-90e8-410e-ae18-9856e26b8c21",
+                        "deviceName": "water purifier",
+                        "deviceType": "water purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "bb3223eb-b660-4f39-9b2d-03eed3b21b2e",
+                            "roomName": "kitchen",
+                            "roomId": "bb3223eb-b660-4f39-9b2d-03eed3b21b2e"
+                        }
+                    },
+                    {
+                        "deviceId": "1e3013e8-097f-4c11-a46d-cfa91de88b58",
+                        "deviceName": "water dispenser",
+                        "deviceType": "water dispenser",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "a35ef435-22e0-47fe-ad0a-59f4e7d5529b",
+                            "roomName": "utility room",
+                            "roomId": "a35ef435-22e0-47fe-ad0a-59f4e7d5529b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please dispense some water from the dispenser."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "water_dispense",
+                            "arguments": {
+                                "device": "3395858f-90e8-410e-ae18-9856e26b8c21",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive dispensed water from the dispenser."
+        }
+    ],
+    "tools": []
+}

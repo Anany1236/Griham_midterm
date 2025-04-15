@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5a2f05da-3adf-4dfa-a45c-3d1d09e8d8c1",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e19a45b2-d590-4b36-a560-1d70423ed124",
+                            "roomName": "kitchen",
+                            "roomId": "e19a45b2-d590-4b36-a560-1d70423ed124"
+                        }
+                    },
+                    {
+                        "deviceId": "a9f6a098-abd5-46f1-96ae-ba7f83fc6448",
+                        "deviceName": "freezer",
+                        "deviceType": "freezer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "garage",
+                            "locationId": "cbc18c5b-f7a5-4279-91da-7d6ac923d665",
+                            "roomName": "garage",
+                            "roomId": "cbc18c5b-f7a5-4279-91da-7d6ac923d665"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the defrost mode on the freezer in the garage?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scene_execute",
+                            "arguments": {
+                                "device": "a9f6a098-abd5-46f1-96ae-ba7f83fc6448",
+                                "room": "garage"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The defrost mode has been disabled on the freezer in the garage."
+        }
+    ],
+    "tools": []
+}

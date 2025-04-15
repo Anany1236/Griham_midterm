@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "07555263-b3b2-4037-9293-fc485c3f737e",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d8ee266d-8e24-4dcc-b370-6eb6c26b67bd",
+                            "roomName": "bedroom",
+                            "roomId": "d8ee266d-8e24-4dcc-b370-6eb6c26b67bd"
+                        }
+                    },
+                    {
+                        "deviceId": "0730d727-7bb6-48f9-bbe6-30c589aff85c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "88bbd419-63c0-4bb5-a333-814c6d611e82",
+                            "roomName": "living Room",
+                            "roomId": "88bbd419-63c0-4bb5-a333-814c6d611e82"
+                        }
+                    },
+                    {
+                        "deviceId": "4375935a-ef99-42b9-91a1-b23b546d5bbc",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5b58e1ee-259d-45f8-bb5c-118a08ccfce3",
+                            "roomName": "guest Room",
+                            "roomId": "5b58e1ee-259d-45f8-bb5c-118a08ccfce3"
+                        }
+                    },
+                    {
+                        "deviceId": "47cd5f30-a607-4b0f-8a02-c3f8cb2613e4",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3c6d6ee1-9885-41c3-9023-805649d5393f",
+                            "roomName": "kitchen",
+                            "roomId": "3c6d6ee1-9885-41c3-9023-805649d5393f"
+                        }
+                    },
+                    {
+                        "deviceId": "c82b2cca-f121-4d0e-a149-08bec211d22d",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8e4e2631-4194-44f9-916c-4bcee3220a14",
+                            "roomName": "utility Room",
+                            "roomId": "8e4e2631-4194-44f9-916c-4bcee3220a14"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the humidification mode for the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "humidificationMode_setValue",
+                            "arguments": {
+                                "device": "4375935a-ef99-42b9-91a1-b23b546d5bbc",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The humidification mode for the light in the guest room is set"
+        }
+    ],
+    "tools": []
+}

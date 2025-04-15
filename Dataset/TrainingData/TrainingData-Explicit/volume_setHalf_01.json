@@ -1,0 +1,71 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "e9608ee5-5e37-49f7-96a7-32ca52317a78",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "0f5a19f2-63a7-4985-970c-d1a75032d41e",
+							"roomName": "Living room",
+							"roomId": "23edcaa7-ccbc-4f40-9f1e-92c1fe638895"
+						}
+					},
+					{
+						"deviceId": "62f05755-033b-4c56-aa7e-88ef365e97ed",
+						"deviceName": "light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "0f5a19f2-63a7-4985-970c-d1a75032d41e",
+							"roomName": "Kitchen",
+							"roomId": "f1f14e86-9c43-4cf3-a130-b91e1e0e3b7e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Set the volume to half of tv in living room"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setHalf",
+							"arguments": {
+								"device": "e9608ee5-5e37-49f7-96a7-32ca52317a78",
+								"room": "living room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to half of tv in the living room."
+		}
+	],
+	"tools": []
+}

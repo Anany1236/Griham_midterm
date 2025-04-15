@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ec5fbe56-809a-4681-ab4b-19ebd0ddac6b",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "a146b844-18db-42cd-b9da-1b845f1c844c",
+                            "roomName": "kitchen",
+                            "roomId": "a146b844-18db-42cd-b9da-1b845f1c844c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please enable the power cool mode on the fridge."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerCoolMode_turnOn",
+                            "arguments": {
+                                "device": "ec5fbe56-809a-4681-ab4b-19ebd0ddac6b",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have enabled the power cool mode for the fridge."
+        }
+    ],
+    "tools": []
+}

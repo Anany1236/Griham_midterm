@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7a417972-f914-4071-964d-803a1805e485",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "301a7a66-91e7-4948-89e9-73b650e4c478",
+                            "roomName": "bathroom",
+                            "roomId": "301a7a66-91e7-4948-89e9-73b650e4c478"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the water heating mode to eco in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeatingMode_setValue",
+                            "arguments": {
+                                "device": "7a417972-f914-4071-964d-803a1805e485",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water heating mode in the bathroom has been set to eco."
+        }
+    ],
+    "tools": []
+}

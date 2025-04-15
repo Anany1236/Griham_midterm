@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "humidificationMode_setValue",
+            "description": "This function is used to change the humidification mode of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to change the humidification mode."
+                    },
+                    "predefinedHumidificationMode": {
+                        "type": "string",
+                        "description": "The predefined humidification mode to set (e.g., auto, medium, high, low)."
+                    }
+                },
+                "required": [
+                    "predefinedHumidificationMode"
+                ]
+            }
+        }
+    ]
+}

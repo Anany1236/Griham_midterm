@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "81045f82-3f2b-40c9-bb36-62aa0d577e37",
+                        "deviceName": "dishcleaner",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b4806cc-b3ed-4f25-b0c5-5e0049b83be3",
+                            "roomName": "Kitchen",
+                            "roomId": "f59ca15e-2df2-4e5b-afda-3e75fcc00081"
+                        }
+                    },
+                    {
+                        "deviceId": "57b02f88-779f-4e4f-80b5-344196db0739",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b4806cc-b3ed-4f25-b0c5-5e0049b83be3",
+                            "roomName": "Living room",
+                            "roomId": "097d7703-0f71-4aeb-a2d8-c8b7636d7219"
+                        }
+                    },
+                    {
+                        "deviceId": "13c41777-9b04-4380-9054-f0a5710fcd34",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b4806cc-b3ed-4f25-b0c5-5e0049b83be3",
+                            "roomName": "Living room",
+                            "roomId": "097d7703-0f71-4aeb-a2d8-c8b7636d7219"
+                        }
+                    },
+                    {
+                        "deviceId": "69af862a-1379-406d-b409-b242b7c18468",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b4806cc-b3ed-4f25-b0c5-5e0049b83be3",
+                            "roomName": "living room",
+                            "roomId": "3155cba1-0390-4972-a65a-07673f0a6744"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you close the living room blinds?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_close",
+                            "arguments": {
+                                "device": "69af862a-1379-406d-b409-b242b7c18468",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, I have closed the living room blinds"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "26430e9f-4d0d-48ed-a31b-d40ede55c1b7",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ee962ae6-786a-4a99-8c12-a1d50a71a354",
+                            "roomName": "living room",
+                            "roomId": "ee962ae6-786a-4a99-8c12-a1d50a71a354"
+                        }
+                    },
+                    {
+                        "deviceId": "41c04b68-55f9-4cf4-943a-0cbbaa148e88",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robot cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "8834288d-fe42-4e60-a7a2-c9c3e4feed08",
+                            "roomName": "bedroom",
+                            "roomId": "8834288d-fe42-4e60-a7a2-c9c3e4feed08"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the progress of the air conditioner in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getProgress",
+                            "arguments": {
+                                "device": "26430e9f-4d0d-48ed-a31b-d40ede55c1b7",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air conditioner in the bedroom is at 50% progress."
+        }
+    ],
+    "tools": []
+}

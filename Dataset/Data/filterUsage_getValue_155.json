@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "776b69a6-d2da-43d6-b2b9-3311dbec7d48",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cc94412d-3b63-47e9-ba3d-58de8bb88a61",
+                            "roomName": "bedroom",
+                            "roomId": "cc94412d-3b63-47e9-ba3d-58de8bb88a61"
+                        }
+                    },
+                    {
+                        "deviceId": "2cd3b20e-e836-4386-8951-96cd9b005f3d",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "59d7629e-0ac9-4a67-8349-7acb244490a7",
+                            "roomName": "living Room",
+                            "roomId": "59d7629e-0ac9-4a67-8349-7acb244490a7"
+                        }
+                    },
+                    {
+                        "deviceId": "14b4e67e-e1ec-4ac8-97d3-4eef39872ad3",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7527bb94-2f00-4cff-b852-74832496aa5e",
+                            "roomName": "guest Room",
+                            "roomId": "7527bb94-2f00-4cff-b852-74832496aa5e"
+                        }
+                    },
+                    {
+                        "deviceId": "48f15ff4-1c11-454c-9cf8-38ea4d0af134",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2cc46033-7f14-486d-b057-6daa76af49c7",
+                            "roomName": "kitchen",
+                            "roomId": "2cc46033-7f14-486d-b057-6daa76af49c7"
+                        }
+                    },
+                    {
+                        "deviceId": "7adaa44f-0e7c-445d-af0e-00c75165b0c0",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "eeabebce-5854-430d-9eaf-453486346071",
+                            "roomName": "utility Room",
+                            "roomId": "eeabebce-5854-430d-9eaf-453486346071"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the filter usage value of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "filterUsage_getValue",
+                            "arguments": {
+                                "device": "7adaa44f-0e7c-445d-af0e-00c75165b0c0",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The filter usage value of the hood in the utility room is available"
+        }
+    ],
+    "tools": []
+}

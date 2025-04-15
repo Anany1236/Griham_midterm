@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bfbd472a-ff7a-495e-a2db-43ac09f78294",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "8a8b628d-fc1d-473a-9ff8-91a81ed3815d",
+                            "roomName": "living room",
+                            "roomId": "8a8b628d-fc1d-473a-9ff8-91a81ed3815d"
+                        }
+                    },
+                    {
+                        "deviceId": "ae7bc9d4-ba18-4b18-9cba-d111fcbcc5d6",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "0b63b2e2-1ec6-4107-8c71-58cbda292ca6",
+                            "roomName": "bedroom",
+                            "roomId": "0b63b2e2-1ec6-4107-8c71-58cbda292ca6"
+                        }
+                    },
+                    {
+                        "deviceId": "574c3713-433b-4729-96af-06cbbc0c26ee",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "cb2aae96-b257-4152-ac3f-1701cd0e3689",
+                            "roomName": "laundry room",
+                            "roomId": "cb2aae96-b257-4152-ac3f-1701cd0e3689"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please activate the speed mode on the washing machine in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "speedMode_turnOn",
+                            "arguments": {
+                                "device": "574c3713-433b-4729-96af-06cbbc0c26ee",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The speed mode on the washing machine in the laundry room has been activated."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5b7d57ed-c1d6-4db3-babb-0c45fec65611",
+                        "deviceName": "water sensor",
+                        "deviceType": "water sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "1495c274-7f11-4050-af69-2d5cd789b59c",
+                            "roomName": "basement",
+                            "roomId": "1495c274-7f11-4050-af69-2d5cd789b59c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the status of the water sensor in the basement?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterSensor_getStatus",
+                            "arguments": {
+                                "device": "5b7d57ed-c1d6-4db3-babb-0c45fec65611",
+                                "room": "basement"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water sensor in the basement is inactive."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "application_launch",
+            "description": "This function is used to launch an application on TV device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device which needs to be used to launch the application is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the air conditioner is located. e.g. living room, bedroom, bathroom, etc."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to be used to launch an application."
+                    },
+                    "app_name": {
+                        "type": "string",
+                        "description": "The application which the user intends to launch on the device"
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "1744a06c-8ff0-4c1d-924d-9899b21ccb31",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "f352a80f-a62e-42fc-90f6-0fb2d789ac10",
+							"roomName": "master bedroom",
+							"roomId": "0a5d9d15-97a1-4351-88c8-d11b1b9efed8"
+						}
+					},
+					{
+						"deviceId": "a55d2f1d-ab89-4aea-afcb-f0e4e0cb35d3",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "f352a80f-a62e-42fc-90f6-0fb2d789ac10",
+							"roomName": "living room",
+							"roomId": "377f87b7-c05d-46db-adb0-156ba4873411"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you set the volume to minimum of master bedroom speaker?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMin",
+							"arguments": {
+								"device": "1744a06c-8ff0-4c1d-924d-9899b21ccb31",
+								"room": "master bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to minimum of master bedroom speaker."
+		}
+	],
+	"tools": []
+}

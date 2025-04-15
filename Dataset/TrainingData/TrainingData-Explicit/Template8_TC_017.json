@@ -1,0 +1,68 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Set temperature to 26 in Bed room thermostat"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperatureSetting_setValue",
+                            "arguments": {
+                                "device": "thermostat",
+                                "room": "Bed room",
+                                "temperature": 26
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The bed room thermostat temperature is at 26."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "deviceTemperatureSetting_setValue",
+                    "description": "This function is used to set a temperature on device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "temperature": {
+                                "type": "string",
+                                "description": "Target temperature to be used"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "temperature"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

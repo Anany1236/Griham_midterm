@@ -1,0 +1,38 @@
+{
+    "name": "deviceState_setValue",
+    "description": "This function is used to set a specific value on a SmartThings device, excluding volume or temperature adjustments.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the specific value.",
+            "optional": true
+        },
+        {
+            "name": "number",
+            "type": "float",
+            "description": "The specific value to set on the device.",
+            "optional": true
+        },
+        {
+            "name": "predefinedUnit",
+            "type": "string",
+            "description": "The predefined unit for the specific value to set on the device.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

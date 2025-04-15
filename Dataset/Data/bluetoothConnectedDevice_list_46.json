@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "13694f6a-7dee-4329-a762-6eecec033560",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e3616885-bc69-481a-ad26-c7b75343fd67",
+                            "roomName": "bedroom",
+                            "roomId": "e3616885-bc69-481a-ad26-c7b75343fd67"
+                        }
+                    },
+                    {
+                        "deviceId": "63c5fc21-ea2c-4c34-bf72-dba961a215ad",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "67e65704-522c-40b0-bfcf-6709fd5f0998",
+                            "roomName": "living Room",
+                            "roomId": "67e65704-522c-40b0-bfcf-6709fd5f0998"
+                        }
+                    },
+                    {
+                        "deviceId": "d076d4b4-b26e-456a-9e5c-dfd7cd84c7a1",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "24b815e5-da85-4b4d-8340-623750ac959b",
+                            "roomName": "guest Room",
+                            "roomId": "24b815e5-da85-4b4d-8340-623750ac959b"
+                        }
+                    },
+                    {
+                        "deviceId": "9e8d7107-67bf-4304-8069-f448a316ec31",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0d7026ae-6f04-4ceb-b064-9bbd440f759d",
+                            "roomName": "kitchen",
+                            "roomId": "0d7026ae-6f04-4ceb-b064-9bbd440f759d"
+                        }
+                    },
+                    {
+                        "deviceId": "6620e838-c42d-49f7-98a8-4df72f09c8c6",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19c4d658-d379-4a4b-9f40-fe48133f719d",
+                            "roomName": "utility Room",
+                            "roomId": "19c4d658-d379-4a4b-9f40-fe48133f719d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "List all Bluetooth-connected devices on the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bluetoothConnectedDevice_list",
+                            "arguments": {
+                                "device": "13694f6a-7dee-4329-a762-6eecec033560",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Here is the list of Bluetooth-connected devices on the air conditioner in the bedroom"
+        }
+    ],
+    "tools": []
+}

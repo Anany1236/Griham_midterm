@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f2006ac7-1037-4cad-92f6-f4d7cfd9e982",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "548f5050-e4f4-4566-bbcd-6b08874abb1c",
+                            "roomName": "living room",
+                            "roomId": "2203d82b-b5fc-4851-82a4-007542733f7d"
+                        }
+                    },
+                    {
+                        "deviceId": "d64db0eb-5b18-4cfc-bec6-af1de55595bc",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "548f5050-e4f4-4566-bbcd-6b08874abb1c",
+                            "roomName": "bedroom",
+                            "roomId": "63a7cdf6-b522-4cd2-aa00-f245f61427ca"
+                        }
+                    },
+                    {
+                        "deviceId": "850b0dc5-3df5-42cd-8c67-65bd0513eb0c",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "548f5050-e4f4-4566-bbcd-6b08874abb1c",
+                            "roomName": "laundry room",
+                            "roomId": "9037dd2b-6c42-436b-b794-2a3fb5655634"
+                        }
+                    },
+                    {
+                        "deviceId": "e7a6df6b-358e-46ba-b3eb-83e0de760c1f",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "548f5050-e4f4-4566-bbcd-6b08874abb1c",
+                            "roomName": "bedroom",
+                            "roomId": "63a7cdf6-b522-4cd2-aa00-f245f61427ca"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the speaker partially"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_increasePartial",
+                            "arguments": {
+                                "device": "d64db0eb-5b18-4cfc-bec6-af1de55595bc"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have increased the speaker partially."
+        }
+    ],
+    "tools": []
+}

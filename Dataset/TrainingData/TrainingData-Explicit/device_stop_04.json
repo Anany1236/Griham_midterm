@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "88c829cd-9e98-4c3b-b0a8-3555c4d26765",
+                        "deviceName": "airpurifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e76e73a-3929-4f30-9265-1aa1750c8078",
+                            "roomName": "living room",
+                            "roomId": "56085adb-a40d-4606-9471-2435b2f62cfe"
+                        }
+                    },
+                    {
+                        "deviceId": "b9c0d790-ed98-44a4-9020-6893af558ae3",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e76e73a-3929-4f30-9265-1aa1750c8078",
+                            "roomName": "guest room",
+                            "roomId": "56085adb-a40d-4606-9471-2435b2f62cfe"
+                        }
+                    },
+                    {
+                        "deviceId": "d98f17ae-bb7f-4ee3-9bbe-6739fbbad9bb",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e76e73a-3929-4f30-9265-1aa1750c8078",
+                            "roomName": "living room",
+                            "roomId": "56085adb-a40d-4606-9471-2435b2f62cfe"
+                        }
+                    },
+                    {
+                        "deviceId": "657f73b1-2a07-49d0-b9d8-a6639c5e2e7d",
+                        "deviceName": "cleaner",
+                        "deviceType": "cleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0e76e73a-3929-4f30-9265-1aa1750c8078",
+                            "roomName": "living room",
+                            "roomId": "56085adb-a40d-4606-9471-2435b2f62cfe"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the dehumidifier in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_stop",
+                            "arguments": {
+                                "device": "b9c0d790-ed98-44a4-9020-6893af558ae3",
+                                "room": "guest room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have turned off the dehumidifier in teh guest room"
+        }
+    ],
+    "tools": []
+}

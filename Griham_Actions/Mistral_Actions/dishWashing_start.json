@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "dishWashing_start",
+            "description": "This function is used to start the dishwashing function on a specified SmartThings dishwasher.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the dishwasher is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the dishwasher is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name of the dishwasher on which the dishwashing function needs to be started."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment of the dishwasher on which the dishwashing function needs to be started."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

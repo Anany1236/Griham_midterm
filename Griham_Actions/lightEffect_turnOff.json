@@ -1,0 +1,38 @@
+{
+    "name": "lightEffect_turnOff",
+    "description": "This function is used to turn off the light effect function of a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to turn off the light effect.",
+            "optional": true
+        },
+        {
+            "name": "predefinedLightEffect",
+            "type": "string",
+            "description": "The specific light effect function to be turned off (e.g., gradual turn-on, gradual turn-off).",
+            "optional": false
+        },
+        {
+            "name": "groupAction",
+            "type": "boolean",
+            "description": "Whether the action applies to a group of devices.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

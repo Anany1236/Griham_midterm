@@ -1,0 +1,71 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "009112f2-24a0-43d3-a274-551539da20d6",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "1667fa18-160d-4d6f-abb0-40f945586287",
+							"roomName": "kids room",
+							"roomId": "47b4df99-b62d-4841-a706-4f9e59cb594a"
+						}
+					},
+					{
+						"deviceId": "46e9e11b-f665-4cfb-a074-9d9dfb797359",
+						"deviceName": "light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "1667fa18-160d-4d6f-abb0-40f945586287",
+							"roomName": "Kitchen",
+							"roomId": "7446f139-7e03-4170-a0bb-d422c7629c5e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you set the volume to maximum of kids room speaker?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMax",
+							"arguments": {
+								"device": "009112f2-24a0-43d3-a274-551539da20d6",
+								"room": "kids room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to maximum of kids room speaker."
+		}
+	],
+	"tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7f8899ac-3a3d-466a-b569-8eaeb4fdcf6b",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "f2588be8-6438-42f8-b265-5d2c3acc402f",
+                            "roomName": "kitchen",
+                            "roomId": "f2588be8-6438-42f8-b265-5d2c3acc402f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Cancel the cooking mode on the oven."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_cancel",
+                            "arguments": {
+                                "device": "7f8899ac-3a3d-466a-b569-8eaeb4fdcf6b",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking mode on the oven has been canceled."
+        }
+    ],
+    "tools": []
+}

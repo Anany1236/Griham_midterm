@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9ace3e54-4450-4190-87ae-f15342ce3593",
+                        "deviceName": "charger",
+                        "deviceType": "charger",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "a76c9642-d7b9-4b4f-9b6c-d4d45668515a",
+                            "roomName": "bedroom",
+                            "roomId": "a76c9642-d7b9-4b4f-9b6c-d4d45668515a"
+                        }
+                    },
+                    {
+                        "deviceId": "397aa115-03ea-4969-ab08-0180f031633c",
+                        "deviceName": "lamp",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "0fafe005-f90c-44e3-9cf4-2cfb4d3d6b0a",
+                            "roomName": "living room",
+                            "roomId": "0fafe005-f90c-44e3-9cf4-2cfb4d3d6b0a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the charger lamp in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chargerLamp_turnOn",
+                            "arguments": {
+                                "device": "9ace3e54-4450-4190-87ae-f15342ce3593",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The charger lamp in the bedroom is now on."
+        }
+    ],
+    "tools": []
+}

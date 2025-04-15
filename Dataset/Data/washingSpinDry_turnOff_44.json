@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "96d900ab-bcf7-4466-9586-37954110884b",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "d05a7b6e-fe98-4ea4-97e2-57a73c0a9183",
+                            "roomName": "laundry room",
+                            "roomId": "d05a7b6e-fe98-4ea4-97e2-57a73c0a9183"
+                        }
+                    },
+                    {
+                        "deviceId": "39b3c7bb-700c-4238-b2e2-b31b5ca1ae9b",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "856f02ac-b941-4444-83c4-36f160ac0b44",
+                            "roomName": "kitchen",
+                            "roomId": "856f02ac-b941-4444-83c4-36f160ac0b44"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the spin dry function on the washing machine in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingSpinDry_turnOff",
+                            "arguments": {
+                                "device": "96d900ab-bcf7-4466-9586-37954110884b",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The spin dry function on the washing machine in the laundry room has been turned off."
+        }
+    ],
+    "tools": []
+}

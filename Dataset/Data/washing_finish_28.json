@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "60a9a59b-662e-4731-aabf-f653882d4217",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "d6f0528c-5f8a-4eb8-8a64-d0b507714bf2",
+                            "roomName": "laundry room",
+                            "roomId": "d6f0528c-5f8a-4eb8-8a64-d0b507714bf2"
+                        }
+                    },
+                    {
+                        "deviceId": "0ec7da2e-a152-449f-8855-c639c0687061",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "d7727dd2-16fc-492c-a79f-6ebcdc5ee03e",
+                            "roomName": "kitchen",
+                            "roomId": "d7727dd2-16fc-492c-a79f-6ebcdc5ee03e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "The door in the bedroom is currently closed."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washing_finish",
+                            "arguments": {
+                                "device": "60a9a59b-662e-4731-aabf-f653882d4217",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washing is complete in the bathroom."
+        }
+    ],
+    "tools": []
+}

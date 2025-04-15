@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "b99012b0-884d-43b2-af89-12ddcd30b716",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "9664adcb-66fa-4c83-b776-f858ed6fe674",
+							"roomName": "living room",
+							"roomId": "61d5c51c-7f1a-46c7-9e36-638c759cea7b"
+						}
+					},
+					{
+						"deviceId": "beb4f03e-356f-4d8a-8f9a-fe16e5bc24ec",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "9664adcb-66fa-4c83-b776-f858ed6fe674",
+							"roomName": "bedroom",
+							"roomId": "e181eb7f-c2fa-4794-9bff-8bae68ccad56"
+						}
+					},
+					{
+						"deviceId": "b85cf466-fce5-449b-9d41-72f4e8366a3b",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "9664adcb-66fa-4c83-b776-f858ed6fe674",
+							"roomName": "master bedroom",
+							"roomId": "9eb84569-0630-4705-a405-b8050a0fda8d"
+						}
+					},
+					{
+						"deviceId": "ffedac59-6f0e-47fb-a80f-f6aa248c6670",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "9664adcb-66fa-4c83-b776-f858ed6fe674",
+							"roomName": "kitchen",
+							"roomId": "87d2a2bc-9e86-4f94-b21b-44c8bab4be09"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you set the brightness to maximum of living room projector?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_setMax",
+							"arguments": {
+								"device": "b99012b0-884d-43b2-af89-12ddcd30b716",
+								"room": "living room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the brightness to maximum of living room projector."
+		}
+	],
+	"tools": []
+}

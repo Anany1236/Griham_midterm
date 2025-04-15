@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "05b40766-3644-4fb5-9dd9-83a984deeeb4",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2fc19b2-8ba3-45b1-a0d2-c0d132c2c129",
+                            "roomName": "Bedroom",
+                            "roomId": "c193df27-f33a-43bc-989d-92307181f3af"
+                        }
+                    },
+                    {
+                        "deviceId": "fc81df09-15ed-4d1d-a1f6-afbd4befedd7",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2fc19b2-8ba3-45b1-a0d2-c0d132c2c129",
+                            "roomName": "kitchen",
+                            "roomId": "c7b459f6-05c6-4d20-b410-fe2cb9c6b7ae"
+                        }
+                    },
+                    {
+                        "deviceId": "d74975b4-d5c0-4686-a824-fb6186e50158",
+                        "deviceName": "stick cleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2fc19b2-8ba3-45b1-a0d2-c0d132c2c129",
+                            "roomName": "master bedroom",
+                            "roomId": "58564be0-a288-4c5e-98fc-5e8be9e5becd"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you switch to auto mode in master bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_setMode",
+                            "arguments": {
+                                "room": "master bedroom",
+                                "predefinedCleaningMode": "auto"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have switched to auto mode in master bedroom."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,39 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "drying_startCourse",
+            "description": "This function is used to start a specific dryer course.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to start the course."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to start the course."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode to start for the dryer."
+                    },
+                    "predefinedMode": {
+                        "type": "string",
+                        "description": "The predefined mode to start for the dryer."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

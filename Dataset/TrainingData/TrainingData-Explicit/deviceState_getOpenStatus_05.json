@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cd8bca95-fdda-4025-9551-467c5ce3d66d",
+                        "deviceName": "gas valve",
+                        "deviceType": "gasvalve",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d601b4e8-e131-40b9-b708-6db2d48fad0d",
+                            "roomName": "kitchen",
+                            "roomId": "f042c9e4-6ae3-47af-992e-345443ddf4d4"
+                        }
+                    },
+                    {
+                        "deviceId": "43355cf3-67ae-4ba3-adba-8d37180368fc",
+                        "deviceName": "smart lock",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d601b4e8-e131-40b9-b708-6db2d48fad0d",
+                            "roomName": "bedroom",
+                            "roomId": "72f99ad6-d39f-4701-a448-ea48b66b148e"
+                        }
+                    },
+                    {
+                        "deviceId": "e8423131-4e1e-4552-97f9-9f03fffb9c0b",
+                        "deviceName": "water valve",
+                        "deviceType": "watervalve",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d601b4e8-e131-40b9-b708-6db2d48fad0d",
+                            "roomName": "laundry room",
+                            "roomId": "3dc6e26e-4d8f-4c42-a17f-1db0bd3a3f62"
+                        }
+                    },
+                    {
+                        "deviceId": "66a0b57b-ff4b-433e-a620-3641b93627d8",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d601b4e8-e131-40b9-b708-6db2d48fad0d",
+                            "roomName": "bedroom",
+                            "roomId": "72f99ad6-d39f-4701-a448-ea48b66b148e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is the blinds state open in bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getOpenStatus",
+                            "arguments": {
+                                "device": "66a0b57b-ff4b-433e-a620-3641b93627d8"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, the blinds state is open in bedroom."
+        }
+    ],
+    "tools": []
+}

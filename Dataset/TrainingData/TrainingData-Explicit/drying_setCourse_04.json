@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8b9c8b32-ecc8-44d0-9869-7b1999c7e4d0",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a78de79a-f212-4d4b-a4b9-d932b4732f39",
+                            "roomName": "bedroom",
+                            "roomId": "ba1d6520-819c-4330-83fd-97937efbe851"
+                        }
+                    },
+                    {
+                        "deviceId": "e1517ceb-db82-4b60-a1a4-03f53854aeae",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a78de79a-f212-4d4b-a4b9-d932b4732f39",
+                            "roomName": "laundry room",
+                            "roomId": "49c00136-0fe5-499e-809f-fff6eb8cf26d"
+                        }
+                    },
+                    {
+                        "deviceId": "5ff5bc81-5b54-4bed-934c-c4052ff1d720",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a78de79a-f212-4d4b-a4b9-d932b4732f39",
+                            "roomName": "kitchen",
+                            "roomId": "f9e1ef84-63a0-4c8c-b59e-d8fa03401810"
+                        }
+                    },
+                    {
+                        "deviceId": "7dc39445-edc8-44eb-b426-38a926982952",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a78de79a-f212-4d4b-a4b9-d932b4732f39",
+                            "roomName": "kitchen",
+                            "roomId": "f9e1ef84-63a0-4c8c-b59e-d8fa03401810"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the dryer to normal course"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_setCourse",
+                            "arguments": {
+                                "device": "e1517ceb-db82-4b60-a1a4-03f53854aeae",
+                                "mode": "normal"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the dryer to normal course."
+        }
+    ],
+    "tools": []
+}

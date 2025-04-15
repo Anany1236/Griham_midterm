@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d04885ca-d0bd-4797-95f2-a5e09c749730",
+                        "deviceName": "washer1",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "87358605-520e-4c43-981f-1bdc2f322e61",
+                            "roomName": "laundry room",
+                            "roomId": "42e955ee-f4f0-4a5a-943f-e0b8fa9f9df9"
+                        }
+                    },
+                    {
+                        "deviceId": "9c095ca9-ea0e-40fa-8929-b5506645075b",
+                        "deviceName": "washer2",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "87358605-520e-4c43-981f-1bdc2f322e61",
+                            "roomName": "bathroom1",
+                            "roomId": "6631e1d4-899b-4f57-a1b8-60e7cb14dc2f"
+                        }
+                    },
+                    {
+                        "deviceId": "adffda7d-96f4-4f4b-9d86-32c69bf62913",
+                        "deviceName": "washer3",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "87358605-520e-4c43-981f-1bdc2f322e61",
+                            "roomName": "utility room",
+                            "roomId": "d0ba6b82-7851-4b6f-b648-25b40d7d63c4"
+                        }
+                    },
+                    {
+                        "deviceId": "5ca64101-4d1a-47b6-99ed-42c330e02248",
+                        "deviceName": "washer4",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "87358605-520e-4c43-981f-1bdc2f322e61",
+                            "roomName": "bathroom2",
+                            "roomId": "00913def-21dd-48a8-9c9a-eda3ab74fe26"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the washing course of the washer to cooling mode in the laundry room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washing_setCourse",
+                            "arguments": {
+                                "device": "d04885ca-d0bd-4797-95f2-a5e09c749730",
+                                "room": "laundry room",
+                                "mode": "cooling"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The laundry room washer has been set to cooling mode"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7fd25883-9672-482e-8aff-53226b17092a",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "dd3af71a-053e-4aba-9123-191cb1954d68",
+                            "roomName": "living room",
+                            "roomId": "dd3af71a-053e-4aba-9123-191cb1954d68"
+                        }
+                    },
+                    {
+                        "deviceId": "79316498-5f06-4105-9492-3ff090f176aa",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home office",
+                            "locationId": "330d2bc6-6aaa-4536-85a1-99c90aaf4bc7",
+                            "roomName": "home office",
+                            "roomId": "330d2bc6-6aaa-4536-85a1-99c90aaf4bc7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the screen rotation to vertical?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "screenRotation_setVertical",
+                            "arguments": {
+                                "device": "7fd25883-9672-482e-8aff-53226b17092a",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The screen is now in vertical mode."
+        }
+    ],
+    "tools": []
+}

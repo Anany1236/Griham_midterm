@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4dc86794-6533-48a7-853f-35ff991ee1f6",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "608641c1-1763-473c-b1cf-bd612e9cae1e",
+                            "roomName": "bedroom",
+                            "roomId": "608641c1-1763-473c-b1cf-bd612e9cae1e"
+                        }
+                    },
+                    {
+                        "deviceId": "94ef4bd6-3112-4260-821d-399185185dbe",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2b0e4347-56a1-494d-962a-2be315b6f61c",
+                            "roomName": "living Room",
+                            "roomId": "2b0e4347-56a1-494d-962a-2be315b6f61c"
+                        }
+                    },
+                    {
+                        "deviceId": "98be4212-ed2a-438b-9d16-e304c6499b3b",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6ad232c2-33b9-4027-b83d-c4f704756375",
+                            "roomName": "guest Room",
+                            "roomId": "6ad232c2-33b9-4027-b83d-c4f704756375"
+                        }
+                    },
+                    {
+                        "deviceId": "e9630648-c765-4fc2-bf65-b5dff17c148d",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6e026c3-1ee7-4a82-b142-7f422a937f79",
+                            "roomName": "kitchen",
+                            "roomId": "f6e026c3-1ee7-4a82-b142-7f422a937f79"
+                        }
+                    },
+                    {
+                        "deviceId": "6b01f7e2-0898-439d-bd3b-8d8b476ad67e",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "de749dc7-fe0b-4500-a5a1-dcae099537e4",
+                            "roomName": "utility Room",
+                            "roomId": "de749dc7-fe0b-4500-a5a1-dcae099537e4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the continuity status of the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "continuity_getStatus",
+                            "arguments": {
+                                "device": "94ef4bd6-3112-4260-821d-399185185dbe",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The continuity status of the air purifier in the living room is displayed"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1ba073a9-0f84-465c-a9ad-b2f7434c1b6e",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3aa6a238-bb80-47d4-8a21-d5c331415993",
+                            "roomName": "bedroom",
+                            "roomId": "3aa6a238-bb80-47d4-8a21-d5c331415993"
+                        }
+                    },
+                    {
+                        "deviceId": "1a7dd23b-842d-4f81-a8ec-87ec8d808a10",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "765bfcb4-1a65-41a2-bda6-b02dd439a4dc",
+                            "roomName": "living Room",
+                            "roomId": "765bfcb4-1a65-41a2-bda6-b02dd439a4dc"
+                        }
+                    },
+                    {
+                        "deviceId": "46db486a-4373-4f1b-bbbb-596e6f602204",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7d9cee1b-f039-4157-8b1a-db455b2f99c2",
+                            "roomName": "guest Room",
+                            "roomId": "7d9cee1b-f039-4157-8b1a-db455b2f99c2"
+                        }
+                    },
+                    {
+                        "deviceId": "8a2cd3dc-f5a8-4bab-bd4a-02c288cded3f",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cd718d2c-7014-4b7b-a471-1f08f4f67f61",
+                            "roomName": "kitchen",
+                            "roomId": "cd718d2c-7014-4b7b-a471-1f08f4f67f61"
+                        }
+                    },
+                    {
+                        "deviceId": "54582f77-21a0-4e45-8f15-21ba265c1900",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6c8a5027-fe26-4a20-ba87-b34aa3987b77",
+                            "roomName": "utility Room",
+                            "roomId": "6c8a5027-fe26-4a20-ba87-b34aa3987b77"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the detected sound type of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "detectedSoundType_getValue",
+                            "arguments": {
+                                "device": "46db486a-4373-4f1b-bbbb-596e6f602204",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The detected sound type of the light in the guest room is displayed"
+        }
+    ],
+    "tools": []
+}

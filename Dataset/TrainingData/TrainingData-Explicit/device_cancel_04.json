@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2464a435-f6a8-45f7-9a8f-eb60ead32527",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9499486a-01d9-4fda-8395-af39e471c795",
+                            "roomName": "bedroom",
+                            "roomId": "9b8c398d-c4ee-4173-a236-bc593feff435"
+                        }
+                    },
+                    {
+                        "deviceId": "58df00c4-ca43-4cbd-a1cc-80a70fd65dd3",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9499486a-01d9-4fda-8395-af39e471c795",
+                            "roomName": "Living room",
+                            "roomId": "bf0cb96f-a084-4b5f-bc6f-87fa73947a97"
+                        }
+                    },
+                    {
+                        "deviceId": "c23208b1-1c45-4d4d-9628-962ea9830d66",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9499486a-01d9-4fda-8395-af39e471c795",
+                            "roomName": "Living room",
+                            "roomId": "bf0cb96f-a084-4b5f-bc6f-87fa73947a97"
+                        }
+                    },
+                    {
+                        "deviceId": "7c5a6d56-1e9b-4f77-b789-d97774be1407",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9499486a-01d9-4fda-8395-af39e471c795",
+                            "roomName": "Kitchen",
+                            "roomId": "4a5d31a3-dd5a-4967-9c3c-ebf359178552"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Cancel the air conditioner current operation"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_cancel",
+                            "arguments": {
+                                "device": "2464a435-f6a8-45f7-9a8f-eb60ead32527"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": " The current operation of the ac is canceled."
+        }
+    ],
+    "tools": []
+}

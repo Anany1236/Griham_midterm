@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2e572dec-cdaa-4843-9f88-1680b1e31038",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "2c5c297a-1d98-4c6f-8dff-a3cdef61b8a4",
+                            "roomName": "living room",
+                            "roomId": "2c5c297a-1d98-4c6f-8dff-a3cdef61b8a4"
+                        }
+                    },
+                    {
+                        "deviceId": "3d62245d-6c9b-47dd-995a-038c4a513acb",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "2d418da3-d264-418b-bb13-ca7fa71f288e",
+                            "roomName": "home theater",
+                            "roomId": "2d418da3-d264-418b-bb13-ca7fa71f288e"
+                        }
+                    },
+                    {
+                        "deviceId": "29d716bc-4062-4c4c-83d7-b27850e60b2a",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "d13c126f-b7b6-4d93-a6cf-94d3ff9b7305",
+                            "roomName": "office room",
+                            "roomId": "d13c126f-b7b6-4d93-a6cf-94d3ff9b7305"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the video description feature on the smart TV in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "videoDescription_turnOff",
+                            "arguments": {
+                                "device": "2e572dec-cdaa-4843-9f88-1680b1e31038",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The video description feature on the smart TV in the living room has been turned off."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cc51c160-a43a-4cc3-9a6f-f9f02fff145d",
+                        "deviceName": "audio system",
+                        "deviceType": "audio system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "4a91ccb8-b2ae-4810-a194-78fa381c9855",
+                            "roomName": "living room",
+                            "roomId": "4a91ccb8-b2ae-4810-a194-78fa381c9855"
+                        }
+                    },
+                    {
+                        "deviceId": "14078552-1276-4372-9625-aa519843dd8f",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "33e3e324-1c44-4e46-936e-c04a75911c54",
+                            "roomName": "kitchen",
+                            "roomId": "33e3e324-1c44-4e46-936e-c04a75911c54"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the audio stream in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "boosterWindStrengthMode_turnOff",
+                            "arguments": {
+                                "device": "cc51c160-a43a-4cc3-9a6f-f9f02fff145d",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The audio stream in the living room has been turned off."
+        }
+    ],
+    "tools": []
+}

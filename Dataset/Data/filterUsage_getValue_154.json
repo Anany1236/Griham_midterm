@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d68a2f96-bce9-4a23-a9a8-1972fe99c88c",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "862b22b4-1fd3-4666-a761-f5d78e8ed6be",
+                            "roomName": "bedroom",
+                            "roomId": "862b22b4-1fd3-4666-a761-f5d78e8ed6be"
+                        }
+                    },
+                    {
+                        "deviceId": "1a256447-df14-4874-9ffd-54c34fae3e6d",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bf2f7f61-97c7-4366-bed7-18e5fd80be20",
+                            "roomName": "living Room",
+                            "roomId": "bf2f7f61-97c7-4366-bed7-18e5fd80be20"
+                        }
+                    },
+                    {
+                        "deviceId": "ea4d7c08-d564-49ae-9c19-cbeaf81325c0",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dd556144-c406-4a28-97f1-7f88664069de",
+                            "roomName": "guest Room",
+                            "roomId": "dd556144-c406-4a28-97f1-7f88664069de"
+                        }
+                    },
+                    {
+                        "deviceId": "f0175c79-3305-496e-9a59-d6dcd4d2cc50",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a2bb1c6d-8119-460c-8ead-27471190b166",
+                            "roomName": "kitchen",
+                            "roomId": "a2bb1c6d-8119-460c-8ead-27471190b166"
+                        }
+                    },
+                    {
+                        "deviceId": "9b51e1e3-9bfd-491f-ab51-e580c30df9bf",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c1373eae-7e10-47ec-a315-577f435a7ab4",
+                            "roomName": "utility Room",
+                            "roomId": "c1373eae-7e10-47ec-a315-577f435a7ab4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the filter usage value of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "filterUsage_getValue",
+                            "arguments": {
+                                "device": "f0175c79-3305-496e-9a59-d6dcd4d2cc50",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The filter usage value of the washer in the kitchen is 40%"
+        }
+    ],
+    "tools": []
+}

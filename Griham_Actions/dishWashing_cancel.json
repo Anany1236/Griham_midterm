@@ -1,0 +1,32 @@
+{
+    "name": "dishWashing_cancel",
+    "description": "This function is used to cancel an in-progress dishwashing cycle on a specified SmartThings dishwasher.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the dishwasher is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the dishwasher is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name of the dishwasher whose dishwashing cycle needs to be canceled.",
+            "optional": true
+        },
+        {
+            "name": "compartment",
+            "type": "string",
+            "description": "The predefined compartment of the dishwasher whose dishwashing cycle needs to be canceled.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d3b943e3-ccfc-42b1-b0ad-c3d57b23ea53",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f0c1b499-5494-454d-8f89-0e60128f17dd",
+                            "roomName": "bedroom",
+                            "roomId": "f0c1b499-5494-454d-8f89-0e60128f17dd"
+                        }
+                    },
+                    {
+                        "deviceId": "06bb4986-a424-4694-a027-72758dcbb8ab",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6bb2b381-c2fa-45da-8616-99eb06c7486f",
+                            "roomName": "living Room",
+                            "roomId": "6bb2b381-c2fa-45da-8616-99eb06c7486f"
+                        }
+                    },
+                    {
+                        "deviceId": "9c81fad4-d19f-4efb-822c-b1395e44e82a",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "91fa1076-b204-4bf8-9d2f-950127acf4e9",
+                            "roomName": "guest Room",
+                            "roomId": "91fa1076-b204-4bf8-9d2f-950127acf4e9"
+                        }
+                    },
+                    {
+                        "deviceId": "7be44f27-20f2-4c43-9274-4d580be70a78",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8433025f-09e1-41e0-a9e9-88c57d7e3e5d",
+                            "roomName": "kitchen",
+                            "roomId": "8433025f-09e1-41e0-a9e9-88c57d7e3e5d"
+                        }
+                    },
+                    {
+                        "deviceId": "2409662f-b46d-4e10-a12b-79f90801e8ac",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "914b8a52-af04-4519-ab92-634d31c1f126",
+                            "roomName": "utility Room",
+                            "roomId": "914b8a52-af04-4519-ab92-634d31c1f126"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the energy meter value of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "energyMeter_getValue",
+                            "arguments": {
+                                "device": "2409662f-b46d-4e10-a12b-79f90801e8ac",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The energy meter value of the hood in the utility room is available"
+        }
+    ],
+    "tools": []
+}

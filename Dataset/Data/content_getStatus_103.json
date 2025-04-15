@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cb426734-2ad5-4362-8dfe-72488c216f2e",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "951be0ac-4429-494f-9678-ed1f4ffbbff7",
+                            "roomName": "bedroom",
+                            "roomId": "951be0ac-4429-494f-9678-ed1f4ffbbff7"
+                        }
+                    },
+                    {
+                        "deviceId": "f20352f5-78d9-4217-b929-9947743389b5",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ead480b3-3ede-460d-98b5-61fa04f7a773",
+                            "roomName": "living Room",
+                            "roomId": "ead480b3-3ede-460d-98b5-61fa04f7a773"
+                        }
+                    },
+                    {
+                        "deviceId": "d2a0d82b-6380-4656-b493-20f5a5700815",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "17b1e465-6129-4a80-90bf-1bf16f0bb12f",
+                            "roomName": "guest Room",
+                            "roomId": "17b1e465-6129-4a80-90bf-1bf16f0bb12f"
+                        }
+                    },
+                    {
+                        "deviceId": "b68ceb46-a52c-4163-8598-cb9dc68fb1ef",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f187918-3916-4a92-900f-53dd1fe1f728",
+                            "roomName": "kitchen",
+                            "roomId": "9f187918-3916-4a92-900f-53dd1fe1f728"
+                        }
+                    },
+                    {
+                        "deviceId": "033efa23-3b6b-4f91-9411-47b78dce7bd9",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e2ef3af0-1acb-4265-8248-7843709532f4",
+                            "roomName": "utility Room",
+                            "roomId": "e2ef3af0-1acb-4265-8248-7843709532f4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the content status of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "content_getStatus",
+                            "arguments": {
+                                "device": "d2a0d82b-6380-4656-b493-20f5a5700815",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The content status of the light in the guest room is shown"
+        }
+    ],
+    "tools": []
+}

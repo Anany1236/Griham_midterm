@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ad563318-c3e6-4663-9089-175fe0d8faed",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "3c66d5c9-2e05-44ac-8b62-2ce00b958a4e",
+                            "roomName": "kitchen",
+                            "roomId": "3c66d5c9-2e05-44ac-8b62-2ce00b958a4e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the freezing mode on the fridge."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerFreezeMode_turnOn",
+                            "arguments": {
+                                "device": "ad563318-c3e6-4663-9089-175fe0d8faed",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The freezing mode for the fridge is now enabled."
+        }
+    ],
+    "tools": []
+}

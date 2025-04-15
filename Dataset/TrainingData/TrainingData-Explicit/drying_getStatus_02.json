@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "62bbc750-626d-4072-82b9-ab1e079b765b",
+                        "deviceName": "dryer0",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fa4783f7-33b2-4ff6-9c4f-fa100a084b0f",
+                            "roomName": "laundry room",
+                            "roomId": "74cf6063-7148-42ac-af2b-27d2d14c2043"
+                        }
+                    },
+                    {
+                        "deviceId": "1dc75a13-5dd4-487a-9c0d-614965f1632a",
+                        "deviceName": "dryer1",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fa4783f7-33b2-4ff6-9c4f-fa100a084b0f",
+                            "roomName": "bathroom",
+                            "roomId": "01004d93-633a-4005-98b3-3c544fa5c4a6"
+                        }
+                    },
+                    {
+                        "deviceId": "4019a1f7-f9a1-4334-9446-690daf9c296e",
+                        "deviceName": "dryer2",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fa4783f7-33b2-4ff6-9c4f-fa100a084b0f",
+                            "roomName": "laundry room",
+                            "roomId": "74cf6063-7148-42ac-af2b-27d2d14c2043"
+                        }
+                    },
+                    {
+                        "deviceId": "df88278c-1d00-4aa2-8c05-fbcace5f735e",
+                        "deviceName": "dryer3",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fa4783f7-33b2-4ff6-9c4f-fa100a084b0f",
+                            "roomName": "laundry room",
+                            "roomId": "74cf6063-7148-42ac-af2b-27d2d14c2043"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the current status of the dryer"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_getStatus",
+                            "arguments": {
+                                "device": "df88278c-1d00-4aa2-8c05-fbcace5f735e"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current status of the dryer is on"
+        }
+    ],
+    "tools": []
+}

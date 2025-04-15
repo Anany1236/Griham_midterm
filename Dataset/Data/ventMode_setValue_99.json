@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cc6e102d-4a91-4ee7-818d-b89d3ef9db1d",
+                        "deviceName": "ventilation system",
+                        "deviceType": "ventilation system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "06e13cb0-51e5-4b3b-b9b7-010d4eaea333",
+                            "roomName": "bathroom",
+                            "roomId": "06e13cb0-51e5-4b3b-b9b7-010d4eaea333"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the vent mode to exhaust in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ventMode_setValue",
+                            "arguments": {
+                                "device": "cc6e102d-4a91-4ee7-818d-b89d3ef9db1d",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The vent mode in the bathroom has been set to exhaust."
+        }
+    ],
+    "tools": []
+}

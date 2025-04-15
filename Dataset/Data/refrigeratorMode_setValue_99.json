@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f81828c6-e05d-49d4-b42b-bb10760b71fb",
+                        "deviceName": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceType": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Living room,Dining room",
+                            "locationId": "78f99a60-9ee0-4be4-8abc-654471627f2f",
+                            "roomName": "kitchen,Living room,Dining room",
+                            "roomId": "78f99a60-9ee0-4be4-8abc-654471627f2f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the power saving option for the refrigerator in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorMode_setValue",
+                            "arguments": {
+                                "device": "f81828c6-e05d-49d4-b42b-bb10760b71fb",
+                                "room": "kitchen,Living room,Dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The power saving option for the refrigerator in the kitchen has been turned off."
+        }
+    ],
+    "tools": []
+}

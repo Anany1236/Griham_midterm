@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "62725bf2-ce3e-473c-a815-e014f47e6d41",
+                        "deviceName": "embedded lighting",
+                        "deviceType": "embedded lighting",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "adffc930-e5f5-4b10-a03e-bc1089a8ce50",
+                            "roomName": "living room",
+                            "roomId": "adffc930-e5f5-4b10-a03e-bc1089a8ce50"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the embedded light in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "backlight_setValue",
+                            "arguments": {
+                                "device": "62725bf2-ce3e-473c-a815-e014f47e6d41",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The embedded light in the living room has been turned off."
+        }
+    ],
+    "tools": []
+}

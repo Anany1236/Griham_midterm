@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d65b327f-85fb-450d-95bd-a7f0fc314535",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f51cb60e-5a58-4d7e-adc0-2b983287cc2c",
+                            "roomName": "bedroom",
+                            "roomId": "f51cb60e-5a58-4d7e-adc0-2b983287cc2c"
+                        }
+                    },
+                    {
+                        "deviceId": "c6c5df68-bff9-45ab-9c61-ace8766e32c1",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7a1a0580-ee08-4ec6-9147-b5d6e342a71e",
+                            "roomName": "living Room",
+                            "roomId": "7a1a0580-ee08-4ec6-9147-b5d6e342a71e"
+                        }
+                    },
+                    {
+                        "deviceId": "5356c0ca-2b73-456e-a284-1e866d387eed",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "051b422e-70ae-44b0-b4f3-63d3969d03bc",
+                            "roomName": "guest Room",
+                            "roomId": "051b422e-70ae-44b0-b4f3-63d3969d03bc"
+                        }
+                    },
+                    {
+                        "deviceId": "f2651762-a333-4c9d-b631-80504e29baea",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e9bc1d60-2457-41ef-be0c-6423b8d3bfd9",
+                            "roomName": "kitchen",
+                            "roomId": "e9bc1d60-2457-41ef-be0c-6423b8d3bfd9"
+                        }
+                    },
+                    {
+                        "deviceId": "137157a6-4929-42a5-a0d8-378b72eb9b21",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "50592268-827a-4306-a6e7-dc22fd9db7b6",
+                            "roomName": "utility Room",
+                            "roomId": "50592268-827a-4306-a6e7-dc22fd9db7b6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "List the Bluetooth-connected devices on the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bluetoothConnectedDevice_list",
+                            "arguments": {
+                                "device": "5356c0ca-2b73-456e-a284-1e866d387eed",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The list of Bluetooth devices connected to the light in the guest room is available"
+        }
+    ],
+    "tools": []
+}

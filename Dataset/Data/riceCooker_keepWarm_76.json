@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "128da49e-ce2c-4ef9-9be4-643005dab4a3",
+                        "deviceName": "rice cooker",
+                        "deviceType": "rice cooker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "daa88089-e606-4498-a975-54e8799a5418",
+                            "roomName": "kitchen",
+                            "roomId": "daa88089-e606-4498-a975-54e8799a5418"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the keep warm function for the rice cooker on the counter."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "riceCooker_keepWarm",
+                            "arguments": {
+                                "device": "128da49e-ce2c-4ef9-9be4-643005dab4a3",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The keep warm function has been activated for the rice cooker on the counter."
+        }
+    ],
+    "tools": []
+}

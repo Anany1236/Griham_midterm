@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "door_getCloseStatus",
+            "description": "This function is used to check if a SmartThings device door is closed.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to check the door status."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to check the door status."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

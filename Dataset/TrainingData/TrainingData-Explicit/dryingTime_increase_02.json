@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "10cbe3e9-39ca-4f6a-9215-68f0488a8c13",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ab97a17f-273e-4804-902c-a877efee9092",
+                            "roomName": "bedroom",
+                            "roomId": "b0f6659b-2cbc-497c-8a4b-9402dd0f0379"
+                        }
+                    },
+                    {
+                        "deviceId": "a09b02f9-7180-4a03-8e9b-a150775866b3",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ab97a17f-273e-4804-902c-a877efee9092",
+                            "roomName": "utility room",
+                            "roomId": "e491d216-d2e5-491a-941c-7200cf5188e3"
+                        }
+                    },
+                    {
+                        "deviceId": "674d316c-99bc-437b-8e3e-12a7664f2467",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ab97a17f-273e-4804-902c-a877efee9092",
+                            "roomName": "utility room",
+                            "roomId": "e491d216-d2e5-491a-941c-7200cf5188e3"
+                        }
+                    },
+                    {
+                        "deviceId": "c61a45d5-4f6b-4e54-8af5-9c500cc63d55",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ab97a17f-273e-4804-902c-a877efee9092",
+                            "roomName": "kitchen",
+                            "roomId": "37062514-0929-4d59-a645-0a3dd1007d95"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the drying time in lower dryer"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryingTime_increase",
+                            "arguments": {
+                                "device": "a09b02f9-7180-4a03-8e9b-a150775866b3",
+                                "predefinedCompartment": "lower"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have increased the drying time in lower dryer."
+        }
+    ],
+    "tools": []
+}

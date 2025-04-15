@@ -1,0 +1,98 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d61fdc04-4a27-429d-ad38-a63c143759a9",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1337fd31-5cdc-4db1-a7ea-49147e2c8573",
+                            "roomName": "Kitchen",
+                            "roomId": "5558c1ee-f46f-4ec0-9a12-10385e9bef21"
+                        }
+                    },
+                    {
+                        "deviceId": "4abe56f2-bddb-445c-9118-b97683ce942e",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1337fd31-5cdc-4db1-a7ea-49147e2c8573",
+                            "roomName": "Kitchen",
+                            "roomId": "5558c1ee-f46f-4ec0-9a12-10385e9bef21"
+                        }
+                    },
+                    {
+                        "deviceId": "1814d954-bb38-485a-8883-67b8822bb44e",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1337fd31-5cdc-4db1-a7ea-49147e2c8573",
+                            "roomName": "Kitchen",
+                            "roomId": "5558c1ee-f46f-4ec0-9a12-10385e9bef21"
+                        }
+                    },
+                    {
+                        "deviceId": "5849c753-8970-4af5-9f3c-976585ee007b",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1337fd31-5cdc-4db1-a7ea-49147e2c8573",
+                            "roomName": "Kitchen",
+                            "roomId": "5558c1ee-f46f-4ec0-9a12-10385e9bef21"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set kitchen oven to bake at 180 degrees for 30 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_setCourse",
+                            "arguments": {
+                                "device": "d61fdc04-4a27-429d-ad38-a63c143759a9",
+                                "room": "kitchen",
+                                "mode": "bake",
+                                "cookingTemperature": 180,
+                                "cookingTimer": "30 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set kitchen oven to bake at 180 degrees for 30 minutes"
+        }
+    ],
+    "tools": []
+}

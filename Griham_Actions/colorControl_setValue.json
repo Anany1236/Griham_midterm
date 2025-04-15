@@ -1,0 +1,34 @@
+{
+    "name": "colorControl_setValue",
+    "description": "This function is used to change the color of lights in the house using a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to be controlled.",
+            "optional": true
+        },
+        {
+            "name": "color",
+            "type": "string",
+            "description": "The predefined color name to set the lights to.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [
+        "device_turnOn"
+    ],
+    "output": []
+}

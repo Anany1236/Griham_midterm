@@ -1,0 +1,67 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Clean my the bed room by vaccum cleaner"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_start",
+                            "arguments": {
+                                "device": "vaccum cleaner",
+                                "room": "bed room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The vaccum cleaner has started cleaning the bed room."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "cleaning_start",
+                    "description": "This function is used to start cleaning operation of the robot vaccum cleaner.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "room": {
+                                "type": "string",
+                                "description": "Target location to be used."
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "location"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

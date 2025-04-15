@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fc551ab8-b456-4800-9076-657fe33d6d00",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "761b6617-cb4f-4ef9-9253-52ca000d284b",
+                            "roomName": "living room",
+                            "roomId": "761b6617-cb4f-4ef9-9253-52ca000d284b"
+                        }
+                    },
+                    {
+                        "deviceId": "921b5b27-1779-4197-8d37-daeaebb43a99",
+                        "deviceName": "music player",
+                        "deviceType": "music player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "4b147bef-8921-4b64-ac50-ef008d106aa5",
+                            "roomName": "home theater",
+                            "roomId": "4b147bef-8921-4b64-ac50-ef008d106aa5"
+                        }
+                    },
+                    {
+                        "deviceId": "081347ed-f847-4a78-9cbd-6232ac8c118e",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "0322db4a-8967-4a6d-8915-bd0fe9ca5055",
+                            "roomName": "bedroom",
+                            "roomId": "0322db4a-8967-4a6d-8915-bd0fe9ca5055"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the repeat mode for the playlist?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaRepeatMode_turnOff",
+                            "arguments": {
+                                "device": "fc551ab8-b456-4800-9076-657fe33d6d00",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have disabled the repeat mode for the playlist."
+        }
+    ],
+    "tools": []
+}

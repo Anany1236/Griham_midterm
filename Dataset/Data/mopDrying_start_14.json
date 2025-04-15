@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8a3fe2ed-e31b-4ccc-a145-317c3b77d956",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "2dcfdb6b-9eee-49e4-af91-48d07b3d6e60",
+                            "roomName": "bedroom",
+                            "roomId": "2dcfdb6b-9eee-49e4-af91-48d07b3d6e60"
+                        }
+                    },
+                    {
+                        "deviceId": "0388af45-86d8-4647-bfd8-a0837639576c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "b0d54a76-a69f-444f-a5c1-284fee5b8f7e",
+                            "roomName": "living Room",
+                            "roomId": "b0d54a76-a69f-444f-a5c1-284fee5b8f7e"
+                        }
+                    },
+                    {
+                        "deviceId": "383e041e-3117-42db-b30c-d2c451454cde",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "381ff2a5-af62-4f04-a84c-108487098ee7",
+                            "roomName": "guest Room",
+                            "roomId": "381ff2a5-af62-4f04-a84c-108487098ee7"
+                        }
+                    },
+                    {
+                        "deviceId": "91737054-a3ee-4e2c-8bc6-8ace4f050392",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "a574adb0-1084-4327-8fb5-9273c4a25a56",
+                            "roomName": "kitchen",
+                            "roomId": "a574adb0-1084-4327-8fb5-9273c4a25a56"
+                        }
+                    },
+                    {
+                        "deviceId": "eb82cf9b-68f0-4b72-b6d0-6442250da752",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "7eecd811-7a27-435c-bd7e-04760340f46e",
+                            "roomName": "utility Room",
+                            "roomId": "7eecd811-7a27-435c-bd7e-04760340f46e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start the mop drying process for the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mopDrying_start",
+                            "arguments": {
+                                "device": "91737054-a3ee-4e2c-8bc6-8ace4f050392",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The mop drying process for the washer in the kitchen is in progress"
+        }
+    ],
+    "tools": []
+}

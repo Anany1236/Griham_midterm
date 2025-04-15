@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "561f98e6-7d43-40ca-81ed-54fe0e09ee9c",
+                        "deviceName": "Robot Cleaner",
+                        "deviceType": "Robot Cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d379cb3f-a3f2-4092-ac92-728ed17ff83f",
+                            "roomName": "bedroom",
+                            "roomId": "d379cb3f-a3f2-4092-ac92-728ed17ff83f"
+                        }
+                    },
+                    {
+                        "deviceId": "11e6efc4-9e31-4e39-9a78-8d7ef449b81f",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7312f9f7-5923-4ac5-a121-233d489ed65b",
+                            "roomName": "living Room",
+                            "roomId": "7312f9f7-5923-4ac5-a121-233d489ed65b"
+                        }
+                    },
+                    {
+                        "deviceId": "469433f0-614f-4ff8-9758-0e092fcd396a",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f1756eb7-322a-48f6-b4cb-f83fc28ba024",
+                            "roomName": "guest Room",
+                            "roomId": "f1756eb7-322a-48f6-b4cb-f83fc28ba024"
+                        }
+                    },
+                    {
+                        "deviceId": "38c73b7b-c25e-4f09-87c3-20f37a870c10",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "477a0e17-9e5e-415e-8c6c-a98a5e27b0e8",
+                            "roomName": "kitchen",
+                            "roomId": "477a0e17-9e5e-415e-8c6c-a98a5e27b0e8"
+                        }
+                    },
+                    {
+                        "deviceId": "33f373e4-8aba-404e-8538-17d3f1729e94",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "44da4dae-4120-47da-b0af-14cd3c225741",
+                            "roomName": "utility Room",
+                            "roomId": "44da4dae-4120-47da-b0af-14cd3c225741"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the battery value of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "battery_getValue",
+                            "arguments": {
+                                "device": "469433f0-614f-4ff8-9758-0e092fcd396a",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The battery percentage of the light in the guest room is displayed"
+        }
+    ],
+    "tools": []
+}

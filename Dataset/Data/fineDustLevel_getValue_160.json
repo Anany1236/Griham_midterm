@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9e2258af-4f2a-4973-960e-4d0c678acb2b",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "077c3167-f60a-43ea-a70d-5b2d2ae7d9d2",
+                            "roomName": "bedroom",
+                            "roomId": "077c3167-f60a-43ea-a70d-5b2d2ae7d9d2"
+                        }
+                    },
+                    {
+                        "deviceId": "4765395d-e82a-445c-a332-2737d0f32b56",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "60b18f8a-5f2b-4a9b-958f-408994571c17",
+                            "roomName": "living Room",
+                            "roomId": "60b18f8a-5f2b-4a9b-958f-408994571c17"
+                        }
+                    },
+                    {
+                        "deviceId": "b77b17e8-2b5a-45ca-9680-1f3577d1a6e1",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1dd7fc99-04a4-4a3e-8e0f-bb98da3dc5c5",
+                            "roomName": "guest Room",
+                            "roomId": "1dd7fc99-04a4-4a3e-8e0f-bb98da3dc5c5"
+                        }
+                    },
+                    {
+                        "deviceId": "bfbe41aa-6683-4950-9b39-65c8788e1059",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b47d38e9-89e5-43f3-82ba-7608f2d3e217",
+                            "roomName": "kitchen",
+                            "roomId": "b47d38e9-89e5-43f3-82ba-7608f2d3e217"
+                        }
+                    },
+                    {
+                        "deviceId": "0d8a5fe2-b480-443c-a2d3-b5c83c2682a0",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "64a82375-ac3e-4681-96ab-f67993bb783e",
+                            "roomName": "utility Room",
+                            "roomId": "64a82375-ac3e-4681-96ab-f67993bb783e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the fine dust level of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fineDustLevel_getValue",
+                            "arguments": {
+                                "device": "0d8a5fe2-b480-443c-a2d3-b5c83c2682a0",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fine dust level of the hood in the utility room is displayed"
+        }
+    ],
+    "tools": []
+}

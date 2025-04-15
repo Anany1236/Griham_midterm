@@ -1,0 +1,91 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7567aa88-33f4-bacc-a1ff-6dbba69345cc",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Bed room",
+                            "roomId": "r2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can we see Game of Thrones in Disney Hotstar in Bed room TV"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_play",
+                            "arguments": {
+                                "device": "7567aa88-33f4-bacc-a1ff-6dbba69345cc",
+                                "appname": "Disney Hotstar",
+                                "title": "Game of Thrones"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The Bed room TV has started playing Game of Thrones on Disney Hotstar."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "application_launch",
+                    "description": "This function is used to launch an application on TV device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "appname": {
+                                "type": "string",
+                                "description": "Target application to be used"
+                            },
+                            "title": {
+                                "type": "string",
+                                "description": "Target title to be searched and played"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "appname"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

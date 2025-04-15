@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c9fa68fe-b3dc-4779-b128-92c6d9271c67",
+                        "deviceName": "siren",
+                        "deviceType": "siren",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kid's room",
+                            "locationId": "1bba2e48-3f5c-44ce-9e94-0c8508ce0ac9",
+                            "roomName": "kid's room",
+                            "roomId": "1bba2e48-3f5c-44ce-9e94-0c8508ce0ac9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Switch off the alarm in the kid's room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "alarm_turnOff",
+                            "arguments": {
+                                "device": "c9fa68fe-b3dc-4779-b128-92c6d9271c67",
+                                "room": "kid's room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The alarm in the kid's room is now off."
+        }
+    ],
+    "tools": []
+}

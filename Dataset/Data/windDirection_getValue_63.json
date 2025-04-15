@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "58fd87d3-9d8b-4dcb-9515-3553cbe69e29",
+                        "deviceName": "weather station",
+                        "deviceType": "weather station",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "outdoor area",
+                            "locationId": "952aa664-d5c2-45f7-881b-629dfc86cf81",
+                            "roomName": "outdoor area",
+                            "roomId": "952aa664-d5c2-45f7-881b-629dfc86cf81"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the wind direction in the outdoor area."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windDirection_getValue",
+                            "arguments": {
+                                "device": "58fd87d3-9d8b-4dcb-9515-3553cbe69e29",
+                                "room": "outdoor area"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The wind direction in the outdoor area has been retrieved."
+        }
+    ],
+    "tools": []
+}

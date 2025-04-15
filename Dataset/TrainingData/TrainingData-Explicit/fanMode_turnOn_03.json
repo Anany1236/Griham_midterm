@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cb20cce4-e9a9-44ba-9a93-3b32d4ca7654",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "003a5262-5289-430a-8ccf-41391126bb37",
+                            "roomName": "living room",
+                            "roomId": "97ef2ceb-c3ed-4714-add6-800b117fde23"
+                        }
+                    },
+                    {
+                        "deviceId": "0d20e0ca-5b71-413a-881e-b77a4c718af5",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "003a5262-5289-430a-8ccf-41391126bb37",
+                            "roomName": "kids room",
+                            "roomId": "56a9c8b8-e1a6-4859-aa63-cda46e274cd3"
+                        }
+                    },
+                    {
+                        "deviceId": "61968dc8-500b-4d36-a8de-4f5070abfafc",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "003a5262-5289-430a-8ccf-41391126bb37",
+                            "roomName": "bedroom",
+                            "roomId": "312fb364-e023-4f76-b4e9-84951a042e8d"
+                        }
+                    },
+                    {
+                        "deviceId": "a07a77bf-8f5d-42fd-b5d3-9052b1e33440",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "003a5262-5289-430a-8ccf-41391126bb37",
+                            "roomName": "guest room",
+                            "roomId": "24057f68-aa94-498c-a697-0f58a61395c1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn on the fan mode of the living room fan"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanMode_turnOn",
+                            "arguments": {
+                                "device": "cb20cce4-e9a9-44ba-9a93-3b32d4ca7654",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The living room fan mode is turned on"
+        }
+    ],
+    "tools": []
+}

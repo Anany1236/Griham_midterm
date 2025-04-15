@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a1f506da-ac8d-40ff-b5e1-9525dea0d451",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c93d8b76-dfd8-4148-94ad-2bb856e28bab",
+                            "roomName": "kitchen",
+                            "roomId": "46bb7d7d-6933-4cd1-a5b3-6f635c082d35"
+                        }
+                    },
+                    {
+                        "deviceId": "8fe63f50-9321-49b5-a35b-0b7b9995401b",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c93d8b76-dfd8-4148-94ad-2bb856e28bab",
+                            "roomName": "kitchen",
+                            "roomId": "46bb7d7d-6933-4cd1-a5b3-6f635c082d35"
+                        }
+                    },
+                    {
+                        "deviceId": "986d03f2-0791-4944-9807-ce749023f53c",
+                        "deviceName": "range",
+                        "deviceType": "range",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c93d8b76-dfd8-4148-94ad-2bb856e28bab",
+                            "roomName": "kitchen",
+                            "roomId": "46bb7d7d-6933-4cd1-a5b3-6f635c082d35"
+                        }
+                    },
+                    {
+                        "deviceId": "63c43469-f040-4fc5-b0f3-d9c5d46ef55c",
+                        "deviceName": "rice cooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c93d8b76-dfd8-4148-94ad-2bb856e28bab",
+                            "roomName": "kitchen",
+                            "roomId": "46bb7d7d-6933-4cd1-a5b3-6f635c082d35"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you increase the cooking timer on rice cooker by 25 minutes?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTimer_increase",
+                            "arguments": {
+                                "device": "63c43469-f040-4fc5-b0f3-d9c5d46ef55c",
+                                "cookingTimer": "25 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have increased the cooking time by 25 minutes in rice cooker."
+        }
+    ],
+    "tools": []
+}

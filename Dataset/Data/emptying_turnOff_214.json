@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5341db1b-4d12-4e9e-8da3-1638a451590e",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e0d7b61f-d2d0-476c-a9ea-5fb47c7b5334",
+                            "roomName": "kitchen",
+                            "roomId": "e0d7b61f-d2d0-476c-a9ea-5fb47c7b5334"
+                        }
+                    },
+                    {
+                        "deviceId": "00bb5855-435a-42cf-96e7-100eae0fb323",
+                        "deviceName": "vacuum cleaner",
+                        "deviceType": "vacuum cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "2ada8e52-234c-479f-a254-7aa3cc057273",
+                            "roomName": "living room",
+                            "roomId": "2ada8e52-234c-479f-a254-7aa3cc057273"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the emptying mode on the dishwasher."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "emptying_turnOff",
+                            "arguments": {
+                                "device": "5341db1b-4d12-4e9e-8da3-1638a451590e",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The emptying mode on the dishwasher is now off."
+        }
+    ],
+    "tools": []
+}

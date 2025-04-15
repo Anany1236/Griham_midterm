@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f01571f9-4339-4ae5-b670-5ca6ec9f1222",
+                        "deviceName": "weather sensor",
+                        "deviceType": "weather sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "outdoor",
+                            "locationId": "790aa8b0-17ea-4362-adf8-2b70e06646ba",
+                            "roomName": "outdoor",
+                            "roomId": "790aa8b0-17ea-4362-adf8-2b70e06646ba"
+                        }
+                    },
+                    {
+                        "deviceId": "2dc24637-7122-41ec-8a38-d07b6532bd2e",
+                        "deviceName": "rain gauge",
+                        "deviceType": "rain gauge",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "garden",
+                            "locationId": "b6a25dc3-ae74-4089-ac13-683c8a58cb77",
+                            "roomName": "garden",
+                            "roomId": "b6a25dc3-ae74-4089-ac13-683c8a58cb77"
+                        }
+                    },
+                    {
+                        "deviceId": "3d2ea6b4-7857-4ad1-86a9-b3dc3d7bd7e8",
+                        "deviceName": "outdoor sensor",
+                        "deviceType": "outdoor sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "terrace",
+                            "locationId": "c655425a-b80b-4c65-a38b-db26c4c3c839",
+                            "roomName": "terrace",
+                            "roomId": "c655425a-b80b-4c65-a38b-db26c4c3c839"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the precipitation ratio?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "precipitationRatio_getValue",
+                            "arguments": {
+                                "device": "f01571f9-4339-4ae5-b670-5ca6ec9f1222",
+                                "room": "outdoor"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The precipitation ratio is {value}."
+        }
+    ],
+    "tools": []
+}

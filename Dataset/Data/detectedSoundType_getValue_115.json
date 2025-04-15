@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3b5aa5b4-6083-4f5a-9aed-5d7364e1556c",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e5ba814b-91d1-489e-a447-fc63fee25a5c",
+                            "roomName": "bedroom",
+                            "roomId": "e5ba814b-91d1-489e-a447-fc63fee25a5c"
+                        }
+                    },
+                    {
+                        "deviceId": "6450266a-e1dc-4373-86d6-b4865c245fa0",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dc775af2-2c07-4237-9d9c-bffea0503c94",
+                            "roomName": "living Room",
+                            "roomId": "dc775af2-2c07-4237-9d9c-bffea0503c94"
+                        }
+                    },
+                    {
+                        "deviceId": "e6756092-ace8-47af-b2c8-af9b2f182500",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "16197189-8534-4fc0-a8da-aa4486c2a664",
+                            "roomName": "guest Room",
+                            "roomId": "16197189-8534-4fc0-a8da-aa4486c2a664"
+                        }
+                    },
+                    {
+                        "deviceId": "0ce13ad0-9c4a-498f-a6df-da6a59788cc3",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9c059c55-d0af-44be-a2e4-1a1c53c4c000",
+                            "roomName": "kitchen",
+                            "roomId": "9c059c55-d0af-44be-a2e4-1a1c53c4c000"
+                        }
+                    },
+                    {
+                        "deviceId": "4fe2dcc6-c6cd-4476-b74b-2de31ec4c317",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18106129-5808-460b-8571-d540f7f08dc9",
+                            "roomName": "utility Room",
+                            "roomId": "18106129-5808-460b-8571-d540f7f08dc9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the detected sound type of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "detectedSoundType_getValue",
+                            "arguments": {
+                                "device": "4fe2dcc6-c6cd-4476-b74b-2de31ec4c317",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The detected sound type of the hood in the utility room is available"
+        }
+    ],
+    "tools": []
+}

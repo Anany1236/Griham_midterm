@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "71cbb29b-f55e-4562-a03c-09bd599d8a83",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "6db324f7-fc00-422e-8ea9-0c10a0aaa06d",
+                            "roomName": "bedroom",
+                            "roomId": "6db324f7-fc00-422e-8ea9-0c10a0aaa06d"
+                        }
+                    },
+                    {
+                        "deviceId": "076b36fb-e714-49c0-8695-48bc706e48dd",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "684da51e-9886-472d-a128-3f5af2844a4f",
+                            "roomName": "living room",
+                            "roomId": "684da51e-9886-472d-a128-3f5af2844a4f"
+                        }
+                    },
+                    {
+                        "deviceId": "8eaa668c-1e82-48d5-91b1-adde60c78b5a",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "1fd3beed-879b-4614-8486-7c665615cb3b",
+                            "roomName": "basement",
+                            "roomId": "1fd3beed-879b-4614-8486-7c665615cb3b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the minimum setting for the air conditioner in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setMin",
+                            "arguments": {
+                                "device": "076b36fb-e714-49c0-8695-48bc706e48dd",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The minimum setting for the air conditioner in the living room is now adjusted."
+        }
+    ],
+    "tools": []
+}

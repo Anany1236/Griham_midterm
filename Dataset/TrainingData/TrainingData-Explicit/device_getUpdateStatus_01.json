@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4c03f4b0-0d95-4a4b-97fc-1fa37acded12",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9b2e09a9-5e9f-4844-8d11-2a74c084257e",
+                            "roomName": "living room",
+                            "roomId": "168dcc49-471d-4cb6-a0d3-486f564b24f4"
+                        }
+                    },
+                    {
+                        "deviceId": "fbfa2001-6404-4d52-a179-f4a1cadd772e",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9b2e09a9-5e9f-4844-8d11-2a74c084257e",
+                            "roomName": "master bedroom",
+                            "roomId": "2b772a11-4643-4630-96b9-9a3e783f52c8"
+                        }
+                    },
+                    {
+                        "deviceId": "cbf91c19-3ae3-4715-955a-45b05ed54c7d",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9b2e09a9-5e9f-4844-8d11-2a74c084257e",
+                            "roomName": "laundry room",
+                            "roomId": "f22eb2b2-6d2b-4157-aadb-3baa3bff0ad6"
+                        }
+                    },
+                    {
+                        "deviceId": "05538a06-71fb-47fd-a0d4-623da880d06d",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9b2e09a9-5e9f-4844-8d11-2a74c084257e",
+                            "roomName": "living room",
+                            "roomId": "168dcc49-471d-4cb6-a0d3-486f564b24f4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is there any update for tv?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_getUpdateStatus",
+                            "arguments": {
+                                "device": "fbfa2001-6404-4d52-a179-f4a1cadd772e"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, there is an update for tv."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "d1edf057-f191-4a19-b30e-6ff3785e3217",
+						"deviceName": "television",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "8eb8646a-2f63-4bfe-9690-431c02728414",
+							"roomName": "living room",
+							"roomId": "e6961cd2-61e6-4de4-ab0a-612f252bdbc0"
+						}
+					},
+					{
+						"deviceId": "203b3172-0aad-48bb-9378-c2ac4da4dbae",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "8eb8646a-2f63-4bfe-9690-431c02728414",
+							"roomName": "bedroom",
+							"roomId": "2a38e213-e1e5-44c1-9901-cb8f4558c741"
+						}
+					},
+					{
+						"deviceId": "be2bcaa7-de2b-4bc4-8c7f-f067b849ceef",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "8eb8646a-2f63-4bfe-9690-431c02728414",
+							"roomName": "master bedroom",
+							"roomId": "d5ddf1ee-0028-4aac-970d-d5438f933236"
+						}
+					},
+					{
+						"deviceId": "bf67cfe7-bad9-4e42-b040-40b1d9799b35",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "8eb8646a-2f63-4bfe-9690-431c02728414",
+							"roomName": "kitchen",
+							"roomId": "bbb02cfe-5aa3-4c6d-b9fb-fdf3f075cf9b"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Set the brightness to minimum of living room television"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_setMin",
+							"arguments": {
+								"device": "d1edf057-f191-4a19-b30e-6ff3785e3217",
+								"room": "living room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the brightness to minimum of living room television."
+		}
+	],
+	"tools": []
+}

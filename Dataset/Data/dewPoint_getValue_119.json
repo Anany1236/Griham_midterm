@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "20a45992-aab2-4fde-9b60-ddfd4f4bfe74",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7998e623-d15f-4383-9fcf-de4648a8c0cc",
+                            "roomName": "bedroom",
+                            "roomId": "7998e623-d15f-4383-9fcf-de4648a8c0cc"
+                        }
+                    },
+                    {
+                        "deviceId": "7b6ed26d-56ff-4587-96b0-a6d18f0f74a7",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bd003aa4-8b4a-48d3-99d6-4133e4ceeed9",
+                            "roomName": "living Room",
+                            "roomId": "bd003aa4-8b4a-48d3-99d6-4133e4ceeed9"
+                        }
+                    },
+                    {
+                        "deviceId": "1fcfb5c9-5d7a-4c97-8b47-b173245f5fc4",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a8879c76-46f2-4a1b-9d8a-a36ee3063929",
+                            "roomName": "guest Room",
+                            "roomId": "a8879c76-46f2-4a1b-9d8a-a36ee3063929"
+                        }
+                    },
+                    {
+                        "deviceId": "71f6a163-e1b3-4dc1-b8d2-d2c8d1f16210",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c93fa051-d620-473f-b6e1-8ce25d0b0eb0",
+                            "roomName": "kitchen",
+                            "roomId": "c93fa051-d620-473f-b6e1-8ce25d0b0eb0"
+                        }
+                    },
+                    {
+                        "deviceId": "49b88fd8-13a1-486a-aade-a47cd787411f",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d4b00ffa-1cbe-4106-add5-5fd9491d55f8",
+                            "roomName": "utility Room",
+                            "roomId": "d4b00ffa-1cbe-4106-add5-5fd9491d55f8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the dew point value of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dewPoint_getValue",
+                            "arguments": {
+                                "device": "71f6a163-e1b3-4dc1-b8d2-d2c8d1f16210",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dew point value of the washer in the kitchen is available"
+        }
+    ],
+    "tools": []
+}

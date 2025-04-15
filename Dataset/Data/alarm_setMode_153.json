@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6956e6b9-52ca-43f3-87c4-a76ad88e99da",
+                        "deviceName": "siren",
+                        "deviceType": "siren",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "ddda6e7a-c314-4c4a-ac72-88cf85c691e4",
+                            "roomName": "bedroom",
+                            "roomId": "ddda6e7a-c314-4c4a-ac72-88cf85c691e4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Change the alarm to security mode."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "alarm_setMode",
+                            "arguments": {
+                                "device": "6956e6b9-52ca-43f3-87c4-a76ad88e99da",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The alarm is now in security mode."
+        }
+    ],
+    "tools": []
+}

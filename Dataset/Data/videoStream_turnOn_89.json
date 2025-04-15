@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cdd8e72e-d94f-4fe9-968b-0429489b5c49",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "665e12fd-6103-4517-b055-12f99adf34c8",
+                            "roomName": "living room",
+                            "roomId": "665e12fd-6103-4517-b055-12f99adf34c8"
+                        }
+                    },
+                    {
+                        "deviceId": "f24cc269-7b9c-4986-b524-528146fc5aa7",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "338dcacc-2c6a-41a8-94fc-ed1324b740ff",
+                            "roomName": "home theater",
+                            "roomId": "338dcacc-2c6a-41a8-94fc-ed1324b740ff"
+                        }
+                    },
+                    {
+                        "deviceId": "a7e8c54a-260b-4fac-894b-ee6e203e9b1f",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "a8de73ee-43e8-43b3-b558-4db7ca93424a",
+                            "roomName": "office room",
+                            "roomId": "a8de73ee-43e8-43b3-b558-4db7ca93424a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please activate the video stream on the monitor in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "videoStream_turnOn",
+                            "arguments": {
+                                "device": "a7e8c54a-260b-4fac-894b-ee6e203e9b1f",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The video stream on the monitor in the office room has been activated."
+        }
+    ],
+    "tools": []
+}

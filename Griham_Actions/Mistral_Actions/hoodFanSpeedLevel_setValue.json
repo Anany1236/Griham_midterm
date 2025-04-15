@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "hoodFanSpeedLevel_setValue",
+            "description": "This function is used to set the fan speed of the hood to a specific numeric value.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the fan speed."
+                    },
+                    "hoodFanSpeedLevel": {
+                        "type": "integer",
+                        "description": "The specific numeric value to set the fan speed."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

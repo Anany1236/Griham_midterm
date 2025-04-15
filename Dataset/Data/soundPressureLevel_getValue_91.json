@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5bd7bd3f-fa16-4ab6-b1c6-d8ded6965b3e",
+                        "deviceName": "sound sensor",
+                        "deviceType": "sound sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "166cefd4-5e54-414d-a5d9-81209b3e373b",
+                            "roomName": "living room",
+                            "roomId": "166cefd4-5e54-414d-a5d9-81209b3e373b"
+                        }
+                    },
+                    {
+                        "deviceId": "25745444-108e-482f-b319-4d07ed8b7fc8",
+                        "deviceName": "microphone",
+                        "deviceType": "microphone",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "6b0abd46-5f95-43f3-8a96-5fffa73a7598",
+                            "roomName": "office room",
+                            "roomId": "6b0abd46-5f95-43f3-8a96-5fffa73a7598"
+                        }
+                    },
+                    {
+                        "deviceId": "86cbe0fe-3100-4bf8-a0de-5b493b64c190",
+                        "deviceName": "microphone",
+                        "deviceType": "microphone",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "f2c9f0df-a872-4be1-91b0-3765cc43ba70",
+                            "roomName": "home theater",
+                            "roomId": "f2c9f0df-a872-4be1-91b0-3765cc43ba70"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the current sound pressure level?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "soundPressureLevel_getValue",
+                            "arguments": {
+                                "device": "5bd7bd3f-fa16-4ab6-b1c6-d8ded6965b3e",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current sound pressure level is {value}."
+        }
+    ],
+    "tools": []
+}

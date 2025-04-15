@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "358fc8fe-1150-46a1-a3b7-3ef90020cace",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "05383660-8258-4b2d-b962-1a869a7661aa",
+                            "roomName": "living room",
+                            "roomId": "05383660-8258-4b2d-b962-1a869a7661aa"
+                        }
+                    },
+                    {
+                        "deviceId": "f0f9bb32-d72c-4caf-89f1-a90bab8ffb45",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robot cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "33c7c9a3-6870-45db-aece-8d3a92eb3328",
+                            "roomName": "bedroom",
+                            "roomId": "33c7c9a3-6870-45db-aece-8d3a92eb3328"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the progress of the device in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getProgress",
+                            "arguments": {
+                                "device": "358fc8fe-1150-46a1-a3b7-3ef90020cace",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The device in the living room is currently 75% complete."
+        }
+    ],
+    "tools": []
+}

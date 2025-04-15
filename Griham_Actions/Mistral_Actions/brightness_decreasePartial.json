@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "brightness_decreasePartial",
+            "description": "This function is used to slightly lower the brightness of a smart home appliance or place.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device or place which needs to be adjusted is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device or place which needs to be adjusted is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to adjust the brightness."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

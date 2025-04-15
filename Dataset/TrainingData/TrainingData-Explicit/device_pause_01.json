@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ce045e0f-c752-4107-abc1-060462d08c36",
+                        "deviceName": "door",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d6d7c98b-6594-42c8-9fa0-070381213036",
+                            "roomName": "bedroom",
+                            "roomId": "01523677-a370-4941-bcdc-a77a148c979f"
+                        }
+                    },
+                    {
+                        "deviceId": "c25e138f-e864-4d02-adc7-e648e945e3bf",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d6d7c98b-6594-42c8-9fa0-070381213036",
+                            "roomName": "utility room",
+                            "roomId": "96e9402d-3872-4961-8d1f-4f8e05c5e0ca"
+                        }
+                    },
+                    {
+                        "deviceId": "0b7ebefb-c1dc-415f-b231-09fabc1f8264",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d6d7c98b-6594-42c8-9fa0-070381213036",
+                            "roomName": "kitchen",
+                            "roomId": "fdebcb8f-d5ce-4843-8523-01fc66b9b4a1"
+                        }
+                    },
+                    {
+                        "deviceId": "dc111a5c-a6c4-48d7-a407-17d717398f7e",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d6d7c98b-6594-42c8-9fa0-070381213036",
+                            "roomName": "bedroom",
+                            "roomId": "fdebcb8f-d5ce-4843-8523-01fc66b9b4a1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Pause the lower compartment of washing machine in utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_pause",
+                            "arguments": {
+                                "device": "c25e138f-e864-4d02-adc7-e648e945e3bf",
+                                "room": "utility room",
+                                "predefinedCompartment": "lower"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have paused the lower compartment of washing machine in utility room."
+        }
+    ],
+    "tools": []
+}

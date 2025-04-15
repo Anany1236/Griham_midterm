@@ -1,0 +1,37 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "heatingTemperature_setValue",
+            "description": "This function is used to set the heating temperature of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the heating temperature."
+                    },
+                    "predefinedHeatingTemperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of the predefined heating temperature."
+                    },
+                    "heatingTemperature": {
+                        "type": "integer",
+                        "description": "The value of the heating temperature to set."
+                    }
+                },
+                "required": [
+                    "heatingTemperature"
+                ]
+            }
+        }
+    ]
+}

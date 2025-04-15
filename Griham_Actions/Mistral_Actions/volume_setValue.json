@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "volume_setValue",
+            "description": "This function is used to set the volume of a smart home appliance or device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device for which volume needs to be increased is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the air conditioner is located. e.g. living room, bedroom, bathroom, etc."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device on which the volume needs to be increased."
+                    },
+                    "volume": {
+                        "type": "integer",
+                        "description": "The amount by which the volume needs to be set on the device."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

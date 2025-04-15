@@ -1,0 +1,46 @@
+{
+    "name": "cleaning_start",
+    "description": "This function is used to start cleaning a specified area with a robot vacuum cleaner.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located. e.g. home, office, etc.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.  e.g. living room, bedroom, bathroom, etc.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to be used for cleaning.",
+            "optional": true
+        },
+        {
+            "name": "rvcLocations",
+            "type": "string",
+            "description": "The list of locations to be cleaned. e.g. living room, bedroom, etc.",
+            "optional": true
+        },
+        {
+            "name": "rvcObjects",
+            "type": "string",
+            "description": "The list of objects, near to which cleaning needs to be done. e.g. AC, TV, washing machine, etc.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The cleaning mode to be used.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "device_turnOn"
+    ],
+    "output": []
+}

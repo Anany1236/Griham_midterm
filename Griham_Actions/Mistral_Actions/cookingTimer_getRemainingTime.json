@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cookingTimer_getRemainingTime",
+            "description": "This function is used to get the remaining cooking time of a specific appliance compartment.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device whose remaining cooking time is being checked."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The specific compartment of the device for which the remaining cooking time is being checked."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action related to the devices."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

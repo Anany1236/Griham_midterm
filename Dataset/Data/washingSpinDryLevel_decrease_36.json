@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "63d507ef-f0b7-4df9-8810-e73ece692e69",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "389379b6-fc36-4b1c-8330-b5fb2fd3e01b",
+                            "roomName": "laundry room",
+                            "roomId": "389379b6-fc36-4b1c-8330-b5fb2fd3e01b"
+                        }
+                    },
+                    {
+                        "deviceId": "23a71838-b058-47c4-a676-c71e43a514bc",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "6500983d-1fcc-45e3-a319-a705fd9d3d3f",
+                            "roomName": "kitchen",
+                            "roomId": "6500983d-1fcc-45e3-a319-a705fd9d3d3f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you lower the spin dry level on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingSpinDryLevel_decrease",
+                            "arguments": {
+                                "device": "23a71838-b058-47c4-a676-c71e43a514bc",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The spin dry level on the washer in the kitchen is now lower."
+        }
+    ],
+    "tools": []
+}

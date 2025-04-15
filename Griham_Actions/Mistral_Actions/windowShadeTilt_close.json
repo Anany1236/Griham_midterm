@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "windowShadeTilt_close",
+            "description": "This function is used to close the slats of window blinds to a specified angle.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to close the slats of the window blinds."
+                    },
+                    "ratio": {
+                        "type": "number",
+                        "description": "The percentage value to set the slats of the window blinds."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

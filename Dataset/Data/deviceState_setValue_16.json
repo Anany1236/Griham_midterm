@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "330e1553-b1aa-46fe-8f44-fb9cd67bd4a3",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "1e513b15-8e14-46aa-992e-16b38dfe9fa0",
+                            "roomName": "office room",
+                            "roomId": "1e513b15-8e14-46aa-992e-16b38dfe9fa0"
+                        }
+                    },
+                    {
+                        "deviceId": "8d6c5ca1-17df-47f9-8d96-e578aa936b16",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "2d2115bf-87cf-4492-9723-401375d4242e",
+                            "roomName": "living room",
+                            "roomId": "2d2115bf-87cf-4492-9723-401375d4242e"
+                        }
+                    },
+                    {
+                        "deviceId": "1f9b06f5-229b-4f63-8564-dad69f96b697",
+                        "deviceName": "humidifier",
+                        "deviceType": "humidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "c875e4a8-a3b4-48bd-a064-2c876d1c328c",
+                            "roomName": "bedroom",
+                            "roomId": "c875e4a8-a3b4-48bd-a064-2c876d1c328c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the desired value for the humidifier in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setValue",
+                            "arguments": {
+                                "device": "1f9b06f5-229b-4f63-8564-dad69f96b697",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The desired value for the humidifier in the bedroom has been configured."
+        }
+    ],
+    "tools": []
+}

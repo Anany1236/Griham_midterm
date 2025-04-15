@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d63f714c-d050-4a2f-af38-a779cf3df773",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3b4beb08-aef4-4295-aa9b-d0d5fc299546",
+                            "roomName": "bedroom",
+                            "roomId": "3b4beb08-aef4-4295-aa9b-d0d5fc299546"
+                        }
+                    },
+                    {
+                        "deviceId": "1e4b55ae-ecc5-4b72-8e72-234411cf47e1",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2fab1422-cdb7-4364-8900-3f0e008bbf7a",
+                            "roomName": "living Room",
+                            "roomId": "2fab1422-cdb7-4364-8900-3f0e008bbf7a"
+                        }
+                    },
+                    {
+                        "deviceId": "a280a5f2-c071-441a-9891-3c66f9b9db4e",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fe3a6295-2f4b-4b88-b3f2-7b66eec10639",
+                            "roomName": "guest Room",
+                            "roomId": "fe3a6295-2f4b-4b88-b3f2-7b66eec10639"
+                        }
+                    },
+                    {
+                        "deviceId": "531b2d3e-0163-448e-8223-c58ce7dd0658",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fabf8ba8-c7eb-4e49-b35e-5248fed6acaf",
+                            "roomName": "kitchen",
+                            "roomId": "fabf8ba8-c7eb-4e49-b35e-5248fed6acaf"
+                        }
+                    },
+                    {
+                        "deviceId": "02784b54-f020-4473-9c6c-289f1f577da4",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d8906d18-1ee7-4ca3-988b-0d33d183727f",
+                            "roomName": "utility Room",
+                            "roomId": "d8906d18-1ee7-4ca3-988b-0d33d183727f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the chair position of the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chairPosition_setValue",
+                            "arguments": {
+                                "device": "1e4b55ae-ecc5-4b72-8e72-234411cf47e1",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The chair position of the air purifier in the living room is set to 45\u00b0"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0b0eae65-72ba-45ef-9e08-fcecd2196cf0",
+                        "deviceName": "dryer1",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "820f4be0-e4b2-4737-80c4-af728298ac1a",
+                            "roomName": "utility room",
+                            "roomId": "d29db79d-4d90-459b-97c3-d4a53ce82737"
+                        }
+                    },
+                    {
+                        "deviceId": "1c18ac59-6c36-4511-8106-98501bfb7da5",
+                        "deviceName": "dryer2",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "820f4be0-e4b2-4737-80c4-af728298ac1a",
+                            "roomName": "living room",
+                            "roomId": "b995b5fc-9459-4287-823f-9dac71f27eb7"
+                        }
+                    },
+                    {
+                        "deviceId": "47d6092f-fe47-4b46-a9c2-c733c7560e3d",
+                        "deviceName": "dryer3",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "820f4be0-e4b2-4737-80c4-af728298ac1a",
+                            "roomName": "bedroom",
+                            "roomId": "e4e1ca7c-9ab0-4283-a599-83a37153964d"
+                        }
+                    },
+                    {
+                        "deviceId": "3364dba1-e970-4f19-b5f5-2f5b1c85f41a",
+                        "deviceName": "dryer4",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "820f4be0-e4b2-4737-80c4-af728298ac1a",
+                            "roomName": "guest room",
+                            "roomId": "f42f9f46-c32b-4c74-a40b-5d5e6fa275fe"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Now pause the dryer in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_pause",
+                            "arguments": {
+                                "device": "3364dba1-e970-4f19-b5f5-2f5b1c85f41a",
+                                "room": "guest room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, Paused the dryer in the guest room."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f29bd31a-749f-416a-985c-de727f7de3d0",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1b517957-acf4-4a3f-bfde-0c902b8f8116",
+                            "roomName": "laundry room",
+                            "roomId": "bda27c56-7e59-4027-aefe-0b3459e1d4af"
+                        }
+                    },
+                    {
+                        "deviceId": "9b8f1cd8-d0b2-4a50-9890-9f0fa85e3151",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1b517957-acf4-4a3f-bfde-0c902b8f8116",
+                            "roomName": "living room",
+                            "roomId": "72238dea-b63d-41ea-aff0-43c8f9ecd8c0"
+                        }
+                    },
+                    {
+                        "deviceId": "ecd1cffc-39fd-43fe-b57e-0ccfaedbb315",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1b517957-acf4-4a3f-bfde-0c902b8f8116",
+                            "roomName": "kitchen",
+                            "roomId": "f49816d0-e1df-48bc-9c51-6c4231ae82a1"
+                        }
+                    },
+                    {
+                        "deviceId": "50b449cd-972f-456a-86a0-21c1565369a5",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1b517957-acf4-4a3f-bfde-0c902b8f8116",
+                            "roomName": "bedroom",
+                            "roomId": "22462df0-f410-446b-a073-e7605b7249b6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the thermostat value in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_decrease",
+                            "arguments": {
+                                "device": "9b8f1cd8-d0b2-4a50-9890-9f0fa85e3151",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current temperature value of the thermostat is decreased to 15 degrees in the living room"
+        }
+    ],
+    "tools": []
+}

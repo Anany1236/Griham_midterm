@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "1082cf1d-20bb-42b4-91f4-bb4ea96599f9",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "07158c1f-ad5e-43e3-bb99-224a9f072e6c",
+							"roomName": "bedroom",
+							"roomId": "eae80018-6489-4982-9054-a76842b82ae2"
+						}
+					},
+					{
+						"deviceId": "a2fed697-41ee-4ceb-9bc4-a17dc0001f6f",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "07158c1f-ad5e-43e3-bb99-224a9f072e6c",
+							"roomName": "living room",
+							"roomId": "106eb3f8-ffbe-49e3-9c53-1c9aa0604cf6"
+						}
+					},
+					{
+						"deviceId": "154cae8b-c298-44eb-8d34-2b273445f95a",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "07158c1f-ad5e-43e3-bb99-224a9f072e6c",
+							"roomName": "master bedroom",
+							"roomId": "f0118631-5ffd-4e19-a855-d64613fd0619"
+						}
+					},
+					{
+						"deviceId": "b4373cb3-6c80-4575-afe1-fd97d64e8d40",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "07158c1f-ad5e-43e3-bb99-224a9f072e6c",
+							"roomName": "kitchen",
+							"roomId": "84f394ae-b78a-4d38-ba03-5f0575b762ad"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Set the volume to minimum of bedroom tv"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMin",
+							"arguments": {
+								"device": "1082cf1d-20bb-42b4-91f4-bb4ea96599f9",
+								"room": "bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to minimum of bedroom tv."
+		}
+	],
+	"tools": []
+}

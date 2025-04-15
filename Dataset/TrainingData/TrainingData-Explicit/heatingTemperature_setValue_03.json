@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "051770ba-41e7-44e7-b280-e25e7f29718c",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ac222cd-0b23-43b1-83ec-52aeb0326d9f",
+                            "roomName": "laundry room",
+                            "roomId": "6ddb76e6-372b-48c0-92e8-819e4cf4cfa4"
+                        }
+                    },
+                    {
+                        "deviceId": "4cab278a-1288-4760-845c-6077a32fd25d",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ac222cd-0b23-43b1-83ec-52aeb0326d9f",
+                            "roomName": "living room",
+                            "roomId": "2d5cef12-b131-40bf-ba49-b8b6b846b8a9"
+                        }
+                    },
+                    {
+                        "deviceId": "e8e0a335-aa0f-4974-82ad-b0fcf69c8654",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ac222cd-0b23-43b1-83ec-52aeb0326d9f",
+                            "roomName": "kitchen",
+                            "roomId": "d49ecd0e-c6af-4179-b842-398fe3351248"
+                        }
+                    },
+                    {
+                        "deviceId": "93886c1c-7e12-4fc5-8a48-081cfc7961d2",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ac222cd-0b23-43b1-83ec-52aeb0326d9f",
+                            "roomName": "bedroom",
+                            "roomId": "7766f916-a1c2-467f-ab38-856ad8ff8b1f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the boiler heating temperature to 22 degrees Celsius"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_setValue",
+                            "arguments": {
+                                "device": "051770ba-41e7-44e7-b280-e25e7f29718c",
+                                "heatingTemperature": 22
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The heating temperature of the boiler has been set to 22 degrees"
+        }
+    ],
+    "tools": []
+}

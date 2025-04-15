@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6b392381-9a44-43d3-972a-df88df8f0db5",
+                        "deviceName": "weather sensor",
+                        "deviceType": "weather sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "outdoor",
+                            "locationId": "258724a4-43f8-487c-87e7-a69e736d3667",
+                            "roomName": "outdoor",
+                            "roomId": "258724a4-43f8-487c-87e7-a69e736d3667"
+                        }
+                    },
+                    {
+                        "deviceId": "97a00a8d-522d-41a5-8d7d-c1fb5f145047",
+                        "deviceName": "rain gauge",
+                        "deviceType": "rain gauge",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "garden",
+                            "locationId": "5c4a6a6a-c1cf-4313-bf54-0a2f41a55664",
+                            "roomName": "garden",
+                            "roomId": "5c4a6a6a-c1cf-4313-bf54-0a2f41a55664"
+                        }
+                    },
+                    {
+                        "deviceId": "9a3be095-b767-4108-9766-68424b28f66e",
+                        "deviceName": "outdoor sensor",
+                        "deviceType": "outdoor sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "terrace",
+                            "locationId": "e7a6319e-ee8c-4a0a-8d92-6bc532c47776",
+                            "roomName": "terrace",
+                            "roomId": "e7a6319e-ee8c-4a0a-8d92-6bc532c47776"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "How much precipitation ratio is there right now?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "precipitationRatio_getValue",
+                            "arguments": {
+                                "device": "6b392381-9a44-43d3-972a-df88df8f0db5",
+                                "room": "outdoor"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The ratio of precipitation reads {value}."
+        }
+    ],
+    "tools": []
+}

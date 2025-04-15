@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a4dac975-466c-41c3-bf3b-2aa80114fa35",
+                        "deviceName": "door lock",
+                        "deviceType": "door lock",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "front door",
+                            "locationId": "fe304637-79be-4ec0-af34-30985ab38891",
+                            "roomName": "front door",
+                            "roomId": "fe304637-79be-4ec0-af34-30985ab38891"
+                        }
+                    },
+                    {
+                        "deviceId": "0b0913a1-b47d-4b21-8652-2b4f2f9865ac",
+                        "deviceName": "security system,security system",
+                        "deviceType": "security system,security system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom door",
+                            "locationId": "19f9b1b3-608a-49ec-acca-1599178ee02c",
+                            "roomName": "bedroom door",
+                            "roomId": "19f9b1b3-608a-49ec-acca-1599178ee02c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the touch lock."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "touchLock_turnOff",
+                            "arguments": {
+                                "device": "a4dac975-466c-41c3-bf3b-2aa80114fa35",
+                                "room": "front door"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Touch lock has been turned off."
+        }
+    ],
+    "tools": []
+}

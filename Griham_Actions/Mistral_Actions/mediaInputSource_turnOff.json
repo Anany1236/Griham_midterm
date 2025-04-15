@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "mediaInputSource_turnOff",
+            "description": "This function is used to turn off a device connected to a specified TV input source.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn off."
+                    },
+                    "mediaInputSource": {
+                        "type": "string",
+                        "description": "The input source to turn off."
+                    },
+                    "predefinedMediaInputSource": {
+                        "type": "string",
+                        "description": "A predefined media input source."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

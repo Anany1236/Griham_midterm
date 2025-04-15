@@ -1,0 +1,32 @@
+{
+    "name": "alarm_setMode",
+    "description": "This function is used to set the alarm mode of a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the alarm mode.",
+            "optional": true
+        },
+        {
+            "name": "predefinedAlarmMode",
+            "type": "string",
+            "description": "The predefined alarm mode to set (e.g., siren).",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

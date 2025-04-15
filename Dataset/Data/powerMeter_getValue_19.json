@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "260a2bb7-c38c-4e96-9e87-49beb03f9869",
+                        "deviceName": "power meter",
+                        "deviceType": "power meter",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "736e12f1-81a9-48ca-9230-b32d299f1cf0",
+                            "roomName": "utility room",
+                            "roomId": "736e12f1-81a9-48ca-9230-b32d299f1cf0"
+                        }
+                    },
+                    {
+                        "deviceId": "d94544b4-b23b-4669-8bdd-07a67b73cef5",
+                        "deviceName": "energy meter",
+                        "deviceType": "energy meter",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "a9f7ff33-ca04-4d5b-ba41-612e510804bd",
+                            "roomName": "kitchen",
+                            "roomId": "a9f7ff33-ca04-4d5b-ba41-612e510804bd"
+                        }
+                    },
+                    {
+                        "deviceId": "968ffe52-d72a-4f5b-9284-00aebf89cfcc",
+                        "deviceName": "power meter",
+                        "deviceType": "power meter",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "4a3764f8-7026-44c0-9d9a-1a4e9b0654ea",
+                            "roomName": "living room",
+                            "roomId": "4a3764f8-7026-44c0-9d9a-1a4e9b0654ea"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the current power consumption?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerMeter_getValue",
+                            "arguments": {
+                                "device": "260a2bb7-c38c-4e96-9e87-49beb03f9869",
+                                "room": "utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current power usage is {value}."
+        }
+    ],
+    "tools": []
+}

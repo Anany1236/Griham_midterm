@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a03a12d0-67ca-463c-856f-e004f7225925",
+                        "deviceName": "door",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5f4553c9-3555-4580-ae9a-c407d00c8583",
+                            "roomName": "living room",
+                            "roomId": "8c3dee3d-cf75-4d9f-aeb8-006d0a9b1caf"
+                        }
+                    },
+                    {
+                        "deviceId": "80f3bf24-e3ff-4ee9-9202-0560dc527b21",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5f4553c9-3555-4580-ae9a-c407d00c8583",
+                            "roomName": "living room",
+                            "roomId": "8c3dee3d-cf75-4d9f-aeb8-006d0a9b1caf"
+                        }
+                    },
+                    {
+                        "deviceId": "ff3d1723-cbec-44d1-9405-c2d8819f42cc",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5f4553c9-3555-4580-ae9a-c407d00c8583",
+                            "roomName": "living room",
+                            "roomId": "8c3dee3d-cf75-4d9f-aeb8-006d0a9b1caf"
+                        }
+                    },
+                    {
+                        "deviceId": "cc3b203d-65e6-4d09-a3bf-2406f666ebe4",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5f4553c9-3555-4580-ae9a-c407d00c8583",
+                            "roomName": "living room",
+                            "roomId": "8c3dee3d-cf75-4d9f-aeb8-006d0a9b1caf"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Shut the blind in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_close",
+                            "arguments": {
+                                "device": "cc3b203d-65e6-4d09-a3bf-2406f666ebe4",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have shut down the living room blinds"
+        }
+    ],
+    "tools": []
+}

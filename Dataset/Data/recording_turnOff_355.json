@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6487a387-5c9a-44f2-905a-19151a8bc408",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "59be0f22-cd08-4139-b056-aa7433a3b2d8",
+                            "roomName": "living room",
+                            "roomId": "59be0f22-cd08-4139-b056-aa7433a3b2d8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you stop the recording on the camera?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "recording_turnOff",
+                            "arguments": {
+                                "device": "6487a387-5c9a-44f2-905a-19151a8bc408",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The recording on the camera has been turned off."
+        }
+    ],
+    "tools": []
+}

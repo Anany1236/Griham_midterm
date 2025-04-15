@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "washingOption_turnOn",
+            "description": "This function is used to activate a specific washing option on the washing machine.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to activate the washing option."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to activate the washing option."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode to activate the washing option."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

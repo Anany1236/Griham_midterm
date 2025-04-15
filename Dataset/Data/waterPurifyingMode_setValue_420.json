@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d9506f1b-40ba-4ffb-841f-6a49a825e822",
+                        "deviceName": "water purifier",
+                        "deviceType": "water purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "9c546ecb-a899-4c85-9641-26c2f0632f4a",
+                            "roomName": "kitchen",
+                            "roomId": "9c546ecb-a899-4c85-9641-26c2f0632f4a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Adjust the water purifying mode to eco mode."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterPurifyingMode_setValue",
+                            "arguments": {
+                                "device": "d9506f1b-40ba-4ffb-841f-6a49a825e822",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water purifying mode is now on eco mode."
+        }
+    ],
+    "tools": []
+}

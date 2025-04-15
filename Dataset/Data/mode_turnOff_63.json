@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "39b36dd3-6985-4942-87d4-07ac3f10d02e",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "f05fc483-45fe-45d5-af71-0c59faa4853d",
+                            "roomName": "guest room",
+                            "roomId": "f05fc483-45fe-45d5-af71-0c59faa4853d"
+                        }
+                    },
+                    {
+                        "deviceId": "25b81cc1-5bb7-441c-b984-1c6a21acdeb9",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "f3e8d03f-c4d0-42da-b7f1-18a3038c4969",
+                            "roomName": "living room",
+                            "roomId": "f3e8d03f-c4d0-42da-b7f1-18a3038c4969"
+                        }
+                    },
+                    {
+                        "deviceId": "5c6c6828-8274-4488-a87a-a944a1dc10b9",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "79cceca0-358f-4a0c-b618-f32caed097c0",
+                            "roomName": "kitchen",
+                            "roomId": "79cceca0-358f-4a0c-b618-f32caed097c0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the current mode on the air conditioner in the guest room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mode_turnOff",
+                            "arguments": {
+                                "device": "39b36dd3-6985-4942-87d4-07ac3f10d02e",
+                                "room": "guest room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current mode on the air conditioner in the guest room has been turned off."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "750b289e-544e-4c0d-b779-6ece552323cc",
+                        "deviceName": "ricecooker1",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9cacdf0e-90ff-4242-924a-668ee6c153ee",
+                            "roomName": "kitchen",
+                            "roomId": "708e6006-45f3-420f-81db-0042888c29e4"
+                        }
+                    },
+                    {
+                        "deviceId": "d58945a8-fe88-4447-b2e0-3d07acffab02",
+                        "deviceName": "cooktop1",
+                        "deviceType": "cooktop",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9cacdf0e-90ff-4242-924a-668ee6c153ee",
+                            "roomName": "kitchen",
+                            "roomId": "708e6006-45f3-420f-81db-0042888c29e4"
+                        }
+                    },
+                    {
+                        "deviceId": "c425d68a-2687-4598-b979-79f5c9bc769e",
+                        "deviceName": "microwave1",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9cacdf0e-90ff-4242-924a-668ee6c153ee",
+                            "roomName": "kitchen",
+                            "roomId": "708e6006-45f3-420f-81db-0042888c29e4"
+                        }
+                    },
+                    {
+                        "deviceId": "b2ca21d6-b134-4da7-aa7c-1ca43d14c07c",
+                        "deviceName": "oven1",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9cacdf0e-90ff-4242-924a-668ee6c153ee",
+                            "roomName": "kitchen",
+                            "roomId": "708e6006-45f3-420f-81db-0042888c29e4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the cooking temperature of the cooktop"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTemperature_decrease",
+                            "arguments": {
+                                "device": "d58945a8-fe88-4447-b2e0-3d07acffab02"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking temperature of the cooktop is 100 degree Celsius"
+        }
+    ],
+    "tools": []
+}

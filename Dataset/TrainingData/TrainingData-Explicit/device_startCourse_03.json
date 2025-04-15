@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1093080f-5c7d-4e2d-ace9-7db7574dce6f",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bf80f280-f1ac-4a17-91d9-68c921fd2f7e",
+                            "roomName": "kids room",
+                            "roomId": "0d1b827a-f426-4247-a393-c89dbaad9578"
+                        }
+                    },
+                    {
+                        "deviceId": "eb5c8517-c32a-40ef-a3ff-7213214c56d2",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bf80f280-f1ac-4a17-91d9-68c921fd2f7e",
+                            "roomName": "laundry room",
+                            "roomId": "3a0f9e80-a5d7-430e-be80-c557e8c45862"
+                        }
+                    },
+                    {
+                        "deviceId": "db1f779e-4a77-42f9-a293-90b74ddf6815",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bf80f280-f1ac-4a17-91d9-68c921fd2f7e",
+                            "roomName": "kitchen",
+                            "roomId": "6ce843d7-fd53-4cf8-a154-fd8aa43923fb"
+                        }
+                    },
+                    {
+                        "deviceId": "fc4057f3-88f4-474b-8aa6-313beb32e0ee",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bf80f280-f1ac-4a17-91d9-68c921fd2f7e",
+                            "roomName": "kitchen",
+                            "roomId": "6ce843d7-fd53-4cf8-a154-fd8aa43923fb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start the wool mode for 10 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_startCourse",
+                            "arguments": {
+                                "mode": "wool",
+                                "duration": "10"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started the wool mode for 10 minutes."
+        }
+    ],
+    "tools": []
+}

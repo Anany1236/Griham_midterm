@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "27f295d8-ac98-4071-a731-630129df8647",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6f310ccc-bd04-4027-81c2-0532045cff06",
+                            "roomName": "master bedroom",
+                            "roomId": "308bba0b-288b-4329-b629-c210a8b3d118"
+                        }
+                    },
+                    {
+                        "deviceId": "c9d5bea5-ed79-4658-8e50-e867c177c6a8",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6f310ccc-bd04-4027-81c2-0532045cff06",
+                            "roomName": "master bedroom",
+                            "roomId": "308bba0b-288b-4329-b629-c210a8b3d118"
+                        }
+                    },
+                    {
+                        "deviceId": "accd683e-33f4-4967-9de5-d2d06e5e8818",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6f310ccc-bd04-4027-81c2-0532045cff06",
+                            "roomName": "kitchen",
+                            "roomId": "8455bc75-428b-4731-94bb-97475dfcabe1"
+                        }
+                    },
+                    {
+                        "deviceId": "8f580835-d711-4ba0-b4be-c20999d1b994",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6f310ccc-bd04-4027-81c2-0532045cff06",
+                            "roomName": "kitchen",
+                            "roomId": "8455bc75-428b-4731-94bb-97475dfcabe1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you move robot cleaner to table?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_move",
+                            "arguments": {
+                                "device": "27f295d8-ac98-4071-a731-630129df8647",
+                                "rvcObject": "table"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have moved robot cleaner to table."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,108 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "94300714-df53-42ca-abcb-1f8477e41b00",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f284dd71-6439-47dd-be15-05e0e6e66312",
+                            "roomName": "bedroom",
+                            "roomId": "f284dd71-6439-47dd-be15-05e0e6e66312"
+                        }
+                    },
+                    {
+                        "deviceId": "0f985877-7263-407c-a498-01af2fcf24b7",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a539b6c4-bfcd-46c1-bfcd-260fca4aab66",
+                            "roomName": "living Room",
+                            "roomId": "a539b6c4-bfcd-46c1-bfcd-260fca4aab66"
+                        }
+                    },
+                    {
+                        "deviceId": "077b2fa9-1bc3-4118-b4fa-e7f375d8cfb7",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "91821ec7-788f-4ba2-bc0c-2a4e9e68dde1",
+                            "roomName": "guest Room",
+                            "roomId": "91821ec7-788f-4ba2-bc0c-2a4e9e68dde1"
+                        }
+                    },
+                    {
+                        "deviceId": "3b2ed01e-1991-49d8-bc15-4f87ab4955b0",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6a30428e-ff2b-406d-bb91-c6eae929df74",
+                            "roomName": "kitchen",
+                            "roomId": "6a30428e-ff2b-406d-bb91-c6eae929df74"
+                        }
+                    },
+                    {
+                        "deviceId": "f39a9127-364b-49f4-b5ed-a410c794df26",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bfd79b1b-6b0f-41a8-ab8e-794dc2c6fcae",
+                            "roomName": "utility Room",
+                            "roomId": "bfd79b1b-6b0f-41a8-ab8e-794dc2c6fcae"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Switch off the accessibility mode of the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "accessibility_turnOff",
+                            "arguments": {
+                                "device": "077b2fa9-1bc3-4118-b4fa-e7f375d8cfb7",
+                                "room": "guest Room",
+                                "mode": "accessibility"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Accessibility mode for the light has been successfully disabled in the guest room"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,39 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "device_open",
+            "description": "This function is used to open a SmartThings device to a specified percentage.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to open."
+                    },
+                    "ration": {
+                        "type": "string",
+                        "description": "The percentage to open the device."
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "The number to open the device."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to perform on the devices."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

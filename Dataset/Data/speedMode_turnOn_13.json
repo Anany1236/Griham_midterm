@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4f545dda-3591-4f46-bf16-21775889fba8",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "f2557f69-26a0-4ca7-a658-3ba32557234a",
+                            "roomName": "living room",
+                            "roomId": "f2557f69-26a0-4ca7-a658-3ba32557234a"
+                        }
+                    },
+                    {
+                        "deviceId": "29e9e114-fd3e-4339-8ac1-5b6fb7834519",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "04dc3e98-8ae0-4491-9ecc-d2c7fe406a2c",
+                            "roomName": "bedroom",
+                            "roomId": "04dc3e98-8ae0-4491-9ecc-d2c7fe406a2c"
+                        }
+                    },
+                    {
+                        "deviceId": "4cbb2c5a-0146-41a1-8fe9-2d701493e8fd",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "cdad07b5-43df-444a-bc4d-92a74dc1b73b",
+                            "roomName": "laundry room",
+                            "roomId": "cdad07b5-43df-444a-bc4d-92a74dc1b73b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you enable the speed mode on the air purifier in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "speedMode_turnOn",
+                            "arguments": {
+                                "device": "29e9e114-fd3e-4339-8ac1-5b6fb7834519",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Speed mode on the air purifier in the bedroom is now enabled."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "42997fdb-12a6-4bf2-9cbd-0c113d93bd22",
+                        "deviceName": "steamcloset1",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aa006d31-8c18-4034-ba95-bb6822bf6630",
+                            "roomName": "guest room",
+                            "roomId": "44dd0c68-7300-4c5d-b50a-960d6af0ead6"
+                        }
+                    },
+                    {
+                        "deviceId": "535a7fd5-33ed-4e55-8731-e8bad6fbd7d7",
+                        "deviceName": "steamcloset2",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aa006d31-8c18-4034-ba95-bb6822bf6630",
+                            "roomName": "Living room",
+                            "roomId": "05deca0f-92b3-44f1-8c7c-17d9ec6fc687"
+                        }
+                    },
+                    {
+                        "deviceId": "33bf7b6c-fb86-4923-b984-be34aad476f2",
+                        "deviceName": "steamcloset3",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aa006d31-8c18-4034-ba95-bb6822bf6630",
+                            "roomName": "hall",
+                            "roomId": "9bc7441a-eace-4538-9675-b60f31e47278"
+                        }
+                    },
+                    {
+                        "deviceId": "172f2375-daf1-430f-b437-aabff20318cc",
+                        "deviceName": "steamcloset4",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aa006d31-8c18-4034-ba95-bb6822bf6630",
+                            "roomName": "bedroom",
+                            "roomId": "b5a394b7-9c23-4d19-820e-79f429b6edbb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the dressing mode of air dresser in living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressingMode_setValue",
+                            "arguments": {
+                                "device": "535a7fd5-33ed-4e55-8731-e8bad6fbd7d7",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dressing mode of the air dresser is set in the living room"
+        }
+    ],
+    "tools": []
+}

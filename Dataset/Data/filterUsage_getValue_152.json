@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2ccefb3a-24dd-4bec-b17e-6073316aab61",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "77a5f41a-bf71-4a28-9ef7-3fcbd75b60ab",
+                            "roomName": "bedroom",
+                            "roomId": "77a5f41a-bf71-4a28-9ef7-3fcbd75b60ab"
+                        }
+                    },
+                    {
+                        "deviceId": "93828488-583a-4fec-878f-8a53c3fe090c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ddc19483-0a2a-4c1e-b036-62306934e99f",
+                            "roomName": "living Room",
+                            "roomId": "ddc19483-0a2a-4c1e-b036-62306934e99f"
+                        }
+                    },
+                    {
+                        "deviceId": "f70b6e7d-6b28-459a-bac7-18e100b71ceb",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6eac973-000a-4fe3-a38b-4e3860163335",
+                            "roomName": "guest Room",
+                            "roomId": "a6eac973-000a-4fe3-a38b-4e3860163335"
+                        }
+                    },
+                    {
+                        "deviceId": "d38b5179-8337-48e3-a01d-409633b3ca9b",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b49d546b-55ae-4c92-935b-ca6cb891e76b",
+                            "roomName": "kitchen",
+                            "roomId": "b49d546b-55ae-4c92-935b-ca6cb891e76b"
+                        }
+                    },
+                    {
+                        "deviceId": "c8fc8628-350e-42f7-aea1-42ed0c546c0e",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "73fa705b-6654-4972-bffd-03ee9660cb2e",
+                            "roomName": "utility Room",
+                            "roomId": "73fa705b-6654-4972-bffd-03ee9660cb2e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the filter usage value of the air purifier in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "filterUsage_getValue",
+                            "arguments": {
+                                "device": "93828488-583a-4fec-878f-8a53c3fe090c",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The filter usage value of the air purifier in the living room is 50%"
+        }
+    ],
+    "tools": []
+}

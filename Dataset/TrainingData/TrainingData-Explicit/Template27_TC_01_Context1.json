@@ -1,0 +1,80 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "deviceId01",
+                        "deviceName": "Rice cooker",
+                        "deviceType": "cooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "roomName": "kitchen",
+                            "roomId": "roomId1",
+                            "locationName": "house",
+                            "locationId": "l1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the progress of the cooking"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_getProgress",
+                            "arguments": {
+                                "device": "deviceId01"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking is 75% complete."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "cooking_getProgress",
+                    "description": "This function is used to get the progress of the cooking.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            }
+                        },
+                        "required": [
+                            "device"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

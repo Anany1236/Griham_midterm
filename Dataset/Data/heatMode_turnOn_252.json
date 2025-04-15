@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "59774991-3c5b-41ea-a0ba-e6f98bda98a5",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "a51c617a-e6aa-4b20-bcd8-7182e6cde363",
+                            "roomName": "bedroom",
+                            "roomId": "a51c617a-e6aa-4b20-bcd8-7182e6cde363"
+                        }
+                    },
+                    {
+                        "deviceId": "48a03144-89d4-4cf5-9399-1369bd847e6e",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d2c9b80f-0994-458a-b904-139ec0955c3c",
+                            "roomName": "living room",
+                            "roomId": "d2c9b80f-0994-458a-b904-139ec0955c3c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please switch on the heating mode on the heat pump."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatMode_turnOn",
+                            "arguments": {
+                                "device": "59774991-3c5b-41ea-a0ba-e6f98bda98a5",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The heating mode on the heat pump is now active."
+        }
+    ],
+    "tools": []
+}

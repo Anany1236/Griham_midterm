@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "97a0d435-b31a-4e2d-87cb-2d40b9c0d477",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ab2e567f-9038-4c8a-b012-732b77caa889",
+                            "roomName": "bedroom",
+                            "roomId": "ab2e567f-9038-4c8a-b012-732b77caa889"
+                        }
+                    },
+                    {
+                        "deviceId": "6f2b25f2-b604-43c3-ad9b-410bd154a58a",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ec5d22b-9a4a-421d-adae-43d1b30142c4",
+                            "roomName": "living Room",
+                            "roomId": "2ec5d22b-9a4a-421d-adae-43d1b30142c4"
+                        }
+                    },
+                    {
+                        "deviceId": "f47fab3f-4e96-49d9-8f64-18ea462f06d3",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7b2d34d6-5abc-4234-a1a4-1287ce0ed011",
+                            "roomName": "guest Room",
+                            "roomId": "7b2d34d6-5abc-4234-a1a4-1287ce0ed011"
+                        }
+                    },
+                    {
+                        "deviceId": "15ef9eb7-7b94-4eb1-8b6f-90e4b0fabef0",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "08bb546d-69be-4737-909a-11b870a59fcd",
+                            "roomName": "kitchen",
+                            "roomId": "08bb546d-69be-4737-909a-11b870a59fcd"
+                        }
+                    },
+                    {
+                        "deviceId": "c78f6c4e-3fa4-4c95-b7a7-5a473267b356",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b39140b9-50f0-4530-aebf-c1fda7ff79cb",
+                            "roomName": "utility Room",
+                            "roomId": "b39140b9-50f0-4530-aebf-c1fda7ff79cb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Press the button of the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "button_press",
+                            "arguments": {
+                                "device": "f47fab3f-4e96-49d9-8f64-18ea462f06d3",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The button of the light in the guest room is now pressed"
+        }
+    ],
+    "tools": []
+}

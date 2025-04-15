@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "77dc20b3-0723-467c-b728-6b10998c54d2",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c75e8465-9cad-4300-b1f5-22ac0708de1f",
+                            "roomName": "utility room",
+                            "roomId": "c3e82e56-92d7-473b-8b56-8e17d31e886f"
+                        }
+                    },
+                    {
+                        "deviceId": "9aae9ecb-18d9-4df7-8a18-87e4b5caf999",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c75e8465-9cad-4300-b1f5-22ac0708de1f",
+                            "roomName": "living room",
+                            "roomId": "6147c17d-ceb4-4a90-8fd9-7631c33cbd40"
+                        }
+                    },
+                    {
+                        "deviceId": "9db2f5ed-f9ce-4b49-839b-bf2801ebad38",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c75e8465-9cad-4300-b1f5-22ac0708de1f",
+                            "roomName": "utility room",
+                            "roomId": "c3e82e56-92d7-473b-8b56-8e17d31e886f"
+                        }
+                    },
+                    {
+                        "deviceId": "95f398d4-7491-4a5e-8818-981f55be526f",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c75e8465-9cad-4300-b1f5-22ac0708de1f",
+                            "roomName": "bedroom",
+                            "roomId": "eec9c399-3935-48e1-bbd5-6e509accf709"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the water temperature in lower compartment"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_setValue",
+                            "arguments": {
+                                "predefinedCompartment": "lower"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the temperature in lower compartment."
+        }
+    ],
+    "tools": []
+}

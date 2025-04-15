@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8dc1a6da-d68b-4ebd-bfc6-74e67ddec746",
+                        "deviceName": "appliance",
+                        "deviceType": "appliance",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "021e4556-89ba-467d-846b-0d2bed707aa2",
+                            "roomName": "utility room",
+                            "roomId": "021e4556-89ba-467d-846b-0d2bed707aa2"
+                        }
+                    },
+                    {
+                        "deviceId": "66041df1-8e17-456d-9b38-b9fcb25b4857",
+                        "deviceName": "smart device",
+                        "deviceType": "smart device",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "storage room",
+                            "locationId": "3c6dc029-aab7-48f9-9991-decb7384b06f",
+                            "roomName": "storage room",
+                            "roomId": "3c6dc029-aab7-48f9-9991-decb7384b06f"
+                        }
+                    },
+                    {
+                        "deviceId": "9e21f851-0991-4054-9e24-5f5c7b40187c",
+                        "deviceName": "apppliance",
+                        "deviceType": "apppliance",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "d744e97c-78bf-4f84-8849-b448c3ff8fd2",
+                            "roomName": "office room",
+                            "roomId": "d744e97c-78bf-4f84-8849-b448c3ff8fd2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the serial number of the device?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "serialNumber_getValue",
+                            "arguments": {
+                                "device": "8dc1a6da-d68b-4ebd-bfc6-74e67ddec746",
+                                "room": "utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The serial number is {serial_number}."
+        }
+    ],
+    "tools": []
+}

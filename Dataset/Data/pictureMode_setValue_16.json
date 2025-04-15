@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "13920981-5821-4834-b5ce-78e5a1236774",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "f74f8da7-93ad-4886-a6c6-40b835f7f471",
+                            "roomName": "living room",
+                            "roomId": "f74f8da7-93ad-4886-a6c6-40b835f7f471"
+                        }
+                    },
+                    {
+                        "deviceId": "dcee6a48-3e12-4b60-91f4-cd46596c5fa5",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "61df3fea-6dbb-4336-aaed-5dec20f6796d",
+                            "roomName": "home theater",
+                            "roomId": "61df3fea-6dbb-4336-aaed-5dec20f6796d"
+                        }
+                    },
+                    {
+                        "deviceId": "42738d05-f3b3-4527-966c-668b0a98f95f",
+                        "deviceName": "display",
+                        "deviceType": "display",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "895cda1b-0db6-49f1-8e43-4b30de7c0839",
+                            "roomName": "guest room",
+                            "roomId": "895cda1b-0db6-49f1-8e43-4b30de7c0839"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the picture mode to {mode}?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "pictureMode_setValue",
+                            "arguments": {
+                                "device": "13920981-5821-4834-b5ce-78e5a1236774",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The picture mode has been set to {mode}."
+        }
+    ],
+    "tools": []
+}

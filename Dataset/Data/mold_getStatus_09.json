@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ff6f4bc9-933a-4275-b3b3-a9e33084bfec",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "07e69211-c29e-42cc-831d-1da4c00a40da",
+                            "roomName": "bedroom",
+                            "roomId": "07e69211-c29e-42cc-831d-1da4c00a40da"
+                        }
+                    },
+                    {
+                        "deviceId": "cd27288a-b0f4-4a50-8019-d3ad1b15e903",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "d341d28f-1364-4b7c-9f15-20d7cfb9f571",
+                            "roomName": "living Room",
+                            "roomId": "d341d28f-1364-4b7c-9f15-20d7cfb9f571"
+                        }
+                    },
+                    {
+                        "deviceId": "bf140128-c59d-4186-a5e3-a78bca0ae93d",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "c62219ec-be9a-4a27-9b82-afd082c500bb",
+                            "roomName": "guest Room",
+                            "roomId": "c62219ec-be9a-4a27-9b82-afd082c500bb"
+                        }
+                    },
+                    {
+                        "deviceId": "b18734cf-b574-4f8e-8ceb-ffee079d2f27",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "b8f81dd5-66e8-4e60-82ab-89af73d18296",
+                            "roomName": "kitchen",
+                            "roomId": "b8f81dd5-66e8-4e60-82ab-89af73d18296"
+                        }
+                    },
+                    {
+                        "deviceId": "c8debe78-80d7-4049-9303-4e701e5c948a",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "79dca1a0-64aa-40f8-ba21-237e92e0bf50",
+                            "roomName": "utility Room",
+                            "roomId": "79dca1a0-64aa-40f8-ba21-237e92e0bf50"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the mold status of the washer in the kitchen?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mold_getStatus",
+                            "arguments": {
+                                "device": "b18734cf-b574-4f8e-8ceb-ffee079d2f27",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The mold status of the washer in the kitchen is safe"
+        }
+    ],
+    "tools": []
+}

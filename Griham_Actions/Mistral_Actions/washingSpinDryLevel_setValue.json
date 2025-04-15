@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "washingSpinDryLevel_setValue",
+            "description": "This function is used to set the spin dry level of a washing machine.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the spin dry level."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to set the spin dry level."
+                    },
+                    "spinDryLevel": {
+                        "type": "integer",
+                        "description": "The specific spin dry level to set on the washing machine."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

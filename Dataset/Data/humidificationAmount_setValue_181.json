@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b98916ea-ad17-4e8b-b60d-b27e61fde146",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e07690d9-8ad3-4487-b834-95ba6becfa26",
+                            "roomName": "bedroom",
+                            "roomId": "e07690d9-8ad3-4487-b834-95ba6becfa26"
+                        }
+                    },
+                    {
+                        "deviceId": "795799eb-058f-4ded-b697-60baab925c45",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "39e5959d-9f07-463b-aee9-3c3597ac26f6",
+                            "roomName": "living Room",
+                            "roomId": "39e5959d-9f07-463b-aee9-3c3597ac26f6"
+                        }
+                    },
+                    {
+                        "deviceId": "ac6dc432-0f72-429a-a297-bc629e821319",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "486e06b1-b6d2-4c5d-899e-c30427462c5a",
+                            "roomName": "guest Room",
+                            "roomId": "486e06b1-b6d2-4c5d-899e-c30427462c5a"
+                        }
+                    },
+                    {
+                        "deviceId": "17eaed9d-1a68-4971-b03f-5c24f5e2baa3",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "07b3b26b-eadc-4612-a68b-0219b7d56628",
+                            "roomName": "kitchen",
+                            "roomId": "07b3b26b-eadc-4612-a68b-0219b7d56628"
+                        }
+                    },
+                    {
+                        "deviceId": "0fa9e313-188e-4644-b7c7-45282a8431f4",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e31740f3-90d2-46d7-ab8f-ac0b5b3c7fb8",
+                            "roomName": "utility Room",
+                            "roomId": "e31740f3-90d2-46d7-ab8f-ac0b5b3c7fb8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the humidification amount for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "humidificationAmount_setValue",
+                            "arguments": {
+                                "device": "b98916ea-ad17-4e8b-b60d-b27e61fde146",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The humidification amount for the air conditioner in the bedroom is set"
+        }
+    ],
+    "tools": []
+}

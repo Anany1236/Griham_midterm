@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "22f91264-1380-4303-9cc1-92f299b98bcb",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "36948392-17c7-49fc-956e-dec981b3ceaa",
+                            "roomName": "living room",
+                            "roomId": "36948392-17c7-49fc-956e-dec981b3ceaa"
+                        }
+                    },
+                    {
+                        "deviceId": "e0d69123-65bb-4a4a-b979-bcd89f070006",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "1d81e6be-cc00-4f29-8ed9-b9f402a0b657",
+                            "roomName": "home theater",
+                            "roomId": "1d81e6be-cc00-4f29-8ed9-b9f402a0b657"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you play the video on the TV?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "video_play",
+                            "arguments": {
+                                "device": "22f91264-1380-4303-9cc1-92f299b98bcb",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The video has started on the TV."
+        }
+    ],
+    "tools": []
+}

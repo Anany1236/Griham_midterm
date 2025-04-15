@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "391da6fd-be9a-4e74-a6af-38be6d9c4c59",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "8d7ca4d9-1624-4d50-9e8c-cdc4966a6cd2",
+                            "roomName": "living room",
+                            "roomId": "8d7ca4d9-1624-4d50-9e8c-cdc4966a6cd2"
+                        }
+                    },
+                    {
+                        "deviceId": "ff0c4014-9e18-4981-a3ab-ebfc6ac189ab",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "a1ab98d5-e6e3-4c0f-aa19-276792473aba",
+                            "roomName": "home theater",
+                            "roomId": "a1ab98d5-e6e3-4c0f-aa19-276792473aba"
+                        }
+                    },
+                    {
+                        "deviceId": "6ca3907b-a7bc-44be-aa36-ae627713f9c0",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "c018c5da-e238-43df-8a4a-c43a7629164a",
+                            "roomName": "office room",
+                            "roomId": "c018c5da-e238-43df-8a4a-c43a7629164a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Stop the video playback on the smart TV in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "video_stop",
+                            "arguments": {
+                                "device": "391da6fd-be9a-4e74-a6af-38be6d9c4c59",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The video playback on the smart TV in the living room has been stopped."
+        }
+    ],
+    "tools": []
+}

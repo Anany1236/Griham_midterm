@@ -1,0 +1,43 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "microwave_start",
+            "description": "This function is used to start the microwave with a specified duration.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the microwave is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the microwave is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name of the microwave that needs to be started."
+                    },
+                    "timer": {
+                        "type": "string",
+                        "description": "The duration for which the microwave should cook."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment of the microwave that needs to be started."
+                    },
+                    "temperature": {
+                        "type": "integer",
+                        "description": "The temperature at which the microwave should cook."
+                    },
+                    "temperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of temperature for the SmartThings device."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

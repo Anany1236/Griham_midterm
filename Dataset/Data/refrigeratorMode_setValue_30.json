@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5d3b37be-c24d-41ec-9a88-2e190c8aca55",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e7becaa7-387d-446e-8174-e56bd5a86c31",
+                            "roomName": "kitchen",
+                            "roomId": "e7becaa7-387d-446e-8174-e56bd5a86c31"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the refrigerator mode to eco in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorMode_setValue",
+                            "arguments": {
+                                "device": "5d3b37be-c24d-41ec-9a88-2e190c8aca55",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator mode in the kitchen has been set to eco."
+        }
+    ],
+    "tools": []
+}

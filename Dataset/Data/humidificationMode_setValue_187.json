@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "51f2d1b2-a407-4cdc-ac4e-110b4e9b3dcf",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "794c5cd8-8fc9-454d-bb0b-e830fa4db7cd",
+                            "roomName": "bedroom",
+                            "roomId": "794c5cd8-8fc9-454d-bb0b-e830fa4db7cd"
+                        }
+                    },
+                    {
+                        "deviceId": "5c9ff912-400c-4894-92aa-e9ccf4dc6e89",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f0f596a1-8aef-44a1-9919-c9f65d80a6d4",
+                            "roomName": "living Room",
+                            "roomId": "f0f596a1-8aef-44a1-9919-c9f65d80a6d4"
+                        }
+                    },
+                    {
+                        "deviceId": "477fba1d-ee6b-4caf-97b6-d29d953f72db",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "30b71280-8ad0-4b73-954e-2865ef57041c",
+                            "roomName": "guest Room",
+                            "roomId": "30b71280-8ad0-4b73-954e-2865ef57041c"
+                        }
+                    },
+                    {
+                        "deviceId": "8c490e35-d507-451e-ab2c-79dc23389468",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "511df74e-cde3-4c36-ae92-ccefa5783cec",
+                            "roomName": "kitchen",
+                            "roomId": "511df74e-cde3-4c36-ae92-ccefa5783cec"
+                        }
+                    },
+                    {
+                        "deviceId": "72274819-ba1a-4268-a3ae-9e5d40ed9033",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ae0d6116-e172-43fb-af9a-fed542afb369",
+                            "roomName": "utility Room",
+                            "roomId": "ae0d6116-e172-43fb-af9a-fed542afb369"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the humidification mode for the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "humidificationMode_setValue",
+                            "arguments": {
+                                "device": "5c9ff912-400c-4894-92aa-e9ccf4dc6e89",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The humidification mode for the air purifier in the living room is updated"
+        }
+    ],
+    "tools": []
+}

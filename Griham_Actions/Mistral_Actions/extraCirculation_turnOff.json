@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "extraCirculation_turnOff",
+            "description": "This function is used to turn off the circulator function of the ventilator.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the ventilator is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the ventilator is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn off the circulator function."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

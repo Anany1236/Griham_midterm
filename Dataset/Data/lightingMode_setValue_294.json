@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "78b9c927-4352-45bf-8ddc-6f4588164931",
+                        "deviceName": "smart light",
+                        "deviceType": "smart light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "6cf55ba5-3e6d-42ca-8db1-553414270d35",
+                            "roomName": "living room",
+                            "roomId": "6cf55ba5-3e6d-42ca-8db1-553414270d35"
+                        }
+                    },
+                    {
+                        "deviceId": "448c617a-41f3-43c2-ace8-7d6fc65e5fb3",
+                        "deviceName": "kitchen lights",
+                        "deviceType": "kitchen lights",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "9fc01308-284e-4a60-92b0-835737c02a53",
+                            "roomName": "kitchen",
+                            "roomId": "9fc01308-284e-4a60-92b0-835737c02a53"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the lighting mode to ambient on the smart lights."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "lightingMode_setValue",
+                            "arguments": {
+                                "device": "78b9c927-4352-45bf-8ddc-6f4588164931",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lighting mode on the smart lights is now set to ambient."
+        }
+    ],
+    "tools": []
+}

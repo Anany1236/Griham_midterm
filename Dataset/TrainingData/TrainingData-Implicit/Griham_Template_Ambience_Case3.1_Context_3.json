@@ -1,0 +1,102 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "92d521c0-ff61-40e5-bf33-3dec6f26445b",
+                        "deviceName": "Outside light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32cafb0a-1418-4e70-80c0-52fa193eefc1",
+                            "roomName": "Balcony",
+                            "roomId": "0edae9f6-52a9-4f6a-b24e-55f2c727eaf5"
+                        }
+                    },
+                    {
+                        "deviceId": "6c5c7ec7-7294-4c0f-bb7c-f4e5793df370",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32cafb0a-1418-4e70-80c0-52fa193eefc1",
+                            "roomName": "Living room",
+                            "roomId": "f0b5e7a2-e2c8-4c37-9f2b-3d049072bd8a"
+                        }
+                    },
+                    {
+                        "deviceId": "a1b10056-b9ff-4d18-b983-c3fd326c3d8c",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32cafb0a-1418-4e70-80c0-52fa193eefc1",
+                            "roomName": "Living room",
+                            "roomId": "f0b5e7a2-e2c8-4c37-9f2b-3d049072bd8a"
+                        }
+                    },
+                    {
+                        "deviceId": "2bbd8d44-be73-45e1-a1bd-d721b3bd6cbc",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "433e9541-6cf6-45f1-8eb8-e5dab8ee71b7",
+                            "roomName": "Kitchen",
+                            "roomId": "1377cafa-de48-4042-9ef4-131a17a6ebe6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on all the lights except living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "92d521c0-ff61-40e5-bf33-3dec6f26445b",
+                                "room": "balcony"
+                            }
+                        },
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "2bbd8d44-be73-45e1-a1bd-d721b3bd6cbc",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have turned on all the lights except living room."
+        }
+    ],
+    "tools": []
+}

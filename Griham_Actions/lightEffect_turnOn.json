@@ -1,0 +1,44 @@
+{
+    "name": "lightEffect_turnOn",
+    "description": "This function is used to activate a specified light effect on a device for a set duration.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to apply the light effect.",
+            "optional": true
+        },
+        {
+            "name": "predefinedLightEffect",
+            "type": "string",
+            "description": "The specific light effect to be applied (e.g., wake-up mode, gradual brightening, sleep mode).",
+            "optional": false
+        },
+        {
+            "name": "lightEffectTimer",
+            "type": "integer",
+            "description": "The duration for which the light effect should be applied.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "boolean",
+            "description": "Whether the action applies to a group of devices.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

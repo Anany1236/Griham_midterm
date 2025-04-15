@@ -1,0 +1,40 @@
+{
+    "name": "deviceTemperatureSetting_decrease",
+    "description": "This function is used to lower the temperature of a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to lower the temperature on.",
+            "optional": true
+        },
+        {
+            "name": "compartment",
+            "type": "string",
+            "description": "The predefined compartment to lower the temperature on.",
+            "optional": true
+        },
+        {
+            "name": "temperature",
+            "type": "integer",
+            "description": "The amount by which to lower the temperature.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "device_turnOn"
+    ],
+    "output": []
+}

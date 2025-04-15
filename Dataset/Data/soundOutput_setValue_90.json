@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2924fdcd-cf77-4a35-bcbb-c77df987822f",
+                        "deviceName": "sound system",
+                        "deviceType": "sound system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "76bc290b-4d51-4221-81cd-789f222022c1",
+                            "roomName": "living room",
+                            "roomId": "76bc290b-4d51-4221-81cd-789f222022c1"
+                        }
+                    },
+                    {
+                        "deviceId": "9e1835c3-0e24-47f3-b49b-884ed714b1d5",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "a42c42a0-f77f-4361-9217-9b90e516e3b9",
+                            "roomName": "home theater",
+                            "roomId": "a42c42a0-f77f-4361-9217-9b90e516e3b9"
+                        }
+                    },
+                    {
+                        "deviceId": "8ad9e3f3-9dc9-431f-a1f1-ed1afa76f23a",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "9a73190b-e0dd-48e2-9327-79402e3bcdcc",
+                            "roomName": "office room",
+                            "roomId": "9a73190b-e0dd-48e2-9327-79402e3bcdcc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the sound output level to {value}."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "soundOutput_setValue",
+                            "arguments": {
+                                "device": "2924fdcd-cf77-4a35-bcbb-c77df987822f",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The sound output level is now {value}."
+        }
+    ],
+    "tools": []
+}

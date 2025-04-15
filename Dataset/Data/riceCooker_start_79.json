@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5558de3a-379d-4f2e-a4a2-3700ae9f90bd",
+                        "deviceName": "rice cooker",
+                        "deviceType": "rice cooker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "2149668c-a67b-47c8-9bc9-8001a051a532",
+                            "roomName": "kitchen",
+                            "roomId": "2149668c-a67b-47c8-9bc9-8001a051a532"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you begin the rice cooking process on the counter."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "riceCooker_start",
+                            "arguments": {
+                                "device": "5558de3a-379d-4f2e-a4a2-3700ae9f90bd",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rice cooking process has begun on the counter."
+        }
+    ],
+    "tools": []
+}

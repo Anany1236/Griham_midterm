@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "924185ce-e09a-401b-b5c3-e02745f33df5",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "89d75c08-768f-4331-8c05-98bf75f01ce1",
+                            "roomName": "living room",
+                            "roomId": "89d75c08-768f-4331-8c05-98bf75f01ce1"
+                        }
+                    },
+                    {
+                        "deviceId": "3fa33123-af11-4a8d-9964-d49515562eb3",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "48ef3759-2c31-490a-a984-0ffab9b55393",
+                            "roomName": "home theater",
+                            "roomId": "48ef3759-2c31-490a-a984-0ffab9b55393"
+                        }
+                    },
+                    {
+                        "deviceId": "6b02c9bd-6967-4488-a9fc-253b1a61cf8c",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "0ffebcc6-e029-45a9-81c3-3586ef0b3d82",
+                            "roomName": "office room",
+                            "roomId": "0ffebcc6-e029-45a9-81c3-3586ef0b3d82"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable video description on the projector in the home theater."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "videoDescription_turnOff",
+                            "arguments": {
+                                "device": "3fa33123-af11-4a8d-9964-d49515562eb3",
+                                "room": "home theater"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Video description on the projector in the home theater is now disabled."
+        }
+    ],
+    "tools": []
+}

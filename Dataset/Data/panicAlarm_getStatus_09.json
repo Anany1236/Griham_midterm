@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6995c519-e431-4c0b-be60-f02eb7db1f73",
+                        "deviceName": "panic button",
+                        "deviceType": "panic button",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "e85153b4-b304-407c-82be-7cd489599f2d",
+                            "roomName": "living room",
+                            "roomId": "e85153b4-b304-407c-82be-7cd489599f2d"
+                        }
+                    },
+                    {
+                        "deviceId": "c7ab5f1b-611c-4194-bc21-9e21c06b7af0",
+                        "deviceName": "alarm system",
+                        "deviceType": "alarm system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "5b2d7ec4-517f-4183-9fa1-42a6184e176f",
+                            "roomName": "guest room",
+                            "roomId": "5b2d7ec4-517f-4183-9fa1-42a6184e176f"
+                        }
+                    },
+                    {
+                        "deviceId": "376616b3-c996-41b0-a2c6-68869b96f428",
+                        "deviceName": "alarm system",
+                        "deviceType": "alarm system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "4d2f9bb6-a8ed-4fb5-a646-c1f160e6e0b9",
+                            "roomName": "hallway",
+                            "roomId": "4d2f9bb6-a8ed-4fb5-a646-c1f160e6e0b9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check if the panic alarm is on?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "panicAlarm_getStatus",
+                            "arguments": {
+                                "device": "6995c519-e431-4c0b-be60-f02eb7db1f73",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The panic alarm is currently {status}."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5a011ca6-f7ce-4b3a-93d3-21d0db33457c",
+                        "deviceName": "Hood,Hood,Hood",
+                        "deviceType": "Hood,Hood,Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Dining room,Utility room",
+                            "locationId": "3826fa17-9196-467f-9765-c6a4692c69cb",
+                            "roomName": "kitchen,Dining room,Utility room",
+                            "roomId": "3826fa17-9196-467f-9765-c6a4692c69cb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Switch on the hood light in the dining room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodPower_turnOn",
+                            "arguments": {
+                                "device": "5a011ca6-f7ce-4b3a-93d3-21d0db33457c",
+                                "room": "kitchen,Dining room,Utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The hood light in the dining room is now on."
+        }
+    ],
+    "tools": []
+}

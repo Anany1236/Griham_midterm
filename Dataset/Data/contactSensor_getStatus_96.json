@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "be56a060-d1c7-4a0d-9868-6e786aab3c2b",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2e9e2f84-6df7-4764-b2c5-94549c99d3f0",
+                            "roomName": "bedroom",
+                            "roomId": "2e9e2f84-6df7-4764-b2c5-94549c99d3f0"
+                        }
+                    },
+                    {
+                        "deviceId": "da33d3c2-1f78-4dd5-afdb-6300d1587541",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0bd0f8f9-5845-4b1a-ba75-47e4eea63f1b",
+                            "roomName": "living Room",
+                            "roomId": "0bd0f8f9-5845-4b1a-ba75-47e4eea63f1b"
+                        }
+                    },
+                    {
+                        "deviceId": "3a7e66a8-736a-4db7-ae27-4b6ac9ec270c",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ea46ba3b-bc73-44ec-936b-74d1c3539143",
+                            "roomName": "guest Room",
+                            "roomId": "ea46ba3b-bc73-44ec-936b-74d1c3539143"
+                        }
+                    },
+                    {
+                        "deviceId": "39fb3667-55e6-42cf-8cf7-4e98bcfca627",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "af4181b8-f96a-41c7-850a-8b9df0822e1b",
+                            "roomName": "kitchen",
+                            "roomId": "af4181b8-f96a-41c7-850a-8b9df0822e1b"
+                        }
+                    },
+                    {
+                        "deviceId": "af8907be-80fb-4dd7-bd46-2efab00b850b",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "414c8108-8be6-4872-b7a4-fa60d6bc9b77",
+                            "roomName": "utility Room",
+                            "roomId": "414c8108-8be6-4872-b7a4-fa60d6bc9b77"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the contact sensor status of the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "contactSensor_getStatus",
+                            "arguments": {
+                                "device": "be56a060-d1c7-4a0d-9868-6e786aab3c2b",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The contact sensor status for the air conditioner in the bedroom is active"
+        }
+    ],
+    "tools": []
+}

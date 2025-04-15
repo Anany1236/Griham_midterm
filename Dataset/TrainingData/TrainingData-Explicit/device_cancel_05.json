@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6bfdb0c5-4572-46be-b813-a66071156c45",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "340c0f80-abc1-48cc-84ef-541a594e5c99",
+                            "roomName": "hall",
+                            "roomId": "04569b57-6cff-412e-b96b-8a93da472e59"
+                        }
+                    },
+                    {
+                        "deviceId": "ff6064af-90c5-4444-ae2f-c825358a8e63",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "340c0f80-abc1-48cc-84ef-541a594e5c99",
+                            "roomName": "Living room",
+                            "roomId": "16988f37-0be4-4e27-940a-e920d8f45feb"
+                        }
+                    },
+                    {
+                        "deviceId": "6b9bfb1a-7777-429a-9d93-efe8f1015c2d",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "340c0f80-abc1-48cc-84ef-541a594e5c99",
+                            "roomName": "Living room",
+                            "roomId": "16988f37-0be4-4e27-940a-e920d8f45feb"
+                        }
+                    },
+                    {
+                        "deviceId": "97a5d653-171c-4e5c-8db7-d4eda768349e",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "340c0f80-abc1-48cc-84ef-541a594e5c99",
+                            "roomName": "Kitchen",
+                            "roomId": "d7bb17de-7eef-45b3-97e3-8c3747868c8f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Halt the hall air conditioner current operation"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_cancel",
+                            "arguments": {
+                                "device": "6bfdb0c5-4572-46be-b813-a66071156c45",
+                                "room": "hall"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": " The current operation of the hall ac is canceled."
+        }
+    ],
+    "tools": []
+}

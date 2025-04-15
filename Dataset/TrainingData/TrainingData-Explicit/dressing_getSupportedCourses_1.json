@@ -1,0 +1,40 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "What are the available courses in our home air dresser?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_getSupportedCourses",
+                            "arguments": {
+                                "device": "air dresser",
+                                "room": "our home"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Currently, the supported courses for air dresser are standard, fine dust, rapid, sterilization, smart drying, time drying 1 hour, time drying 2 hours, time drying 3 hours, space dehumidification 2 hours, space dehumidification 4 hours. , suits, school uniforms, blouse dresses, wool knits, denim, padding, fur leather, strong, internal sterilization."
+        }
+    ],
+    "tools": []
+}

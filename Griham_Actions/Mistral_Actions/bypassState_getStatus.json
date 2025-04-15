@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "bypassState_getStatus",
+            "description": "This function is used to check if the security system's bypass setting is on or off.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the security system is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the security system is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to check the bypass setting."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

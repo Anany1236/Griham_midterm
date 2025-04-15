@@ -1,0 +1,38 @@
+{
+    "name": "cooking_getStatus",
+    "description": "This function is used to get the current status of cooking on a cooking appliance.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device whose cooking status is being checked.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The specific compartment of the device whose cooking status is being checked.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "The group action related to the devices.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

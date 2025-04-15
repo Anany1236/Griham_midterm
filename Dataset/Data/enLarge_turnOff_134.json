@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d487a88a-83ff-4271-8184-2d6314c22f0f",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "074c5bd7-e704-47b7-8322-6095f4ae683c",
+                            "roomName": "bedroom",
+                            "roomId": "074c5bd7-e704-47b7-8322-6095f4ae683c"
+                        }
+                    },
+                    {
+                        "deviceId": "de997985-1bc9-4728-9d60-bd02da494c53",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cc50ddd2-1d65-4eba-88fa-e9bfa2ed33d2",
+                            "roomName": "living Room",
+                            "roomId": "cc50ddd2-1d65-4eba-88fa-e9bfa2ed33d2"
+                        }
+                    },
+                    {
+                        "deviceId": "ba45497f-8582-41ae-a70c-b1cf5196b48a",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5938e13c-eef9-4af6-9d9f-3fbd66bdfa05",
+                            "roomName": "guest Room",
+                            "roomId": "5938e13c-eef9-4af6-9d9f-3fbd66bdfa05"
+                        }
+                    },
+                    {
+                        "deviceId": "f80caec8-22c1-4d28-b47e-381a24e99c2e",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "39739534-b8f1-483a-8ca7-54aacb83441b",
+                            "roomName": "kitchen",
+                            "roomId": "39739534-b8f1-483a-8ca7-54aacb83441b"
+                        }
+                    },
+                    {
+                        "deviceId": "873fe36d-3426-483c-a5bb-f2f388b987bf",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8adf95f4-ee16-4768-a1e6-db5fe80b9ff9",
+                            "roomName": "utility Room",
+                            "roomId": "8adf95f4-ee16-4768-a1e6-db5fe80b9ff9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the enlarge mode for the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "enLarge_turnOff",
+                            "arguments": {
+                                "device": "f80caec8-22c1-4d28-b47e-381a24e99c2e",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The enlarge mode for the washer in the kitchen is turned off"
+        }
+    ],
+    "tools": []
+}

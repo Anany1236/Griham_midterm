@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3bb2b58c-8672-4e0a-bf74-7607852c1a13",
+                        "deviceName": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceType": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Living room,Dining room",
+                            "locationId": "a568a978-baac-49ab-a23c-2a19ca857ed8",
+                            "roomName": "kitchen,Living room,Dining room",
+                            "roomId": "a568a978-baac-49ab-a23c-2a19ca857ed8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Switch off the fast cooling option for the refrigerator in the dining room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorMode_setValue",
+                            "arguments": {
+                                "device": "3bb2b58c-8672-4e0a-bf74-7607852c1a13",
+                                "room": "kitchen,Living room,Dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fast cooling option for the refrigerator in the dining room is now off."
+        }
+    ],
+    "tools": []
+}

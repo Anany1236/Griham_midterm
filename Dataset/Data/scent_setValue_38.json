@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d45ec5e8-e920-4eda-9277-7bdb46de7e3b",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "370105a9-4d00-4bf0-a6af-a849de8b6409",
+                            "roomName": "basement",
+                            "roomId": "370105a9-4d00-4bf0-a6af-a849de8b6409"
+                        }
+                    },
+                    {
+                        "deviceId": "ee3d6753-9bf7-4182-bf5e-7ff2f6af7a03",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "da6a2314-0cc8-4602-a1ee-1d06d32d6840",
+                            "roomName": "living room",
+                            "roomId": "da6a2314-0cc8-4602-a1ee-1d06d32d6840"
+                        }
+                    },
+                    {
+                        "deviceId": "61017b41-d710-4038-b01d-e21fba60c1d7",
+                        "deviceName": "air quality sensor",
+                        "deviceType": "air quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "efc8c3e3-6f11-401d-9f87-1b4a7d1ed93a",
+                            "roomName": "bedroom",
+                            "roomId": "efc8c3e3-6f11-401d-9f87-1b4a7d1ed93a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please provide the dehumidification mode value for the air quality sensor in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scent_setValue",
+                            "arguments": {
+                                "device": "61017b41-d710-4038-b01d-e21fba60c1d7",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Please enable the dehumidification mode value for the air quality sensor in the bedroom."
+        }
+    ],
+    "tools": []
+}

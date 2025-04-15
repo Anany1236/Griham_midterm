@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1a920ff2-e3b7-448b-ac72-78cae4e334da",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dfcee149-b750-4ab2-83b8-a1974209ae78",
+                            "roomName": "bedroom",
+                            "roomId": "dfcee149-b750-4ab2-83b8-a1974209ae78"
+                        }
+                    },
+                    {
+                        "deviceId": "2e9a51a8-1cad-42be-a93c-42d46099bf67",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8eedb543-3fb6-4e63-b57d-130957549a32",
+                            "roomName": "living Room",
+                            "roomId": "8eedb543-3fb6-4e63-b57d-130957549a32"
+                        }
+                    },
+                    {
+                        "deviceId": "4dca8fe4-a16a-450f-87d9-5e772af933a5",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e5879156-8e0a-4d26-9071-25d416bf52c1",
+                            "roomName": "guest Room",
+                            "roomId": "e5879156-8e0a-4d26-9071-25d416bf52c1"
+                        }
+                    },
+                    {
+                        "deviceId": "14d6d550-5e3b-4e0a-aa14-1ab4a031ae5f",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f71c17be-2193-4da1-9c9a-daeed526c773",
+                            "roomName": "kitchen",
+                            "roomId": "f71c17be-2193-4da1-9c9a-daeed526c773"
+                        }
+                    },
+                    {
+                        "deviceId": "cbfb3dc0-8092-44c3-a224-28f91540fd9a",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "363babcd-b908-4105-b3c3-8dbe41e776af",
+                            "roomName": "utility Room",
+                            "roomId": "363babcd-b908-4105-b3c3-8dbe41e776af"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Display the blueprint of the air conditioner in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "blueprint_show",
+                            "arguments": {
+                                "device": "2e9a51a8-1cad-42be-a93c-42d46099bf67",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The blueprint of the air conditioner in the living room is shown"
+        }
+    ],
+    "tools": []
+}

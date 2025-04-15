@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "54086910-5281-428c-a845-f426853c3c8f",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbd8162e-a9be-43c0-8686-e1d19ef720f9",
+                            "roomName": "living room",
+                            "roomId": "84b01639-3628-44d8-837c-fd15cd16261b"
+                        }
+                    },
+                    {
+                        "deviceId": "be9d5c78-79b6-4a56-932c-0d2e122a5163",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbd8162e-a9be-43c0-8686-e1d19ef720f9",
+                            "roomName": "kids room",
+                            "roomId": "2cd41ab2-9959-4ceb-ba04-7c686c04a8fd"
+                        }
+                    },
+                    {
+                        "deviceId": "3e2db7d5-61da-4071-b310-4f4fc333ff29",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbd8162e-a9be-43c0-8686-e1d19ef720f9",
+                            "roomName": "bedroom",
+                            "roomId": "304af1f7-2803-472d-bc99-ac791978e68c"
+                        }
+                    },
+                    {
+                        "deviceId": "74fd5534-bda7-493d-a2e0-f91f82d220df",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbd8162e-a9be-43c0-8686-e1d19ef720f9",
+                            "roomName": "guest room",
+                            "roomId": "56463c49-6d71-4df2-b22f-3f0f995151d2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the fan speed value of the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeed_getValue",
+                            "arguments": {
+                                "device": "3e2db7d5-61da-4071-b310-4f4fc333ff29",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed in the bedroom is 25"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "036e59cf-c0c7-4f0a-869c-166427c23bb8",
+                        "deviceName": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceType": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Living room,Dining room",
+                            "locationId": "d56773f4-d3a8-4e53-8f80-d7fdaf6e177a",
+                            "roomName": "kitchen,Living room,Dining room",
+                            "roomId": "d56773f4-d3a8-4e53-8f80-d7fdaf6e177a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the refrigerator lamp in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ovenLamp_turnOn",
+                            "arguments": {
+                                "device": "036e59cf-c0c7-4f0a-869c-166427c23bb8",
+                                "room": "kitchen,Living room,Dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator lamp in the kitchen has been turned on."
+        }
+    ],
+    "tools": []
+}

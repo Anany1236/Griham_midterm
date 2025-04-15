@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d3b0c7d6-2511-4945-9184-cbeb7539850f",
+                        "deviceName": "air quality sensor",
+                        "deviceType": "air quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "2e539fd1-48a9-4d24-b6ed-7ce4ea58fa96",
+                            "roomName": "living room",
+                            "roomId": "2e539fd1-48a9-4d24-b6ed-7ce4ea58fa96"
+                        }
+                    },
+                    {
+                        "deviceId": "ceb7fd89-0d25-4b20-8133-0bf155e67f01",
+                        "deviceName": "monitor,monitor",
+                        "deviceType": "monitor,monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "3046750b-ae5e-484c-abd2-6abed094f426",
+                            "roomName": "bedroom",
+                            "roomId": "3046750b-ae5e-484c-abd2-6abed094f426"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the current TVOC level?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "tvocLevel_getValue",
+                            "arguments": {
+                                "device": "d3b0c7d6-2511-4945-9184-cbeb7539850f",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current TVOC level is {value}."
+        }
+    ],
+    "tools": []
+}

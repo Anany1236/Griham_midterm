@@ -1,0 +1,78 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2bbd8d44-be73-45e1-a1bd-d721b3bd6cbc",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b5deeb7a-b45b-4dcf-af70-31eb4f13e180",
+                            "roomName": "Living room",
+                            "roomId": "2d479146-e58e-4909-97e3-00f9330eb203"
+                        }
+                    },
+                    {
+                        "deviceId": "b8a92e13-4973-43f2-8ed2-6d539ff8e026",
+                        "deviceName": "Blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b5deeb7a-b45b-4dcf-af70-31eb4f13e180",
+                            "roomName": "Living room",
+                            "roomId": "2d479146-e58e-4909-97e3-00f9330eb203"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the living room AC"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOff",
+                            "arguments": {
+                                "device": "b8a92e13-4973-43f2-8ed2-6d539ff8e026",
+                                "room": "living room"
+                            }
+                        },
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "2bbd8d44-be73-45e1-a1bd-d721b3bd6cbc",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Would you like me to turn on the AC and turn off the blind."
+        }
+    ],
+    "tools": []
+}

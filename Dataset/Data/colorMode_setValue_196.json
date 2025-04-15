@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5c51666b-4916-42d3-9d52-f20cf7de3630",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "895d6c35-9e64-4e7b-aa8c-0dcb97cdcaea",
+                            "roomName": "living room",
+                            "roomId": "895d6c35-9e64-4e7b-aa8c-0dcb97cdcaea"
+                        }
+                    },
+                    {
+                        "deviceId": "34313a8c-978b-467a-860c-431477058434",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater room",
+                            "locationId": "107f0eb8-47f9-4c61-bf58-81602cb12df4",
+                            "roomName": "home theater room",
+                            "roomId": "107f0eb8-47f9-4c61-bf58-81602cb12df4"
+                        }
+                    },
+                    {
+                        "deviceId": "1b62f6e7-741f-4cb5-b4bf-61a8c0f511a4",
+                        "deviceName": "lighting system",
+                        "deviceType": "lighting system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hall",
+                            "locationId": "8a1d646e-5e7d-4000-a2a3-fe44226f9e3b",
+                            "roomName": "hall",
+                            "roomId": "8a1d646e-5e7d-4000-a2a3-fe44226f9e3b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Change the color mode to vivid on the TV."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "colorMode_setValue",
+                            "arguments": {
+                                "device": "5c51666b-4916-42d3-9d52-f20cf7de3630",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The color mode on the TV is now set to vivid."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fd219041-c5f2-4110-a0da-646b9e62ba0b",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "d6c177ec-8d28-4c85-b568-05a3e65d58bf",
+                            "roomName": "bedroom",
+                            "roomId": "d6c177ec-8d28-4c85-b568-05a3e65d58bf"
+                        }
+                    },
+                    {
+                        "deviceId": "567ce41a-9040-4c44-8fba-4f6f340d7eb8",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "cb6dc1fd-eb68-4ad2-942f-980f4fdb83d3",
+                            "roomName": "living room",
+                            "roomId": "cb6dc1fd-eb68-4ad2-942f-980f4fdb83d3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the heating temperature on the air conditioner."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_decrease",
+                            "arguments": {
+                                "device": "fd219041-c5f2-4110-a0da-646b9e62ba0b",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The heating temperature on the air conditioner has been decreased."
+        }
+    ],
+    "tools": []
+}

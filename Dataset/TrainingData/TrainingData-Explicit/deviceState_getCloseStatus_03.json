@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "296d3604-7285-4ec7-9e33-032c8ed01b6c",
+                        "deviceName": "gas valve",
+                        "deviceType": "gasvalve",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1c6f787-9f2c-492a-b569-48a65ada836d",
+                            "roomName": "kitchen",
+                            "roomId": "f574903f-3448-4dc6-a35a-1c9123a020bd"
+                        }
+                    },
+                    {
+                        "deviceId": "15799a04-228f-40cc-a550-9be7d12866f8",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1c6f787-9f2c-492a-b569-48a65ada836d",
+                            "roomName": "kitchen",
+                            "roomId": "f574903f-3448-4dc6-a35a-1c9123a020bd"
+                        }
+                    },
+                    {
+                        "deviceId": "e536654b-70ca-4c09-8feb-b35290d989d8",
+                        "deviceName": "range",
+                        "deviceType": "range",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1c6f787-9f2c-492a-b569-48a65ada836d",
+                            "roomName": "kitchen",
+                            "roomId": "f574903f-3448-4dc6-a35a-1c9123a020bd"
+                        }
+                    },
+                    {
+                        "deviceId": "044cce35-d561-4f0d-966b-c4e9461d67c3",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d1c6f787-9f2c-492a-b569-48a65ada836d",
+                            "roomName": "living room",
+                            "roomId": "f8ef12d0-ee6e-40b1-b080-abb115c6d2be"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is the gas valve closed in kitchen?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getCloseStatus",
+                            "arguments": {
+                                "device": "296d3604-7285-4ec7-9e33-032c8ed01b6c",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, gas valve is closed in kitchen."
+        }
+    ],
+    "tools": []
+}

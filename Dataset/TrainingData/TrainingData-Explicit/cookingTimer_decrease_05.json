@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ebafa4df-dc71-40b8-90aa-ab11b9477d50",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18a8a293-c9ae-417b-b7e7-30d36cdf0726",
+                            "roomName": "Kitchen",
+                            "roomId": "44fcbd7a-dfa9-4128-8c59-55e2c719d10d"
+                        }
+                    },
+                    {
+                        "deviceId": "f9b5e222-67ee-41ea-a7bc-7aca78ad7ec5",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18a8a293-c9ae-417b-b7e7-30d36cdf0726",
+                            "roomName": "Kitchen",
+                            "roomId": "44fcbd7a-dfa9-4128-8c59-55e2c719d10d"
+                        }
+                    },
+                    {
+                        "deviceId": "26a8279b-ca82-4ecd-8b81-08a19cc31cf4",
+                        "deviceName": "cooktop",
+                        "deviceType": "cooktop",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18a8a293-c9ae-417b-b7e7-30d36cdf0726",
+                            "roomName": "Kitchen",
+                            "roomId": "44fcbd7a-dfa9-4128-8c59-55e2c719d10d"
+                        }
+                    },
+                    {
+                        "deviceId": "256ae28a-cbbc-41a5-8892-fa6831a5ab2e",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18a8a293-c9ae-417b-b7e7-30d36cdf0726",
+                            "roomName": "Kitchen",
+                            "roomId": "44fcbd7a-dfa9-4128-8c59-55e2c719d10d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the cooking time on the kitchen cooktop by 50 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTimer_decrease",
+                            "arguments": {
+                                "device": "26a8279b-ca82-4ecd-8b81-08a19cc31cf4",
+                                "room": "kitchen",
+                                "cookingTimer": "50 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have decreased the cooking time on the kitchen cooktop by 50 minutes"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,67 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Start cleaning the living room using RVC"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_start",
+                            "arguments": {
+                                "device": "RVC",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The RVC has started cleaning the living room."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "cleaning_start",
+                    "description": "This function is used to start cleaning operation of the robot vaccum cleaner.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "room": {
+                                "type": "string",
+                                "description": "Target location to be used."
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "location"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

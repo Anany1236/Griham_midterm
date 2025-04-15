@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ebb2c208-e820-434e-bffb-bdb19dc1ff7b",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "2c793691-11f0-4bde-bdb1-3603867448f4",
+                            "roomName": "living room",
+                            "roomId": "2c793691-11f0-4bde-bdb1-3603867448f4"
+                        }
+                    },
+                    {
+                        "deviceId": "858110dd-02c9-42ce-ae38-fdb03ab7c09f",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "b2003274-7426-4619-8ef5-4da14d23993c",
+                            "roomName": "bedroom",
+                            "roomId": "b2003274-7426-4619-8ef5-4da14d23993c"
+                        }
+                    },
+                    {
+                        "deviceId": "9b1b90e1-5340-4e2a-9aaa-6290f7fb8ea8",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "9399b2f0-ca4a-46e8-a3da-fe9fbf505a7a",
+                            "roomName": "office room",
+                            "roomId": "9399b2f0-ca4a-46e8-a3da-fe9fbf505a7a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you switch to the next video on the TV in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_playNext",
+                            "arguments": {
+                                "device": "858110dd-02c9-42ce-ae38-fdb03ab7c09f",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The next video is now streaming on the TV in the bedroom."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,150 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5e34da19-8af5-4f37-a8e1-34194c2298ec",
+                        "deviceName": "airconditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "kitchen",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "4f218e34-581d-470d-895d-5c542c39e8c5",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "kitchen",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "bf4f9695-ff53-46c8-8cff-85964e5d9008",
+                        "deviceName": "airpurifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "kitchen",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "337e3004-1777-43c0-84bd-91d125a8d105",
+                        "deviceName": "kitchen blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "kitchen",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "378e3004-1777-43c0-84bd-91d125a8d105",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "kitchen",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "389e3004-1777-43c0-84bd-91d125a8d105",
+                        "deviceName": "robotcleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "kitchen",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Create an airy kitchen for breakfast at 8 AM Wednesday"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperatureSetting_increase",
+                            "arguments": {
+                                "device": "5e34da19-8af5-4f37-a8e1-34194c2298ec"
+                            }
+                        },
+                        {
+                            "name": " media_play",
+                            "arguments": {
+                                "device": "4f218e34-581d-470d-895d-5c542c39e8c5"
+                            }
+                        },
+                        {
+                            "name": " mode_setValue",
+                            "arguments": {
+                                "device": "bf4f9695-ff53-46c8-8cff-85964e5d9008",
+                                "mode": "auto"
+                            }
+                        },
+                        {
+                            "name": " device_close",
+                            "arguments": {
+                                "device": "337e3004-1777-43c0-84bd-91d125a8d105"
+                            }
+                        },
+                        {
+                            "name": " device_turnOn",
+                            "arguments": {
+                                "device": "378e3004-1777-43c0-84bd-91d125a8d105"
+                            }
+                        },
+                        {
+                            "name": " cleaning_start",
+                            "arguments": {
+                                "device": "389e3004-1777-43c0-84bd-91d125a8d105"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success",
+                "cron": "0 8 16 10 3"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can raise the temperature to a comfortable level, start a movie on the projector, close the blinds, set airpurifier to auto mode, turn on the lights and start the cleaning using robot cleaner. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

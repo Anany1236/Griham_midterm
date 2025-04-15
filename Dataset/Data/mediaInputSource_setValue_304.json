@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c5629581-b5a8-4420-89e5-cba60ccda028",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "3de4d19e-7c2f-4c06-9652-2967c7a58b41",
+                            "roomName": "living room",
+                            "roomId": "3de4d19e-7c2f-4c06-9652-2967c7a58b41"
+                        }
+                    },
+                    {
+                        "deviceId": "d7aa7e5a-76dc-481e-ab6c-b557787be823",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "6323fd65-69c7-407c-b651-01af3e6066a7",
+                            "roomName": "home theater",
+                            "roomId": "6323fd65-69c7-407c-b651-01af3e6066a7"
+                        }
+                    },
+                    {
+                        "deviceId": "c6b9351d-7838-48cf-9866-be76a6cdb022",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "0c0dfde4-fa33-4228-a72e-3513490cafc8",
+                            "roomName": "bedroom",
+                            "roomId": "0c0dfde4-fa33-4228-a72e-3513490cafc8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the input source to HDMI 2 on the TV."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaInputSource_setValue",
+                            "arguments": {
+                                "device": "c5629581-b5a8-4420-89e5-cba60ccda028",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The input source on the TV is now set to HDMI 2."
+        }
+    ],
+    "tools": []
+}

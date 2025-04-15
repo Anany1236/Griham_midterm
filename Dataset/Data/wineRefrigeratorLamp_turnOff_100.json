@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "905c6c4d-b46d-4274-85aa-50b74f5e44a8",
+                        "deviceName": "wine refrigerator",
+                        "deviceType": "wine refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "dining room",
+                            "locationId": "92a733c6-8543-471c-affe-4bd5829778ad",
+                            "roomName": "dining room",
+                            "roomId": "92a733c6-8543-471c-affe-4bd5829778ad"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the lamp of the wine refrigerator in the dining room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "wineRefrigeratorLamp_turnOff",
+                            "arguments": {
+                                "device": "905c6c4d-b46d-4274-85aa-50b74f5e44a8",
+                                "room": "dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Turn off the lamp of the wine refrigerator in the dining room."
+        }
+    ],
+    "tools": []
+}

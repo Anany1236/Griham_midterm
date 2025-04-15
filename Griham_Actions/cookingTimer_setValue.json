@@ -1,0 +1,38 @@
+{
+    "name": "cookingTimer_setValue",
+    "description": "This function is used to set the cooking time for a specific compartment of cooking equipment.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device whose cooking time is being set.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The specific compartment of the device whose cooking time is being set.",
+            "optional": true
+        },
+        {
+            "name": "cookingTimer",
+            "type": "integer",
+            "description": "The duration to be set as the cooking time.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

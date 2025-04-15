@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "washing_cancel",
+            "description": "This function is used to cancel the current washing cycle of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the SmartThings device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the SmartThings device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name of the SmartThings device that needs to have its washing cycle canceled."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment of the SmartThings device that needs to have its washing cycle canceled."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

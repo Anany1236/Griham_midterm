@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "98f0e7a5-e1bc-41c3-8627-d99781906fc6",
+                        "deviceName": "sound sensor",
+                        "deviceType": "sound sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kids room",
+                            "locationId": "5f01c117-9115-4e7b-b879-2fe4ba2e73e0",
+                            "roomName": "kids room",
+                            "roomId": "5f01c117-9115-4e7b-b879-2fe4ba2e73e0"
+                        }
+                    },
+                    {
+                        "deviceId": "249e5ac7-b20d-4fd1-80f0-cd189dd7993a",
+                        "deviceName": "microphone",
+                        "deviceType": "microphone",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "f89fc8a8-b83f-4463-b3eb-10d870cb1af4",
+                            "roomName": "living room",
+                            "roomId": "f89fc8a8-b83f-4463-b3eb-10d870cb1af4"
+                        }
+                    },
+                    {
+                        "deviceId": "01d91b23-c53a-411d-b173-445926054fae",
+                        "deviceName": "sound sensor",
+                        "deviceType": "sound sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hall",
+                            "locationId": "4433ccc9-8596-42fe-8605-7824af4a5559",
+                            "roomName": "hall",
+                            "roomId": "4433ccc9-8596-42fe-8605-7824af4a5559"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Enable sound detection."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "soundDetectionSetting_turnOn",
+                            "arguments": {
+                                "device": "98f0e7a5-e1bc-41c3-8627-d99781906fc6",
+                                "room": "kids room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sound detection is now on."
+        }
+    ],
+    "tools": []
+}

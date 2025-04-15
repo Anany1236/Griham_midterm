@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3897dee4-9044-42c4-8a2b-44e4d9ec9e6c",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "14436e0b-4a82-4221-8f24-c8eff24885d8",
+                            "roomName": "bathroom",
+                            "roomId": "14436e0b-4a82-4221-8f24-c8eff24885d8"
+                        }
+                    },
+                    {
+                        "deviceId": "da491d18-f37f-4501-baf4-58c0b0b7b91c",
+                        "deviceName": "tub cleaner",
+                        "deviceType": "tub cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "f4ddda86-e7a3-41b9-8756-ebb29b87cf01",
+                            "roomName": "laundry room",
+                            "roomId": "f4ddda86-e7a3-41b9-8756-ebb29b87cf01"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the status of the tub cleaning cycle in the bathroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "feedPortion_setValue",
+                            "arguments": {
+                                "device": "3897dee4-9044-42c4-8a2b-44e4d9ec9e6c",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the tub cleaning cycle in the bathroom has been retrieved."
+        }
+    ],
+    "tools": []
+}

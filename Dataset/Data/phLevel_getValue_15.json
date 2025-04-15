@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "746ea192-89ed-4390-9323-2d722d327be6",
+                        "deviceName": "water quality sensor",
+                        "deviceType": "water quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "63698c65-d6c1-47dd-a3ee-f632c4eaf4df",
+                            "roomName": "kitchen",
+                            "roomId": "63698c65-d6c1-47dd-a3ee-f632c4eaf4df"
+                        }
+                    },
+                    {
+                        "deviceId": "5a9f5557-4dba-4e71-a078-4083f6eb8668",
+                        "deviceName": "water purifier",
+                        "deviceType": "water purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "fa2b62a6-07f5-4081-ab50-4e0e6c6b75f3",
+                            "roomName": "utility room",
+                            "roomId": "fa2b62a6-07f5-4081-ab50-4e0e6c6b75f3"
+                        }
+                    },
+                    {
+                        "deviceId": "e7b61a80-45c6-4cf4-b9d2-be96c3a450b3",
+                        "deviceName": "water purifier",
+                        "deviceType": "water purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "51f68b2c-312f-48be-9cf4-77d177d5ac91",
+                            "roomName": "bathroom",
+                            "roomId": "51f68b2c-312f-48be-9cf4-77d177d5ac91"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "How's the pH level today?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "phLevel_getValue",
+                            "arguments": {
+                                "device": "746ea192-89ed-4390-9323-2d722d327be6",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Set the display to {mode}."
+        }
+    ],
+    "tools": []
+}

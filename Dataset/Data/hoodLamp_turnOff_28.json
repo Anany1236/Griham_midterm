@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "39ceb132-05be-416c-ae98-304320ff6d99",
+                        "deviceName": "Hood,Hood,Hood",
+                        "deviceType": "Hood,Hood,Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Dining room,Utility room",
+                            "locationId": "5812f182-506e-41bb-b1d5-5a547fd34688",
+                            "roomName": "kitchen,Dining room,Utility room",
+                            "roomId": "5812f182-506e-41bb-b1d5-5a547fd34688"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Disable the hood lamp in the utility room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodLamp_turnOff",
+                            "arguments": {
+                                "device": "39ceb132-05be-416c-ae98-304320ff6d99",
+                                "room": "kitchen,Dining room,Utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The hood lamp in the utility room has been disabled."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "273f952d-fd16-49a4-b730-feee3e446264",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3f105370-02b0-41e7-9181-7e98dc04c536",
+                            "roomName": "utility room",
+                            "roomId": "46b1075a-6d41-4130-ae42-c3ea2e224a35"
+                        }
+                    },
+                    {
+                        "deviceId": "e462b6f5-eb85-44c3-adf7-66f70dce870e",
+                        "deviceName": "roof air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3f105370-02b0-41e7-9181-7e98dc04c536",
+                            "roomName": "living room",
+                            "roomId": "799acea3-f202-4274-a67e-ebbee18cf631"
+                        }
+                    },
+                    {
+                        "deviceId": "089f918e-0e52-4d0c-8492-d696224165f0",
+                        "deviceName": "floor air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3f105370-02b0-41e7-9181-7e98dc04c536",
+                            "roomName": "bedroom",
+                            "roomId": "1234101a-8884-43e0-9ddb-87f24d3ff3f4"
+                        }
+                    },
+                    {
+                        "deviceId": "a8c7b4b4-b687-461d-848a-e8da3a635597",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3f105370-02b0-41e7-9181-7e98dc04c536",
+                            "roomName": "guest room",
+                            "roomId": "11363fa7-e254-44fb-ae8c-1a708894026f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the cooling temperature of the air conditioner by 6 degrees in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "coolingTemperature_increase",
+                            "arguments": {
+                                "device": "a8c7b4b4-b687-461d-848a-e8da3a635597",
+                                "room": "guest room",
+                                "coolingTemperatureDelta": "6"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have turned up the cooling temperature of the air conditioner by 6 degrees."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ce9c86d5-e098-4c4f-a7dc-45aa3840ca47",
+                        "deviceName": "airpurifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a40b2671-261e-40ab-925d-1a01416aea04",
+                            "roomName": "living room",
+                            "roomId": "9addba5f-01c8-4754-a82f-1facf9340aa7"
+                        }
+                    },
+                    {
+                        "deviceId": "9a8429aa-82ca-4139-b07b-50b2aa9cabeb",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a40b2671-261e-40ab-925d-1a01416aea04",
+                            "roomName": "living room",
+                            "roomId": "9addba5f-01c8-4754-a82f-1facf9340aa7"
+                        }
+                    },
+                    {
+                        "deviceId": "d0998ce8-d159-4da0-9abd-90207d5b5915",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a40b2671-261e-40ab-925d-1a01416aea04",
+                            "roomName": "living room",
+                            "roomId": "9addba5f-01c8-4754-a82f-1facf9340aa7"
+                        }
+                    },
+                    {
+                        "deviceId": "5dbd7948-c668-4b8a-9273-8cace0efee01",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a40b2671-261e-40ab-925d-1a01416aea04",
+                            "roomName": "living room",
+                            "roomId": "9addba5f-01c8-4754-a82f-1facf9340aa7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turned off the air purifier in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_stop",
+                            "arguments": {
+                                "device": "ce9c86d5-e098-4c4f-a7dc-45aa3840ca47",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have stop the living room air purifier"
+        }
+    ],
+    "tools": []
+}

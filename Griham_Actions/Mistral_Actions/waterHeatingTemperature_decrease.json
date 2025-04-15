@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "waterHeatingTemperature_decrease",
+            "description": "This function is used to decrease the hot water temperature of the boiler.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to decrease the hot water temperature."
+                    },
+                    "waterHeatingTemperatureDelta": {
+                        "type": "number",
+                        "description": "The amount by which to decrease the hot water temperature."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4d3d56be-2c55-4252-b054-f6aca1bfd36a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fcf14c67-b16d-4a62-86d5-0037ca9009a8",
+                            "roomName": "bedroom",
+                            "roomId": "fcf14c67-b16d-4a62-86d5-0037ca9009a8"
+                        }
+                    },
+                    {
+                        "deviceId": "20b953ba-d355-4482-a348-9631a13d4994",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "65a9cb8a-708a-4ba5-95f1-462b0473a236",
+                            "roomName": "living Room",
+                            "roomId": "65a9cb8a-708a-4ba5-95f1-462b0473a236"
+                        }
+                    },
+                    {
+                        "deviceId": "1031d07e-3beb-4ccc-b067-da2f926bddcc",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ef4f8311-9c33-4a2e-93cb-f280d62cced9",
+                            "roomName": "guest Room",
+                            "roomId": "ef4f8311-9c33-4a2e-93cb-f280d62cced9"
+                        }
+                    },
+                    {
+                        "deviceId": "f73f6aeb-24a9-46d4-a2bc-92be375f73ae",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4aab274d-6d1c-46da-a570-4a3ffb9c2dc8",
+                            "roomName": "kitchen",
+                            "roomId": "4aab274d-6d1c-46da-a570-4a3ffb9c2dc8"
+                        }
+                    },
+                    {
+                        "deviceId": "fb1e52a8-636c-4180-9f08-d05d15fdacd1",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9e74cb9a-bae2-4093-912b-66877e4f7fd3",
+                            "roomName": "utility Room",
+                            "roomId": "9e74cb9a-bae2-4093-912b-66877e4f7fd3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the chair position of the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chairPosition_setValue",
+                            "arguments": {
+                                "device": "1031d07e-3beb-4ccc-b067-da2f926bddcc",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The chair position of the light in the guest room is adjusted"
+        }
+    ],
+    "tools": []
+}

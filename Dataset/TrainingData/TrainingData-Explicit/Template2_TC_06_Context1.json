@@ -1,0 +1,63 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8395cb55-12c1-aabc-a23d-7a7dabb678aa",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "master bedroom",
+                            "roomId": "r3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Lets watch TV"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "8395cb55-12c1-aabc-a23d-7a7dabb678aa"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The TV is turned on."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": []
+        }
+    ]
+}

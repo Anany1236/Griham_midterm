@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "ccad7118-0933-4be3-8535-9b4baeb87beb",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "dd2800aa-8099-4a42-af09-f2142b6e2606",
+							"roomName": "bedroom",
+							"roomId": "88f5eafb-a9f0-44db-b0ff-a0b2e8096d9e"
+						}
+					},
+					{
+						"deviceId": "8525bd51-c130-4a6b-8495-b4a3b2a711cd",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "dd2800aa-8099-4a42-af09-f2142b6e2606",
+							"roomName": "living room",
+							"roomId": "169adc2a-5bae-45fb-a358-44c230856c9a"
+						}
+					},
+					{
+						"deviceId": "7cc3bc6b-a3d9-4816-bbc5-fb418e67b603",
+						"deviceName": "light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "dd2800aa-8099-4a42-af09-f2142b6e2606",
+							"roomName": "master bedroom",
+							"roomId": "4791a3ce-521b-43a1-9d5d-6ac9efa8ad1e"
+						}
+					},
+					{
+						"deviceId": "aef3ed7e-60c0-43e1-9021-753aa29ecae0",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "dd2800aa-8099-4a42-af09-f2142b6e2606",
+							"roomName": "kitchen",
+							"roomId": "e4961ff6-6222-4e54-bc78-466d5c512c77"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Set the volume to minimum of bedroom speaker"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMin",
+							"arguments": {
+								"device": "ccad7118-0933-4be3-8535-9b4baeb87beb",
+								"room": "bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to minimum of bedroom speaker."
+		}
+	],
+	"tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e5538836-96c3-4ab8-b3b0-3f2529ad96a5",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2da29c05-1a4d-4c05-99a8-c0754b3e89de",
+                            "roomName": "laundry room",
+                            "roomId": "94afa485-de8b-4e79-94bd-752acc3a9bea"
+                        }
+                    },
+                    {
+                        "deviceId": "c7729263-b654-463a-a932-ca20e219994f",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2da29c05-1a4d-4c05-99a8-c0754b3e89de",
+                            "roomName": "living room",
+                            "roomId": "870ffe5d-e17a-4254-9e98-f1b0e5f09fc5"
+                        }
+                    },
+                    {
+                        "deviceId": "6e9e091c-ce1e-444f-9dcd-6dc8e67a54ba",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2da29c05-1a4d-4c05-99a8-c0754b3e89de",
+                            "roomName": "kitchen",
+                            "roomId": "5994cf78-7e16-4517-a531-c6507c5621ba"
+                        }
+                    },
+                    {
+                        "deviceId": "4c642745-af7d-4c34-920f-d7099a4e8a62",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2da29c05-1a4d-4c05-99a8-c0754b3e89de",
+                            "roomName": "bedroom",
+                            "roomId": "310f3e10-9915-4859-beef-9455d766e848"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you increase the heater temperature value of boiler by 2 degrees?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_increase",
+                            "arguments": {
+                                "device": "e5538836-96c3-4ab8-b3b0-3f2529ad96a5",
+                                "heatingTemperatureDelta": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The temperature has been increased to 2 degrees for the boiler in the laundry room"
+        }
+    ],
+    "tools": []
+}

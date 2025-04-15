@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3a092203-5bab-4192-b8d1-51eeac5707a0",
+                        "deviceName": "gas valve",
+                        "deviceType": "gasvalve",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "09dfd3c2-0e0f-4bb3-8a3c-8293d953ee34",
+                            "roomName": "kitchen",
+                            "roomId": "ae20a298-755a-4539-adb1-d37a9c90d7b6"
+                        }
+                    },
+                    {
+                        "deviceId": "ad5002ce-e03f-4d23-a928-1dd715fd8d1f",
+                        "deviceName": "door lock",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "09dfd3c2-0e0f-4bb3-8a3c-8293d953ee34",
+                            "roomName": "bedroom",
+                            "roomId": "4e3b8861-e78e-4212-a88c-effcbaa2590f"
+                        }
+                    },
+                    {
+                        "deviceId": "9a4a08f8-f6e5-4981-9159-01f1e25069fc",
+                        "deviceName": "range",
+                        "deviceType": "range",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "09dfd3c2-0e0f-4bb3-8a3c-8293d953ee34",
+                            "roomName": "kitchen",
+                            "roomId": "ae20a298-755a-4539-adb1-d37a9c90d7b6"
+                        }
+                    },
+                    {
+                        "deviceId": "a19f2f00-864e-40a3-a697-c29ce952203c",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "09dfd3c2-0e0f-4bb3-8a3c-8293d953ee34",
+                            "roomName": "living room",
+                            "roomId": "99e4fbf8-3af9-4c25-8972-a471e28e6346"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Is the door lock closed?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getCloseStatus",
+                            "arguments": {
+                                "device": "ad5002ce-e03f-4d23-a928-1dd715fd8d1f"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, door lock is closed."
+        }
+    ],
+    "tools": []
+}

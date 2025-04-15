@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5debb37c-c849-476c-ad81-23840e64c8fd",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b664607-34ce-4f39-844d-4ad9a6a34020",
+                            "roomName": "kitchen",
+                            "roomId": "d15898cd-e363-4478-bce7-bf8fcd5dcfa3"
+                        }
+                    },
+                    {
+                        "deviceId": "31699efe-fbc3-471a-8f37-894e60015eb2",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b664607-34ce-4f39-844d-4ad9a6a34020",
+                            "roomName": "kitchen",
+                            "roomId": "d15898cd-e363-4478-bce7-bf8fcd5dcfa3"
+                        }
+                    },
+                    {
+                        "deviceId": "ab4c5224-1cad-47cc-a11e-8739a5981b41",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b664607-34ce-4f39-844d-4ad9a6a34020",
+                            "roomName": "living room",
+                            "roomId": "f731c31d-1ee4-41be-b1ab-7a1a2350e7db"
+                        }
+                    },
+                    {
+                        "deviceId": "a52998db-a208-45bf-b13a-22132b268b5d",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b664607-34ce-4f39-844d-4ad9a6a34020",
+                            "roomName": "bedroom",
+                            "roomId": "bf93d8d1-0147-446b-93f3-95ad2d1eda48"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "How much time is left on microwave?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTimer_getRemainingTime",
+                            "arguments": {
+                                "device": "5debb37c-c849-476c-ad81-23840e64c8fd"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The time left on microwave is 2 minutes."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b9ba08cf-ec4b-40b9-b9c4-b47114319c23",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "94a93f06-77c3-4de5-a5c7-0fdcc53c6483",
+                            "roomName": "laundry room",
+                            "roomId": "94a93f06-77c3-4de5-a5c7-0fdcc53c6483"
+                        }
+                    },
+                    {
+                        "deviceId": "373422bd-63a7-45d0-bd03-c9df2cd995cc",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "17d01be0-8e4c-4e6b-8fa1-7e2bf0535e3e",
+                            "roomName": "kitchen",
+                            "roomId": "17d01be0-8e4c-4e6b-8fa1-7e2bf0535e3e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please tell me the emptying duration on the robot cleaner."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "emptyingDuration_getValue",
+                            "arguments": {
+                                "device": "b9ba08cf-ec4b-40b9-b9c4-b47114319c23",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The emptying duration for the robot cleaner is 15 minutes."
+        }
+    ],
+    "tools": []
+}

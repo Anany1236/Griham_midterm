@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5edd729a-b0c3-49ff-b2f5-faaf1eabf0ad",
+                        "deviceName": "gas valve",
+                        "deviceType": "gasvalve",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6785a157-798f-44b5-bdfc-7efc2394aefd",
+                            "roomName": "kitchen",
+                            "roomId": "6064808f-12ba-4f73-933b-5514f6f392d2"
+                        }
+                    },
+                    {
+                        "deviceId": "88d21a6a-3b69-4efd-ac80-1091750b3e7f",
+                        "deviceName": "door lock",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6785a157-798f-44b5-bdfc-7efc2394aefd",
+                            "roomName": "bedroom",
+                            "roomId": "7ea68d88-348e-45c6-abe6-e5859f7df253"
+                        }
+                    },
+                    {
+                        "deviceId": "3a764e62-4e4e-495c-9538-00973a3f3a7b",
+                        "deviceName": "water valve",
+                        "deviceType": "watervalve",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6785a157-798f-44b5-bdfc-7efc2394aefd",
+                            "roomName": "laundry room",
+                            "roomId": "a2b5e109-074f-4395-9a35-53137049ce45"
+                        }
+                    },
+                    {
+                        "deviceId": "54521862-b510-449d-a849-b3255878559f",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6785a157-798f-44b5-bdfc-7efc2394aefd",
+                            "roomName": "living room",
+                            "roomId": "4e525ab5-db2f-4899-a9d9-4c801389846f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know if water valve open in laundry room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getOpenStatus",
+                            "arguments": {
+                                "device": "3a764e62-4e4e-495c-9538-00973a3f3a7b",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, the water valve is open in laundry room."
+        }
+    ],
+    "tools": []
+}

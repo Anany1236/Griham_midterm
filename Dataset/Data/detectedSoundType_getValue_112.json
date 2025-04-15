@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "796c56d6-ac2d-4a1e-aa24-47e5375dae9a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c4e17de-f450-4577-875d-3456d1f0cad6",
+                            "roomName": "bedroom",
+                            "roomId": "4c4e17de-f450-4577-875d-3456d1f0cad6"
+                        }
+                    },
+                    {
+                        "deviceId": "f55e52c6-79d6-49b7-85b8-1c7ccf631369",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8aaf86c8-6356-44a4-a389-c09704aef825",
+                            "roomName": "living Room",
+                            "roomId": "8aaf86c8-6356-44a4-a389-c09704aef825"
+                        }
+                    },
+                    {
+                        "deviceId": "a961f20d-0e83-4a26-8c18-53eca491aced",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18c9a417-309a-4042-b94f-59867aeb8fc9",
+                            "roomName": "guest Room",
+                            "roomId": "18c9a417-309a-4042-b94f-59867aeb8fc9"
+                        }
+                    },
+                    {
+                        "deviceId": "cc70d135-e627-4dd4-918b-c633a7791e9f",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "59115906-793a-4d8b-818e-ae4015646386",
+                            "roomName": "kitchen",
+                            "roomId": "59115906-793a-4d8b-818e-ae4015646386"
+                        }
+                    },
+                    {
+                        "deviceId": "c377fbea-00e5-4d5d-af24-bec8d6724254",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "12e59266-3f28-4222-9eaa-7c1e142868f4",
+                            "roomName": "utility Room",
+                            "roomId": "12e59266-3f28-4222-9eaa-7c1e142868f4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the detected sound type for the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "detectedSoundType_getValue",
+                            "arguments": {
+                                "device": "f55e52c6-79d6-49b7-85b8-1c7ccf631369",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The detected sound type for the air purifier in the living room is available"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,32 @@
+{
+    "name": "refrigeratorOption_turnOn",
+    "description": "This function is used to turn on a specified option of a refrigerator.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to turn on the specified option of the refrigerator.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The option to be turned on on the refrigerator (e.g., welcome light).",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

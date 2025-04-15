@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e15488a8-02a2-46d4-91d8-01d1399e511c",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b230e4ce-5ff2-497c-b4f8-9f9628fd9911",
+                            "roomName": "living room",
+                            "roomId": "7157a396-43f8-4302-84c2-ad74a881bea4"
+                        }
+                    },
+                    {
+                        "deviceId": "23b7c2cb-a93d-4186-9d6d-5accb28268ac",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b230e4ce-5ff2-497c-b4f8-9f9628fd9911",
+                            "roomName": "kids room",
+                            "roomId": "fff7a632-a777-4b92-aba9-826ff2a80696"
+                        }
+                    },
+                    {
+                        "deviceId": "8d4db5af-bd02-41aa-9cae-4e5ad63eabea",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b230e4ce-5ff2-497c-b4f8-9f9628fd9911",
+                            "roomName": "bedroom",
+                            "roomId": "4dfc44f3-0051-4f07-881a-3a69440b569d"
+                        }
+                    },
+                    {
+                        "deviceId": "e07f4a9b-d8d2-4f0b-b782-ff0c6e5a6605",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b230e4ce-5ff2-497c-b4f8-9f9628fd9911",
+                            "roomName": "guest room",
+                            "roomId": "bf71eea3-b89c-4e43-b66d-e5acf6408585"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn up the fan speed of the living room fan by 30?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeed_increase",
+                            "arguments": {
+                                "device": "e15488a8-02a2-46d4-91d8-01d1399e511c",
+                                "room": "living room",
+                                "fanSpeed": 30
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed of the living room fan is turned up by 30"
+        }
+    ],
+    "tools": []
+}

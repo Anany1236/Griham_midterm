@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "chairPosition_setValue",
+            "description": "This function is used to adjust the position of a massage chair.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the massage chair is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the massage chair is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to adjust the chair position."
+                    },
+                    "predefinedChairPosition": {
+                        "type": "string",
+                        "description": "The predefined position to set for the massage chair."
+                    }
+                },
+                "required": [
+                    "predefinedChairPosition"
+                ]
+            }
+        }
+    ]
+}

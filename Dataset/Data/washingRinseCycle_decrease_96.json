@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ee631125-ea37-49a7-b6e6-e2a76b8ad748",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "024b72a3-679e-4b6b-aa58-e2b57f8ac547",
+                            "roomName": "laundry room",
+                            "roomId": "024b72a3-679e-4b6b-aa58-e2b57f8ac547"
+                        }
+                    },
+                    {
+                        "deviceId": "4e1656f0-83ae-45ec-a5eb-6c74008be48b",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "a2089ee5-419c-4b62-b429-050728d3b3e1",
+                            "roomName": "kitchen",
+                            "roomId": "a2089ee5-419c-4b62-b429-050728d3b3e1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the rinse cycle on the washing machine in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingRinseCycle_decrease",
+                            "arguments": {
+                                "device": "ee631125-ea37-49a7-b6e6-e2a76b8ad748",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rinse cycle on the washing machine in the laundry room has been decreased."
+        }
+    ],
+    "tools": []
+}

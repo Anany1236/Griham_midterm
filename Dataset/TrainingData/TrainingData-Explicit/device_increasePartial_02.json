@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4919dce0-f536-4f5c-81e4-b71a45bb2df9",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86ceb76c-e987-4e58-8454-2ed302464e77",
+                            "roomName": "living room",
+                            "roomId": "c5192a5e-a190-437b-8cb8-c2976e33cf5e"
+                        }
+                    },
+                    {
+                        "deviceId": "24a8a9a9-d9dc-4352-be42-2cbc646641ba",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86ceb76c-e987-4e58-8454-2ed302464e77",
+                            "roomName": "bedroom",
+                            "roomId": "7a94b154-9f73-4a6c-ab61-26b7992899d1"
+                        }
+                    },
+                    {
+                        "deviceId": "210e7d87-1d73-441c-bdaa-3364dc1e7e5f",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86ceb76c-e987-4e58-8454-2ed302464e77",
+                            "roomName": "laundry room",
+                            "roomId": "ad81717a-cb45-4c48-b04d-8c355ebc517d"
+                        }
+                    },
+                    {
+                        "deviceId": "10f46653-5df9-499d-98e1-145c2c39203e",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86ceb76c-e987-4e58-8454-2ed302464e77",
+                            "roomName": "bedroom",
+                            "roomId": "7a94b154-9f73-4a6c-ab61-26b7992899d1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the washing machine partially in laundry room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_increasePartial",
+                            "arguments": {
+                                "device": "210e7d87-1d73-441c-bdaa-3364dc1e7e5f",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have increased the washing machine partially in laundry room."
+        }
+    ],
+    "tools": []
+}

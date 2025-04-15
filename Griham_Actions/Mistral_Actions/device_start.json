@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "device_start",
+            "description": "This function is used to start a specific compartment of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to start."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to perform on the device."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment related to the device."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

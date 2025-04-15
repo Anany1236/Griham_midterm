@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0293de09-f001-4415-8268-d25be860cbad",
+                        "deviceName": "smart lights",
+                        "deviceType": "smart lights",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "e13f611d-f87b-4e46-a3bb-de6634b349b6",
+                            "roomName": "living room",
+                            "roomId": "e13f611d-f87b-4e46-a3bb-de6634b349b6"
+                        }
+                    },
+                    {
+                        "deviceId": "05b1166d-c2bb-4110-941e-dffb885fae9a",
+                        "deviceName": "smart assistant",
+                        "deviceType": "smart assistant",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "fdf0f388-e330-4b54-925f-4caa51d9ec16",
+                            "roomName": "guest room",
+                            "roomId": "fdf0f388-e330-4b54-925f-4caa51d9ec16"
+                        }
+                    },
+                    {
+                        "deviceId": "868d3eff-b9c6-482b-ad22-f4303273cbd5",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hall",
+                            "locationId": "6fbb9c32-e869-4a26-a299-b9facb932bf3",
+                            "roomName": "hall",
+                            "roomId": "6fbb9c32-e869-4a26-a299-b9facb932bf3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you run the selected scene?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scene_execute",
+                            "arguments": {
+                                "device": "0293de09-f001-4415-8268-d25be860cbad",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The selected scene is now running."
+        }
+    ],
+    "tools": []
+}

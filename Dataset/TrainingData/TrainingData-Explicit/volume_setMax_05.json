@@ -1,0 +1,71 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "5ca6f532-7365-4be3-babc-1d9deaaa5acb",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "29e77dfa-39c9-4677-bb4d-0b58d5aabb51",
+							"roomName": "master bedroom",
+							"roomId": "24884f70-8bde-4f7d-8b71-c8d531dc8afe"
+						}
+					},
+					{
+						"deviceId": "315a82d4-d95b-4a35-b6e1-60fd7b0286b8",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "29e77dfa-39c9-4677-bb4d-0b58d5aabb51",
+							"roomName": "living room",
+							"roomId": "5a2b113e-9e35-4f6a-bd1a-4f9f0d940210"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you set the volume to maximum of master bedroom tv?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMax",
+							"arguments": {
+								"device": "5ca6f532-7365-4be3-babc-1d9deaaa5acb",
+								"room": "master bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to maximum of master bedroom tv."
+		}
+	],
+	"tools": []
+}

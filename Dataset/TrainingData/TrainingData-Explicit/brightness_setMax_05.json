@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "10db6050-2c4c-470f-b9eb-2a4fe975f5ff",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "84d52372-bb8a-482e-acb3-b7abbd885ff4",
+							"roomName": "kids room",
+							"roomId": "41eff6ae-1993-433c-aca0-edf1bf66ae1f"
+						}
+					},
+					{
+						"deviceId": "ade4b0b9-a1d3-43e6-b140-d40cdd37ef0e",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "84d52372-bb8a-482e-acb3-b7abbd885ff4",
+							"roomName": "bedroom",
+							"roomId": "fffcfa84-175f-494a-a476-7d1ae0bf2417"
+						}
+					},
+					{
+						"deviceId": "bc62cbf1-efa4-40ce-9c3d-98fc1e011ff6",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "84d52372-bb8a-482e-acb3-b7abbd885ff4",
+							"roomName": "master bedroom",
+							"roomId": "0478c220-f13b-40e1-be00-3b951accdcaf"
+						}
+					},
+					{
+						"deviceId": "bb29570b-5e02-4f7b-9380-b5e84d40d926",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "84d52372-bb8a-482e-acb3-b7abbd885ff4",
+							"roomName": "kitchen",
+							"roomId": "082a9c5a-df7c-4e86-a8b8-9142b24767ad"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Change the brightness to maximum of kids room projector"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_setMax",
+							"arguments": {
+								"device": "10db6050-2c4c-470f-b9eb-2a4fe975f5ff",
+								"room": "kids room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have changed the brightness to maximum of kids room projector."
+		}
+	],
+	"tools": []
+}

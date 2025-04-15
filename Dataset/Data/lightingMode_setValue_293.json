@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "25fb46b8-a541-4e95-ac1e-0769bf44fed1",
+                        "deviceName": "smart light",
+                        "deviceType": "smart light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "9efc7965-5d65-4fa3-8c88-2753b401595a",
+                            "roomName": "living room",
+                            "roomId": "9efc7965-5d65-4fa3-8c88-2753b401595a"
+                        }
+                    },
+                    {
+                        "deviceId": "a2362998-c908-42cb-894d-52ecd32e80c4",
+                        "deviceName": "kitchen lights",
+                        "deviceType": "kitchen lights",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "08fdb057-b584-42b8-b7fd-9a0b39dd8b9d",
+                            "roomName": "kitchen",
+                            "roomId": "08fdb057-b584-42b8-b7fd-9a0b39dd8b9d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you change the lighting mode to dim on the kitchen lights?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "lightingMode_setValue",
+                            "arguments": {
+                                "device": "a2362998-c908-42cb-894d-52ecd32e80c4",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have changed the lighting mode to dim on the kitchen lights."
+        }
+    ],
+    "tools": []
+}

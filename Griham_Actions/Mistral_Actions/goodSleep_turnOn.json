@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "goodSleep-turnOn",
+            "description": "This function is used to activate the 'good sleep' mode for a specified duration.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn on the good sleep mode."
+                    },
+                    "duration": {
+                        "type": "string",
+                        "description": "The duration for which the good sleep mode should be activated."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

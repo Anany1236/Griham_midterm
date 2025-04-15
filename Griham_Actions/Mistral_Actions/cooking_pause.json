@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cooking_pause",
+            "description": "This function is used to pause the cooking process on a cooker without canceling or stopping it.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device whose cooking process is being paused."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The specific compartment of the device whose cooking process is being paused."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

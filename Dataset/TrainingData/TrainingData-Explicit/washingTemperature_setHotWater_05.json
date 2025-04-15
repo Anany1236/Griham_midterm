@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2b815ebb-f1d8-4f90-810c-d0011d112650",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1c443ebd-1689-41a2-a478-cea5f6d04364",
+                            "roomName": "utility room",
+                            "roomId": "63a324de-4c36-4764-a67b-91d906313ef4"
+                        }
+                    },
+                    {
+                        "deviceId": "9c0ed8ce-5241-47ae-9045-89ea829d81f5",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1c443ebd-1689-41a2-a478-cea5f6d04364",
+                            "roomName": "living room",
+                            "roomId": "49a25ddc-0ec4-4ac0-bec3-393d659f536b"
+                        }
+                    },
+                    {
+                        "deviceId": "2eb8f903-3fb4-43d2-b283-ea4ac316e4c8",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1c443ebd-1689-41a2-a478-cea5f6d04364",
+                            "roomName": "utility room",
+                            "roomId": "63a324de-4c36-4764-a67b-91d906313ef4"
+                        }
+                    },
+                    {
+                        "deviceId": "04db18c6-a43c-46e1-b4fc-bcb0847b94b4",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1c443ebd-1689-41a2-a478-cea5f6d04364",
+                            "roomName": "bedroom",
+                            "roomId": "0d75adf5-e410-4ead-8e97-06c4391dff78"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the washer's water temperature to hot"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_setHotWater",
+                            "arguments": {
+                                "device": "2b815ebb-f1d8-4f90-810c-d0011d112650"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the washer's water temperature to hot."
+        }
+    ],
+    "tools": []
+}

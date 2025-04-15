@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5d89a31a-17a4-4243-be84-74c3fc57a361",
+                        "deviceName": "pest control device",
+                        "deviceType": "pest control device",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "40055257-97a6-4a82-b715-dc620294b925",
+                            "roomName": "kitchen",
+                            "roomId": "40055257-97a6-4a82-b715-dc620294b925"
+                        }
+                    },
+                    {
+                        "deviceId": "6485d898-a24b-405c-ad59-607bda35f313",
+                        "deviceName": "sensor.motion",
+                        "deviceType": "sensor.motion",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "garage",
+                            "locationId": "09707612-41bd-4ee6-bd3f-c40e98677aa7",
+                            "roomName": "garage",
+                            "roomId": "09707612-41bd-4ee6-bd3f-c40e98677aa7"
+                        }
+                    },
+                    {
+                        "deviceId": "75382f4d-fb06-437f-b231-f4d0862af19e",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "storage room",
+                            "locationId": "a055fc36-7cb2-43e9-9e0f-3b6bbfa3451d",
+                            "roomName": "storage room",
+                            "roomId": "a055fc36-7cb2-43e9-9e0f-3b6bbfa3451d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check if pest control is working?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "pestControl_getStatus",
+                            "arguments": {
+                                "device": "5d89a31a-17a4-4243-be84-74c3fc57a361",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The pest control system is {status} right now."
+        }
+    ],
+    "tools": []
+}

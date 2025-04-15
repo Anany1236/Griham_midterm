@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3e55788e-3f87-4424-acbe-c4b8fd9e6125",
+                        "deviceName": "ceiling fan",
+                        "deviceType": "ceiling fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "618ea503-4bcb-4d95-86e4-f281a9640a58",
+                            "roomName": "living room",
+                            "roomId": "618ea503-4bcb-4d95-86e4-f281a9640a58"
+                        }
+                    },
+                    {
+                        "deviceId": "37cf54c4-7134-4aab-b32a-ea50aa6cdaaa",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "2bebf4ef-bd25-41bf-8553-622920a41e95",
+                            "roomName": "bedroom",
+                            "roomId": "2bebf4ef-bd25-41bf-8553-622920a41e95"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you start the rotation of the ceiling fan?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "rotation_turnOn",
+                            "arguments": {
+                                "device": "3e55788e-3f87-4424-acbe-c4b8fd9e6125",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Can you start the rotation of the ceiling fan?"
+        }
+    ],
+    "tools": []
+}

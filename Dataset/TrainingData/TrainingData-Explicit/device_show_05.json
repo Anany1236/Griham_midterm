@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a87da2f5-a18c-4b79-b8ed-31371fd15b7a",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2aac889-e6d5-499d-ab93-25ef689cf862",
+                            "roomName": "living room",
+                            "roomId": "61351f0c-201d-4295-aac5-336c3ac08cf9"
+                        }
+                    },
+                    {
+                        "deviceId": "9168ff75-0334-4efa-9deb-69efc58b104c",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2aac889-e6d5-499d-ab93-25ef689cf862",
+                            "roomName": "kitchen",
+                            "roomId": "05b66c07-d1d0-4259-9b13-b39b10738e1f"
+                        }
+                    },
+                    {
+                        "deviceId": "22ff7406-1ee6-4e35-9776-b9ef49982534",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2aac889-e6d5-499d-ab93-25ef689cf862",
+                            "roomName": "kitchen",
+                            "roomId": "05b66c07-d1d0-4259-9b13-b39b10738e1f"
+                        }
+                    },
+                    {
+                        "deviceId": "3f3cc13c-6739-489d-8543-c933567fd17a",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d2aac889-e6d5-499d-ab93-25ef689cf862",
+                            "roomName": "bedroom",
+                            "roomId": "266194a2-22d5-4429-b185-072d89058a4a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show me the dishwasher"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_show",
+                            "arguments": {
+                                "device": "22ff7406-1ee6-4e35-9776-b9ef49982534",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Here is your dishwasher and its relevant detail"
+        }
+    ],
+    "tools": []
+}

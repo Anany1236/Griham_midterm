@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "washing_getProgress",
+            "description": "This function is used to check the progress of laundry in a washing machine.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the SmartThings device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the SmartThings device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name of the SmartThings device that needs to have its laundry progress checked."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment of the SmartThings device that needs to have its laundry progress checked."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action for the SmartThings device that needs to have its laundry progress checked."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

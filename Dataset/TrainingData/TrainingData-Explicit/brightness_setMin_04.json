@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "cbe37568-9f1d-48f2-9ed4-2912123d4e4f",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "d5225dc5-907b-4597-9c23-c5fa7cf4f2f7",
+							"roomName": "living room",
+							"roomId": "ce78145a-f868-459f-b783-23e96b1a1788"
+						}
+					},
+					{
+						"deviceId": "861e25d9-195b-4810-a2e3-61567be8f6d8",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "d5225dc5-907b-4597-9c23-c5fa7cf4f2f7",
+							"roomName": "bedroom",
+							"roomId": "2951b92b-d205-427b-a85f-b721b986a8fd"
+						}
+					},
+					{
+						"deviceId": "f2579954-2b69-4ea1-b8e7-939ddf1440ca",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "d5225dc5-907b-4597-9c23-c5fa7cf4f2f7",
+							"roomName": "master bedroom",
+							"roomId": "b52d5c35-6f8c-437c-ac6a-ca092fc798a2"
+						}
+					},
+					{
+						"deviceId": "9e6c2447-5a88-4eca-a766-e8a8f28c0f57",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "d5225dc5-907b-4597-9c23-c5fa7cf4f2f7",
+							"roomName": "kitchen",
+							"roomId": "62c5eaa8-e183-4b1a-a67c-8946de90be11"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you set the brightness to minimum of living room projector?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_setMin",
+							"arguments": {
+								"device": "cbe37568-9f1d-48f2-9ed4-2912123d4e4f",
+								"room": "living room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the brightness to minimum of living room projector."
+		}
+	],
+	"tools": []
+}

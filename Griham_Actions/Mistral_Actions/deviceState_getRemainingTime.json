@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "deviceState_getRemainingTime",
+            "description": "This function is used to query the remaining time for a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to query the remaining time."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to query the remaining time."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to query the remaining time."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

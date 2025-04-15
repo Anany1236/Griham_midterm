@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a463fdbd-2ed6-497c-9259-bc4caef1d697",
+                        "deviceName": "tv1",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "34bc78a8-8d0a-4968-b6b6-d9355c15f159",
+                            "roomName": "living room",
+                            "roomId": "63835be8-34b0-4fe1-819c-1110b7764ab7"
+                        }
+                    },
+                    {
+                        "deviceId": "640b1cdf-be3a-4730-b0eb-ffae0645aff1",
+                        "deviceName": "speaker1",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "34bc78a8-8d0a-4968-b6b6-d9355c15f159",
+                            "roomName": "bedroom",
+                            "roomId": "336a1988-f831-4475-b6e6-c7ab17bbc876"
+                        }
+                    },
+                    {
+                        "deviceId": "a6499a6f-ce98-4625-b77a-702eb9043b17",
+                        "deviceName": "refrigerator1",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "34bc78a8-8d0a-4968-b6b6-d9355c15f159",
+                            "roomName": "kitchen",
+                            "roomId": "9f9b5485-b1b7-4292-911f-89ee20dff90f"
+                        }
+                    },
+                    {
+                        "deviceId": "9edac6c5-7283-4968-b7c0-692534c13488",
+                        "deviceName": "monitor1",
+                        "deviceType": "monitor",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "34bc78a8-8d0a-4968-b6b6-d9355c15f159",
+                            "roomName": "bedroom",
+                            "roomId": "336a1988-f831-4475-b6e6-c7ab17bbc876"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the bixby volume of the living room tv to 45"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bixbyVolume_setValue",
+                            "arguments": {
+                                "device": "a463fdbd-2ed6-497c-9259-bc4caef1d697",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The volume of the tv is 45"
+        }
+    ],
+    "tools": []
+}

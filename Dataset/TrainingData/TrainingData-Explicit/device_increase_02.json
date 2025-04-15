@@ -1,0 +1,97 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5c5770d9-4fc0-4bb6-abf6-47ad92d18bc3",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cd6a2ec4-2186-43ff-b3e7-6a37366fa6d1",
+                            "roomName": "living room",
+                            "roomId": "a1e10695-6a0a-4c3e-8bfa-31bd0f0ddb54"
+                        }
+                    },
+                    {
+                        "deviceId": "c818196b-9050-4a08-906f-8b81e4f846b7",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cd6a2ec4-2186-43ff-b3e7-6a37366fa6d1",
+                            "roomName": "bedroom",
+                            "roomId": "e6881c6d-4fd6-4340-bef6-37282e5e424d"
+                        }
+                    },
+                    {
+                        "deviceId": "2dcbb6b5-1d69-4d14-861e-7dfd6bad7fab",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cd6a2ec4-2186-43ff-b3e7-6a37366fa6d1",
+                            "roomName": "laundry room",
+                            "roomId": "dba219cf-dc2f-4558-a5e4-5cec4a7bb3c3"
+                        }
+                    },
+                    {
+                        "deviceId": "575e5820-c299-44f6-9963-57ef746c1773",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cd6a2ec4-2186-43ff-b3e7-6a37366fa6d1",
+                            "roomName": "kitchen",
+                            "roomId": "260aaa48-7ff8-4d59-b0b0-f34b350747fa"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the living room ac by 2 Celsius"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_increase",
+                            "arguments": {
+                                "device": "5c5770d9-4fc0-4bb6-abf6-47ad92d18bc3",
+                                "room": "living room",
+                                "levelDelta": 2,
+                                "predefinedUnit": "c"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have increased the living room ac by 2 Celsius."
+        }
+    ],
+    "tools": []
+}

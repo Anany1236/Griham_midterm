@@ -1,0 +1,34 @@
+{
+    "name": "application_exit",
+    "description": "This function is used to close a specified application on a smart home device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device which needs to be closed is located. e.g. home, office, etc.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device which needs to be closed is located.  e.g. living room, bedroom, bathroom, etc.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device on which the application needs to be closed. e.g. TV, fridge, mobile, etc.",
+            "optional": true
+        },
+        {
+            "name": "appname",
+            "type": "string",
+            "description": "The name of the application to be closed. e.g. Netflix, prime video, etc.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "device_turnOn"
+    ],
+    "output": []
+}

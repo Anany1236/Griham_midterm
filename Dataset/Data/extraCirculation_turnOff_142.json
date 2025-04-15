@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8de8a267-2291-4732-99ba-12eda4154443",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "efdfb01d-50ac-4528-8e5c-ecc396188bf9",
+                            "roomName": "bedroom",
+                            "roomId": "efdfb01d-50ac-4528-8e5c-ecc396188bf9"
+                        }
+                    },
+                    {
+                        "deviceId": "b1fbbb1e-b6f7-4e9e-bb88-5ad5990e918c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e1b5de24-46a1-43d1-9868-bef92fc4b94c",
+                            "roomName": "living Room",
+                            "roomId": "e1b5de24-46a1-43d1-9868-bef92fc4b94c"
+                        }
+                    },
+                    {
+                        "deviceId": "fa63b018-a525-44f7-b4a8-80cb99ebb09c",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "524e05c9-1c3b-43ce-aac9-2bd1a5cf3dc3",
+                            "roomName": "guest Room",
+                            "roomId": "524e05c9-1c3b-43ce-aac9-2bd1a5cf3dc3"
+                        }
+                    },
+                    {
+                        "deviceId": "416cb86e-4494-451b-9672-9ef6b1279af7",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e5927ca7-8251-43ed-b0bc-0e96477aa6e3",
+                            "roomName": "kitchen",
+                            "roomId": "e5927ca7-8251-43ed-b0bc-0e96477aa6e3"
+                        }
+                    },
+                    {
+                        "deviceId": "30157d17-5d52-4b91-ba26-867340ff66f5",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "40ae76df-76e5-4e1b-9557-d56330e68230",
+                            "roomName": "utility Room",
+                            "roomId": "40ae76df-76e5-4e1b-9557-d56330e68230"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn off the extra circulation mode for the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "extraCirculation_turnOff",
+                            "arguments": {
+                                "device": "b1fbbb1e-b6f7-4e9e-bb88-5ad5990e918c",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The extra circulation mode for the air purifier in the living room is off"
+        }
+    ],
+    "tools": []
+}

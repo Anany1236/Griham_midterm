@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "add53874-42e4-4fa2-b014-b827e5359299",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6337f25-fac8-481c-ac0d-147cb5d0362c",
+                            "roomName": "living room",
+                            "roomId": "ff116910-6687-42cc-82bd-57c92fd4ec60"
+                        }
+                    },
+                    {
+                        "deviceId": "18b2a974-f8d4-42fe-83ad-c215ec70a3c7",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6337f25-fac8-481c-ac0d-147cb5d0362c",
+                            "roomName": "bedroom",
+                            "roomId": "b82e0033-dfd8-4e1a-a965-ef56a4627cbd"
+                        }
+                    },
+                    {
+                        "deviceId": "a6cf02b5-4a33-47df-9ce5-f06ec5b7d7d0",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6337f25-fac8-481c-ac0d-147cb5d0362c",
+                            "roomName": "utility room",
+                            "roomId": "6cd76210-dfc2-412f-97fd-6671178270eb"
+                        }
+                    },
+                    {
+                        "deviceId": "65897e82-77d0-4654-8ca9-bd23ded7248a",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6337f25-fac8-481c-ac0d-147cb5d0362c",
+                            "roomName": "living room",
+                            "roomId": "ff116910-6687-42cc-82bd-57c92fd4ec60"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Reduce the washer partially in utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_decreasePartial",
+                            "arguments": {
+                                "device": "a6cf02b5-4a33-47df-9ce5-f06ec5b7d7d0",
+                                "room": "utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have partially reduced the washer in utility room."
+        }
+    ],
+    "tools": []
+}

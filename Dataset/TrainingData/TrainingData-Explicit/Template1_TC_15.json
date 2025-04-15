@@ -1,0 +1,73 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Shall we play money heist on Netflix in the master bedroom television now"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_play",
+                            "arguments": {
+                                "device": "television",
+                                "room": "master bedroom",
+                                "appname": "Netflix",
+                                "title": "money heist"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The master bedroom television has started playing money heist on Netflix."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "application_launch",
+                    "description": "This function is used to launch an application on TV device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "appname": {
+                                "type": "string",
+                                "description": "Target application to be used"
+                            },
+                            "title": {
+                                "type": "string",
+                                "description": "Target title to be searched and played"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "appname"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

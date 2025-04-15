@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "eecd93ff-a983-4972-9742-1070f79a9e79",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "119b0ac9-9b23-40f2-8296-52aec2019cdf",
+                            "roomName": "bedroom",
+                            "roomId": "119b0ac9-9b23-40f2-8296-52aec2019cdf"
+                        }
+                    },
+                    {
+                        "deviceId": "6c7c06b1-dab8-4c32-ba7b-4f20218a4be0",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e6a09b75-5f9a-416d-b4cc-4948b52c8a97",
+                            "roomName": "living Room",
+                            "roomId": "e6a09b75-5f9a-416d-b4cc-4948b52c8a97"
+                        }
+                    },
+                    {
+                        "deviceId": "23b47ead-a1ae-455a-8a58-8276ea09a604",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2d974e34-37b2-4e3a-901b-aa4123904016",
+                            "roomName": "guest Room",
+                            "roomId": "2d974e34-37b2-4e3a-901b-aa4123904016"
+                        }
+                    },
+                    {
+                        "deviceId": "6bac808b-8ab3-43f5-9280-75dc784a38da",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b55ae136-fd8a-4454-9bdd-c673b1a5610e",
+                            "roomName": "kitchen",
+                            "roomId": "b55ae136-fd8a-4454-9bdd-c673b1a5610e"
+                        }
+                    },
+                    {
+                        "deviceId": "3f697f44-929a-41de-bfdc-7e98f51f572d",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8e248063-6ad6-44b0-a18a-e285ab690724",
+                            "roomName": "utility Room",
+                            "roomId": "8e248063-6ad6-44b0-a18a-e285ab690724"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the filter usage value of the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "filterUsage_getValue",
+                            "arguments": {
+                                "device": "eecd93ff-a983-4972-9742-1070f79a9e79",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The filter usage value of the air conditioner in the bedroom is displayed"
+        }
+    ],
+    "tools": []
+}

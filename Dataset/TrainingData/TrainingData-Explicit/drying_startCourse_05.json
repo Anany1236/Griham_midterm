@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e7de82bd-d329-4158-a286-7fe3cbb1dc85",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ad38f93-5f29-4675-b590-c9c7d08b863d",
+                            "roomName": "bedroom",
+                            "roomId": "f3e4d46b-1a36-4fb9-899d-4d201f867be2"
+                        }
+                    },
+                    {
+                        "deviceId": "4f68b827-545d-4ad1-9baa-0608a05770b7",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ad38f93-5f29-4675-b590-c9c7d08b863d",
+                            "roomName": "laundry room",
+                            "roomId": "bda7f797-d8ef-4754-956e-d9730855170f"
+                        }
+                    },
+                    {
+                        "deviceId": "800a1108-61b0-4183-a781-6f0c07a53aaa",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ad38f93-5f29-4675-b590-c9c7d08b863d",
+                            "roomName": "utility room",
+                            "roomId": "a22230cb-66f1-4331-8a3d-15b4033e4a90"
+                        }
+                    },
+                    {
+                        "deviceId": "8f0d434a-306f-47e2-a16f-56883a4ba920",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2ad38f93-5f29-4675-b590-c9c7d08b863d",
+                            "roomName": "kitchen",
+                            "roomId": "08d4da3d-80b1-4db3-9d88-36331dfd5923"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Initialize the course to be normal in laundry room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_startCourse",
+                            "arguments": {
+                                "room": "laundry room",
+                                "mode": "normal"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have initialized the course to be normal in laundry room."
+        }
+    ],
+    "tools": []
+}

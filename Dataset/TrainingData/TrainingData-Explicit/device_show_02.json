@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2e7b74eb-9a28-4bb5-88f5-0470ae3515e0",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "09213896-2040-4498-89d9-b35da85cb8b3",
+                            "roomName": "living room",
+                            "roomId": "fb6dd5f4-3ecb-4da8-85b5-b7c1250defe5"
+                        }
+                    },
+                    {
+                        "deviceId": "e7ef95ff-a40c-49d9-852e-2c5515aff865",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "09213896-2040-4498-89d9-b35da85cb8b3",
+                            "roomName": "kitchen",
+                            "roomId": "3270d2ca-7233-405b-89a9-fc579dedbc57"
+                        }
+                    },
+                    {
+                        "deviceId": "8a1651f6-7123-4412-8e0b-1d893bdb79c5",
+                        "deviceName": "kimchi refrigerator",
+                        "deviceType": "krefrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "09213896-2040-4498-89d9-b35da85cb8b3",
+                            "roomName": "kitchen",
+                            "roomId": "3270d2ca-7233-405b-89a9-fc579dedbc57"
+                        }
+                    },
+                    {
+                        "deviceId": "a26ef471-98b6-45c6-8666-1bda4f76d8b7",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "09213896-2040-4498-89d9-b35da85cb8b3",
+                            "roomName": "bedroom",
+                            "roomId": "64deb4ef-1870-4585-9c60-09696d121037"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show me the tv"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_show",
+                            "arguments": {
+                                "device": "2e7b74eb-9a28-4bb5-88f5-0470ae3515e0"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Here is your tv and its relevant detail"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "1a575ba4-0542-4a38-8482-802b2512abc2",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "489385bd-f9f5-4dbe-baa1-4e7504f0c619",
+							"roomName": "kids room",
+							"roomId": "d85e8a90-b202-445a-a91f-8ca28b31033e"
+						}
+					},
+					{
+						"deviceId": "f5b2c05b-3bf8-4f53-bc71-af7d805603f9",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "489385bd-f9f5-4dbe-baa1-4e7504f0c619",
+							"roomName": "bedroom",
+							"roomId": "dcc7bb0a-7ba0-49ad-aa40-6a6dd44a5567"
+						}
+					},
+					{
+						"deviceId": "5e0c2329-1dd4-4332-93ac-ac529ccfd784",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "489385bd-f9f5-4dbe-baa1-4e7504f0c619",
+							"roomName": "master bedroom",
+							"roomId": "d71a84a7-aedd-4fac-9fc9-654958dc2f7d"
+						}
+					},
+					{
+						"deviceId": "97197bae-9191-418e-97fe-14539514b28e",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "489385bd-f9f5-4dbe-baa1-4e7504f0c619",
+							"roomName": "kitchen",
+							"roomId": "6cc82178-36d6-4aad-9e8b-c07e5dd826f8"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Change the brightness to minimum of kids room projector"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_setMin",
+							"arguments": {
+								"device": "1a575ba4-0542-4a38-8482-802b2512abc2",
+								"room": "kids room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have changed the brightness to minimum of kids room projector."
+		}
+	],
+	"tools": []
+}

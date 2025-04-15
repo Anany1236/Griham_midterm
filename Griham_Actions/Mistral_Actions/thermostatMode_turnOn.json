@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "thermostatMode-turnOn",
+            "description": "This function is used to turn on the thermostat mode of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn on the thermostat mode."
+                    },
+                    "predefinedThermostatMode": {
+                        "type": "string",
+                        "description": "The predefined thermostat mode to turn on."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode to turn on the thermostat."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

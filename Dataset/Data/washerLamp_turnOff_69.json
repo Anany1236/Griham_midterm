@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7b112c38-bbb5-4bf2-b235-06a5c91ff3b6",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "68b9918a-5435-4576-81e8-37ef425647fc",
+                            "roomName": "laundry room",
+                            "roomId": "68b9918a-5435-4576-81e8-37ef425647fc"
+                        }
+                    },
+                    {
+                        "deviceId": "ac76d836-51bf-4236-a53e-f0dcc26ce118",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "04c0406b-0b09-4ea2-97fc-f33d8d2e7a3b",
+                            "roomName": "utility room",
+                            "roomId": "04c0406b-0b09-4ea2-97fc-f33d8d2e7a3b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the washer lamp."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washerLamp_turnOff",
+                            "arguments": {
+                                "device": "7b112c38-bbb5-4bf2-b235-06a5c91ff3b6",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washer lamp has been turned off."
+        }
+    ],
+    "tools": []
+}

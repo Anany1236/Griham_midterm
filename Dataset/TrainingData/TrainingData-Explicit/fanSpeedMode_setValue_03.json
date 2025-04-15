@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1b23a8b1-5188-487d-ad05-b8cf699f7403",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "324c6c83-8672-4eb2-854e-07815ede1903",
+                            "roomName": "Living room",
+                            "roomId": "8de1f857-7cbe-42ae-8c29-672e8bffdc5d"
+                        }
+                    },
+                    {
+                        "deviceId": "893a3355-96de-422e-a62a-24005b09c338",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "324c6c83-8672-4eb2-854e-07815ede1903",
+                            "roomName": "kids room",
+                            "roomId": "d9a6d9a6-57a2-457c-baa9-403f775f4590"
+                        }
+                    },
+                    {
+                        "deviceId": "403d0478-df55-45ce-9f71-a7db5728e7d3",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "324c6c83-8672-4eb2-854e-07815ede1903",
+                            "roomName": "bedroom",
+                            "roomId": "1a6b582c-db26-4de2-b923-408c29004e83"
+                        }
+                    },
+                    {
+                        "deviceId": "0838ed1a-8444-42e9-a568-caa5e2208b85",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "324c6c83-8672-4eb2-854e-07815ede1903",
+                            "roomName": "guest room",
+                            "roomId": "e1a308d7-6fd2-46e7-96f7-79a4b62d18a3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the fan speed mode value of the kids room fan to 5"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeedMode_setValue",
+                            "arguments": {
+                                "device": "893a3355-96de-422e-a62a-24005b09c338",
+                                "room": "kids room",
+                                "predefinedFanSpeedMode": "5"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed mode value of the kids room fan is switched to 5"
+        }
+    ],
+    "tools": []
+}

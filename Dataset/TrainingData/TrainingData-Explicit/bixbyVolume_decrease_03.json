@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8f6d505a-5372-40ac-b92e-a4b6c5f52b70",
+                        "deviceName": "tv1",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "36167b21-0856-4aad-8156-5f1f50f3e3a1",
+                            "roomName": "living room",
+                            "roomId": "3b0c7595-29bb-469d-8563-7571a74ad576"
+                        }
+                    },
+                    {
+                        "deviceId": "3245c0fd-e31d-4a63-9745-e94e49026dae",
+                        "deviceName": "speaker1",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "36167b21-0856-4aad-8156-5f1f50f3e3a1",
+                            "roomName": "bedroom",
+                            "roomId": "1bc3bace-a41f-4749-a8a2-6c8834f2b30d"
+                        }
+                    },
+                    {
+                        "deviceId": "af44bb32-5d57-4c73-97fe-368223361817",
+                        "deviceName": "refrigerator1",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "36167b21-0856-4aad-8156-5f1f50f3e3a1",
+                            "roomName": "kitchen",
+                            "roomId": "abe04cb7-090c-445d-a720-281f49fb1eaf"
+                        }
+                    },
+                    {
+                        "deviceId": "f4652929-c84a-42b2-b449-ec26c2403a2c",
+                        "deviceName": "monitor1",
+                        "deviceType": "monitor",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "36167b21-0856-4aad-8156-5f1f50f3e3a1",
+                            "roomName": "bedroom",
+                            "roomId": "1bc3bace-a41f-4749-a8a2-6c8834f2b30d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn down the bixby volume of the monitor?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bixbyVolume_decrease",
+                            "arguments": {
+                                "device": "monitor"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The volume of the monitor is now 5"
+        }
+    ],
+    "tools": []
+}

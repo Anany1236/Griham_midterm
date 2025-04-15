@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b5df3aaf-8c46-4d55-92f0-e0be2f0c8e8b",
+                        "deviceName": "Robot Cleaner",
+                        "deviceType": "Robot Cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "39d27d8f-ddbf-42fd-9e71-7416d9b017fa",
+                            "roomName": "bedroom",
+                            "roomId": "39d27d8f-ddbf-42fd-9e71-7416d9b017fa"
+                        }
+                    },
+                    {
+                        "deviceId": "7f64abbf-4ee1-43aa-9700-c67c6f9ba0f9",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "633bc1a0-e5ce-4ec7-9247-5908ee114b6c",
+                            "roomName": "living Room",
+                            "roomId": "633bc1a0-e5ce-4ec7-9247-5908ee114b6c"
+                        }
+                    },
+                    {
+                        "deviceId": "0081eb8c-3081-407b-bab9-37c7d44a8748",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2c7181ab-b921-4223-b5ac-00c29d5affc2",
+                            "roomName": "guest Room",
+                            "roomId": "2c7181ab-b921-4223-b5ac-00c29d5affc2"
+                        }
+                    },
+                    {
+                        "deviceId": "701c274c-cf26-40be-a0d9-83841be85079",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6bcb0c91-8e91-4409-8e0b-36f6ed840921",
+                            "roomName": "kitchen",
+                            "roomId": "6bcb0c91-8e91-4409-8e0b-36f6ed840921"
+                        }
+                    },
+                    {
+                        "deviceId": "1c86c74d-b0b3-413c-b535-179718ca0471",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ff84392b-a873-420a-a949-b2f40a9f5794",
+                            "roomName": "utility Room",
+                            "roomId": "ff84392b-a873-420a-a949-b2f40a9f5794"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the battery level of the air conditioner in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "battery_getValue",
+                            "arguments": {
+                                "device": "7f64abbf-4ee1-43aa-9700-c67c6f9ba0f9",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The battery level of the air conditioner in the living room is 50%"
+        }
+    ],
+    "tools": []
+}

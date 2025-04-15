@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5eee8816-3806-4665-9c76-babdc7c1eb2e",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8dfb7679-b5c2-475f-82d6-1a1f4aa96346",
+                            "roomName": "bedroom",
+                            "roomId": "8dfb7679-b5c2-475f-82d6-1a1f4aa96346"
+                        }
+                    },
+                    {
+                        "deviceId": "59264986-05bf-4a51-89ae-124af22b38ec",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6bc2929f-0247-4e32-ac3c-b99ee51dd88c",
+                            "roomName": "living Room",
+                            "roomId": "6bc2929f-0247-4e32-ac3c-b99ee51dd88c"
+                        }
+                    },
+                    {
+                        "deviceId": "971cba16-b5b0-4762-8f81-852325ba89a5",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "de1f3842-dce5-4435-b1b2-6df01bc33494",
+                            "roomName": "guest Room",
+                            "roomId": "de1f3842-dce5-4435-b1b2-6df01bc33494"
+                        }
+                    },
+                    {
+                        "deviceId": "4891281e-b267-40a7-af63-11f76db280ec",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5271989c-0f3a-4ef5-99fb-4abfdf008980",
+                            "roomName": "kitchen",
+                            "roomId": "5271989c-0f3a-4ef5-99fb-4abfdf008980"
+                        }
+                    },
+                    {
+                        "deviceId": "3a5172d3-5ef0-49e0-bfb7-c84f22375e37",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "55340cfd-142e-42bc-b51c-41da286c9b49",
+                            "roomName": "utility Room",
+                            "roomId": "55340cfd-142e-42bc-b51c-41da286c9b49"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the enlarge mode for the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "enLarge_turnOff",
+                            "arguments": {
+                                "device": "971cba16-b5b0-4762-8f81-852325ba89a5",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The enlarge mode for the light in the guest room is deactivated"
+        }
+    ],
+    "tools": []
+}

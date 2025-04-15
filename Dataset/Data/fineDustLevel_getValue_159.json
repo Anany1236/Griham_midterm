@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1422ef0d-af11-43d1-9a1a-b62653043c1e",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ca9953b1-2063-49f9-9abf-299333a1d959",
+                            "roomName": "bedroom",
+                            "roomId": "ca9953b1-2063-49f9-9abf-299333a1d959"
+                        }
+                    },
+                    {
+                        "deviceId": "9cb8cb77-497d-42d2-8612-cb074b00cd69",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dabca46c-09a1-4511-be1e-98ab1e04a3c3",
+                            "roomName": "living Room",
+                            "roomId": "dabca46c-09a1-4511-be1e-98ab1e04a3c3"
+                        }
+                    },
+                    {
+                        "deviceId": "0d3e90dd-02a3-464a-9871-73ed85ee3f1d",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "505924c9-a709-4cd2-b3cd-6407e9e6a10f",
+                            "roomName": "guest Room",
+                            "roomId": "505924c9-a709-4cd2-b3cd-6407e9e6a10f"
+                        }
+                    },
+                    {
+                        "deviceId": "3122abe9-ed69-4917-bb85-fc15e4b8d91c",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4d844e1c-1153-4f4c-8370-77ff7d720d09",
+                            "roomName": "kitchen",
+                            "roomId": "4d844e1c-1153-4f4c-8370-77ff7d720d09"
+                        }
+                    },
+                    {
+                        "deviceId": "e43fbe93-8fd3-4af0-94a9-eef1dea268de",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "496f9b5a-e6e4-40d4-a2d8-f118890b2160",
+                            "roomName": "utility Room",
+                            "roomId": "496f9b5a-e6e4-40d4-a2d8-f118890b2160"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the fine dust level of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fineDustLevel_getValue",
+                            "arguments": {
+                                "device": "3122abe9-ed69-4917-bb85-fc15e4b8d91c",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fine dust level of the washer in the kitchen is 20 \u00b5g/m\u00b3"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "device_connect",
+            "description": "This function is used to add SmartThings devices to a specified location.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device should be added."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device should be added."
+                    },
+                    "predefinedDevice": {
+                        "type": "string",
+                        "description": "The predefined device to be added."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

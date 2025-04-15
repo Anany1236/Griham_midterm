@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a784a8e2-d678-4ddc-bee3-32469bda78ee",
+                        "deviceName": "water purifier",
+                        "deviceType": "water purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "529221e3-687a-467a-b1aa-991f94ea7ebb",
+                            "roomName": "kitchen",
+                            "roomId": "529221e3-687a-467a-b1aa-991f94ea7ebb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the dispense amount to 2 liters for the water purifier?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "water_setDispenseAmount",
+                            "arguments": {
+                                "device": "a784a8e2-d678-4ddc-bee3-32469bda78ee",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dispense amount for the water purifier is now set to 2 liters."
+        }
+    ],
+    "tools": []
+}

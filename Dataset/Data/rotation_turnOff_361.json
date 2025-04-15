@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5ffbd2ec-e736-46ba-ae12-eb3ec1849494",
+                        "deviceName": "ceiling fan",
+                        "deviceType": "ceiling fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ee8257ce-8cd7-4eaf-9b09-0685a904c9b1",
+                            "roomName": "living room",
+                            "roomId": "ee8257ce-8cd7-4eaf-9b09-0685a904c9b1"
+                        }
+                    },
+                    {
+                        "deviceId": "68571b4d-bf4e-438a-ac93-e038fbee72b2",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "f31bc737-1918-4167-9293-4e8a7bf67f85",
+                            "roomName": "bedroom",
+                            "roomId": "f31bc737-1918-4167-9293-4e8a7bf67f85"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you stop the rotation of the ceiling fan?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "rotation_turnOff",
+                            "arguments": {
+                                "device": "5ffbd2ec-e736-46ba-ae12-eb3ec1849494",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rotation of the ceiling fan has been stopped."
+        }
+    ],
+    "tools": []
+}

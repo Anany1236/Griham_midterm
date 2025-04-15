@@ -1,0 +1,132 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5e34da19-8af5-4f37-a8e1-34194c2298ec",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "hall",
+                            "roomId": "118923ce-c5c5-433a-b6fb-44ba189186c3"
+                        }
+                    },
+                    {
+                        "deviceId": "4f218e34-581d-470d-895d-5c542c39e8c5",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "hall",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "bf4f9695-ff53-46c8-8cff-85964e5d9008",
+                        "deviceName": "airpurifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "laundry room",
+                            "roomId": "796b7257-cb2f-4e0d-8623-00d577556064"
+                        }
+                    },
+                    {
+                        "deviceId": "337e3004-1777-43c0-84bd-91d125a8d105",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "hall",
+                            "roomId": "c4cac413-f899-4664-aff8-f3035d723f32"
+                        }
+                    },
+                    {
+                        "deviceId": "378e3004-1777-43c0-84bd-91d125a8d105",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "86fe6668-a923-4cc2-a08e-d93d4dae8abb",
+                            "roomName": "kids room",
+                            "roomId": "c4cac413-f899-4664-aff8-f3035d723f32"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get up for a cozy and snug movie night at 5 PM every weekday?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperatureSetting_increase",
+                            "arguments": {
+                                "device": "5e34da19-8af5-4f37-a8e1-34194c2298ec"
+                            }
+                        },
+                        {
+                            "name": " application_launch",
+                            "arguments": {
+                                "device": "4f218e34-581d-470d-895d-5c542c39e8c5"
+                            }
+                        },
+                        {
+                            "name": " mode_setValue",
+                            "arguments": {
+                                "device": "bf4f9695-ff53-46c8-8cff-85964e5d9008",
+                                "mode": "auto"
+                            }
+                        },
+                        {
+                            "name": " device_close",
+                            "arguments": {
+                                "device": "337e3004-1777-43c0-84bd-91d125a8d105"
+                            }
+                        },
+                        {
+                            "name": " device_turnOff",
+                            "arguments": {
+                                "device": "378e3004-1777-43c0-84bd-91d125a8d105"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success",
+                "cron": "0 17 * * 1-5"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can raise the temperature to a comfortable level, start a movie on the tv, close the blinds, set airpurifier to auto mode and turn the lights off. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

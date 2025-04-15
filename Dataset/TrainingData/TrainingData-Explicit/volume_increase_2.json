@@ -1,0 +1,42 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Increase the volume of the left side living room TV by 2 levels"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "volume_increase",
+                            "arguments": {
+                                "device": "TV",
+                                "volume": 2,
+                                "predefinedScreenPosition": "leftScreen",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Here it is."
+        }
+    ],
+    "tools": []
+}

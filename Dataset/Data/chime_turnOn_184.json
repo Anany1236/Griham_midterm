@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "78f21179-66b5-4ce2-b8d0-d0be5b6dc63a",
+                        "deviceName": "chime",
+                        "deviceType": "chime",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "27d25746-107a-43b7-90bd-57096d75509d",
+                            "roomName": "kitchen",
+                            "roomId": "27d25746-107a-43b7-90bd-57096d75509d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the chime in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chime_turnOn",
+                            "arguments": {
+                                "device": "78f21179-66b5-4ce2-b8d0-d0be5b6dc63a",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The chime in the kitchen is now on."
+        }
+    ],
+    "tools": []
+}

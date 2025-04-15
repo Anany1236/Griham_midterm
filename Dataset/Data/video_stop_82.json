@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "af464622-a5cd-4b22-8fea-bcf3540b5ec8",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "29689f0f-55cc-41d9-b26b-fb6e5f80c4b0",
+                            "roomName": "living room",
+                            "roomId": "29689f0f-55cc-41d9-b26b-fb6e5f80c4b0"
+                        }
+                    },
+                    {
+                        "deviceId": "7c71231f-bffd-4e24-b301-53d98a694761",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "25a2be11-36a9-4e4a-a790-3d727597d076",
+                            "roomName": "home theater",
+                            "roomId": "25a2be11-36a9-4e4a-a790-3d727597d076"
+                        }
+                    },
+                    {
+                        "deviceId": "9287182e-93a7-41c0-9295-35960e3cd962",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "f895af4f-c756-4db7-b6fd-772778756c4e",
+                            "roomName": "office room",
+                            "roomId": "f895af4f-c756-4db7-b6fd-772778756c4e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you halt the video streaming on the projector in the home theater."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "video_stop",
+                            "arguments": {
+                                "device": "7c71231f-bffd-4e24-b301-53d98a694761",
+                                "room": "home theater"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Video streaming on the projector in the home theater is now halted."
+        }
+    ],
+    "tools": []
+}

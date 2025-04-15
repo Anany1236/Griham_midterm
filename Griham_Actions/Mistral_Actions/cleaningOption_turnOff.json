@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cleaningOption_turnOff",
+            "description": "This function is used to turn off a specific mode of a robot vacuum cleaner.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn off the cleaning option."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The cleaning mode to turn off."
+                    },
+                    "rvcLocation": {
+                        "type": "string",
+                        "description": "The location to turn off the cleaning option."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

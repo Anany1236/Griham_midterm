@@ -1,0 +1,140 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "tv1",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bedroom",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "ac1",
+                        "deviceName": "AC",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bedroom",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "rvc1",
+                        "deviceName": "Robot Vaccum Cleaner",
+                        "deviceType": "rvc",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bedroom",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "l1",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bedroom",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "b1",
+                        "deviceName": "Blind 1",
+                        "deviceType": "blind",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bedroom",
+                            "roomId": "r1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the bedroom ready for kids movie with my children at 9 PM every Sunday."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_play",
+                            "arguments": {
+                                "device": "tv1",
+                                "appname": "Youtube",
+                                "title": "kids movie"
+                            }
+                        },
+                        {
+                            "name": "cleaning_pause",
+                            "arguments": {
+                                "device": "rvc1"
+                            }
+                        },
+                        {
+                            "name": "airConditioningMode_setValue",
+                            "arguments": {
+                                "device": "ac1",
+                                "mode": "WindFree"
+                            }
+                        },
+                        {
+                            "name": "colorMode_setValue",
+                            "arguments": {
+                                "device": "l1",
+                                "mode": "night"
+                            }
+                        },
+                        {
+                            "name": "device_close",
+                            "arguments": {
+                                "device": "b1"
+                            }
+                        },
+                        {
+                            "name": "condition_scheduleOnce",
+                            "arguments": {
+                                "cron": "0 23 * * 7"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can play kids movie on tv, pause the rvc, set the air conditioner to WindFree mode, set light to night mode and close the blinds. Would you like me to proceed with these actions?"
+        }
+    ],
+    "tools": []
+}

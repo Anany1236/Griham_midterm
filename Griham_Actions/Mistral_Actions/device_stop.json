@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "device_stop",
+            "description": "This function is used to stop a specified SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to stop."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to perform on the devices."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

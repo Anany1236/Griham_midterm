@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "511fedbe-8561-4a39-97dc-fc09e1a593a1",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "7fefed86-54e9-49f6-9b7d-305f0c6e4f46",
+                            "roomName": "kitchen",
+                            "roomId": "7fefed86-54e9-49f6-9b7d-305f0c6e4f46"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you switch off the refrigerator lamp in the pantry."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorLamp_turnOff",
+                            "arguments": {
+                                "device": "511fedbe-8561-4a39-97dc-fc09e1a593a1",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator lamp in the pantry is now switched off."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,43 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Start the upper oven on bake and at 90 minutes in the house"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_startCourse",
+                            "arguments": {
+                                "device": "oven",
+                                "compartment": "upper",
+                                "mode": "bake",
+                                "timer": "90 minutes",
+                                "location": "house"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started oven on bake and at 90 minutes."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,98 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3966f1e1-d28a-4712-a584-96ae6f1f1a30",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "69f0c998-a531-4261-b5bb-dd760456e543",
+                            "roomName": "Kitchen",
+                            "roomId": "f0ed2d22-ae19-47b7-84c0-f3d42b55570f"
+                        }
+                    },
+                    {
+                        "deviceId": "b3e9cca7-f940-4aae-ac87-713e96f75d00",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "69f0c998-a531-4261-b5bb-dd760456e543",
+                            "roomName": "Kitchen",
+                            "roomId": "f0ed2d22-ae19-47b7-84c0-f3d42b55570f"
+                        }
+                    },
+                    {
+                        "deviceId": "42182bab-9fa3-41dc-a160-c1f9744734d9",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "69f0c998-a531-4261-b5bb-dd760456e543",
+                            "roomName": "Kitchen",
+                            "roomId": "f0ed2d22-ae19-47b7-84c0-f3d42b55570f"
+                        }
+                    },
+                    {
+                        "deviceId": "72c6cec3-540d-40ee-94d0-c172b9332394",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "69f0c998-a531-4261-b5bb-dd760456e543",
+                            "roomName": "Kitchen",
+                            "roomId": "f0ed2d22-ae19-47b7-84c0-f3d42b55570f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set kitchen microwave to bake at 120 degrees for 33 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_setCourse",
+                            "arguments": {
+                                "device": "b3e9cca7-f940-4aae-ac87-713e96f75d00",
+                                "room": "kitchen",
+                                "mode": "bake",
+                                "cookingTemperature": 120,
+                                "cookingTimer": "33 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set kitchen microwave to bake at 120 degrees for 33 minutes"
+        }
+    ],
+    "tools": []
+}

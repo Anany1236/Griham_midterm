@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "28aa5cf0-66f9-4303-91bc-812e57ead2d2",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c5f515dd-56fd-4ff2-91cc-a52454c27c89",
+                            "roomName": "bedroom",
+                            "roomId": "c5f515dd-56fd-4ff2-91cc-a52454c27c89"
+                        }
+                    },
+                    {
+                        "deviceId": "7dfd839b-7c51-4c80-8315-1472d7ed7a73",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "31c177f6-621d-429c-ae89-3edce5852272",
+                            "roomName": "living Room",
+                            "roomId": "31c177f6-621d-429c-ae89-3edce5852272"
+                        }
+                    },
+                    {
+                        "deviceId": "708d38ff-33e7-4b62-9e49-0b29990d22e9",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5c05312b-beb6-49b4-80b1-a8c6330358a2",
+                            "roomName": "guest Room",
+                            "roomId": "5c05312b-beb6-49b4-80b1-a8c6330358a2"
+                        }
+                    },
+                    {
+                        "deviceId": "0f2fcbae-5066-49dc-a980-6fab523a0633",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18116fd5-99fa-479f-97d8-2e3e758610eb",
+                            "roomName": "kitchen",
+                            "roomId": "18116fd5-99fa-479f-97d8-2e3e758610eb"
+                        }
+                    },
+                    {
+                        "deviceId": "fcfa55ea-1d37-4ec4-9ea7-fd0d1636cfef",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1cd66ff7-db21-42a4-8727-f692308c5a01",
+                            "roomName": "utility Room",
+                            "roomId": "1cd66ff7-db21-42a4-8727-f692308c5a01"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show the blueprint for the air purifier in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "blueprint_show",
+                            "arguments": {
+                                "device": "28aa5cf0-66f9-4303-91bc-812e57ead2d2",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The blueprint of the air purifier in the bedroom has been displayed"
+        }
+    ],
+    "tools": []
+}

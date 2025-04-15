@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "320e404f-4414-4b44-907b-d6964c1c6aed",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "a49fd3fa-df54-4f70-b1e0-30dd8bada6ab",
+                            "roomName": "basement",
+                            "roomId": "a49fd3fa-df54-4f70-b1e0-30dd8bada6ab"
+                        }
+                    },
+                    {
+                        "deviceId": "e4539788-3513-4af3-8bd6-e7d815e6ec07",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "f6086ccd-23f8-412d-8cf0-84df6f4b0fc0",
+                            "roomName": "living room",
+                            "roomId": "f6086ccd-23f8-412d-8cf0-84df6f4b0fc0"
+                        }
+                    },
+                    {
+                        "deviceId": "d956977d-703c-4c9b-9610-5cab5973c953",
+                        "deviceName": "air quality sensor",
+                        "deviceType": "air quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "ce9613bb-0335-4688-90ea-fcf3767f0838",
+                            "roomName": "bedroom",
+                            "roomId": "ce9613bb-0335-4688-90ea-fcf3767f0838"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check the dehumidification mode on the air conditioner in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scent_setValue",
+                            "arguments": {
+                                "device": "e4539788-3513-4af3-8bd6-e7d815e6ec07",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Can you adjust the dehumidification mode on the dehumidifier in the basement?"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,68 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "In my Living Room TV set the volume to 60"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "volume_setValue",
+                            "arguments": {
+                                "device": "TV",
+                                "room": "Living Room",
+                                "volume": 60
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Setting volume to 60 on Living room TV."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "volume_setValue",
+                    "description": "This function is used to set a volume on device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "volume": {
+                                "type": "string",
+                                "description": "Target volume to be used"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "volume"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

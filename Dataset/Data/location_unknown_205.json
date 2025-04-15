@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "469def6f-e3db-4ec7-a52f-8a3550f399c5",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e515bf03-c009-4bed-a99b-99c0be5f524f",
+                            "roomName": "bedroom",
+                            "roomId": "e515bf03-c009-4bed-a99b-99c0be5f524f"
+                        }
+                    },
+                    {
+                        "deviceId": "b9b6e749-4497-4d0f-a707-e6c9eb293f47",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c542acb9-e471-4432-851b-4a38ad1c31eb",
+                            "roomName": "living Room",
+                            "roomId": "c542acb9-e471-4432-851b-4a38ad1c31eb"
+                        }
+                    },
+                    {
+                        "deviceId": "584e4267-caa8-4735-a036-0b7a487a092e",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f5334c96-d545-45a7-80c4-aee606c25825",
+                            "roomName": "guest Room",
+                            "roomId": "f5334c96-d545-45a7-80c4-aee606c25825"
+                        }
+                    },
+                    {
+                        "deviceId": "12f96d85-fe56-4fed-996a-6514b9001cc4",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0258aed8-b950-4241-bae2-155cd0de68a6",
+                            "roomName": "kitchen",
+                            "roomId": "0258aed8-b950-4241-bae2-155cd0de68a6"
+                        }
+                    },
+                    {
+                        "deviceId": "b300c7bd-69fd-4624-9167-3317346a335d",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aac45b56-0098-485a-a06f-dd53f92e525e",
+                            "roomName": "utility Room",
+                            "roomId": "aac45b56-0098-485a-a06f-dd53f92e525e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the status of the unknown location for the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "location_unknown",
+                            "arguments": {
+                                "device": "b300c7bd-69fd-4624-9167-3317346a335d",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the unknown location for the hood in the utility room is displayed"
+        }
+    ],
+    "tools": []
+}

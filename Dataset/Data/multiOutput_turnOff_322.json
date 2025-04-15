@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5fb5a355-5c20-4f95-84ac-fc08a90ad6aa",
+                        "deviceName": "sound system",
+                        "deviceType": "sound system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "502dc880-bdd5-47bf-9fc2-b93bd84156f5",
+                            "roomName": "living room",
+                            "roomId": "502dc880-bdd5-47bf-9fc2-b93bd84156f5"
+                        }
+                    },
+                    {
+                        "deviceId": "d0c0225d-478c-4f4e-bfd3-a0315eaceb7b",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "dde17461-3c09-4de5-bc17-2c816c77acdc",
+                            "roomName": "home theater",
+                            "roomId": "dde17461-3c09-4de5-bc17-2c816c77acdc"
+                        }
+                    },
+                    {
+                        "deviceId": "58f8bde9-b591-41d0-a685-f7b0ab24849e",
+                        "deviceName": "speakers",
+                        "deviceType": "speakers",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "4b9422c8-fdef-425b-a4d5-29a22305f81d",
+                            "roomName": "bedroom",
+                            "roomId": "4b9422c8-fdef-425b-a4d5-29a22305f81d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off all outputs on the sound system."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "multiOutput_turnOff",
+                            "arguments": {
+                                "device": "5fb5a355-5c20-4f95-84ac-fc08a90ad6aa",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "All outputs on the sound system have been turned off."
+        }
+    ],
+    "tools": []
+}

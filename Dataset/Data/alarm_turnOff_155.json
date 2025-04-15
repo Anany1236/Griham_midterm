@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5db58ca1-8099-4337-aea1-8f18e153a825",
+                        "deviceName": "siren",
+                        "deviceType": "siren",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "68ba65ae-ad35-40d4-bfac-d56bfcf39c09",
+                            "roomName": "living room",
+                            "roomId": "68ba65ae-ad35-40d4-bfac-d56bfcf39c09"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the alarm in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "alarm_turnOff",
+                            "arguments": {
+                                "device": "5db58ca1-8099-4337-aea1-8f18e153a825",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have disabled the alarm in the living room."
+        }
+    ],
+    "tools": []
+}

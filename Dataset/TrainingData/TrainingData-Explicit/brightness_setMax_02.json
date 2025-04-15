@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "4e7c65f2-eac1-411c-8822-8e3120a04da7",
+						"deviceName": "television",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "40514ca6-a23d-4e48-8241-0ad8305cf490",
+							"roomName": "living room",
+							"roomId": "e83e831d-40c6-4ca4-8a56-acc6c52a5a04"
+						}
+					},
+					{
+						"deviceId": "c2b39750-326b-4aa8-9fc2-789baa94a8eb",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "40514ca6-a23d-4e48-8241-0ad8305cf490",
+							"roomName": "bedroom",
+							"roomId": "7a60d410-f00f-4d49-89c1-849bc54d6c3d"
+						}
+					},
+					{
+						"deviceId": "7fa384e1-58e5-435e-8e5e-738382f406e6",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "40514ca6-a23d-4e48-8241-0ad8305cf490",
+							"roomName": "master bedroom",
+							"roomId": "32ecb898-a535-43a1-87b5-313f2f669eaf"
+						}
+					},
+					{
+						"deviceId": "c8915a36-cd02-4001-a4bd-a4117a4f1402",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "40514ca6-a23d-4e48-8241-0ad8305cf490",
+							"roomName": "kitchen",
+							"roomId": "525680a0-33c5-4f48-8e23-f8c6b65392a2"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Set the brightness to maximum of living room television"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_setMax",
+							"arguments": {
+								"device": "4e7c65f2-eac1-411c-8822-8e3120a04da7",
+								"room": "living room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the brightness to maximum of living room television."
+		}
+	],
+	"tools": []
+}

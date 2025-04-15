@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d3416ab7-dd6e-4144-8594-d5599f3d0bb0",
+                        "deviceName": "tv1",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dbb791d0-45d8-4a53-be74-41b2241903e6",
+                            "roomName": "living room",
+                            "roomId": "5c69c9fd-7c7a-4ed1-82f8-9021dc6d245f"
+                        }
+                    },
+                    {
+                        "deviceId": "e3236196-6381-4a20-9495-f5ef9d82f59f",
+                        "deviceName": "speaker1",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dbb791d0-45d8-4a53-be74-41b2241903e6",
+                            "roomName": "bedroom",
+                            "roomId": "fdd03330-d0f4-4cd8-bf11-f1d16b564629"
+                        }
+                    },
+                    {
+                        "deviceId": "63f0fcd9-7736-40e2-8725-efaaca709c5a",
+                        "deviceName": "refrigerator1",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dbb791d0-45d8-4a53-be74-41b2241903e6",
+                            "roomName": "kitchen",
+                            "roomId": "0f3116de-24cd-40e7-b7aa-ddb30f44c56a"
+                        }
+                    },
+                    {
+                        "deviceId": "a7f8078c-b0cd-4a46-b18d-4c4c9c173f31",
+                        "deviceName": "monitor1",
+                        "deviceType": "monitor",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dbb791d0-45d8-4a53-be74-41b2241903e6",
+                            "roomName": "bedroom",
+                            "roomId": "fdd03330-d0f4-4cd8-bf11-f1d16b564629"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the bixby volume of the living room tv to min?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bixbyVolume_setMin",
+                            "arguments": {
+                                "device": "d3416ab7-dd6e-4144-8594-d5599f3d0bb0",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The volume of the tv is set to 0"
+        }
+    ],
+    "tools": []
+}

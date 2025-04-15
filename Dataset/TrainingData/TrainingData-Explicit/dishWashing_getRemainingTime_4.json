@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Tell me the remaining time on the lower dishwasher in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_getRemainingTime",
+                            "arguments": {
+                                "device": "dishwasher",
+                                "room": "kitchen",
+                                "predefinedCompartment": "lower"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The remaining time on the lower dishwasher in the kitchen is 12 minutes."
+        }
+    ],
+    "tools": []
+}

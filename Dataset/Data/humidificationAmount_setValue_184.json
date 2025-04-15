@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "81d6e873-f5bf-4e8b-8a5a-e39987e161d4",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "708aee91-d0d7-4a2f-96e5-7e4616b65738",
+                            "roomName": "bedroom",
+                            "roomId": "708aee91-d0d7-4a2f-96e5-7e4616b65738"
+                        }
+                    },
+                    {
+                        "deviceId": "8077e4de-5837-4466-97ae-59adf3e2d2fb",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "440ec06c-2872-4aaf-8422-f476accbae85",
+                            "roomName": "living Room",
+                            "roomId": "440ec06c-2872-4aaf-8422-f476accbae85"
+                        }
+                    },
+                    {
+                        "deviceId": "9b6752e9-a549-48e7-b97d-0b0d08ddabcc",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0bd00c81-7423-4186-ad30-2bfc835098fb",
+                            "roomName": "guest Room",
+                            "roomId": "0bd00c81-7423-4186-ad30-2bfc835098fb"
+                        }
+                    },
+                    {
+                        "deviceId": "76b652e8-32c1-42eb-a2af-5bb91edb2198",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b75f98ce-f49d-4ab4-bbad-2ab315d717d0",
+                            "roomName": "kitchen",
+                            "roomId": "b75f98ce-f49d-4ab4-bbad-2ab315d717d0"
+                        }
+                    },
+                    {
+                        "deviceId": "6327873f-6c8f-4af8-93d6-99885a690982",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e6cf1ac8-a8b3-4317-a591-7ffdd3bfd053",
+                            "roomName": "utility Room",
+                            "roomId": "e6cf1ac8-a8b3-4317-a591-7ffdd3bfd053"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the humidification amount for the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "humidificationAmount_setValue",
+                            "arguments": {
+                                "device": "76b652e8-32c1-42eb-a2af-5bb91edb2198",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The humidification amount for the washer in the kitchen is updated"
+        }
+    ],
+    "tools": []
+}

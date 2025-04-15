@@ -1,0 +1,41 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "refrigerationTemperature_setValue",
+            "description": "This function is used to set the temperature of the refrigerator's refrigerating compartment.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the temperature."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to set the temperature (e.g., refrigerating compartment)."
+                    },
+                    "settingTemperature": {
+                        "type": "number",
+                        "description": "The desired temperature to set for the refrigerating compartment."
+                    },
+                    "predefinedSettingTemperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of the temperature setting (e.g., Celsius, Fahrenheit)."
+                    }
+                },
+                "required": [
+                    "settingTemperature"
+                ]
+            }
+        }
+    ]
+}

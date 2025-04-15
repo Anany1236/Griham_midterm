@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3dcf7f7a-a971-41ac-9aa7-c7f4365f07f0",
+                        "deviceName": "wine refrigerator",
+                        "deviceType": "wine refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "13f6b3a7-8fe5-43be-945f-84b6bb1bf8fd",
+                            "roomName": "living room",
+                            "roomId": "13f6b3a7-8fe5-43be-945f-84b6bb1bf8fd"
+                        }
+                    },
+                    {
+                        "deviceId": "fc0ae92b-8150-4297-ad71-fdca9a797840",
+                        "deviceName": "wine refrigerator",
+                        "deviceType": "wine refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "cellar",
+                            "locationId": "ed960d9e-e912-41f5-b141-1881e2dfc89c",
+                            "roomName": "cellar",
+                            "roomId": "ed960d9e-e912-41f5-b141-1881e2dfc89c"
+                        }
+                    },
+                    {
+                        "deviceId": "a9ae56fc-34d1-40b6-aa93-df921d882820",
+                        "deviceName": "wine refrigerator",
+                        "deviceType": "wine refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "43c7d81d-0a76-4e56-9d8d-8f8bd1d27b86",
+                            "roomName": "kitchen",
+                            "roomId": "43c7d81d-0a76-4e56-9d8d-8f8bd1d27b86"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you switch off the lamp in the wine refrigerator?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "wineRefrigeratorLamp_turnOff",
+                            "arguments": {
+                                "device": "3dcf7f7a-a971-41ac-9aa7-c7f4365f07f0",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Wine refrigerator lamp is now off."
+        }
+    ],
+    "tools": []
+}

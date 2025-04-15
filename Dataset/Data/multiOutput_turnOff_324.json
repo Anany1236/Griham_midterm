@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6451a610-86a4-46e5-8238-e04060bb2807",
+                        "deviceName": "sound system",
+                        "deviceType": "sound system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "f3ff0cd0-46a9-45c8-9f7e-b013bbaafbed",
+                            "roomName": "living room",
+                            "roomId": "f3ff0cd0-46a9-45c8-9f7e-b013bbaafbed"
+                        }
+                    },
+                    {
+                        "deviceId": "5d712eeb-1550-4680-966c-2134db107e29",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "4c8e7179-35b5-4faa-b52b-2756fb82722c",
+                            "roomName": "home theater",
+                            "roomId": "4c8e7179-35b5-4faa-b52b-2756fb82722c"
+                        }
+                    },
+                    {
+                        "deviceId": "ec7d186b-2a53-451c-8771-3748bc30ec29",
+                        "deviceName": "speakers",
+                        "deviceType": "speakers",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "7c0f002c-e652-4c9e-8b1d-3706c08d972e",
+                            "roomName": "bedroom",
+                            "roomId": "7c0f002c-e652-4c9e-8b1d-3706c08d972e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please turn off the multi-output on the speakers."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "multiOutput_turnOff",
+                            "arguments": {
+                                "device": "6451a610-86a4-46e5-8238-e04060bb2807",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The multi-output on the speakers is now off."
+        }
+    ],
+    "tools": []
+}

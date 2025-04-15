@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "525be222-0b48-423b-a038-a4301ca05e66",
+                        "deviceName": "door",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d834e4d6-ebb2-410a-aa7b-68752d71e803",
+                            "roomName": "bedroom",
+                            "roomId": "cf11b002-0fd7-4eb4-9216-37c27332e7e5"
+                        }
+                    },
+                    {
+                        "deviceId": "c293b807-86fe-4824-914c-0d7b9d718948",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d834e4d6-ebb2-410a-aa7b-68752d71e803",
+                            "roomName": "laundry room",
+                            "roomId": "c6f31c9e-45a1-4f80-befd-8202e9d384c0"
+                        }
+                    },
+                    {
+                        "deviceId": "8752e287-5e98-4f3a-b91c-a609aadd4db4",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d834e4d6-ebb2-410a-aa7b-68752d71e803",
+                            "roomName": "kitchen",
+                            "roomId": "d9bf3e2d-12ad-4195-b600-960295c3c6b6"
+                        }
+                    },
+                    {
+                        "deviceId": "0ac646be-b295-49d2-8f83-f1f8b8142dbb",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d834e4d6-ebb2-410a-aa7b-68752d71e803",
+                            "roomName": "bedroom",
+                            "roomId": "d9bf3e2d-12ad-4195-b600-960295c3c6b6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Open the bedroom door partially"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_openPartial",
+                            "arguments": {
+                                "device": "525be222-0b48-423b-a038-a4301ca05e66",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have opened the bedroom door partially."
+        }
+    ],
+    "tools": []
+}

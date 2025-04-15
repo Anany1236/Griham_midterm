@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "44625547-3820-4669-bdfd-752c51a747e8",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e9f722b8-f7ad-4a44-bfac-baf172421b9e",
+                            "roomName": "kitchen",
+                            "roomId": "fa36b628-8a1e-4c18-b00b-631221572f64"
+                        }
+                    },
+                    {
+                        "deviceId": "328ca31f-f79c-460b-b843-4ac47a527d16",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e9f722b8-f7ad-4a44-bfac-baf172421b9e",
+                            "roomName": "living room",
+                            "roomId": "1dff32dd-384b-40ec-962b-95c06cdae408"
+                        }
+                    },
+                    {
+                        "deviceId": "2ccaf3fd-effd-4c9f-a51d-d51d5adb72be",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e9f722b8-f7ad-4a44-bfac-baf172421b9e",
+                            "roomName": "living room",
+                            "roomId": "1dff32dd-384b-40ec-962b-95c06cdae408"
+                        }
+                    },
+                    {
+                        "deviceId": "9cd79a7a-1758-4247-a72e-fccb65661a66",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e9f722b8-f7ad-4a44-bfac-baf172421b9e",
+                            "roomName": "kitchen",
+                            "roomId": "fa36b628-8a1e-4c18-b00b-631221572f64"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Adjust the dishwasher to cooling course in kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_setCourse",
+                            "arguments": {
+                                "device": "44625547-3820-4669-bdfd-752c51a747e8",
+                                "room": "kitchen",
+                                "mode": "cooling"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have adjust the dishwasher to cooling course in kitchen."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f6e08f10-1634-4eea-83a7-9d1e1e309061",
+                        "deviceName": "ricecooker1",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a1d6ab09-4f18-4002-b006-535346937eb3",
+                            "roomName": "kitchen",
+                            "roomId": "23a27028-b555-4661-abe7-16616733d841"
+                        }
+                    },
+                    {
+                        "deviceId": "c12b80ea-9f37-495f-a22a-e52c7deb0862",
+                        "deviceName": "cooktop1",
+                        "deviceType": "cooktop",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a1d6ab09-4f18-4002-b006-535346937eb3",
+                            "roomName": "kitchen",
+                            "roomId": "23a27028-b555-4661-abe7-16616733d841"
+                        }
+                    },
+                    {
+                        "deviceId": "d719f6ad-d5b2-471e-9c84-ba10c4aed7d5",
+                        "deviceName": "microwave1",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a1d6ab09-4f18-4002-b006-535346937eb3",
+                            "roomName": "kitchen",
+                            "roomId": "23a27028-b555-4661-abe7-16616733d841"
+                        }
+                    },
+                    {
+                        "deviceId": "a5f33275-c653-4de2-860a-eb6e1fbed4d4",
+                        "deviceName": "oven1",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a1d6ab09-4f18-4002-b006-535346937eb3",
+                            "roomName": "kitchen",
+                            "roomId": "23a27028-b555-4661-abe7-16616733d841"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the cooking temperature of the ricecooker to 110 degree"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTemperature_setValue",
+                            "arguments": {
+                                "device": "f6e08f10-1634-4eea-83a7-9d1e1e309061"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking temperature of the ricecooker is set to 110 degree Celsius"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "645a0755-32a9-4dc2-94f3-e4aea8870d92",
+                        "deviceName": "airpurifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dfbf4af6-c3f1-4035-be6b-b5c7dd0181ea",
+                            "roomName": "living room",
+                            "roomId": "30386cc0-fd40-4cd0-82ee-ba87abda8457"
+                        }
+                    },
+                    {
+                        "deviceId": "da010b0c-1e16-4b88-8889-08e92241d006",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dfbf4af6-c3f1-4035-be6b-b5c7dd0181ea",
+                            "roomName": "living room",
+                            "roomId": "30386cc0-fd40-4cd0-82ee-ba87abda8457"
+                        }
+                    },
+                    {
+                        "deviceId": "2cc65ba6-2879-4b86-8323-9f491d232afc",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dfbf4af6-c3f1-4035-be6b-b5c7dd0181ea",
+                            "roomName": "living room",
+                            "roomId": "30386cc0-fd40-4cd0-82ee-ba87abda8457"
+                        }
+                    },
+                    {
+                        "deviceId": "7c952b85-b032-4553-a210-4a4dfbb52c4c",
+                        "deviceName": "cleaner",
+                        "deviceType": "cleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dfbf4af6-c3f1-4035-be6b-b5c7dd0181ea",
+                            "roomName": "kids room",
+                            "roomId": "30386cc0-fd40-4cd0-82ee-ba87abda8457"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn off the kids room cleaner"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_stop",
+                            "arguments": {
+                                "device": "7c952b85-b032-4553-a210-4a4dfbb52c4c",
+                                "room": "kids room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sure, I have stop the kids room cleaner"
+        }
+    ],
+    "tools": []
+}

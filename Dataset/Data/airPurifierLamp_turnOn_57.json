@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7ec71bbb-f8cf-4289-9324-8ea759e1ffc1",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "8e4fbbb9-e8ff-459a-bce6-bc95f51c424f",
+                            "roomName": "utility room",
+                            "roomId": "8e4fbbb9-e8ff-459a-bce6-bc95f51c424f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you switch on the air purifier lamp in the utility room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "airPurifierLamp_turnOn",
+                            "arguments": {
+                                "device": "7ec71bbb-f8cf-4289-9324-8ea759e1ffc1",
+                                "room": "utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air purifier lamp in the bedroom is now switched on."
+        }
+    ],
+    "tools": []
+}

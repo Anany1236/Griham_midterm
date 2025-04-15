@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "690843a9-f966-465d-987e-5715da8618fc",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "a420b867-6809-493b-a918-118279ace4ab",
+                            "roomName": "kitchen",
+                            "roomId": "a420b867-6809-493b-a918-118279ace4ab"
+                        }
+                    },
+                    {
+                        "deviceId": "85943329-a3b6-4793-ad6b-34232d0e901c",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "448d2c1f-13e8-4887-9ba8-06de1b89823a",
+                            "roomName": "living room",
+                            "roomId": "448d2c1f-13e8-4887-9ba8-06de1b89823a"
+                        }
+                    },
+                    {
+                        "deviceId": "e706a1a5-52f5-44c3-b782-cb867d0af967",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "ab48255e-2cf5-4f33-8f14-bb092915c3bc",
+                            "roomName": "office room",
+                            "roomId": "ab48255e-2cf5-4f33-8f14-bb092915c3bc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please stop the music on the music system in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "music_stop",
+                            "arguments": {
+                                "device": "e706a1a5-52f5-44c3-b782-cb867d0af967",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The music system in the office room is now stopped."
+        }
+    ],
+    "tools": []
+}

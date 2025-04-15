@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "27bc745a-0536-440c-870d-d029badfbb08",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4abf7e3d-f9ca-4f66-84b7-1593d391a6ad",
+                            "roomName": "bedroom",
+                            "roomId": "4abf7e3d-f9ca-4f66-84b7-1593d391a6ad"
+                        }
+                    },
+                    {
+                        "deviceId": "81a2d3ca-205f-4054-9b00-f5237b5ce86f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0f12a28e-ed8f-4578-af51-8af25c6ceff0",
+                            "roomName": "living Room",
+                            "roomId": "0f12a28e-ed8f-4578-af51-8af25c6ceff0"
+                        }
+                    },
+                    {
+                        "deviceId": "53807094-d819-4962-bbf8-b3d629fe7d3f",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "38301cb0-37c0-4bc5-bd99-22c3208eaaa8",
+                            "roomName": "guest Room",
+                            "roomId": "38301cb0-37c0-4bc5-bd99-22c3208eaaa8"
+                        }
+                    },
+                    {
+                        "deviceId": "7400455c-2f92-4931-8174-11fe56e1a7bd",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "11b0272d-d356-4d52-a11b-f2ccb0864d21",
+                            "roomName": "kitchen",
+                            "roomId": "11b0272d-d356-4d52-a11b-f2ccb0864d21"
+                        }
+                    },
+                    {
+                        "deviceId": "7764fd85-587a-44cf-92f4-6157fff0dbb1",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0fd8a9ab-3fc9-4300-a601-1f9136cb3c11",
+                            "roomName": "utility Room",
+                            "roomId": "0fd8a9ab-3fc9-4300-a601-1f9136cb3c11"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the charger value of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "charger_getValue",
+                            "arguments": {
+                                "device": "7764fd85-587a-44cf-92f4-6157fff0dbb1",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The charger value of the hood in the utility room is 100%"
+        }
+    ],
+    "tools": []
+}

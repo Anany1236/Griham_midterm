@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "49d5810f-e421-4736-b13f-167ff1fb08b8",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32fecc66-568e-44d9-948c-693a92c91406",
+                            "roomName": "Living room",
+                            "roomId": "b97fa795-ac13-4b39-b338-315459569726"
+                        }
+                    },
+                    {
+                        "deviceId": "40418cd2-0bc2-4f56-a924-e5e55226b280",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32fecc66-568e-44d9-948c-693a92c91406",
+                            "roomName": "kids room",
+                            "roomId": "014a6299-f70d-4891-a993-cbc9c51ff97b"
+                        }
+                    },
+                    {
+                        "deviceId": "77bf4f14-8237-45f4-b0a5-3bd97655ecd7",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32fecc66-568e-44d9-948c-693a92c91406",
+                            "roomName": "bedroom",
+                            "roomId": "9f241a74-8f7b-4673-bd0d-d5a5b3e9afa3"
+                        }
+                    },
+                    {
+                        "deviceId": "2b355777-4e58-4f8b-bc40-2c517005c59a",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32fecc66-568e-44d9-948c-693a92c91406",
+                            "roomName": "guest room",
+                            "roomId": "e17f8432-e42b-49e4-b584-420496bca0cd"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the fan mode of the living room fan to automatic"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanMode_setValue",
+                            "arguments": {
+                                "device": "49d5810f-e421-4736-b13f-167ff1fb08b8",
+                                "room": "living room",
+                                "predefinedFanMode": "auto"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan mode value of the living room fan is switched to automatic"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8e2b5423-ece4-40c1-84e4-d4e7db96f5cc",
+                        "deviceName": "hall blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7b11849b-a53b-4ff9-970c-4f70f46c447d",
+                            "roomName": "hall",
+                            "roomId": "e87addcd-3441-4c61-8b81-68aa70700ed0"
+                        }
+                    },
+                    {
+                        "deviceId": "dd47b318-6949-4b1a-9c06-a3c6a9b70be9",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7b11849b-a53b-4ff9-970c-4f70f46c447d",
+                            "roomName": "Living room",
+                            "roomId": "5ea5879e-2c2e-4d16-ab2b-562c05ba869c"
+                        }
+                    },
+                    {
+                        "deviceId": "29a653d6-9839-4174-818f-fc7b978d7e16",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7b11849b-a53b-4ff9-970c-4f70f46c447d",
+                            "roomName": "Living room",
+                            "roomId": "5ea5879e-2c2e-4d16-ab2b-562c05ba869c"
+                        }
+                    },
+                    {
+                        "deviceId": "b308cab9-a78f-4105-a8a7-4f30d86efa90",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7b11849b-a53b-4ff9-970c-4f70f46c447d",
+                            "roomName": "bedroom",
+                            "roomId": "e8b85795-0f79-4b3f-8568-988875fbd1b3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Shut all the blinds a little in the house"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_closePartial",
+                            "arguments": {
+                                "device": "8e2b5423-ece4-40c1-84e4-d4e7db96f5cc",
+                                "location": "house"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The blinds are shuted a little."
+        }
+    ],
+    "tools": []
+}

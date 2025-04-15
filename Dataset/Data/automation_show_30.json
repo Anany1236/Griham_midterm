@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e64dd238-4fd8-430e-a2c2-834d07a90cf4",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dccba0d9-f4ba-4523-bc42-43659f222cf6",
+                            "roomName": "bedroom",
+                            "roomId": "dccba0d9-f4ba-4523-bc42-43659f222cf6"
+                        }
+                    },
+                    {
+                        "deviceId": "e2e76176-dc57-4793-836e-4dfa841818e1",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ff7fa092-a456-4577-a48f-7592906f0289",
+                            "roomName": "living Room",
+                            "roomId": "ff7fa092-a456-4577-a48f-7592906f0289"
+                        }
+                    },
+                    {
+                        "deviceId": "427dff4b-f76b-450e-9626-a9aadf3c9604",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "07314427-f74a-4a9e-8d00-d17e6eaf1522",
+                            "roomName": "guest Room",
+                            "roomId": "07314427-f74a-4a9e-8d00-d17e6eaf1522"
+                        }
+                    },
+                    {
+                        "deviceId": "8f7a5981-aa89-4035-a324-00e3eb686ff5",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "84a8dbdd-cb19-4c4e-86c3-9cacad1ee643",
+                            "roomName": "kitchen",
+                            "roomId": "84a8dbdd-cb19-4c4e-86c3-9cacad1ee643"
+                        }
+                    },
+                    {
+                        "deviceId": "7ed9d7ba-8451-4895-89eb-3d27e2042994",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "35b63e67-82f2-474c-ae78-caf6de11d40c",
+                            "roomName": "utility Room",
+                            "roomId": "35b63e67-82f2-474c-ae78-caf6de11d40c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you display the automation setup for the hood in the utility room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "automation_show",
+                            "arguments": {
+                                "device": "7ed9d7ba-8451-4895-89eb-3d27e2042994",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The automation setup for the hood in the utility room has been displayed"
+        }
+    ],
+    "tools": []
+}

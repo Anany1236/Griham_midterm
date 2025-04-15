@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "048a0aa9-5e65-415c-bada-0151032cbd13",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "06dfc107-a475-4c5a-b465-20297015c6bf",
+                            "roomName": "bedroom",
+                            "roomId": "06dfc107-a475-4c5a-b465-20297015c6bf"
+                        }
+                    },
+                    {
+                        "deviceId": "d4e4fb87-3d2b-4a24-9564-fb5d266cab5c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1edd318d-95ce-4f98-b9ed-21a809a63190",
+                            "roomName": "living Room",
+                            "roomId": "1edd318d-95ce-4f98-b9ed-21a809a63190"
+                        }
+                    },
+                    {
+                        "deviceId": "d6105165-c95d-472f-9e34-49c0c1a9da50",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8c2c11c1-3528-43dc-8e51-294f958dbfc0",
+                            "roomName": "guest Room",
+                            "roomId": "8c2c11c1-3528-43dc-8e51-294f958dbfc0"
+                        }
+                    },
+                    {
+                        "deviceId": "405e5dd7-26b4-4b31-b942-b551fe214c14",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "76858870-f69a-4fbd-a3db-dcd0e733de93",
+                            "roomName": "kitchen",
+                            "roomId": "76858870-f69a-4fbd-a3db-dcd0e733de93"
+                        }
+                    },
+                    {
+                        "deviceId": "a3832242-a658-417c-81e0-f7be295753ba",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f3c9ef5e-bdfc-4194-9b1e-a6c67b47b780",
+                            "roomName": "utility Room",
+                            "roomId": "f3c9ef5e-bdfc-4194-9b1e-a6c67b47b780"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you tell me the status of the unknown location for the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "location_unknown",
+                            "arguments": {
+                                "device": "d6105165-c95d-472f-9e34-49c0c1a9da50",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the unknown location for the light in the guest room is shown"
+        }
+    ],
+    "tools": []
+}

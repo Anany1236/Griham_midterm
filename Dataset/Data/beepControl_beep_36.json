@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3e96317a-37fa-485f-ad04-5fa6d49fc54a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a65151e3-bddd-4b12-ab1f-b30ed7ba4e1e",
+                            "roomName": "bedroom",
+                            "roomId": "a65151e3-bddd-4b12-ab1f-b30ed7ba4e1e"
+                        }
+                    },
+                    {
+                        "deviceId": "2065f418-6174-46b3-a038-c13377858834",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2242c476-f28b-4c88-ac07-420a8182e7ab",
+                            "roomName": "living Room",
+                            "roomId": "2242c476-f28b-4c88-ac07-420a8182e7ab"
+                        }
+                    },
+                    {
+                        "deviceId": "82882c53-b873-44d1-9991-fa974023aae5",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fbdf5a99-14f5-418d-b3dd-fc1116edb5f7",
+                            "roomName": "guest Room",
+                            "roomId": "fbdf5a99-14f5-418d-b3dd-fc1116edb5f7"
+                        }
+                    },
+                    {
+                        "deviceId": "ccb0bb09-d97a-4d78-8bb8-c98872ac289d",
+                        "deviceName": "Microwave",
+                        "deviceType": "Microwave",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c59f5b1e-c3d0-48ff-adb2-c988c71e50a6",
+                            "roomName": "kitchen",
+                            "roomId": "c59f5b1e-c3d0-48ff-adb2-c988c71e50a6"
+                        }
+                    },
+                    {
+                        "deviceId": "2e29d97e-f493-4d5c-bf19-8211a90c8ad1",
+                        "deviceName": "Refrigerator",
+                        "deviceType": "Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cee48c3f-823d-4737-b2df-b5cf409f6594",
+                            "roomName": "utility Room",
+                            "roomId": "cee48c3f-823d-4737-b2df-b5cf409f6594"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Trigger the beep on the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "beepControl_beep",
+                            "arguments": {
+                                "device": "3e96317a-37fa-485f-ad04-5fa6d49fc54a",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air conditioner in the bedroom has beeped"
+        }
+    ],
+    "tools": []
+}

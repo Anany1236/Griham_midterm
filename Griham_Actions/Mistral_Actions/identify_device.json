@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "identify_device",
+            "description": "Infer the device name or type, location name, room name and capability from the user utterance or prompt the user if inference is not possible.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "device": {
+                        "type": "string",
+                        "description": "Device found in user utterance."
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "location found in user utterance."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "room name found in user utterance."
+                    },
+                    "capability": {
+                        "type": "string",
+                        "description": "Infer the capability from the utterance provided."
+                    }
+                },
+                "required": [
+                    "device",
+                    "location",
+                    "room"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "92c3fc54-2245-416b-a5f6-a733c96fe391",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b83502a7-8831-4861-9367-2ecef7526f7f",
+                            "roomName": "bedroom",
+                            "roomId": "b83502a7-8831-4861-9367-2ecef7526f7f"
+                        }
+                    },
+                    {
+                        "deviceId": "d6e57f21-a4b0-419b-a5f3-7112f9f57ec9",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "eddb9855-c400-42a1-8add-bbdb2f9c2bbd",
+                            "roomName": "living Room",
+                            "roomId": "eddb9855-c400-42a1-8add-bbdb2f9c2bbd"
+                        }
+                    },
+                    {
+                        "deviceId": "d6f62213-fc84-4af2-a0d6-ee5cad4791f4",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "82009b40-4376-4dbd-a9cf-a3a395aa403e",
+                            "roomName": "guest Room",
+                            "roomId": "82009b40-4376-4dbd-a9cf-a3a395aa403e"
+                        }
+                    },
+                    {
+                        "deviceId": "ee48fde4-71b0-4d21-af49-bccc49e01017",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fb366c9c-a4c6-4eac-af95-907eda1054a1",
+                            "roomName": "kitchen",
+                            "roomId": "fb366c9c-a4c6-4eac-af95-907eda1054a1"
+                        }
+                    },
+                    {
+                        "deviceId": "ec216038-21cf-4ca7-8664-5c5eef801038",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dd1ca740-8948-497a-8821-05d339df7049",
+                            "roomName": "utility Room",
+                            "roomId": "dd1ca740-8948-497a-8821-05d339df7049"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the status of the multi-system operator for the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "multiSystemOperator_getStatus",
+                            "arguments": {
+                                "device": "92c3fc54-2245-416b-a5f6-a733c96fe391",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the multi-system operator for the air conditioner in the bedroom is operational"
+        }
+    ],
+    "tools": []
+}

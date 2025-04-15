@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6c67b354-72b7-4ef3-addf-a6533b184a05",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "4100044e-040a-4ea9-b66e-210d93712042",
+                            "roomName": "living room",
+                            "roomId": "4100044e-040a-4ea9-b66e-210d93712042"
+                        }
+                    },
+                    {
+                        "deviceId": "75431919-d990-4577-8ffc-3fc50c527df1",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "7ad8fa03-b372-4211-b7e7-31a136de81e9",
+                            "roomName": "laundry room",
+                            "roomId": "7ad8fa03-b372-4211-b7e7-31a136de81e9"
+                        }
+                    },
+                    {
+                        "deviceId": "3c7be780-d542-4bf5-bfeb-1232b6fd056e",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "818f10e7-dee9-4be0-8705-a5cfed50f813",
+                            "roomName": "office room",
+                            "roomId": "818f10e7-dee9-4be0-8705-a5cfed50f813"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the washing machine to maximum mode in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setMax",
+                            "arguments": {
+                                "device": "75431919-d990-4577-8ffc-3fc50c527df1",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washing machine in the laundry room has been adjusted to maximum mode."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "242d766c-bbc6-4ac3-aacc-34fd148d6c81",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8050e895-7686-43a8-8f69-0df16a863002",
+                            "roomName": "Living room",
+                            "roomId": "06f10523-2480-4cb6-88ca-80c27ad48156"
+                        }
+                    },
+                    {
+                        "deviceId": "ab9b6b02-631c-463f-b696-9b0c0aad1b87",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8050e895-7686-43a8-8f69-0df16a863002",
+                            "roomName": "kids room",
+                            "roomId": "c64d0dfb-a6be-4861-bd5c-402751d906cb"
+                        }
+                    },
+                    {
+                        "deviceId": "02ffeec5-c4d9-402f-b49e-1c9df12f445a",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8050e895-7686-43a8-8f69-0df16a863002",
+                            "roomName": "bedroom",
+                            "roomId": "56297e3f-7c04-4744-8e0e-f940e4465bcb"
+                        }
+                    },
+                    {
+                        "deviceId": "2c49737b-0600-4fc8-8ea4-78994865379d",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8050e895-7686-43a8-8f69-0df16a863002",
+                            "roomName": "guest room",
+                            "roomId": "399dcd89-a293-47db-99cd-544427896f0b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the fan mode of the kids room fan"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanMode_turnOn",
+                            "arguments": {
+                                "device": "ab9b6b02-631c-463f-b696-9b0c0aad1b87",
+                                "room": "kids room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I am turning on the fan mode in the kids room."
+        }
+    ],
+    "tools": []
+}

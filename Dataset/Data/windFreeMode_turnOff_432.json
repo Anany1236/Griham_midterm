@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b8cee956-2bf1-4726-a704-319eb0b25cb1",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "48f8f352-c27c-490d-8328-5e02078088a4",
+                            "roomName": "living room",
+                            "roomId": "48f8f352-c27c-490d-8328-5e02078088a4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please disable WindFree mode on the AC."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windFreeMode_turnOff",
+                            "arguments": {
+                                "device": "b8cee956-2bf1-4726-a704-319eb0b25cb1",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The WindFree mode on the air conditioner is now off."
+        }
+    ],
+    "tools": []
+}

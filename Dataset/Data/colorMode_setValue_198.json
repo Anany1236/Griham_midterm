@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cf3c1652-8419-4c25-8d91-d4b4d5cfbc85",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "220a8e07-361e-45d8-aa16-cdae1e8cd411",
+                            "roomName": "living room",
+                            "roomId": "220a8e07-361e-45d8-aa16-cdae1e8cd411"
+                        }
+                    },
+                    {
+                        "deviceId": "e3d0a196-58a7-47dd-a044-fe1668aed473",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater room",
+                            "locationId": "b1467e1e-7169-4ae6-80ad-10a731ba80b4",
+                            "roomName": "home theater room",
+                            "roomId": "b1467e1e-7169-4ae6-80ad-10a731ba80b4"
+                        }
+                    },
+                    {
+                        "deviceId": "d1bea7ec-d6c8-44dd-851d-3fc05549996f",
+                        "deviceName": "lighting system",
+                        "deviceType": "lighting system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hall",
+                            "locationId": "d5764e39-d5fa-41a7-bd41-fb9ca5e6c4f9",
+                            "roomName": "hall",
+                            "roomId": "d5764e39-d5fa-41a7-bd41-fb9ca5e6c4f9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the lighting to warm color mode?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "colorMode_setValue",
+                            "arguments": {
+                                "device": "cf3c1652-8419-4c25-8d91-d4b4d5cfbc85",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lighting has been adjusted to warm color mode."
+        }
+    ],
+    "tools": []
+}

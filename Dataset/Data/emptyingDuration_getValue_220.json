@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "900ee874-4572-4dad-8e6d-392a8d20783f",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "b1455fbb-4cff-4c3d-859f-d6d0c7335800",
+                            "roomName": "laundry room",
+                            "roomId": "b1455fbb-4cff-4c3d-859f-d6d0c7335800"
+                        }
+                    },
+                    {
+                        "deviceId": "ffe9bfd1-f363-4f31-b70c-9e03e40254f9",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "8105de30-7db4-4ef5-aade-865546a8ec3f",
+                            "roomName": "kitchen",
+                            "roomId": "8105de30-7db4-4ef5-aade-865546a8ec3f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the current emptying duration for the washing machine?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "emptyingDuration_getValue",
+                            "arguments": {
+                                "device": "900ee874-4572-4dad-8e6d-392a8d20783f",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The emptying duration for the washing machine is 30 minutes."
+        }
+    ],
+    "tools": []
+}

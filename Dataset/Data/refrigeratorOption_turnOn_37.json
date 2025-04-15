@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b2547cd9-23da-4265-b777-d49cd0ed1773",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "dea69ef4-e56b-4bc9-86c5-0e867d77405b",
+                            "roomName": "kitchen",
+                            "roomId": "dea69ef4-e56b-4bc9-86c5-0e867d77405b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you enable the refrigerator option in the pantry."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorOption_turnOn",
+                            "arguments": {
+                                "device": "b2547cd9-23da-4265-b777-d49cd0ed1773",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator option in the pantry is now enabled."
+        }
+    ],
+    "tools": []
+}

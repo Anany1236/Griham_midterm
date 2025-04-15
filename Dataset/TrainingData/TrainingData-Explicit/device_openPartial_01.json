@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4480e4b1-2182-4ddb-be4b-88801e4e45a1",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "15c71d95-fd12-429e-b27b-a54a4f9383a6",
+                            "roomName": "kids room",
+                            "roomId": "7a345a5e-1b11-4612-91cb-3d1523641481"
+                        }
+                    },
+                    {
+                        "deviceId": "f4d6ad35-4ad0-4921-a3aa-6448250612be",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "15c71d95-fd12-429e-b27b-a54a4f9383a6",
+                            "roomName": "laundry room",
+                            "roomId": "63f81970-069b-4672-b43b-85e15d8624be"
+                        }
+                    },
+                    {
+                        "deviceId": "c37d0634-0150-4a4d-b243-9224ae5d56ad",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "15c71d95-fd12-429e-b27b-a54a4f9383a6",
+                            "roomName": "kitchen",
+                            "roomId": "9155a393-74c5-4966-b70d-4db348746609"
+                        }
+                    },
+                    {
+                        "deviceId": "36b6bd03-a1ff-4755-bb48-e958eaf8618d",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "15c71d95-fd12-429e-b27b-a54a4f9383a6",
+                            "roomName": "bedroom",
+                            "roomId": "9155a393-74c5-4966-b70d-4db348746609"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Could you open blinds partially?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_openPartial",
+                            "arguments": {
+                                "device": "36b6bd03-a1ff-4755-bb48-e958eaf8618d"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have opened blinds partially."
+        }
+    ],
+    "tools": []
+}

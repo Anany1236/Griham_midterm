@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e40c9787-c87e-4268-9801-80715902dc25",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "90133397-5af1-4365-ad6c-ffcac0336188",
+                            "roomName": "laundry room",
+                            "roomId": "90133397-5af1-4365-ad6c-ffcac0336188"
+                        }
+                    },
+                    {
+                        "deviceId": "b819fb78-1135-47ae-9b05-6fde0cfce614",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "eef9ee2a-c7d2-4550-adab-dd6ff1c03c8a",
+                            "roomName": "kitchen",
+                            "roomId": "eef9ee2a-c7d2-4550-adab-dd6ff1c03c8a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you raise the spin dry level on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingSpinDryLevel_increase",
+                            "arguments": {
+                                "device": "b819fb78-1135-47ae-9b05-6fde0cfce614",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The spin dry level on the washer in the kitchen is now higher."
+        }
+    ],
+    "tools": []
+}

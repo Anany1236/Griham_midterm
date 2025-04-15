@@ -1,0 +1,96 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "fd926b0a-ca47-4aac-b4ba-d535d3969f7d",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "443dfe24-fba1-498a-8591-7154d077a237",
+							"roomName": "kids room",
+							"roomId": "683bb3ea-abac-48e7-a806-1273b45b19f3"
+						}
+					},
+					{
+						"deviceId": "12177d2c-9200-477f-8714-b5a1640342ed",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "443dfe24-fba1-498a-8591-7154d077a237",
+							"roomName": "Living room",
+							"roomId": "3f15776c-f28f-4d92-bf49-7c9951aecf8b"
+						}
+					},
+					{
+						"deviceId": "58865ab4-0ffa-497e-9f4a-8ec067a212dd",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "443dfe24-fba1-498a-8591-7154d077a237",
+							"roomName": "Living room",
+							"roomId": "3f15776c-f28f-4d92-bf49-7c9951aecf8b"
+						}
+					},
+					{
+						"deviceId": "c5545584-5fe9-454c-8fa1-75d41c2ed677",
+						"deviceName": "smart tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "443dfe24-fba1-498a-8591-7154d077a237",
+							"roomName": "bedroom",
+							"roomId": "5f2b426d-f8b7-41d3-b062-a7b64bfae1bb"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you change the program to ICC Cricket 360 on ESPN in kids room?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "channel_setByProgram",
+							"arguments": {
+								"device": "fd926b0a-ca47-4aac-b4ba-d535d3969f7d",
+								"room": "kids room",
+								"programName": "ICC Cricket 360"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have switched to ICC Cricket 360 in kids room tv."
+		}
+	],
+	"tools": []
+}

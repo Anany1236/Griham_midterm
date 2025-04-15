@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a42001c9-465a-45ec-9fc7-ecfde1d56bc4",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "48402ebf-5000-4f66-9d47-51130429f4fd",
+                            "roomName": "living room",
+                            "roomId": "48402ebf-5000-4f66-9d47-51130429f4fd"
+                        }
+                    },
+                    {
+                        "deviceId": "0faf990d-2fba-460b-aa68-44fcc897cd81",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "26c7e516-6991-4b46-b94f-be8211642197",
+                            "roomName": "basement",
+                            "roomId": "26c7e516-6991-4b46-b94f-be8211642197"
+                        }
+                    },
+                    {
+                        "deviceId": "0b9d2b3c-c19f-453b-8881-33e466d4bdd3",
+                        "deviceName": "air quality sensor",
+                        "deviceType": "air quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "1f989237-7585-4bb4-8a20-36c6a10783a3",
+                            "roomName": "bedroom",
+                            "roomId": "1f989237-7585-4bb4-8a20-36c6a10783a3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What are the supported modes for dehumidification on the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scent_getValue",
+                            "arguments": {
+                                "device": "a42001c9-465a-45ec-9fc7-ecfde1d56bc4",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The supported modes for dehumidification on the air purifier in the living room have been retrieved."
+        }
+    ],
+    "tools": []
+}

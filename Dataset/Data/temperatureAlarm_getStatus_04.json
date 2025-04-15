@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6b29dc40-4205-497a-b040-67d3b3e62ead",
+                        "deviceName": "temperature sensor",
+                        "deviceType": "temperature sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d3f91659-7ae5-4e20-866a-852dc5814b7f",
+                            "roomName": "living room",
+                            "roomId": "d3f91659-7ae5-4e20-866a-852dc5814b7f"
+                        }
+                    },
+                    {
+                        "deviceId": "c77547ff-49b1-489a-9630-7b78cab571f1",
+                        "deviceName": "alarm system",
+                        "deviceType": "alarm system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "0a3a9cda-31ea-46ed-83c7-a286a509e73c",
+                            "roomName": "kitchen",
+                            "roomId": "0a3a9cda-31ea-46ed-83c7-a286a509e73c"
+                        }
+                    },
+                    {
+                        "deviceId": "966b351e-91a1-4dfb-bae8-90e45e4aa5fb",
+                        "deviceName": "alarm system",
+                        "deviceType": "alarm system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "bebbc5c1-0bdf-42f7-9d2c-0fb9304df845",
+                            "roomName": "utility room",
+                            "roomId": "bebbc5c1-0bdf-42f7-9d2c-0fb9304df845"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check if the temperature alarm is active?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "temperatureAlarm_getStatus",
+                            "arguments": {
+                                "device": "6b29dc40-4205-497a-b040-67d3b3e62ead",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Temperature alarm status: {status}."
+        }
+    ],
+    "tools": []
+}

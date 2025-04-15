@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "acb3f7e1-8087-4663-a87e-35a67d21085c",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "ec26fbe2-ffe0-4b73-9b4a-f9f7984a25a5",
+							"roomName": "Living room",
+							"roomId": "71f5baa6-3c4e-414f-8123-c9e9b58d6005"
+						}
+					},
+					{
+						"deviceId": "60bcdf2a-0eaf-4560-aff5-9a495321596b",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "ec26fbe2-ffe0-4b73-9b4a-f9f7984a25a5",
+							"roomName": "bedroom",
+							"roomId": "f1b8cc89-566d-4a68-ac7c-535d8a379d9c"
+						}
+					},
+					{
+						"deviceId": "569f5a21-8500-4e64-8eb2-2412efa9bfcc",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "ec26fbe2-ffe0-4b73-9b4a-f9f7984a25a5",
+							"roomName": "master bedroom",
+							"roomId": "379e9b90-7e5a-4da2-afb9-096fbc2da3bc"
+						}
+					},
+					{
+						"deviceId": "8b312a37-e735-4b65-921d-e15d1105d841",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "ec26fbe2-ffe0-4b73-9b4a-f9f7984a25a5",
+							"roomName": "Kitchen",
+							"roomId": "77a73474-2827-49a3-b019-76b933866a9a"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you reduce the brightness partially of the master bedroom projector?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_decreasePartial",
+							"arguments": {
+								"device": "569f5a21-8500-4e64-8eb2-2412efa9bfcc",
+								"room": "master bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have decreased the brightness partially of the master bedroom projector."
+		}
+	],
+	"tools": []
+}

@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "38a39b6e-ddba-4a3d-9a98-48d06ec3b92d",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "b33474bf-32d7-4e16-a2bc-d7d85fc43814",
+							"roomName": "Living room",
+							"roomId": "d1e75876-bd71-4843-8c34-38c05089e791"
+						}
+					},
+					{
+						"deviceId": "ee9dac53-b2eb-4fbc-bcb0-59987433fce6",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "b33474bf-32d7-4e16-a2bc-d7d85fc43814",
+							"roomName": "bedroom",
+							"roomId": "ccbf8343-2a9d-43c0-8033-ba365be4fed7"
+						}
+					},
+					{
+						"deviceId": "bb541006-3f92-4db6-b830-c148b0d83a1e",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "b33474bf-32d7-4e16-a2bc-d7d85fc43814",
+							"roomName": "living room",
+							"roomId": "200a2921-c510-4fcf-b38d-4d59cb73d90e"
+						}
+					},
+					{
+						"deviceId": "a77ed7fb-d2b1-4fe8-8e90-a59b35514d7c",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "b33474bf-32d7-4e16-a2bc-d7d85fc43814",
+							"roomName": "Kitchen",
+							"roomId": "0ca7c350-d2ba-4fec-a13a-89d2db4404a0"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you increase the brightness partially of the living room projector?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_increasePartial",
+							"arguments": {
+								"device": "bb541006-3f92-4db6-b830-c148b0d83a1e",
+								"room": "living room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have increased the brightness partially of the projector in living room."
+		}
+	],
+	"tools": []
+}

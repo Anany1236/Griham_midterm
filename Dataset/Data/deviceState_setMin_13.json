@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "21e49a7d-067d-43e2-aaba-175feff6cbc9",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "7fda0ebc-0dbf-4a1e-8c68-ece005c2ef54",
+                            "roomName": "bedroom",
+                            "roomId": "7fda0ebc-0dbf-4a1e-8c68-ece005c2ef54"
+                        }
+                    },
+                    {
+                        "deviceId": "7aa0a7d4-c142-40a5-9732-e7874eae4a54",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "c756a847-3870-40b7-8608-51eac7cf1e33",
+                            "roomName": "living room",
+                            "roomId": "c756a847-3870-40b7-8608-51eac7cf1e33"
+                        }
+                    },
+                    {
+                        "deviceId": "814c0f41-8757-4ad5-b992-f4d8e0dfa130",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "259cd4d0-51b8-49da-922f-7919816bda58",
+                            "roomName": "basement",
+                            "roomId": "259cd4d0-51b8-49da-922f-7919816bda58"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the minimum value for the dehumidifier in the basement."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setMin",
+                            "arguments": {
+                                "device": "814c0f41-8757-4ad5-b992-f4d8e0dfa130",
+                                "room": "basement"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The minimum value for the dehumidifier in the basement has been configured."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b90fccca-db06-48e6-9154-58f3643dfc31",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "00345acc-03e4-420f-9730-089142cb172e",
+                            "roomName": "living room",
+                            "roomId": "00345acc-03e4-420f-9730-089142cb172e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off WindFree mode on the air conditioner in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windFreeMode_turnOff",
+                            "arguments": {
+                                "device": "b90fccca-db06-48e6-9154-58f3643dfc31",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive disabled WindFree mode on the AC in the living room."
+        }
+    ],
+    "tools": []
+}

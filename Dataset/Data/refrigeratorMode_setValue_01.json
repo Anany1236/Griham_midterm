@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "584bb057-56b8-4ca5-b70b-00aae81c7385",
+                        "deviceName": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceType": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Living room,Dining room",
+                            "locationId": "8ca16ca9-5ee2-465e-bad8-15bef00043e5",
+                            "roomName": "kitchen,Living room,Dining room",
+                            "roomId": "8ca16ca9-5ee2-465e-bad8-15bef00043e5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Disable the ice maker option in the refrigerator located in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorMode_setValue",
+                            "arguments": {
+                                "device": "584bb057-56b8-4ca5-b70b-00aae81c7385",
+                                "room": "kitchen,Living room,Dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The ice maker option in the living room refrigerator has been disabled."
+        }
+    ],
+    "tools": []
+}

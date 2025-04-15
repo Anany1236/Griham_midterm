@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "19313aae-a1af-4c3d-9424-33781fb040c6",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4fb84fee-8f71-4fda-a546-79cfc5152141",
+                            "roomName": "bedroom",
+                            "roomId": "4fb84fee-8f71-4fda-a546-79cfc5152141"
+                        }
+                    },
+                    {
+                        "deviceId": "d665cb1f-60e0-45d9-b553-a41351727557",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "514578e5-1450-4991-a0eb-61e6627fefba",
+                            "roomName": "living Room",
+                            "roomId": "514578e5-1450-4991-a0eb-61e6627fefba"
+                        }
+                    },
+                    {
+                        "deviceId": "78fc9a63-6a5d-4fde-a0a4-44788509f467",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8eab109f-867c-4906-92f1-44d9caa96c86",
+                            "roomName": "guest Room",
+                            "roomId": "8eab109f-867c-4906-92f1-44d9caa96c86"
+                        }
+                    },
+                    {
+                        "deviceId": "b67db467-51df-49d1-ae90-96699fd1d3e8",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1a5a4322-d1b2-4fca-bccb-b3ca10b5cd63",
+                            "roomName": "kitchen",
+                            "roomId": "1a5a4322-d1b2-4fca-bccb-b3ca10b5cd63"
+                        }
+                    },
+                    {
+                        "deviceId": "02a3d74d-7f13-4eee-89b9-4f1847990af8",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ca16c83f-d2e6-45e2-8fee-6c5582cf20cf",
+                            "roomName": "utility Room",
+                            "roomId": "ca16c83f-d2e6-45e2-8fee-6c5582cf20cf"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the finish time for the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "finishTime_setValue",
+                            "arguments": {
+                                "device": "78fc9a63-6a5d-4fde-a0a4-44788509f467",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The finish time for the light in the guest room is set"
+        }
+    ],
+    "tools": []
+}

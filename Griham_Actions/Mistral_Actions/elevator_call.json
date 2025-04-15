@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "elevator_call",
+            "description": "This function is used to call the elevator through a voice command.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the elevator is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the elevator is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to call the elevator."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

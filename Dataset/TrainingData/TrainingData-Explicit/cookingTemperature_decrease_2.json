@@ -1,0 +1,41 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Decrease the cooking temperature of the upper oven by 25 degrees"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTemperature_decrease",
+                            "arguments": {
+                                "device": "oven",
+                                "predefinedCompartment": "upper",
+                                "cookingTemperatureDelta": 25
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I'm turning down the temperature of oven by upper by 25 degrees."
+        }
+    ],
+    "tools": []
+}

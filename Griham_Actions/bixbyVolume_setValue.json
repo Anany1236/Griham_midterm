@@ -1,0 +1,32 @@
+{
+    "name": "bixbyVolume_setValue",
+    "description": "This function is used to set the volume of the Voice Assistant Bixby on SmartThings devices.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set Bixby's volume.",
+            "optional": true
+        },
+        {
+            "name": "volumeLevel",
+            "type": "integer",
+            "description": "The desired volume level for Bixby.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

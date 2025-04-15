@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2a54b78e-2d35-47eb-a544-5467ce89beab",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "782fe596-2e3a-4988-9222-bbc6e957d713",
+                            "roomName": "kitchen",
+                            "roomId": "782fe596-2e3a-4988-9222-bbc6e957d713"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the refrigerator option in the pantry."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorOption_turnOff",
+                            "arguments": {
+                                "device": "2a54b78e-2d35-47eb-a544-5467ce89beab",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator option in the pantry is now disabled."
+        }
+    ],
+    "tools": []
+}

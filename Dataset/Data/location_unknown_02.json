@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f090e6e5-e188-471d-8e9a-832bc9a6b81c",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "e4b9e1dc-054f-4ee5-9a0f-ce26ceac5e1a",
+                            "roomName": "bedroom",
+                            "roomId": "e4b9e1dc-054f-4ee5-9a0f-ce26ceac5e1a"
+                        }
+                    },
+                    {
+                        "deviceId": "a8d67acc-5d59-4993-9346-601e65714a44",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "b0c973a3-8178-408e-855b-6e67f59517dc",
+                            "roomName": "living Room",
+                            "roomId": "b0c973a3-8178-408e-855b-6e67f59517dc"
+                        }
+                    },
+                    {
+                        "deviceId": "d1bfed8c-69a5-4f39-b9d0-fdbe68c8478b",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "24ebc160-b0e6-4446-8aa9-69644521d0c0",
+                            "roomName": "guest Room",
+                            "roomId": "24ebc160-b0e6-4446-8aa9-69644521d0c0"
+                        }
+                    },
+                    {
+                        "deviceId": "8ba1ef7d-4869-48c5-90c5-e1bb67de65ed",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "2cea0f5b-5c16-4f24-8546-db036595e77e",
+                            "roomName": "kitchen",
+                            "roomId": "2cea0f5b-5c16-4f24-8546-db036595e77e"
+                        }
+                    },
+                    {
+                        "deviceId": "2b3dcac8-14d7-4791-afcb-b57c9e266cd6",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "fa35fbb2-caea-42b5-a5ac-63611c34df35",
+                            "roomName": "utility Room",
+                            "roomId": "fa35fbb2-caea-42b5-a5ac-63611c34df35"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the status of the unknown location for the air purifier in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "location_unknown",
+                            "arguments": {
+                                "device": "a8d67acc-5d59-4993-9346-601e65714a44",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the unknown location for the air purifier in the living room is available"
+        }
+    ],
+    "tools": []
+}

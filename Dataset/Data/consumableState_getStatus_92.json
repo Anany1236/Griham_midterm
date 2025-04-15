@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ca201869-7b0e-4ea1-a5d2-1e439ba8aa7a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "649a88d6-1499-4ee0-9dfb-a2ce069e95ae",
+                            "roomName": "bedroom",
+                            "roomId": "649a88d6-1499-4ee0-9dfb-a2ce069e95ae"
+                        }
+                    },
+                    {
+                        "deviceId": "1b96cebc-6a87-4bd5-a139-8665f1fc181e",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "509b0903-9f23-4eea-a285-76cecdef22d3",
+                            "roomName": "living Room",
+                            "roomId": "509b0903-9f23-4eea-a285-76cecdef22d3"
+                        }
+                    },
+                    {
+                        "deviceId": "17a1b7ec-8fdd-49ba-8d69-8800f124cd6d",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "36938e90-609c-44a4-a08d-713b012bbc1c",
+                            "roomName": "guest Room",
+                            "roomId": "36938e90-609c-44a4-a08d-713b012bbc1c"
+                        }
+                    },
+                    {
+                        "deviceId": "d066c981-a6d0-4646-9083-ac646ee7c5d4",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3024ea03-60fb-40a3-8020-97c9ff7e7eb1",
+                            "roomName": "kitchen",
+                            "roomId": "3024ea03-60fb-40a3-8020-97c9ff7e7eb1"
+                        }
+                    },
+                    {
+                        "deviceId": "cccc4b3e-0a1f-4322-a6c1-fbde251f4e51",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "35fb5c84-aa72-478c-8836-d3c0033e18a8",
+                            "roomName": "utility Room",
+                            "roomId": "35fb5c84-aa72-478c-8836-d3c0033e18a8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the consumable state status of the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "consumableState_getStatus",
+                            "arguments": {
+                                "device": "1b96cebc-6a87-4bd5-a139-8665f1fc181e",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The consumable state status of the air purifier in the living room is available"
+        }
+    ],
+    "tools": []
+}

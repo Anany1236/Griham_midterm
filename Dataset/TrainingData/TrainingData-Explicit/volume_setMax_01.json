@@ -1,0 +1,71 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "a24c46af-5057-43dc-aba7-f0bc80735d64",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "b46528a0-f792-4949-afdd-61faef016d21",
+							"roomName": "Bedroom",
+							"roomId": "bff4de86-a637-44a8-b8a5-bc6954ce118c"
+						}
+					},
+					{
+						"deviceId": "1c14e284-d077-45e3-8d6b-0d3a59fa866d",
+						"deviceName": "light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "b46528a0-f792-4949-afdd-61faef016d21",
+							"roomName": "Kitchen",
+							"roomId": "04b63dc2-91ce-480d-b14e-c1fdc367028c"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Adjust the audio to max of speaker in bedroom"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMax",
+							"arguments": {
+								"device": "a24c46af-5057-43dc-aba7-f0bc80735d64",
+								"room": "bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have adjusted the audio to maximum of speaker in bedroom."
+		}
+	],
+	"tools": []
+}

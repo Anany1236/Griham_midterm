@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4431dcfc-7bf0-48fb-a781-8f6156c6cb9a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3395c411-5e27-4091-b1fc-24530d99a6a9",
+                            "roomName": "bedroom",
+                            "roomId": "3395c411-5e27-4091-b1fc-24530d99a6a9"
+                        }
+                    },
+                    {
+                        "deviceId": "f71e94be-0153-42b3-b457-37b4462d445d",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c52a2ccf-55cd-44dd-9d12-adacc2187d23",
+                            "roomName": "living Room",
+                            "roomId": "c52a2ccf-55cd-44dd-9d12-adacc2187d23"
+                        }
+                    },
+                    {
+                        "deviceId": "c3d6dd7f-2c2b-4647-bff6-44c66d3bf6b1",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9a9cb1d1-ee20-4ab8-964a-fae748b2ef71",
+                            "roomName": "guest Room",
+                            "roomId": "9a9cb1d1-ee20-4ab8-964a-fae748b2ef71"
+                        }
+                    },
+                    {
+                        "deviceId": "5d9ff378-bdd3-4359-be92-52bac43f9c18",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8007ef3e-c42c-481c-b882-03e49164de95",
+                            "roomName": "kitchen",
+                            "roomId": "8007ef3e-c42c-481c-b882-03e49164de95"
+                        }
+                    },
+                    {
+                        "deviceId": "2a0a2e0b-27b3-4539-a50e-85dc46fa5554",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1a42631b-941f-4cae-b8fc-05082314cd10",
+                            "roomName": "utility Room",
+                            "roomId": "1a42631b-941f-4cae-b8fc-05082314cd10"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you show the invitation code for the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "invitationCode_show",
+                            "arguments": {
+                                "device": "f71e94be-0153-42b3-b457-37b4462d445d",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The invitation code for the air purifier in the living room is available"
+        }
+    ],
+    "tools": []
+}

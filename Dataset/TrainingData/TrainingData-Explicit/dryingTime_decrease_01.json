@@ -1,0 +1,92 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "78c4e699-8b22-4efc-82cd-a51fa051eda1",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ae69a066-bc12-4124-b3ea-619f4af5419e",
+                            "roomName": "bedroom",
+                            "roomId": "40b72fd3-4d4b-4650-be24-c401a427554f"
+                        }
+                    },
+                    {
+                        "deviceId": "5a57ad16-620b-44c3-ba90-0d0de8925b43",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ae69a066-bc12-4124-b3ea-619f4af5419e",
+                            "roomName": "laundry room",
+                            "roomId": "d95c51be-aaa2-46db-8eb7-b2a635bd5eae"
+                        }
+                    },
+                    {
+                        "deviceId": "ed82ba99-4b2f-442b-a67e-d98d0db9e4bc",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ae69a066-bc12-4124-b3ea-619f4af5419e",
+                            "roomName": "utility room",
+                            "roomId": "96f5021b-5223-4a9a-bfb4-ea8ed8c81527"
+                        }
+                    },
+                    {
+                        "deviceId": "f01335a6-21fd-40b7-95c3-9edd76349c2b",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ae69a066-bc12-4124-b3ea-619f4af5419e",
+                            "roomName": "kitchen",
+                            "roomId": "28c02b14-8047-44f6-9b1d-36d9e1816974"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the drying time"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryingTime_decrease",
+                            "arguments": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have decreased the drying time."
+        }
+    ],
+    "tools": []
+}

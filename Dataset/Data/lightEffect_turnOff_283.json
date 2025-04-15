@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c5069250-f21b-4584-a295-5dd4fedb6950",
+                        "deviceName": "smart light",
+                        "deviceType": "smart light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "cdc8f711-e51f-48f3-80ff-3ca25ad70cb3",
+                            "roomName": "living room",
+                            "roomId": "cdc8f711-e51f-48f3-80ff-3ca25ad70cb3"
+                        }
+                    },
+                    {
+                        "deviceId": "332b87f7-7a78-4224-afd7-47d8920a04c2",
+                        "deviceName": "ceiling lights",
+                        "deviceType": "ceiling lights",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "0ccc309a-4099-4d57-a465-024e914bef15",
+                            "roomName": "bedroom",
+                            "roomId": "0ccc309a-4099-4d57-a465-024e914bef15"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the light effect on the smart light."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "lightEffect_turnOff",
+                            "arguments": {
+                                "device": "c5069250-f21b-4584-a295-5dd4fedb6950",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The light effect on the smart light is now off."
+        }
+    ],
+    "tools": []
+}

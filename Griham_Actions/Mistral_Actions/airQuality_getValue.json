@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "airQuality_getValue",
+            "description": "This function is used to check the air quality in the user's home via a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the air quality is being checked."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the air quality is being checked."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to check the air quality."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

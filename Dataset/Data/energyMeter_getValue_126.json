@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "40550993-e65d-40ee-8b4d-9aff087c5fd0",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "853b33ae-be43-4bec-bc70-4934a8a18af7",
+                            "roomName": "bedroom",
+                            "roomId": "853b33ae-be43-4bec-bc70-4934a8a18af7"
+                        }
+                    },
+                    {
+                        "deviceId": "454f8bdd-a923-4325-af75-da01e5979309",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c3802e31-417d-424b-acb6-df408cf55ec8",
+                            "roomName": "living Room",
+                            "roomId": "c3802e31-417d-424b-acb6-df408cf55ec8"
+                        }
+                    },
+                    {
+                        "deviceId": "18dfc95b-edae-4087-848a-1317b28cc68c",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bfdc573b-0e8b-409f-970d-6d4ad2d87383",
+                            "roomName": "guest Room",
+                            "roomId": "bfdc573b-0e8b-409f-970d-6d4ad2d87383"
+                        }
+                    },
+                    {
+                        "deviceId": "23b453a1-34f1-4a87-8f46-4ca63fa9a828",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f5f19831-51bc-4fc2-a180-181483ba1454",
+                            "roomName": "kitchen",
+                            "roomId": "f5f19831-51bc-4fc2-a180-181483ba1454"
+                        }
+                    },
+                    {
+                        "deviceId": "124304d2-4f34-44af-a29c-4a9447075e3a",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fb39402e-2e20-45ff-b998-ff113a99045a",
+                            "roomName": "utility Room",
+                            "roomId": "fb39402e-2e20-45ff-b998-ff113a99045a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the energy meter value of the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "energyMeter_getValue",
+                            "arguments": {
+                                "device": "40550993-e65d-40ee-8b4d-9aff087c5fd0",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The energy meter value of the air conditioner in the bedroom is displayed"
+        }
+    ],
+    "tools": []
+}

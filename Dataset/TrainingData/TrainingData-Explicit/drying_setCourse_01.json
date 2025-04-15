@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "462676ac-dd2e-4027-8e96-8d011bdf4836",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "04ba9cb0-e50e-4d4e-9ed7-bb08925168e6",
+                            "roomName": "bedroom",
+                            "roomId": "b572a75f-a1c8-4629-b73a-5a8f45cc06cd"
+                        }
+                    },
+                    {
+                        "deviceId": "6e465087-3b2b-4a2e-8d26-520f37498f0b",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "04ba9cb0-e50e-4d4e-9ed7-bb08925168e6",
+                            "roomName": "utility room",
+                            "roomId": "45b4bcd8-9783-4f9e-821c-8409b776d02d"
+                        }
+                    },
+                    {
+                        "deviceId": "340c1414-ab41-4556-a500-10c08932d64e",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "04ba9cb0-e50e-4d4e-9ed7-bb08925168e6",
+                            "roomName": "kitchen",
+                            "roomId": "b233abb8-8b55-486d-8147-df6049029e6b"
+                        }
+                    },
+                    {
+                        "deviceId": "de70d370-d81c-4ef2-abbf-f6d91825bfcf",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "04ba9cb0-e50e-4d4e-9ed7-bb08925168e6",
+                            "roomName": "kitchen",
+                            "roomId": "b233abb8-8b55-486d-8147-df6049029e6b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the dryer to cotton mode in utility room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_setCourse",
+                            "arguments": {
+                                "device": "6e465087-3b2b-4a2e-8d26-520f37498f0b",
+                                "room": "utility room",
+                                "mode": "cotton"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the dryer to cotton mode in utility room."
+        }
+    ],
+    "tools": []
+}

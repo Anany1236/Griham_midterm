@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "95dd67c0-d0ae-4f42-949f-c5cbedc580df",
+                        "deviceName": "weather station",
+                        "deviceType": "weather station",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "outdoor area",
+                            "locationId": "6e923b00-55ec-44a8-bb70-a2f2ad3a2b43",
+                            "roomName": "outdoor area",
+                            "roomId": "6e923b00-55ec-44a8-bb70-a2f2ad3a2b43"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please provide the wind strength in the garden."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windStrength_getValue",
+                            "arguments": {
+                                "device": "95dd67c0-d0ae-4f42-949f-c5cbedc580df",
+                                "room": "outdoor area"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The wind strength in the garden has been checked."
+        }
+    ],
+    "tools": []
+}

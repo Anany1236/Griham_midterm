@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4ca53696-47a8-48fe-9946-6f891e87bff8",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "a7f5e098-f8c6-4de0-a26e-65a41ad74a30",
+                            "roomName": "bedroom",
+                            "roomId": "a7f5e098-f8c6-4de0-a26e-65a41ad74a30"
+                        }
+                    },
+                    {
+                        "deviceId": "0e221e0d-49e9-4aa3-9dc4-5528fb771edd",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "16aef879-3466-4d7d-aa80-dffbc6cf8cbc",
+                            "roomName": "living room",
+                            "roomId": "16aef879-3466-4d7d-aa80-dffbc6cf8cbc"
+                        }
+                    },
+                    {
+                        "deviceId": "e4b4bcaa-6775-4971-b272-d3b67e41bf78",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "basement",
+                            "locationId": "b01defc7-4f4c-4836-8c40-0791a611c03c",
+                            "roomName": "basement",
+                            "roomId": "b01defc7-4f4c-4836-8c40-0791a611c03c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the minimum state for the air purifier in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setMin",
+                            "arguments": {
+                                "device": "4ca53696-47a8-48fe-9946-6f891e87bff8",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The minimum state for the air purifier in the bedroom has been set."
+        }
+    ],
+    "tools": []
+}

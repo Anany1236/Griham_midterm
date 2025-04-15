@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "26c16ba3-1b18-4873-a33a-bcf011dadc68",
+                        "deviceName": "wine refrigerator",
+                        "deviceType": "wine refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "41e8f992-ff5b-4d34-9db5-303edb58faee",
+                            "roomName": "living room",
+                            "roomId": "41e8f992-ff5b-4d34-9db5-303edb58faee"
+                        }
+                    },
+                    {
+                        "deviceId": "e505df5d-3145-464b-af89-d17c33c943fc",
+                        "deviceName": "wine refrigerator",
+                        "deviceType": "wine refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "cellar",
+                            "locationId": "7a7aad6b-eacd-4b1f-b4c5-8f16440b541b",
+                            "roomName": "cellar",
+                            "roomId": "7a7aad6b-eacd-4b1f-b4c5-8f16440b541b"
+                        }
+                    },
+                    {
+                        "deviceId": "a1ce3be1-c3c7-4e5f-889c-6f0fbbd90974",
+                        "deviceName": "wine refrigerator",
+                        "deviceType": "wine refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "227d4cca-0179-4687-8cdd-f3af7ae62af3",
+                            "roomName": "kitchen",
+                            "roomId": "227d4cca-0179-4687-8cdd-f3af7ae62af3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please turn on the lamp inside the wine refrigerator."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "wineRefrigeratorLamp_turnOn",
+                            "arguments": {
+                                "device": "26c16ba3-1b18-4873-a33a-bcf011dadc68",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lamp in the wine refrigerator is now on."
+        }
+    ],
+    "tools": []
+}

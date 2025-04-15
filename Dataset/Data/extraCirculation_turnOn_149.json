@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8476f550-e16c-41b6-a7b3-14f963849885",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9066d67f-a6e5-4f78-98bb-54b0ee3cda2d",
+                            "roomName": "bedroom",
+                            "roomId": "9066d67f-a6e5-4f78-98bb-54b0ee3cda2d"
+                        }
+                    },
+                    {
+                        "deviceId": "4b81f1a1-d02c-4cfb-85c4-929fcb21670c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "80a1afe5-894f-439f-9161-675905b9ac5a",
+                            "roomName": "living Room",
+                            "roomId": "80a1afe5-894f-439f-9161-675905b9ac5a"
+                        }
+                    },
+                    {
+                        "deviceId": "1ef2fe15-4526-46de-813a-c2bbb2ae3952",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a461694e-6251-4d1e-9303-02e290cc3f6d",
+                            "roomName": "guest Room",
+                            "roomId": "a461694e-6251-4d1e-9303-02e290cc3f6d"
+                        }
+                    },
+                    {
+                        "deviceId": "7d2037c2-401d-4719-b0e4-101dacfa2bd2",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8c74180a-9ac1-4fef-a400-1eb4ab1573ee",
+                            "roomName": "kitchen",
+                            "roomId": "8c74180a-9ac1-4fef-a400-1eb4ab1573ee"
+                        }
+                    },
+                    {
+                        "deviceId": "6023fa2d-79df-4b38-8f6f-3937820a7c9f",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7c54aa72-821e-486c-9176-cd289c7f6c30",
+                            "roomName": "utility Room",
+                            "roomId": "7c54aa72-821e-486c-9176-cd289c7f6c30"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the extra circulation mode for the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "extraCirculation_turnOn",
+                            "arguments": {
+                                "device": "7d2037c2-401d-4719-b0e4-101dacfa2bd2",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The extra circulation mode for the washer in the kitchen is activated"
+        }
+    ],
+    "tools": []
+}

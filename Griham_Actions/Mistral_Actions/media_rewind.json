@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "media_rewind",
+            "description": "This function is used to execute the rewind function on a TV, audio, or speaker device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to execute the rewind function."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "A predefined compartment for organizing devices."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

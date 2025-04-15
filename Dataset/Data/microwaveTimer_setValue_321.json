@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "589f3540-b616-40af-9833-2c170b170b25",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "aab04e21-5c32-45ec-8000-bfc939f8dfc1",
+                            "roomName": "kitchen",
+                            "roomId": "aab04e21-5c32-45ec-8000-bfc939f8dfc1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the timer on the microwave for 10 minutes."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "microwaveTimer_setValue",
+                            "arguments": {
+                                "device": "589f3540-b616-40af-9833-2c170b170b25",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The microwave timer is now set for 10 minutes."
+        }
+    ],
+    "tools": []
+}

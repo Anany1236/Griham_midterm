@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d56c699b-2ba4-4d58-bfb0-e427eb036695",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "8b6606dc-68cb-4dcd-92a4-f20d33b8f63b",
+                            "roomName": "kitchen",
+                            "roomId": "8b6606dc-68cb-4dcd-92a4-f20d33b8f63b"
+                        }
+                    },
+                    {
+                        "deviceId": "ea02e833-0bf1-444a-94e1-80855dae90eb",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "3dc01bda-1c81-4433-b84b-9cb40f73f4d5",
+                            "roomName": "living room",
+                            "roomId": "3dc01bda-1c81-4433-b84b-9cb40f73f4d5"
+                        }
+                    },
+                    {
+                        "deviceId": "d6950403-cc68-420c-9f1b-cc7fb855726a",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "81de6df0-d4ee-4dd8-96b5-f164b7b6322b",
+                            "roomName": "office room",
+                            "roomId": "81de6df0-d4ee-4dd8-96b5-f164b7b6322b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off shuffle mode on the speaker in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaShuffle_turnOff",
+                            "arguments": {
+                                "device": "d56c699b-2ba4-4d58-bfb0-e427eb036695",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Shuffle mode is now turned off on the speaker in the kitchen."
+        }
+    ],
+    "tools": []
+}

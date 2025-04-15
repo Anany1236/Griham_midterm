@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c4541e15-620b-4e55-98f9-e900ae40284c",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "59c9e8a0-e518-4841-9b6e-42a615c94d98",
+                            "roomName": "laundry room",
+                            "roomId": "12bc4234-21e6-465e-be1c-75d894558eb8"
+                        }
+                    },
+                    {
+                        "deviceId": "87c70e92-3bdc-413d-a387-5b1bf203d293",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "59c9e8a0-e518-4841-9b6e-42a615c94d98",
+                            "roomName": "living room",
+                            "roomId": "43012927-8f6f-44e4-ac52-b03c5d0ef4b2"
+                        }
+                    },
+                    {
+                        "deviceId": "deeaa712-2389-4eee-8eaa-58cee55e6650",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "59c9e8a0-e518-4841-9b6e-42a615c94d98",
+                            "roomName": "kitchen",
+                            "roomId": "31839694-154d-4529-8db3-bb5a33eec773"
+                        }
+                    },
+                    {
+                        "deviceId": "8a6eb588-cf2b-48df-9496-fc80f06aebab",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "59c9e8a0-e518-4841-9b6e-42a615c94d98",
+                            "roomName": "bedroom",
+                            "roomId": "ae1959fd-8e80-4a79-b50c-982d37badbd4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "set the heater temperature value of thermostat to 29 degrees"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_setValue",
+                            "arguments": {
+                                "device": "87c70e92-3bdc-413d-a387-5b1bf203d293",
+                                "room": "living room",
+                                "heatingTemperature": 29
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The heating temperature of the thermostat in the living room has been set to 29 degrees"
+        }
+    ],
+    "tools": []
+}

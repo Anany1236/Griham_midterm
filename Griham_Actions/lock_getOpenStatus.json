@@ -1,0 +1,32 @@
+{
+    "name": "lock_getOpenStatus",
+    "description": "This function is used to check if a lockable SmartThings device is open.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to check if it is open.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "The group action to check if multiple devices are open.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

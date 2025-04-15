@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c9dd3f15-f1f4-4ad8-8a0c-6d3448c6a9ad",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8f33ce7c-d7c6-4bf5-95ec-fe2b6e39e71e",
+                            "roomName": "Kitchen",
+                            "roomId": "6e85c3b5-3265-4e25-9c6f-c6c2efe4f35c"
+                        }
+                    },
+                    {
+                        "deviceId": "eabc40c5-2e42-4dc2-a208-fba3e9835273",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8f33ce7c-d7c6-4bf5-95ec-fe2b6e39e71e",
+                            "roomName": "Kitchen",
+                            "roomId": "6e85c3b5-3265-4e25-9c6f-c6c2efe4f35c"
+                        }
+                    },
+                    {
+                        "deviceId": "76125d93-8b3e-474c-a361-55b23492c701",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8f33ce7c-d7c6-4bf5-95ec-fe2b6e39e71e",
+                            "roomName": "Kitchen",
+                            "roomId": "6e85c3b5-3265-4e25-9c6f-c6c2efe4f35c"
+                        }
+                    },
+                    {
+                        "deviceId": "e0c4bc6b-010f-4a1a-90bb-cff64b350533",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8f33ce7c-d7c6-4bf5-95ec-fe2b6e39e71e",
+                            "roomName": "Kitchen",
+                            "roomId": "6e85c3b5-3265-4e25-9c6f-c6c2efe4f35c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the cooking time on the microwave by 20 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTimer_decrease",
+                            "arguments": {
+                                "device": "eabc40c5-2e42-4dc2-a208-fba3e9835273",
+                                "cookingTimer": "20 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have decreased the cooking time on the microwave by 20 minutes"
+        }
+    ],
+    "tools": []
+}

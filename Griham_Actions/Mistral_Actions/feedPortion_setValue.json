@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "feedPortion_setValue",
+            "description": "This function is used to set the amount of food for a pet's feeder.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the feed portion."
+                    },
+                    "feedPortion": {
+                        "type": "string",
+                        "description": "The amount of food to set for the pet's feeder."
+                    }
+                },
+                "required": [
+                    "feedPortion"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "30423e3a-3dcb-4e04-8d31-3028fff9453b",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6754b649-6a36-4212-8461-714a399e41ed",
+                            "roomName": "laundry room",
+                            "roomId": "63f6ae22-54f8-4a97-8865-41f7dbca4eba"
+                        }
+                    },
+                    {
+                        "deviceId": "02b47ca2-6c43-4f90-9838-ab8a1d047e60",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6754b649-6a36-4212-8461-714a399e41ed",
+                            "roomName": "living room",
+                            "roomId": "9147a614-5e02-4656-8745-ac534a78c4b8"
+                        }
+                    },
+                    {
+                        "deviceId": "e6276763-e44f-4a71-ae3a-e8afa237aae9",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6754b649-6a36-4212-8461-714a399e41ed",
+                            "roomName": "kitchen",
+                            "roomId": "7d1242a5-3241-411a-8ec7-f413bced54de"
+                        }
+                    },
+                    {
+                        "deviceId": "b0420a9c-6ba2-4bb2-bdff-97b8e2365348",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6754b649-6a36-4212-8461-714a399e41ed",
+                            "roomName": "bedroom",
+                            "roomId": "ded6ae5e-6ada-4a73-954f-1f08d8e36c06"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you decrease the heater temperature value of microwave?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_decrease",
+                            "arguments": {
+                                "device": "e6276763-e44f-4a71-ae3a-e8afa237aae9",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current temperature value of the microwave is decreased to 10 degrees in the kitchen"
+        }
+    ],
+    "tools": []
+}

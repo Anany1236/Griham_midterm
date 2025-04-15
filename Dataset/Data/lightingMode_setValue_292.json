@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fbaa539b-84d1-4535-a387-4894a41da936",
+                        "deviceName": "smart light",
+                        "deviceType": "smart light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "375241a5-c1bb-4b93-ab0d-828837294d03",
+                            "roomName": "living room",
+                            "roomId": "375241a5-c1bb-4b93-ab0d-828837294d03"
+                        }
+                    },
+                    {
+                        "deviceId": "c894c9a0-49b5-4dff-9321-571febce5f0b",
+                        "deviceName": "kitchen lights",
+                        "deviceType": "kitchen lights",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "17bba2c9-09f9-44dc-97de-a8a72de66c48",
+                            "roomName": "kitchen",
+                            "roomId": "17bba2c9-09f9-44dc-97de-a8a72de66c48"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the lighting mode to bright in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "lightingMode_setValue",
+                            "arguments": {
+                                "device": "fbaa539b-84d1-4535-a387-4894a41da936",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lighting mode in the living room is now set to bright."
+        }
+    ],
+    "tools": []
+}

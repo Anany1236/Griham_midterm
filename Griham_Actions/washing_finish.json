@@ -1,0 +1,38 @@
+{
+    "name": "washing_finish",
+    "description": "This function is used to set the completion time for the washing machine cycle.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the completion time.",
+            "optional": true
+        },
+        {
+            "name": "predefinedCompartment",
+            "type": "string",
+            "description": "The predefined compartment to set the completion time.",
+            "optional": true
+        },
+        {
+            "name": "finishTime",
+            "type": "string",
+            "description": "The specific time to set as the completion time for the washing machine cycle.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

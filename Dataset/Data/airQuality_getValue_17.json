@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7d5a54d5-e4f2-4afb-929a-4346cb2116a0",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a8c58458-4040-490b-b680-46fa44c79767",
+                            "roomName": "bedroom",
+                            "roomId": "a8c58458-4040-490b-b680-46fa44c79767"
+                        }
+                    },
+                    {
+                        "deviceId": "5841776e-ab77-41cc-8781-f7ad4655c8da",
+                        "deviceName": "airqualitysensor",
+                        "deviceType": "airqualitysensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29c73e44-483c-430a-aa25-8bfba0e6dc8d",
+                            "roomName": "living Room",
+                            "roomId": "29c73e44-483c-430a-aa25-8bfba0e6dc8d"
+                        }
+                    },
+                    {
+                        "deviceId": "d62c726b-e593-4959-9669-81784434ce88",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5467de59-8861-4d9e-ba56-671d22544832",
+                            "roomName": "guest Room",
+                            "roomId": "5467de59-8861-4d9e-ba56-671d22544832"
+                        }
+                    },
+                    {
+                        "deviceId": "da5623c1-e7b9-4c22-ba6a-32ba95bb1e56",
+                        "deviceName": "airqualitysensor",
+                        "deviceType": "airqualitysensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "66e64da1-a8d3-490c-bc12-3de812170b36",
+                            "roomName": "kitchen",
+                            "roomId": "66e64da1-a8d3-490c-bc12-3de812170b36"
+                        }
+                    },
+                    {
+                        "deviceId": "f3c7c4a9-3b9c-47af-8baa-3f7d7eb695b9",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5990e4a2-8aac-443f-a5ad-0f7e18ca8901",
+                            "roomName": "utility Room",
+                            "roomId": "5990e4a2-8aac-443f-a5ad-0f7e18ca8901"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the air quality in the living room from the air quality sensor?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "airQuality_getValue",
+                            "arguments": {
+                                "device": "5841776e-ab77-41cc-8781-f7ad4655c8da",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air quality from the air quality sensor is moderate in the living room"
+        }
+    ],
+    "tools": []
+}

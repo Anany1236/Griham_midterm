@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "01fe3ae7-7e44-46fc-bb56-e5a791ccec66",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d7147a37-cbe8-4e7d-9fc4-dfff03407a32",
+                            "roomName": "kitchen",
+                            "roomId": "e4334110-1571-4409-9f9d-6479fd3caba0"
+                        }
+                    },
+                    {
+                        "deviceId": "dcb04c5b-bf03-4871-87df-61d38e9a0d7f",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d7147a37-cbe8-4e7d-9fc4-dfff03407a32",
+                            "roomName": "kitchen",
+                            "roomId": "e4334110-1571-4409-9f9d-6479fd3caba0"
+                        }
+                    },
+                    {
+                        "deviceId": "fa0ba049-9ce1-49ab-a2ea-60fcda1f983b",
+                        "deviceName": "range",
+                        "deviceType": "range",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d7147a37-cbe8-4e7d-9fc4-dfff03407a32",
+                            "roomName": "kitchen",
+                            "roomId": "e4334110-1571-4409-9f9d-6479fd3caba0"
+                        }
+                    },
+                    {
+                        "deviceId": "b4048cc0-f7b9-4c7d-9fa4-a249ed1c789c",
+                        "deviceName": "rice cooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d7147a37-cbe8-4e7d-9fc4-dfff03407a32",
+                            "roomName": "kitchen",
+                            "roomId": "e4334110-1571-4409-9f9d-6479fd3caba0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set cooking timer for 20 minutes in lower oven?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTimer_setValue",
+                            "arguments": {
+                                "device": "dcb04c5b-bf03-4871-87df-61d38e9a0d7f",
+                                "predefinedCompartment": "lower",
+                                "cookingTimer": "20 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set cooking timer for 20 minutes in lower oven."
+        }
+    ],
+    "tools": []
+}

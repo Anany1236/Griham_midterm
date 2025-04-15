@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a88b5a31-c76e-40e8-9fb7-44def45d8240",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ea158e67-9c23-4861-b88e-d096dfa3611c",
+                            "roomName": "living room",
+                            "roomId": "ea158e67-9c23-4861-b88e-d096dfa3611c"
+                        }
+                    },
+                    {
+                        "deviceId": "7b4ec76e-cff3-40cf-903f-807e2311c0af",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home office",
+                            "locationId": "ecec43ed-54d4-478e-9ce9-2e40693a59fd",
+                            "roomName": "home office",
+                            "roomId": "ecec43ed-54d4-478e-9ce9-2e40693a59fd"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please change the screen to horizontal mode."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "screenRotation_setHorizontal",
+                            "arguments": {
+                                "device": "a88b5a31-c76e-40e8-9fb7-44def45d8240",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive changed the screen orientation to landscape."
+        }
+    ],
+    "tools": []
+}

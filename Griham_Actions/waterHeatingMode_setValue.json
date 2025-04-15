@@ -1,0 +1,32 @@
+{
+    "name": "waterHeatingMode_setValue",
+    "description": "This function is used to set the boiler's hot water supply mode.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the hot water supply mode.",
+            "optional": true
+        },
+        {
+            "name": "predefinedWaterHeatingMode",
+            "type": "string",
+            "description": "The predefined mode to set for the hot water supply (e.g., standard, rapid).",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

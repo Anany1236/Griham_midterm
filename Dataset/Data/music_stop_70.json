@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d5b6dc9f-a01c-4212-af66-8c4a70c4749b",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "758f1812-f7dc-4471-9549-2e6621e7c7bd",
+                            "roomName": "kitchen",
+                            "roomId": "758f1812-f7dc-4471-9549-2e6621e7c7bd"
+                        }
+                    },
+                    {
+                        "deviceId": "7fbbb644-e360-42ef-a3cc-1e18a22b1afb",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "f1a3983f-5e64-4eed-b94c-cb2895189250",
+                            "roomName": "living room",
+                            "roomId": "f1a3983f-5e64-4eed-b94c-cb2895189250"
+                        }
+                    },
+                    {
+                        "deviceId": "190c0759-9677-42fb-a5fc-92b8d87b6680",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "a948dea6-4cdc-4467-94bf-82c569e7c130",
+                            "roomName": "office room",
+                            "roomId": "a948dea6-4cdc-4467-94bf-82c569e7c130"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you pause the music on the TV in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "music_stop",
+                            "arguments": {
+                                "device": "7fbbb644-e360-42ef-a3cc-1e18a22b1afb",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Music playback has been paused on the TV in the living room."
+        }
+    ],
+    "tools": []
+}

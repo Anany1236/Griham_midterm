@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f2e3d996-1944-4577-92da-adbe1eb17355",
+                        "deviceName": "cube refrigerator",
+                        "deviceType": "cube refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "ddad65b2-d695-4444-b44a-5e5bc81720d7",
+                            "roomName": "kitchen",
+                            "roomId": "ddad65b2-d695-4444-b44a-5e5bc81720d7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the lamp inside the cube refrigerator in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cubeRefrigeratorLamp_turnOff",
+                            "arguments": {
+                                "device": "f2e3d996-1944-4577-92da-adbe1eb17355",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lamp inside the cube refrigerator in the kitchen has been turned off."
+        }
+    ],
+    "tools": []
+}

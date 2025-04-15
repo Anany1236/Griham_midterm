@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d28fb41a-68a9-4b04-a5fa-1e93ea0eaf6e",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "161c746d-b009-49bc-8f6e-588bd898af19",
+                            "roomName": "utility room",
+                            "roomId": "2b86598f-2a0d-4e31-80d2-d53624247403"
+                        }
+                    },
+                    {
+                        "deviceId": "9364e196-21c7-429e-bdef-59d6dc1c5627",
+                        "deviceName": "roof air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "161c746d-b009-49bc-8f6e-588bd898af19",
+                            "roomName": "living room",
+                            "roomId": "eccf7ad5-bfbd-46e7-8c65-9ab7460e35ff"
+                        }
+                    },
+                    {
+                        "deviceId": "d3c4b9e5-d9fb-47e8-96a9-478a24e9bd8f",
+                        "deviceName": "floor air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "161c746d-b009-49bc-8f6e-588bd898af19",
+                            "roomName": "bedroom",
+                            "roomId": "00afb01d-2d50-4b72-bb1e-9281075d7631"
+                        }
+                    },
+                    {
+                        "deviceId": "c691baac-cbe0-4193-a7f2-24bef009bfb3",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "161c746d-b009-49bc-8f6e-588bd898af19",
+                            "roomName": "guest room",
+                            "roomId": "b9312a33-d5d1-490c-8d2a-c86b63668bdb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the cooling temperature to 10 degrees in the bedroom "
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "coolingTemperature_setValue",
+                            "arguments": {
+                                "device": "d3c4b9e5-d9fb-47e8-96a9-478a24e9bd8f",
+                                "room": "bedroom",
+                                "coolingTemperature": "10"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooling temperature of the air conditioner is 10 degrees in the bedroom"
+        }
+    ],
+    "tools": []
+}

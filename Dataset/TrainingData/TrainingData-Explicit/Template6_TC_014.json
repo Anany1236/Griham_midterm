@@ -1,0 +1,68 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Set the brightness to 90 in the master bedroom Bulb now"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "brightness_setValue",
+                            "arguments": {
+                                "device": "Bulb",
+                                "room": "master bedroom",
+                                "brightness": 90
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The master bedroom Bulb brightness is set to 90."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "brightness_setValue",
+                    "description": "This function is used to set a brightness on Light device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "brightness": {
+                                "type": "string",
+                                "description": "Target brightness to be used"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "brightness"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

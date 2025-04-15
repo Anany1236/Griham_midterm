@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c5064e33-90b2-4f7f-a03f-d3ce47aaeba9",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "a0d8dd63-9b8d-4b99-bee7-cf801c8eee13",
+                            "roomName": "living room",
+                            "roomId": "a0d8dd63-9b8d-4b99-bee7-cf801c8eee13"
+                        }
+                    },
+                    {
+                        "deviceId": "036bf023-58c4-4e04-8164-9acc8d02262b",
+                        "deviceName": "music player",
+                        "deviceType": "music player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "5da208ff-6994-4b97-b7cd-4b43b3dae288",
+                            "roomName": "home theater",
+                            "roomId": "5da208ff-6994-4b97-b7cd-4b43b3dae288"
+                        }
+                    },
+                    {
+                        "deviceId": "5cfa6b41-9d0a-44d5-ad27-2a631c88ca73",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "2492c222-1b0f-4a61-8b7d-c813c11ef8a7",
+                            "roomName": "bedroom",
+                            "roomId": "2492c222-1b0f-4a61-8b7d-c813c11ef8a7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you change the repeat mode to shuffle for the playlist?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaRepeatMode_setValue",
+                            "arguments": {
+                                "device": "c5064e33-90b2-4f7f-a03f-d3ce47aaeba9",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have changed the repeat mode to shuffle for the playlist."
+        }
+    ],
+    "tools": []
+}

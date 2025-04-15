@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "547791b0-a45b-4904-8b2f-9de7d3165f6b",
+                        "deviceName": "water dispenser",
+                        "deviceType": "water dispenser",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "cf8af1ce-4a18-4c49-be67-40e5c405723a",
+                            "roomName": "kitchen",
+                            "roomId": "cf8af1ce-4a18-4c49-be67-40e5c405723a"
+                        }
+                    },
+                    {
+                        "deviceId": "766bd3e0-6fe8-4274-9c6d-8b5d02ec513b",
+                        "deviceName": "water purifier",
+                        "deviceType": "water purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "93a16387-b06c-479f-8209-852fab3cf461",
+                            "roomName": "utility room",
+                            "roomId": "93a16387-b06c-479f-8209-852fab3cf461"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the water amount level to 5 liters."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "water_setAmountLevel",
+                            "arguments": {
+                                "device": "547791b0-a45b-4904-8b2f-9de7d3165f6b",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water amount level is now set to 5 liters."
+        }
+    ],
+    "tools": []
+}

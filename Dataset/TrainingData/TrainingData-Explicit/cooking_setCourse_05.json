@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4d5eaa54-c23d-4173-ba52-667c63f80d90",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d86601ae-03d0-41fb-b4d2-8dda3d73459e",
+                            "roomName": "Kitchen",
+                            "roomId": "803c7757-6aec-4f6b-9a9c-d6fa41b197e8"
+                        }
+                    },
+                    {
+                        "deviceId": "0fe8f800-f1b5-4307-a9f6-40c0f7e6ac9d",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d86601ae-03d0-41fb-b4d2-8dda3d73459e",
+                            "roomName": "Kitchen",
+                            "roomId": "803c7757-6aec-4f6b-9a9c-d6fa41b197e8"
+                        }
+                    },
+                    {
+                        "deviceId": "5d4a801a-7f12-4575-b7a1-efaa8fc301cf",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d86601ae-03d0-41fb-b4d2-8dda3d73459e",
+                            "roomName": "Kitchen",
+                            "roomId": "803c7757-6aec-4f6b-9a9c-d6fa41b197e8"
+                        }
+                    },
+                    {
+                        "deviceId": "3ed19df7-04ae-434b-ac72-98af4e6fd1ca",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d86601ae-03d0-41fb-b4d2-8dda3d73459e",
+                            "roomName": "Kitchen",
+                            "roomId": "803c7757-6aec-4f6b-9a9c-d6fa41b197e8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set microwave to defrost mode"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_setCourse",
+                            "arguments": {
+                                "device": "0fe8f800-f1b5-4307-a9f6-40c0f7e6ac9d",
+                                "mode": "defrost"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set microwave to defrost mode"
+        }
+    ],
+    "tools": []
+}

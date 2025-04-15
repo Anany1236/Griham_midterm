@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "dde2e629-f0e1-4009-a131-fecb15e87c7b",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18e43e73-7868-4eda-bea9-a5b5083e3680",
+                            "roomName": "bedroom",
+                            "roomId": "18e43e73-7868-4eda-bea9-a5b5083e3680"
+                        }
+                    },
+                    {
+                        "deviceId": "70070ff8-4c79-4090-8b0e-78e94507862f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "12b5a4cc-1507-48f3-bf90-732f9a7d4657",
+                            "roomName": "living Room",
+                            "roomId": "12b5a4cc-1507-48f3-bf90-732f9a7d4657"
+                        }
+                    },
+                    {
+                        "deviceId": "b2214281-fc96-4e92-9949-667b44a02ce9",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1edf4c5a-93da-4248-ae1d-1e95e98d7c53",
+                            "roomName": "guest Room",
+                            "roomId": "1edf4c5a-93da-4248-ae1d-1e95e98d7c53"
+                        }
+                    },
+                    {
+                        "deviceId": "5140f8b5-dbce-4595-a939-e70b2bf57985",
+                        "deviceName": "Microwave",
+                        "deviceType": "Microwave",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "76c10294-d630-43a0-884e-6b166afefc4e",
+                            "roomName": "kitchen",
+                            "roomId": "76c10294-d630-43a0-884e-6b166afefc4e"
+                        }
+                    },
+                    {
+                        "deviceId": "8c0f13df-7eac-4373-9d19-772b8a6d0256",
+                        "deviceName": "Refrigerator",
+                        "deviceType": "Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4b1d1edb-b274-4af4-a7b4-b39d37315d75",
+                            "roomName": "utility Room",
+                            "roomId": "4b1d1edb-b274-4af4-a7b4-b39d37315d75"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Make the air purifier beep in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "beepControl_beep",
+                            "arguments": {
+                                "device": "70070ff8-4c79-4090-8b0e-78e94507862f",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air purifier in the living room is beeping now"
+        }
+    ],
+    "tools": []
+}

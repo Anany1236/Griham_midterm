@@ -1,0 +1,32 @@
+{
+    "name": "door_close",
+    "description": "This function is used to close the door of a specified SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the door is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the door is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name of the door lock that needs to be closed.",
+            "optional": true
+        },
+        {
+            "name": "compartment",
+            "type": "string",
+            "description": "The predefined compartment of the door lock that needs to be closed.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

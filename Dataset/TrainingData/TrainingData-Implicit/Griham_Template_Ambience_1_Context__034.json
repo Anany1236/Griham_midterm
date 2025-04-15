@@ -1,0 +1,113 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c69aaa7c-d448-4e4d-85f4-665095ca7a82",
+                        "deviceName": "airdresser",
+                        "deviceType": "airdresser",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c2053922-30bc-48de-a6d0-26d0e4673a92",
+                            "roomName": "Balcony",
+                            "roomId": "a73a2bb1-df18-44ef-aa89-4df3ae8830d8"
+                        }
+                    },
+                    {
+                        "deviceId": "436d4410-2171-4960-b27a-49db48a1718c",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c2053922-30bc-48de-a6d0-26d0e4673a92",
+                            "roomName": "Living room",
+                            "roomId": "6f3886c0-0408-4344-a5ad-33fd53b388b6"
+                        }
+                    },
+                    {
+                        "deviceId": "f9b0f55c-1d69-45da-9be7-be9697c578d8",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c2053922-30bc-48de-a6d0-26d0e4673a92",
+                            "roomName": "office room",
+                            "roomId": "05e0dff7-6149-4b02-92bd-914746c59df9"
+                        }
+                    },
+                    {
+                        "deviceId": "2c8d5f6d-9c77-4e40-8e8e-0e77f49399af",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c2053922-30bc-48de-a6d0-26d0e4673a92",
+                            "roomName": "office room",
+                            "roomId": "05e0dff7-6149-4b02-92bd-914746c59df9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the office room in the home ready for daily meeting at 11 AM"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_pause",
+                            "arguments": {
+                                "device": "c69aaa7c-d448-4e4d-85f4-665095ca7a82"
+                            }
+                        },
+                        {
+                            "name": " mute_turnOn",
+                            "arguments": {
+                                "device": "436d4410-2171-4960-b27a-49db48a1718c"
+                            }
+                        },
+                        {
+                            "name": " device_close",
+                            "arguments": {
+                                "device": "f9b0f55c-1d69-45da-9be7-be9697c578d8"
+                            }
+                        },
+                        {
+                            "name": " device_turnOff",
+                            "arguments": {
+                                "device": "2c8d5f6d-9c77-4e40-8e8e-0e77f49399af"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success",
+                "cron": "0 11 * * *"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can pause the dressing on air dresser, mute the tv, close the blinds and turn off the dehumidifier. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

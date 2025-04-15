@@ -1,0 +1,37 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "humidity_setValue",
+            "description": "This function is used to set the humidity level of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the humidity level."
+                    },
+                    "ration": {
+                        "type": "integer",
+                        "description": "The percentage value to set the humidity to."
+                    },
+                    "humidity": {
+                        "type": "integer",
+                        "description": "The specific humidity level to set."
+                    }
+                },
+                "required": [
+                    "humidity"
+                ]
+            }
+        }
+    ]
+}

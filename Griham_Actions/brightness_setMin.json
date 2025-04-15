@@ -1,0 +1,32 @@
+{
+    "name": "brightness_setMin",
+    "description": "This function is used to set the brightness of a smart home appliance or place to its minimum level.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device or place which needs to be adjusted is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device or place which needs to be adjusted is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to adjust the brightness.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "The group action to perform on multiple devices.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "873d6a31-842c-4865-97f5-861a2c36f5fc",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ffe59729-9d61-487e-9801-0214dcdefec3",
+                            "roomName": "bedroom",
+                            "roomId": "ffe59729-9d61-487e-9801-0214dcdefec3"
+                        }
+                    },
+                    {
+                        "deviceId": "2364b411-337c-4802-8e34-add236fee733",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7e9b7976-8b53-4b7d-bc00-731e5f17b3a0",
+                            "roomName": "living Room",
+                            "roomId": "7e9b7976-8b53-4b7d-bc00-731e5f17b3a0"
+                        }
+                    },
+                    {
+                        "deviceId": "3a534de2-25dd-4d74-a157-58d58d246496",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3319cb14-3eec-4cf3-89eb-6f53f3a80bab",
+                            "roomName": "guest Room",
+                            "roomId": "3319cb14-3eec-4cf3-89eb-6f53f3a80bab"
+                        }
+                    },
+                    {
+                        "deviceId": "c2343522-8218-4b37-9a8e-8446940d77c3",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "40d22355-d429-4152-adcb-bb0b7ba306e1",
+                            "roomName": "kitchen",
+                            "roomId": "40d22355-d429-4152-adcb-bb0b7ba306e1"
+                        }
+                    },
+                    {
+                        "deviceId": "40031291-1938-4a5c-bccd-757a818d2730",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "16f1ecc0-c83e-4200-873c-dc321101efb8",
+                            "roomName": "utility Room",
+                            "roomId": "16f1ecc0-c83e-4200-873c-dc321101efb8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you tell me the mold status for the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mold_getStatus",
+                            "arguments": {
+                                "device": "3a534de2-25dd-4d74-a157-58d58d246496",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The mold status for the light in the guest room is normal"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d77ab772-177f-4bf3-aa7f-eba4d6b006e0",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0390a2be-8bf1-4d92-9e4a-c5d1252622aa",
+                            "roomName": "bedroom",
+                            "roomId": "0390a2be-8bf1-4d92-9e4a-c5d1252622aa"
+                        }
+                    },
+                    {
+                        "deviceId": "be48943a-0f3b-4a69-8881-0d2af53a1805",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "146c135d-6bd5-4867-b9ed-e28543608c9d",
+                            "roomName": "living Room",
+                            "roomId": "146c135d-6bd5-4867-b9ed-e28543608c9d"
+                        }
+                    },
+                    {
+                        "deviceId": "53b67a15-09c1-464d-bc9c-3b4fdd9ccc77",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d900f192-fccc-4cf4-b1ba-762857f85699",
+                            "roomName": "guest Room",
+                            "roomId": "d900f192-fccc-4cf4-b1ba-762857f85699"
+                        }
+                    },
+                    {
+                        "deviceId": "11a0b062-d09b-4bbe-bd7b-5223e79edcf5",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8f59d6ed-025a-46b7-873b-d2799eca87c6",
+                            "roomName": "kitchen",
+                            "roomId": "8f59d6ed-025a-46b7-873b-d2799eca87c6"
+                        }
+                    },
+                    {
+                        "deviceId": "2dfcf81c-9fc8-4fb6-9043-65162635a180",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "acbc8cfd-afdb-4949-87ad-7d108dce2143",
+                            "roomName": "utility Room",
+                            "roomId": "acbc8cfd-afdb-4949-87ad-7d108dce2143"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the charger value for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "charger_getValue",
+                            "arguments": {
+                                "device": "d77ab772-177f-4bf3-aa7f-eba4d6b006e0",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The charger value for the air conditioner in the bedroom is displayed"
+        }
+    ],
+    "tools": []
+}

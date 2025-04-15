@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "302531fe-5d43-4b12-af27-1479a1be686c",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "991a7de8-d4bb-4e7d-9005-69170b025b61",
+                            "roomName": "kitchen",
+                            "roomId": "991a7de8-d4bb-4e7d-9005-69170b025b61"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please deactivate the refrigerator lamp in the dining area."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorLamp_turnOff",
+                            "arguments": {
+                                "device": "302531fe-5d43-4b12-af27-1479a1be686c",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator lamp in the dining area has been deactivated."
+        }
+    ],
+    "tools": []
+}

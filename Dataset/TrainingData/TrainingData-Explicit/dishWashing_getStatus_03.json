@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5f861fc1-7127-4209-b825-9ee6585b4027",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "464b3077-8f51-4df1-ae3c-1dd85dade5c1",
+                            "roomName": "living room",
+                            "roomId": "33cc71e3-1c9c-4193-9d75-56f3412e83da"
+                        }
+                    },
+                    {
+                        "deviceId": "6ee8e785-bb48-4f76-b135-8ecfdb9008b0",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "464b3077-8f51-4df1-ae3c-1dd85dade5c1",
+                            "roomName": "living room",
+                            "roomId": "33cc71e3-1c9c-4193-9d75-56f3412e83da"
+                        }
+                    },
+                    {
+                        "deviceId": "dbfccd40-65b6-4dc0-8f69-650ea50e1194",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "464b3077-8f51-4df1-ae3c-1dd85dade5c1",
+                            "roomName": "kitchen",
+                            "roomId": "dc55d4ac-c724-4a9d-bcdf-5fadddd0a0b3"
+                        }
+                    },
+                    {
+                        "deviceId": "af2b1cad-83e9-4dae-a6c3-a83ea2a5c258",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "464b3077-8f51-4df1-ae3c-1dd85dade5c1",
+                            "roomName": "laundry room",
+                            "roomId": "fa2ca144-0d22-4177-848a-6b9896dc4ce2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Quote the status of dishwashing in dishwasher"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_getStatus",
+                            "arguments": {
+                                "device": "dbfccd40-65b6-4dc0-8f69-650ea50e1194"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Dishwashing will be finished in 30 minutes."
+        }
+    ],
+    "tools": []
+}

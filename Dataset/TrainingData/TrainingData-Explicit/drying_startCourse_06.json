@@ -1,0 +1,97 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c6f848bd-2fca-47ee-8c86-5f0a5b2e646b",
+                        "deviceName": "dryer1",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c8e8e65-9e7b-4b01-afb4-22e2978e4d85",
+                            "roomName": "utility room",
+                            "roomId": "d25f8649-ad26-447f-8f0e-7257def60fa6"
+                        }
+                    },
+                    {
+                        "deviceId": "42a82a4a-5040-443f-ac7c-74f9fb8e878d",
+                        "deviceName": "dryer2",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c8e8e65-9e7b-4b01-afb4-22e2978e4d85",
+                            "roomName": "living room",
+                            "roomId": "411f7456-a6c6-4bd3-a705-1e919edf877e"
+                        }
+                    },
+                    {
+                        "deviceId": "dc750265-dafa-4108-95de-e845e39b4603",
+                        "deviceName": "dryer3",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c8e8e65-9e7b-4b01-afb4-22e2978e4d85",
+                            "roomName": "bedroom",
+                            "roomId": "aba958f3-7e44-4167-89af-8202e2858240"
+                        }
+                    },
+                    {
+                        "deviceId": "d0ce275d-e91f-454f-9997-7c752080d7d6",
+                        "deviceName": "dryer4",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4c8e8e65-9e7b-4b01-afb4-22e2978e4d85",
+                            "roomName": "guest room",
+                            "roomId": "8c51700b-5930-4da0-9d06-98a7c863b816"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you start the cotton course on the dryer in the utility room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_startCourse",
+                            "arguments": {
+                                "device": "c6f848bd-2fca-47ee-8c86-5f0a5b2e646b",
+                                "room": "utility room",
+                                "mode": "cotton"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, I am starting the cotton course on the dryer in the utility room."
+        }
+    ],
+    "tools": []
+}
+

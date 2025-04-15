@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "415c654f-e2d0-4361-94a7-a1b323967ac3",
+                        "deviceName": "cube refrigerator",
+                        "deviceType": "cube refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "25fbd6f2-59e6-467f-a4ed-6fc6748dfdc6",
+                            "roomName": "kitchen",
+                            "roomId": "25fbd6f2-59e6-467f-a4ed-6fc6748dfdc6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the cube refrigerator lamp in the pantry."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cubeRefrigeratorLamp_turnOff",
+                            "arguments": {
+                                "device": "415c654f-e2d0-4361-94a7-a1b323967ac3",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cube refrigerator lamp in the pantry is now disabled."
+        }
+    ],
+    "tools": []
+}

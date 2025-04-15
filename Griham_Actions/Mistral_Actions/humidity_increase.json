@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "humidity_increase",
+            "description": "This function is used to increase the humidity level of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to increase the humidity level."
+                    },
+                    "ration": {
+                        "type": "integer",
+                        "description": "The percentage value to increase the humidity by."
+                    },
+                    "humidityDelta": {
+                        "type": "integer",
+                        "description": "The amount by which to increase the humidity."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

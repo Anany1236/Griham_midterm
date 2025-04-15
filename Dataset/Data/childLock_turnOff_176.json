@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0086602a-7414-424f-92cc-e27c27f81265",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kid's room",
+                            "locationId": "f7ea4f9a-44ca-4a17-8ba4-71fdbcbdce51",
+                            "roomName": "kid's room",
+                            "roomId": "f7ea4f9a-44ca-4a17-8ba4-71fdbcbdce51"
+                        }
+                    },
+                    {
+                        "deviceId": "4ba4e10f-d6a2-4043-b9b0-a271c75d623d",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "673d4e03-7d6c-489e-b7e1-e8a1d8e71a05",
+                            "roomName": "kitchen",
+                            "roomId": "673d4e03-7d6c-489e-b7e1-e8a1d8e71a05"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the child lock in the kid's room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "childLock_turnOff",
+                            "arguments": {
+                                "device": "0086602a-7414-424f-92cc-e27c27f81265",
+                                "room": "kid's room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have disabled the child lock in the kid's room."
+        }
+    ],
+    "tools": []
+}

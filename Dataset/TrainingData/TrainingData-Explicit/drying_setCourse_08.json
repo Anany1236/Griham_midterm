@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f62d45a1-02d2-4542-8294-be0b4c9e77b2",
+                        "deviceName": "dryer1",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3b36d412-6fe2-4fd2-8e74-7f05ddc64730",
+                            "roomName": "utility room",
+                            "roomId": "949b127e-4309-4d10-af4a-81dedf83a87e"
+                        }
+                    },
+                    {
+                        "deviceId": "eb9c5db8-1c24-4af4-8875-a7fe6e9678f1",
+                        "deviceName": "dryer2",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3b36d412-6fe2-4fd2-8e74-7f05ddc64730",
+                            "roomName": "living room",
+                            "roomId": "bc1da165-e902-45e1-a28c-bd184c6c32e6"
+                        }
+                    },
+                    {
+                        "deviceId": "c2678bca-21e4-425e-8921-d888eefaf5c9",
+                        "deviceName": "dryer3",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3b36d412-6fe2-4fd2-8e74-7f05ddc64730",
+                            "roomName": "bedroom",
+                            "roomId": "800fd663-6def-425e-ae5c-88de8c57caf4"
+                        }
+                    },
+                    {
+                        "deviceId": "0925b4c6-0d13-4136-8d72-23e3acf8aa9d",
+                        "deviceName": "dryer4",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3b36d412-6fe2-4fd2-8e74-7f05ddc64730",
+                            "roomName": "guest room",
+                            "roomId": "a7124d58-0bb7-4502-8a80-e82eb7c2b5b2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the regular course in the dryer in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_setCourse",
+                            "arguments": {
+                                "device": "c2678bca-21e4-425e-8921-d888eefaf5c9",
+                                "room": "bedroom",
+                                "mode": "regular"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the regular course in the bedroom dryer"
+        }
+    ],
+    "tools": []
+}

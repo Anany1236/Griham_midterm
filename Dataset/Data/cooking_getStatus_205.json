@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a3a66160-3227-405f-aba7-1856f0aba8a4",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "f87c846e-d599-40d2-997b-339653e86c9a",
+                            "roomName": "kitchen",
+                            "roomId": "f87c846e-d599-40d2-997b-339653e86c9a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the cooking status on the oven?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_getStatus",
+                            "arguments": {
+                                "device": "a3a66160-3227-405f-aba7-1856f0aba8a4",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking status on the oven is in progress."
+        }
+    ],
+    "tools": []
+}

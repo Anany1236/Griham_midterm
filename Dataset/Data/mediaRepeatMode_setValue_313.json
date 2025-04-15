@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4c41e6f7-f87f-487b-abef-c25ee404bf44",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "15199140-0b34-40d9-b69a-ea3c0320ee35",
+                            "roomName": "living room",
+                            "roomId": "15199140-0b34-40d9-b69a-ea3c0320ee35"
+                        }
+                    },
+                    {
+                        "deviceId": "0f13a7e8-cc81-4f80-b21e-b41a83980691",
+                        "deviceName": "music player",
+                        "deviceType": "music player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "c072c254-ba72-4a19-962c-1a552d953442",
+                            "roomName": "home theater",
+                            "roomId": "c072c254-ba72-4a19-962c-1a552d953442"
+                        }
+                    },
+                    {
+                        "deviceId": "96b505ac-f8f2-4a0d-9ffa-d20c1b737fd1",
+                        "deviceName": "media player",
+                        "deviceType": "media player",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "e56f7ee1-53a0-4051-a38f-a408a3d78bfe",
+                            "roomName": "bedroom",
+                            "roomId": "e56f7ee1-53a0-4051-a38f-a408a3d78bfe"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the repeat mode to loop for the TV show."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaRepeatMode_setValue",
+                            "arguments": {
+                                "device": "4c41e6f7-f87f-487b-abef-c25ee404bf44",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The repeat mode for the TV show is now set to loop."
+        }
+    ],
+    "tools": []
+}

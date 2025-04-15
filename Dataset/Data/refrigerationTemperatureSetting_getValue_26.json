@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ac640f95-ed9d-43fc-bdd4-0430c435cc82",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "f7d08f0d-b10b-48e5-a7db-6065a56b407c",
+                            "roomName": "kitchen",
+                            "roomId": "f7d08f0d-b10b-48e5-a7db-6065a56b407c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please provide the refrigeration temperature setting in the cube refrigerator."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigerationTemperatureSetting_getValue",
+                            "arguments": {
+                                "device": "ac640f95-ed9d-43fc-bdd4-0430c435cc82",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigeration temperature setting in the cube refrigerator has been checked."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5d9e0b9f-7220-48ba-970b-89514ec06843",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "ecaa9209-da78-4efb-8e61-0e23af059d49",
+                            "roomName": "laundry room",
+                            "roomId": "ecaa9209-da78-4efb-8e61-0e23af059d49"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you increase the contamination level on the washing machine?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingContaminationLevel_increase",
+                            "arguments": {
+                                "device": "5d9e0b9f-7220-48ba-970b-89514ec06843",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The contamination level on the washing machine has been increased."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e675c0b6-0639-4960-bc23-60b82014e6ef",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "46ed488d-881d-4e3b-91c0-3885228eb3c8",
+                            "roomName": "bedroom",
+                            "roomId": "46ed488d-881d-4e3b-91c0-3885228eb3c8"
+                        }
+                    },
+                    {
+                        "deviceId": "ba6a83d3-7932-41d6-a15b-57fc3bf3a6ab",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1e74cb78-b1aa-4b12-9b8f-44a8d85d1dbc",
+                            "roomName": "living Room",
+                            "roomId": "1e74cb78-b1aa-4b12-9b8f-44a8d85d1dbc"
+                        }
+                    },
+                    {
+                        "deviceId": "22bbf86c-1295-4fa0-8ec9-26fa30babfd4",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c424a7c3-c217-4b33-a6f4-287a89df5210",
+                            "roomName": "guest Room",
+                            "roomId": "c424a7c3-c217-4b33-a6f4-287a89df5210"
+                        }
+                    },
+                    {
+                        "deviceId": "054725e5-6023-4440-9d0c-3bad79d8b3c5",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "75c05e87-942d-4e44-9036-c169499641ee",
+                            "roomName": "kitchen",
+                            "roomId": "75c05e87-942d-4e44-9036-c169499641ee"
+                        }
+                    },
+                    {
+                        "deviceId": "b2a9e9f5-46ed-4a56-baee-3e72d4bd9555",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d0238e4b-7780-4f64-a0bc-ed3ffd42b827",
+                            "roomName": "utility Room",
+                            "roomId": "d0238e4b-7780-4f64-a0bc-ed3ffd42b827"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the gas meter reading for the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "gasMeter_getValue",
+                            "arguments": {
+                                "device": "b2a9e9f5-46ed-4a56-baee-3e72d4bd9555",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The gas meter reading for the hood in the utility room is displayed"
+        }
+    ],
+    "tools": []
+}

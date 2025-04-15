@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "59b992b4-24d9-4422-9d33-9c4adf658497",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6a7052da-4307-4031-88b2-bbc51660c4d3",
+                            "roomName": "laundry room",
+                            "roomId": "f866801a-e635-4a35-b511-a9fb9c29ee48"
+                        }
+                    },
+                    {
+                        "deviceId": "7ee2bcc5-c8aa-48b8-82bd-5e7ed5f608d6",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6a7052da-4307-4031-88b2-bbc51660c4d3",
+                            "roomName": "living room",
+                            "roomId": "f23ae2ee-d677-466c-9df9-28c17bacf990"
+                        }
+                    },
+                    {
+                        "deviceId": "b9dba4a6-7107-4194-bc06-9b19c2e0d7dc",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6a7052da-4307-4031-88b2-bbc51660c4d3",
+                            "roomName": "utility room",
+                            "roomId": "0e38a890-7737-43c1-9f62-aaa8309d380f"
+                        }
+                    },
+                    {
+                        "deviceId": "84188cc7-fd96-4f72-a1d2-6456fe0b48dc",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6a7052da-4307-4031-88b2-bbc51660c4d3",
+                            "roomName": "bedroom",
+                            "roomId": "0abd0a43-32ef-4881-a4aa-c8f16210c180"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the washing machine water temperature to cold?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_setColdWater",
+                            "arguments": {
+                                "device": "59b992b4-24d9-4422-9d33-9c4adf658497"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the washing machine water temperature to cold."
+        }
+    ],
+    "tools": []
+}

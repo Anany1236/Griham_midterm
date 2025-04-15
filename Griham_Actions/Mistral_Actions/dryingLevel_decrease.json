@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "dryingLevel_decrease",
+            "description": "This function is used to reduce the drying level of a dryer.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to decrease the drying level."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to decrease the drying level."
+                    },
+                    "dryingLevelDelta": {
+                        "type": "integer",
+                        "description": "The amount by which to decrease the drying level."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "deviceTemperatureSetting_getValue",
+            "description": "This function is used to request the set temperature of a specific compartment in a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to get the temperature from."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to get the temperature from."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

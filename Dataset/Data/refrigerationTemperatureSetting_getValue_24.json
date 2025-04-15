@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e1acb332-44ba-4764-b18d-50b479aaada5",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "8e923477-8deb-4801-b9dc-ae9e89a4d622",
+                            "roomName": "kitchen",
+                            "roomId": "8e923477-8deb-4801-b9dc-ae9e89a4d622"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the refrigeration temperature setting for the kitchen refrigerator."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigerationTemperatureSetting_getValue",
+                            "arguments": {
+                                "device": "e1acb332-44ba-4764-b18d-50b479aaada5",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigeration temperature setting for the kitchen refrigerator has been retrieved."
+        }
+    ],
+    "tools": []
+}

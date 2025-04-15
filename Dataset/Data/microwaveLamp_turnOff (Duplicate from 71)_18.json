@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f592178f-0c38-4df1-8261-8724439b6faa",
+                        "deviceName": "Dryer,Dryer,Dryer",
+                        "deviceType": "Dryer,Dryer,Dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "Laundry room,Bathroom,Utility room",
+                            "locationId": "c40ec0e7-0313-4f89-835d-ea8e9df8bfb9",
+                            "roomName": "Laundry room,Bathroom,Utility room",
+                            "roomId": "c40ec0e7-0313-4f89-835d-ea8e9df8bfb9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the dryer lamp in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "microwaveLamp_turnOff (Duplicate from 71)",
+                            "arguments": {
+                                "device": "f592178f-0c38-4df1-8261-8724439b6faa",
+                                "room": "Laundry room,Bathroom,Utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dryer lamp in the laundry room has been turned off."
+        }
+    ],
+    "tools": []
+}

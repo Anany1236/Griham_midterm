@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f7bbc35a-74eb-433f-816f-9f0064dc7106",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2282c1ea-9591-4035-889a-d807c707b4b2",
+                            "roomName": "bedroom",
+                            "roomId": "2282c1ea-9591-4035-889a-d807c707b4b2"
+                        }
+                    },
+                    {
+                        "deviceId": "256a414f-3719-4f1b-a580-7485b0323bba",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4fdc860d-7ce8-4143-9161-a09c726ccd1a",
+                            "roomName": "living Room",
+                            "roomId": "4fdc860d-7ce8-4143-9161-a09c726ccd1a"
+                        }
+                    },
+                    {
+                        "deviceId": "c725216c-62fd-42d0-93c0-4985c8466cfc",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "030d2ced-194d-485d-91d4-f9674da722ea",
+                            "roomName": "guest Room",
+                            "roomId": "030d2ced-194d-485d-91d4-f9674da722ea"
+                        }
+                    },
+                    {
+                        "deviceId": "c15fbf27-53c6-4b85-abce-2e8ba8b81387",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4a12c13a-3831-452e-b484-97120e6567ce",
+                            "roomName": "kitchen",
+                            "roomId": "4a12c13a-3831-452e-b484-97120e6567ce"
+                        }
+                    },
+                    {
+                        "deviceId": "1d531112-0370-4c19-9938-416bdb7f94b5",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "48df9421-67bc-47a8-8795-0e3587617328",
+                            "roomName": "utility Room",
+                            "roomId": "48df9421-67bc-47a8-8795-0e3587617328"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the bypass state status of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bypassState_getStatus",
+                            "arguments": {
+                                "device": "c15fbf27-53c6-4b85-abce-2e8ba8b81387",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The bypass state status of the washer in the kitchen is shown"
+        }
+    ],
+    "tools": []
+}

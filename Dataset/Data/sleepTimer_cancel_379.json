@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "04461892-037d-4db7-8f65-7e199b2dd11a",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "361af5f1-052f-40b0-b07a-a664ba3cb1b9",
+                            "roomName": "bedroom",
+                            "roomId": "361af5f1-052f-40b0-b07a-a664ba3cb1b9"
+                        }
+                    },
+                    {
+                        "deviceId": "5160f8fb-2629-40a4-9bd4-1f9241ad4c26",
+                        "deviceName": "humidifier",
+                        "deviceType": "humidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "40d87e23-195f-4c33-a5d3-80b4fe66fb09",
+                            "roomName": "living room",
+                            "roomId": "40d87e23-195f-4c33-a5d3-80b4fe66fb09"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Cancel the sleep timer for the air purifier."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "sleepTimer_cancel",
+                            "arguments": {
+                                "device": "04461892-037d-4db7-8f65-7e199b2dd11a",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The sleep timer for the air purifier has been canceled."
+        }
+    ],
+    "tools": []
+}

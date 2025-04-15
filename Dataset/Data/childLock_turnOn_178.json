@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "eafb7276-0f48-4337-8be2-a799580e4af0",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "c00cbc1d-81aa-44c9-bd72-7d5ece292554",
+                            "roomName": "kitchen",
+                            "roomId": "c00cbc1d-81aa-44c9-bd72-7d5ece292554"
+                        }
+                    },
+                    {
+                        "deviceId": "d8600b09-c567-4fea-a58e-8a2110ac9dcb",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "642fafbe-823e-4c9e-8a1d-89de07804fcb",
+                            "roomName": "laundry room",
+                            "roomId": "642fafbe-823e-4c9e-8a1d-89de07804fcb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Activate the child lock on the dishwasher."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "childLock_turnOn",
+                            "arguments": {
+                                "device": "eafb7276-0f48-4337-8be2-a799580e4af0",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The child lock on the dishwasher is now on."
+        }
+    ],
+    "tools": []
+}

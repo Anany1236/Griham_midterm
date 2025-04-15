@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f082f113-7842-4b8a-bc76-1c602b834336",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4e70eeef-861a-44ac-8d61-e144aa52d6c9",
+                            "roomName": "bedroom",
+                            "roomId": "4e70eeef-861a-44ac-8d61-e144aa52d6c9"
+                        }
+                    },
+                    {
+                        "deviceId": "6110937f-db59-427f-a840-7f630d7dd0eb",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "618f95fe-6501-4f7e-b72a-abfa34ec70f4",
+                            "roomName": "living Room",
+                            "roomId": "618f95fe-6501-4f7e-b72a-abfa34ec70f4"
+                        }
+                    },
+                    {
+                        "deviceId": "f7103ff2-cfca-45ce-8bad-610e4d72ac63",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "35c635d8-fe9e-40f4-95d1-8a17fe9afa6f",
+                            "roomName": "guest Room",
+                            "roomId": "35c635d8-fe9e-40f4-95d1-8a17fe9afa6f"
+                        }
+                    },
+                    {
+                        "deviceId": "3225a81c-d5f5-47c1-b488-057644e82648",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cc9c2ab1-eb60-45c8-8964-fd827ae23028",
+                            "roomName": "kitchen",
+                            "roomId": "cc9c2ab1-eb60-45c8-8964-fd827ae23028"
+                        }
+                    },
+                    {
+                        "deviceId": "a3af1e25-9f1d-46bd-87c5-b1d6e5e0cd80",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "445abe21-0c6a-497e-9fd4-768a42ac1e47",
+                            "roomName": "utility Room",
+                            "roomId": "445abe21-0c6a-497e-9fd4-768a42ac1e47"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Display the automation settings for the air conditioner in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "automation_show",
+                            "arguments": {
+                                "device": "6110937f-db59-427f-a840-7f630d7dd0eb",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The automation for the air conditioner in the living room is displayed"
+        }
+    ],
+    "tools": []
+}

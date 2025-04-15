@@ -1,0 +1,47 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cooking_startCourse",
+            "description": "This function is used to start a specific cooking course on a cooking appliance.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to be controlled."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode to start the cooking course."
+                    },
+                    "temperatureUnit": {
+                        "type": "string",
+                        "description": "The unit of temperature to be used."
+                    },
+                    "temperature": {
+                        "type": "integer",
+                        "description": "The temperature to start the cooking course."
+                    },
+                    "timer": {
+                        "type": "string",
+                        "description": "The duration of the cooking course."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to start the cooking course on."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "92a78662-0a7a-40ea-996a-e4cdb6471ffe",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d9c08495-314e-4dc0-8ee3-cc0f8950f0a1",
+                            "roomName": "bedroom",
+                            "roomId": "d9c08495-314e-4dc0-8ee3-cc0f8950f0a1"
+                        }
+                    },
+                    {
+                        "deviceId": "c221ad7e-b011-49ed-b851-3eb2459e621e",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5eb58238-bfbc-40c9-ba93-5f37e75031fc",
+                            "roomName": "living Room",
+                            "roomId": "5eb58238-bfbc-40c9-ba93-5f37e75031fc"
+                        }
+                    },
+                    {
+                        "deviceId": "54c3d1db-10a7-4620-8773-97140d5cc872",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6798627e-4690-4bb3-bb3b-ba6aabeede8f",
+                            "roomName": "guest Room",
+                            "roomId": "6798627e-4690-4bb3-bb3b-ba6aabeede8f"
+                        }
+                    },
+                    {
+                        "deviceId": "cef8b8be-25b2-4a86-a40f-030ae63d415c",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b12b9632-9460-44cc-b118-8fed8d79c07d",
+                            "roomName": "kitchen",
+                            "roomId": "b12b9632-9460-44cc-b118-8fed8d79c07d"
+                        }
+                    },
+                    {
+                        "deviceId": "acbcbfae-b494-43f0-8f60-3ef15480ddcf",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a76791fb-ae71-4db7-b957-a478bd525d27",
+                            "roomName": "utility Room",
+                            "roomId": "a76791fb-ae71-4db7-b957-a478bd525d27"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the carbon monoxide detection status of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "carbonMonoxideDetection_getStatus",
+                            "arguments": {
+                                "device": "acbcbfae-b494-43f0-8f60-3ef15480ddcf",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The carbon monoxide detection status of the hood in the utility room is shown"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6c6e9e7a-ab6d-4a80-8e3d-cf1ae0631acf",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "cced05f6-98d2-4073-a660-7175967eabd0",
+                            "roomName": "guest room",
+                            "roomId": "cced05f6-98d2-4073-a660-7175967eabd0"
+                        }
+                    },
+                    {
+                        "deviceId": "af7a9adc-3fd2-469f-883d-cc9d457d72e6",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d062a145-99b8-4ded-8264-09cf88ee6465",
+                            "roomName": "living room",
+                            "roomId": "d062a145-99b8-4ded-8264-09cf88ee6465"
+                        }
+                    },
+                    {
+                        "deviceId": "a89473a2-1687-44c7-9093-b6fc45d63ada",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "dd5d1a65-7cd0-4deb-b5d3-291eb9a5f76b",
+                            "roomName": "kitchen",
+                            "roomId": "dd5d1a65-7cd0-4deb-b5d3-291eb9a5f76b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the sleep mode on the air purifier in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mode_turnOff",
+                            "arguments": {
+                                "device": "af7a9adc-3fd2-469f-883d-cc9d457d72e6",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sleep mode on the air purifier in the living room is now disabled."
+        }
+    ],
+    "tools": []
+}

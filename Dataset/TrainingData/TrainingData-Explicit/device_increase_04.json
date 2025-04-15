@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0bf19b4a-dd1f-4e6b-b703-ce0c8dd8d8fc",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b9c1582-3101-41af-8d13-f3d12e801ef2",
+                            "roomName": "living room",
+                            "roomId": "d8cfc8f0-8d18-4569-88db-514086d9d445"
+                        }
+                    },
+                    {
+                        "deviceId": "eaa0206f-1c64-4114-b94c-da4ddb6c987d",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b9c1582-3101-41af-8d13-f3d12e801ef2",
+                            "roomName": "bedroom",
+                            "roomId": "d1752a55-5f8d-4fb0-af5b-0d764ec67d05"
+                        }
+                    },
+                    {
+                        "deviceId": "ef7521d6-2959-462a-851f-dc2f2a958c8f",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b9c1582-3101-41af-8d13-f3d12e801ef2",
+                            "roomName": "laundry room",
+                            "roomId": "add57894-8df3-4e76-a74c-d06722f46630"
+                        }
+                    },
+                    {
+                        "deviceId": "9790eb1a-cd9b-4e63-83da-4830c7cb5e03",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8b9c1582-3101-41af-8d13-f3d12e801ef2",
+                            "roomName": "bedroom",
+                            "roomId": "d1752a55-5f8d-4fb0-af5b-0d764ec67d05"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you increase the robot cleaner by 5?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_increase",
+                            "arguments": {
+                                "device": "9790eb1a-cd9b-4e63-83da-4830c7cb5e03",
+                                "levelDelta": "5"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have increased the robot cleaner by 5."
+        }
+    ],
+    "tools": []
+}

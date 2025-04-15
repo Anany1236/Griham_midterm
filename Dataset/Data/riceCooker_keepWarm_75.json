@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "90db3707-b0d7-45b7-835f-d2a46c5ad4a4",
+                        "deviceName": "rice cooker",
+                        "deviceType": "rice cooker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "670d7961-c1ac-407c-af62-f27d0dab325b",
+                            "roomName": "kitchen",
+                            "roomId": "670d7961-c1ac-407c-af62-f27d0dab325b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you keep the rice warm in the rice cooker in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "riceCooker_keepWarm",
+                            "arguments": {
+                                "device": "90db3707-b0d7-45b7-835f-d2a46c5ad4a4",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rice cooker in the kitchen is now set to keep warm."
+        }
+    ],
+    "tools": []
+}

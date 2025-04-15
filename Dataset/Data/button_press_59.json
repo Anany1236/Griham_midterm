@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b75ee14b-aef1-4819-8631-f2fe274f9223",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ae678a78-cf39-48da-8fcd-b489c3a5a397",
+                            "roomName": "bedroom",
+                            "roomId": "ae678a78-cf39-48da-8fcd-b489c3a5a397"
+                        }
+                    },
+                    {
+                        "deviceId": "e9341472-01ef-4f5c-891a-63e035a6235c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "99ea1c4c-cd15-4d12-800b-98684f4bd44c",
+                            "roomName": "living Room",
+                            "roomId": "99ea1c4c-cd15-4d12-800b-98684f4bd44c"
+                        }
+                    },
+                    {
+                        "deviceId": "dd832251-e81d-46df-ba88-2b2f085cef3a",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2679ce9b-c743-4068-94e3-0cb2ec2f114a",
+                            "roomName": "guest Room",
+                            "roomId": "2679ce9b-c743-4068-94e3-0cb2ec2f114a"
+                        }
+                    },
+                    {
+                        "deviceId": "e774d705-e9cd-4b8b-a249-3c8c6a48a08e",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8c57cfe8-a796-46e7-a5e4-c179ced48cf7",
+                            "roomName": "kitchen",
+                            "roomId": "8c57cfe8-a796-46e7-a5e4-c179ced48cf7"
+                        }
+                    },
+                    {
+                        "deviceId": "95da5554-9ecf-4172-9b1a-92b8cf7e1fcf",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "70a37e73-8777-4756-9761-d7123f57d6a6",
+                            "roomName": "utility Room",
+                            "roomId": "70a37e73-8777-4756-9761-d7123f57d6a6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Press the button on the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "button_press",
+                            "arguments": {
+                                "device": "e774d705-e9cd-4b8b-a249-3c8c6a48a08e",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The button on the washer in the kitchen has been pressed"
+        }
+    ],
+    "tools": []
+}

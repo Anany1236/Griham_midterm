@@ -1,0 +1,38 @@
+{
+    "name": "lightingMode_setValue",
+    "description": "This function is used to change the lighting mode of a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the lighting mode.",
+            "optional": true
+        },
+        {
+            "name": "predefinedLightingMode",
+            "type": "string",
+            "description": "The specific lighting mode to be set (e.g., writing mode, night mode, sleep mode).",
+            "optional": false
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The mode to be set (used interchangeably with predefinedLightingMode).",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

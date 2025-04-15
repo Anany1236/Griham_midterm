@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "dbc1ac51-06b8-4f33-9eee-a499001b3f6f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d15e6fec-d0c2-49ff-9402-1536eb52b2ca",
+                            "roomName": "bedroom",
+                            "roomId": "d15e6fec-d0c2-49ff-9402-1536eb52b2ca"
+                        }
+                    },
+                    {
+                        "deviceId": "ae2dd87d-e0fd-45e3-b8cd-cf6abf6e7e1d",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b925cffd-c096-47a1-b2fb-b6f36aed8484",
+                            "roomName": "living Room",
+                            "roomId": "b925cffd-c096-47a1-b2fb-b6f36aed8484"
+                        }
+                    },
+                    {
+                        "deviceId": "e5ba3163-c0d8-414b-bf3e-df65e5317cd3",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5fc57118-c589-40ab-b942-beb3e5d17384",
+                            "roomName": "guest Room",
+                            "roomId": "5fc57118-c589-40ab-b942-beb3e5d17384"
+                        }
+                    },
+                    {
+                        "deviceId": "4fd70e7a-eeb3-4b13-87e3-99e5681f468c",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6c7f1818-773e-4115-a3ad-451979ec8ada",
+                            "roomName": "kitchen",
+                            "roomId": "6c7f1818-773e-4115-a3ad-451979ec8ada"
+                        }
+                    },
+                    {
+                        "deviceId": "36decca4-557e-4844-98aa-d59aa574020f",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1356dcc5-3312-499f-b2fd-7cd32edeca68",
+                            "roomName": "utility Room",
+                            "roomId": "1356dcc5-3312-499f-b2fd-7cd32edeca68"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you show me the blueprint of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "blueprint_show",
+                            "arguments": {
+                                "device": "e5ba3163-c0d8-414b-bf3e-df65e5317cd3",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The blueprint of the light in the guest room is displayed"
+        }
+    ],
+    "tools": []
+}

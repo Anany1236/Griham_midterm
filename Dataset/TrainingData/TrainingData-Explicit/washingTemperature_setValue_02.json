@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d2768a8b-b87f-4923-8e5b-d7021633be40",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "43a29ea9-de8d-49a0-b176-9caf80bb1bcc",
+                            "roomName": "utility room",
+                            "roomId": "b42f5bec-44b2-417e-b6a0-d5f0d5699a8a"
+                        }
+                    },
+                    {
+                        "deviceId": "b3fb83b5-6540-43e2-9909-3d6ea7753f40",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "43a29ea9-de8d-49a0-b176-9caf80bb1bcc",
+                            "roomName": "living room",
+                            "roomId": "9fcfe60c-6332-4d3a-a6b2-d46b9d9467cd"
+                        }
+                    },
+                    {
+                        "deviceId": "e02552d1-4797-41e9-8410-5345fdbeae21",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "43a29ea9-de8d-49a0-b176-9caf80bb1bcc",
+                            "roomName": "utility room",
+                            "roomId": "b42f5bec-44b2-417e-b6a0-d5f0d5699a8a"
+                        }
+                    },
+                    {
+                        "deviceId": "71365a8f-144a-4eee-8116-a0ef6052a430",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "43a29ea9-de8d-49a0-b176-9caf80bb1bcc",
+                            "roomName": "bedroom",
+                            "roomId": "65667ab7-c314-4517-a071-941708c528b7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the washing temperature to 40 degrees"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_setValue",
+                            "arguments": {
+                                "washingTemperature": 40
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, I'm setting the washing temperature to 40 degrees."
+        }
+    ],
+    "tools": []
+}

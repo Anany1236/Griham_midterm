@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bbe92698-ac91-4e3d-93b2-063ad8220704",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "9cad3da2-7b42-4aa3-be1b-766a76fc2120",
+                            "roomName": "living room",
+                            "roomId": "9cad3da2-7b42-4aa3-be1b-766a76fc2120"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the recording feature for the camera."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "recording_turnOn",
+                            "arguments": {
+                                "device": "bbe92698-ac91-4e3d-93b2-063ad8220704",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The recording feature for the camera is now on."
+        }
+    ],
+    "tools": []
+}

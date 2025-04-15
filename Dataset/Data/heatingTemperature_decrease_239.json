@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "11f22f3e-0f50-4096-8114-881cb8aa5207",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "43412dd7-2e3a-43ba-ae68-4017ac45a665",
+                            "roomName": "bedroom",
+                            "roomId": "43412dd7-2e3a-43ba-ae68-4017ac45a665"
+                        }
+                    },
+                    {
+                        "deviceId": "15f62d74-fd4e-41c0-a964-0d0abb5f997d",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "1450e63a-ca48-491c-bdb1-e39009ede838",
+                            "roomName": "living room",
+                            "roomId": "1450e63a-ca48-491c-bdb1-e39009ede838"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you lower the heating temperature in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_decrease",
+                            "arguments": {
+                                "device": "11f22f3e-0f50-4096-8114-881cb8aa5207",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have lowered the heating temperature in the bedroom."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "eb6b83a9-4997-435d-9e07-395acdac05f7",
+                        "deviceName": "Dryer,Dryer,Dryer",
+                        "deviceType": "Dryer,Dryer,Dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "Laundry room,Bathroom,Utility room",
+                            "locationId": "077634a9-40ec-4ed5-aa1a-77a61e12bd12",
+                            "roomName": "Laundry room,Bathroom,Utility room",
+                            "roomId": "077634a9-40ec-4ed5-aa1a-77a61e12bd12"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Switch on the dryer light in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "microwaveLamp_turnOn (Duplicate from 72)",
+                            "arguments": {
+                                "device": "eb6b83a9-4997-435d-9e07-395acdac05f7",
+                                "room": "Laundry room,Bathroom,Utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dryer light in the bathroom is now on."
+        }
+    ],
+    "tools": []
+}

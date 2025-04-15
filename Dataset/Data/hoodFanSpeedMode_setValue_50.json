@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "740a6bc3-3e6f-42de-a3af-ecf2dd0419f4",
+                        "deviceName": "hood",
+                        "deviceType": "hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "68ae5390-c897-4923-93da-8af83137b526",
+                            "roomName": "kitchen",
+                            "roomId": "68ae5390-c897-4923-93da-8af83137b526"
+                        }
+                    },
+                    {
+                        "deviceId": "b181af44-585a-4c7b-8ede-02cf7d9685a5",
+                        "deviceName": "range hood",
+                        "deviceType": "range hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "dining room",
+                            "locationId": "37d1d79a-5371-48a9-87ee-e92cbf85b491",
+                            "roomName": "dining room",
+                            "roomId": "37d1d79a-5371-48a9-87ee-e92cbf85b491"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the fan speed mode for the hood in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodFanSpeedMode_setValue",
+                            "arguments": {
+                                "device": "740a6bc3-3e6f-42de-a3af-ecf2dd0419f4",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed mode for the hood in the kitchen has been set."
+        }
+    ],
+    "tools": []
+}

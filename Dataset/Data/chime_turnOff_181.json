@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "caa836d9-f885-4a54-b780-103d71062141",
+                        "deviceName": "chime",
+                        "deviceType": "chime",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "6e6b1dc0-bfc5-40a3-8223-b51dcacee3e5",
+                            "roomName": "hallway",
+                            "roomId": "6e6b1dc0-bfc5-40a3-8223-b51dcacee3e5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the chime in the hallway."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chime_turnOff",
+                            "arguments": {
+                                "device": "caa836d9-f885-4a54-b780-103d71062141",
+                                "room": "hallway"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The chime in the hallway is now off."
+        }
+    ],
+    "tools": []
+}

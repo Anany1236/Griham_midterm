@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "63152dcf-d677-40a4-a20b-b739f04d21f9",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3285fc99-6e35-4353-95c8-8546a51c1e7d",
+                            "roomName": "bedroom",
+                            "roomId": "5e0e0153-d959-4691-a2eb-5dcb6f1eb241"
+                        }
+                    },
+                    {
+                        "deviceId": "425b865d-8a9f-42cd-9bbe-e928a0157005",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3285fc99-6e35-4353-95c8-8546a51c1e7d",
+                            "roomName": "utility room",
+                            "roomId": "96ca84a0-7100-4479-85e7-680e16c2d308"
+                        }
+                    },
+                    {
+                        "deviceId": "63109f59-7e99-448a-8fd4-343c1303bc33",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3285fc99-6e35-4353-95c8-8546a51c1e7d",
+                            "roomName": "kitchen",
+                            "roomId": "285a1b7a-1c3e-49df-8dc8-110d41ffe3fe"
+                        }
+                    },
+                    {
+                        "deviceId": "836dc2e2-d1cd-489b-9329-b58e5461c21c",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3285fc99-6e35-4353-95c8-8546a51c1e7d",
+                            "roomName": "bedroom",
+                            "roomId": "285a1b7a-1c3e-49df-8dc8-110d41ffe3fe"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you pause tv for a while"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_pause",
+                            "arguments": {
+                                "device": "63152dcf-d677-40a4-a20b-b739f04d21f9"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have paused tv for a while."
+        }
+    ],
+    "tools": []
+}

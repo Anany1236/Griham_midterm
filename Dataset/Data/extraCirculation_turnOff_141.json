@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "46cc336b-18be-4cf9-a9c2-0212b3c56e1b",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9702dc9a-ec11-433a-8858-5e06289a99a2",
+                            "roomName": "bedroom",
+                            "roomId": "9702dc9a-ec11-433a-8858-5e06289a99a2"
+                        }
+                    },
+                    {
+                        "deviceId": "24b633c6-59cc-4c73-b80e-0bc5c7afe1bc",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d0bc7488-9759-4b5e-ac0f-3cf6a37b8b52",
+                            "roomName": "living Room",
+                            "roomId": "d0bc7488-9759-4b5e-ac0f-3cf6a37b8b52"
+                        }
+                    },
+                    {
+                        "deviceId": "760f1110-74ca-4bf0-aa2e-c7d095c3705b",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "22a4fdb4-7f46-4463-b03c-c8d907483ec1",
+                            "roomName": "guest Room",
+                            "roomId": "22a4fdb4-7f46-4463-b03c-c8d907483ec1"
+                        }
+                    },
+                    {
+                        "deviceId": "1e3a6c04-ea26-4b06-8148-368d215cebbf",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3aa8908f-2021-4d53-a12e-b28be548b09b",
+                            "roomName": "kitchen",
+                            "roomId": "3aa8908f-2021-4d53-a12e-b28be548b09b"
+                        }
+                    },
+                    {
+                        "deviceId": "a8261388-3c5c-4a82-b12b-be9681ca4669",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c32006dc-42a1-4fec-b466-5c7d945ee6eb",
+                            "roomName": "utility Room",
+                            "roomId": "c32006dc-42a1-4fec-b466-5c7d945ee6eb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the extra circulation mode for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "extraCirculation_turnOff",
+                            "arguments": {
+                                "device": "46cc336b-18be-4cf9-a9c2-0212b3c56e1b",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The extra circulation mode for the air conditioner in the bedroom is turned off"
+        }
+    ],
+    "tools": []
+}

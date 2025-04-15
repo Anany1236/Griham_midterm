@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "22951615-b67f-4479-a524-3e4db58c989a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "21e798d1-5d6a-498b-bf03-e239bc01266b",
+                            "roomName": "bedroom",
+                            "roomId": "21e798d1-5d6a-498b-bf03-e239bc01266b"
+                        }
+                    },
+                    {
+                        "deviceId": "e016191e-2100-4b59-93ae-9a4dba6f0630",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d69c5cec-f111-4a2e-805e-9d58fc6cbca6",
+                            "roomName": "living Room",
+                            "roomId": "d69c5cec-f111-4a2e-805e-9d58fc6cbca6"
+                        }
+                    },
+                    {
+                        "deviceId": "c4983d61-ee6e-4c99-8e00-0370908988c5",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "792eacf5-b581-46a9-b29d-cb315a1d1ad8",
+                            "roomName": "guest Room",
+                            "roomId": "792eacf5-b581-46a9-b29d-cb315a1d1ad8"
+                        }
+                    },
+                    {
+                        "deviceId": "3ec825bf-1c12-4039-9727-c18e54fd0a2d",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "385b1e1e-81eb-4adf-9bac-4a3f63a77be2",
+                            "roomName": "kitchen",
+                            "roomId": "385b1e1e-81eb-4adf-9bac-4a3f63a77be2"
+                        }
+                    },
+                    {
+                        "deviceId": "844ba1a2-b3f8-492b-95a2-578c086d30df",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1cf6f30e-1fdb-44a5-b421-61eaca92f45b",
+                            "roomName": "utility Room",
+                            "roomId": "1cf6f30e-1fdb-44a5-b421-61eaca92f45b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the detected sound type of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "detectedSoundType_getValue",
+                            "arguments": {
+                                "device": "3ec825bf-1c12-4039-9727-c18e54fd0a2d",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The detected sound type of the washer in the kitchen is shown"
+        }
+    ],
+    "tools": []
+}

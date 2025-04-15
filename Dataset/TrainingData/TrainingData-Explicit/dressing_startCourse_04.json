@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "eab91da0-f23f-4df0-8a74-3163edb66c29",
+                        "deviceName": "steamcloset1",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6b9571c-abf5-4a67-9efc-62d8fa1ce931",
+                            "roomName": "utility room",
+                            "roomId": "e8ad060a-de67-469b-853e-af9040f82fe3"
+                        }
+                    },
+                    {
+                        "deviceId": "17fd21bf-0634-4c90-805c-f93ebb797cbd",
+                        "deviceName": "steamcloset2",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6b9571c-abf5-4a67-9efc-62d8fa1ce931",
+                            "roomName": "living room",
+                            "roomId": "3429ebda-26a3-42fb-9486-c8355610f267"
+                        }
+                    },
+                    {
+                        "deviceId": "46b28218-7430-4fed-b6b4-62e820bc42ee",
+                        "deviceName": "airdresser",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6b9571c-abf5-4a67-9efc-62d8fa1ce931",
+                            "roomName": "bedroom",
+                            "roomId": "bde934b0-9bce-42b8-9251-5d5b485d7c9b"
+                        }
+                    },
+                    {
+                        "deviceId": "3495802c-02f0-4c51-9240-fe22dbda043e",
+                        "deviceName": "dresser",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6b9571c-abf5-4a67-9efc-62d8fa1ce931",
+                            "roomName": "guest room",
+                            "roomId": "6f056899-17d8-48d5-ad81-b7d0e548d259"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the dressing in the delicates mode in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_startCourse",
+                            "arguments": {
+                                "device": "46b28218-7430-4fed-b6b4-62e820bc42ee",
+                                "room": "bedroom",
+                                "mode": "delicates"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dresser has been started in the delicates mode in the bedoom"
+        }
+    ],
+    "tools": []
+}

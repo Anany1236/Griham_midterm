@@ -1,0 +1,65 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "o1",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "kitchen",
+                            "roomId": "r5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Power on the Kitchen oven"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "o1"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The Kitchen oven is powered on."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                
+            ]
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c9944ff4-8415-4be6-be9c-3ba256ae9407",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "6dbe4716-7fcc-42cb-8ed8-895ed88d988d",
+                            "roomName": "kitchen",
+                            "roomId": "6dbe4716-7fcc-42cb-8ed8-895ed88d988d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the refrigerator option in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigeratorOption_turnOn",
+                            "arguments": {
+                                "device": "c9944ff4-8415-4be6-be9c-3ba256ae9407",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator option in the kitchen has been turned on."
+        }
+    ],
+    "tools": []
+}

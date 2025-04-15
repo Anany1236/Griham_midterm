@@ -1,0 +1,38 @@
+{
+    "name": "device_move",
+    "description": "This function is used to move a SmartThings device to a specified location.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is currently located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is currently located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to move.",
+            "optional": true
+        },
+        {
+            "name": "rvcLocation",
+            "type": "string",
+            "description": "The location to which the device should be moved.",
+            "optional": true
+        },
+        {
+            "name": "rvcObject",
+            "type": "string",
+            "description": "The object to which the device should be moved.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

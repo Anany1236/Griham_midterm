@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0b4bcffd-c265-42e9-b962-ea9718b7dabd",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f9cd09f-65ae-4469-bb1c-66c811bdf41e",
+                            "roomName": "Kitchen",
+                            "roomId": "89b39dc1-f903-44c7-bc63-ce52525b0879"
+                        }
+                    },
+                    {
+                        "deviceId": "55f84528-b9e7-4180-b3e5-1362682fd1d3",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f9cd09f-65ae-4469-bb1c-66c811bdf41e",
+                            "roomName": "Living room",
+                            "roomId": "a8a6d812-5b59-4dac-be3c-d3df3b463c08"
+                        }
+                    },
+                    {
+                        "deviceId": "d7a1289d-312c-45af-a5c1-f528fb7a3b1d",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f9cd09f-65ae-4469-bb1c-66c811bdf41e",
+                            "roomName": "Living room",
+                            "roomId": "a8a6d812-5b59-4dac-be3c-d3df3b463c08"
+                        }
+                    },
+                    {
+                        "deviceId": "700d3bd8-0b26-42fd-9ece-2e4c95d2743a",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f9cd09f-65ae-4469-bb1c-66c811bdf41e",
+                            "roomName": "Kitchen",
+                            "roomId": "89b39dc1-f903-44c7-bc63-ce52525b0879"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the dishwasher in drying course "
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_startCourse",
+                            "arguments": {
+                                "device": "0b4bcffd-c265-42e9-b962-ea9718b7dabd",
+                                "mode": "drying"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have turned on the dishwasher in the drying course "
+        }
+    ],
+    "tools": []
+}

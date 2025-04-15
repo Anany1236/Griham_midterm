@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8372458b-cc62-4a67-bc89-d702e9f6580b",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "25539adf-f0d8-487a-8a88-aab2bd062105",
+                            "roomName": "laundry room",
+                            "roomId": "25539adf-f0d8-487a-8a88-aab2bd062105"
+                        }
+                    },
+                    {
+                        "deviceId": "9c1d233e-7330-4f1c-a974-f897c252c6b4",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "6b873dcd-4735-4bdf-8b6a-c4bb65019551",
+                            "roomName": "kitchen",
+                            "roomId": "6b873dcd-4735-4bdf-8b6a-c4bb65019551"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the emptying duration on the washing machine."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "emptyingDuration_decrease",
+                            "arguments": {
+                                "device": "8372458b-cc62-4a67-bc89-d702e9f6580b",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The emptying duration on the washing machine is decreased."
+        }
+    ],
+    "tools": []
+}

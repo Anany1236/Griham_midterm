@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a902d53d-3692-45d1-be60-d4abea327956",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "d59da3cd-e555-4783-a396-4b3a004817dd",
+                            "roomName": "bedroom",
+                            "roomId": "d59da3cd-e555-4783-a396-4b3a004817dd"
+                        }
+                    },
+                    {
+                        "deviceId": "df5749c1-31eb-413d-9b32-9b4fb509ea73",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "69056c8a-ab47-4aaf-8498-5f6b16a2b648",
+                            "roomName": "living Room",
+                            "roomId": "69056c8a-ab47-4aaf-8498-5f6b16a2b648"
+                        }
+                    },
+                    {
+                        "deviceId": "6cf4690e-02dd-4266-a767-3c795f15ba83",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "8630c923-0539-42d3-9e12-d86e9f94645a",
+                            "roomName": "guest Room",
+                            "roomId": "8630c923-0539-42d3-9e12-d86e9f94645a"
+                        }
+                    },
+                    {
+                        "deviceId": "b6a129d8-04dd-4ced-bec7-7fa5ea03e472",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "ffedbd9e-68a3-4f47-bd4a-8cf44873189c",
+                            "roomName": "kitchen",
+                            "roomId": "ffedbd9e-68a3-4f47-bd4a-8cf44873189c"
+                        }
+                    },
+                    {
+                        "deviceId": "73990b32-5692-47f6-b4da-88901496eb28",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "104b45c9-ecc3-480d-8067-2266c7561e5f",
+                            "roomName": "utility Room",
+                            "roomId": "104b45c9-ecc3-480d-8067-2266c7561e5f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the status of the multi-system operator for the washer in the kitchen?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "multiSystemOperator_getStatus",
+                            "arguments": {
+                                "device": "b6a129d8-04dd-4ced-bec7-7fa5ea03e472",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the multi-system operator for the washer in the kitchen is normal"
+        }
+    ],
+    "tools": []
+}

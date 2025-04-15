@@ -1,0 +1,39 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "device_close",
+            "description": "This function is used to fully close or partially close (use percent % for some) SmartThings devices with an on/off function.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to close."
+                    },
+                    "ration": {
+                        "type": "string",
+                        "description": "The percentage to close the device."
+                    },
+                    "number": {
+                        "type": "string",
+                        "description": "The number to close the device."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to perform on the devices."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

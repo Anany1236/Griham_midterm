@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "coolingTemperature_getValue",
+            "description": "This function retrieves the current cooling temperature setting of an air conditioner through speech.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to retrieve the cooling temperature from."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

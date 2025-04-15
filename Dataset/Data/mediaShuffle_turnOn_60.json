@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "77c8f984-d847-43e6-9c8b-34c718f9df2e",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "5dccf71a-8b35-40b1-8af8-3e1eeedabff3",
+                            "roomName": "living room",
+                            "roomId": "5dccf71a-8b35-40b1-8af8-3e1eeedabff3"
+                        }
+                    },
+                    {
+                        "deviceId": "6606fa6f-7fd2-4c5b-90de-963335715815",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "53fda2b6-6d9a-4e39-9221-37fe83911df5",
+                            "roomName": "kitchen",
+                            "roomId": "53fda2b6-6d9a-4e39-9221-37fe83911df5"
+                        }
+                    },
+                    {
+                        "deviceId": "e685b28c-24b5-42ee-80cd-68831ba70d85",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "f9c66c66-8257-47b0-a787-89be46d555f6",
+                            "roomName": "office room",
+                            "roomId": "f9c66c66-8257-47b0-a787-89be46d555f6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on shuffle mode on the speaker in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaShuffle_turnOn",
+                            "arguments": {
+                                "device": "77c8f984-d847-43e6-9c8b-34c718f9df2e",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Shuffle mode is now turned on for the speaker in the living room."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,28 @@
+{
+    "name": "device_turnOn",
+    "description": "This function is used to turn on a smart home appliance or device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device which needs to be turned on is located. e.g. Home, house, office, etc.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located. e.g. living room, bedroom, bathroom, etc.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to be turned on.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "powerSwitch_getStatus"
+    ],
+    "output": []
+}

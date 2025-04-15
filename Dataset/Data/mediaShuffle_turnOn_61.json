@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "979a0a2a-0789-4b91-ba29-8e1beb00535a",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "9837060f-4ad8-4749-96cf-43be74cad9f3",
+                            "roomName": "living room",
+                            "roomId": "9837060f-4ad8-4749-96cf-43be74cad9f3"
+                        }
+                    },
+                    {
+                        "deviceId": "8f56a4f3-6734-411d-b770-f66aa766501b",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "23413298-ef01-4f4f-8a78-d0c1dd4eb6d7",
+                            "roomName": "kitchen",
+                            "roomId": "23413298-ef01-4f4f-8a78-d0c1dd4eb6d7"
+                        }
+                    },
+                    {
+                        "deviceId": "047acc85-d18f-4c39-935c-092b6a5ea91a",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "2286ce16-2010-47c1-aad2-95098b1dcda7",
+                            "roomName": "office room",
+                            "roomId": "2286ce16-2010-47c1-aad2-95098b1dcda7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you enable shuffle for the playlist on the TV in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaShuffle_turnOn",
+                            "arguments": {
+                                "device": "8f56a4f3-6734-411d-b770-f66aa766501b",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Shuffle has been enabled for the playlist on the TV in the kitchen."
+        }
+    ],
+    "tools": []
+}

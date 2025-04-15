@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "798108c7-8bd0-46d4-906d-6dc042a0016c",
+                        "deviceName": "ac1",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "248b02bd-e5d2-4044-bba7-5b5a78b9aa10",
+                            "roomName": "living room",
+                            "roomId": "7bebabc8-2d5e-470b-a1bc-376880012c17"
+                        }
+                    },
+                    {
+                        "deviceId": "0ae34092-9b2c-4752-9f3b-383a5929e5e0",
+                        "deviceName": "sensor1",
+                        "deviceType": "sensor.multifunction",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "248b02bd-e5d2-4044-bba7-5b5a78b9aa10",
+                            "roomName": "bedroom",
+                            "roomId": "0ad40e5f-2ce3-4cd0-9f7e-fec8cac94f0c"
+                        }
+                    },
+                    {
+                        "deviceId": "e55bab8a-8c6f-4440-94b7-e3a5fe12b146",
+                        "deviceName": "boiler1",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "248b02bd-e5d2-4044-bba7-5b5a78b9aa10",
+                            "roomName": "laundry room",
+                            "roomId": "69ed4730-ee18-4c95-80e1-c9eac5c1922a"
+                        }
+                    },
+                    {
+                        "deviceId": "30a6f615-9b39-43bc-b7a3-895bb0ffeb74",
+                        "deviceName": "ac2",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "248b02bd-e5d2-4044-bba7-5b5a78b9aa10",
+                            "roomName": "bedroom",
+                            "roomId": "0ad40e5f-2ce3-4cd0-9f7e-fec8cac94f0c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the temperature of the living room ac"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperature_getValue",
+                            "arguments": {
+                                "device": "798108c7-8bd0-46d4-906d-6dc042a0016c",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The temperature of the living room ac is 21 degree Celsius"
+        }
+    ],
+    "tools": []
+}

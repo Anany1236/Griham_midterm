@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d6c1122a-ed25-4ce2-88a5-6dbb2575cd7d",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "543671f4-6020-4252-9664-eaf83c9aed88",
+                            "roomName": "living room",
+                            "roomId": "543671f4-6020-4252-9664-eaf83c9aed88"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please enable recording on the device."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "recording_turnOn",
+                            "arguments": {
+                                "device": "d6c1122a-ed25-4ce2-88a5-6dbb2575cd7d",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive enabled recording on the device."
+        }
+    ],
+    "tools": []
+}

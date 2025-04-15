@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c548a1a7-c4d1-49b7-82e0-962112fa80d8",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1e1f57e9-c4fc-489b-80e2-9023408fd967",
+                            "roomName": "laundry room",
+                            "roomId": "0ac5ac78-373c-4153-be54-e6d65bbc71c3"
+                        }
+                    },
+                    {
+                        "deviceId": "82ef70c3-7010-48a2-a0a0-d777d34a2a2e",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1e1f57e9-c4fc-489b-80e2-9023408fd967",
+                            "roomName": "kitchen",
+                            "roomId": "2a2bc206-56c5-4ef3-9827-521b9fd8ed68"
+                        }
+                    },
+                    {
+                        "deviceId": "0b3764d1-931a-4363-ac88-0430275e4dea",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1e1f57e9-c4fc-489b-80e2-9023408fd967",
+                            "roomName": "kitchen",
+                            "roomId": "2a2bc206-56c5-4ef3-9827-521b9fd8ed68"
+                        }
+                    },
+                    {
+                        "deviceId": "d8c63c79-4a07-4dbc-b4b7-40354a5c36c3",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1e1f57e9-c4fc-489b-80e2-9023408fd967",
+                            "roomName": "bedroom",
+                            "roomId": "14a1909a-7de8-4640-a73b-8c13295ffe02"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you reduce the water temperature of the washing machine by 8 degree Celsius?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_decrease",
+                            "arguments": {
+                                "device": "c548a1a7-c4d1-49b7-82e0-962112fa80d8",
+                                "washingTemperatureDelta": 8
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sure, I have reduce the water temperature of the washer by 8 degree Celsius"
+        }
+    ],
+    "tools": []
+}

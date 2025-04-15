@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "46388ebc-54fc-44b5-a376-2ea92c31bd1c",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cb2c2828-5429-4bb1-b535-e515ef001b8d",
+                            "roomName": "hall",
+                            "roomId": "34ba8bc6-0c95-4526-9463-78a112d81384"
+                        }
+                    },
+                    {
+                        "deviceId": "c2c32a63-3d82-4fe3-8494-42399c4e78bf",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cb2c2828-5429-4bb1-b535-e515ef001b8d",
+                            "roomName": "living room",
+                            "roomId": "5b1bb92d-9490-430c-b1e2-69d722179743"
+                        }
+                    },
+                    {
+                        "deviceId": "779acc54-031d-446e-9d3e-a4e432351123",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cb2c2828-5429-4bb1-b535-e515ef001b8d",
+                            "roomName": "laundry room",
+                            "roomId": "3637a7b5-912f-452c-9c51-eb6c905f45af"
+                        }
+                    },
+                    {
+                        "deviceId": "459c275d-8029-42a4-9c55-c9b43331fab7",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cb2c2828-5429-4bb1-b535-e515ef001b8d",
+                            "roomName": "bedroom",
+                            "roomId": "75dddca0-d51a-4b6a-bfce-2d8d2b87ed1f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you add the tv to the house"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_connect",
+                            "arguments": {
+                                "predefinedDevice": "459c275d-8029-42a4-9c55-c9b43331fab7",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Added the TV to the house."
+        }
+    ],
+    "tools": []
+}

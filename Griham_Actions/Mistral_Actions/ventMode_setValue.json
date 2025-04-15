@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "ventMode_setValue",
+            "description": "This function is used to set the ventilation mode of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the ventilation mode."
+                    },
+                    "predefinedVentMode": {
+                        "type": "string",
+                        "description": "The predefined mode to set for the ventilation (e.g., automatic, bypass, heat transfer, sleep)."
+                    }
+                },
+                "required": [
+                    "predefinedVentMode"
+                ]
+            }
+        }
+    ]
+}

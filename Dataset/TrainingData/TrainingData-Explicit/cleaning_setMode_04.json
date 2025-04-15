@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "19a42aa6-584b-44ad-8b44-adb7e0f1aa7b",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b7aff1d0-92c7-4ffd-8a30-09c7f11d03da",
+                            "roomName": "bedroom",
+                            "roomId": "0294f182-d0ca-48c5-9536-ab3ec08d0cb0"
+                        }
+                    },
+                    {
+                        "deviceId": "f13cb5ad-ed2c-4146-9578-7bf2903afff9",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b7aff1d0-92c7-4ffd-8a30-09c7f11d03da",
+                            "roomName": "kitchen",
+                            "roomId": "be667231-36ad-43b7-8b72-456142283e5f"
+                        }
+                    },
+                    {
+                        "deviceId": "f09f28e3-0c16-433c-9de6-8652f8e1029a",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b7aff1d0-92c7-4ffd-8a30-09c7f11d03da",
+                            "roomName": "bedroom",
+                            "roomId": "84b9552d-f619-4c66-9761-e0b8ea464050"
+                        }
+                    },
+                    {
+                        "deviceId": "86e3a9d1-9531-40b5-bd10-b0bf6b6c1485",
+                        "deviceName": "stick cleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b7aff1d0-92c7-4ffd-8a30-09c7f11d03da",
+                            "roomName": "master bedroom",
+                            "roomId": "caeb28d3-6a54-4974-9e42-cfeb18b8e1aa"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Change the mode of robot cleaner in bedroom to turbo mode"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_setMode",
+                            "arguments": {
+                                "device": "f09f28e3-0c16-433c-9de6-8652f8e1029a",
+                                "room": "bedroom",
+                                "predefinedCleaningMode": "turbo"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have changed the mode of robot cleaner in bedroom to turbo mode."
+        }
+    ],
+    "tools": []
+}

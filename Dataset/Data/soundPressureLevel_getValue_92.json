@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "269a7102-bac8-469d-bf9e-ba95ecd0b3e5",
+                        "deviceName": "sound sensor",
+                        "deviceType": "sound sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "4da1cef3-7549-4110-8668-93766f028a59",
+                            "roomName": "living room",
+                            "roomId": "4da1cef3-7549-4110-8668-93766f028a59"
+                        }
+                    },
+                    {
+                        "deviceId": "632a9510-32b9-4c15-9f9e-5eb703758f0b",
+                        "deviceName": "microphone",
+                        "deviceType": "microphone",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "63f50255-8daa-4db4-8982-c7bc0ba81832",
+                            "roomName": "office room",
+                            "roomId": "63f50255-8daa-4db4-8982-c7bc0ba81832"
+                        }
+                    },
+                    {
+                        "deviceId": "4e3581be-9481-4cf8-ba5c-4a90e97b7c86",
+                        "deviceName": "microphone",
+                        "deviceType": "microphone",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "08a538fa-0389-4346-9581-815abb3cbeb8",
+                            "roomName": "home theater",
+                            "roomId": "08a538fa-0389-4346-9581-815abb3cbeb8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check the sound pressure level?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "soundPressureLevel_getValue",
+                            "arguments": {
+                                "device": "269a7102-bac8-469d-bf9e-ba95ecd0b3e5",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The sound pressure level is {value}."
+        }
+    ],
+    "tools": []
+}

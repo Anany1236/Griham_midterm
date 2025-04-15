@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "13c01be7-4c6a-45c0-b0ce-e60e921f516d",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "ccbb6ae9-d0e5-4003-84ab-62e888524f57",
+                            "roomName": "bathroom",
+                            "roomId": "ccbb6ae9-d0e5-4003-84ab-62e888524f57"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the water heating in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeating_turnOff",
+                            "arguments": {
+                                "device": "13c01be7-4c6a-45c0-b0ce-e60e921f516d",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water heating in the bathroom has been turned off."
+        }
+    ],
+    "tools": []
+}

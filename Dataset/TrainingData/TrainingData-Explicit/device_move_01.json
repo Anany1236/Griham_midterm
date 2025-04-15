@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f60286bd-49a4-426c-870b-1dc85d1991ef",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "97f60bb8-2289-4e1f-8dca-5f8143b16a63",
+                            "roomName": "bedroom",
+                            "roomId": "d0d22e3f-ed8f-43f8-be4f-f4af23ca2215"
+                        }
+                    },
+                    {
+                        "deviceId": "6ad53f2b-34ac-4852-a9e5-74e096701467",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "97f60bb8-2289-4e1f-8dca-5f8143b16a63",
+                            "roomName": "master bedroom",
+                            "roomId": "356fcbf5-d4f6-4c3a-b1a0-fcb5d444d946"
+                        }
+                    },
+                    {
+                        "deviceId": "64607bec-9866-467f-b164-363f9f275487",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "97f60bb8-2289-4e1f-8dca-5f8143b16a63",
+                            "roomName": "kitchen",
+                            "roomId": "63baf2d4-99e9-42e1-92f6-201073d340f4"
+                        }
+                    },
+                    {
+                        "deviceId": "d9afe326-0f0c-4646-867e-7756d536df3e",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "97f60bb8-2289-4e1f-8dca-5f8143b16a63",
+                            "roomName": "kitchen",
+                            "roomId": "63baf2d4-99e9-42e1-92f6-201073d340f4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you shift robot cleaner to master bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_move",
+                            "arguments": {
+                                "device": "f60286bd-49a4-426c-870b-1dc85d1991ef",
+                                "rvcLocation": "master bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have shifted robot cleaner to master bedroom."
+        }
+    ],
+    "tools": []
+}

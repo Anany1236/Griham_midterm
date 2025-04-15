@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "airConditioningMode_setValue",
+            "description": "This function is used to activate a specific operation mode on an air conditioner using voice commands.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the air conditioner is located. e.g. home, office, etc."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the air conditioner is located. e.g. living room, bedroom, bathroom, etc."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name of the air conditioner whose operation mode needs to be set. e.g. AC1, standing air conditioner, etc."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The specific mode of the air conditioner to be activated. e.g. auto, windfree, ai comfort zone, etc."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

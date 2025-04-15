@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7137a89a-62c6-491f-81a2-ba601d617289",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c3425439-ba08-4af8-9326-0f2f7d65e20f",
+                            "roomName": "bedroom",
+                            "roomId": "c3425439-ba08-4af8-9326-0f2f7d65e20f"
+                        }
+                    },
+                    {
+                        "deviceId": "29bd23aa-aac2-4bdf-bd93-a59c7baff74e",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "55612ebe-2fca-4896-8c74-8f36194fbd55",
+                            "roomName": "living Room",
+                            "roomId": "55612ebe-2fca-4896-8c74-8f36194fbd55"
+                        }
+                    },
+                    {
+                        "deviceId": "a8482fa9-ecf0-48b4-bbab-dbc8b929f60c",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1d83bdce-2727-4e0a-a8b2-5fdb00520f28",
+                            "roomName": "guest Room",
+                            "roomId": "1d83bdce-2727-4e0a-a8b2-5fdb00520f28"
+                        }
+                    },
+                    {
+                        "deviceId": "7a7b6689-7f58-4be3-abd6-6d3684b8fc7a",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f9be923d-3c26-4404-874f-72316763052c",
+                            "roomName": "kitchen",
+                            "roomId": "f9be923d-3c26-4404-874f-72316763052c"
+                        }
+                    },
+                    {
+                        "deviceId": "dfa75888-6ed7-419c-9198-00a6de0050ec",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c57ffc76-9855-4046-9760-9a37b1777d81",
+                            "roomName": "utility Room",
+                            "roomId": "c57ffc76-9855-4046-9760-9a37b1777d81"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the humidification amount for the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "humidificationAmount_setValue",
+                            "arguments": {
+                                "device": "29bd23aa-aac2-4bdf-bd93-a59c7baff74e",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The humidification amount for the air purifier in the living room is updated"
+        }
+    ],
+    "tools": []
+}

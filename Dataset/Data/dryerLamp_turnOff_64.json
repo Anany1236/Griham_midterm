@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "09921889-139f-48bc-8923-72cee3506f28",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "7f38f243-d1ee-4016-a41c-c0f6d02ba3c7",
+                            "roomName": "laundry room",
+                            "roomId": "7f38f243-d1ee-4016-a41c-c0f6d02ba3c7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please deactivate the dryer lamp in the utility room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryerLamp_turnOff",
+                            "arguments": {
+                                "device": "09921889-139f-48bc-8923-72cee3506f28",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dryer lamp in the utility room has been deactivated."
+        }
+    ],
+    "tools": []
+}

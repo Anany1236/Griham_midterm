@@ -1,0 +1,29 @@
+{
+    "name": "powerSwitch_getStatus",
+    "description": "This function is used to get the on or off state of a smart home appliance or device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device for which the power status is requested is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device for which the power status is requested.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": [
+        "On",
+        "Off"
+    ]
+}

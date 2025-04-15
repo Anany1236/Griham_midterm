@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "deviceState_getCloseStatus",
+            "description": "This function is used to get the closed state of SmartThings devices.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to be performed."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

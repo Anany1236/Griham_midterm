@@ -1,0 +1,89 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Turn on the washing machine in wool mode"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washing_startCourse",
+                            "arguments": {
+                                "device": "washing machine",
+                                "mode": "wool"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Washing has started in washing machine with wool mode on."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "powerSwitch_getStatus",
+                    "description": "This function is used to check the status of the smart home device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "device_turnOn",
+                    "description": "This function is used to turn on the smart home device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "washing_startCourse",
+                    "description": "This function is used to start the washing process of the washing machine.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "mode": {
+                                "type": "string",
+                                "description": "Target mode to be used."
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "48de080b-b12c-4078-96db-2f8b747d05fa",
+                        "deviceName": "steamcloset1",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5a5c9ff6-e155-4a08-b03b-4b3bf9088bac",
+                            "roomName": "guest room",
+                            "roomId": "08c83384-8488-4936-85ab-376ac13a845e"
+                        }
+                    },
+                    {
+                        "deviceId": "caa62d21-0379-483c-87bb-cd1377809ce8",
+                        "deviceName": "steamcloset2",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5a5c9ff6-e155-4a08-b03b-4b3bf9088bac",
+                            "roomName": "Living room",
+                            "roomId": "d371a4ac-9b55-4c52-bccb-72ce20990817"
+                        }
+                    },
+                    {
+                        "deviceId": "9f547572-41b4-4088-a2f5-69d48e28e4cb",
+                        "deviceName": "steamcloset3",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5a5c9ff6-e155-4a08-b03b-4b3bf9088bac",
+                            "roomName": "hall",
+                            "roomId": "aec850e9-797f-4238-9720-b02f487744a9"
+                        }
+                    },
+                    {
+                        "deviceId": "2e565c69-68dc-4e37-8e1a-a0d6fba788f3",
+                        "deviceName": "steamcloset4",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5a5c9ff6-e155-4a08-b03b-4b3bf9088bac",
+                            "roomName": "bedroom",
+                            "roomId": "53775734-7723-4310-9b10-7748fa48da4e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Pause the steamcloset now in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_pause",
+                            "arguments": {
+                                "device": "48de080b-b12c-4078-96db-2f8b747d05fa",
+                                "room": "guestroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air dresser is paused in the guest room"
+        }
+    ],
+    "tools": []
+}

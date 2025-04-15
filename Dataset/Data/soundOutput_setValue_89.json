@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "783a3aed-ba4b-4a82-bea0-5e375e788ccc",
+                        "deviceName": "sound system",
+                        "deviceType": "sound system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "4069b960-2805-412d-be98-98b82a94fc8d",
+                            "roomName": "living room",
+                            "roomId": "4069b960-2805-412d-be98-98b82a94fc8d"
+                        }
+                    },
+                    {
+                        "deviceId": "064a512f-63ee-4e82-abce-f0e98ba3e8ed",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "483c1460-b896-4217-9fd7-3a8713408005",
+                            "roomName": "home theater",
+                            "roomId": "483c1460-b896-4217-9fd7-3a8713408005"
+                        }
+                    },
+                    {
+                        "deviceId": "9e64fa4f-798b-43b3-a463-0f39af649273",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "30b69d2b-8839-41c5-acb4-b9114ec153d0",
+                            "roomName": "office room",
+                            "roomId": "30b69d2b-8839-41c5-acb4-b9114ec153d0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the sound output to {value}?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "soundOutput_setValue",
+                            "arguments": {
+                                "device": "783a3aed-ba4b-4a82-bea0-5e375e788ccc",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sound output is now at {value}."
+        }
+    ],
+    "tools": []
+}

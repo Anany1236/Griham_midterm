@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "491760c7-dad2-48e3-af5a-6f8d5b89c1ad",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8e3a4227-b30e-49df-bd5e-206e025753f8",
+                            "roomName": "laundry room",
+                            "roomId": "7f006337-adb6-468e-b420-fdcfc3f3b6a1"
+                        }
+                    },
+                    {
+                        "deviceId": "c5306d84-4924-4520-951c-f7cd2cc0c6ff",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8e3a4227-b30e-49df-bd5e-206e025753f8",
+                            "roomName": "living room",
+                            "roomId": "cfaf29c3-8ef4-4fa6-8c0e-b5c756dc8f5a"
+                        }
+                    },
+                    {
+                        "deviceId": "c9691f71-93b2-440b-9244-dc5afb187bfc",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8e3a4227-b30e-49df-bd5e-206e025753f8",
+                            "roomName": "kitchen",
+                            "roomId": "593ce7ed-dca2-475f-beb2-00f3a7c33dab"
+                        }
+                    },
+                    {
+                        "deviceId": "652c5dd7-1571-47d0-a33f-36a33f81d431",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8e3a4227-b30e-49df-bd5e-206e025753f8",
+                            "roomName": "bedroom",
+                            "roomId": "6350061f-8d29-4812-b907-0705f00494d7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you let me know the heater temperature value of boiler?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_getValue",
+                            "arguments": {
+                                "device": "491760c7-dad2-48e3-af5a-6f8d5b89c1ad",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current temperature value of the boiler is 21 degrees in the laundry room"
+        }
+    ],
+    "tools": []
+}

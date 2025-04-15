@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b4032930-07f8-4162-bca5-015213b5dfda",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "401df21b-655e-4a55-838d-8c6b007930a2",
+                            "roomName": "master bedroom",
+                            "roomId": "7a490bc6-2823-4e7e-af7e-472e6270119f"
+                        }
+                    },
+                    {
+                        "deviceId": "85509dad-c8b3-497c-8f48-f31440112972",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "401df21b-655e-4a55-838d-8c6b007930a2",
+                            "roomName": "bedroom",
+                            "roomId": "8b780c1f-6e9d-47de-aa57-798f9a56fd6b"
+                        }
+                    },
+                    {
+                        "deviceId": "4c63a2dc-3a2a-4956-8b9f-a3b425bab3ad",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "401df21b-655e-4a55-838d-8c6b007930a2",
+                            "roomName": "laundry room",
+                            "roomId": "0ae616c6-b708-4103-8870-49cc0b9e30f0"
+                        }
+                    },
+                    {
+                        "deviceId": "829d5b8c-8964-4574-ab37-dc0025ed60f6",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "401df21b-655e-4a55-838d-8c6b007930a2",
+                            "roomName": "bedroom",
+                            "roomId": "8b780c1f-6e9d-47de-aa57-798f9a56fd6b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you partially increase the master bedroom AC?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_increasePartial",
+                            "arguments": {
+                                "device": "b4032930-07f8-4162-bca5-015213b5dfda",
+                                "room": "master bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have partially increased the master bedroom AC."
+        }
+    ],
+    "tools": []
+}

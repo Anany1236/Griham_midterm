@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e70ecea8-a322-4e23-b9b8-042fdf2d9a62",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "87b5018d-0bd5-4a65-af84-03faa47596ad",
+                            "roomName": "living room",
+                            "roomId": "87b5018d-0bd5-4a65-af84-03faa47596ad"
+                        }
+                    },
+                    {
+                        "deviceId": "823a1022-4922-44b9-b118-40f0c4cf8d39",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home office",
+                            "locationId": "3a019e51-94db-495a-8c15-6979ed9b6f31",
+                            "roomName": "home office",
+                            "roomId": "3a019e51-94db-495a-8c15-6979ed9b6f31"
+                        }
+                    },
+                    {
+                        "deviceId": "4a538b67-711d-4444-8df0-64f0ede831c6",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater room",
+                            "locationId": "5d0658a0-4160-4d30-8cb9-7955cdb3da10",
+                            "roomName": "home theater room",
+                            "roomId": "5d0658a0-4160-4d30-8cb9-7955cdb3da10"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the high contrast mode on the TV."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "highContrast_turnOff",
+                            "arguments": {
+                                "device": "e70ecea8-a322-4e23-b9b8-042fdf2d9a62",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "High contrast mode on the TV is now off."
+        }
+    ],
+    "tools": []
+}

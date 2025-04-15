@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9d06bfe6-3843-4e25-881f-27471306cfd1",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f9f843d0-695b-4870-a1aa-4f3389347b0b",
+                            "roomName": "bedroom",
+                            "roomId": "f9f843d0-695b-4870-a1aa-4f3389347b0b"
+                        }
+                    },
+                    {
+                        "deviceId": "66e1db18-dbb9-4af5-a85e-3ba686c7df85",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f14eefbf-8a4b-4e1b-8870-6e2972ba9f38",
+                            "roomName": "living Room",
+                            "roomId": "f14eefbf-8a4b-4e1b-8870-6e2972ba9f38"
+                        }
+                    },
+                    {
+                        "deviceId": "4a7bc26b-02b2-41a6-bed7-21e6ec8b061b",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4d362207-facb-432c-b909-4ac6163042c0",
+                            "roomName": "guest Room",
+                            "roomId": "4d362207-facb-432c-b909-4ac6163042c0"
+                        }
+                    },
+                    {
+                        "deviceId": "f4b959c1-cf2e-4004-911e-843de2b7f95e",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "40b830ea-46fc-4e3c-965b-4c69e63dc7ac",
+                            "roomName": "kitchen",
+                            "roomId": "40b830ea-46fc-4e3c-965b-4c69e63dc7ac"
+                        }
+                    },
+                    {
+                        "deviceId": "acc70759-a45e-4237-ab0b-f065467c4a74",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8c35445c-08c7-4509-968b-db4d05edfadd",
+                            "roomName": "utility Room",
+                            "roomId": "8c35445c-08c7-4509-968b-db4d05edfadd"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show the automation for the air purifier in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "automation_show",
+                            "arguments": {
+                                "device": "9d06bfe6-3843-4e25-881f-27471306cfd1",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The automation details for the air purifier in the bedroom are shown"
+        }
+    ],
+    "tools": []
+}

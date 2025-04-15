@@ -1,0 +1,32 @@
+{
+    "name": "water_getDispenseAmount",
+    "description": "This function is used to check the current water outlet volume setting of the water purifier.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to check the current water outlet volume setting.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "The group action to be performed.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

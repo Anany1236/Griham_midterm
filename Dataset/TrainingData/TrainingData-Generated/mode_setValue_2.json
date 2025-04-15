@@ -1,0 +1,43 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "Change the washing machine course to delicate fabric for 10 items that weighs 250 grams"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mode_setValue",
+                            "arguments": {
+                                "device": "washing machine",
+                                "mode": "delicate fabric",
+                                "weight": 250,
+                                "weightUnit": "g",
+                                "number": 10
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I'm setting the mode to delicate fabric for washing machine."
+        }
+    ],
+    "tools": []
+}

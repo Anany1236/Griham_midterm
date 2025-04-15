@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "57e318fe-01f1-49be-941d-9ee276fbdac1",
+                        "deviceName": "sound system",
+                        "deviceType": "sound system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "2b70d5d4-8bed-44b7-8f01-65f3314d241e",
+                            "roomName": "living room",
+                            "roomId": "2b70d5d4-8bed-44b7-8f01-65f3314d241e"
+                        }
+                    },
+                    {
+                        "deviceId": "5620222d-b92d-46fe-ae31-61972c5e6664",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "2474cef5-16e3-4f73-89f6-33356f382c34",
+                            "roomName": "home theater",
+                            "roomId": "2474cef5-16e3-4f73-89f6-33356f382c34"
+                        }
+                    },
+                    {
+                        "deviceId": "9b6f62c0-8318-4400-b323-ed56779818ed",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "263505b9-e1b5-4470-a51b-10afc7f54358",
+                            "roomName": "bedroom",
+                            "roomId": "263505b9-e1b5-4470-a51b-10afc7f54358"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please set the sound mode to {mode}."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "soundMode_setValue",
+                            "arguments": {
+                                "device": "57e318fe-01f1-49be-941d-9ee276fbdac1",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The system is now in {mode} sound mode."
+        }
+    ],
+    "tools": []
+}

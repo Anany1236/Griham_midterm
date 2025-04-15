@@ -1,0 +1,70 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "cb9f665e-ef38-4a0a-a1b0-74229cef1f3d",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "a521eb9e-50d1-4507-8a1d-885d20b29f01",
+							"roomName": "Living room",
+							"roomId": "19741d40-afe4-4432-97e9-8a07468b57df"
+						}
+					},
+					{
+						"deviceId": "bd71b613-f7d7-4bc9-b747-25b37bbb0b46",
+						"deviceName": "light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "a521eb9e-50d1-4507-8a1d-885d20b29f01",
+							"roomName": "Kitchen",
+							"roomId": "d3849446-7771-4bf4-ac57-b76afcf071d1"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Put the volume to half of speaker"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setHalf",
+							"arguments": {
+								"device": "cb9f665e-ef38-4a0a-a1b0-74229cef1f3d"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have set the volume to half of speaker."
+		}
+	],
+	"tools": []
+}

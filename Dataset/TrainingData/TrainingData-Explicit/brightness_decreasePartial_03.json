@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "85003bcc-7a26-4a54-9126-59e3bd2f7881",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "ecddd6a9-6720-4fea-b7a4-6516ed96552e",
+							"roomName": "Living room",
+							"roomId": "3aad3d36-6cf7-4e77-9909-dca639b723eb"
+						}
+					},
+					{
+						"deviceId": "738fdeaf-4808-436f-a0c8-4b23dbf4b744",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "ecddd6a9-6720-4fea-b7a4-6516ed96552e",
+							"roomName": "Bedroom",
+							"roomId": "e0f09f5d-cc47-4bad-aec1-24a34591cbe2"
+						}
+					},
+					{
+						"deviceId": "13202651-2796-4d17-8457-126829601dd0",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "ecddd6a9-6720-4fea-b7a4-6516ed96552e",
+							"roomName": "Living room",
+							"roomId": "3aad3d36-6cf7-4e77-9909-dca639b723eb"
+						}
+					},
+					{
+						"deviceId": "c5e85e4d-34fa-4593-9824-a0af8143e27d",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "ecddd6a9-6720-4fea-b7a4-6516ed96552e",
+							"roomName": "Kitchen",
+							"roomId": "4979443f-44b7-4a1a-a2c8-05fbc88f2d78"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you reduce the brightness partially of the bedroom tv?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_decreasePartial",
+							"arguments": {
+								"device": "738fdeaf-4808-436f-a0c8-4b23dbf4b744",
+								"room": "bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have decreased the brightness partially of the bedroom tv."
+		}
+	],
+	"tools": []
+}

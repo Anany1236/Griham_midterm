@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1b7bf813-3309-4d7d-a3e4-545e282588cb",
+                        "deviceName": "cabinetLighting",
+                        "deviceType": "cabinetLighting",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "pantry",
+                            "locationId": "be7ff719-c7cb-41d3-8083-897e0c54b4b2",
+                            "roomName": "pantry",
+                            "roomId": "be7ff719-c7cb-41d3-8083-897e0c54b4b2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the cabinet lights in the pantry."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cabinetLighting_turnOn",
+                            "arguments": {
+                                "device": "1b7bf813-3309-4d7d-a3e4-545e282588cb",
+                                "room": "pantry"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cabinet lights in the pantry are now on."
+        }
+    ],
+    "tools": []
+}

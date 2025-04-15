@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "73e11104-e28d-458b-86aa-cbca72fbe48c",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2b7f43d1-ebb9-4aad-ad2f-feb126f51688",
+                            "roomName": "living room",
+                            "roomId": "74716981-fa80-449d-932b-64919e5635ba"
+                        }
+                    },
+                    {
+                        "deviceId": "b15627aa-726d-4686-b630-f7032c2d0559",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2b7f43d1-ebb9-4aad-ad2f-feb126f51688",
+                            "roomName": "hall",
+                            "roomId": "5d41228c-ac47-45ef-bba9-56bfcd75b2a3"
+                        }
+                    },
+                    {
+                        "deviceId": "f0e18fc9-f3ff-4a81-b91e-bad1dfff6f1b",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2b7f43d1-ebb9-4aad-ad2f-feb126f51688",
+                            "roomName": "hall",
+                            "roomId": "5d41228c-ac47-45ef-bba9-56bfcd75b2a3"
+                        }
+                    },
+                    {
+                        "deviceId": "2cc021cb-3398-49f7-ac7d-13b809f2105f",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2b7f43d1-ebb9-4aad-ad2f-feb126f51688",
+                            "roomName": "bedroom",
+                            "roomId": "40908ed8-c98b-4b4c-ab02-e3c77c271e31"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show me the detailed hall Light 1 control page"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "devicePlugin_show",
+                            "arguments": {
+                                "device": "b15627aa-726d-4686-b630-f7032c2d0559",
+                                "room": "hall"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Here is your detailed light 1 control page and you can control it from here"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "washingContaminationLevel_decrease",
+            "description": "This function is used to decrease the contamination level of a washing machine.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to decrease the contamination level."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to decrease the contamination level."
+                    },
+                    "washingContaminationLevelDelta": {
+                        "type": "string",
+                        "description": "The delta value to decrease the contamination level."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

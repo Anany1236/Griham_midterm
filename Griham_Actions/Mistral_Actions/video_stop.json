@@ -1,0 +1,47 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "video_stop",
+            "description": "This function is used to stop the playback of a video on a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to stop the video playback."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to stop the video playback."
+                    },
+                    "appname": {
+                        "type": "string",
+                        "description": "The app name associated with the video playback."
+                    },
+                    "predefinedAppName": {
+                        "type": "string",
+                        "description": "The predefined app name associated with the video playback."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the video being played."
+                    },
+                    "cast": {
+                        "type": "string",
+                        "description": "The cast members of the video being played."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

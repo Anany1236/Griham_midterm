@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "dd3d40b7-4020-4015-ac94-40da790a938c",
+                        "deviceName": "rvc",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bcdb170c-265d-4e25-a6cd-4fc6237be073",
+                            "roomName": "master bedroom",
+                            "roomId": "fbf1028b-e44c-46f1-98c3-cca2f9aed793"
+                        }
+                    },
+                    {
+                        "deviceId": "d1fe2930-d219-40d7-8ea2-2a6f87e48489",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bcdb170c-265d-4e25-a6cd-4fc6237be073",
+                            "roomName": "master bedroom",
+                            "roomId": "fbf1028b-e44c-46f1-98c3-cca2f9aed793"
+                        }
+                    },
+                    {
+                        "deviceId": "5b4a40e5-caa2-4ed0-9fe0-bae6e1164a89",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bcdb170c-265d-4e25-a6cd-4fc6237be073",
+                            "roomName": "kitchen",
+                            "roomId": "03a8f01e-b2e2-4ab2-8eea-95200512e53c"
+                        }
+                    },
+                    {
+                        "deviceId": "208d02f9-88b0-4364-9232-e9ed4e4d999b",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bcdb170c-265d-4e25-a6cd-4fc6237be073",
+                            "roomName": "kitchen",
+                            "roomId": "03a8f01e-b2e2-4ab2-8eea-95200512e53c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Kindly move the rvc to bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_move",
+                            "arguments": {
+                                "device": "dd3d40b7-4020-4015-ac94-40da790a938c",
+                                "rvcLocation": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have shifted the rvc to bedroom."
+        }
+    ],
+    "tools": []
+}

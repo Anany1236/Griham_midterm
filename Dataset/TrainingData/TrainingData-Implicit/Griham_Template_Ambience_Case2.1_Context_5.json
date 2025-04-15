@@ -1,0 +1,60 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b750cd26-1559-4cd6-bb19-9a902b4b3df9",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "deviceTemperature": 20,
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e0916258-351e-41da-906d-616f12b3eec2",
+                            "roomName": "Living room",
+                            "roomId": "b90714f0-8ba3-4039-921c-bf757fa47ab0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Its freezing out here. Do Something."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperatureSetting_increase",
+                            "arguments": {
+                                "device": "b750cd26-1559-4cd6-bb19-9a902b4b3df9",
+                                "temperature": 25
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Should I increase the AC temperature to 25?"
+        }
+    ],
+    "tools": []
+}

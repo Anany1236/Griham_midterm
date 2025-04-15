@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cooking_cancel",
+            "description": "This function is used to cancel the current cooking process on a cooker.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device whose cooking process is being canceled."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The specific compartment of the device whose cooking process is being canceled."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action related to the devices."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

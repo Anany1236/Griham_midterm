@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5caf43c4-343d-4ff3-a171-c4b2d5e720b1",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c50601cc-7afe-4a32-a766-9837bd9e178f",
+                            "roomName": "bedroom",
+                            "roomId": "291e7598-783f-4c9c-a05a-7e12cb517a6b"
+                        }
+                    },
+                    {
+                        "deviceId": "09a4acf1-c584-4ff3-be4e-5374d7abb8a8",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c50601cc-7afe-4a32-a766-9837bd9e178f",
+                            "roomName": "Living room",
+                            "roomId": "d308ae99-399b-4645-93f1-cf831f9153e5"
+                        }
+                    },
+                    {
+                        "deviceId": "2e700cf1-ec3b-42d7-a3f6-ab8f4622948f",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c50601cc-7afe-4a32-a766-9837bd9e178f",
+                            "roomName": "Living room",
+                            "roomId": "d308ae99-399b-4645-93f1-cf831f9153e5"
+                        }
+                    },
+                    {
+                        "deviceId": "8f5af268-053a-4886-980d-b214c8d08fc0",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c50601cc-7afe-4a32-a766-9837bd9e178f",
+                            "roomName": "Kitchen",
+                            "roomId": "4bd5bcca-6c30-40e3-b309-334d85d2641a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start the air purifier"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_start",
+                            "arguments": {
+                                "device": "5caf43c4-343d-4ff3-a171-c4b2d5e720b1"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air purifier is started."
+        }
+    ],
+    "tools": []
+}

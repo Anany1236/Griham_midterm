@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "924c5f09-e54a-44b3-8270-74f918fd2328",
+                        "deviceName": "siren",
+                        "deviceType": "siren",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "3060b07e-ec0a-4c74-95f3-15fd0ba3a835",
+                            "roomName": "guest room",
+                            "roomId": "3060b07e-ec0a-4c74-95f3-15fd0ba3a835"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the alarm in the guest room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "alarm_turnOn",
+                            "arguments": {
+                                "device": "924c5f09-e54a-44b3-8270-74f918fd2328",
+                                "room": "guest room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have activated the alarm in the guest room."
+        }
+    ],
+    "tools": []
+}

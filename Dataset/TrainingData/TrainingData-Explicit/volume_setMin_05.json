@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "06c5b566-55d6-49d5-b008-3eb3d3a62397",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "57b03757-fefb-4a23-84db-e60f1b84fd71",
+							"roomName": "bedroom",
+							"roomId": "bcc3f079-4083-40fe-934d-39713fb0b08e"
+						}
+					},
+					{
+						"deviceId": "c6207ce5-ccb9-426c-aad2-01ec06f47bdb",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "57b03757-fefb-4a23-84db-e60f1b84fd71",
+							"roomName": "living room",
+							"roomId": "d729b481-93c3-4fde-a9a1-6d255c21d8da"
+						}
+					},
+					{
+						"deviceId": "07963aef-471f-4ee7-bb43-30d939c2c7dd",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "57b03757-fefb-4a23-84db-e60f1b84fd71",
+							"roomName": "master bedroom",
+							"roomId": "b2f93278-1bf8-4efa-9aa0-8150245e94b4"
+						}
+					},
+					{
+						"deviceId": "2553d66b-d007-4fe2-98be-d461d848ac32",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "57b03757-fefb-4a23-84db-e60f1b84fd71",
+							"roomName": "kitchen",
+							"roomId": "5fc47d71-aed1-4ebb-80ad-e2b2429d98f3"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Adjust the volume to minimum of master bedroom speaker"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "volume_setMin",
+							"arguments": {
+								"device": "07963aef-471f-4ee7-bb43-30d939c2c7dd",
+								"room": "master bedroom"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have adjusted the volume to minimum of master bedroom speaker."
+		}
+	],
+	"tools": []
+}

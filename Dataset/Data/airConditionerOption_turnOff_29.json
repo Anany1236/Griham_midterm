@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "25b1c42e-813c-4422-b8a5-59aabe7ac27a",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "07d6f2ec-8a52-4f2d-ad1d-b5ce2888fe37",
+                            "roomName": "living room",
+                            "roomId": "07d6f2ec-8a52-4f2d-ad1d-b5ce2888fe37"
+                        }
+                    },
+                    {
+                        "deviceId": "abe4b35b-7bae-4a01-98d2-4438396e88a7",
+                        "deviceName": "AC",
+                        "deviceType": "AC",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "e4aeaf0e-e5d5-48c2-85d8-5db0e7ae7719",
+                            "roomName": "bedroom",
+                            "roomId": "e4aeaf0e-e5d5-48c2-85d8-5db0e7ae7719"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the air conditioner in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "airConditionerOption_turnOff",
+                            "arguments": {
+                                "device": "25b1c42e-813c-4422-b8a5-59aabe7ac27a",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air conditioner in the living room has been turned off."
+        }
+    ],
+    "tools": []
+}

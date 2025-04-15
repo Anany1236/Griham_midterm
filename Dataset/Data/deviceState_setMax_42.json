@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c5f1ad35-ecf7-42b8-9b19-b27d19bd686c",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "66a6015e-f2bd-4f80-b39f-ff877b4f7392",
+                            "roomName": "living room",
+                            "roomId": "66a6015e-f2bd-4f80-b39f-ff877b4f7392"
+                        }
+                    },
+                    {
+                        "deviceId": "6d9a06e6-cd75-49d9-81e7-0cc11144ff72",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "9ef0e41d-7634-4aed-b746-7b78f42cacfd",
+                            "roomName": "laundry room",
+                            "roomId": "9ef0e41d-7634-4aed-b746-7b78f42cacfd"
+                        }
+                    },
+                    {
+                        "deviceId": "05d1c774-bfe2-47b1-a28d-3dea770042e1",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "3c688db6-6b2b-46a8-864a-2bf9db2818bc",
+                            "roomName": "office room",
+                            "roomId": "3c688db6-6b2b-46a8-864a-2bf9db2818bc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the maximum setting for the air conditioner in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setMax",
+                            "arguments": {
+                                "device": "c5f1ad35-ecf7-42b8-9b19-b27d19bd686c",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air conditioner in the living room is now set to maximum."
+        }
+    ],
+    "tools": []
+}

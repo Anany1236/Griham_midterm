@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "fanMode_setValue",
+            "description": "This function is used to set the fan mode of a device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the fan mode."
+                    },
+                    "predefinedFanMode": {
+                        "type": "string",
+                        "description": "The fan mode to set (e.g., 'automatic', 'circulation')."
+                    }
+                },
+                "required": [
+                    "predefinedFanMode"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ddcd4315-a8f7-4666-a8c2-9ddbff2df36e",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "5a1fc7db-0b0f-4753-b4b1-2b959a7565fb",
+                            "roomName": "kitchen",
+                            "roomId": "5a1fc7db-0b0f-4753-b4b1-2b959a7565fb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the power cool mode for the refrigerator."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerCoolMode_turnOn",
+                            "arguments": {
+                                "device": "ddcd4315-a8f7-4666-a8c2-9ddbff2df36e",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The power cool mode on the refrigerator is now active."
+        }
+    ],
+    "tools": []
+}

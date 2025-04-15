@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bcbf02f4-e1f8-4a40-ba5b-1f996ef9c288",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9df96b24-acfe-4260-afe7-721473466a83",
+                            "roomName": "bedroom",
+                            "roomId": "9df96b24-acfe-4260-afe7-721473466a83"
+                        }
+                    },
+                    {
+                        "deviceId": "665c812c-ff0a-4ce0-8752-428973848511",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cbf506f0-8a6b-4219-b892-fd80c30b8670",
+                            "roomName": "living Room",
+                            "roomId": "cbf506f0-8a6b-4219-b892-fd80c30b8670"
+                        }
+                    },
+                    {
+                        "deviceId": "bfafa307-a2d7-45df-b6c8-ab03e8c06049",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3d17d905-9a12-4f3b-b862-33a264bcaffe",
+                            "roomName": "guest Room",
+                            "roomId": "3d17d905-9a12-4f3b-b862-33a264bcaffe"
+                        }
+                    },
+                    {
+                        "deviceId": "a413ad34-4fb3-43ee-bbd4-0f85903ac6f5",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ef0af3c-8740-4aa6-b605-17abbbb50ad6",
+                            "roomName": "kitchen",
+                            "roomId": "1ef0af3c-8740-4aa6-b605-17abbbb50ad6"
+                        }
+                    },
+                    {
+                        "deviceId": "e056a386-5bbf-4343-be8d-e7950b4b2b94",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4b2a1bd1-8f9e-4a1e-be9a-50180415a956",
+                            "roomName": "utility Room",
+                            "roomId": "4b2a1bd1-8f9e-4a1e-be9a-50180415a956"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the dew point value of the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dewPoint_getValue",
+                            "arguments": {
+                                "device": "bfafa307-a2d7-45df-b6c8-ab03e8c06049",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dew point value of the light in the guest room is shown"
+        }
+    ],
+    "tools": []
+}

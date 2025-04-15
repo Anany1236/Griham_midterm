@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "100ee494-17d2-4890-a49c-c9739fcfa990",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b557bccc-37e7-4f3c-bbc3-532b9de1e5db",
+                            "roomName": "bedroom",
+                            "roomId": "b557bccc-37e7-4f3c-bbc3-532b9de1e5db"
+                        }
+                    },
+                    {
+                        "deviceId": "00866970-079a-4e62-af2f-6eb145cf6398",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "69348a61-8b4c-4476-b0f8-a7df86826048",
+                            "roomName": "living Room",
+                            "roomId": "69348a61-8b4c-4476-b0f8-a7df86826048"
+                        }
+                    },
+                    {
+                        "deviceId": "f904ae24-4e99-420d-b2f1-d2d3ca208b38",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1699c93f-471e-485c-aa61-ae17111c45fb",
+                            "roomName": "guest Room",
+                            "roomId": "1699c93f-471e-485c-aa61-ae17111c45fb"
+                        }
+                    },
+                    {
+                        "deviceId": "344f8c2c-6fd3-494a-97a1-7cfa14e10fe1",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a98a4214-2f87-4e2a-aa61-474a368c02e6",
+                            "roomName": "kitchen",
+                            "roomId": "a98a4214-2f87-4e2a-aa61-474a368c02e6"
+                        }
+                    },
+                    {
+                        "deviceId": "a93f379e-00b0-45c6-8d3a-ea3d85aa11d8",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0926121f-694c-4402-9980-f7c0e07cf94f",
+                            "roomName": "utility Room",
+                            "roomId": "0926121f-694c-4402-9980-f7c0e07cf94f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the BMI value for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bmi_getValue",
+                            "arguments": {
+                                "device": "100ee494-17d2-4890-a49c-c9739fcfa990",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The BMI value for the air conditioner in the bedroom is shown"
+        }
+    ],
+    "tools": []
+}

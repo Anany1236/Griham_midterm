@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f88428be-c05a-418c-ba18-f19eed3f0f5a",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f81ca7e8-b013-48c1-b293-0220081af2ea",
+                            "roomName": "living room",
+                            "roomId": "21c7cdeb-83fc-4a97-bbaa-ccc75f2a3084"
+                        }
+                    },
+                    {
+                        "deviceId": "675fb404-21f2-4a1f-ab5e-bb956b388d42",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f81ca7e8-b013-48c1-b293-0220081af2ea",
+                            "roomName": "kids room",
+                            "roomId": "37ddedb8-a6db-43ff-84e1-81e19e66ca3b"
+                        }
+                    },
+                    {
+                        "deviceId": "c7c996f4-8329-4075-afa0-7fba593874dd",
+                        "deviceName": "fan3",
+                        "deviceType": "air purifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f81ca7e8-b013-48c1-b293-0220081af2ea",
+                            "roomName": "bedroom",
+                            "roomId": "f906d608-c390-4be7-9461-0b8276eaaabb"
+                        }
+                    },
+                    {
+                        "deviceId": "d3f4db42-1be9-43a4-8f45-d72472fdb0aa",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f81ca7e8-b013-48c1-b293-0220081af2ea",
+                            "roomName": "guest room",
+                            "roomId": "9a0a94b8-cd08-4aea-a077-9ba1dd781a2e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you tell me the fan speed value of the bedroom air purifier"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeed_getValue",
+                            "arguments": {
+                                "device": "c7c996f4-8329-4075-afa0-7fba593874dd",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The bedroom air purifier fan speed is 35"
+        }
+    ],
+    "tools": []
+}

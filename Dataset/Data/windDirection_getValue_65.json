@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "38736218-9033-403a-929f-1b8679182ea3",
+                        "deviceName": "weather station",
+                        "deviceType": "weather station",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "outdoor area",
+                            "locationId": "199248ca-027f-404f-8b50-1a948639b732",
+                            "roomName": "outdoor area",
+                            "roomId": "199248ca-027f-404f-8b50-1a948639b732"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please provide the wind direction in the garden."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windDirection_getValue",
+                            "arguments": {
+                                "device": "38736218-9033-403a-929f-1b8679182ea3",
+                                "room": "outdoor area"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The wind direction in the garden has been checked."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4582200a-d6d6-446f-8af1-1230d3e2bb4a",
+                        "deviceName": "siren",
+                        "deviceType": "siren",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "081f3ce4-2965-4323-9509-1523fcc7a879",
+                            "roomName": "living room",
+                            "roomId": "081f3ce4-2965-4323-9509-1523fcc7a879"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the alarm in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "alarm_turnOff",
+                            "arguments": {
+                                "device": "4582200a-d6d6-446f-8af1-1230d3e2bb4a",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The alarm in the living room has been turned off."
+        }
+    ],
+    "tools": []
+}

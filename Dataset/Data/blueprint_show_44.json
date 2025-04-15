@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "97ef0700-00b0-4288-ad65-fae998af1816",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f27d4166-43ae-4056-a6c1-fbac0d04ab87",
+                            "roomName": "bedroom",
+                            "roomId": "f27d4166-43ae-4056-a6c1-fbac0d04ab87"
+                        }
+                    },
+                    {
+                        "deviceId": "aa2b5f76-e7ac-48df-8af6-7ca210ffd239",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3e2716fb-0c34-4fe8-b08a-49a49264182e",
+                            "roomName": "living Room",
+                            "roomId": "3e2716fb-0c34-4fe8-b08a-49a49264182e"
+                        }
+                    },
+                    {
+                        "deviceId": "ea1e3033-cc5f-4683-96d0-b78f56f2a2a2",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "76d0db04-fbec-42bd-823a-38c4a34e0c19",
+                            "roomName": "guest Room",
+                            "roomId": "76d0db04-fbec-42bd-823a-38c4a34e0c19"
+                        }
+                    },
+                    {
+                        "deviceId": "b6eb83f9-5a54-4ecd-9711-26888c86b5c3",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "553805ca-df11-4bcd-b4fb-b0297efff395",
+                            "roomName": "kitchen",
+                            "roomId": "553805ca-df11-4bcd-b4fb-b0297efff395"
+                        }
+                    },
+                    {
+                        "deviceId": "f3bd039e-47c4-4458-949d-2a09fda83866",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "91d3829a-b0c1-4c72-9d6e-8dadb8bd9773",
+                            "roomName": "utility Room",
+                            "roomId": "91d3829a-b0c1-4c72-9d6e-8dadb8bd9773"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show the washer's blueprint in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "blueprint_show",
+                            "arguments": {
+                                "device": "b6eb83f9-5a54-4ecd-9711-26888c86b5c3",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The blueprint of the washer in the kitchen is available"
+        }
+    ],
+    "tools": []
+}

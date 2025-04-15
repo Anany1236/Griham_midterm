@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "03cf3055-2240-4921-8aaf-d7db65ab8869",
+                        "deviceName": "airconditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7337674b-2d66-40d4-828c-20c1e3004bee",
+                            "roomName": "hall",
+                            "roomId": "d93272b3-0453-4d9f-8314-6714de27bfc4"
+                        }
+                    },
+                    {
+                        "deviceId": "8c073606-7d82-4ba0-8a8c-6124ab260e4d",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7337674b-2d66-40d4-828c-20c1e3004bee",
+                            "roomName": "Living room",
+                            "roomId": "c8320a2c-b194-4780-9c6c-8acf0680b6cd"
+                        }
+                    },
+                    {
+                        "deviceId": "4cf1dba5-9e79-4b38-b8d1-25f857c19c81",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7337674b-2d66-40d4-828c-20c1e3004bee",
+                            "roomName": "Living room",
+                            "roomId": "c8320a2c-b194-4780-9c6c-8acf0680b6cd"
+                        }
+                    },
+                    {
+                        "deviceId": "dbc62e85-79eb-4523-9ea0-50b6c5938da5",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7337674b-2d66-40d4-828c-20c1e3004bee",
+                            "roomName": "bedroom",
+                            "roomId": "227db540-4ee8-4fc4-977a-00414a73302f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start the airconditioner in the hall"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_start",
+                            "arguments": {
+                                "device": "03cf3055-2240-4921-8aaf-d7db65ab8869",
+                                "room": "hall"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The airconditioner is started in the hall."
+        }
+    ],
+    "tools": []
+}

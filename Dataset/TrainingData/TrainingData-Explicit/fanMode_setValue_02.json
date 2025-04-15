@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c48a5935-ce89-45aa-86ed-a7dfeb5ab199",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29a2b59c-25dd-4d0d-a716-f41f42dfd19f",
+                            "roomName": "Living room",
+                            "roomId": "e61ff375-3e94-4ed0-bba8-d3261f517adc"
+                        }
+                    },
+                    {
+                        "deviceId": "671bf0cd-3a7d-4eb9-a784-9a64d93c0696",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29a2b59c-25dd-4d0d-a716-f41f42dfd19f",
+                            "roomName": "kids room",
+                            "roomId": "36a7dc04-b61d-4c11-9d5e-6e79eb5a9a11"
+                        }
+                    },
+                    {
+                        "deviceId": "20d14a55-eb6d-4039-a9c9-84e71fc4cbd6",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29a2b59c-25dd-4d0d-a716-f41f42dfd19f",
+                            "roomName": "bedroom",
+                            "roomId": "b6176715-402f-45f9-943d-910e63e5593c"
+                        }
+                    },
+                    {
+                        "deviceId": "51504a07-99d0-41f1-9ca1-9ce820b7f9bf",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29a2b59c-25dd-4d0d-a716-f41f42dfd19f",
+                            "roomName": "guest room",
+                            "roomId": "69be4948-7bd7-4af0-a253-d3b26fae0a4e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the fan mode of the bedroom fan to circulate"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanMode_setValue",
+                            "arguments": {
+                                "device": "20d14a55-eb6d-4039-a9c9-84e71fc4cbd6",
+                                "room": "bedroom",
+                                "predefinedFanMode": "circulate"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan mode value of the bedoom fan is switched to circulate"
+        }
+    ],
+    "tools": []
+}

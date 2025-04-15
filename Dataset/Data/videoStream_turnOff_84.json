@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7bde4467-3653-427c-b0ee-d08f5d9a2276",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "fbf56676-fec9-446c-afac-e1a780a056e7",
+                            "roomName": "living room",
+                            "roomId": "fbf56676-fec9-446c-afac-e1a780a056e7"
+                        }
+                    },
+                    {
+                        "deviceId": "8f624622-cd57-48a5-a2b1-18c6d4b6f2c7",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "3d6da329-02ec-46fc-817e-fcd1b1626829",
+                            "roomName": "home theater",
+                            "roomId": "3d6da329-02ec-46fc-817e-fcd1b1626829"
+                        }
+                    },
+                    {
+                        "deviceId": "898d41d4-e8dc-4957-9bfe-3ffac14b1f9b",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "67f0b089-f12d-4c1c-a34e-b2440ab9c2b9",
+                            "roomName": "office room",
+                            "roomId": "67f0b089-f12d-4c1c-a34e-b2440ab9c2b9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the video stream on the smart TV in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "videoStream_turnOff",
+                            "arguments": {
+                                "device": "7bde4467-3653-427c-b0ee-d08f5d9a2276",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The video stream on the smart TV in the living room has been turned off."
+        }
+    ],
+    "tools": []
+}

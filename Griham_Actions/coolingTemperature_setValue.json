@@ -1,0 +1,38 @@
+{
+    "name": "coolingTemperature_setValue",
+    "description": "This function sets the cooling temperature of a device through voice commands. The utterance must explicitly include the expression 'cooling temperature'.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the cooling temperature for.",
+            "optional": true
+        },
+        {
+            "name": "coolingTemperature",
+            "type": "number",
+            "description": "The specific value to set the cooling temperature to.",
+            "optional": false
+        },
+        {
+            "name": "predefinedCoolingTemperatureUnit",
+            "type": "string",
+            "description": "The unit of measurement for the cooling temperature (e.g., Celsius, Fahrenheit).",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

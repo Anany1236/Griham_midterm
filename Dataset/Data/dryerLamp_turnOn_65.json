@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2f68b820-0053-4bf6-ac5d-df89d12c79d3",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "48ea7f38-2a51-4e48-85d1-7fe0ef0c7e5b",
+                            "roomName": "laundry room",
+                            "roomId": "48ea7f38-2a51-4e48-85d1-7fe0ef0c7e5b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the lamp of the dryer in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryerLamp_turnOn",
+                            "arguments": {
+                                "device": "2f68b820-0053-4bf6-ac5d-df89d12c79d3",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lamp of the dryer in the laundry room has been turned on."
+        }
+    ],
+    "tools": []
+}

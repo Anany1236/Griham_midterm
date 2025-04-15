@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a8f5f060-ed59-4449-ae43-2bc43cbac2bf",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f80320ba-b50e-4d1f-9f5c-ba1afcb9bc51",
+                            "roomName": "bedroom",
+                            "roomId": "f80320ba-b50e-4d1f-9f5c-ba1afcb9bc51"
+                        }
+                    },
+                    {
+                        "deviceId": "e3c00560-caba-4387-b02a-8259bdedf52e",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "edcca4d7-6e69-4163-b61f-728553fd85e8",
+                            "roomName": "living Room",
+                            "roomId": "edcca4d7-6e69-4163-b61f-728553fd85e8"
+                        }
+                    },
+                    {
+                        "deviceId": "9520a5bb-17d5-4094-b6dd-a653e7b61379",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a9ef1395-a739-40ac-9cd3-483aab23513f",
+                            "roomName": "guest Room",
+                            "roomId": "a9ef1395-a739-40ac-9cd3-483aab23513f"
+                        }
+                    },
+                    {
+                        "deviceId": "6c705ec9-096e-45bb-8e74-5a8b63aad44f",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee12bdf5-816d-4dda-b56c-31413266afda",
+                            "roomName": "kitchen",
+                            "roomId": "ee12bdf5-816d-4dda-b56c-31413266afda"
+                        }
+                    },
+                    {
+                        "deviceId": "c5c3eca0-a01b-4f33-9713-afd14a290ea2",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2c460ccb-df55-423a-843e-40e8cd3ad2f3",
+                            "roomName": "utility Room",
+                            "roomId": "2c460ccb-df55-423a-843e-40e8cd3ad2f3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the content status of the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "content_getStatus",
+                            "arguments": {
+                                "device": "a8f5f060-ed59-4449-ae43-2bc43cbac2bf",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The content status for the air conditioner in the bedroom is available"
+        }
+    ],
+    "tools": []
+}

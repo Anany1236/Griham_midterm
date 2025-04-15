@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0fe51776-f038-45da-947c-8bd7080dfc68",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "d9e673d9-78a9-40cb-83a7-89f918036da6",
+                            "roomName": "laundry room",
+                            "roomId": "d9e673d9-78a9-40cb-83a7-89f918036da6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the contamination level to 5 on the washing machine."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingContaminationLevel_setValue",
+                            "arguments": {
+                                "device": "0fe51776-f038-45da-947c-8bd7080dfc68",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The contamination level on the washing machine has been set to 5."
+        }
+    ],
+    "tools": []
+}

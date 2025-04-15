@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "da84521a-af43-480c-917d-f97ea4f1ecde",
+                        "deviceName": "robotcleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "065cb581-693f-4021-954d-e5d4c76edcbf",
+                            "roomName": "laundry room",
+                            "roomId": "065cb581-693f-4021-954d-e5d4c76edcbf"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off auto-empty mode for the robot cleaner."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "autoEmptyMode_turnOff",
+                            "arguments": {
+                                "device": "da84521a-af43-480c-917d-f97ea4f1ecde",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Auto-empty mode for the robot cleaner is now off."
+        }
+    ],
+    "tools": []
+}

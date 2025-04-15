@@ -1,0 +1,149 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "38a804ad-8265-488b-b32b-dd70bad43937",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c1650143-195c-4a25-8de9-ae5ab94dce5f",
+                            "roomName": "kids room",
+                            "roomId": "009752ef-2faa-4726-866f-ca0ac979ebb2"
+                        }
+                    },
+                    {
+                        "deviceId": "e10b449b-12c6-47b6-96c6-5c0a3665cc88",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c1650143-195c-4a25-8de9-ae5ab94dce5f",
+                            "roomName": "kids room",
+                            "roomId": "59e377bb-28dd-4019-bb8c-55836ebc13c4"
+                        }
+                    },
+                    {
+                        "deviceId": "8b8b8dc7-298a-4912-8980-aab5bfa8da7a",
+                        "deviceName": "robotcleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c1650143-195c-4a25-8de9-ae5ab94dce5f",
+                            "roomName": "kids room",
+                            "roomId": "009752ef-2faa-4726-866f-ca0ac979ebb2"
+                        }
+                    },
+                    {
+                        "deviceId": "41ff6b74-4e52-4c86-bdf4-b32cb241f9ed",
+                        "deviceName": "stickcleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c1650143-195c-4a25-8de9-ae5ab94dce5f",
+                            "roomName": "kids room",
+                            "roomId": "59e377bb-28dd-4019-bb8c-55836ebc13c4"
+                        }
+                    },
+                    {
+                        "deviceId": "319dd1cc-97bf-4f15-938a-a33c43b284b7",
+                        "deviceName": "airdresser",
+                        "deviceType": "airdresser",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c1650143-195c-4a25-8de9-ae5ab94dce5f",
+                            "roomName": "kids room",
+                            "roomId": "19b616ad-9f40-4e91-910c-6d2daa45d98d"
+                        }
+                    },
+                    {
+                        "deviceId": "433976c8-f1ba-4530-a628-6f11b0250513",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c1650143-195c-4a25-8de9-ae5ab94dce5f",
+                            "roomName": "kitchen",
+                            "roomId": "dabe2400-5fba-4811-8b75-2d92f24ca9aa"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set up the home kids room ready for a movie on the tv every weekdays at 11 PM"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": " media_play",
+                            "arguments": {
+                                "device": "38a804ad-8265-488b-b32b-dd70bad43937"
+                            }
+                        },
+                        {
+                            "name": " device_close",
+                            "arguments": {
+                                "device": "e10b449b-12c6-47b6-96c6-5c0a3665cc88"
+                            }
+                        },
+                        {
+                            "name": " cleaning_pause",
+                            "arguments": {
+                                "device": "8b8b8dc7-298a-4912-8980-aab5bfa8da7a"
+                            }
+                        },
+                        {
+                            "name": " cleaning_pause",
+                            "arguments": {
+                                "device": "41ff6b74-4e52-4c86-bdf4-b32cb241f9ed"
+                            }
+                        },
+                        {
+                            "name": " dressing_pause",
+                            "arguments": {
+                                "device": "319dd1cc-97bf-4f15-938a-a33c43b284b7"
+                            }
+                        },
+                        {
+                            "name": " cooking_pause",
+                            "arguments": {
+                                "device": "433976c8-f1ba-4530-a628-6f11b0250513"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success",
+                "cron": "0 23 * * 1-5"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can play media on the tv, close the blinds, pause the stickcleaner, airdresser, robotcleaner and oven. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

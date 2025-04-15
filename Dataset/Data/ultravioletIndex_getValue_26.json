@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4ec2bb73-a868-42c1-95b4-0c4fda99b68c",
+                        "deviceName": "environmental sensor",
+                        "deviceType": "environmental sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "garden",
+                            "locationId": "ebe24c67-fa27-4069-8f37-9b124e426d7e",
+                            "roomName": "garden",
+                            "roomId": "ebe24c67-fa27-4069-8f37-9b124e426d7e"
+                        }
+                    },
+                    {
+                        "deviceId": "4417bcfc-3773-499a-99af-89fdc0f2fbc5",
+                        "deviceName": "outdoor weather station",
+                        "deviceType": "outdoor weather station",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "balcony",
+                            "locationId": "ad03c54a-8bc7-4d94-a4dd-dad0f8274e57",
+                            "roomName": "balcony",
+                            "roomId": "ad03c54a-8bc7-4d94-a4dd-dad0f8274e57"
+                        }
+                    },
+                    {
+                        "deviceId": "6238b5af-f752-4807-a427-5671597e77d3",
+                        "deviceName": "environmental sensor",
+                        "deviceType": "environmental sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "terrace",
+                            "locationId": "675bab71-b003-4269-8a54-c7fb37783fbe",
+                            "roomName": "terrace",
+                            "roomId": "675bab71-b003-4269-8a54-c7fb37783fbe"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please tell me the ultraviolet index."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ultravioletIndex_getValue",
+                            "arguments": {
+                                "device": "4ec2bb73-a868-42c1-95b4-0c4fda99b68c",
+                                "room": "garden"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Ultraviolet index is now {value}."
+        }
+    ],
+    "tools": []
+}

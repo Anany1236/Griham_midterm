@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6d3d342b-3e48-49b1-ba44-61e314c537af",
+                        "deviceName": "smart light",
+                        "deviceType": "smart light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "72fd996c-7084-4649-b945-8e56301a779a",
+                            "roomName": "living room",
+                            "roomId": "72fd996c-7084-4649-b945-8e56301a779a"
+                        }
+                    },
+                    {
+                        "deviceId": "c74d7809-172a-4d85-b9b0-693da17827ee",
+                        "deviceName": "ceiling lights",
+                        "deviceType": "ceiling lights",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "7093cbd2-8cf5-4f62-90b9-8289dee32453",
+                            "roomName": "bedroom",
+                            "roomId": "7093cbd2-8cf5-4f62-90b9-8289dee32453"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the light effect on the smart light."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "lightEffect_turnOn",
+                            "arguments": {
+                                "device": "6d3d342b-3e48-49b1-ba44-61e314c537af",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The light effect on the smart light is now on."
+        }
+    ],
+    "tools": []
+}

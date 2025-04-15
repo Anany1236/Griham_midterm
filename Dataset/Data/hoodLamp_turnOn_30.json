@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "24d6910c-1d7c-4de3-bf83-943a17fdd9bf",
+                        "deviceName": "Air purifier,Air purifier,Air purifier",
+                        "deviceType": "airpurifier,Air purifier,Air purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "Living room,bedroom,Hallway",
+                            "locationId": "9b873101-913c-4380-b579-839b18b448e4",
+                            "roomName": "Living room,bedroom,Hallway",
+                            "roomId": "9b873101-913c-4380-b579-839b18b448e4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Switch on the air purifier light in the bedroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodLamp_turnOn",
+                            "arguments": {
+                                "device": "24d6910c-1d7c-4de3-bf83-943a17fdd9bf",
+                                "room": "Living room,bedroom,Hallway"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air purifier light in the bedroom is now switched on."
+        }
+    ],
+    "tools": []
+}

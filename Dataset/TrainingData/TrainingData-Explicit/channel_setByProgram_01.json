@@ -1,0 +1,96 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "cc2d3237-5c08-42bc-b7e6-46a1f8b14eac",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "30000fad-1f69-48dc-9973-7c55a7e9cb3a",
+							"roomName": "living room",
+							"roomId": "3de97b07-a318-40e5-be79-9d874f33a3f7"
+						}
+					},
+					{
+						"deviceId": "0f4624d7-6347-433b-ae49-1cb85c0fc2d7",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "30000fad-1f69-48dc-9973-7c55a7e9cb3a",
+							"roomName": "bedroom",
+							"roomId": "f74f13ef-ff9d-47cd-8674-453c0be870ff"
+						}
+					},
+					{
+						"deviceId": "512f10d9-5abf-4ac5-b906-1e729623b4db",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "30000fad-1f69-48dc-9973-7c55a7e9cb3a",
+							"roomName": "living room",
+							"roomId": "3de97b07-a318-40e5-be79-9d874f33a3f7"
+						}
+					},
+					{
+						"deviceId": "6bb1d798-0d2c-49fe-b168-f50454e75764",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "30000fad-1f69-48dc-9973-7c55a7e9cb3a",
+							"roomName": "kitchen",
+							"roomId": "18466e7f-e395-4fa2-88e7-a9c2a72dc567"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Can you switch to The Walking Dead series on AMC in living room tv?"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "channel_setByProgram",
+							"arguments": {
+								"device": "cc2d3237-5c08-42bc-b7e6-46a1f8b14eac",
+								"room": "living room",
+								"programName": "The Walking Dead"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have switched to The Walking Dead series on AMC in living room tv."
+		}
+	],
+	"tools": []
+}

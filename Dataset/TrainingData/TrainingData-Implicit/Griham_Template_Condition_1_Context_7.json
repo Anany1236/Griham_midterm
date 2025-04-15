@@ -1,0 +1,160 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "4f228e34-581d-470d-895d-5c542c39e8c5",
+						"deviceName": "TV",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}
+					},
+					{
+						"deviceId": "ef5a18ad-ffb5-4dd3-895f-624cb0b1a026",
+						"deviceName": "AC",
+						"deviceType": "airconditioner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}
+					},
+					{
+						"deviceId": "dg5b18ad-ffb5-4dd3-895f-624cb0b1a026",
+						"deviceName": "Robo Vaccum Cleaner",
+						"deviceType": "robotcleaner",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}
+					},
+					{
+						"deviceId": "2f806971-9928-439e-85ac-3239249d19d0",
+						"deviceName": "Light 1",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}
+					},
+					{
+						"deviceId": "2f906971-9928-439e-85ac-3239249d19d0",
+						"deviceName": "Light 2",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}
+					},
+					{
+						"deviceId": "dg5b18ad-frg6-4dd3-895f-624cb0b1a026",
+						"deviceName": "Light 3",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Living Room",
+							"roomId": "r1"
+						}
+					},
+					{
+						"deviceId": "dg5b18ad-frg6-4dd3-875f-624cb0b1a026",
+						"deviceName": "Bedroom Light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Bedroom",
+							"roomId": "r2"
+						}
+					},
+					{
+						"deviceId": "4f218e34-581d-470d-895d-5c542c39e8c5",
+						"deviceName": "TV",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Bedroom",
+							"roomId": "r2"
+						}
+					},
+					{
+						"deviceId": "ro5b18ad-frg6-4dd3-875f-624cb0b1a026",
+						"deviceName": "Balcony Light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "l1",
+							"roomName": "Balcony",
+							"roomId": "r3"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Turn off all the lights except living room."
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "device_turnOff",
+							"arguments": {
+								"device": "dg5b18ad-frg6-4dd3-875f-624cb0b1a026"
+							}
+						},
+						{
+							"name": "device_turnOff",
+							"arguments": {
+								"device": "ro5b18ad-frg6-4dd3-875f-624cb0b1a026"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have turned off all the lights except the lights in the living room."
+		}
+	],
+	"tools": []
+}

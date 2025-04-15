@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6ba36d10-a5ea-4282-87c8-64f42f627d13",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cb3fe0b1-b5b1-4c44-a57c-b983f0fa9fb9",
+                            "roomName": "kitchen",
+                            "roomId": "d8766059-16fd-405e-9270-48230d6f4589"
+                        }
+                    },
+                    {
+                        "deviceId": "b7a2c2d0-dce2-4b25-a914-936e3ee0a903",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cb3fe0b1-b5b1-4c44-a57c-b983f0fa9fb9",
+                            "roomName": "living room",
+                            "roomId": "11fbbe6c-5f1f-4dcc-9b0c-c7af8480305a"
+                        }
+                    },
+                    {
+                        "deviceId": "0ba42660-db1a-47c5-9f0a-db31489ede21",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cb3fe0b1-b5b1-4c44-a57c-b983f0fa9fb9",
+                            "roomName": "living room",
+                            "roomId": "11fbbe6c-5f1f-4dcc-9b0c-c7af8480305a"
+                        }
+                    },
+                    {
+                        "deviceId": "1f0e6d96-72f3-4a85-9fb3-71deda47deb9",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cb3fe0b1-b5b1-4c44-a57c-b983f0fa9fb9",
+                            "roomName": "kitchen",
+                            "roomId": "d8766059-16fd-405e-9270-48230d6f4589"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the dishwasher to standard mode in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_setCourse",
+                            "arguments": {
+                                "device": "6ba36d10-a5ea-4282-87c8-64f42f627d13",
+                                "room": "kitchen",
+                                "mode": "standard"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the dishwasher to standard mode in the kitchen"
+        }
+    ],
+    "tools": []
+}

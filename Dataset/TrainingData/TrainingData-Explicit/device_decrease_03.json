@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f675e7d5-d0dc-4fce-9f85-896f16290036",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c609275c-b569-41cf-9d6e-3b53e1828786",
+                            "roomName": "hall",
+                            "roomId": "2af46e68-05b1-4fb9-a7dc-85794e7c7a34"
+                        }
+                    },
+                    {
+                        "deviceId": "36b73100-480b-454f-8e40-b2990921b7bd",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c609275c-b569-41cf-9d6e-3b53e1828786",
+                            "roomName": "living room",
+                            "roomId": "fb5e8c19-3974-40b1-91c4-af4d39c7d9ad"
+                        }
+                    },
+                    {
+                        "deviceId": "e31a3828-2fe5-4113-819b-6124466236d6",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c609275c-b569-41cf-9d6e-3b53e1828786",
+                            "roomName": "laundry room",
+                            "roomId": "8a82a25e-da17-4991-b2ab-b41c70f7f530"
+                        }
+                    },
+                    {
+                        "deviceId": "7cb119c0-49e7-4688-9b85-52929780b24e",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c609275c-b569-41cf-9d6e-3b53e1828786",
+                            "roomName": "bedroom",
+                            "roomId": "348e85ff-51a6-4fc1-979c-472b3feedac7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Lower the fan "
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_decrease",
+                            "arguments": {
+                                "device": "36b73100-480b-454f-8e40-b2990921b7bd"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan is lowered."
+        }
+    ],
+    "tools": []
+}

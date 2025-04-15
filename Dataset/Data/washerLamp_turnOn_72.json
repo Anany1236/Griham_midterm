@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "49d17867-eee1-48c0-bde9-c0c7097c2210",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "8630bb5f-0789-4d1b-8f64-859eecd601f8",
+                            "roomName": "laundry room",
+                            "roomId": "8630bb5f-0789-4d1b-8f64-859eecd601f8"
+                        }
+                    },
+                    {
+                        "deviceId": "f099ffd0-f4f3-4cdf-8e1c-582cec4c8a8e",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "a9f2365b-dac2-408f-bb29-98f745d83026",
+                            "roomName": "utility room",
+                            "roomId": "a9f2365b-dac2-408f-bb29-98f745d83026"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the washer lamp."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washerLamp_turnOn",
+                            "arguments": {
+                                "device": "49d17867-eee1-48c0-bde9-c0c7097c2210",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washer lamp has been turned on."
+        }
+    ],
+    "tools": []
+}

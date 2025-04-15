@@ -1,0 +1,96 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "b141abd7-80d6-4864-9442-5b19f6b78dc7",
+						"deviceName": "ac",
+						"deviceType": "airconditioner",
+						"deviceStatus": "off",
+						"location": {
+							"locationName": "house",
+							"locationId": "32726be0-fb12-45ef-97d8-331a91c2cf95",
+							"roomName": "kids room",
+							"roomId": "36817cca-5097-4349-b044-addb3ec360a8"
+						}
+					},
+					{
+						"deviceId": "aca5d418-75da-415b-b7d6-c0a0af4ea800",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "32726be0-fb12-45ef-97d8-331a91c2cf95",
+							"roomName": "Living room",
+							"roomId": "cee34b81-e46e-4dac-9ec6-4b0f19558d0c"
+						}
+					},
+					{
+						"deviceId": "bbd843b7-b982-4765-b321-5e1ca8c27617",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "32726be0-fb12-45ef-97d8-331a91c2cf95",
+							"roomName": "Living room",
+							"roomId": "cee34b81-e46e-4dac-9ec6-4b0f19558d0c"
+						}
+					},
+					{
+						"deviceId": "eba1e022-96a2-4a16-a928-c3c83969a83a",
+						"deviceName": "smart tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "32726be0-fb12-45ef-97d8-331a91c2cf95",
+							"roomName": "bedroom",
+							"roomId": "0112a36a-e459-4f13-8801-761b4098f762"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Switch to House of Dragon in living room tv"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "channel_setByProgram",
+							"arguments": {
+								"device": "aca5d418-75da-415b-b7d6-c0a0af4ea800",
+								"room": "living room",
+								"programName": "House of Dragon"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have switched to House of Dragon in living room tv."
+		}
+	],
+	"tools": []
+}

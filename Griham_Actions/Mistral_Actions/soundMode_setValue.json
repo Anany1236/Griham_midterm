@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "soundMode-setValue",
+            "description": "This function is used to change the sound mode of a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to change the sound mode."
+                    },
+                    "predefinedSoundMode": {
+                        "type": "string",
+                        "description": "The predefined sound mode to set on the device."
+                    }
+                },
+                "required": [
+                    "predefinedSoundMode"
+                ]
+            }
+        }
+    ]
+}

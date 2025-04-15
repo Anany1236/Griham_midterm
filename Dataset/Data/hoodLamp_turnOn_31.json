@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5dc3c398-b393-4877-932c-361e4485bb67",
+                        "deviceName": "Air purifier,Air purifier,Air purifier",
+                        "deviceType": "airpurifier,Air purifier,Air purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "Living room,bedroom,Hallway",
+                            "locationId": "1585b957-25f1-4dda-b0f2-c9c3b800c010",
+                            "roomName": "Living room,bedroom,Hallway",
+                            "roomId": "1585b957-25f1-4dda-b0f2-c9c3b800c010"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the hood lamp in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodLamp_turnOn",
+                            "arguments": {
+                                "device": "5dc3c398-b393-4877-932c-361e4485bb67",
+                                "room": "Living room,bedroom,Hallway"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The hood lamp in the kitchen has been turned on."
+        }
+    ],
+    "tools": []
+}

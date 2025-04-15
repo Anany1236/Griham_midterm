@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "78676b15-7299-4f49-b286-62a92bbed253",
+                        "deviceName": "display",
+                        "deviceType": "display",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "78bf9618-fb29-4c5e-9ec3-c67ae1e8688d",
+                            "roomName": "living room",
+                            "roomId": "78bf9618-fb29-4c5e-9ec3-c67ae1e8688d"
+                        }
+                    },
+                    {
+                        "deviceId": "c992694c-3f01-4367-808a-2064df03b719",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "3e509892-17fa-41d1-9bd2-199433a70341",
+                            "roomName": "bedroom",
+                            "roomId": "3e509892-17fa-41d1-9bd2-199433a70341"
+                        }
+                    },
+                    {
+                        "deviceId": "3345daf5-a5be-4893-a9ff-8a67059ee79b",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "533d3ac1-c05f-434f-8d9d-6cd50c126f53",
+                            "roomName": "office room",
+                            "roomId": "533d3ac1-c05f-434f-8d9d-6cd50c126f53"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the backlight to {value}."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "backlight_setValue",
+                            "arguments": {
+                                "device": "78676b15-7299-4f49-b286-62a92bbed253",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The backlight has been set to {value}."
+        }
+    ],
+    "tools": []
+}

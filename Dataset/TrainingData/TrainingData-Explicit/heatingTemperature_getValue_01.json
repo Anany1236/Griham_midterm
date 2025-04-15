@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7441acf2-ae74-4421-b146-7c25938e8ff1",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6dc922b6-1d8b-4363-ad49-d9fd1dcbc6be",
+                            "roomName": "laundry room",
+                            "roomId": "e561add1-1532-4abe-902c-300844331cff"
+                        }
+                    },
+                    {
+                        "deviceId": "c6c5c9da-b195-4601-b20e-6dbd93025263",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6dc922b6-1d8b-4363-ad49-d9fd1dcbc6be",
+                            "roomName": "living room",
+                            "roomId": "5aaf6894-8336-45ea-941a-fd5e582219bd"
+                        }
+                    },
+                    {
+                        "deviceId": "d2f44db4-badc-423a-9a40-5ebb4a0d1ccc",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6dc922b6-1d8b-4363-ad49-d9fd1dcbc6be",
+                            "roomName": "kitchen",
+                            "roomId": "21d25dff-356f-44c4-b43b-b8650ae9778d"
+                        }
+                    },
+                    {
+                        "deviceId": "84702931-6edc-4f89-9249-ff97512d5ec2",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6dc922b6-1d8b-4363-ad49-d9fd1dcbc6be",
+                            "roomName": "bedroom",
+                            "roomId": "e865d990-5010-465d-bceb-c9d8610e1d74"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you tell me the heater temperature value of microwave?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_getValue",
+                            "arguments": {
+                                "device": "d2f44db4-badc-423a-9a40-5ebb4a0d1ccc",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current temperature value of the microwave is 21 degrees in the kitchen"
+        }
+    ],
+    "tools": []
+}

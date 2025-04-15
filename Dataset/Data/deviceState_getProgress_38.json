@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "dca93030-c5bf-4e61-bdc0-8fcd28e3b714",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "53c0009b-0eb2-4c38-a6fa-c2954933f5b2",
+                            "roomName": "living room",
+                            "roomId": "53c0009b-0eb2-4c38-a6fa-c2954933f5b2"
+                        }
+                    },
+                    {
+                        "deviceId": "2c681a7a-fa60-448f-8bbc-b8f3956a5882",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robot cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "b00ec8f0-5a01-4a65-b9a2-6227c1d2d769",
+                            "roomName": "bedroom",
+                            "roomId": "b00ec8f0-5a01-4a65-b9a2-6227c1d2d769"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "How much time is left for the robot cleaner in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getProgress",
+                            "arguments": {
+                                "device": "dca93030-c5bf-4e61-bdc0-8fcd28e3b714",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The robot cleaner in the kitchen has 10 minutes remaining."
+        }
+    ],
+    "tools": []
+}

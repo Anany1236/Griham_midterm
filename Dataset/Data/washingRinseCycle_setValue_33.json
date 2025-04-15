@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b6db2b03-cf87-46f7-a882-b8111e3c5086",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "1a514b50-01b1-448d-8334-d1a4526e2dcf",
+                            "roomName": "laundry room",
+                            "roomId": "1a514b50-01b1-448d-8334-d1a4526e2dcf"
+                        }
+                    },
+                    {
+                        "deviceId": "ea726b8b-91fb-4a7a-ae62-1e1903cb7720",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "930291e1-a989-4f0e-84ae-7abb7258c144",
+                            "roomName": "kitchen",
+                            "roomId": "930291e1-a989-4f0e-84ae-7abb7258c144"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the rinse cycle on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingRinseCycle_setValue",
+                            "arguments": {
+                                "device": "ea726b8b-91fb-4a7a-ae62-1e1903cb7720",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rinse cycle on the washer in the kitchen is now adjusted."
+        }
+    ],
+    "tools": []
+}

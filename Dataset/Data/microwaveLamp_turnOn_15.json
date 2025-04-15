@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5735d5ee-b6f8-48e9-98c0-5f0a562b20c4",
+                        "deviceName": "Hood,Hood,Hood",
+                        "deviceType": "Hood,Hood,Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Dining room,Utility room",
+                            "locationId": "5ac8df04-681a-4182-980d-a955c641dde3",
+                            "roomName": "kitchen,Dining room,Utility room",
+                            "roomId": "5ac8df04-681a-4182-980d-a955c641dde3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the hood in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "microwaveLamp_turnOn",
+                            "arguments": {
+                                "device": "5735d5ee-b6f8-48e9-98c0-5f0a562b20c4",
+                                "room": "kitchen,Dining room,Utility room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The hood in the kitchen has been turned on."
+        }
+    ],
+    "tools": []
+}

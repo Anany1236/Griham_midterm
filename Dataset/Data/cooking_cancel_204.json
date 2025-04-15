@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "117d71b2-1299-4e1d-937c-3da628e9e2d5",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "d07a7653-f79b-45b9-b0c5-a1b83446eef8",
+                            "roomName": "kitchen",
+                            "roomId": "d07a7653-f79b-45b9-b0c5-a1b83446eef8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please cancel the cooking process in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_cancel",
+                            "arguments": {
+                                "device": "117d71b2-1299-4e1d-937c-3da628e9e2d5",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking process in the kitchen has been canceled."
+        }
+    ],
+    "tools": []
+}

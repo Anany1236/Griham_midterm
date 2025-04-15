@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "deae0db2-fef0-4e2c-9615-e3206f84931f",
+                        "deviceName": "smart control hub",
+                        "deviceType": "smart control hub",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "8ec3a5d4-a7c4-4315-a6b5-34a86ce020ac",
+                            "roomName": "living room",
+                            "roomId": "8ec3a5d4-a7c4-4315-a6b5-34a86ce020ac"
+                        }
+                    },
+                    {
+                        "deviceId": "baf8840f-77e8-41ba-a7c9-607e1a4dc3cc",
+                        "deviceName": "home assistant",
+                        "deviceType": "home assistant",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "5838e372-c21c-4ef6-a2e6-7251c1e56450",
+                            "roomName": "office room",
+                            "roomId": "5838e372-c21c-4ef6-a2e6-7251c1e56450"
+                        }
+                    },
+                    {
+                        "deviceId": "1166097f-f344-493e-bd60-e1cd3404e119",
+                        "deviceName": "home assistant",
+                        "deviceType": "home assistant",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "8ed959a1-8c94-4ac2-9b31-3c62ab80f0fa",
+                            "roomName": "utility room",
+                            "roomId": "8ed959a1-8c94-4ac2-9b31-3c62ab80f0fa"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please display the supported devices."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "supportedDevices_show",
+                            "arguments": {
+                                "device": "deae0db2-fef0-4e2c-9615-e3206f84931f",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The following devices are supported: {device_list}."
+        }
+    ],
+    "tools": []
+}

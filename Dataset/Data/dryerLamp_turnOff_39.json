@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0f0dd02d-6df1-4a6a-b777-b63397f28cb3",
+                        "deviceName": "Dryer,Dryer,Dryer",
+                        "deviceType": "Dryer,Dryer,Dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "Laundry room,Bathroom,Garage",
+                            "locationId": "25d3995c-6fa7-46bb-8bbf-b6cbb3391b03",
+                            "roomName": "Laundry room,Bathroom,Garage",
+                            "roomId": "25d3995c-6fa7-46bb-8bbf-b6cbb3391b03"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Switch off the dryer light in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryerLamp_turnOff",
+                            "arguments": {
+                                "device": "0f0dd02d-6df1-4a6a-b777-b63397f28cb3",
+                                "room": "Laundry room,Bathroom,Garage"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dryer light in the bathroom is now switched off."
+        }
+    ],
+    "tools": []
+}

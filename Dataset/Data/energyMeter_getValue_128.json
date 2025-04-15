@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3aa63f93-2ed5-47ff-959d-f0e0fb114230",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5e1a00cc-6dcb-4054-9bad-ae23c214d85e",
+                            "roomName": "bedroom",
+                            "roomId": "5e1a00cc-6dcb-4054-9bad-ae23c214d85e"
+                        }
+                    },
+                    {
+                        "deviceId": "873f9d75-77f4-4f34-b4e6-93a3e7367e39",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "99f1bb4d-359f-4784-83e3-880eb467ba9b",
+                            "roomName": "living Room",
+                            "roomId": "99f1bb4d-359f-4784-83e3-880eb467ba9b"
+                        }
+                    },
+                    {
+                        "deviceId": "5c2fe441-086d-4419-ad56-33d559c40a1f",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e2c7883d-0191-447c-b905-3a0f75f0ce0e",
+                            "roomName": "guest Room",
+                            "roomId": "e2c7883d-0191-447c-b905-3a0f75f0ce0e"
+                        }
+                    },
+                    {
+                        "deviceId": "9cab9dbc-c451-404a-be33-dfdc2738b445",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "37f29697-0ec8-42a5-9c53-13f32436b5ad",
+                            "roomName": "kitchen",
+                            "roomId": "37f29697-0ec8-42a5-9c53-13f32436b5ad"
+                        }
+                    },
+                    {
+                        "deviceId": "1f0b94de-1102-4dd9-9a01-d79a9e92d9b0",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0aba3077-f99f-4520-b925-2ca070345b6a",
+                            "roomName": "utility Room",
+                            "roomId": "0aba3077-f99f-4520-b925-2ca070345b6a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the energy meter value of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "energyMeter_getValue",
+                            "arguments": {
+                                "device": "5c2fe441-086d-4419-ad56-33d559c40a1f",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The energy meter value of the light in the guest room is shown"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,32 @@
+{
+    "name": "airConditionerOption_turnOff",
+    "description": "This function is used to turn off a specific option on an air conditioner.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to turn off the option.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The specific option to turn off on the air conditioner.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

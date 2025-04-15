@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "46d92a1e-4239-427f-b088-2c3a551e69a8",
+                        "deviceName": "display",
+                        "deviceType": "display",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "a991f5a5-15fd-4d0c-ba07-ec4b60904b05",
+                            "roomName": "living room",
+                            "roomId": "a991f5a5-15fd-4d0c-ba07-ec4b60904b05"
+                        }
+                    },
+                    {
+                        "deviceId": "db68c98c-d6dc-4ef0-b297-9d5958cfa9ce",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "8311b5ea-8794-4195-b869-e997313b593a",
+                            "roomName": "bedroom",
+                            "roomId": "8311b5ea-8794-4195-b869-e997313b593a"
+                        }
+                    },
+                    {
+                        "deviceId": "405eca04-38e9-4b3e-922c-e222ddb22a29",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "800c7fd4-d71a-4757-b03a-c450e4a59c98",
+                            "roomName": "office room",
+                            "roomId": "800c7fd4-d71a-4757-b03a-c450e4a59c98"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please raise the backlight intensity."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "backlight_increase",
+                            "arguments": {
+                                "device": "46d92a1e-4239-427f-b088-2c3a551e69a8",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The backlight intensity is raised."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "00c1e36d-f201-459d-81c0-563d2737f335",
+                        "deviceName": "assistant",
+                        "deviceType": "assistant",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "0253bb57-9018-47d0-8608-97bb08e1d200",
+                            "roomName": "kitchen",
+                            "roomId": "0253bb57-9018-47d0-8608-97bb08e1d200"
+                        }
+                    },
+                    {
+                        "deviceId": "f57874fc-3ec0-4e24-959a-3caa1b55cda2",
+                        "deviceName": "smart display",
+                        "deviceType": "smart display",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "a234cb28-d7d0-4dfd-a810-8a93fdfbfb85",
+                            "roomName": "living room",
+                            "roomId": "a234cb28-d7d0-4dfd-a810-8a93fdfbfb85"
+                        }
+                    },
+                    {
+                        "deviceId": "2d0155fc-471f-4441-be7d-3a7a7b035e03",
+                        "deviceName": "assitant",
+                        "deviceType": "assitant",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "d9e676db-6c48-4b82-a5c8-4f60afc441f1",
+                            "roomName": "bedroom",
+                            "roomId": "d9e676db-6c48-4b82-a5c8-4f60afc441f1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What does the routine look like?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "routine_show",
+                            "arguments": {
+                                "device": "00c1e36d-f201-459d-81c0-563d2737f335",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The routine for today is {routine}."
+        }
+    ],
+    "tools": []
+}

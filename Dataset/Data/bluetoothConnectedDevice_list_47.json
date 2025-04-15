@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b26417d2-7d27-4a6a-a55d-625799ad7d94",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "875a36e9-8b14-4107-9052-8983305bdf43",
+                            "roomName": "bedroom",
+                            "roomId": "875a36e9-8b14-4107-9052-8983305bdf43"
+                        }
+                    },
+                    {
+                        "deviceId": "433b78e9-22aa-4ca1-82ad-e208e1b87194",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d87e5527-0bf8-4d5c-a217-bd253a1764e0",
+                            "roomName": "living Room",
+                            "roomId": "d87e5527-0bf8-4d5c-a217-bd253a1764e0"
+                        }
+                    },
+                    {
+                        "deviceId": "785e11f6-7c50-4216-86d5-65899326d2aa",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "977d8401-0b91-45ef-8666-6eb50bb601b5",
+                            "roomName": "guest Room",
+                            "roomId": "977d8401-0b91-45ef-8666-6eb50bb601b5"
+                        }
+                    },
+                    {
+                        "deviceId": "79a993c3-3313-455e-9aad-a1f2f472d7dd",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e5379aac-689c-4c90-9c69-d7c052ecf2ae",
+                            "roomName": "kitchen",
+                            "roomId": "e5379aac-689c-4c90-9c69-d7c052ecf2ae"
+                        }
+                    },
+                    {
+                        "deviceId": "1bfcf135-b934-4645-a483-887340d200ee",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f748199b-ca3e-4931-9748-7f0533968bb4",
+                            "roomName": "utility Room",
+                            "roomId": "f748199b-ca3e-4931-9748-7f0533968bb4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you show the Bluetooth devices connected to the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bluetoothConnectedDevice_list",
+                            "arguments": {
+                                "device": "433b78e9-22aa-4ca1-82ad-e208e1b87194",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The Bluetooth devices connected to the air purifier in the living room are shown"
+        }
+    ],
+    "tools": []
+}

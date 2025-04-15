@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7db2a0fd-f19c-4710-a9ee-2af78d39b57a",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "558711b3-8e87-45bc-8296-4d4aaa330b29",
+                            "roomName": "office room",
+                            "roomId": "558711b3-8e87-45bc-8296-4d4aaa330b29"
+                        }
+                    },
+                    {
+                        "deviceId": "d562ced9-c1e3-4d85-aac9-a9eab3cee82b",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "c4c3ac45-34b4-4c22-b300-43a83f716b58",
+                            "roomName": "living room",
+                            "roomId": "c4c3ac45-34b4-4c22-b300-43a83f716b58"
+                        }
+                    },
+                    {
+                        "deviceId": "fad5b8f5-b553-4eb1-9a19-b4861e1b49a5",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "7447f0ff-8cf0-4a79-9bd5-1f1ea95a8152",
+                            "roomName": "bedroom",
+                            "roomId": "7447f0ff-8cf0-4a79-9bd5-1f1ea95a8152"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please change the screen orientation."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "screenRotation_change",
+                            "arguments": {
+                                "device": "7db2a0fd-f19c-4710-a9ee-2af78d39b57a",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The screen has been rotated to {orientation}."
+        }
+    ],
+    "tools": []
+}

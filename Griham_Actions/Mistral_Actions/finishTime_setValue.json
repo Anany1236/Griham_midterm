@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "finishTime_setValue",
+            "description": "This function is used to set the operation completion time for a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the operation completion time."
+                    },
+                    "finishTime": {
+                        "type": "string",
+                        "description": "The time when the operation should be completed."
+                    }
+                },
+                "required": [
+                    "finishTime"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "226079b1-c577-4d31-854b-32f84ee48cbf",
+                        "deviceName": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceType": "Refrigerator,Refrigerator,Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Living room,Dining room",
+                            "locationId": "d7e40b08-f3c1-4086-b52e-00f411a19163",
+                            "roomName": "kitchen,Living room,Dining room",
+                            "roomId": "d7e40b08-f3c1-4086-b52e-00f411a19163"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Enable the refrigerator lamp in the dining room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ovenLamp_turnOn",
+                            "arguments": {
+                                "device": "226079b1-c577-4d31-854b-32f84ee48cbf",
+                                "room": "kitchen,Living room,Dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The refrigerator lamp in the dining room has been enabled."
+        }
+    ],
+    "tools": []
+}

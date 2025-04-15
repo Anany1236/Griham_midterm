@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "711c6a76-58dd-46db-8614-fab5916aa948",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4256b116-893a-4ba6-ab70-56a9b3a96423",
+                            "roomName": "living room",
+                            "roomId": "2a3e6268-f45b-4806-9d6a-0c493702197a"
+                        }
+                    },
+                    {
+                        "deviceId": "31fdd3b6-2628-4a83-b435-8b1e25399291",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4256b116-893a-4ba6-ab70-56a9b3a96423",
+                            "roomName": "living room",
+                            "roomId": "2a3e6268-f45b-4806-9d6a-0c493702197a"
+                        }
+                    },
+                    {
+                        "deviceId": "f091fb82-3530-4eaf-b9d4-7faf52aa4633",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4256b116-893a-4ba6-ab70-56a9b3a96423",
+                            "roomName": "kitchen",
+                            "roomId": "cbb06bef-e26d-4f45-bf2e-0692143d5889"
+                        }
+                    },
+                    {
+                        "deviceId": "0587d14e-02f8-4804-920c-a25f703ab64e",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4256b116-893a-4ba6-ab70-56a9b3a96423",
+                            "roomName": "laundry room",
+                            "roomId": "461a5bb8-01c7-4e61-bc96-5aad0fe1e4ed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Pause the dishwashing in kitchen dishwasher"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_pause",
+                            "arguments": {
+                                "device": "f091fb82-3530-4eaf-b9d4-7faf52aa4633",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have paused the dishwashing in kitchen dishwasher."
+        }
+    ],
+    "tools": []
+}

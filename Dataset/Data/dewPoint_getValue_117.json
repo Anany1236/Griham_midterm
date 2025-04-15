@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7579bfed-7144-49cd-98df-020e5f153f34",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a9a8c76a-711c-4803-8ca2-ec3ed1d37dc5",
+                            "roomName": "bedroom",
+                            "roomId": "a9a8c76a-711c-4803-8ca2-ec3ed1d37dc5"
+                        }
+                    },
+                    {
+                        "deviceId": "44636f7d-49b5-4d48-9bc9-5fccbaaa0a9f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a8c4eee6-c1f5-4fa5-8b40-d81adde5f9fb",
+                            "roomName": "living Room",
+                            "roomId": "a8c4eee6-c1f5-4fa5-8b40-d81adde5f9fb"
+                        }
+                    },
+                    {
+                        "deviceId": "4dcdfc3a-fc8b-43a9-b97c-a049a08405e3",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e704c71a-8112-4e6f-bc59-0eb0c6fa35ff",
+                            "roomName": "guest Room",
+                            "roomId": "e704c71a-8112-4e6f-bc59-0eb0c6fa35ff"
+                        }
+                    },
+                    {
+                        "deviceId": "d61685de-a547-47d5-97c0-0cc4f8d227ad",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "cc0b8bb8-5599-4edc-b9d5-56e267e45295",
+                            "roomName": "kitchen",
+                            "roomId": "cc0b8bb8-5599-4edc-b9d5-56e267e45295"
+                        }
+                    },
+                    {
+                        "deviceId": "d1c6edab-a65d-4029-8401-66ff54917d44",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "141ba55e-c39e-4f38-bf8f-294fbc97bc9b",
+                            "roomName": "utility Room",
+                            "roomId": "141ba55e-c39e-4f38-bf8f-294fbc97bc9b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the dew point value of the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dewPoint_getValue",
+                            "arguments": {
+                                "device": "44636f7d-49b5-4d48-9bc9-5fccbaaa0a9f",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dew point value of the air purifier in the living room is displayed"
+        }
+    ],
+    "tools": []
+}

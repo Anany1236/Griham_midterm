@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1497a80f-1555-47d6-9233-7bc068f68e2c",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e7b18e60-f488-4970-8328-09258708ffea",
+                            "roomName": "laundry room",
+                            "roomId": "22aa7eb0-36b0-4abe-8698-e79656b87069"
+                        }
+                    },
+                    {
+                        "deviceId": "e3e02a7a-fa73-47f7-bca0-2ef4d14c461c",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e7b18e60-f488-4970-8328-09258708ffea",
+                            "roomName": "Living room",
+                            "roomId": "3e0d4049-7d66-461b-a951-c7e474592bf9"
+                        }
+                    },
+                    {
+                        "deviceId": "123eb416-822b-4404-9f85-d996cfeb1a81",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e7b18e60-f488-4970-8328-09258708ffea",
+                            "roomName": "Living room",
+                            "roomId": "3e0d4049-7d66-461b-a951-c7e474592bf9"
+                        }
+                    },
+                    {
+                        "deviceId": "85abeaf3-bc1a-4d12-98a1-a46d2bfc50bf",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e7b18e60-f488-4970-8328-09258708ffea",
+                            "roomName": "Kitchen",
+                            "roomId": "9073ecf4-7160-4949-adad-3bbe1c74747a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the washing machine water temperature to warm?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperatureMode_setValue",
+                            "arguments": {
+                                "device": "1497a80f-1555-47d6-9233-7bc068f68e2c",
+                                "mode": "warm"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Okay, I have set the washer temperature to warm"
+        }
+    ],
+    "tools": []
+}

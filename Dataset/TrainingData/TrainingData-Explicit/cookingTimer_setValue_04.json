@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "67a93fad-687c-4463-b02a-500b0b1a0084",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "636a82d9-28b8-4b56-90c2-98277281e26d",
+                            "roomName": "kitchen",
+                            "roomId": "60239dc9-d37a-45c4-9933-27dfdd814480"
+                        }
+                    },
+                    {
+                        "deviceId": "5819cd27-9143-44a8-a1ae-280b6c5823ce",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "636a82d9-28b8-4b56-90c2-98277281e26d",
+                            "roomName": "kitchen",
+                            "roomId": "60239dc9-d37a-45c4-9933-27dfdd814480"
+                        }
+                    },
+                    {
+                        "deviceId": "36a76c9e-5d48-4636-ba15-44019e88b880",
+                        "deviceName": "range",
+                        "deviceType": "range",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "636a82d9-28b8-4b56-90c2-98277281e26d",
+                            "roomName": "kitchen",
+                            "roomId": "60239dc9-d37a-45c4-9933-27dfdd814480"
+                        }
+                    },
+                    {
+                        "deviceId": "8032ea74-4103-4519-849d-3b53bb024e28",
+                        "deviceName": "rice cooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "636a82d9-28b8-4b56-90c2-98277281e26d",
+                            "roomName": "kitchen",
+                            "roomId": "60239dc9-d37a-45c4-9933-27dfdd814480"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the cooking timer for 5 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTimer_setValue",
+                            "arguments": {
+                                "cookingTimer": "5 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the cooking timer for 5 minutes."
+        }
+    ],
+    "tools": []
+}

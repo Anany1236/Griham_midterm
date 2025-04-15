@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d31eddc0-e29f-430d-a3a0-3175f04a9e3d",
+                        "deviceName": "smart trash can",
+                        "deviceType": "smart trash can",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "f4327725-95aa-41fe-8fb6-faf50dde72c4",
+                            "roomName": "kitchen",
+                            "roomId": "f4327725-95aa-41fe-8fb6-faf50dde72c4"
+                        }
+                    },
+                    {
+                        "deviceId": "136f28a2-6965-4eec-be9a-265d0c15a55c",
+                        "deviceName": "garbage bin",
+                        "deviceType": "garbage bin",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "9e192429-6a60-47df-86ba-fdf893248758",
+                            "roomName": "utility room",
+                            "roomId": "9e192429-6a60-47df-86ba-fdf893248758"
+                        }
+                    },
+                    {
+                        "deviceId": "10d7d2b4-2af2-45da-b153-b84c33e956ef",
+                        "deviceName": "garbage bin",
+                        "deviceType": "garbage bin",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "garage",
+                            "locationId": "4f17f8cc-6635-45ce-aafd-dc4fe8837ae6",
+                            "roomName": "garage",
+                            "roomId": "4f17f8cc-6635-45ce-aafd-dc4fe8837ae6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Empty the trash can."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "trashCan_empty",
+                            "arguments": {
+                                "device": "d31eddc0-e29f-430d-a3a0-3175f04a9e3d",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The trash can has been emptied."
+        }
+    ],
+    "tools": []
+}

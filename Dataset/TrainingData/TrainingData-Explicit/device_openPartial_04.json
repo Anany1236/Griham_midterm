@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "786b98e1-a761-4648-9a15-c80f9136ace8",
+                        "deviceName": "door",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ed2e06d-10da-426d-824a-610e3136c37e",
+                            "roomName": "bedroom",
+                            "roomId": "189778ac-6924-4bd7-9308-c7319b011f00"
+                        }
+                    },
+                    {
+                        "deviceId": "3c90c9bd-32db-44af-98d3-e7bd6354746a",
+                        "deviceName": "water valve",
+                        "deviceType": "watervalve",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ed2e06d-10da-426d-824a-610e3136c37e",
+                            "roomName": "laundry room",
+                            "roomId": "ec75116c-20df-43da-9aca-dbe328e97bfc"
+                        }
+                    },
+                    {
+                        "deviceId": "1871db03-9362-42cb-a851-ff4500bee69c",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ed2e06d-10da-426d-824a-610e3136c37e",
+                            "roomName": "kitchen",
+                            "roomId": "bbd3eb43-b955-4c49-965f-18b15b5b7fa1"
+                        }
+                    },
+                    {
+                        "deviceId": "d851baca-28ec-4776-b02b-47afe8556456",
+                        "deviceName": "blinds",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ed2e06d-10da-426d-824a-610e3136c37e",
+                            "roomName": "bedroom",
+                            "roomId": "bbd3eb43-b955-4c49-965f-18b15b5b7fa1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Partially open the water valve"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_openPartial",
+                            "arguments": {
+                                "device": "3c90c9bd-32db-44af-98d3-e7bd6354746a"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have opened the water valve partially."
+        }
+    ],
+    "tools": []
+}

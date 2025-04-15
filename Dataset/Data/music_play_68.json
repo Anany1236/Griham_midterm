@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8ddcecc5-8059-45d9-ba13-d282e9ca0185",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "1cf375a8-1540-4404-8005-533730a50786",
+                            "roomName": "living room",
+                            "roomId": "1cf375a8-1540-4404-8005-533730a50786"
+                        }
+                    },
+                    {
+                        "deviceId": "6bf52264-539f-4804-88eb-ff2e6b7b028f",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "9cef6422-36d6-4803-aac3-551c54612556",
+                            "roomName": "bedroom",
+                            "roomId": "9cef6422-36d6-4803-aac3-551c54612556"
+                        }
+                    },
+                    {
+                        "deviceId": "f20bcf70-390d-4175-b22e-d9a323b397da",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "027f7d65-1cde-4481-932a-459c0fe77711",
+                            "roomName": "office room",
+                            "roomId": "027f7d65-1cde-4481-932a-459c0fe77711"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please play music on the music system in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "music_play",
+                            "arguments": {
+                                "device": "f20bcf70-390d-4175-b22e-d9a323b397da",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Music is now playing on the music system in the office room."
+        }
+    ],
+    "tools": []
+}

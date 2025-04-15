@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "11054243-ef40-43f1-a3f8-33ae0c28ae0c",
+                        "deviceName": "Robot Cleaner",
+                        "deviceType": "Robot Cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5f926843-6326-4b96-9c2d-97ef9df50518",
+                            "roomName": "bedroom",
+                            "roomId": "5f926843-6326-4b96-9c2d-97ef9df50518"
+                        }
+                    },
+                    {
+                        "deviceId": "ce18653e-e79d-4899-8c30-e39fd1fc6474",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ba68b62-50d1-4b89-a554-41375c6fd851",
+                            "roomName": "living Room",
+                            "roomId": "0ba68b62-50d1-4b89-a554-41375c6fd851"
+                        }
+                    },
+                    {
+                        "deviceId": "c4d742aa-ee67-4c9b-93bd-0e1e3916c3e7",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3955a279-a677-4835-a891-405905e81e1f",
+                            "roomName": "guest Room",
+                            "roomId": "3955a279-a677-4835-a891-405905e81e1f"
+                        }
+                    },
+                    {
+                        "deviceId": "d9e27a63-157f-4150-81d0-5d0ebeece527",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1158f013-a276-4b8c-8504-d666cfa7abb5",
+                            "roomName": "kitchen",
+                            "roomId": "1158f013-a276-4b8c-8504-d666cfa7abb5"
+                        }
+                    },
+                    {
+                        "deviceId": "932d30b2-2af5-4ba4-9756-dd75aa614e3a",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7aefa979-4a15-4d82-8ca6-31e3de1094e3",
+                            "roomName": "utility Room",
+                            "roomId": "7aefa979-4a15-4d82-8ca6-31e3de1094e3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the battery percentage of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "battery_getValue",
+                            "arguments": {
+                                "device": "d9e27a63-157f-4150-81d0-5d0ebeece527",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The battery value of the washer in the kitchen is shown"
+        }
+    ],
+    "tools": []
+}

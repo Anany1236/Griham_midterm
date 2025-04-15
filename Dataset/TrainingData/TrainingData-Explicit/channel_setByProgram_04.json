@@ -1,0 +1,96 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "c644c564-ed6c-4e8e-bf12-05b8a52e6fe4",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "off",
+						"location": {
+							"locationName": "house",
+							"locationId": "45c29dd7-39b4-4aac-9b65-cb5dd736c239",
+							"roomName": "kids room",
+							"roomId": "e7551eec-ab2b-4a82-9adc-028276eb3613"
+						}
+					},
+					{
+						"deviceId": "61642d4a-e788-4ed2-9d66-13c75247d4b3",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "45c29dd7-39b4-4aac-9b65-cb5dd736c239",
+							"roomName": "Living room",
+							"roomId": "82213f7f-c65f-454d-842a-5d146a687dbf"
+						}
+					},
+					{
+						"deviceId": "fcef3277-7649-46c8-9dea-19e1e5c8495d",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "45c29dd7-39b4-4aac-9b65-cb5dd736c239",
+							"roomName": "Living room",
+							"roomId": "82213f7f-c65f-454d-842a-5d146a687dbf"
+						}
+					},
+					{
+						"deviceId": "b9e9e8cc-7aee-4748-8700-18aaa979b006",
+						"deviceName": "smart tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "45c29dd7-39b4-4aac-9b65-cb5dd736c239",
+							"roomName": "master bedroom",
+							"roomId": "41e2cb7b-0f44-4e90-ba9f-c4a44c3967a8"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Change the program on BBC to Planet Earth in the master bedroom smart tv"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "channel_setByProgram",
+							"arguments": {
+								"device": "b9e9e8cc-7aee-4748-8700-18aaa979b006",
+								"room": "master bedroom",
+								"programName": "Planet Earth"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have changed the program on BBC to Planet Earth in the master bedroom smart tv."
+		}
+	],
+	"tools": []
+}

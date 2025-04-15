@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "67e852a6-c866-432b-9a35-110c103ae05f",
+                        "deviceName": "ventilation system",
+                        "deviceType": "ventilation system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "c841f08a-4bb6-4574-963f-2a2e66987740",
+                            "roomName": "living room",
+                            "roomId": "c841f08a-4bb6-4574-963f-2a2e66987740"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "The vent mode in the bathroom has been set to exhaust."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ventStrength_getValue",
+                            "arguments": {
+                                "device": "67e852a6-c866-432b-9a35-110c103ae05f",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current vent strength in the living room has been retrieved."
+        }
+    ],
+    "tools": []
+}

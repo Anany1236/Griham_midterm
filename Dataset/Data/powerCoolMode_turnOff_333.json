@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "61fe8ccc-e383-4e72-a371-ec4353868fda",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "27122b60-83e7-4bc3-bbdb-d0f0c0a54b88",
+                            "roomName": "kitchen",
+                            "roomId": "27122b60-83e7-4bc3-bbdb-d0f0c0a54b88"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn off the cooling mode for the refrigerator?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerCoolMode_turnOff",
+                            "arguments": {
+                                "device": "61fe8ccc-e383-4e72-a371-ec4353868fda",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive turned off the power cool mode on the refrigerator."
+        }
+    ],
+    "tools": []
+}

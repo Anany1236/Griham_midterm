@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bbcccaee-5163-4daa-a224-a0089083c1b4",
+                        "deviceName": "cabinetLighting",
+                        "deviceType": "cabinetLighting",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "12c0a462-30a9-45c8-8753-8b6549b36948",
+                            "roomName": "kitchen",
+                            "roomId": "12c0a462-30a9-45c8-8753-8b6549b36948"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the cabinet lighting in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cabinetLighting_turnOff",
+                            "arguments": {
+                                "device": "bbcccaee-5163-4daa-a224-a0089083c1b4",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cabinet lighting in the kitchen is now off."
+        }
+    ],
+    "tools": []
+}

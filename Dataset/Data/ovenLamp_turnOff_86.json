@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a525f65a-624e-4fdb-8b88-538f4a54332c",
+                        "deviceName": "Oven,Oven,Oven",
+                        "deviceType": "Oven,Oven,Oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen,Living room,Dining room",
+                            "locationId": "03c3731c-ef6a-4d20-afe8-011b243495b9",
+                            "roomName": "kitchen,Living room,Dining room",
+                            "roomId": "03c3731c-ef6a-4d20-afe8-011b243495b9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Disable the oven lamp in the dining room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ovenLamp_turnOff",
+                            "arguments": {
+                                "device": "a525f65a-624e-4fdb-8b88-538f4a54332c",
+                                "room": "kitchen,Living room,Dining room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The oven lamp in the dining room has been switched off."
+        }
+    ],
+    "tools": []
+}

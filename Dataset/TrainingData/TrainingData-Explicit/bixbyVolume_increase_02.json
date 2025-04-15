@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bde927d2-dd45-4a67-a7af-aec217f1245f",
+                        "deviceName": "tv1",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f9fe2a02-231e-4a58-8f88-8bf730847109",
+                            "roomName": "living room",
+                            "roomId": "f77cb839-aa2f-4119-abf2-b8f3ca2eff7a"
+                        }
+                    },
+                    {
+                        "deviceId": "66712b39-0b50-4514-8d0c-c64a0e2e190a",
+                        "deviceName": "speaker1",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f9fe2a02-231e-4a58-8f88-8bf730847109",
+                            "roomName": "bedroom",
+                            "roomId": "33db331e-1c0c-4b83-aaf2-ae3859d749e5"
+                        }
+                    },
+                    {
+                        "deviceId": "0b275994-b87d-42e1-88bd-2877e282ea68",
+                        "deviceName": "refrigerator1",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f9fe2a02-231e-4a58-8f88-8bf730847109",
+                            "roomName": "kitchen",
+                            "roomId": "259cbb53-c1cd-4e7a-8141-8d112a0c50a5"
+                        }
+                    },
+                    {
+                        "deviceId": "3f04893e-c5a8-43d5-8210-57afb88fa667",
+                        "deviceName": "monitor1",
+                        "deviceType": "monitor",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f9fe2a02-231e-4a58-8f88-8bf730847109",
+                            "roomName": "bedroom",
+                            "roomId": "33db331e-1c0c-4b83-aaf2-ae3859d749e5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the bixby volume of the living room tv"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bixbyVolume_increase",
+                            "arguments": {
+                                "device": "bde927d2-dd45-4a67-a7af-aec217f1245f",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The volume of the tv is 7"
+        }
+    ],
+    "tools": []
+}

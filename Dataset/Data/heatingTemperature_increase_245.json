@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1d145ad3-dda8-43bb-80d0-eab755d8f147",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "3bb4c59c-a7e8-4443-8350-834895254ac0",
+                            "roomName": "bedroom",
+                            "roomId": "3bb4c59c-a7e8-4443-8350-834895254ac0"
+                        }
+                    },
+                    {
+                        "deviceId": "7fb7c4fd-69c3-465f-be3f-48d6338a27b0",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "55bbb2d0-1085-4729-8446-7a8f407c3c91",
+                            "roomName": "living room",
+                            "roomId": "55bbb2d0-1085-4729-8446-7a8f407c3c91"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you raise the heating temperature in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_increase",
+                            "arguments": {
+                                "device": "1d145ad3-dda8-43bb-80d0-eab755d8f147",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have raised the heating temperature in the bedroom."
+        }
+    ],
+    "tools": []
+}

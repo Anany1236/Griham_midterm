@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b920f5af-faba-4212-aa47-86e8358fee25",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee3b411c-2dbc-4952-9be6-76fb395c423f",
+                            "roomName": "bedroom",
+                            "roomId": "ee3b411c-2dbc-4952-9be6-76fb395c423f"
+                        }
+                    },
+                    {
+                        "deviceId": "c23d7413-9beb-4495-ac03-b860b2c145a1",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "01ae660f-3c04-4e8e-bd45-61b6ac89299a",
+                            "roomName": "living Room",
+                            "roomId": "01ae660f-3c04-4e8e-bd45-61b6ac89299a"
+                        }
+                    },
+                    {
+                        "deviceId": "2545dbfe-c607-44a3-847d-8f1780c9515b",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f1275f52-a270-4ad1-ad76-4f1615e935e3",
+                            "roomName": "guest Room",
+                            "roomId": "f1275f52-a270-4ad1-ad76-4f1615e935e3"
+                        }
+                    },
+                    {
+                        "deviceId": "7bb2d9c4-fee1-4434-bd10-87ffec10658e",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "567735d5-886d-4e07-b325-c5fab993e7a4",
+                            "roomName": "kitchen",
+                            "roomId": "567735d5-886d-4e07-b325-c5fab993e7a4"
+                        }
+                    },
+                    {
+                        "deviceId": "138f9abc-d574-48a8-a358-92de0215f933",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c3ccff22-2272-4076-bd82-ca576cb807b1",
+                            "roomName": "utility Room",
+                            "roomId": "c3ccff22-2272-4076-bd82-ca576cb807b1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the BMI value of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bmi_getValue",
+                            "arguments": {
+                                "device": "138f9abc-d574-48a8-a358-92de0215f933",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The BMI value for the hood in the utility room is available"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4a08c391-bd77-45d5-b747-91a5db33dee5",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "082a809e-4c8f-4713-9f12-09a847c9ce45",
+                            "roomName": "living room",
+                            "roomId": "90fe46a4-1f28-412f-ac25-2fb7707c0a17"
+                        }
+                    },
+                    {
+                        "deviceId": "d98d605c-d3b1-44e6-bd92-80b703c2a4aa",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "082a809e-4c8f-4713-9f12-09a847c9ce45",
+                            "roomName": "kids room",
+                            "roomId": "691c1987-5d61-496c-94ac-a6eb609d5d53"
+                        }
+                    },
+                    {
+                        "deviceId": "9da4a897-9381-4dc2-bc90-3ffbf55ec259",
+                        "deviceName": "fan3",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "082a809e-4c8f-4713-9f12-09a847c9ce45",
+                            "roomName": "bedroom",
+                            "roomId": "1c91cccf-b0f4-4205-949d-6455ba2b82eb"
+                        }
+                    },
+                    {
+                        "deviceId": "fa37880e-ef97-4080-b4be-fa16e5431896",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "082a809e-4c8f-4713-9f12-09a847c9ce45",
+                            "roomName": "guest room",
+                            "roomId": "c6f050e4-81bc-4281-8d39-9f03842f6d0c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn down the AC fan speed of the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeed_decrease",
+                            "arguments": {
+                                "device": "9da4a897-9381-4dc2-bc90-3ffbf55ec259",
+                                "room": "bedoom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed of the bedoom ac has been turned down now."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "969da35a-4bdc-4b09-b69f-e628ffcf7de7",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "02118919-86ae-4460-ba93-26da5aaf10ff",
+                            "roomName": "bedroom",
+                            "roomId": "02118919-86ae-4460-ba93-26da5aaf10ff"
+                        }
+                    },
+                    {
+                        "deviceId": "62a33d25-d14d-4dc5-9881-d1b382192ab7",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8f830565-7ecc-4ea2-867f-e5ee86b0e98a",
+                            "roomName": "living Room",
+                            "roomId": "8f830565-7ecc-4ea2-867f-e5ee86b0e98a"
+                        }
+                    },
+                    {
+                        "deviceId": "aa7ddd2f-cb9e-4857-8609-b269e1d706c8",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "beb3fa4a-ac6a-469a-9578-0dbba2620437",
+                            "roomName": "guest Room",
+                            "roomId": "beb3fa4a-ac6a-469a-9578-0dbba2620437"
+                        }
+                    },
+                    {
+                        "deviceId": "c5f98fef-7064-4316-bd90-842f898bc05d",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6a1354e4-ce80-49e3-ab60-a67cd5dec1bc",
+                            "roomName": "kitchen",
+                            "roomId": "6a1354e4-ce80-49e3-ab60-a67cd5dec1bc"
+                        }
+                    },
+                    {
+                        "deviceId": "6dafc645-30a0-44fa-b604-dee42ebf79d5",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4d0dae04-f4d2-4e36-8ba9-e8ea13274077",
+                            "roomName": "utility Room",
+                            "roomId": "4d0dae04-f4d2-4e36-8ba9-e8ea13274077"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show the invitation code for the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "invitationCode_show",
+                            "arguments": {
+                                "device": "6dafc645-30a0-44fa-b604-dee42ebf79d5",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The invitation code for the hood in the utility room is available"
+        }
+    ],
+    "tools": []
+}

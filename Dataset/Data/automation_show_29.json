@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a83efa05-5ec8-4e95-b08f-c19bc58e8633",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ed8e9c6b-f696-4422-a7e0-ad3669cd27a3",
+                            "roomName": "bedroom",
+                            "roomId": "ed8e9c6b-f696-4422-a7e0-ad3669cd27a3"
+                        }
+                    },
+                    {
+                        "deviceId": "729cea00-8849-4a0c-90d6-17b63a3c2ef0",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bf792cee-989a-482f-868c-6c3ca0c7895f",
+                            "roomName": "living Room",
+                            "roomId": "bf792cee-989a-482f-868c-6c3ca0c7895f"
+                        }
+                    },
+                    {
+                        "deviceId": "c59e09be-3a6b-4259-9e8d-e441ea772619",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "879d1e1c-ef4a-40a2-9fe2-021b8a3e3e14",
+                            "roomName": "guest Room",
+                            "roomId": "879d1e1c-ef4a-40a2-9fe2-021b8a3e3e14"
+                        }
+                    },
+                    {
+                        "deviceId": "1aa9b294-6406-4c3a-9605-6064cb0d2cfa",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6d3b167-a893-4a48-87e6-275fcf0d9e78",
+                            "roomName": "kitchen",
+                            "roomId": "a6d3b167-a893-4a48-87e6-275fcf0d9e78"
+                        }
+                    },
+                    {
+                        "deviceId": "c5391a0b-ba89-4cb7-9e14-3405e48445e2",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "022f8e7e-796f-4587-9378-5b4faffface3",
+                            "roomName": "utility Room",
+                            "roomId": "022f8e7e-796f-4587-9378-5b4faffface3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Show the automation details of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "automation_show",
+                            "arguments": {
+                                "device": "1aa9b294-6406-4c3a-9605-6064cb0d2cfa",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Automation details for the washer in the kitchen are available"
+        }
+    ],
+    "tools": []
+}

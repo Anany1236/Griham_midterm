@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "db171e75-28e6-458c-acea-a638291bf162",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "e5dce516-e968-439e-af4b-3967440661bd",
+                            "roomName": "living room",
+                            "roomId": "e5dce516-e968-439e-af4b-3967440661bd"
+                        }
+                    },
+                    {
+                        "deviceId": "f72ae862-8e4f-4c8b-8186-42b6065fd974",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater room",
+                            "locationId": "b60258ca-5537-43ca-b86f-51a07bbe1a94",
+                            "roomName": "home theater room",
+                            "roomId": "b60258ca-5537-43ca-b86f-51a07bbe1a94"
+                        }
+                    },
+                    {
+                        "deviceId": "edc03fb5-8c4a-4c66-b727-1dd7b5012edd",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office",
+                            "locationId": "f61beab7-7910-4fe9-b35d-318e8a2b5578",
+                            "roomName": "office",
+                            "roomId": "f61beab7-7910-4fe9-b35d-318e8a2b5578"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on grayscale mode on the television."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "grayscale_turnOn",
+                            "arguments": {
+                                "device": "db171e75-28e6-458c-acea-a638291bf162",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Grayscale mode on the television is now on."
+        }
+    ],
+    "tools": []
+}

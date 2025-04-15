@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bc2022f5-6f74-46c2-971f-bf481a435638",
+                        "deviceName": "steamcloset1",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fc32c7ae-ea6e-48d7-bc50-7f4096e9c80b",
+                            "roomName": "utility room",
+                            "roomId": "2605b465-1329-4c8d-86ab-225b7f20fc72"
+                        }
+                    },
+                    {
+                        "deviceId": "c5a71b0a-ad9e-4e76-89b7-b9063014ee2e",
+                        "deviceName": "steamcloset2",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fc32c7ae-ea6e-48d7-bc50-7f4096e9c80b",
+                            "roomName": "living room",
+                            "roomId": "f4f22fe3-c58f-43a5-bb8f-37fa92935d17"
+                        }
+                    },
+                    {
+                        "deviceId": "5da859f4-6d09-46a0-9940-b736e629c030",
+                        "deviceName": "airdresser",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fc32c7ae-ea6e-48d7-bc50-7f4096e9c80b",
+                            "roomName": "bedroom",
+                            "roomId": "1ef8d258-07f1-4aaa-8b94-a1ba6ea1d542"
+                        }
+                    },
+                    {
+                        "deviceId": "b2f0c7d3-cb1b-4108-9e2f-625b20a41be3",
+                        "deviceName": "dresser",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fc32c7ae-ea6e-48d7-bc50-7f4096e9c80b",
+                            "roomName": "guest room",
+                            "roomId": "f4315478-6f5f-4ce9-88d8-9adf3d875801"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn on the dressing in the quick mode in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_startCourse",
+                            "arguments": {
+                                "device": "5da859f4-6d09-46a0-9940-b736e629c030",
+                                "room": "bedroom",
+                                "mode": "quick"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The steamcloset has been started in the quick mode in the bedoom"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "07fc3f9e-a36e-4b39-bd1c-40a7a00fc4a4",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "7ac1ae7e-5d16-4c36-a854-8f8afa80d5de",
+                            "roomName": "guest room",
+                            "roomId": "7ac1ae7e-5d16-4c36-a854-8f8afa80d5de"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on WindFree mode on the air conditioner in the guest room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windFreeMode_turnOn",
+                            "arguments": {
+                                "device": "07fc3f9e-a36e-4b39-bd1c-40a7a00fc4a4",
+                                "room": "guest room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive turned on WindFree mode on the AC in the guest room."
+        }
+    ],
+    "tools": []
+}

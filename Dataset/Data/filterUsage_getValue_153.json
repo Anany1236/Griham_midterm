@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1b929ac1-14eb-41a6-8336-754fe077e35a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "73ab68cd-ab1f-40aa-bd45-687814305127",
+                            "roomName": "bedroom",
+                            "roomId": "73ab68cd-ab1f-40aa-bd45-687814305127"
+                        }
+                    },
+                    {
+                        "deviceId": "deec2578-5180-4cae-bfd3-c186e45e41ad",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1d0ec4e9-6072-4ae7-b081-45d8abb270ae",
+                            "roomName": "living Room",
+                            "roomId": "1d0ec4e9-6072-4ae7-b081-45d8abb270ae"
+                        }
+                    },
+                    {
+                        "deviceId": "89d3d8eb-fa87-418b-a8e8-5aa2c5f9cbf6",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "61847251-cf25-4769-80e4-97d7372d930d",
+                            "roomName": "guest Room",
+                            "roomId": "61847251-cf25-4769-80e4-97d7372d930d"
+                        }
+                    },
+                    {
+                        "deviceId": "bb3a8dac-7f7f-4f8d-8653-983a5290eb4d",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "63807d05-aaeb-477e-9c15-53ccf8191c5a",
+                            "roomName": "kitchen",
+                            "roomId": "63807d05-aaeb-477e-9c15-53ccf8191c5a"
+                        }
+                    },
+                    {
+                        "deviceId": "863f4155-cbbd-4933-ae76-3d4be1871381",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b3a40b54-ffdc-47ab-ae9a-07762c2d7125",
+                            "roomName": "utility Room",
+                            "roomId": "b3a40b54-ffdc-47ab-ae9a-07762c2d7125"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the filter usage value of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "filterUsage_getValue",
+                            "arguments": {
+                                "device": "89d3d8eb-fa87-418b-a8e8-5aa2c5f9cbf6",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The filter usage value of the light in the guest room is shown"
+        }
+    ],
+    "tools": []
+}

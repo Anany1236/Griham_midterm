@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cooking_getProgress",
+            "description": "This function is used to get the progress of the cooking happening on a device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device which needs to be turned on is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device which needs to be turned on is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The device on which action needs to be performed."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The groupAction that needs to be performed on the device."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment of the device, in which action needs to be performed."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

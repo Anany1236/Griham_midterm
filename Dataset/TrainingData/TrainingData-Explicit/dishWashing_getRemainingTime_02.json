@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3d3d67b8-4194-428b-80e8-72a5a2a813cf",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fedeb7ae-60cb-470f-aba7-bf41059c1929",
+                            "roomName": "living room",
+                            "roomId": "3d6e3776-3638-4bc7-bd28-21b43d10a75c"
+                        }
+                    },
+                    {
+                        "deviceId": "f7a82131-c122-4560-addc-375ec5445792",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fedeb7ae-60cb-470f-aba7-bf41059c1929",
+                            "roomName": "living room",
+                            "roomId": "3d6e3776-3638-4bc7-bd28-21b43d10a75c"
+                        }
+                    },
+                    {
+                        "deviceId": "708dfce5-ef75-43d4-a883-6e8b93d0cba8",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fedeb7ae-60cb-470f-aba7-bf41059c1929",
+                            "roomName": "kitchen",
+                            "roomId": "57041ede-887f-4753-9777-6757f3068bf8"
+                        }
+                    },
+                    {
+                        "deviceId": "0eef646b-b5c5-44aa-bc0b-35b981e910a7",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fedeb7ae-60cb-470f-aba7-bf41059c1929",
+                            "roomName": "laundry room",
+                            "roomId": "671f69a9-cc39-4abc-b6f0-77e86914160c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the remaining time of kitchen dishwasher"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_getRemainingTime",
+                            "arguments": {
+                                "device": "708dfce5-ef75-43d4-a883-6e8b93d0cba8",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The remaining time of kitchen dishwasher is 45 minutes."
+        }
+    ],
+    "tools": []
+}

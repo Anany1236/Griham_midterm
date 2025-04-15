@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b1a5ea53-a689-4312-8bca-a37a8667cfc4",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1b9afc4c-d8d4-4705-b3d3-6fe26d43d00c",
+                            "roomName": "bedroom",
+                            "roomId": "1b9afc4c-d8d4-4705-b3d3-6fe26d43d00c"
+                        }
+                    },
+                    {
+                        "deviceId": "5873f10c-159f-4a69-885e-0984f5d5c72a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f2a6ac4-3787-4e79-b020-4e77b8913066",
+                            "roomName": "living Room",
+                            "roomId": "9f2a6ac4-3787-4e79-b020-4e77b8913066"
+                        }
+                    },
+                    {
+                        "deviceId": "23ab3f10-e711-42c4-b8aa-48057868be9e",
+                        "deviceName": "Robot Cleaner",
+                        "deviceType": "Robot Cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c6ddb3c6-e0ca-46bf-aff5-645ea067e342",
+                            "roomName": "guest Room",
+                            "roomId": "c6ddb3c6-e0ca-46bf-aff5-645ea067e342"
+                        }
+                    },
+                    {
+                        "deviceId": "49a4bf00-1e75-465d-8657-6efd2a4debd0",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a9c82514-24a3-4a33-8bc0-647677368e76",
+                            "roomName": "kitchen",
+                            "roomId": "a9c82514-24a3-4a33-8bc0-647677368e76"
+                        }
+                    },
+                    {
+                        "deviceId": "17956b42-a258-4848-8d1f-9aba8f5ceddc",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2b8c923d-a59e-4388-b638-a3736ff1f61d",
+                            "roomName": "utility Room",
+                            "roomId": "2b8c923d-a59e-4388-b638-a3736ff1f61d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the status of the robot cleaner activity in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "activity_getStatus",
+                            "arguments": {
+                                "device": "23ab3f10-e711-42c4-b8aa-48057868be9e",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The robot cleaner activity status has been retrieved in the guest room"
+        }
+    ],
+    "tools": []
+}

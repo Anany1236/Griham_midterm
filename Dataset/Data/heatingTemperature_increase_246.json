@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f6c75b81-ffe0-44ec-a28b-c2b4fc0f9df2",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "f8f053c4-ea60-4668-b5d3-2f548761b102",
+                            "roomName": "bedroom",
+                            "roomId": "f8f053c4-ea60-4668-b5d3-2f548761b102"
+                        }
+                    },
+                    {
+                        "deviceId": "d4780c7b-7339-4da6-8805-f65586f833f3",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "14f7dc0f-4040-4c61-b272-47de211a9c19",
+                            "roomName": "living room",
+                            "roomId": "14f7dc0f-4040-4c61-b272-47de211a9c19"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please boost the heating setting on the heater."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_increase",
+                            "arguments": {
+                                "device": "f6c75b81-ffe0-44ec-a28b-c2b4fc0f9df2",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The heating setting on the heater is now higher."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cefe80fd-02d8-4abc-b287-d7f92ec011b2",
+                        "deviceName": "water purifier",
+                        "deviceType": "water purifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "b971a12f-c7e8-4d2e-8114-76bc2b8ca44a",
+                            "roomName": "kitchen",
+                            "roomId": "b971a12f-c7e8-4d2e-8114-76bc2b8ca44a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you change the water purifying mode to standard?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterPurifyingMode_setValue",
+                            "arguments": {
+                                "device": "cefe80fd-02d8-4abc-b287-d7f92ec011b2",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive set the water purifying mode to standard."
+        }
+    ],
+    "tools": []
+}

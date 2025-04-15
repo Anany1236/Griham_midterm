@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ff351c56-682b-4e06-9b11-81073765512b",
+                        "deviceName": "weather station",
+                        "deviceType": "weather station",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "outdoor area",
+                            "locationId": "f9aa3411-8a9c-41a6-9179-7fa588807d8e",
+                            "roomName": "outdoor area",
+                            "roomId": "f9aa3411-8a9c-41a6-9179-7fa588807d8e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the wind direction to southeast in the outdoor area."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windDirection_setValue",
+                            "arguments": {
+                                "device": "ff351c56-682b-4e06-9b11-81073765512b",
+                                "room": "outdoor area"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The wind direction in the outdoor area has been set to southeast."
+        }
+    ],
+    "tools": []
+}

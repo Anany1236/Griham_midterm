@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "214bada4-3f63-4d37-8c1b-e73b84f03cd8",
+                        "deviceName": "door",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f8f5e6a8-cba2-4420-a5eb-4792b504fce6",
+                            "roomName": "living room",
+                            "roomId": "25ebc74e-dfa4-4c22-aa95-11c1900433c9"
+                        }
+                    },
+                    {
+                        "deviceId": "4c70e6f2-16d2-43aa-9aa0-1558ec58e180",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f8f5e6a8-cba2-4420-a5eb-4792b504fce6",
+                            "roomName": "living room",
+                            "roomId": "25ebc74e-dfa4-4c22-aa95-11c1900433c9"
+                        }
+                    },
+                    {
+                        "deviceId": "0561b5ba-96ee-4070-a980-21bfeec389e3",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f8f5e6a8-cba2-4420-a5eb-4792b504fce6",
+                            "roomName": "living room",
+                            "roomId": "25ebc74e-dfa4-4c22-aa95-11c1900433c9"
+                        }
+                    },
+                    {
+                        "deviceId": "fac70066-2206-4f9e-a143-315bcc933fd1",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f8f5e6a8-cba2-4420-a5eb-4792b504fce6",
+                            "roomName": "living room",
+                            "roomId": "25ebc74e-dfa4-4c22-aa95-11c1900433c9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you pull down the blind?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_close",
+                            "arguments": {
+                                "device": "fac70066-2206-4f9e-a143-315bcc933fd1"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sure, I have pulled down the blinds"
+        }
+    ],
+    "tools": []
+}

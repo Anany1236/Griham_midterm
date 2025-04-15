@@ -1,0 +1,41 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "water_setDispenseAmount",
+            "description": "This function is used to set the water dispensing amount for a water purifier.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the water dispensing amount."
+                    },
+                    "foodRecipeName": {
+                        "type": "string",
+                        "description": "The name of the food recipe to be prepared using the water purifier."
+                    },
+                    "waterAmount": {
+                        "type": "string",
+                        "description": "The amount of water to be dispensed."
+                    },
+                    "predefinedWaterAmountUnit": {
+                        "type": "string",
+                        "description": "The unit of the predefined water amount."
+                    }
+                },
+                "required": [
+                    "waterAmount"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "device_decrease",
+            "description": "This function is used to decrease a setting on a specified SmartThings device without turning it off.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to decrease."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to perform on the device."
+                    },
+                    "integer": {
+                        "type": "integer",
+                        "description": "The level delta to decrease the device setting."
+                    },
+                    "predefinedUnit": {
+                        "type": "string",
+                        "description": "The predefined unit related to the device setting."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

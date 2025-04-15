@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "79a4e04a-0a3e-4227-9aad-ec35a9c0a4fb",
+                        "deviceName": "tv1",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ada79ef-815a-4c62-b48b-7cec9fbaf812",
+                            "roomName": "living room",
+                            "roomId": "45f38e7b-d796-4631-9c09-6192cfdcd8aa"
+                        }
+                    },
+                    {
+                        "deviceId": "a79fb825-3471-414e-aedd-d32573a7280f",
+                        "deviceName": "speaker1",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ada79ef-815a-4c62-b48b-7cec9fbaf812",
+                            "roomName": "bedroom",
+                            "roomId": "fdaa7428-0e28-453b-802e-93a923fd6649"
+                        }
+                    },
+                    {
+                        "deviceId": "8a7caa91-fa87-49b6-8749-f55a0b5fff45",
+                        "deviceName": "refrigerator1",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ada79ef-815a-4c62-b48b-7cec9fbaf812",
+                            "roomName": "kitchen",
+                            "roomId": "01f22230-254a-4710-9e81-6af95f0d6b92"
+                        }
+                    },
+                    {
+                        "deviceId": "3f0ffa8f-eaf8-4b3a-a32e-5caa713f30dc",
+                        "deviceName": "monitor1",
+                        "deviceType": "monitor",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ada79ef-815a-4c62-b48b-7cec9fbaf812",
+                            "roomName": "bedroom",
+                            "roomId": "fdaa7428-0e28-453b-802e-93a923fd6649"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the bixby volume of the bedroom speaker to min"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bixbyVolume_setMin",
+                            "arguments": {
+                                "device": "a79fb825-3471-414e-aedd-d32573a7280f",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The volume of the speaker is set to 0"
+        }
+    ],
+    "tools": []
+}

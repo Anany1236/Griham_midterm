@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6dc4a46c-3cbb-4be9-8db9-a80dd5e306ba",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "0ae5bfe1-c8a9-444d-8bf1-c771e45830bf",
+                            "roomName": "laundry room",
+                            "roomId": "0ae5bfe1-c8a9-444d-8bf1-c771e45830bf"
+                        }
+                    },
+                    {
+                        "deviceId": "d93da1ef-4572-4bb3-99bd-cd46935e4423",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "6b5a0ebf-714c-4d91-a8e9-1eb5f5ae5bd4",
+                            "roomName": "kitchen",
+                            "roomId": "6b5a0ebf-714c-4d91-a8e9-1eb5f5ae5bd4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What washing courses are available on the washing machine in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washing_getSupportedCourses",
+                            "arguments": {
+                                "device": "6dc4a46c-3cbb-4be9-8db9-a80dd5e306ba",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The available washing courses on the washing machine in the laundry room are displayed."
+        }
+    ],
+    "tools": []
+}

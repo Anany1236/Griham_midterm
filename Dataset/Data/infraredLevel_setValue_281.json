@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "28dcbb32-4be6-4ae7-a551-42d8de83b0e6",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "6a09650b-37cd-41cb-a9fd-ce86cacfd23a",
+                            "roomName": "living room",
+                            "roomId": "6a09650b-37cd-41cb-a9fd-ce86cacfd23a"
+                        }
+                    },
+                    {
+                        "deviceId": "eeb13426-f48c-4977-9533-40fd547d8a45",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "39bcedc5-6642-4584-8e95-6cb609a5cadf",
+                            "roomName": "bedroom",
+                            "roomId": "39bcedc5-6642-4584-8e95-6cb609a5cadf"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the infrared level to 2 in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "infraredLevel_setValue",
+                            "arguments": {
+                                "device": "28dcbb32-4be6-4ae7-a551-42d8de83b0e6",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have adjusted the infrared level to 2 in the living room."
+        }
+    ],
+    "tools": []
+}

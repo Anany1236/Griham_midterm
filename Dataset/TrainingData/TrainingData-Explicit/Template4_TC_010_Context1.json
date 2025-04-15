@@ -1,0 +1,109 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "tv1",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Living Room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "l1",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Living Room",
+                            "roomId": "r1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off my living room light and then play the office on Netflix on Living Room TV"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOff",
+                            "arguments": {
+                                "device": "l1"
+                            }
+                        },
+                        {
+                            "name": "media_play",
+                            "arguments": {
+                                "device": "tv1",
+                                "appname": "Netflix",
+                                "title": "The Office"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The living room TV has started playing the Office on Netflix after turning off the light."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "application_launch",
+                    "description": "This function is used to launch an application on TV device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "appname": {
+                                "type": "string",
+                                "description": "Target application to be used"
+                            },
+                            "title": {
+                                "type": "string",
+                                "description": "Target title to be searched and played"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "appname"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

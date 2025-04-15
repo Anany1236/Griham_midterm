@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "04b66a87-a514-4deb-8fee-aacaabe6a7bf",
+                        "deviceName": "charger",
+                        "deviceType": "charger",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "5111e8ce-3cfb-4746-b96a-20e8e4cb7528",
+                            "roomName": "bedroom",
+                            "roomId": "5111e8ce-3cfb-4746-b96a-20e8e4cb7528"
+                        }
+                    },
+                    {
+                        "deviceId": "0de2d341-7c7d-4fd1-92d6-f64572bb58ab",
+                        "deviceName": "lamp",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "bfb9ae52-5b9b-43b0-8526-c5d2a880f062",
+                            "roomName": "living room",
+                            "roomId": "bfb9ae52-5b9b-43b0-8526-c5d2a880f062"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you activate the lamp on the charger in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chargerLamp_turnOn",
+                            "arguments": {
+                                "device": "0de2d341-7c7d-4fd1-92d6-f64572bb58ab",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have activated the lamp on the charger in the living room."
+        }
+    ],
+    "tools": []
+}

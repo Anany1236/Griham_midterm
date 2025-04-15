@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "908b01e9-f36e-4c5d-ae4a-4896341304be",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5a5ba9cb-4d68-45ac-9fd9-0b686fa04cb2",
+                            "roomName": "bedroom",
+                            "roomId": "5a5ba9cb-4d68-45ac-9fd9-0b686fa04cb2"
+                        }
+                    },
+                    {
+                        "deviceId": "79664571-be77-4f2a-8e2b-755339f9b443",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f3f03c9e-fc28-4945-9de8-d3287c198695",
+                            "roomName": "living Room",
+                            "roomId": "f3f03c9e-fc28-4945-9de8-d3287c198695"
+                        }
+                    },
+                    {
+                        "deviceId": "f012eac7-957e-499d-a44f-e13b04585354",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b4a97d1f-5534-470c-8ce9-2a152c692e6e",
+                            "roomName": "guest Room",
+                            "roomId": "b4a97d1f-5534-470c-8ce9-2a152c692e6e"
+                        }
+                    },
+                    {
+                        "deviceId": "f6014b0d-4757-4fea-9e14-106ae219ee99",
+                        "deviceName": "Microwave",
+                        "deviceType": "Microwave",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5a46ac45-bb23-49ad-abeb-ba9b81d01dc3",
+                            "roomName": "kitchen",
+                            "roomId": "5a46ac45-bb23-49ad-abeb-ba9b81d01dc3"
+                        }
+                    },
+                    {
+                        "deviceId": "8a1ae4f5-f254-41ae-8d4f-a6e7aa2700d3",
+                        "deviceName": "Refrigerator",
+                        "deviceType": "Refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9a0372d4-73b4-4c5e-abf1-af80521df152",
+                            "roomName": "utility Room",
+                            "roomId": "9a0372d4-73b4-4c5e-abf1-af80521df152"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you trigger the beep sound on the washer in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "beepControl_beep",
+                            "arguments": {
+                                "device": "f012eac7-957e-499d-a44f-e13b04585354",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The beep sound has been triggered on the washer in the guest room"
+        }
+    ],
+    "tools": []
+}

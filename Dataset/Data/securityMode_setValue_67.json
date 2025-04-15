@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ba5cc088-75d8-48e5-b472-cc0795e32b36",
+                        "deviceName": "security system",
+                        "deviceType": "security system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "main entrance",
+                            "locationId": "0808a78f-6061-478f-8a9e-7ae62bd31e57",
+                            "roomName": "main entrance",
+                            "roomId": "0808a78f-6061-478f-8a9e-7ae62bd31e57"
+                        }
+                    },
+                    {
+                        "deviceId": "039e7d54-6e1d-4105-b09c-5d092bbc895e",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "a3f564d2-fca9-4eec-851f-74f66e232e5b",
+                            "roomName": "living room",
+                            "roomId": "a3f564d2-fca9-4eec-851f-74f66e232e5b"
+                        }
+                    },
+                    {
+                        "deviceId": "f1b9caa2-4f75-45a6-8223-e780c8ba7af6",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "63b4e18c-0bb3-4642-9fd6-f09d057d48de",
+                            "roomName": "hallway",
+                            "roomId": "63b4e18c-0bb3-4642-9fd6-f09d057d48de"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the security mode to {mode}."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "securityMode_setValue",
+                            "arguments": {
+                                "device": "ba5cc088-75d8-48e5-b472-cc0795e32b36",
+                                "room": "main entrance"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The security mode is now set to {mode}."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0bda5213-28c7-432f-9ae2-7b3fc918ddc1",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "e62916b1-f1b9-4cee-9cd2-bb7a9c5a7990",
+                            "roomName": "kitchen",
+                            "roomId": "e62916b1-f1b9-4cee-9cd2-bb7a9c5a7990"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the lamp of the oven in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ovenLamp_turnOn",
+                            "arguments": {
+                                "device": "0bda5213-28c7-432f-9ae2-7b3fc918ddc1",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lamp of the oven in the kitchen has been turned on."
+        }
+    ],
+    "tools": []
+}

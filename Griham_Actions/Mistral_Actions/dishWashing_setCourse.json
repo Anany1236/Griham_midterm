@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "dishWashing_setCourse",
+            "description": "This function is used to set the dishwasher to a specific course.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to set the course."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode or course to set for the dishwasher."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

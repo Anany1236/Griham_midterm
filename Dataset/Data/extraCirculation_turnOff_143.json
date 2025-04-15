@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6ff0f2c8-77bd-421a-90c2-0493236dfc16",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c5c9121a-c984-443e-9dd9-afc671d2670f",
+                            "roomName": "bedroom",
+                            "roomId": "c5c9121a-c984-443e-9dd9-afc671d2670f"
+                        }
+                    },
+                    {
+                        "deviceId": "dc1f6bde-9150-4dfe-b64f-d36204e721b0",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e5575e03-5606-4bf5-866c-4f5bc0f34414",
+                            "roomName": "living Room",
+                            "roomId": "e5575e03-5606-4bf5-866c-4f5bc0f34414"
+                        }
+                    },
+                    {
+                        "deviceId": "98a32046-2042-42f0-b9eb-93f9bd2d55f8",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6663ec1e-7441-42a6-8976-b921011cac6b",
+                            "roomName": "guest Room",
+                            "roomId": "6663ec1e-7441-42a6-8976-b921011cac6b"
+                        }
+                    },
+                    {
+                        "deviceId": "434fed08-3afb-4a87-a4d2-bf1ec526c536",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19d5904a-e941-4b0f-b946-0b0ab265e1d7",
+                            "roomName": "kitchen",
+                            "roomId": "19d5904a-e941-4b0f-b946-0b0ab265e1d7"
+                        }
+                    },
+                    {
+                        "deviceId": "1ad5c30b-1e56-44cb-970f-16c71999eaf7",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "43da271c-84de-4fea-89e0-c249e89e9346",
+                            "roomName": "utility Room",
+                            "roomId": "43da271c-84de-4fea-89e0-c249e89e9346"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the extra circulation mode for the light in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "extraCirculation_turnOff",
+                            "arguments": {
+                                "device": "98a32046-2042-42f0-b9eb-93f9bd2d55f8",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The extra circulation mode for the light in the guest room is deactivated"
+        }
+    ],
+    "tools": []
+}

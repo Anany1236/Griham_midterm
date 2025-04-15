@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5201d11b-0990-42a7-b773-0ed73ccaab75",
+                        "deviceName": "embedded lighting",
+                        "deviceType": "embedded lighting",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "dd19ad54-2d1d-4683-9520-81b7c9be0e38",
+                            "roomName": "living room",
+                            "roomId": "dd19ad54-2d1d-4683-9520-81b7c9be0e38"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the embedded light in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "boosterWindStrengthMode_setValue",
+                            "arguments": {
+                                "device": "5201d11b-0990-42a7-b773-0ed73ccaab75",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The embedded light in the living room has been turned on."
+        }
+    ],
+    "tools": []
+}

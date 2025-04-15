@@ -1,0 +1,44 @@
+{
+    "name": "securityMode_setValue",
+    "description": "This function is used to change the security mode of a SmartThings device.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to change the security mode.",
+            "optional": true
+        },
+        {
+            "name": "predefinedSecurityMode",
+            "type": "string",
+            "description": "The predefined security mode to set (e.g., disarmed, armed stay, armed away).",
+            "optional": false
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The security mode to set (derived from predefinedSecurityMode).",
+            "optional": true
+        },
+        {
+            "name": "course",
+            "type": "string",
+            "description": "The security course to set (derived from mode).",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

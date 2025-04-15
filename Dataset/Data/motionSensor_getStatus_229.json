@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "20d39f21-6013-4a6a-b4b4-d5c68661f71c",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "18bbe20e-dced-43a8-93a4-491496653fdf",
+                            "roomName": "bedroom",
+                            "roomId": "18bbe20e-dced-43a8-93a4-491496653fdf"
+                        }
+                    },
+                    {
+                        "deviceId": "4e67cfcc-be76-4908-ab42-d7c91970ee68",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2de46c04-b2bf-431d-9c1c-1cefe9921258",
+                            "roomName": "living Room",
+                            "roomId": "2de46c04-b2bf-431d-9c1c-1cefe9921258"
+                        }
+                    },
+                    {
+                        "deviceId": "d5a0a8db-2baa-4e04-876c-38f9fa8de997",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "750eefce-a75d-4ced-9a52-f18163ae73c0",
+                            "roomName": "guest Room",
+                            "roomId": "750eefce-a75d-4ced-9a52-f18163ae73c0"
+                        }
+                    },
+                    {
+                        "deviceId": "f417c1c8-ec77-4fd9-913e-840d86aa9a02",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4b79dae8-be61-41e7-9140-c04c29dc7a8b",
+                            "roomName": "kitchen",
+                            "roomId": "4b79dae8-be61-41e7-9140-c04c29dc7a8b"
+                        }
+                    },
+                    {
+                        "deviceId": "980b7383-ab41-4680-8cf9-55023d672a72",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f6dafc13-2db7-42d1-807c-e1086a3ee6a0",
+                            "roomName": "utility Room",
+                            "roomId": "f6dafc13-2db7-42d1-807c-e1086a3ee6a0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the sensor.motion status of the washer in the kitchen?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "motionSensor_getStatus",
+                            "arguments": {
+                                "device": "f417c1c8-ec77-4fd9-913e-840d86aa9a02",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The sensor.motion status of the washer in the kitchen is normal"
+        }
+    ],
+    "tools": []
+}

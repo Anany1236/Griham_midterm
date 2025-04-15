@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d20af204-6ef5-4bcc-99e5-6b48197ac61f",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b8490e8e-9595-44a9-90b3-abefe479a47f",
+                            "roomName": "living room",
+                            "roomId": "4cd99cb2-4eab-4928-81fc-711db373fce4"
+                        }
+                    },
+                    {
+                        "deviceId": "b36ab90c-8c30-44d3-a04d-8607f537c750",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b8490e8e-9595-44a9-90b3-abefe479a47f",
+                            "roomName": "bedroom",
+                            "roomId": "afdaca71-279e-49f6-a194-5d08a5b7b4af"
+                        }
+                    },
+                    {
+                        "deviceId": "3f6a2e87-001e-4257-b23f-40289b47b228",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b8490e8e-9595-44a9-90b3-abefe479a47f",
+                            "roomName": "utility room",
+                            "roomId": "5404ac01-2adb-48a8-b672-bfb5ab478196"
+                        }
+                    },
+                    {
+                        "deviceId": "ee1061a9-8b78-4076-af61-4c63ba33214c",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b8490e8e-9595-44a9-90b3-abefe479a47f",
+                            "roomName": "living room",
+                            "roomId": "4cd99cb2-4eab-4928-81fc-711db373fce4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you partially decrease the ac?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_decreasePartial",
+                            "arguments": {
+                                "device": "d20af204-6ef5-4bcc-99e5-6b48197ac61f"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have partially decreased the ac."
+        }
+    ],
+    "tools": []
+}

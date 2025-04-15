@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1ac21eca-8bc3-4541-88d6-691b8694f253",
+                        "deviceName": "dryer0",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "62c22a4a-9915-4faf-b8de-2807b43f1196",
+                            "roomName": "laundry room",
+                            "roomId": "9d9a5c09-28f1-4d41-8b9a-667da9821ce9"
+                        }
+                    },
+                    {
+                        "deviceId": "4ccda5f3-6d43-4f34-8842-a0f68a70e2fa",
+                        "deviceName": "dryer1",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "62c22a4a-9915-4faf-b8de-2807b43f1196",
+                            "roomName": "bathroom",
+                            "roomId": "f9e6f6fd-b37d-4ba5-8ff9-6befc3747bb6"
+                        }
+                    },
+                    {
+                        "deviceId": "0e8314fa-0b68-4e97-b3d3-193d1d7f7c8a",
+                        "deviceName": "dryer2",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "62c22a4a-9915-4faf-b8de-2807b43f1196",
+                            "roomName": "laundry room",
+                            "roomId": "9d9a5c09-28f1-4d41-8b9a-667da9821ce9"
+                        }
+                    },
+                    {
+                        "deviceId": "48868b05-6329-498d-b8f5-870277098105",
+                        "deviceName": "dryer3",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "62c22a4a-9915-4faf-b8de-2807b43f1196",
+                            "roomName": "laundry room",
+                            "roomId": "9d9a5c09-28f1-4d41-8b9a-667da9821ce9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the drying modes for the dryer"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_getSupportedCourses",
+                            "arguments": {
+                                "device": "48868b05-6329-498d-b8f5-870277098105"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "These are the drying modes supported by the dryer: standard, blankets, towels, delicate clothing, wool, and denim mode."
+        }
+    ],
+    "tools": []
+}

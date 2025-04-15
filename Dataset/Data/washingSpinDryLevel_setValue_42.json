@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "74d48c73-417d-418a-9e53-e2280313a4c9",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "8a6677fa-384e-42f2-945f-91cd9551fb50",
+                            "roomName": "laundry room",
+                            "roomId": "8a6677fa-384e-42f2-945f-91cd9551fb50"
+                        }
+                    },
+                    {
+                        "deviceId": "f8e36d7c-c6fc-4ca2-9f70-e0fc0c2be556",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "06ef7d1a-d39c-408a-b8ac-cf10163aa849",
+                            "roomName": "kitchen",
+                            "roomId": "06ef7d1a-d39c-408a-b8ac-cf10163aa849"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the spin dry level on the washer in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingSpinDryLevel_setValue",
+                            "arguments": {
+                                "device": "f8e36d7c-c6fc-4ca2-9f70-e0fc0c2be556",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The spin dry level on the washer in the kitchen is now adjusted."
+        }
+    ],
+    "tools": []
+}

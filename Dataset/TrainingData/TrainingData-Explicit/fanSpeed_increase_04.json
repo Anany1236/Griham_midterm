@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6e22d168-20db-43ec-a13b-a28cbea2be06",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4cf1fc2f-aeee-4a5b-b723-1b0866d4f382",
+                            "roomName": "living room",
+                            "roomId": "238cafa8-9e9f-4780-abc6-8380c07d1845"
+                        }
+                    },
+                    {
+                        "deviceId": "a83fa8ed-7fac-4b6c-b3d6-017ad02b66b5",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4cf1fc2f-aeee-4a5b-b723-1b0866d4f382",
+                            "roomName": "kids room",
+                            "roomId": "a8d56b41-2b78-4a38-878c-c5b5e4096879"
+                        }
+                    },
+                    {
+                        "deviceId": "338871ec-8e6c-4014-9963-5b105aeebb2b",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4cf1fc2f-aeee-4a5b-b723-1b0866d4f382",
+                            "roomName": "bedroom",
+                            "roomId": "4f782db6-77e4-49c4-8bb9-f77d01ee5f5b"
+                        }
+                    },
+                    {
+                        "deviceId": "1bd1c298-9c49-4b19-8dfc-705c8f2f91aa",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4cf1fc2f-aeee-4a5b-b723-1b0866d4f382",
+                            "roomName": "guest room",
+                            "roomId": "71822355-2dca-45a6-9600-b5efb97b9e84"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you increase the fan speed of the bedroom fan by 13?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanSpeed_increase",
+                            "arguments": {
+                                "device": "338871ec-8e6c-4014-9963-5b105aeebb2b",
+                                "room": "bedroom",
+                                "fanSpeed": 13
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed of the bedroom fan is increased by 13"
+        }
+    ],
+    "tools": []
+}

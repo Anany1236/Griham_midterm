@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "channel_setPrevious",
+            "description": "This function is used to change the channel to the previous one on a SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located. e.g. home, office, etc."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located.  e.g. living room, bedroom, bathroom, etc."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device on which the channel needs to be set. e.g. TV, smart monitor, etc."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "A predefined compartment associated with the device."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

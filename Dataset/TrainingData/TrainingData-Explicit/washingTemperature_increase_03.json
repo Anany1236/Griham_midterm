@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "91f435a6-5978-4678-9598-c704a72f96e3",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0d5ff057-d06d-4a89-97c7-33328181073a",
+                            "roomName": "laundry room",
+                            "roomId": "158237ce-2e7c-4417-b451-d18abfb3f2c3"
+                        }
+                    },
+                    {
+                        "deviceId": "08dd860d-ecf7-465c-bd15-a782595e7035",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0d5ff057-d06d-4a89-97c7-33328181073a",
+                            "roomName": "kitchen",
+                            "roomId": "c92e4d31-626b-4f56-82ad-1996f01fcfd1"
+                        }
+                    },
+                    {
+                        "deviceId": "d6b1a134-4ee4-443c-9390-2727acb55529",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0d5ff057-d06d-4a89-97c7-33328181073a",
+                            "roomName": "kitchen",
+                            "roomId": "c92e4d31-626b-4f56-82ad-1996f01fcfd1"
+                        }
+                    },
+                    {
+                        "deviceId": "734f46a4-bec8-4458-b194-d88c6dafd605",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0d5ff057-d06d-4a89-97c7-33328181073a",
+                            "roomName": "bedroom",
+                            "roomId": "5b50a7b2-a739-4df5-a9cf-a5f5fc0d413a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the washing temperature by 7 degree celsius"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_increase",
+                            "arguments": {
+                                "device": "91f435a6-5978-4678-9598-c704a72f96e3",
+                                "washingTemperatureDelta": 7
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have turned up the washing temperature for washer by 7 degrees celsius"
+        }
+    ],
+    "tools": []
+}

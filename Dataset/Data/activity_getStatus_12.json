@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3c1d161f-2eeb-467c-8f94-a0432abdedc8",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6ba6d31-b347-4f8b-821c-a97fa8610b0b",
+                            "roomName": "bedroom",
+                            "roomId": "a6ba6d31-b347-4f8b-821c-a97fa8610b0b"
+                        }
+                    },
+                    {
+                        "deviceId": "2df28384-f14e-4d50-adc8-aff6e8817315",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ca45fba-185d-4ec8-8527-a5687d01ead9",
+                            "roomName": "living Room",
+                            "roomId": "0ca45fba-185d-4ec8-8527-a5687d01ead9"
+                        }
+                    },
+                    {
+                        "deviceId": "989a8a83-cda7-4c5d-a8ff-0d18233a34f0",
+                        "deviceName": "Robot Cleaner",
+                        "deviceType": "Robot Cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "56ffb7a2-c333-48fa-b0da-94e819d7d724",
+                            "roomName": "guest Room",
+                            "roomId": "56ffb7a2-c333-48fa-b0da-94e819d7d724"
+                        }
+                    },
+                    {
+                        "deviceId": "fdfda1f8-2eab-4666-882c-3aa63c26a67e",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "af3a02eb-9e08-43d8-bd14-919ce878b728",
+                            "roomName": "kitchen",
+                            "roomId": "af3a02eb-9e08-43d8-bd14-919ce878b728"
+                        }
+                    },
+                    {
+                        "deviceId": "10e98408-a891-4e41-a815-153cca6b4534",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "68993bb5-d4af-4494-aa3d-e01efb810472",
+                            "roomName": "utility Room",
+                            "roomId": "68993bb5-d4af-4494-aa3d-e01efb810472"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the current status of the air conditioner activity in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "activity_getStatus",
+                            "arguments": {
+                                "device": "2df28384-f14e-4d50-adc8-aff6e8817315",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The air conditioner activity status is now available in the living room"
+        }
+    ],
+    "tools": []
+}

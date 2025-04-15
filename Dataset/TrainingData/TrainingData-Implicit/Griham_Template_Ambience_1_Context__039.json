@@ -1,0 +1,149 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ea167afd-c89f-497a-9424-afc4d3b76132",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ec8d6cb9-4ff3-4810-ab16-90d9c3e1d781",
+                            "roomName": "office room",
+                            "roomId": "a2cfaa25-9746-44ac-aab4-ab6c2a55eba8"
+                        }
+                    },
+                    {
+                        "deviceId": "65eaeb86-2798-41a3-8845-efe063cb8870",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ec8d6cb9-4ff3-4810-ab16-90d9c3e1d781",
+                            "roomName": "office room",
+                            "roomId": "8365d4c7-d0d3-453e-b204-9b760af282fe"
+                        }
+                    },
+                    {
+                        "deviceId": "9793959d-6713-4adb-803b-e93dee1e3f34",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ec8d6cb9-4ff3-4810-ab16-90d9c3e1d781",
+                            "roomName": "living room",
+                            "roomId": "a3f528f4-a732-4316-958b-0c95e60d15d4"
+                        }
+                    },
+                    {
+                        "deviceId": "3ccf7d79-026b-40b6-994c-0971370f2078",
+                        "deviceName": "stickcleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ec8d6cb9-4ff3-4810-ab16-90d9c3e1d781",
+                            "roomName": "office room",
+                            "roomId": "8365d4c7-d0d3-453e-b204-9b760af282fe"
+                        }
+                    },
+                    {
+                        "deviceId": "c9cf7744-d123-44a9-8c54-fb9efd903a2c",
+                        "deviceName": "airdresser",
+                        "deviceType": "airdresser",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ec8d6cb9-4ff3-4810-ab16-90d9c3e1d781",
+                            "roomName": "living room",
+                            "roomId": "a3f528f4-a732-4316-958b-0c95e60d15d4"
+                        }
+                    },
+                    {
+                        "deviceId": "976b9dbf-ffc0-4cf6-b318-e843b558cbec",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ec8d6cb9-4ff3-4810-ab16-90d9c3e1d781",
+                            "roomName": "kitchen",
+                            "roomId": "87f3e202-0f5e-4f3b-8e29-26a6fccfe20f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Prepare the home office for a day of focused work for meeting on every Wednesday at 11 AM"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": " mute_turnOn",
+                            "arguments": {
+                                "device": "ea167afd-c89f-497a-9424-afc4d3b76132"
+                            }
+                        },
+                        {
+                            "name": " device_close",
+                            "arguments": {
+                                "device": "65eaeb86-2798-41a3-8845-efe063cb8870"
+                            }
+                        },
+                        {
+                            "name": " device_turnOff",
+                            "arguments": {
+                                "device": "9793959d-6713-4adb-803b-e93dee1e3f34"
+                            }
+                        },
+                        {
+                            "name": " cleaning_pause",
+                            "arguments": {
+                                "device": "3ccf7d79-026b-40b6-994c-0971370f2078"
+                            }
+                        },
+                        {
+                            "name": " dressing_pause",
+                            "arguments": {
+                                "device": "c9cf7744-d123-44a9-8c54-fb9efd903a2c"
+                            }
+                        },
+                        {
+                            "name": " cooking_pause",
+                            "arguments": {
+                                "device": "976b9dbf-ffc0-4cf6-b318-e843b558cbec"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success",
+                "cron": "0 11 * * 3"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can mute the tv, close the blinds, turn off the dehumidifier, pause the stickcleaner, airdresser and oven. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

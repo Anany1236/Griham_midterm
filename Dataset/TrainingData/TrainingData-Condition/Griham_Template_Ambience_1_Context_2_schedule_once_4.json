@@ -1,0 +1,122 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "tv1",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bathroom",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "b1",
+                        "deviceName": "Boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bathroom",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "rvc1",
+                        "deviceName": "Robo Vaccum Cleaner",
+                        "deviceType": "rvc",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bathroom",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "l1",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "bathroom",
+                            "roomId": "r1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the bathroom ready for a relaxing bath at 9 PM."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_play",
+                            "arguments": {
+                                "device": "tv1",
+                                "appname": "Youtube",
+                                "title": "relaxing music"
+                            }
+                        },
+                        {
+                            "name": "deviceTemperatureSetting_setValue",
+                            "arguments": {
+                                "device": "b1",
+                                "mode": "warm"
+                            }
+                        },
+                        {
+                            "name": "cleaning_pause",
+                            "arguments": {
+                                "device": "rvc1"
+                            }
+                        },
+                        {
+                            "name": "colorMode_setValue",
+                            "arguments": {
+                                "device": "l1",
+                                "mode": "soft"
+                            }
+                        },
+                        {
+                            "name": "condition_scheduleOnce",
+                            "arguments": {
+                                "cron": "0 21 23 9 *"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can play relaxing music on tv, pause the rvc, set the boiler to warm mode and set light to soft mode. Would you like me to proceed with these actions?"
+        }
+    ],
+    "tools": []
+}

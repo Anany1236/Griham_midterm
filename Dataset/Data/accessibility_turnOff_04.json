@@ -1,0 +1,108 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a76f7ee8-5590-41ef-86e5-0f3605942df9",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6aa7f97e-65ad-4198-9f20-847b690220ba",
+                            "roomName": "bedroom",
+                            "roomId": "6aa7f97e-65ad-4198-9f20-847b690220ba"
+                        }
+                    },
+                    {
+                        "deviceId": "aca942c5-c396-461d-a7b1-74ae8cadf1d3",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e5662c53-8baf-4412-b910-ff12edf6d8cb",
+                            "roomName": "living Room",
+                            "roomId": "e5662c53-8baf-4412-b910-ff12edf6d8cb"
+                        }
+                    },
+                    {
+                        "deviceId": "44146a4e-158b-4ff4-b80d-4004a142ab3c",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "23f2fc6e-68e6-4a1a-a409-baa25f546501",
+                            "roomName": "guest Room",
+                            "roomId": "23f2fc6e-68e6-4a1a-a409-baa25f546501"
+                        }
+                    },
+                    {
+                        "deviceId": "026a1e38-cdab-40ed-b983-c1ffd751e818",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5f3b62a3-a35b-4cb8-911f-d2288121a9aa",
+                            "roomName": "kitchen",
+                            "roomId": "5f3b62a3-a35b-4cb8-911f-d2288121a9aa"
+                        }
+                    },
+                    {
+                        "deviceId": "07035ac3-51d9-440c-92b0-5a4df49e6250",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c0756b3b-9d86-4259-958f-3bb970fc5514",
+                            "roomName": "utility Room",
+                            "roomId": "c0756b3b-9d86-4259-958f-3bb970fc5514"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn off the accessibility mode of the TV in the kitchen?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "accessibility_turnOff",
+                            "arguments": {
+                                "device": "026a1e38-cdab-40ed-b983-c1ffd751e818",
+                                "room": "kitchen",
+                                "mode": "accessibility"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The accessibility mode of the TV has been switched off in the kitchen"
+        }
+    ],
+    "tools": []
+}

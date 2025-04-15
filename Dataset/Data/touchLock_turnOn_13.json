@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1ec95afa-3b8d-464b-9fa8-e0cfc8d514bf",
+                        "deviceName": "door lock",
+                        "deviceType": "door lock",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "front door",
+                            "locationId": "99dddf46-2a55-48c1-9175-42ab0a487624",
+                            "roomName": "front door",
+                            "roomId": "99dddf46-2a55-48c1-9175-42ab0a487624"
+                        }
+                    },
+                    {
+                        "deviceId": "aa6596df-5d3d-428e-a4ae-14bfdd2f4946",
+                        "deviceName": "security system,security system",
+                        "deviceType": "security system,security system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom door",
+                            "locationId": "41f11314-ec65-4e5e-9520-9f744ea02b10",
+                            "roomName": "bedroom door",
+                            "roomId": "41f11314-ec65-4e5e-9520-9f744ea02b10"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn on the touch lock?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "touchLock_turnOn",
+                            "arguments": {
+                                "device": "1ec95afa-3b8d-464b-9fa8-e0cfc8d514bf",
+                                "room": "front door"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The touch lock has been activated."
+        }
+    ],
+    "tools": []
+}

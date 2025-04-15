@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2b148d67-e5df-4105-b4df-f8f3f767b47e",
+                        "deviceName": "hood",
+                        "deviceType": "hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "675912bc-1b65-489c-805c-4cfbc72e5135",
+                            "roomName": "kitchen",
+                            "roomId": "675912bc-1b65-489c-805c-4cfbc72e5135"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "The hood lamp in the living room has been deactivated."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodLamp_turnOn",
+                            "arguments": {
+                                "device": "2b148d67-e5df-4105-b4df-f8f3f767b47e",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The hood lamp in the living room has been activated."
+        }
+    ],
+    "tools": []
+}

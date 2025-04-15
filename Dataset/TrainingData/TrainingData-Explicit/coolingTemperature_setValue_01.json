@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "57b2ea74-0340-4491-835c-bdca2687c7df",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a745368f-764e-4ae8-8d86-13049c6df194",
+                            "roomName": "utility room",
+                            "roomId": "780b9fd1-d3dd-4000-b26b-e3eb8d6157df"
+                        }
+                    },
+                    {
+                        "deviceId": "7d867bb0-775f-4f36-8c08-2ab9d107bca3",
+                        "deviceName": "roof air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a745368f-764e-4ae8-8d86-13049c6df194",
+                            "roomName": "living room",
+                            "roomId": "74acc582-2e21-49ff-bf68-17e1b8886c76"
+                        }
+                    },
+                    {
+                        "deviceId": "594d4f23-576f-4807-a280-053338da94cb",
+                        "deviceName": "floor air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a745368f-764e-4ae8-8d86-13049c6df194",
+                            "roomName": "bedroom",
+                            "roomId": "ac624622-97b3-47b1-b4a4-09644de3feb4"
+                        }
+                    },
+                    {
+                        "deviceId": "c76a89f8-f2e8-4136-9ac8-9dd915d07d1b",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a745368f-764e-4ae8-8d86-13049c6df194",
+                            "roomName": "guest room",
+                            "roomId": "d3c53295-d4d6-4c47-ad13-5b9c0797add3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the cooling temperature to 20 degrees in the utility room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "coolingTemperature_setValue",
+                            "arguments": {
+                                "device": "57b2ea74-0340-4491-835c-bdca2687c7df",
+                                "room": "utility room",
+                                "coolingTemperature": "20"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooling temperature of the air conditioner is set to 20 degrees in the utility room."
+        }
+    ],
+    "tools": []
+}

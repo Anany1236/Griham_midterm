@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e5e35e99-6bf2-4a6a-a65c-e4834f93d5c2",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "28f50f61-1f4f-4917-9d7a-3287250b9a29",
+                            "roomName": "bedroom",
+                            "roomId": "28f50f61-1f4f-4917-9d7a-3287250b9a29"
+                        }
+                    },
+                    {
+                        "deviceId": "5e2df2b6-675c-4bc0-a396-baf42953c717",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a651fe53-7289-4ff0-859c-76d2d85f06a2",
+                            "roomName": "living Room",
+                            "roomId": "a651fe53-7289-4ff0-859c-76d2d85f06a2"
+                        }
+                    },
+                    {
+                        "deviceId": "e939b0e5-83c3-4190-94e5-d8569c061793",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f51a9d2d-bca5-46f0-ac30-eed75a14d954",
+                            "roomName": "guest Room",
+                            "roomId": "f51a9d2d-bca5-46f0-ac30-eed75a14d954"
+                        }
+                    },
+                    {
+                        "deviceId": "938f91f8-2c25-4958-829a-9a18542ce701",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c8ad8672-0ed3-4223-a003-2e1d97519fd4",
+                            "roomName": "kitchen",
+                            "roomId": "c8ad8672-0ed3-4223-a003-2e1d97519fd4"
+                        }
+                    },
+                    {
+                        "deviceId": "b76ed72e-7c0f-4742-9ada-8e3fafc824bc",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "55f8a1d3-9fd6-41a0-9aee-6f336d74494f",
+                            "roomName": "utility Room",
+                            "roomId": "55f8a1d3-9fd6-41a0-9aee-6f336d74494f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the BMI value of the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bmi_getValue",
+                            "arguments": {
+                                "device": "5e2df2b6-675c-4bc0-a396-baf42953c717",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The BMI value of the air purifier in the living room is 22"
+        }
+    ],
+    "tools": []
+}

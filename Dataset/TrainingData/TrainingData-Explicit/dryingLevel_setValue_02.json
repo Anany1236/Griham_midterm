@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "adf2120e-75dd-472f-906b-a6b923b9ec61",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7d927b96-d1cb-436f-a27a-dd971539ba08",
+                            "roomName": "laundry room",
+                            "roomId": "360f0e94-07a9-4d6a-b9e9-5cc8d37ce349"
+                        }
+                    },
+                    {
+                        "deviceId": "4608486c-7948-4896-8762-c27c2e74500c",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7d927b96-d1cb-436f-a27a-dd971539ba08",
+                            "roomName": "living room",
+                            "roomId": "0e166ded-30d5-4ca6-b5a5-b2adfc8f7450"
+                        }
+                    },
+                    {
+                        "deviceId": "8ed4a322-2f84-4ca2-8955-1a7b895abac2",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7d927b96-d1cb-436f-a27a-dd971539ba08",
+                            "roomName": "utility room",
+                            "roomId": "cd315a67-d26b-492b-ae47-9de5bfd2cbd5"
+                        }
+                    },
+                    {
+                        "deviceId": "6e756cfc-6ae1-407c-bb23-d66453812154",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7d927b96-d1cb-436f-a27a-dd971539ba08",
+                            "roomName": "bedroom",
+                            "roomId": "062d9446-6746-42bc-a985-7bab15ad28ad"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the drying level to 2 in utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryingLevel_setValue",
+                            "arguments": {
+                                "room": "utility room",
+                                "dryingLevel": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the drying level to 2 in utility room."
+        }
+    ],
+    "tools": []
+}

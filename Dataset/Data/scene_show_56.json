@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b84aa5d7-3136-4d52-89c4-130cd65e1d2f",
+                        "deviceName": "smart assistant",
+                        "deviceType": "smart assistant",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "611ce370-a7a3-4362-8c3b-f7547de1fa7a",
+                            "roomName": "living room",
+                            "roomId": "611ce370-a7a3-4362-8c3b-f7547de1fa7a"
+                        }
+                    },
+                    {
+                        "deviceId": "229cd761-6c7d-415b-a4c3-8842f6b89dd6",
+                        "deviceName": "display",
+                        "deviceType": "display",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "7185ddef-6b14-485c-b32e-ea7cf8a8f926",
+                            "roomName": "bedroom",
+                            "roomId": "7185ddef-6b14-485c-b32e-ea7cf8a8f926"
+                        }
+                    },
+                    {
+                        "deviceId": "c9bc5f22-55ae-472e-a741-f207d40533db",
+                        "deviceName": "display",
+                        "deviceType": "display",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "0f445996-4c6b-40d5-8572-545fb83eb01e",
+                            "roomName": "office room",
+                            "roomId": "0f445996-4c6b-40d5-8572-545fb83eb01e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you display the scene?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scene_show",
+                            "arguments": {
+                                "device": "b84aa5d7-3136-4d52-89c4-130cd65e1d2f",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current scene is {scene}."
+        }
+    ],
+    "tools": []
+}

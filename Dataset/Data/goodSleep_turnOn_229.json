@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f99c13a5-f170-49bd-8175-3f1fa74e8480",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "95841717-ae08-422e-b66e-dca96e9e010f",
+                            "roomName": "bedroom",
+                            "roomId": "95841717-ae08-422e-b66e-dca96e9e010f"
+                        }
+                    },
+                    {
+                        "deviceId": "283f7d60-5fd1-4dc5-8345-bf28cdd7ee54",
+                        "deviceName": "humidifier",
+                        "deviceType": "humidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d5339f3f-93bc-4498-9507-1980ccc648c3",
+                            "roomName": "living room",
+                            "roomId": "d5339f3f-93bc-4498-9507-1980ccc648c3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Activate the good sleep mode on the air conditioner."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "goodSleep_turnOn",
+                            "arguments": {
+                                "device": "f99c13a5-f170-49bd-8175-3f1fa74e8480",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The good sleep mode on the air conditioner is now on."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ad2d8594-8ce5-46a2-95e0-07490ad5eca9",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "8fe53cc1-32c2-452a-a2f1-e653ee4c5b30",
+                            "roomName": "laundry room",
+                            "roomId": "8fe53cc1-32c2-452a-a2f1-e653ee4c5b30"
+                        }
+                    },
+                    {
+                        "deviceId": "0be03171-6e72-492e-9b3f-002e771611f0",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "da4a04f4-37f1-4f40-be81-3a2f360794f9",
+                            "roomName": "kitchen",
+                            "roomId": "da4a04f4-37f1-4f40-be81-3a2f360794f9"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the drain on the washing machine in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingDrain_turnOff",
+                            "arguments": {
+                                "device": "ad2d8594-8ce5-46a2-95e0-07490ad5eca9",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The drain on the washing machine in the laundry room has been turned off."
+        }
+    ],
+    "tools": []
+}

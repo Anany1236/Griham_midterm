@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "064c0dc1-968d-4845-a2e3-b3d68332b06e",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "93dfbcbe-7bef-45e6-a6f9-61cdac2d8ef0",
+                            "roomName": "living room",
+                            "roomId": "93dfbcbe-7bef-45e6-a6f9-61cdac2d8ef0"
+                        }
+                    },
+                    {
+                        "deviceId": "b407988f-01e9-430b-b151-a91497d17bd7",
+                        "deviceName": "purifier fan",
+                        "deviceType": "purifier fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "ddac7310-5792-44c2-9671-1bd057b48bf1",
+                            "roomName": "bedroom",
+                            "roomId": "ddac7310-5792-44c2-9671-1bd057b48bf1"
+                        }
+                    },
+                    {
+                        "deviceId": "7cbd6e2e-fee0-4113-8367-7c4b8011b315",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "6931aa82-9407-4e53-9d88-21fcfbf0c662",
+                            "roomName": "office room",
+                            "roomId": "6931aa82-9407-4e53-9d88-21fcfbf0c662"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you start the purification process?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "purifying_turnOn",
+                            "arguments": {
+                                "device": "064c0dc1-968d-4845-a2e3-b3d68332b06e",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Air purification is now active."
+        }
+    ],
+    "tools": []
+}

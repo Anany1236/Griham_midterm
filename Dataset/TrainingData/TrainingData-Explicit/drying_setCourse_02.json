@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f1753208-8116-4829-888e-3828bb4484ac",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6c171ea7-648a-4eb1-ae34-dcec4897a1dd",
+                            "roomName": "bedroom",
+                            "roomId": "ea2c767a-c607-4e6e-a5e0-d9c429726421"
+                        }
+                    },
+                    {
+                        "deviceId": "0d790230-349a-4286-acae-825d3363ef14",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6c171ea7-648a-4eb1-ae34-dcec4897a1dd",
+                            "roomName": "utility room",
+                            "roomId": "ecd9acc7-57f2-48a1-afa4-8d36360f4d06"
+                        }
+                    },
+                    {
+                        "deviceId": "84043d3e-f2c7-4a07-8e91-c9dcfafee628",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6c171ea7-648a-4eb1-ae34-dcec4897a1dd",
+                            "roomName": "kitchen",
+                            "roomId": "7962067c-ae16-4974-955e-158ac280a5d3"
+                        }
+                    },
+                    {
+                        "deviceId": "fb7b17b4-2efd-451a-befb-4a8dca457d64",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6c171ea7-648a-4eb1-ae34-dcec4897a1dd",
+                            "roomName": "kitchen",
+                            "roomId": "7962067c-ae16-4974-955e-158ac280a5d3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the upper dryer to delicate mode"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_setCourse",
+                            "arguments": {
+                                "device": "0d790230-349a-4286-acae-825d3363ef14",
+                                "predefinedCompartment": "upper",
+                                "mode": "delicate"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the upper dryer to delicate mode."
+        }
+    ],
+    "tools": []
+}

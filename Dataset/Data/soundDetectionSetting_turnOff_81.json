@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c997cd67-fa72-4934-87f3-c27e940321d5",
+                        "deviceName": "sound sensor",
+                        "deviceType": "sound sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "486d0be3-36a3-4673-9346-967e693a69f0",
+                            "roomName": "living room",
+                            "roomId": "486d0be3-36a3-4673-9346-967e693a69f0"
+                        }
+                    },
+                    {
+                        "deviceId": "fe6c0c95-7286-4aea-b9dd-9af20680a936",
+                        "deviceName": "microphone",
+                        "deviceType": "microphone",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "8d1f74c9-4c12-497e-b6de-5da6d5a129c0",
+                            "roomName": "office room",
+                            "roomId": "8d1f74c9-4c12-497e-b6de-5da6d5a129c0"
+                        }
+                    },
+                    {
+                        "deviceId": "3b56f7cb-ed92-4ba9-8364-742c69d1117f",
+                        "deviceName": "sound sensor",
+                        "deviceType": "sound sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kids room",
+                            "locationId": "637605f1-6238-4a04-abb6-19934f352c1c",
+                            "roomName": "kids room",
+                            "roomId": "637605f1-6238-4a04-abb6-19934f352c1c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please turn off sound detection."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "soundDetectionSetting_turnOff",
+                            "arguments": {
+                                "device": "c997cd67-fa72-4934-87f3-c27e940321d5",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Sound detection is disabled."
+        }
+    ],
+    "tools": []
+}

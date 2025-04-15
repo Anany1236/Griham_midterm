@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f8f1bb9e-ee9b-4a21-ac09-5f7882f297d4",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "6a71133b-e8c4-477b-89ea-fb5ec6abedce",
+                            "roomName": "living room",
+                            "roomId": "6a71133b-e8c4-477b-89ea-fb5ec6abedce"
+                        }
+                    },
+                    {
+                        "deviceId": "d082ffbe-dc10-452c-bd94-3c57f08a89ef",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "6b05d9e0-8677-4db7-b8e6-588a3488b707",
+                            "roomName": "home theater",
+                            "roomId": "6b05d9e0-8677-4db7-b8e6-588a3488b707"
+                        }
+                    },
+                    {
+                        "deviceId": "f9b109a7-1ade-4aec-b7d2-37cb6404ffec",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "b625c910-83d3-4062-8910-45a7b45c6b5d",
+                            "roomName": "bedroom",
+                            "roomId": "b625c910-83d3-4062-8910-45a7b45c6b5d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you fast forward the movie on the TV?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_fastForward",
+                            "arguments": {
+                                "device": "f8f1bb9e-ee9b-4a21-ac09-5f7882f297d4",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The movie on the TV has been fast-forwarded."
+        }
+    ],
+    "tools": []
+}

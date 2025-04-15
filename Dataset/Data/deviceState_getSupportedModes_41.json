@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7dfb1f47-b852-4ba0-a80f-f2d4aa51bd0b",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "866d4789-ceef-40f5-ba8a-be842d4609ba",
+                            "roomName": "guest room",
+                            "roomId": "866d4789-ceef-40f5-ba8a-be842d4609ba"
+                        }
+                    },
+                    {
+                        "deviceId": "71e80918-b4ef-4036-88ea-1829af97f70f",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "e46f7965-f665-416a-b2b9-d655d9ae03eb",
+                            "roomName": "office room",
+                            "roomId": "e46f7965-f665-416a-b2b9-d655d9ae03eb"
+                        }
+                    },
+                    {
+                        "deviceId": "5f37c464-46e1-4faf-9289-622cd5cae05c",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "5941762d-9646-4b09-a3c6-e28f52fa601c",
+                            "roomName": "kitchen",
+                            "roomId": "5941762d-9646-4b09-a3c6-e28f52fa601c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What are the available modes for the dishwasher in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_getSupportedModes",
+                            "arguments": {
+                                "device": "5f37c464-46e1-4faf-9289-622cd5cae05c",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dishwasher in the kitchen offers normal and quick wash modes."
+        }
+    ],
+    "tools": []
+}

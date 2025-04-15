@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "00a6818b-ce6b-4a60-8e0a-57bd73025912",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "faf9cc77-39ab-490a-b0cf-854bdb287dc3",
+                            "roomName": "bedroom",
+                            "roomId": "faf9cc77-39ab-490a-b0cf-854bdb287dc3"
+                        }
+                    },
+                    {
+                        "deviceId": "66af8497-f5e6-4441-b7df-28f69136f690",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0b075e9b-c027-42ab-bcaa-1ce1a9df4e4d",
+                            "roomName": "living Room",
+                            "roomId": "0b075e9b-c027-42ab-bcaa-1ce1a9df4e4d"
+                        }
+                    },
+                    {
+                        "deviceId": "0b96d388-e9ea-4c4a-a30c-866724cd9eb9",
+                        "deviceName": "Robot Cleaner",
+                        "deviceType": "Robot Cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9dc83274-d168-4023-b8aa-f5a614b21ca8",
+                            "roomName": "guest Room",
+                            "roomId": "9dc83274-d168-4023-b8aa-f5a614b21ca8"
+                        }
+                    },
+                    {
+                        "deviceId": "52f3dd7a-8b90-4b3a-986c-ab063c2e1e5f",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0c24fa60-1887-4fd1-8107-3de574bf3cf3",
+                            "roomName": "kitchen",
+                            "roomId": "0c24fa60-1887-4fd1-8107-3de574bf3cf3"
+                        }
+                    },
+                    {
+                        "deviceId": "eaeb12c0-b8d0-4d45-acd7-5d0ea39ed75c",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "844069ff-c579-4d76-ad91-684952e89c76",
+                            "roomName": "utility Room",
+                            "roomId": "844069ff-c579-4d76-ad91-684952e89c76"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the status of the air purifier activity in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "activity_getStatus",
+                            "arguments": {
+                                "device": "00a6818b-ce6b-4a60-8e0a-57bd73025912",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the air purifier activity is displayed in the bedroom"
+        }
+    ],
+    "tools": []
+}

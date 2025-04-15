@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f8cbd69e-1c4b-4942-9c32-13d69c5e9219",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ebee03b-c69e-4c2f-b35e-4a0914a7c9e7",
+                            "roomName": "bedroom",
+                            "roomId": "0ebee03b-c69e-4c2f-b35e-4a0914a7c9e7"
+                        }
+                    },
+                    {
+                        "deviceId": "7e2e5f5d-df55-42aa-b258-cd0cc531c3b5",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "96fc149f-6276-41ea-b979-71c91e54944e",
+                            "roomName": "living Room",
+                            "roomId": "96fc149f-6276-41ea-b979-71c91e54944e"
+                        }
+                    },
+                    {
+                        "deviceId": "88afbd4f-4965-4e75-8279-54380a72918d",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ba8b478-8cbd-4194-81a4-01772e186b60",
+                            "roomName": "guest Room",
+                            "roomId": "0ba8b478-8cbd-4194-81a4-01772e186b60"
+                        }
+                    },
+                    {
+                        "deviceId": "47b37dcc-0dd0-45c7-9ec2-7486fd7a6ea4",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e5425d16-608e-460b-b3ec-dc0276c1a52b",
+                            "roomName": "kitchen",
+                            "roomId": "e5425d16-608e-460b-b3ec-dc0276c1a52b"
+                        }
+                    },
+                    {
+                        "deviceId": "89bea122-2c91-4dc2-a078-9be37dd4cd2e",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c52c2c6a-6e86-4b03-ae1b-ccd4fa6c2e29",
+                            "roomName": "utility Room",
+                            "roomId": "c52c2c6a-6e86-4b03-ae1b-ccd4fa6c2e29"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the charger value of the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "charger_getValue",
+                            "arguments": {
+                                "device": "7e2e5f5d-df55-42aa-b258-cd0cc531c3b5",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The charger value of the air purifier in the living room is 80%"
+        }
+    ],
+    "tools": []
+}

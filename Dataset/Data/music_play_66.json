@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fa40d7c5-9b63-4a4e-b026-435fa138037c",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "a8b4b3ac-08e0-48f4-bd06-04fe69365dfe",
+                            "roomName": "living room",
+                            "roomId": "a8b4b3ac-08e0-48f4-bd06-04fe69365dfe"
+                        }
+                    },
+                    {
+                        "deviceId": "793ef091-bb59-4c18-b564-6d0ed8cf62e9",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "e9b8c75a-0239-4934-bc1b-af87cf9450a4",
+                            "roomName": "bedroom",
+                            "roomId": "e9b8c75a-0239-4934-bc1b-af87cf9450a4"
+                        }
+                    },
+                    {
+                        "deviceId": "7bab62ff-cf25-4105-aef0-7eee3201c439",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "c18c042a-c8b6-41ae-836f-537ad2f39eae",
+                            "roomName": "office room",
+                            "roomId": "c18c042a-c8b6-41ae-836f-537ad2f39eae"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Play some music on the speaker in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "music_play",
+                            "arguments": {
+                                "device": "fa40d7c5-9b63-4a4e-b026-435fa138037c",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Music is now playing on the speaker in the living room."
+        }
+    ],
+    "tools": []
+}

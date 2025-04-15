@@ -1,0 +1,94 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "bd0f6751-38fd-46eb-8b96-f71a66495f5a",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "6f046e71-15e5-4a69-8f68-ec368d8f0659",
+							"roomName": "Living room",
+							"roomId": "94a0af76-2b47-49d9-83ae-72ad02384a35"
+						}
+					},
+					{
+						"deviceId": "621c4348-9e8a-498f-b507-8e5179ba62ec",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "6f046e71-15e5-4a69-8f68-ec368d8f0659",
+							"roomName": "Bedroom",
+							"roomId": "3befd79f-0f8d-4663-85cc-b6c1a9a8362e"
+						}
+					},
+					{
+						"deviceId": "43a637c4-0108-44fc-b36c-0c1fadb53848",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "6f046e71-15e5-4a69-8f68-ec368d8f0659",
+							"roomName": "Living room",
+							"roomId": "94a0af76-2b47-49d9-83ae-72ad02384a35"
+						}
+					},
+					{
+						"deviceId": "cebf4e18-87b5-4284-a2b9-d3119e9de001",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "6f046e71-15e5-4a69-8f68-ec368d8f0659",
+							"roomName": "Kitchen",
+							"roomId": "ba15416c-84cf-476c-a734-e418db9827df"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Decrease the brightness partially of the tv"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_decreasePartial",
+							"arguments": {
+								"device": "bd0f6751-38fd-46eb-8b96-f71a66495f5a"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have decreased the brightness partially of the tv."
+		}
+	],
+	"tools": []
+}

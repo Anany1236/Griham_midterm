@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "79c3d1bb-dd11-4ebd-9f09-e5fc95f97be4",
+                        "deviceName": "cube refrigerator",
+                        "deviceType": "cube refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "c26a8555-229f-42aa-8d66-6fd0840b98d4",
+                            "roomName": "kitchen",
+                            "roomId": "c26a8555-229f-42aa-8d66-6fd0840b98d4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please activate the light in the cube refrigerator."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cubeRefrigeratorLamp_turnOn",
+                            "arguments": {
+                                "device": "79c3d1bb-dd11-4ebd-9f09-e5fc95f97be4",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The light in the cube refrigerator has been activated."
+        }
+    ],
+    "tools": []
+}

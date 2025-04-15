@@ -1,0 +1,40 @@
+{
+    "name": "washing_startCourse",
+    "description": "This function is used to start the washing process of the washing machine on a specific course.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device which needs to be turned on is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device which needs to be turned on is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The device on which action needs to be performed.",
+            "optional": true
+        },
+        {
+            "name": "compartment",
+            "type": "string",
+            "description": "The predefined compartment of the device, in which action needs to be performed.",
+            "optional": true
+        },
+        {
+            "name": "mode",
+            "type": "string",
+            "description": "The mode in which device needs to be set.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [
+        "powerSwitch_getStatus"
+    ],
+    "output": []
+}

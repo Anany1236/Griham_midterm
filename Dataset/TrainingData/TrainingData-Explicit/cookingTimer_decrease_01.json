@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "67b0a7e3-7317-42e3-a2d3-64afc09e407a",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c4389598-980e-4d00-a854-93f16c31809c",
+                            "roomName": "Kitchen",
+                            "roomId": "c85dd770-73b1-41b4-b673-416b169fab09"
+                        }
+                    },
+                    {
+                        "deviceId": "cf5a33e3-5b3c-4d23-8da1-b1806dc72b5e",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c4389598-980e-4d00-a854-93f16c31809c",
+                            "roomName": "Kitchen",
+                            "roomId": "c85dd770-73b1-41b4-b673-416b169fab09"
+                        }
+                    },
+                    {
+                        "deviceId": "b38886a6-d642-46a0-8c08-fb95b9eb261b",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c4389598-980e-4d00-a854-93f16c31809c",
+                            "roomName": "Kitchen",
+                            "roomId": "c85dd770-73b1-41b4-b673-416b169fab09"
+                        }
+                    },
+                    {
+                        "deviceId": "267e9b87-cfe4-42c5-a0a0-9fac0f99582f",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c4389598-980e-4d00-a854-93f16c31809c",
+                            "roomName": "Kitchen",
+                            "roomId": "c85dd770-73b1-41b4-b673-416b169fab09"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Reduce the cooking time on the oven by 10 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTimer_decrease",
+                            "arguments": {
+                                "device": "67b0a7e3-7317-42e3-a2d3-64afc09e407a",
+                                "cookingTimer": "10 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have reduced the cooking time on the oven by 10 minutes"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c49e6679-7678-494a-8312-e14a6c4cd4b1",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0f15d6cb-0dbd-48ce-8f9e-fa0a5889c9d2",
+                            "roomName": "bedroom",
+                            "roomId": "0f15d6cb-0dbd-48ce-8f9e-fa0a5889c9d2"
+                        }
+                    },
+                    {
+                        "deviceId": "34a8b1d4-7f96-4075-905c-2f9907ddf27b",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "017bb069-c829-4929-a1a8-35b795273868",
+                            "roomName": "living Room",
+                            "roomId": "017bb069-c829-4929-a1a8-35b795273868"
+                        }
+                    },
+                    {
+                        "deviceId": "60fbee37-5c5b-4b3a-9e62-cdba38cf63bf",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "383e0db8-0242-425b-b4fd-9d102dd6b689",
+                            "roomName": "guest Room",
+                            "roomId": "383e0db8-0242-425b-b4fd-9d102dd6b689"
+                        }
+                    },
+                    {
+                        "deviceId": "63901175-2166-4c66-9325-91c5b60a06da",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b8d87b9c-ad49-4968-bb64-09a4d08218e9",
+                            "roomName": "kitchen",
+                            "roomId": "b8d87b9c-ad49-4968-bb64-09a4d08218e9"
+                        }
+                    },
+                    {
+                        "deviceId": "78f97603-b629-4d6e-a373-9368b4b5d4cd",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7d14e6d5-1abc-4cb5-b47e-eb62ec0a8a38",
+                            "roomName": "utility Room",
+                            "roomId": "7d14e6d5-1abc-4cb5-b47e-eb62ec0a8a38"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn on the enlarge mode for the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "enLarge_turnOn",
+                            "arguments": {
+                                "device": "34a8b1d4-7f96-4075-905c-2f9907ddf27b",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The enlarge mode for the air purifier in the living room is now on"
+        }
+    ],
+    "tools": []
+}

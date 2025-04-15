@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b3020ae3-816b-4f6a-b3e5-6c87a6c11245",
+                        "deviceName": "Device Type",
+                        "deviceType": "Device Type",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "Room Name",
+                            "locationId": "69445847-5b24-47c0-b0f1-a984514a468a",
+                            "roomName": "Room Name",
+                            "roomId": "69445847-5b24-47c0-b0f1-a984514a468a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Utterances"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "Function Name",
+                            "arguments": {
+                                "device": "b3020ae3-816b-4f6a-b3e5-6c87a6c11245",
+                                "room": "Room Name"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Expected NLG"
+        }
+    ],
+    "tools": []
+}

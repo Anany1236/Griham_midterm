@@ -1,0 +1,131 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fa9b04e7-995b-4bd6-9875-daf7784fd428",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "908f1cb8-384d-419c-b835-4b05ca2e5c2e",
+                            "roomName": "office room",
+                            "roomId": "9fc8174e-e108-47a0-94bf-f5851a34099d"
+                        }
+                    },
+                    {
+                        "deviceId": "6575741e-c60a-4d67-84b5-dd33e632fa13",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "908f1cb8-384d-419c-b835-4b05ca2e5c2e",
+                            "roomName": "bedroom",
+                            "roomId": "b33983fd-5abe-4d2d-a67e-865a8ee62e78"
+                        }
+                    },
+                    {
+                        "deviceId": "6c3483dd-9996-4354-b991-c8aec8d3cb1a",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "908f1cb8-384d-419c-b835-4b05ca2e5c2e",
+                            "roomName": "bedroom",
+                            "roomId": "b33983fd-5abe-4d2d-a67e-865a8ee62e78"
+                        }
+                    },
+                    {
+                        "deviceId": "02f03982-3efd-422b-a725-f647be257e6c",
+                        "deviceName": "stickcleaner",
+                        "deviceType": "stickcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "908f1cb8-384d-419c-b835-4b05ca2e5c2e",
+                            "roomName": "bedroom",
+                            "roomId": "b33983fd-5abe-4d2d-a67e-865a8ee62e78"
+                        }
+                    },
+                    {
+                        "deviceId": "191cf2ac-7b1c-4c02-a2f0-9806fd5bc0bb",
+                        "deviceName": "airdresser",
+                        "deviceType": "airdresser",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "908f1cb8-384d-419c-b835-4b05ca2e5c2e",
+                            "roomName": "office room",
+                            "roomId": "d56855a3-3dfe-4ca3-b64c-0cbff69887eb"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Prepare the home office for a day of focused work for meeting on every Tuesday at 11 PM"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": " mute_turnOn",
+                            "arguments": {
+                                "device": "fa9b04e7-995b-4bd6-9875-daf7784fd428"
+                            }
+                        },
+                        {
+                            "name": " device_close",
+                            "arguments": {
+                                "device": "6575741e-c60a-4d67-84b5-dd33e632fa13"
+                            }
+                        },
+                        {
+                            "name": " device_turnOff",
+                            "arguments": {
+                                "device": "6c3483dd-9996-4354-b991-c8aec8d3cb1a"
+                            }
+                        },
+                        {
+                            "name": " cleaning_pause",
+                            "arguments": {
+                                "device": "destickcleanervice"
+                            }
+                        },
+                        {
+                            "name": " dressing_pause",
+                            "arguments": {
+                                "device": "191cf2ac-7b1c-4c02-a2f0-9806fd5bc0bb"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success",
+                "cron": "0 23 * * 2"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can mute the tv, close the blinds, turn off the dehumidifier and pause the stickcleaner and airdresser. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

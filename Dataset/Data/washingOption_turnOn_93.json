@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bfbbfe59-d842-4c6d-bce4-f4a78821ca81",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "dbe45800-b357-405b-b8b1-d2fb3c89c96e",
+                            "roomName": "laundry room",
+                            "roomId": "dbe45800-b357-405b-b8b1-d2fb3c89c96e"
+                        }
+                    },
+                    {
+                        "deviceId": "da04fefd-1667-46f1-8db1-f8dfb9b97353",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "a55864f6-3aa9-49a7-a22b-8baa7bf0abed",
+                            "roomName": "kitchen",
+                            "roomId": "a55864f6-3aa9-49a7-a22b-8baa7bf0abed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the washing option for the washing machine in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingOption_turnOn",
+                            "arguments": {
+                                "device": "bfbbfe59-d842-4c6d-bce4-f4a78821ca81",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washing option for the washing machine in the laundry room is now turned on."
+        }
+    ],
+    "tools": []
+}

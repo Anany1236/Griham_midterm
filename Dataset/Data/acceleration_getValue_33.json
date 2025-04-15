@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "29d78202-10a9-47cc-9fce-4c18cf12c304",
+                        "deviceName": "sensor.motion",
+                        "deviceType": "sensor.motion",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "768e95f4-874c-47da-a736-fc2e907e6e60",
+                            "roomName": "living room",
+                            "roomId": "768e95f4-874c-47da-a736-fc2e907e6e60"
+                        }
+                    },
+                    {
+                        "deviceId": "c9cef5a5-ba93-47c7-9dec-5ef832eae64e",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "f593f5c6-265f-457d-9924-fe3d608a92d6",
+                            "roomName": "utility room",
+                            "roomId": "f593f5c6-265f-457d-9924-fe3d608a92d6"
+                        }
+                    },
+                    {
+                        "deviceId": "a848222f-6103-418c-a4d7-e9f1f1aeb0b2",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "cdbe0dcd-6820-4731-8474-bbe442b72dc2",
+                            "roomName": "hallway",
+                            "roomId": "cdbe0dcd-6820-4731-8474-bbe442b72dc2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check if the washer is vibrating?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "acceleration_getValue",
+                            "arguments": {
+                                "device": "a848222f-6103-418c-a4d7-e9f1f1aeb0b2",
+                                "room": "hallway"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washer is vibrating in hallway."
+        }
+    ],
+    "tools": []
+}

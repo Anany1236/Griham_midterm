@@ -1,0 +1,168 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b7996c96-93c5-4207-a2a8-238537945edd",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95103576-cd54-450e-ad2e-fbf4e0936766",
+                            "roomName": "kids room",
+                            "roomId": "26860474-d419-423a-b2e4-5770f84ed92f"
+                        }
+                    },
+                    {
+                        "deviceId": "4bf5ed2b-f618-4c0b-ab04-e18e8262fe6b",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95103576-cd54-450e-ad2e-fbf4e0936766",
+                            "roomName": "kids room",
+                            "roomId": "295972db-5c78-4944-9782-75b32590e833"
+                        }
+                    },
+                    {
+                        "deviceId": "a6a46345-79fa-4422-a94e-4df2b8b27bfd",
+                        "deviceName": "robotcleaner",
+                        "deviceType": "robotcleaner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95103576-cd54-450e-ad2e-fbf4e0936766",
+                            "roomName": "kids room",
+                            "roomId": "295972db-5c78-4944-9782-75b32590e833"
+                        }
+                    },
+                    {
+                        "deviceId": "bcd39e03-e446-48d6-a1d9-0808af123ad6",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95103576-cd54-450e-ad2e-fbf4e0936766",
+                            "roomName": "kids room",
+                            "roomId": "295972db-5c78-4944-9782-75b32590e833"
+                        }
+                    },
+                    {
+                        "deviceId": "14662099-70b8-415f-946f-646310050c30",
+                        "deviceName": "airdresser",
+                        "deviceType": "airdresser",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95103576-cd54-450e-ad2e-fbf4e0936766",
+                            "roomName": "kids room",
+                            "roomId": "454aa4f7-1312-46ca-8b12-2f70774ee034"
+                        }
+                    },
+                    {
+                        "deviceId": "27a31ecc-d0ef-43c9-aa1d-77e08a547560",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95103576-cd54-450e-ad2e-fbf4e0936766",
+                            "roomName": "kitchen",
+                            "roomId": "deaeb780-f916-44a5-b75f-fafe8d401f55"
+                        }
+                    },
+                    {
+                        "deviceId": "233fc8df-b756-49bf-b4b5-1ac118337802",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95103576-cd54-450e-ad2e-fbf4e0936766",
+                            "roomName": "kids room",
+                            "roomId": "295972db-5c78-4944-9782-75b32590e833"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set up the kids room ready for a movie on every weekdays at 4 PM"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": " mute_turnOn",
+                            "arguments": {
+                                "device": "b7996c96-93c5-4207-a2a8-238537945edd"
+                            }
+                        },
+                        {
+                            "name": " device_close",
+                            "arguments": {
+                                "device": "4bf5ed2b-f618-4c0b-ab04-e18e8262fe6b"
+                            }
+                        },
+                        {
+                            "name": " cleaning_pause",
+                            "arguments": {
+                                "device": "a6a46345-79fa-4422-a94e-4df2b8b27bfd"
+                            }
+                        },
+                        {
+                            "name": " device_turnOff",
+                            "arguments": {
+                                "device": "bcd39e03-e446-48d6-a1d9-0808af123ad6"
+                            }
+                        },
+                        {
+                            "name": " dressing_pause",
+                            "arguments": {
+                                "device": "14662099-70b8-415f-946f-646310050c30"
+                            }
+                        },
+                        {
+                            "name": " cooking_pause",
+                            "arguments": {
+                                "device": "27a31ecc-d0ef-43c9-aa1d-77e08a547560"
+                            }
+                        },
+                        {
+                            "name": " airConditioningMode_setValue",
+                            "arguments": {
+                                "device": "airconditioner",
+                                "windfree": "windfree"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success",
+                "cron": "0 16 * * 1-5"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can mute the tv, close the blinds, turn off the dehumidifier, pause the airdresser, robotcleaner and oven and set the air conditioner to windfree. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

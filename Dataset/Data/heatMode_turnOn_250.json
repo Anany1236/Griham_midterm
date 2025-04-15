@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e7a8a059-674d-49bf-aa3f-7d50900a5ef5",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "41a789b4-145c-4df4-9f3c-5c3a83cbdcda",
+                            "roomName": "bedroom",
+                            "roomId": "41a789b4-145c-4df4-9f3c-5c3a83cbdcda"
+                        }
+                    },
+                    {
+                        "deviceId": "d4640ef5-2c48-49d0-9c5e-84b29aa899b6",
+                        "deviceName": "heater",
+                        "deviceType": "heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "49cc0f3f-7593-404d-a6e6-c0b8177aaeed",
+                            "roomName": "living room",
+                            "roomId": "49cc0f3f-7593-404d-a6e6-c0b8177aaeed"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the heat mode on the air conditioner."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatMode_turnOn",
+                            "arguments": {
+                                "device": "e7a8a059-674d-49bf-aa3f-7d50900a5ef5",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The heat mode on the air conditioner is now on."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "door_open",
+            "description": "This function is used to open the door of a specified SmartThings device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the door is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the door is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name of the door lock that needs to be opened."
+                    },
+                    "compartment": {
+                        "type": "string",
+                        "description": "The predefined compartment of the door lock that needs to be opened."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

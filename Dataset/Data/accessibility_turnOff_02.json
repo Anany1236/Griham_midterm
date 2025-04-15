@@ -1,0 +1,108 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1109896c-a32a-4a9b-b46e-7dd6860eb0e5",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "953251af-1d3d-457d-a749-e96bc360dc1f",
+                            "roomName": "bedroom",
+                            "roomId": "953251af-1d3d-457d-a749-e96bc360dc1f"
+                        }
+                    },
+                    {
+                        "deviceId": "2b6dcaff-8594-4b00-965b-53a358cce60f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "eee17d48-fb18-42ed-8dd6-51b36a422b87",
+                            "roomName": "living Room",
+                            "roomId": "eee17d48-fb18-42ed-8dd6-51b36a422b87"
+                        }
+                    },
+                    {
+                        "deviceId": "86f8e335-2ca1-4471-8269-98e4da064494",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a5f4f455-0f3b-4c1c-b4c1-1cfba4a84f1d",
+                            "roomName": "guest Room",
+                            "roomId": "a5f4f455-0f3b-4c1c-b4c1-1cfba4a84f1d"
+                        }
+                    },
+                    {
+                        "deviceId": "f26970d1-49e9-4375-bf9d-bdc39e6c167e",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1f062679-b435-445e-a02d-85109574d5a2",
+                            "roomName": "kitchen",
+                            "roomId": "1f062679-b435-445e-a02d-85109574d5a2"
+                        }
+                    },
+                    {
+                        "deviceId": "ef25cda5-9836-4eea-9fe2-81082ac599de",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0cf7976a-9def-4ed0-b145-160712f87dc8",
+                            "roomName": "utility Room",
+                            "roomId": "0cf7976a-9def-4ed0-b145-160712f87dc8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Disable the accessibility mode of the air purifier in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "accessibility_turnOff",
+                            "arguments": {
+                                "device": "2b6dcaff-8594-4b00-965b-53a358cce60f",
+                                "room": "living Room",
+                                "mode": "accessibility"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The accessibility mode of the air purifier is now off in the living room"
+        }
+    ],
+    "tools": []
+}

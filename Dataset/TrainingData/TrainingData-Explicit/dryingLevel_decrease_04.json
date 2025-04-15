@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "ce90ae14-72ac-4e82-bb78-82d939dce01d",
+                        "deviceName": "dryer0",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "318b82fa-0783-49d8-826e-c425aaf4a848",
+                            "roomName": "laundry room",
+                            "roomId": "a567c2d2-2fa1-4df1-9fbc-daccd8b70670"
+                        }
+                    },
+                    {
+                        "deviceId": "05b54fdc-a920-4bc6-a33f-c0692473e284",
+                        "deviceName": "dryer1",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "318b82fa-0783-49d8-826e-c425aaf4a848",
+                            "roomName": "bathroom",
+                            "roomId": "c08a6617-cb73-4313-a4a5-b5b509e23cea"
+                        }
+                    },
+                    {
+                        "deviceId": "2248e001-16d5-4585-80ef-c9d60eb8d492",
+                        "deviceName": "dryer2",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "318b82fa-0783-49d8-826e-c425aaf4a848",
+                            "roomName": "laundry room",
+                            "roomId": "a567c2d2-2fa1-4df1-9fbc-daccd8b70670"
+                        }
+                    },
+                    {
+                        "deviceId": "b8c159a0-d019-4b7a-9bbb-83b1b5484c15",
+                        "deviceName": "dryer3",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "318b82fa-0783-49d8-826e-c425aaf4a848",
+                            "roomName": "laundry room",
+                            "roomId": "a567c2d2-2fa1-4df1-9fbc-daccd8b70670"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you reduce the dry level of the dryer?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dryingLevel_decrease",
+                            "arguments": {
+                                "device": "ce90ae14-72ac-4e82-bb78-82d939dce01d"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Yes, I have reduced the drying level of the dryer"
+        }
+    ],
+    "tools": []
+}

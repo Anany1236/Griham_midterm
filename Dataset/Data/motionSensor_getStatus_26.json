@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bbdbddac-eb56-4297-af4c-6f4ff38c3f1a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "5abd314b-ac52-4d2d-8a0b-686abdd046e5",
+                            "roomName": "bedroom",
+                            "roomId": "5abd314b-ac52-4d2d-8a0b-686abdd046e5"
+                        }
+                    },
+                    {
+                        "deviceId": "005f0791-4e32-4353-9a1b-8b10a097cffe",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "a5378470-63a4-446f-9da6-a98b8fee5745",
+                            "roomName": "living Room",
+                            "roomId": "a5378470-63a4-446f-9da6-a98b8fee5745"
+                        }
+                    },
+                    {
+                        "deviceId": "2c282dcf-4eb7-4e6c-af9b-72c60897ee77",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "363a6166-6e24-4e15-8d56-dffda8334928",
+                            "roomName": "guest Room",
+                            "roomId": "363a6166-6e24-4e15-8d56-dffda8334928"
+                        }
+                    },
+                    {
+                        "deviceId": "9d09e6f7-310c-4ba6-a0bc-c0153285ad7b",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "d5c30a85-d818-4004-a229-8d3ac3df96f6",
+                            "roomName": "kitchen",
+                            "roomId": "d5c30a85-d818-4004-a229-8d3ac3df96f6"
+                        }
+                    },
+                    {
+                        "deviceId": "9c5aa0e0-1f58-4ce7-9b70-a78ba5a58182",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "bd0dcc44-09ba-444c-b5b0-2175a1c0a689",
+                            "roomName": "utility Room",
+                            "roomId": "bd0dcc44-09ba-444c-b5b0-2175a1c0a689"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the sensor.motion status of the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "motionSensor_getStatus",
+                            "arguments": {
+                                "device": "bbdbddac-eb56-4297-af4c-6f4ff38c3f1a",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The sensor.motion status of the air conditioner in the bedroom is active"
+        }
+    ],
+    "tools": []
+}

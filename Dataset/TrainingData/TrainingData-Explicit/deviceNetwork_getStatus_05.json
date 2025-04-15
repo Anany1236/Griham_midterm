@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "85c7f4b4-2b86-4e75-81d5-05bb6178a4b2",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ce4796f-9565-4977-b950-fbf9d980b142",
+                            "roomName": "kids room",
+                            "roomId": "b00f56ae-93bf-4dc7-989a-dcf525820988"
+                        }
+                    },
+                    {
+                        "deviceId": "40982d5e-a8e1-4a59-b283-5a92c67aa118",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ce4796f-9565-4977-b950-fbf9d980b142",
+                            "roomName": "kids room",
+                            "roomId": "b00f56ae-93bf-4dc7-989a-dcf525820988"
+                        }
+                    },
+                    {
+                        "deviceId": "b21786b3-a58b-45b3-9d48-06b03030bc36",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ce4796f-9565-4977-b950-fbf9d980b142",
+                            "roomName": "kitchen",
+                            "roomId": "2e834d22-c909-47c0-b3d1-82fffe13ec08"
+                        }
+                    },
+                    {
+                        "deviceId": "2cdb6e95-5081-4346-b928-44a35b5707b6",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0ce4796f-9565-4977-b950-fbf9d980b142",
+                            "roomName": "kitchen",
+                            "roomId": "2e834d22-c909-47c0-b3d1-82fffe13ec08"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the network status of kids room projector"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceNetwork_getStatus",
+                            "arguments": {
+                                "device": "40982d5e-a8e1-4a59-b283-5a92c67aa118",
+                                "room": "kids room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The network status of kids room projector is on."
+        }
+    ],
+    "tools": []
+}

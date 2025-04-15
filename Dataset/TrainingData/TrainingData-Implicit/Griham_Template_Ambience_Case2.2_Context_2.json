@@ -1,0 +1,78 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "2bbd8d44-be73-45e1-a1bd-d721b3bd6cbc",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "433e9541-6cf6-45f1-8eb8-e5dab8ee71b7",
+                            "roomName": "Bedroom",
+                            "roomId": "1377cafa-de48-4042-9ef4-131a17a6ebe6"
+                        }
+                    },
+                    {
+                        "deviceId": "b8a92e13-4973-43f2-8ed2-6d539ff8e026",
+                        "deviceName": "Blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "433e9541-6cf6-45f1-8eb8-e5dab8ee71b7",
+                            "roomName": "Bedroom",
+                            "roomId": "1377cafa-de48-4042-9ef4-131a17a6ebe6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn on the bedroom AC"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOff",
+                            "arguments": {
+                                "device": "b8a92e13-4973-43f2-8ed2-6d539ff8e026",
+                                "room": "bedroom"
+                            }
+                        },
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "2bbd8d44-be73-45e1-a1bd-d721b3bd6cbc",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Would you like me to turn on the AC and turn off the blind."
+        }
+    ],
+    "tools": []
+}

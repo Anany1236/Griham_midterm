@@ -1,0 +1,33 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "refrigeratorOption_turnOff",
+            "description": "This function is used to turn off a specified option on a refrigerator.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to turn off the specified option on the refrigerator."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The option to be turned off on the refrigerator (e.g., welcome light)."
+                    }
+                },
+                "required": [
+                    "mode"
+                ]
+            }
+        }
+    ]
+}

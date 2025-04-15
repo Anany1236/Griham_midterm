@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f4b1e79e-6dc0-47d1-93d5-74393583a365",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "fb8afc35-17c1-4cd5-a8e8-6e74ceb887b8",
+                            "roomName": "living room",
+                            "roomId": "fb8afc35-17c1-4cd5-a8e8-6e74ceb887b8"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the thermostat mode to heating in the living room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "thermostatMode_setValue",
+                            "arguments": {
+                                "device": "f4b1e79e-6dc0-47d1-93d5-74393583a365",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The thermostat mode in the living room has been set to heating."
+        }
+    ],
+    "tools": []
+}

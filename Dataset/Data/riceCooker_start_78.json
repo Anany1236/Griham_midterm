@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "53a54f27-7a51-4242-a360-bb7557c86da8",
+                        "deviceName": "rice cooker",
+                        "deviceType": "rice cooker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "c4f47730-a79e-4891-9275-85760d263181",
+                            "roomName": "kitchen",
+                            "roomId": "c4f47730-a79e-4891-9275-85760d263181"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Start cooking rice in the rice cooker in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "riceCooker_start",
+                            "arguments": {
+                                "device": "53a54f27-7a51-4242-a360-bb7557c86da8",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The rice cooker in the kitchen has started cooking."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3db5e93f-70a0-4280-9710-9591e2bc032b",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c77870ea-276a-43fb-b76a-b78f2bf1bdfa",
+                            "roomName": "bedroom",
+                            "roomId": "c77870ea-276a-43fb-b76a-b78f2bf1bdfa"
+                        }
+                    },
+                    {
+                        "deviceId": "ef22fd5d-c4bd-4dac-9057-e57ff3606295",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bbb63c32-7f0a-4077-9104-0e8344676c8c",
+                            "roomName": "living Room",
+                            "roomId": "bbb63c32-7f0a-4077-9104-0e8344676c8c"
+                        }
+                    },
+                    {
+                        "deviceId": "ddea2c30-ffc1-4e8a-aa05-2d10dc78a72c",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a6b207a7-730a-4f17-baed-9bc7ecd6554e",
+                            "roomName": "guest Room",
+                            "roomId": "a6b207a7-730a-4f17-baed-9bc7ecd6554e"
+                        }
+                    },
+                    {
+                        "deviceId": "d1567cb8-140d-46b5-9d7f-63c0c9343faf",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ebf1f71a-66aa-484a-b117-d75a90b4a8b6",
+                            "roomName": "kitchen",
+                            "roomId": "ebf1f71a-66aa-484a-b117-d75a90b4a8b6"
+                        }
+                    },
+                    {
+                        "deviceId": "2c2bb743-bd93-4129-91e8-fe33a6ad1cc0",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "adb2d5dd-ee7d-4a37-93d3-d90731e1138e",
+                            "roomName": "utility Room",
+                            "roomId": "adb2d5dd-ee7d-4a37-93d3-d90731e1138e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the fine dust level of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fineDustLevel_getValue",
+                            "arguments": {
+                                "device": "ddea2c30-ffc1-4e8a-aa05-2d10dc78a72c",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fine dust level of the light in the guest room is available"
+        }
+    ],
+    "tools": []
+}

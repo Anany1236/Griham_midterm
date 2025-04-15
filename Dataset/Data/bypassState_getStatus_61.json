@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9f0e5c3f-4490-43c1-9c87-df77b5fdf627",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "29e08445-6ed1-4e96-9c09-470c34b559f1",
+                            "roomName": "bedroom",
+                            "roomId": "29e08445-6ed1-4e96-9c09-470c34b559f1"
+                        }
+                    },
+                    {
+                        "deviceId": "d1959b75-e1f6-4362-a52c-6fd934b9f8f3",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "caef0bb2-c961-4605-a837-b3f824805af4",
+                            "roomName": "living Room",
+                            "roomId": "caef0bb2-c961-4605-a837-b3f824805af4"
+                        }
+                    },
+                    {
+                        "deviceId": "44026029-cc3a-4fbd-bec5-f34f684c68da",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "69a68a4b-853e-411c-ada1-594b87c6e347",
+                            "roomName": "guest Room",
+                            "roomId": "69a68a4b-853e-411c-ada1-594b87c6e347"
+                        }
+                    },
+                    {
+                        "deviceId": "63599522-365f-469d-9cf8-7f750a3e4fa9",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e6441416-105a-4c87-9c08-ae526013a527",
+                            "roomName": "kitchen",
+                            "roomId": "e6441416-105a-4c87-9c08-ae526013a527"
+                        }
+                    },
+                    {
+                        "deviceId": "f898a6c2-142b-4940-b9ff-f36cfa0961e2",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2057dd14-546a-4549-8089-ce8245c04022",
+                            "roomName": "utility Room",
+                            "roomId": "2057dd14-546a-4549-8089-ce8245c04022"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the bypass state status for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bypassState_getStatus",
+                            "arguments": {
+                                "device": "9f0e5c3f-4490-43c1-9c87-df77b5fdf627",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The bypass state status for the air conditioner in the bedroom is shown"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "dd94d7e0-fd74-4ebc-b07a-4295f4a9197c",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9256dbd4-3f46-408a-ad9c-c21197c0f2e3",
+                            "roomName": "bedroom",
+                            "roomId": "9256dbd4-3f46-408a-ad9c-c21197c0f2e3"
+                        }
+                    },
+                    {
+                        "deviceId": "a6ddfd18-cbe0-43ed-a00f-d9f7f095f8fb",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c3d10214-68a3-44f2-9d71-008781006bfe",
+                            "roomName": "living Room",
+                            "roomId": "c3d10214-68a3-44f2-9d71-008781006bfe"
+                        }
+                    },
+                    {
+                        "deviceId": "80a03e03-01a5-4193-b80f-9f325d3a7b7b",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b73384fb-3912-481a-b92f-cd8f041b9f42",
+                            "roomName": "guest Room",
+                            "roomId": "b73384fb-3912-481a-b92f-cd8f041b9f42"
+                        }
+                    },
+                    {
+                        "deviceId": "1cc58c2d-2286-4281-9ec2-d6fb3601a21e",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a42c4d60-3b18-4543-afc3-6348fbc5af43",
+                            "roomName": "kitchen",
+                            "roomId": "a42c4d60-3b18-4543-afc3-6348fbc5af43"
+                        }
+                    },
+                    {
+                        "deviceId": "e849d183-c9b2-4f41-bd3e-9d5c554a7f19",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c83cb2ca-877d-4a67-9153-7a398c93ee8d",
+                            "roomName": "utility Room",
+                            "roomId": "c83cb2ca-877d-4a67-9153-7a398c93ee8d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the chair position of the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "chairPosition_setValue",
+                            "arguments": {
+                                "device": "dd94d7e0-fd74-4ebc-b07a-4295f4a9197c",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The chair position of the air conditioner in the bedroom has been set"
+        }
+    ],
+    "tools": []
+}

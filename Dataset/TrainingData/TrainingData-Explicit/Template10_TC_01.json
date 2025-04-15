@@ -1,0 +1,66 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "RVC, Stop cleaning the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cleaning_stop",
+                            "arguments": {
+                                "device": "RVC",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The RVC has stopped cleaning the living room."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "cleaning_stop",
+                    "description": "This function is used to stop cleaning operation of the robot vaccum cleaner.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "room": {
+                                "type": "string",
+                                "description": "Target location to be used."
+                            }
+                        },
+                        "required": [
+                            "device"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

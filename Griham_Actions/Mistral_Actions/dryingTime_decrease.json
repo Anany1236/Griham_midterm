@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "dryingTime_decrease",
+            "description": "This function is used to reduce the operating time of the dryer.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to reduce the drying time."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to reduce the drying time."
+                    },
+                    "dryingTimer": {
+                        "type": "integer",
+                        "description": "The amount of time in minutes to reduce the drying timer."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

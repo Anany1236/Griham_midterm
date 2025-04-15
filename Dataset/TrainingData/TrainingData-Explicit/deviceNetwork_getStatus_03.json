@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "47992709-5126-4d73-8475-3f6cc0b24a8d",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d7f3179f-b8d2-4654-a575-e778a1b63df8",
+                            "roomName": "living room",
+                            "roomId": "30a92f2e-2592-4beb-b787-6739d22ecaba"
+                        }
+                    },
+                    {
+                        "deviceId": "a2bec6ce-2205-4ec0-be5e-26f798892ede",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d7f3179f-b8d2-4654-a575-e778a1b63df8",
+                            "roomName": "master bedroom",
+                            "roomId": "efcaf732-8a89-49f2-bc59-788d17dcef98"
+                        }
+                    },
+                    {
+                        "deviceId": "7dff6195-330b-4047-8f25-f8060b38461e",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d7f3179f-b8d2-4654-a575-e778a1b63df8",
+                            "roomName": "kitchen",
+                            "roomId": "60e433bf-b064-4b73-87db-9b4be5afae7b"
+                        }
+                    },
+                    {
+                        "deviceId": "04180f8f-f0b6-4d53-b3e6-1332e19a6ba7",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d7f3179f-b8d2-4654-a575-e778a1b63df8",
+                            "roomName": "kitchen",
+                            "roomId": "60e433bf-b064-4b73-87db-9b4be5afae7b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the network status of living room tv"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceNetwork_getStatus",
+                            "arguments": {
+                                "device": "47992709-5126-4d73-8475-3f6cc0b24a8d",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The network status of living room tv is on."
+        }
+    ],
+    "tools": []
+}

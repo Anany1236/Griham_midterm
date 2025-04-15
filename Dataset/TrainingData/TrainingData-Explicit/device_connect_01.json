@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "95392e5a-a759-456c-9b55-757f6a54ab78",
+                        "deviceName": "hall blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e6c7aff7-48fd-470e-add4-4076d16d7cdb",
+                            "roomName": "hall",
+                            "roomId": "366e9b05-f6e2-4e2a-ad29-c183b35b60ea"
+                        }
+                    },
+                    {
+                        "deviceId": "25f01ddc-a633-4fda-b4fd-cfa4731431a6",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e6c7aff7-48fd-470e-add4-4076d16d7cdb",
+                            "roomName": "Living room",
+                            "roomId": "0bab7241-20ed-4897-88e1-a6640da42814"
+                        }
+                    },
+                    {
+                        "deviceId": "d5c1cc0e-2f0f-41ac-a43c-c79e4ade06e2",
+                        "deviceName": "Light 2",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e6c7aff7-48fd-470e-add4-4076d16d7cdb",
+                            "roomName": "Living room",
+                            "roomId": "0bab7241-20ed-4897-88e1-a6640da42814"
+                        }
+                    },
+                    {
+                        "deviceId": "80f818c0-8ed2-492b-85ed-722212e2911f",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e6c7aff7-48fd-470e-add4-4076d16d7cdb",
+                            "roomName": "bedroom",
+                            "roomId": "c7e36359-f580-4857-bafc-df29311831b6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Could you add my devices to the house?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_connect",
+                            "arguments": {
+                                "location": "house"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Devices are added to the house"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d32b34b3-a7e7-42ac-9d70-1cc5fa4d0beb",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "ebccbd3f-37e8-4d9c-a4b2-edaa6a229028",
+                            "roomName": "living room",
+                            "roomId": "ebccbd3f-37e8-4d9c-a4b2-edaa6a229028"
+                        }
+                    },
+                    {
+                        "deviceId": "9b9d7873-99dd-426e-a177-a00c5abff724",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "e87f0b3f-c539-4936-b4ab-cb10e768ac95",
+                            "roomName": "laundry room",
+                            "roomId": "e87f0b3f-c539-4936-b4ab-cb10e768ac95"
+                        }
+                    },
+                    {
+                        "deviceId": "3b991bd4-f207-40c6-9b14-3b6ed2fc9270",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "992e53ed-e4d7-4bc1-b611-d7421e93a86d",
+                            "roomName": "office room",
+                            "roomId": "992e53ed-e4d7-4bc1-b611-d7421e93a86d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the fan speed to maximum in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceState_setMax",
+                            "arguments": {
+                                "device": "3b991bd4-f207-40c6-9b14-3b6ed2fc9270",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan in the office room is now running at maximum speed."
+        }
+    ],
+    "tools": []
+}

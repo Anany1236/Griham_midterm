@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3364f5cd-8bb9-4ca6-98f8-5dd8cb60d4b6",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "2f8b506f-ff68-4b77-b05e-7c2ed022e8b7",
+                            "roomName": "bathroom",
+                            "roomId": "2f8b506f-ff68-4b77-b05e-7c2ed022e8b7"
+                        }
+                    },
+                    {
+                        "deviceId": "5c8a931d-0833-4e5e-aced-a963796e6c8c",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "43c15732-491c-47ea-bbe8-a3ebccb12054",
+                            "roomName": "utility room",
+                            "roomId": "43c15732-491c-47ea-bbe8-a3ebccb12054"
+                        }
+                    },
+                    {
+                        "deviceId": "57c5606a-359d-489a-9999-9a5f4de105c6",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "61613d57-5c14-4fab-b9b5-26c68ddac977",
+                            "roomName": "kitchen",
+                            "roomId": "61613d57-5c14-4fab-b9b5-26c68ddac977"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you enable the water heating?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeating_turnOn",
+                            "arguments": {
+                                "device": "3364f5cd-8bb9-4ca6-98f8-5dd8cb60d4b6",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The water heating system is now active."
+        }
+    ],
+    "tools": []
+}

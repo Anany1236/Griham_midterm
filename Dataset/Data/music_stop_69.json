@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9c7ea258-4996-4682-8e0e-63d7e3eb6322",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "2e1b6728-f8dc-4e68-9bb6-170fd4a6234e",
+                            "roomName": "kitchen",
+                            "roomId": "2e1b6728-f8dc-4e68-9bb6-170fd4a6234e"
+                        }
+                    },
+                    {
+                        "deviceId": "b9958114-2f88-4729-a848-7018b597bf4c",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "a86f1dfc-ab68-4cb7-b56d-f277928d31ac",
+                            "roomName": "living room",
+                            "roomId": "a86f1dfc-ab68-4cb7-b56d-f277928d31ac"
+                        }
+                    },
+                    {
+                        "deviceId": "1e2c4148-9982-4575-a4d7-0b0f604fcd4b",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "293ca32d-50a0-4213-b569-2c4bb1fa2f36",
+                            "roomName": "office room",
+                            "roomId": "293ca32d-50a0-4213-b569-2c4bb1fa2f36"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Stop the music on the speaker in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "music_stop",
+                            "arguments": {
+                                "device": "9c7ea258-4996-4682-8e0e-63d7e3eb6322",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The music has been stopped on the speaker in the kitchen."
+        }
+    ],
+    "tools": []
+}

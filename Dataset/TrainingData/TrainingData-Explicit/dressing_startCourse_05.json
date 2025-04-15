@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6aad343d-2b9d-4fb1-9afb-09ff5f7ba43c",
+                        "deviceName": "steamcloset1",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32a55559-6ff4-4e6c-805f-3b094d442931",
+                            "roomName": "utility room",
+                            "roomId": "d6141443-b24b-4c1b-b316-f7f4c9248408"
+                        }
+                    },
+                    {
+                        "deviceId": "7e58c5e4-028d-4c5e-a6e3-da4a3964b208",
+                        "deviceName": "steamcloset2",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32a55559-6ff4-4e6c-805f-3b094d442931",
+                            "roomName": "living room",
+                            "roomId": "a8494c78-864c-4893-ab3b-a118d3ad785f"
+                        }
+                    },
+                    {
+                        "deviceId": "69960f01-0906-4cb6-9538-8d740600f6e7",
+                        "deviceName": "airdresser",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32a55559-6ff4-4e6c-805f-3b094d442931",
+                            "roomName": "bedroom",
+                            "roomId": "4483c2f2-c3f1-40b6-9f4b-1264267ee353"
+                        }
+                    },
+                    {
+                        "deviceId": "97e33967-7310-45f2-80a1-92e806da0e93",
+                        "deviceName": "dresser",
+                        "deviceType": "steamcloset",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "32a55559-6ff4-4e6c-805f-3b094d442931",
+                            "roomName": "guest room",
+                            "roomId": "2573ad95-ceaf-437b-b990-78eaafaa6fa0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Now start the steamcloset in the normal mode in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_startCourse",
+                            "arguments": {
+                                "device": "97e33967-7310-45f2-80a1-92e806da0e93",
+                                "room": "guest room",
+                                "mode": "normal"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The steamcloset has been started in the normal mode in the guest room"
+        }
+    ],
+    "tools": []
+}

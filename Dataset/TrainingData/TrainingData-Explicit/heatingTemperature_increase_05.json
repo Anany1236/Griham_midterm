@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f6573ff4-9b5d-47a7-a582-9a2b2e8e96e9",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "445ee3a5-c7c0-4c1e-a7fd-17dda734384a",
+                            "roomName": "laundry room",
+                            "roomId": "f372a453-f0e0-4a4d-90bf-43213a46450b"
+                        }
+                    },
+                    {
+                        "deviceId": "b4b7a9f4-1522-4dc1-8597-b77aff120c43",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "445ee3a5-c7c0-4c1e-a7fd-17dda734384a",
+                            "roomName": "living room",
+                            "roomId": "3bbfd13b-67d5-4c12-a5bd-f26d5c996b1a"
+                        }
+                    },
+                    {
+                        "deviceId": "81bd06b3-ab2c-4c02-8cc5-6b4ce1b0f71a",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "445ee3a5-c7c0-4c1e-a7fd-17dda734384a",
+                            "roomName": "kitchen",
+                            "roomId": "bc48f55f-6ac0-4a76-a9f4-7cdfcc71625e"
+                        }
+                    },
+                    {
+                        "deviceId": "59bcbcea-622f-4712-8dde-6dbdd45d04e2",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "445ee3a5-c7c0-4c1e-a7fd-17dda734384a",
+                            "roomName": "bedroom",
+                            "roomId": "22456d34-22b8-4ae2-ab9c-da5736c2abb4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the heater temperature value of thermostat in the living room by 2 degrees"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_increase",
+                            "arguments": {
+                                "device": "b4b7a9f4-1522-4dc1-8597-b77aff120c43",
+                                "room": "living room",
+                                "heatingTemperatureDelta": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The temperature has been increased to 2 degrees for the thermostat in the living room"
+        }
+    ],
+    "tools": []
+}

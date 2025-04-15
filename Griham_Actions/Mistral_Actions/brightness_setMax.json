@@ -1,0 +1,31 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "brightness_setMax",
+            "description": "This function is used to set the brightness of a smart home appliance or place to its maximum level.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device or place which needs to be adjusted is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device or place which needs to be adjusted is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to adjust the brightness."
+                    },
+                    "groupAction": {
+                        "type": "string",
+                        "description": "The group action to perform on multiple devices."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

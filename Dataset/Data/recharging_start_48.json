@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6935899d-c68b-406e-b466-5e3ca73390d3",
+                        "deviceName": "charger",
+                        "deviceType": "charger",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "c367265c-227a-47bb-8b64-1ee32940a5bb",
+                            "roomName": "bedroom",
+                            "roomId": "c367265c-227a-47bb-8b64-1ee32940a5bb"
+                        }
+                    },
+                    {
+                        "deviceId": "f141a986-6a0b-41fd-91f0-4bda2bb6ad5a",
+                        "deviceName": "power bank",
+                        "deviceType": "power bank",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "6e6dec9f-f8a7-4bb4-b216-975a2209b70d",
+                            "roomName": "office room",
+                            "roomId": "6e6dec9f-f8a7-4bb4-b216-975a2209b70d"
+                        }
+                    },
+                    {
+                        "deviceId": "b9ac7433-91a1-4def-b70f-0452d2438b81",
+                        "deviceName": "charger",
+                        "deviceType": "charger",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d7c4e662-1520-4b9c-ac53-8ccde60bd0c5",
+                            "roomName": "living room",
+                            "roomId": "d7c4e662-1520-4b9c-ac53-8ccde60bd0c5"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please start the recharge."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "recharging_start",
+                            "arguments": {
+                                "device": "6935899d-c68b-406e-b466-5e3ca73390d3",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The device is now recharging."
+        }
+    ],
+    "tools": []
+}

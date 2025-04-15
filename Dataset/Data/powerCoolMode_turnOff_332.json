@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6bb330b9-3249-43a1-ac1e-d85b04753e49",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "eb940473-3e10-4150-aaf2-543573e385fc",
+                            "roomName": "kitchen",
+                            "roomId": "eb940473-3e10-4150-aaf2-543573e385fc"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please disable the power cool mode on the fridge."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "powerCoolMode_turnOff",
+                            "arguments": {
+                                "device": "6bb330b9-3249-43a1-ac1e-d85b04753e49",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooling mode for the fridge is now disabled."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d73118d7-e4c3-4ae0-8238-1f03c5f0af06",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6c61ba8c-dee0-4d99-ab6c-e88d5a3e74f7",
+                            "roomName": "bedroom",
+                            "roomId": "6c61ba8c-dee0-4d99-ab6c-e88d5a3e74f7"
+                        }
+                    },
+                    {
+                        "deviceId": "27e14cf9-d97c-40dd-998d-3a803b00b289",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7d62956f-605e-452c-87d3-41de57a9c268",
+                            "roomName": "living Room",
+                            "roomId": "7d62956f-605e-452c-87d3-41de57a9c268"
+                        }
+                    },
+                    {
+                        "deviceId": "a0753fe3-ec75-4414-8076-708f8c0c7a56",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "875c58f2-107d-4bb1-8f61-c5046cac2140",
+                            "roomName": "guest Room",
+                            "roomId": "875c58f2-107d-4bb1-8f61-c5046cac2140"
+                        }
+                    },
+                    {
+                        "deviceId": "ea8c20d1-8429-4b26-9237-5a3d8f482ae2",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "75ea7a36-fe82-441d-99db-bc6577581df8",
+                            "roomName": "kitchen",
+                            "roomId": "75ea7a36-fe82-441d-99db-bc6577581df8"
+                        }
+                    },
+                    {
+                        "deviceId": "4c797e78-2d22-4e8a-8b49-702333ed59c6",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c71bb8cb-9e9a-44c2-a756-4fd6346dcee7",
+                            "roomName": "utility Room",
+                            "roomId": "c71bb8cb-9e9a-44c2-a756-4fd6346dcee7"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the humidification amount for the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "humidificationAmount_setValue",
+                            "arguments": {
+                                "device": "4c797e78-2d22-4e8a-8b49-702333ed59c6",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The humidification amount for the hood in the utility room is set"
+        }
+    ],
+    "tools": []
+}

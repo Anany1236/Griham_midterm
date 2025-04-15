@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "832b5fa6-9740-4d8d-81d0-d0b1c157f1c9",
+                        "deviceName": "ac1",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "abfe4d86-6068-4264-90a7-704e21b0434d",
+                            "roomName": "living room",
+                            "roomId": "95d16671-9428-43ba-aeb4-a5e113e72f4a"
+                        }
+                    },
+                    {
+                        "deviceId": "649757b2-d9c4-400b-a494-c0192aeccc64",
+                        "deviceName": "sensor1",
+                        "deviceType": "sensor.multifunction",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "abfe4d86-6068-4264-90a7-704e21b0434d",
+                            "roomName": "bedroom",
+                            "roomId": "e291f0e4-14c5-49de-9367-9265aa364c92"
+                        }
+                    },
+                    {
+                        "deviceId": "43bcdac3-2065-49b9-b8c1-a6ac08c9f6a3",
+                        "deviceName": "boiler1",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "abfe4d86-6068-4264-90a7-704e21b0434d",
+                            "roomName": "laundry room",
+                            "roomId": "66c2dabb-fe42-4e15-a705-990b9ae73d67"
+                        }
+                    },
+                    {
+                        "deviceId": "5369fd6d-b843-4e08-ac5d-7558568097b7",
+                        "deviceName": "ac2",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "abfe4d86-6068-4264-90a7-704e21b0434d",
+                            "roomName": "bedroom",
+                            "roomId": "e291f0e4-14c5-49de-9367-9265aa364c92"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the temperature of the boiler to max"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "deviceTemperatureSetting_setMax",
+                            "arguments": {
+                                "device": "43bcdac3-2065-49b9-b8c1-a6ac08c9f6a3"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Now the temperature of the boiler is 34 degree Celsius"
+        }
+    ],
+    "tools": []
+}

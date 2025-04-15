@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "940a5f89-8b5e-4492-80cf-4310002b3100",
+                        "deviceName": "sensor.motion",
+                        "deviceType": "sensor.motion",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "98a584ee-9af5-4ba9-8b11-c0a905f04162",
+                            "roomName": "living room",
+                            "roomId": "98a584ee-9af5-4ba9-8b11-c0a905f04162"
+                        }
+                    },
+                    {
+                        "deviceId": "a755929d-15a8-4303-8c0d-a15d923a20d8",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hall",
+                            "locationId": "84e3164e-a357-4823-8b33-5f5634b1a26b",
+                            "roomName": "hall",
+                            "roomId": "84e3164e-a357-4823-8b33-5f5634b1a26b"
+                        }
+                    },
+                    {
+                        "deviceId": "86138f40-0bef-4a19-91ee-ba08f2b858b5",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest room",
+                            "locationId": "d1800eeb-3e69-4a3a-988b-27ee73aadb23",
+                            "roomName": "guest room",
+                            "roomId": "d1800eeb-3e69-4a3a-988b-27ee73aadb23"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the presence status in the room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "presence_getStatus",
+                            "arguments": {
+                                "device": "940a5f89-8b5e-4492-80cf-4310002b3100",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The room is {status}."
+        }
+    ],
+    "tools": []
+}

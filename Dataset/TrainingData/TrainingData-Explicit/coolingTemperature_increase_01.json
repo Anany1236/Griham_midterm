@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "52c80a15-ed6c-4072-876a-4b2a48eaef66",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee8ffb03-9512-48f2-be98-61e64434024c",
+                            "roomName": "utility room",
+                            "roomId": "dbfc192b-20f6-42c9-aacc-9fef07c0232e"
+                        }
+                    },
+                    {
+                        "deviceId": "f5d56b6c-b30c-4b79-9715-6d1381987119",
+                        "deviceName": "roof air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee8ffb03-9512-48f2-be98-61e64434024c",
+                            "roomName": "living room",
+                            "roomId": "8fb31ecf-59f9-4319-8f2a-7586631d88c7"
+                        }
+                    },
+                    {
+                        "deviceId": "3435f665-a72d-4ff0-99eb-36e53fcb98f2",
+                        "deviceName": "floor air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee8ffb03-9512-48f2-be98-61e64434024c",
+                            "roomName": "bedroom",
+                            "roomId": "6c03900a-bae7-4de6-9ee9-844ca23b05bb"
+                        }
+                    },
+                    {
+                        "deviceId": "777f4442-0d0d-4606-9979-148651cf9505",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ee8ffb03-9512-48f2-be98-61e64434024c",
+                            "roomName": "guest room",
+                            "roomId": "74bc0a47-7044-4ddb-b614-faf9410dcad2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you turn up the air conditioning cooling temperature by 5 degrees in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "coolingTemperature_increase",
+                            "arguments": {
+                                "device": "f5d56b6c-b30c-4b79-9715-6d1381987119",
+                                "room": "living room",
+                                "coolingTemperatureDelta": "5"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have turned up the cooling temperature of the roof air conditioner by 5 degrees in the living room."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4a17ef8f-f3ab-4b9d-81af-d8a1b17d1bf8",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "5219b574-c885-4677-84be-7bf6139b47f6",
+                            "roomName": "bathroom",
+                            "roomId": "5219b574-c885-4677-84be-7bf6139b47f6"
+                        }
+                    },
+                    {
+                        "deviceId": "ddd33b10-1cd2-4c5b-b166-ab535d6ca615",
+                        "deviceName": "air quality sensor",
+                        "deviceType": "air quality sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "595ab877-51f2-47e3-9c80-e0de4dedb719",
+                            "roomName": "kitchen",
+                            "roomId": "595ab877-51f2-47e3-9c80-e0de4dedb719"
+                        }
+                    },
+                    {
+                        "deviceId": "cc824fd7-f595-4c97-a7a4-b8775eacdd2e",
+                        "deviceName": "humidifier",
+                        "deviceType": "humidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "4ea5fa59-0150-4add-b439-960ae9835820",
+                            "roomName": "utility room",
+                            "roomId": "4ea5fa59-0150-4add-b439-960ae9835820"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "How is the odor level in the room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "odorLevel_getValue",
+                            "arguments": {
+                                "device": "4a17ef8f-f3ab-4b9d-81af-d8a1b17d1bf8",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The odor level is {level}."
+        }
+    ],
+    "tools": []
+}

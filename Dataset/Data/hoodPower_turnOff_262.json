@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "34080155-a603-45fb-8fb8-a17e1b3e8342",
+                        "deviceName": "hood",
+                        "deviceType": "hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "ceaa92a6-57c7-4498-b31e-b009a8bc6494",
+                            "roomName": "kitchen",
+                            "roomId": "ceaa92a6-57c7-4498-b31e-b009a8bc6494"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the power on the kitchen hood."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodPower_turnOff",
+                            "arguments": {
+                                "device": "34080155-a603-45fb-8fb8-a17e1b3e8342",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The power on the kitchen hood is now off."
+        }
+    ],
+    "tools": []
+}

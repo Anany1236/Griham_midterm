@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4f1dfed1-71ad-4239-98ad-cb8a84b4f0fe",
+                        "deviceName": "hood",
+                        "deviceType": "hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "2906d7ae-6906-4220-8651-659f784daee4",
+                            "roomName": "kitchen",
+                            "roomId": "2906d7ae-6906-4220-8651-659f784daee4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the fan speed on the hood in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "hoodFanSpeedLevel_setValue",
+                            "arguments": {
+                                "device": "4f1dfed1-71ad-4239-98ad-cb8a84b4f0fe",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The fan speed on the hood in the kitchen has been set."
+        }
+    ],
+    "tools": []
+}

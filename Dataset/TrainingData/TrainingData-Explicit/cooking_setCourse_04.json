@@ -1,0 +1,97 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d74fb2fc-7844-4283-b982-c8828ca37018",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "330b3741-6213-44c1-9fd3-7fe373a458f8",
+                            "roomName": "Kitchen",
+                            "roomId": "e956bd8d-fd1f-40e6-95d0-3240832bef8f"
+                        }
+                    },
+                    {
+                        "deviceId": "7d0c0ef5-e6af-42c4-8176-184254632c69",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "330b3741-6213-44c1-9fd3-7fe373a458f8",
+                            "roomName": "Kitchen",
+                            "roomId": "e956bd8d-fd1f-40e6-95d0-3240832bef8f"
+                        }
+                    },
+                    {
+                        "deviceId": "c94ee6d6-b730-4a40-a50b-433188406145",
+                        "deviceName": "ricecooker",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "330b3741-6213-44c1-9fd3-7fe373a458f8",
+                            "roomName": "Kitchen",
+                            "roomId": "e956bd8d-fd1f-40e6-95d0-3240832bef8f"
+                        }
+                    },
+                    {
+                        "deviceId": "806c87f3-39df-45be-acbf-c1f38e3e1748",
+                        "deviceName": "Kitchen light",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "330b3741-6213-44c1-9fd3-7fe373a458f8",
+                            "roomName": "Kitchen",
+                            "roomId": "e956bd8d-fd1f-40e6-95d0-3240832bef8f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set microwave to bake at 110 degrees for 36 minutes"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cooking_setCourse",
+                            "arguments": {
+                                "device": "7d0c0ef5-e6af-42c4-8176-184254632c69",
+                                "mode": "bake",
+                                "cookingTemperature": 110,
+                                "cookingTimer": "36 minutes"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set microwave to bake at 110 degrees for 36 minutes"
+        }
+    ],
+    "tools": []
+}

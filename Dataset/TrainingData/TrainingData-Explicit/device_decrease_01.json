@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b584caf7-d4cf-4793-bb84-d1ba11a30990",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fb375606-0988-4896-a864-5156183dcc27",
+                            "roomName": "hall",
+                            "roomId": "4a35bca9-7032-44d4-b949-49e637cc3b2a"
+                        }
+                    },
+                    {
+                        "deviceId": "30755cd0-c468-4b21-a2f5-d565ee0d7b95",
+                        "deviceName": "fan",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fb375606-0988-4896-a864-5156183dcc27",
+                            "roomName": "living room",
+                            "roomId": "b9aaeefb-4c52-446c-812e-fff130de407b"
+                        }
+                    },
+                    {
+                        "deviceId": "354a399f-7d19-4e91-b07e-6bf8364cc1c3",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fb375606-0988-4896-a864-5156183dcc27",
+                            "roomName": "laundry room",
+                            "roomId": "41660156-a2dc-4f58-a068-abe7d99b97d0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Decrease the fan in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_decrease",
+                            "arguments": {
+                                "device": "30755cd0-c468-4b21-a2f5-d565ee0d7b95",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The living room fan is decreased."
+        }
+    ],
+    "tools": []
+}

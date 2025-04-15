@@ -1,0 +1,32 @@
+{
+    "name": "microwaveTimer_setValue",
+    "description": "This function is used to set the cooking time of the microwave.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to set the cooking time of the microwave.",
+            "optional": true
+        },
+        {
+            "name": "cookingTimer",
+            "type": "number",
+            "description": "The cooking time to be set for the microwave in either minutes or seconds.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

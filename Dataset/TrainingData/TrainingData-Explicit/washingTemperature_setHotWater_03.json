@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "34df5099-b75a-44c0-9a48-1565ef812638",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5ad10012-36eb-44fe-9f4d-b87a6548493e",
+                            "roomName": "utility room",
+                            "roomId": "1c74f750-1b68-4c94-9d14-5ca3fcc50a91"
+                        }
+                    },
+                    {
+                        "deviceId": "3718da5c-31cf-429e-9033-a32451dbd507",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5ad10012-36eb-44fe-9f4d-b87a6548493e",
+                            "roomName": "living room",
+                            "roomId": "141cb1ad-842a-4cb5-bda6-6f4c195702cf"
+                        }
+                    },
+                    {
+                        "deviceId": "87aa3e61-8d34-4530-9a59-b23d0728f970",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5ad10012-36eb-44fe-9f4d-b87a6548493e",
+                            "roomName": "utility room",
+                            "roomId": "1c74f750-1b68-4c94-9d14-5ca3fcc50a91"
+                        }
+                    },
+                    {
+                        "deviceId": "4f260fdd-1c2a-4abe-87d6-d9fa81be42d0",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5ad10012-36eb-44fe-9f4d-b87a6548493e",
+                            "roomName": "bedroom",
+                            "roomId": "18cc7f8e-83d1-4a9d-9bb5-9395e565cd92"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the water temperature to hot in upper compartment?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingTemperature_setHotWater",
+                            "arguments": {
+                                "predefinedCompartment": "upper"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have set the water temperature to hot in upper compartment."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,67 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "change volume to 50 in Samsung Speaker"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "volume_setValue",
+                            "arguments": {
+                                "device": "Samsung Speaker",
+                                "volume": 50
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The Samsung Speaker volume is changed to 50."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "volume_setValue",
+                    "description": "This function is used to set a volume on device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "volume": {
+                                "type": "string",
+                                "description": "Target volume to be used"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "volume"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "0083fce0-0cd7-4b74-a360-635945ba6332",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "deviceTemperature": 24,
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "83261da1-9097-44a3-8689-089819437a2b",
+                            "roomName": "Living room",
+                            "roomId": "0bb8773e-6535-4ca0-af3d-8cf8abf7b18f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Its getting really cold, do something"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOff",
+                            "arguments": {
+                                "device": "0083fce0-0cd7-4b74-a360-635945ba6332"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Would you like me to turn off the air conditioner?"
+        }
+    ],
+    "tools": []
+}

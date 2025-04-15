@@ -1,0 +1,47 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "video_play",
+            "description": "This function is used to play a video on a SmartThings device like a TV.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to play the video."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to play the video."
+                    },
+                    "appname": {
+                        "type": "string",
+                        "description": "The name of the application to play the video (e.g., Netflix, YouTube)."
+                    },
+                    "predefinedAppName": {
+                        "type": "string",
+                        "description": "The predefined application name to play the video."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the video to play."
+                    },
+                    "cast": {
+                        "type": "string",
+                        "description": "The cast of the video to play."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

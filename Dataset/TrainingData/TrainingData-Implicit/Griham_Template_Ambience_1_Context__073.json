@@ -1,0 +1,113 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "75ec954c-9a4a-40a1-8ff8-26e12b1ecae3",
+                        "deviceName": "airdresser",
+                        "deviceType": "airdresser",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aa499394-c58c-4f4d-83f1-42fad4bedb58",
+                            "roomName": "Balcony",
+                            "roomId": "c24b48a8-4bd5-4ebb-b978-e496273a559c"
+                        }
+                    },
+                    {
+                        "deviceId": "5ec522b0-51a7-4d85-a0f4-54810dd23011",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aa499394-c58c-4f4d-83f1-42fad4bedb58",
+                            "roomName": "Living room",
+                            "roomId": "6c1e50d9-d801-4fe5-ac2a-92c7079ba4cc"
+                        }
+                    },
+                    {
+                        "deviceId": "f8fe2a6c-9f8f-42aa-b642-caa92a1abef6",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aa499394-c58c-4f4d-83f1-42fad4bedb58",
+                            "roomName": "guest room",
+                            "roomId": "e5b488b0-450d-46eb-b1b3-bd34c671bcc4"
+                        }
+                    },
+                    {
+                        "deviceId": "1d523fe3-67d9-4ef2-8d26-7332066ea4c1",
+                        "deviceName": "dehumidifier",
+                        "deviceType": "dehumidifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "aa499394-c58c-4f4d-83f1-42fad4bedb58",
+                            "roomName": "guest room",
+                            "roomId": "e5b488b0-450d-46eb-b1b3-bd34c671bcc4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the guest room ready for daily meeting at 8 AM"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dressing_pause",
+                            "arguments": {
+                                "device": "75ec954c-9a4a-40a1-8ff8-26e12b1ecae3"
+                            }
+                        },
+                        {
+                            "name": " mute_turnOn",
+                            "arguments": {
+                                "device": "5ec522b0-51a7-4d85-a0f4-54810dd23011"
+                            }
+                        },
+                        {
+                            "name": " device_close",
+                            "arguments": {
+                                "device": "f8fe2a6c-9f8f-42aa-b642-caa92a1abef6"
+                            }
+                        },
+                        {
+                            "name": " device_turnOff",
+                            "arguments": {
+                                "device": "1d523fe3-67d9-4ef2-8d26-7332066ea4c1"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success",
+                "cron": "0 8 * * *"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can pause the dressing on air dresser, mute the tv, close the blinds and turn off the dehumidifier. Would you confirm?"
+        }
+    ],
+    "tools": []
+}

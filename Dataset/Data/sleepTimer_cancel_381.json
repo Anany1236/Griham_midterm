@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "af5c96a2-c8a3-486e-97d8-8d09dbff98af",
+                        "deviceName": "air purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "0c79a2a9-3890-4656-887c-e7dc467e1971",
+                            "roomName": "bedroom",
+                            "roomId": "0c79a2a9-3890-4656-887c-e7dc467e1971"
+                        }
+                    },
+                    {
+                        "deviceId": "5fa67abf-d74e-4cc3-9828-603e5d157269",
+                        "deviceName": "humidifier",
+                        "deviceType": "humidifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "51bba1ee-d630-4ea1-ad6e-bed521a0f4a2",
+                            "roomName": "living room",
+                            "roomId": "51bba1ee-d630-4ea1-ad6e-bed521a0f4a2"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the sleep timer for the fan."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "sleepTimer_cancel",
+                            "arguments": {
+                                "device": "af5c96a2-c8a3-486e-97d8-8d09dbff98af",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The sleep timer for the fan is now off."
+        }
+    ],
+    "tools": []
+}

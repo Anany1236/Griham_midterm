@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9f1af3c9-5af9-4607-a33f-cba50b9d751e",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5b55b56a-44b9-4436-ab4a-a8a12640a1a7",
+                            "roomName": "bedroom",
+                            "roomId": "5b55b56a-44b9-4436-ab4a-a8a12640a1a7"
+                        }
+                    },
+                    {
+                        "deviceId": "c74e9ddb-f7dd-4986-aff0-46566d4153ad",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f29eddfa-cad5-4774-a45c-4a8d78d72a1e",
+                            "roomName": "living Room",
+                            "roomId": "f29eddfa-cad5-4774-a45c-4a8d78d72a1e"
+                        }
+                    },
+                    {
+                        "deviceId": "cc032f59-82c9-4bfa-a01b-e86b26f2cf1f",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "03b4bfbd-f5f5-4a46-b5ae-7b5892fe6930",
+                            "roomName": "guest Room",
+                            "roomId": "03b4bfbd-f5f5-4a46-b5ae-7b5892fe6930"
+                        }
+                    },
+                    {
+                        "deviceId": "83227878-191f-494b-8887-b16caa323832",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9ddb85d3-8110-454e-a1ba-20a190429817",
+                            "roomName": "kitchen",
+                            "roomId": "9ddb85d3-8110-454e-a1ba-20a190429817"
+                        }
+                    },
+                    {
+                        "deviceId": "87302d63-f146-4d1c-83ac-5fe64a0bae7d",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fd797af7-8506-407d-9c5e-76ea98a6d254",
+                            "roomName": "utility Room",
+                            "roomId": "fd797af7-8506-407d-9c5e-76ea98a6d254"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the finish time for the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "finishTime_setValue",
+                            "arguments": {
+                                "device": "83227878-191f-494b-8887-b16caa323832",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The finish time for the washer in the kitchen is updated"
+        }
+    ],
+    "tools": []
+}

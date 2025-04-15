@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "031e3d4c-ef43-45e2-bacf-236695407a69",
+                        "deviceName": "smart TV",
+                        "deviceType": "smart TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "83687d7e-2a86-4c06-8123-afaa001defbf",
+                            "roomName": "living room",
+                            "roomId": "83687d7e-2a86-4c06-8123-afaa001defbf"
+                        }
+                    },
+                    {
+                        "deviceId": "0cef199b-cf3f-4e16-a608-991be2c34f32",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "home theater",
+                            "locationId": "562a92b8-00e5-473f-b8aa-951495f22acb",
+                            "roomName": "home theater",
+                            "roomId": "562a92b8-00e5-473f-b8aa-951495f22acb"
+                        }
+                    },
+                    {
+                        "deviceId": "f9298188-20ee-4f3b-b5cd-16cca1ad4e35",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "e85a40b6-7793-4186-895a-85d82ef613a6",
+                            "roomName": "office room",
+                            "roomId": "e85a40b6-7793-4186-895a-85d82ef613a6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please turn off the video stream on the monitor in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "videoStream_turnOff",
+                            "arguments": {
+                                "device": "f9298188-20ee-4f3b-b5cd-16cca1ad4e35",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The video stream on the monitor in the office room has been turned off."
+        }
+    ],
+    "tools": []
+}

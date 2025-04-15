@@ -1,0 +1,39 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "refrigeratorMode_setValue",
+            "description": "This function is used to change the mode of the refrigerator.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to change the refrigerator's mode."
+                    },
+                    "mode": {
+                        "type": "string",
+                        "description": "The mode to which the refrigerator should be changed (e.g., fruit/vegetable, wine, meat, defrost)."
+                    },
+                    "weight": {
+                        "type": "number",
+                        "description": "The weight of the item being placed in the refrigerator compartment."
+                    },
+                    "weightUnit": {
+                        "type": "string",
+                        "description": "The unit of the weight (e.g., kg, lbs)."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

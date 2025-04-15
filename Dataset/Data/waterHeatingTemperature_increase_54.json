@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "242a735f-2352-453f-8b19-e47ac54fbe33",
+                        "deviceName": "water heater",
+                        "deviceType": "water heater",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "d4ec5b0d-77c0-4020-bca9-1466054f83e9",
+                            "roomName": "bathroom",
+                            "roomId": "d4ec5b0d-77c0-4020-bca9-1466054f83e9"
+                        }
+                    },
+                    {
+                        "deviceId": "7c664402-2ddb-4b57-bab7-c6b0fa5e6c5f",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility room",
+                            "locationId": "d8f9ba00-ff22-4879-8e9c-171b5f8136b4",
+                            "roomName": "utility room",
+                            "roomId": "d8f9ba00-ff22-4879-8e9c-171b5f8136b4"
+                        }
+                    },
+                    {
+                        "deviceId": "569e3acd-9cde-400e-a658-497ef13025b1",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "063ad392-a210-46b2-a3e2-19d128740a6a",
+                            "roomName": "kitchen",
+                            "roomId": "063ad392-a210-46b2-a3e2-19d128740a6a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Increase the water heating temperature."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "waterHeatingTemperature_increase",
+                            "arguments": {
+                                "device": "242a735f-2352-453f-8b19-e47ac54fbe33",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Water heating temperature has been increased."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "99f145a6-f486-451f-be58-b91d3b82f54f",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "7c51f630-c448-4f1e-af50-c64c7ee8c35f",
+                            "roomName": "office room",
+                            "roomId": "7c51f630-c448-4f1e-af50-c64c7ee8c35f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please activate the TV ambient mode in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ambientMode_turnOn",
+                            "arguments": {
+                                "device": "99f145a6-f486-451f-be58-b91d3b82f54f",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The ambient mode in TV in the office room has been activated."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,92 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f9da5eff-ad66-4335-afda-42120fe252b1",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9294da89-6dd9-4e9e-ae5c-4979b335bdf9",
+                            "roomName": "living room",
+                            "roomId": "4f4304ff-422b-45a6-a39e-97041ac94988"
+                        }
+                    },
+                    {
+                        "deviceId": "1612ea8c-0011-46f8-9690-847c5873782f",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9294da89-6dd9-4e9e-ae5c-4979b335bdf9",
+                            "roomName": "living room",
+                            "roomId": "4f4304ff-422b-45a6-a39e-97041ac94988"
+                        }
+                    },
+                    {
+                        "deviceId": "368249ba-1cf8-4ac6-b783-10e1e8b133b6",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9294da89-6dd9-4e9e-ae5c-4979b335bdf9",
+                            "roomName": "kitchen",
+                            "roomId": "fbe1d7cc-9dee-497e-9964-52df6cc9309b"
+                        }
+                    },
+                    {
+                        "deviceId": "51e28e94-aaae-4357-9066-7318b0580b61",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9294da89-6dd9-4e9e-ae5c-4979b335bdf9",
+                            "roomName": "laundry room",
+                            "roomId": "7eb53581-d298-4427-befb-e7e16ea50495"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "How far is the dishwashing completed?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_getProgress",
+                            "arguments": { }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The dishwashing in kitchen is completed."
+        }
+    ],
+    "tools": []
+}

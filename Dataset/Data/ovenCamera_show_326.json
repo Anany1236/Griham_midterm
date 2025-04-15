@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a0528c37-182e-4a12-9a8f-36e9c390cf37",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "bd398e8d-8363-4e29-8c44-66cd24c4d4f4",
+                            "roomName": "kitchen",
+                            "roomId": "bd398e8d-8363-4e29-8c44-66cd24c4d4f4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please display the oven camera view."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "ovenCamera_show",
+                            "arguments": {
+                                "device": "a0528c37-182e-4a12-9a8f-36e9c390cf37",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive shown the oven camera view."
+        }
+    ],
+    "tools": []
+}

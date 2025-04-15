@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f0095098-6baa-44a6-b3b2-1e904d507a30",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a728e658-0395-4d5c-a2a4-d4ea5beec70d",
+                            "roomName": "bedroom",
+                            "roomId": "4a2e2804-4fe6-490c-9ad7-d66b88be0669"
+                        }
+                    },
+                    {
+                        "deviceId": "c0247a91-825b-4e1f-8d87-b80407771747",
+                        "deviceName": "dryer",
+                        "deviceType": "dryer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a728e658-0395-4d5c-a2a4-d4ea5beec70d",
+                            "roomName": "utility room",
+                            "roomId": "a29a6be6-8232-4806-ba94-d37e9afdd58d"
+                        }
+                    },
+                    {
+                        "deviceId": "5d0aa9e3-7f81-42d3-a5b0-37e000001a02",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a728e658-0395-4d5c-a2a4-d4ea5beec70d",
+                            "roomName": "kitchen",
+                            "roomId": "1d917dab-d5bf-495b-bac0-5eed9fc3fa9d"
+                        }
+                    },
+                    {
+                        "deviceId": "4d04b97c-4eb9-47dd-a49b-fa207e2a52ba",
+                        "deviceName": "water purifier",
+                        "deviceType": "waterpurifier",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a728e658-0395-4d5c-a2a4-d4ea5beec70d",
+                            "roomName": "kitchen",
+                            "roomId": "1d917dab-d5bf-495b-bac0-5eed9fc3fa9d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Pause the dryer"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "drying_pause",
+                            "arguments": {
+                                "device": "c0247a91-825b-4e1f-8d87-b80407771747"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have paused the dryer."
+        }
+    ],
+    "tools": []
+}

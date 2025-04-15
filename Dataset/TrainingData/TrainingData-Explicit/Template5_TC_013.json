@@ -1,0 +1,68 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "user",
+            "content": "In my Living Room TV open CNN news"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "channel_setByName",
+                            "arguments": {
+                                "device": "TV",
+                                "room": "Living Room",
+                                "channel": "CNN news"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Started CNN news channel on Living room TV."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "channel_setByName",
+                    "description": "This function is used to set a channel on TV device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "channel": {
+                                "type": "string",
+                                "description": "Target channel to be used"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "channel"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

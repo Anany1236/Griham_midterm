@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5e6bd4d9-e8a4-4ed7-9a19-b2928b828793",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "c0157389-6d6b-4ce9-962b-10c4256af931",
+                            "roomName": "living room",
+                            "roomId": "c0157389-6d6b-4ce9-962b-10c4256af931"
+                        }
+                    },
+                    {
+                        "deviceId": "e0f9c38a-7f81-4223-bf2e-3830f31c70c7",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "1c2a3720-d55c-46cf-8611-af8e19f94d6b",
+                            "roomName": "bedroom",
+                            "roomId": "1c2a3720-d55c-46cf-8611-af8e19f94d6b"
+                        }
+                    },
+                    {
+                        "deviceId": "ef674b81-6326-4e8c-9da7-1fa6a54313c1",
+                        "deviceName": "air conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "08ea6475-b06c-483e-bf01-89cca4d60d0c",
+                            "roomName": "office room",
+                            "roomId": "08ea6475-b06c-483e-bf01-89cca4d60d0c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please tell me the thermostat's current state."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "thermostatOperatingState_getValue",
+                            "arguments": {
+                                "device": "5e6bd4d9-e8a4-4ed7-9a19-b2928b828793",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The thermostat is in {state} state."
+        }
+    ],
+    "tools": []
+}

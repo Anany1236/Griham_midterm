@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9d99335b-b788-49f3-acb5-198f777089b9",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0a033961-8ee0-4f97-a391-c7e2afb9f1c8",
+                            "roomName": "bedroom",
+                            "roomId": "0a033961-8ee0-4f97-a391-c7e2afb9f1c8"
+                        }
+                    },
+                    {
+                        "deviceId": "eff0ead2-94ce-4639-b842-797ddf59940c",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "406f1bd0-cc00-4214-873d-1e3fcf795a1c",
+                            "roomName": "living Room",
+                            "roomId": "406f1bd0-cc00-4214-873d-1e3fcf795a1c"
+                        }
+                    },
+                    {
+                        "deviceId": "a81ecb2a-e924-4f5f-9dba-71f49b607c55",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "8f3d3e98-8cc0-4fa9-b063-df85f980862f",
+                            "roomName": "guest Room",
+                            "roomId": "8f3d3e98-8cc0-4fa9-b063-df85f980862f"
+                        }
+                    },
+                    {
+                        "deviceId": "e9deb1a2-e78c-496c-8b9e-47f3bb016a50",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7e135d9c-bc7d-42ac-9c00-63eb6fb06e6a",
+                            "roomName": "kitchen",
+                            "roomId": "7e135d9c-bc7d-42ac-9c00-63eb6fb06e6a"
+                        }
+                    },
+                    {
+                        "deviceId": "c2e2efe9-f19a-456b-9253-8f66e542e340",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e8d581d0-dbba-4b95-98fe-1599def5e01e",
+                            "roomName": "utility Room",
+                            "roomId": "e8d581d0-dbba-4b95-98fe-1599def5e01e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you get the charger value of the light in the guest room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "charger_getValue",
+                            "arguments": {
+                                "device": "a81ecb2a-e924-4f5f-9dba-71f49b607c55",
+                                "room": "guest Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The charger value of the light in the guest room is 50%"
+        }
+    ],
+    "tools": []
+}

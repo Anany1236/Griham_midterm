@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "cookingTemperature_decrease",
+            "description": "This function is used to lower the temperature of the cooker.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to lower the temperature."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The specific compartment within the device to lower the temperature."
+                    },
+                    "cookingTemperatureDelta": {
+                        "type": "integer",
+                        "description": "The amount by which to decrease the cooking temperature."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

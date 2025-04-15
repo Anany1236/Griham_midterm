@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e900d357-f48d-48b1-a4e9-c27ddc246b70",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "e471260f-4f89-4e11-a784-024732973e33",
+                            "roomName": "laundry room",
+                            "roomId": "e471260f-4f89-4e11-a784-024732973e33"
+                        }
+                    },
+                    {
+                        "deviceId": "878d40bc-d55b-44a6-8aea-d376988e1740",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bathroom",
+                            "locationId": "8e64ff85-c3bc-48a2-bc65-d91e57d0acc4",
+                            "roomName": "bathroom",
+                            "roomId": "8e64ff85-c3bc-48a2-bc65-d91e57d0acc4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you disable the washing cycle on the washer in the bathroom."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingOption_turnOff",
+                            "arguments": {
+                                "device": "878d40bc-d55b-44a6-8aea-d376988e1740",
+                                "room": "bathroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The washing cycle on the washer in the bathroom is now disabled."
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,27 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "camera_show",
+            "description": "This function is used to display video feed from a specified camera or a camera built into a smart home device.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the camera is located. e.g. home, office, etc."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the camera is located.  e.g. living room, bedroom, bathroom, etc."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device with the camera. e.g. Refrigerator, etc."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

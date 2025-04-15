@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "fad3ec3d-2ebd-4818-946a-bf2912f493f5",
+                        "deviceName": "door",
+                        "deviceType": "door",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "4b59bc57-76e4-494e-9320-d6a5525d7eff",
+                            "roomName": "kitchen",
+                            "roomId": "4b59bc57-76e4-494e-9320-d6a5525d7eff"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check if the back door is open."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "door_getOpenStatus",
+                            "arguments": {
+                                "device": "fad3ec3d-2ebd-4818-946a-bf2912f493f5",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The back door is closed."
+        }
+    ],
+    "tools": []
+}

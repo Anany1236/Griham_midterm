@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "36bdca92-4b2c-4d0d-a8bd-e9bb979b15ae",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c690cd6a-c26c-4268-8732-06ea49acc344",
+                            "roomName": "bedroom",
+                            "roomId": "c690cd6a-c26c-4268-8732-06ea49acc344"
+                        }
+                    },
+                    {
+                        "deviceId": "b7f6305c-3c79-4db0-a41e-9875a4d44f7f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ecf2f0f-4d8f-4b54-ae1d-f8001519673d",
+                            "roomName": "living Room",
+                            "roomId": "1ecf2f0f-4d8f-4b54-ae1d-f8001519673d"
+                        }
+                    },
+                    {
+                        "deviceId": "35bc8c12-7035-4c24-9915-3db5104f939b",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "70cd0549-067a-4f38-9c02-745e7dc89e5f",
+                            "roomName": "guest Room",
+                            "roomId": "70cd0549-067a-4f38-9c02-745e7dc89e5f"
+                        }
+                    },
+                    {
+                        "deviceId": "f8a06e5f-80d6-4f9f-a414-98f54ed36812",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c685f303-f3e2-479c-abce-80ef7d14fb79",
+                            "roomName": "kitchen",
+                            "roomId": "c685f303-f3e2-479c-abce-80ef7d14fb79"
+                        }
+                    },
+                    {
+                        "deviceId": "6e2482a6-0550-4117-b3fb-eadec163d4cd",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "005c9447-42fd-4e99-8e2d-4deda167bf11",
+                            "roomName": "utility Room",
+                            "roomId": "005c9447-42fd-4e99-8e2d-4deda167bf11"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the consumable state status of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "consumableState_getStatus",
+                            "arguments": {
+                                "device": "f8a06e5f-80d6-4f9f-a414-98f54ed36812",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The consumable state status of the washer in the kitchen is good"
+        }
+    ],
+    "tools": []
+}

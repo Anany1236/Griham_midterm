@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "4666398f-7b9c-4c14-82ef-03df462da2f2",
+                        "deviceName": "door",
+                        "deviceType": "smartlock",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3a7fdd99-fe1f-4e75-9424-4b7258fdf7a6",
+                            "roomName": "living room",
+                            "roomId": "2788ea1a-3ddf-4102-b2d3-3fe69e65108c"
+                        }
+                    },
+                    {
+                        "deviceId": "8bc20c35-4fcb-4a29-81d1-5b5cbcd3c0c7",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3a7fdd99-fe1f-4e75-9424-4b7258fdf7a6",
+                            "roomName": "living room",
+                            "roomId": "2788ea1a-3ddf-4102-b2d3-3fe69e65108c"
+                        }
+                    },
+                    {
+                        "deviceId": "1a71c7bb-5993-4cb8-90d7-f8f58a969820",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3a7fdd99-fe1f-4e75-9424-4b7258fdf7a6",
+                            "roomName": "guest room",
+                            "roomId": "2788ea1a-3ddf-4102-b2d3-3fe69e65108c"
+                        }
+                    },
+                    {
+                        "deviceId": "16e7e5be-6990-4925-b0e7-2cb763926e91",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "3a7fdd99-fe1f-4e75-9424-4b7258fdf7a6",
+                            "roomName": "living room",
+                            "roomId": "2788ea1a-3ddf-4102-b2d3-3fe69e65108c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the ac in the guest room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_stop",
+                            "arguments": {
+                                "device": "1a71c7bb-5993-4cb8-90d7-f8f58a969820",
+                                "room": "guest room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I am turning off the ac in the guest room"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "cd2b484e-08ae-4c4a-b017-40e3ecefa9fd",
+                        "deviceName": "weather station",
+                        "deviceType": "weather station",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "outdoor area",
+                            "locationId": "98596a8d-79e1-4d8a-ad50-01088a9185b4",
+                            "roomName": "outdoor area",
+                            "roomId": "98596a8d-79e1-4d8a-ad50-01088a9185b4"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you check the wind direction at the rooftop."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "windDirection_getValue",
+                            "arguments": {
+                                "device": "cd2b484e-08ae-4c4a-b017-40e3ecefa9fd",
+                                "room": "outdoor area"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The wind direction at the rooftop is currently northeast."
+        }
+    ],
+    "tools": []
+}

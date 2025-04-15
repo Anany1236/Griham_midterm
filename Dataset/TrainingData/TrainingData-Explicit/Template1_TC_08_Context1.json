@@ -1,0 +1,91 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7869ca80-46c7-fdcd-0dff-4daba09708fe",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "Living Room",
+                            "roomId": "r1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Use Living Room TV to play the office on Netflix"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_play",
+                            "arguments": {
+                                "device": "7869ca80-46c7-fdcd-0dff-4daba09708fe",
+                                "appname": "Netflix",
+                                "title": "The Office"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The living room TV has started playing the Office on Netflix."
+        }
+    ],
+    "tools": [
+        {
+            "type": "function",
+            "function": [
+                {
+                    "name": "application_launch",
+                    "description": "This function is used to launch an application on TV device.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "device": {
+                                "type": "string",
+                                "description": "Target device to be used."
+                            },
+                            "appname": {
+                                "type": "string",
+                                "description": "Target application to be used"
+                            },
+                            "title": {
+                                "type": "string",
+                                "description": "Target title to be searched and played"
+                            }
+                        },
+                        "required": [
+                            "device",
+                            "appname"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

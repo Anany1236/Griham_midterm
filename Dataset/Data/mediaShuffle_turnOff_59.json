@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "92d1c3b2-3f9c-422d-a096-53bdee0fa7df",
+                        "deviceName": "speaker",
+                        "deviceType": "speaker",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "57577770-68d1-4db0-b604-6e0816926a1e",
+                            "roomName": "kitchen",
+                            "roomId": "57577770-68d1-4db0-b604-6e0816926a1e"
+                        }
+                    },
+                    {
+                        "deviceId": "3e9a7f50-6aa7-4b8e-b784-f4878f69f587",
+                        "deviceName": "TV",
+                        "deviceType": "TV",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "bfc26c9e-924a-4455-8055-42e34720ffd8",
+                            "roomName": "living room",
+                            "roomId": "bfc26c9e-924a-4455-8055-42e34720ffd8"
+                        }
+                    },
+                    {
+                        "deviceId": "fe9b640c-a945-432c-9d42-14ed7534984b",
+                        "deviceName": "music system",
+                        "deviceType": "music system",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "office room",
+                            "locationId": "627299b7-2474-4d98-a963-e3cf5e78d1e0",
+                            "roomName": "office room",
+                            "roomId": "627299b7-2474-4d98-a963-e3cf5e78d1e0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Please switch off the shuffle feature on the music system in the office room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mediaShuffle_turnOff",
+                            "arguments": {
+                                "device": "fe9b640c-a945-432c-9d42-14ed7534984b",
+                                "room": "office room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The shuffle feature is now off on the music system in the office room."
+        }
+    ],
+    "tools": []
+}

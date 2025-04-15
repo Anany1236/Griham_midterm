@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e0aeb5c7-4b1f-496f-934c-23f39d3a6949",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "bf75419a-be5e-441d-a6cd-d46818246820",
+                            "roomName": "bedroom",
+                            "roomId": "bf75419a-be5e-441d-a6cd-d46818246820"
+                        }
+                    },
+                    {
+                        "deviceId": "a4208c8d-c6a3-4542-912d-76090fe8be23",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dc06360c-7804-4f19-b548-88d429967110",
+                            "roomName": "living Room",
+                            "roomId": "dc06360c-7804-4f19-b548-88d429967110"
+                        }
+                    },
+                    {
+                        "deviceId": "ea99e035-1333-48a2-9a26-cf714bf79222",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2d88230b-2d84-4823-b78d-3bb9a197e909",
+                            "roomName": "guest Room",
+                            "roomId": "2d88230b-2d84-4823-b78d-3bb9a197e909"
+                        }
+                    },
+                    {
+                        "deviceId": "c278ca64-05c3-427f-b4a1-45ae5807958e",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ac12366d-fd6c-43b8-84c6-dcb0cfaa7e85",
+                            "roomName": "kitchen",
+                            "roomId": "ac12366d-fd6c-43b8-84c6-dcb0cfaa7e85"
+                        }
+                    },
+                    {
+                        "deviceId": "b8fef0dd-e7f6-442f-b7ca-f0486e17550b",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6a4de3b1-e9bb-4412-925e-739099b4d25f",
+                            "roomName": "utility Room",
+                            "roomId": "6a4de3b1-e9bb-4412-925e-739099b4d25f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you display the blueprint of the hood in the utility room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "blueprint_show",
+                            "arguments": {
+                                "device": "b8fef0dd-e7f6-442f-b7ca-f0486e17550b",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The blueprint of the hood in the utility room is displayed"
+        }
+    ],
+    "tools": []
+}

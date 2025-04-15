@@ -1,0 +1,95 @@
+{
+	"messages": [
+		{
+			"role": "system",
+			"content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+		},
+		{
+			"role": "context",
+			"content": {
+				"homecontext": [
+					{
+						"deviceId": "5deab698-96f2-42fa-aca7-b1d80d5e54fe",
+						"deviceName": "tv",
+						"deviceType": "tv",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "de75cd8a-d1ef-48d4-b133-674364cb07c4",
+							"roomName": "Living room",
+							"roomId": "33a712b7-7e33-4501-af4a-3dad45a622ba"
+						}
+					},
+					{
+						"deviceId": "c0fada50-9877-4973-8874-7b04efec08dc",
+						"deviceName": "speaker",
+						"deviceType": "speaker",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "de75cd8a-d1ef-48d4-b133-674364cb07c4",
+							"roomName": "bedroom",
+							"roomId": "cfb33e73-ba6e-4afc-b811-828585d8d293"
+						}
+					},
+					{
+						"deviceId": "7e7df863-2594-4c8f-a181-de8f212165c1",
+						"deviceName": "projector",
+						"deviceType": "projector",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "de75cd8a-d1ef-48d4-b133-674364cb07c4",
+							"roomName": "kids room",
+							"roomId": "a6f505e4-45b8-4ae3-b854-7e89842a7734"
+						}
+					},
+					{
+						"deviceId": "5c02d72d-cca0-4e25-be64-358b1ed103d1",
+						"deviceName": "kitchen light",
+						"deviceType": "light",
+						"deviceStatus": "on",
+						"location": {
+							"locationName": "house",
+							"locationId": "de75cd8a-d1ef-48d4-b133-674364cb07c4",
+							"roomName": "Kitchen",
+							"roomId": "a52168e2-5479-49e9-9441-0d458c365d6b"
+						}
+					}
+				]
+			}
+		},
+		{
+			"role": "user",
+			"content": "Partially increase the brightness of the kids room projector"
+		},
+		{
+			"role": "assistant",
+			"tool_calls": [
+				{
+					"type": "function",
+					"function": [
+						{
+							"name": "brightness_increasePartial",
+							"arguments": {
+								"device": "7e7df863-2594-4c8f-a181-de8f212165c1",
+								"room": "kids room"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"role": "tool",
+			"content": {
+				"status": "success"
+			}
+		},
+		{
+			"role": "assistant",
+			"content": "I have increased the brightness partially of the kids room projector."
+		}
+	],
+	"tools": []
+}

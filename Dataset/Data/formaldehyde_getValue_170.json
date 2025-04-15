@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d2514d56-8d10-4595-92df-71ac0a7e1d1a",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "68fb8f11-41e5-42a6-b558-ead7f9fbcd19",
+                            "roomName": "bedroom",
+                            "roomId": "68fb8f11-41e5-42a6-b558-ead7f9fbcd19"
+                        }
+                    },
+                    {
+                        "deviceId": "da9b446e-d768-45c0-a8a7-50b4e80420bb",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "08541b1b-1ef1-4160-8b60-8ffe37cdcdc6",
+                            "roomName": "living Room",
+                            "roomId": "08541b1b-1ef1-4160-8b60-8ffe37cdcdc6"
+                        }
+                    },
+                    {
+                        "deviceId": "1c40214c-8ad1-49eb-875d-7c7f155ce0e0",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a06849e0-e3d2-4a53-85c7-7fd89397181e",
+                            "roomName": "guest Room",
+                            "roomId": "a06849e0-e3d2-4a53-85c7-7fd89397181e"
+                        }
+                    },
+                    {
+                        "deviceId": "51c7cba3-5933-49a0-99fe-8345fc3d7e94",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ca26e576-bc0e-4640-a01d-636bcf8f9ec9",
+                            "roomName": "kitchen",
+                            "roomId": "ca26e576-bc0e-4640-a01d-636bcf8f9ec9"
+                        }
+                    },
+                    {
+                        "deviceId": "29089c46-9b36-4af7-8ce6-f6be14f5cf3f",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "e27526ae-aca6-41d2-bb3b-358f019610ba",
+                            "roomName": "utility Room",
+                            "roomId": "e27526ae-aca6-41d2-bb3b-358f019610ba"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the formaldehyde level of the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "formaldehyde_getValue",
+                            "arguments": {
+                                "device": "29089c46-9b36-4af7-8ce6-f6be14f5cf3f",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The formaldehyde level of the hood in the utility room is shown"
+        }
+    ],
+    "tools": []
+}

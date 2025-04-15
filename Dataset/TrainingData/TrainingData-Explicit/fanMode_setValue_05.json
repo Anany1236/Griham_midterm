@@ -1,0 +1,96 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d5980158-e508-4600-8ce1-51822ce2f12a",
+                        "deviceName": "fan1",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0bede968-abe0-4fa4-94ee-38b5b0e7fcdd",
+                            "roomName": "Living room",
+                            "roomId": "8a451979-0717-4e83-8bed-367048dcd16d"
+                        }
+                    },
+                    {
+                        "deviceId": "b1550bc7-25a0-43f9-a9ff-690965bd10ce",
+                        "deviceName": "fan2",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0bede968-abe0-4fa4-94ee-38b5b0e7fcdd",
+                            "roomName": "kids room",
+                            "roomId": "4fe2b25d-0ab8-442f-ba83-d98ad8430512"
+                        }
+                    },
+                    {
+                        "deviceId": "18dd4ad7-11a8-4499-94df-627e28a8f2d3",
+                        "deviceName": "fan3",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0bede968-abe0-4fa4-94ee-38b5b0e7fcdd",
+                            "roomName": "bedroom",
+                            "roomId": "72c41bbb-1421-423e-aa7b-c53989051409"
+                        }
+                    },
+                    {
+                        "deviceId": "b3901d41-d426-405d-a998-b4f547a0611b",
+                        "deviceName": "fan4",
+                        "deviceType": "fan",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0bede968-abe0-4fa4-94ee-38b5b0e7fcdd",
+                            "roomName": "guest room",
+                            "roomId": "ffa7e3ca-2642-4a64-81bc-28b262aa9bea"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you set the fan mode value of the kids room fan to circulate"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "fanMode_setValue",
+                            "arguments": {
+                                "device": "b1550bc7-25a0-43f9-a9ff-690965bd10ce",
+                                "room": "kids room",
+                                "predefinedFanMode": "circulate"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The kids room fan is switched to circulate"
+        }
+    ],
+    "tools": []
+}

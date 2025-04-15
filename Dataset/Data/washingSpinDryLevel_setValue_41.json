@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "8fd4811e-fee9-4727-8668-5d982dc81ed4",
+                        "deviceName": "washing machine",
+                        "deviceType": "washing machine",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "laundry room",
+                            "locationId": "290a9fa0-ec06-4a45-906d-d6f3e2bfea18",
+                            "roomName": "laundry room",
+                            "roomId": "290a9fa0-ec06-4a45-906d-d6f3e2bfea18"
+                        }
+                    },
+                    {
+                        "deviceId": "2bc265d8-305e-4653-ad2e-9693038a6c42",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "42759b9a-1e45-4845-a1a3-776661d2b84f",
+                            "roomName": "kitchen",
+                            "roomId": "42759b9a-1e45-4845-a1a3-776661d2b84f"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set the spin dry level for the washing machine in the laundry room."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "washingSpinDryLevel_setValue",
+                            "arguments": {
+                                "device": "8fd4811e-fee9-4727-8668-5d982dc81ed4",
+                                "room": "laundry room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The spin dry level on the washing machine in the laundry room has been set."
+        }
+    ],
+    "tools": []
+}

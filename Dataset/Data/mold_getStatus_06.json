@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "6047ae10-2d6f-469c-a9ae-e8a5cea10b39",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "9504ab5d-4525-4945-9abc-5eaee91ef08c",
+                            "roomName": "bedroom",
+                            "roomId": "9504ab5d-4525-4945-9abc-5eaee91ef08c"
+                        }
+                    },
+                    {
+                        "deviceId": "f8848c9f-4e02-4eed-a4e1-dec4a0f23ecf",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "37b43df6-7734-41cc-80b1-8ab29a01d5f9",
+                            "roomName": "living Room",
+                            "roomId": "37b43df6-7734-41cc-80b1-8ab29a01d5f9"
+                        }
+                    },
+                    {
+                        "deviceId": "455827a3-f06e-4199-965a-5ba53931124e",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "aab13b4d-fd85-4bfc-84f4-8a6f9b071056",
+                            "roomName": "guest Room",
+                            "roomId": "aab13b4d-fd85-4bfc-84f4-8a6f9b071056"
+                        }
+                    },
+                    {
+                        "deviceId": "14b92b81-be06-462a-bf10-788497522521",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "05eb815f-2797-4369-b3d5-28bd0e20d757",
+                            "roomName": "kitchen",
+                            "roomId": "05eb815f-2797-4369-b3d5-28bd0e20d757"
+                        }
+                    },
+                    {
+                        "deviceId": "8e2523ea-a0ad-428b-bac1-54a121b58ff4",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "fe01620e-53d7-439d-9450-d014b689e08d",
+                            "roomName": "utility Room",
+                            "roomId": "fe01620e-53d7-439d-9450-d014b689e08d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the mold status of the air conditioner in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mold_getStatus",
+                            "arguments": {
+                                "device": "6047ae10-2d6f-469c-a9ae-e8a5cea10b39",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The mold status of the air conditioner in the bedroom is normal"
+        }
+    ],
+    "tools": []
+}

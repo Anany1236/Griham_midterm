@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "c2a6db3b-9435-487e-9808-fc303ba2d5ea",
+                        "deviceName": "camera",
+                        "deviceType": "camera",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "097555cf-dd1b-4b3a-a57f-e3347e5a4922",
+                            "roomName": "living room",
+                            "roomId": "097555cf-dd1b-4b3a-a57f-e3347e5a4922"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the recording feature on the device."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "recording_turnOff",
+                            "arguments": {
+                                "device": "c2a6db3b-9435-487e-9808-fc303ba2d5ea",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I ive disabled the recording feature on the device."
+        }
+    ],
+    "tools": []
+}

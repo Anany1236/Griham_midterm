@@ -1,0 +1,93 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "d4861769-b7d3-4134-9bf1-15e5ca37cbe0",
+                        "deviceName": "blind",
+                        "deviceType": "blind",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9a0c31ff-8c33-4abc-9fea-fd01fba0804f",
+                            "roomName": "hall",
+                            "roomId": "6eb98896-b3d6-4a94-b0f4-34b4405c7191"
+                        }
+                    },
+                    {
+                        "deviceId": "308db80a-fc3a-469c-9ebd-089ed8f7fac9",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9a0c31ff-8c33-4abc-9fea-fd01fba0804f",
+                            "roomName": "living room",
+                            "roomId": "422c4c0f-460f-412c-840a-0f31a7db90fd"
+                        }
+                    },
+                    {
+                        "deviceId": "7793bb93-5cd7-424a-b5ae-bd4184d9ca04",
+                        "deviceName": "washing machine",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9a0c31ff-8c33-4abc-9fea-fd01fba0804f",
+                            "roomName": "laundry room",
+                            "roomId": "42afeecb-e2b8-4c66-ac11-cab2645092cb"
+                        }
+                    },
+                    {
+                        "deviceId": "fbefbb47-b687-4a28-a4fb-4304d5792c0c",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9a0c31ff-8c33-4abc-9fea-fd01fba0804f",
+                            "roomName": "bedroom",
+                            "roomId": "74dce3e5-2a92-4074-991a-f24734f1d90e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Add my devices"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_connect",
+                            "arguments": {},
+                            "device": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The devices has been added."
+        }
+    ],
+    "tools": []
+}

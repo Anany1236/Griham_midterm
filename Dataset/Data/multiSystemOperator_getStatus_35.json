@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a8280763-c6ef-4d53-8ea4-414a0d4404f8",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "740264d8-62cb-423e-9b8e-2f7886a154f9",
+                            "roomName": "bedroom",
+                            "roomId": "740264d8-62cb-423e-9b8e-2f7886a154f9"
+                        }
+                    },
+                    {
+                        "deviceId": "05ad307c-81a0-4439-b527-9b16ea309433",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "08ae4b22-9cd1-4a4e-8c63-04c5536275a4",
+                            "roomName": "living Room",
+                            "roomId": "08ae4b22-9cd1-4a4e-8c63-04c5536275a4"
+                        }
+                    },
+                    {
+                        "deviceId": "a5d741df-9ef0-4659-bae6-5dcb25a9922e",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "f17f7dbe-3e53-438a-9259-19f9799a56b9",
+                            "roomName": "guest Room",
+                            "roomId": "f17f7dbe-3e53-438a-9259-19f9799a56b9"
+                        }
+                    },
+                    {
+                        "deviceId": "d21b86a0-6fc1-44cc-9887-09bb0b6f947d",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "5e5fc3c2-0d7d-4a87-907e-39633d047995",
+                            "roomName": "kitchen",
+                            "roomId": "5e5fc3c2-0d7d-4a87-907e-39633d047995"
+                        }
+                    },
+                    {
+                        "deviceId": "046129c4-5185-4806-b734-c64ff504b6ba",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "1442763c-1db8-4e51-a71d-e91733f9dd1a",
+                            "roomName": "utility Room",
+                            "roomId": "1442763c-1db8-4e51-a71d-e91733f9dd1a"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the status of the multi-system operator for the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "multiSystemOperator_getStatus",
+                            "arguments": {
+                                "device": "046129c4-5185-4806-b734-c64ff504b6ba",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The status of the multi-system operator for the hood in the utility room is operational"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3b78479f-6f32-41ba-8502-d2eb1c62a72a",
+                        "deviceName": "ricecooker1",
+                        "deviceType": "ricecooker",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d736d657-3396-48bf-a3b4-298a3e56166c",
+                            "roomName": "kitchen",
+                            "roomId": "e983ed24-9ee7-447b-ac58-371023be4018"
+                        }
+                    },
+                    {
+                        "deviceId": "35dc8577-2f1a-42b4-a71c-7184c662b7f9",
+                        "deviceName": "cooktop1",
+                        "deviceType": "cooktop",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d736d657-3396-48bf-a3b4-298a3e56166c",
+                            "roomName": "kitchen",
+                            "roomId": "e983ed24-9ee7-447b-ac58-371023be4018"
+                        }
+                    },
+                    {
+                        "deviceId": "0c6b4fcb-7ccf-4f79-bf87-579d88671068",
+                        "deviceName": "microwave1",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d736d657-3396-48bf-a3b4-298a3e56166c",
+                            "roomName": "kitchen",
+                            "roomId": "e983ed24-9ee7-447b-ac58-371023be4018"
+                        }
+                    },
+                    {
+                        "deviceId": "b439d27f-99bb-4dbd-a630-c9be863d9fc5",
+                        "deviceName": "oven1",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d736d657-3396-48bf-a3b4-298a3e56166c",
+                            "roomName": "kitchen",
+                            "roomId": "e983ed24-9ee7-447b-ac58-371023be4018"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you increase the cooking temperature of the microwave?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "cookingTemperature_increase",
+                            "arguments": {
+                                "device": "0c6b4fcb-7ccf-4f79-bf87-579d88671068"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The cooking temperature of the microwave is 100 degree Celsius"
+        }
+    ],
+    "tools": []
+}

@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "bbfaf406-580c-4654-86aa-0ecea7a8d60c",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0fe7020b-32cf-4ac9-a096-54e5ebe59361",
+                            "roomName": "bedroom",
+                            "roomId": "0fe7020b-32cf-4ac9-a096-54e5ebe59361"
+                        }
+                    },
+                    {
+                        "deviceId": "aa301b3c-3167-4bee-9655-6311da7c063f",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "dd89ce06-9a59-42be-a22d-6f1b5ef5750e",
+                            "roomName": "living Room",
+                            "roomId": "dd89ce06-9a59-42be-a22d-6f1b5ef5750e"
+                        }
+                    },
+                    {
+                        "deviceId": "a52e631c-de6d-439d-9941-c9c5743b06ed",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "6c9f39a4-2e10-4911-9056-c2afdec6b290",
+                            "roomName": "guest Room",
+                            "roomId": "6c9f39a4-2e10-4911-9056-c2afdec6b290"
+                        }
+                    },
+                    {
+                        "deviceId": "c756d071-020f-43df-b7b8-526ac00f4ea5",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "d9f3c655-cebc-44c9-a8e0-d285e6c6bdaa",
+                            "roomName": "kitchen",
+                            "roomId": "d9f3c655-cebc-44c9-a8e0-d285e6c6bdaa"
+                        }
+                    },
+                    {
+                        "deviceId": "c5eeb217-9d9d-4ed9-8a95-d8fc25d179bd",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "b9634b1f-aa22-497e-9578-b8792992ff52",
+                            "roomName": "utility Room",
+                            "roomId": "b9634b1f-aa22-497e-9578-b8792992ff52"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the carbon monoxide detection status for the air conditioner in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "carbonMonoxideDetection_getStatus",
+                            "arguments": {
+                                "device": "bbfaf406-580c-4654-86aa-0ecea7a8d60c",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The carbon monoxide detection status for the air conditioner in the bedroom is shown"
+        }
+    ],
+    "tools": []
+}

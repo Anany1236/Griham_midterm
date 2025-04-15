@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "5b7b9045-426a-4226-842f-605dc81f8fa9",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "fridge",
+                            "locationId": "3beb32b2-c31b-4691-a3ad-67ad9b8cb9aa",
+                            "roomName": "fridge",
+                            "roomId": "3beb32b2-c31b-4691-a3ad-67ad9b8cb9aa"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Get the current refrigeration temperature in the fridge."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "refrigerationTemperature_getValue",
+                            "arguments": {
+                                "device": "5b7b9045-426a-4226-842f-605dc81f8fa9",
+                                "room": "fridge"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current refrigeration temperature in the fridge has been retrieved."
+        }
+    ],
+    "tools": []
+}

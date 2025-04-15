@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "405448f9-b2b3-43a4-b06e-e5ac0545d09b",
+                        "deviceName": "smart light",
+                        "deviceType": "smart light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "d885db6e-d2c2-4852-ac68-e5d59e206d1e",
+                            "roomName": "living room",
+                            "roomId": "d885db6e-d2c2-4852-ac68-e5d59e206d1e"
+                        }
+                    },
+                    {
+                        "deviceId": "a344128f-abbf-4fad-be02-e78f5fdf1fd6",
+                        "deviceName": "ceiling lights",
+                        "deviceType": "ceiling lights",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "0d3ded73-1550-41a9-b22a-142da4570f9c",
+                            "roomName": "bedroom",
+                            "roomId": "0d3ded73-1550-41a9-b22a-142da4570f9c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you enable the light effect in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "lightEffect_turnOn",
+                            "arguments": {
+                                "device": "405448f9-b2b3-43a4-b06e-e5ac0545d09b",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have enabled the light effect in the living room."
+        }
+    ],
+    "tools": []
+}

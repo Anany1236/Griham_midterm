@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "9c1596a5-804f-4341-9470-fbc26d2bd985",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f37b0d1-4712-48d6-bab2-d19fc46045ce",
+                            "roomName": "Kitchen",
+                            "roomId": "edbd1439-e29f-49b4-9a95-f171da9b259d"
+                        }
+                    },
+                    {
+                        "deviceId": "3e74750f-df0a-4d2e-925b-683b63e3bf32",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f37b0d1-4712-48d6-bab2-d19fc46045ce",
+                            "roomName": "Living room",
+                            "roomId": "f453132f-1fd7-4953-82af-120023745bb6"
+                        }
+                    },
+                    {
+                        "deviceId": "ddb0fd41-8526-443f-b521-2124633d26a2",
+                        "deviceName": "ac",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f37b0d1-4712-48d6-bab2-d19fc46045ce",
+                            "roomName": "Living room",
+                            "roomId": "f453132f-1fd7-4953-82af-120023745bb6"
+                        }
+                    },
+                    {
+                        "deviceId": "ae534b57-e039-46d1-a4c8-c5d7fadc9ae5",
+                        "deviceName": "fridge",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f37b0d1-4712-48d6-bab2-d19fc46045ce",
+                            "roomName": "Kitchen",
+                            "roomId": "edbd1439-e29f-49b4-9a95-f171da9b259d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Adjust the dishwasher to the airwash mode"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_setCourse",
+                            "arguments": {
+                                "device": "9c1596a5-804f-4341-9470-fbc26d2bd985",
+                                "mode": "airwash"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have adjust the dishwasher to the airwash mode"
+        }
+    ],
+    "tools": []
+}

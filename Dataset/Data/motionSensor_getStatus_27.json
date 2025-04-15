@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "a2c40af5-6438-402f-8e40-ab2200b22dbf",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "813f1296-d3d3-49f7-b7b6-a42c5ad0db70",
+                            "roomName": "bedroom",
+                            "roomId": "813f1296-d3d3-49f7-b7b6-a42c5ad0db70"
+                        }
+                    },
+                    {
+                        "deviceId": "93c5be4b-9508-46f8-b310-389af8a5e439",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living Room",
+                            "locationId": "96c30ad3-ad71-49e4-9240-38b7e8bb76f5",
+                            "roomName": "living Room",
+                            "roomId": "96c30ad3-ad71-49e4-9240-38b7e8bb76f5"
+                        }
+                    },
+                    {
+                        "deviceId": "33f4d69c-a376-48e1-80dc-775289feaff0",
+                        "deviceName": "Light",
+                        "deviceType": "Light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "guest Room",
+                            "locationId": "58670cbf-083f-42fd-b775-ba2e1360bc53",
+                            "roomName": "guest Room",
+                            "roomId": "58670cbf-083f-42fd-b775-ba2e1360bc53"
+                        }
+                    },
+                    {
+                        "deviceId": "7b96b82e-b017-4669-8144-96e2f73daab5",
+                        "deviceName": "Washer",
+                        "deviceType": "Washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "978177e0-4df2-4455-b15a-152681342175",
+                            "roomName": "kitchen",
+                            "roomId": "978177e0-4df2-4455-b15a-152681342175"
+                        }
+                    },
+                    {
+                        "deviceId": "e5d90d4c-a9cf-4efe-854a-b6297cfde56e",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "utility Room",
+                            "locationId": "cd132875-12a2-4a75-bf09-50978950ba0b",
+                            "roomName": "utility Room",
+                            "roomId": "cd132875-12a2-4a75-bf09-50978950ba0b"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Check the sensor.motion status for the air purifier in the living room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "motionSensor_getStatus",
+                            "arguments": {
+                                "device": "93c5be4b-9508-46f8-b310-389af8a5e439",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The sensor.motion status for the air purifier in the living room is normal"
+        }
+    ],
+    "tools": []
+}

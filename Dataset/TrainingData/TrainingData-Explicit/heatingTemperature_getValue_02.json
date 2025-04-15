@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e550dffa-4e30-45aa-ba7f-cfc396f80459",
+                        "deviceName": "boiler",
+                        "deviceType": "boiler",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ff13744-891b-489b-8221-a8a8a06340d5",
+                            "roomName": "laundry room",
+                            "roomId": "4f119eca-a7ed-4fca-b3fd-63b43c17ca49"
+                        }
+                    },
+                    {
+                        "deviceId": "5adee66f-d387-4582-aa56-07bac8f24ea5",
+                        "deviceName": "thermostat",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ff13744-891b-489b-8221-a8a8a06340d5",
+                            "roomName": "living room",
+                            "roomId": "0cac9117-3ade-4c20-a7e0-1989e5161e0f"
+                        }
+                    },
+                    {
+                        "deviceId": "af1590df-e5dd-449d-a7d8-92a0b8698d18",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ff13744-891b-489b-8221-a8a8a06340d5",
+                            "roomName": "kitchen",
+                            "roomId": "f417c5b4-e544-49e2-ba41-6390dc79cefe"
+                        }
+                    },
+                    {
+                        "deviceId": "053704bc-6fa9-4b46-9cad-3426909abc8d",
+                        "deviceName": "thermostat2",
+                        "deviceType": "thermostat",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "1ff13744-891b-489b-8221-a8a8a06340d5",
+                            "roomName": "bedroom",
+                            "roomId": "5fa6c5cf-b0d2-43fb-99af-a7955a6eef80"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Tell me the heater temperature value of thermostat in the bedroom"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "heatingTemperature_getValue",
+                            "arguments": {
+                                "device": "5adee66f-d387-4582-aa56-07bac8f24ea5",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The current temperature value of the thermostat is 21 degrees in the bedroom"
+        }
+    ],
+    "tools": []
+}

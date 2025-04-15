@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "3e8cea67-e9cf-497b-a301-6087b984e7dc",
+                        "deviceName": "airqualitysensor",
+                        "deviceType": "airqualitysensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "f8dfe23b-115c-4886-9db2-5284eec21d9e",
+                            "roomName": "bedroom",
+                            "roomId": "f8dfe23b-115c-4886-9db2-5284eec21d9e"
+                        }
+                    },
+                    {
+                        "deviceId": "8c9eab0f-e3c1-49f1-8118-734a2c4cebae",
+                        "deviceName": "airqualitysensor",
+                        "deviceType": "airqualitysensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "54b3d5b3-4d7b-4c02-be29-51522c0e2abd",
+                            "roomName": "living Room",
+                            "roomId": "54b3d5b3-4d7b-4c02-be29-51522c0e2abd"
+                        }
+                    },
+                    {
+                        "deviceId": "805a7122-9bd7-4b05-b149-b1a5c9c2a65b",
+                        "deviceName": "airqualitysensor",
+                        "deviceType": "airqualitysensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "df0ee16e-d1ed-4378-99d2-2f8bf15a8244",
+                            "roomName": "guest Room",
+                            "roomId": "df0ee16e-d1ed-4378-99d2-2f8bf15a8244"
+                        }
+                    },
+                    {
+                        "deviceId": "a95d59e2-93be-41de-b072-9479e3dafd07",
+                        "deviceName": "airqualitysensor",
+                        "deviceType": "airqualitysensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "fb4222a2-1c44-4677-ac6a-2d8e67c455ce",
+                            "roomName": "kitchen",
+                            "roomId": "fb4222a2-1c44-4677-ac6a-2d8e67c455ce"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the atmospheric pressure from the air quality sensor in the bedroom?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "atmosphericPressure_getValue",
+                            "arguments": {
+                                "device": "3e8cea67-e9cf-497b-a301-6087b984e7dc",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The atmospheric pressure from the air quality sensor in the bedroom is shown"
+        }
+    ],
+    "tools": []
+}

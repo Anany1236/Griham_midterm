@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "1835a09e-b893-4b0b-8d00-0be9700e5ff2",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5802b405-2e98-44c0-a2dc-944955f045ff",
+                            "roomName": "bedroom",
+                            "roomId": "5802b405-2e98-44c0-a2dc-944955f045ff"
+                        }
+                    },
+                    {
+                        "deviceId": "4b1dfad1-88af-41c1-9e15-2a4c34f7d703",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "95df3335-d852-4296-9503-67f20b76e095",
+                            "roomName": "living Room",
+                            "roomId": "95df3335-d852-4296-9503-67f20b76e095"
+                        }
+                    },
+                    {
+                        "deviceId": "4d689833-c1d7-4b9f-ac8c-9bb17d20e3b3",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "0da57c5a-2b05-4d47-9e8e-13fecd90c9ea",
+                            "roomName": "guest Room",
+                            "roomId": "0da57c5a-2b05-4d47-9e8e-13fecd90c9ea"
+                        }
+                    },
+                    {
+                        "deviceId": "34f39796-aff3-4066-94cb-656dba0a93a6",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "4ca912ac-d5fe-40a5-90c4-8514bcec0987",
+                            "roomName": "kitchen",
+                            "roomId": "4ca912ac-d5fe-40a5-90c4-8514bcec0987"
+                        }
+                    },
+                    {
+                        "deviceId": "c0328f1e-b5d9-43ef-9991-cd58e849464f",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "954017b0-8b9d-494f-88a5-17607c2f1779",
+                            "roomName": "utility Room",
+                            "roomId": "954017b0-8b9d-494f-88a5-17607c2f1779"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Call the elevator to the hood in the utility room"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "elevator_call",
+                            "arguments": {
+                                "device": "c0328f1e-b5d9-43ef-9991-cd58e849464f",
+                                "room": "utility Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The elevator is on its way to the hood in the utility room"
+        }
+    ],
+    "tools": []
+}

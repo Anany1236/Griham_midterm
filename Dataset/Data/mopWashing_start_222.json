@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "77f84cd0-e65f-46df-a185-935cb4e0ecf7",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "534eb3d9-938c-47fe-b706-0621ca3e7824",
+                            "roomName": "bedroom",
+                            "roomId": "534eb3d9-938c-47fe-b706-0621ca3e7824"
+                        }
+                    },
+                    {
+                        "deviceId": "34d95410-d257-4984-bb1b-6f31de3df957",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "a5263f76-1955-49d2-a09c-cfee0173fdbc",
+                            "roomName": "living Room",
+                            "roomId": "a5263f76-1955-49d2-a09c-cfee0173fdbc"
+                        }
+                    },
+                    {
+                        "deviceId": "747da05c-2e5e-481c-a487-4c69bd296254",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "5dd5ae50-ef74-4b09-a7b1-a6f711d1fa46",
+                            "roomName": "guest Room",
+                            "roomId": "5dd5ae50-ef74-4b09-a7b1-a6f711d1fa46"
+                        }
+                    },
+                    {
+                        "deviceId": "9dc301f5-3cac-41ab-966d-21a070db6da3",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "15dc297a-3e2b-4efa-82dd-f4615709391f",
+                            "roomName": "kitchen",
+                            "roomId": "15dc297a-3e2b-4efa-82dd-f4615709391f"
+                        }
+                    },
+                    {
+                        "deviceId": "d38c5b82-5d36-450d-8ccc-fb9330dd10ba",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "9f2ce987-ae1b-4bbd-b259-883b6a5b8b26",
+                            "roomName": "utility Room",
+                            "roomId": "9f2ce987-ae1b-4bbd-b259-883b6a5b8b26"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you start washing the mop with the air purifier in the living room?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "mopWashing_start",
+                            "arguments": {
+                                "device": "34d95410-d257-4984-bb1b-6f31de3df957",
+                                "room": "living Room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Washing the mop with the air purifier in the living room is underway"
+        }
+    ],
+    "tools": []
+}

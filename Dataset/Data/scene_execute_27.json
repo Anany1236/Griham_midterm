@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "7e377a34-4a48-410a-a398-faa79899150a",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "40b9d888-3d92-4d42-860d-adfb1747b800",
+                            "roomName": "kitchen",
+                            "roomId": "40b9d888-3d92-4d42-860d-adfb1747b800"
+                        }
+                    },
+                    {
+                        "deviceId": "1b5b3cfa-2e08-4464-b5b9-7994365e7596",
+                        "deviceName": "freezer",
+                        "deviceType": "freezer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "garage",
+                            "locationId": "76c70373-f36c-4c67-8be0-8e68a6fce648",
+                            "roomName": "garage",
+                            "roomId": "76c70373-f36c-4c67-8be0-8e68a6fce648"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the defrost function on the refrigerator in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "scene_execute",
+                            "arguments": {
+                                "device": "7e377a34-4a48-410a-a398-faa79899150a",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The defrost function has been turned off on the refrigerator in the kitchen."
+        }
+    ],
+    "tools": []
+}

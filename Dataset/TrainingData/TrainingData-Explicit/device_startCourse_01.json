@@ -1,0 +1,95 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "511a03eb-8ae9-4db1-bd1a-4ceb2e644a63",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "683aa0ea-da48-4c3e-af6d-f8b1c04d64bd",
+                            "roomName": "kids room",
+                            "roomId": "2f1a357c-827a-4438-a5ea-7b6bef6541ed"
+                        }
+                    },
+                    {
+                        "deviceId": "790ca63a-7902-4929-932b-9c66b00164df",
+                        "deviceName": "projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "683aa0ea-da48-4c3e-af6d-f8b1c04d64bd",
+                            "roomName": "kids room",
+                            "roomId": "2f1a357c-827a-4438-a5ea-7b6bef6541ed"
+                        }
+                    },
+                    {
+                        "deviceId": "f0fbf04a-0ab6-497c-8315-1a7fd719b406",
+                        "deviceName": "refrigerator",
+                        "deviceType": "refrigerator",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "683aa0ea-da48-4c3e-af6d-f8b1c04d64bd",
+                            "roomName": "kitchen",
+                            "roomId": "84fe35ed-89ee-4bfe-b9d3-794d769981d3"
+                        }
+                    },
+                    {
+                        "deviceId": "8e0b5513-52e2-4624-b952-7b63ddf91ce5",
+                        "deviceName": "oven",
+                        "deviceType": "oven",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "683aa0ea-da48-4c3e-af6d-f8b1c04d64bd",
+                            "roomName": "kitchen",
+                            "roomId": "84fe35ed-89ee-4bfe-b9d3-794d769981d3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you start the bake mode in oven?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_startCourse",
+                            "arguments": {
+                                "device": "8e0b5513-52e2-4624-b952-7b63ddf91ce5",
+                                "mode": "bake"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I have started the bake mode in oven."
+        }
+    ],
+    "tools": []
+}

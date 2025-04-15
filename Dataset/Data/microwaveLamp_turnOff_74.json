@@ -1,0 +1,59 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "79780d59-7f8c-46ea-b06d-46ec09311dcd",
+                        "deviceName": "microwave",
+                        "deviceType": "microwave",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "kitchen",
+                            "locationId": "c4e1fdd9-1365-4a8a-8271-1c248cc5a57c",
+                            "roomName": "kitchen",
+                            "roomId": "c4e1fdd9-1365-4a8a-8271-1c248cc5a57c"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Turn off the lamp of the microwave in the kitchen."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "microwaveLamp_turnOff",
+                            "arguments": {
+                                "device": "79780d59-7f8c-46ea-b06d-46ec09311dcd",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The lamp of the microwave in the kitchen has been turned off."
+        }
+    ],
+    "tools": []
+}

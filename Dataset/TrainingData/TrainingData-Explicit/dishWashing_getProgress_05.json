@@ -1,0 +1,94 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "93e38d2c-9b3f-4140-92c7-5c2b84ba805c",
+                        "deviceName": "tv",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19ba4d8d-8777-4539-a17d-8d0125a5ba64",
+                            "roomName": "living room",
+                            "roomId": "81df3523-3ec2-4a46-9520-332ccbf60af1"
+                        }
+                    },
+                    {
+                        "deviceId": "ddfbc1eb-79f4-49aa-a686-b1caea6a6803",
+                        "deviceName": "AC",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19ba4d8d-8777-4539-a17d-8d0125a5ba64",
+                            "roomName": "living room",
+                            "roomId": "81df3523-3ec2-4a46-9520-332ccbf60af1"
+                        }
+                    },
+                    {
+                        "deviceId": "7eff1435-6adc-4d0d-9619-05de3a4d5768",
+                        "deviceName": "dishwasher",
+                        "deviceType": "dishwasher",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19ba4d8d-8777-4539-a17d-8d0125a5ba64",
+                            "roomName": "kitchen",
+                            "roomId": "bc5df6b5-25a9-4df0-9278-81ead178f4f6"
+                        }
+                    },
+                    {
+                        "deviceId": "69a72850-b6c1-4744-a2aa-8c2910bb6d3f",
+                        "deviceName": "washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "19ba4d8d-8777-4539-a17d-8d0125a5ba64",
+                            "roomName": "laundry room",
+                            "roomId": "36864c67-e729-4ec9-9ab8-1efc1eda05d6"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the progress of dishwashing in dishwasher?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "dishWashing_getProgress",
+                            "arguments": {
+                                "device": "7eff1435-6adc-4d0d-9619-05de3a4d5768"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The progress of dishwashing in dishwasher is 70%."
+        }
+    ],
+    "tools": []
+}

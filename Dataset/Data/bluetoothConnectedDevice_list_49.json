@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "b38086bb-2e50-4ab0-a016-6ca412f2f8db",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "61c2f0fc-d23b-4c84-9047-834eb287d1c9",
+                            "roomName": "bedroom",
+                            "roomId": "61c2f0fc-d23b-4c84-9047-834eb287d1c9"
+                        }
+                    },
+                    {
+                        "deviceId": "611f3c5e-d78f-4de2-80ff-0008a8f384c0",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "78e536c7-fef0-4b21-a4c3-f784c34e6249",
+                            "roomName": "living Room",
+                            "roomId": "78e536c7-fef0-4b21-a4c3-f784c34e6249"
+                        }
+                    },
+                    {
+                        "deviceId": "b9392607-4d74-4d3b-ad34-f2e30dd35b56",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "123744c9-547c-4ac9-b83d-054bae4a439e",
+                            "roomName": "guest Room",
+                            "roomId": "123744c9-547c-4ac9-b83d-054bae4a439e"
+                        }
+                    },
+                    {
+                        "deviceId": "32b9009c-beeb-4bb4-9028-dcfa90a022cf",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "c9585229-028d-4b7d-924e-e1c0bb053997",
+                            "roomName": "kitchen",
+                            "roomId": "c9585229-028d-4b7d-924e-e1c0bb053997"
+                        }
+                    },
+                    {
+                        "deviceId": "a5701d12-d7a9-455d-b899-eb3bffb53b6b",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "58791109-163e-45bc-8343-69e780a80901",
+                            "roomName": "utility Room",
+                            "roomId": "58791109-163e-45bc-8343-69e780a80901"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What Bluetooth devices are connected to the washer in the kitchen?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bluetoothConnectedDevice_list",
+                            "arguments": {
+                                "device": "32b9009c-beeb-4bb4-9028-dcfa90a022cf",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The Bluetooth devices connected to the washer in the kitchen are displayed"
+        }
+    ],
+    "tools": []
+}

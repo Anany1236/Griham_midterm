@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "e5829e79-2c84-4011-a616-d188da1f4270",
+                        "deviceName": "vacuum cleaner",
+                        "deviceType": "vacuum cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "7160ae46-8b79-49dc-8297-32446f610745",
+                            "roomName": "living room",
+                            "roomId": "7160ae46-8b79-49dc-8297-32446f610745"
+                        }
+                    },
+                    {
+                        "deviceId": "84cff3ee-fe48-488b-9cf0-c8a65d4f82b3",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robot cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "724cd8e5-2022-4bc6-9538-faff35b463d3",
+                            "roomName": "bedroom",
+                            "roomId": "724cd8e5-2022-4bc6-9538-faff35b463d3"
+                        }
+                    },
+                    {
+                        "deviceId": "46c8e181-0d60-4fac-83a1-76e8ced21893",
+                        "deviceName": "robot cleaner",
+                        "deviceType": "robot cleaner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "hallway",
+                            "locationId": "8b8f5181-231d-454a-bebd-0d8e89b4468e",
+                            "roomName": "hallway",
+                            "roomId": "8b8f5181-231d-454a-bebd-0d8e89b4468e"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Can you adjust the suction power to {value}?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "suctionPower_setValue",
+                            "arguments": {
+                                "device": "e5829e79-2c84-4011-a616-d188da1f4270",
+                                "room": "living room"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "Suction power is now at {value}."
+        }
+    ],
+    "tools": []
+}

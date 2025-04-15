@@ -1,0 +1,107 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "14a22c9c-a779-4588-b546-19835b38438f",
+                        "deviceName": "Air Conditioner",
+                        "deviceType": "airconditioner",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7623e21d-aab0-4583-90c3-bbf271364faa",
+                            "roomName": "bedroom",
+                            "roomId": "7623e21d-aab0-4583-90c3-bbf271364faa"
+                        }
+                    },
+                    {
+                        "deviceId": "4ca7424d-9fe3-484e-8749-ede73cc229d8",
+                        "deviceName": "Air Purifier",
+                        "deviceType": "airpurifier",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "2abf9ed1-8aa5-4f46-9acd-04e9be1f88ae",
+                            "roomName": "living Room",
+                            "roomId": "2abf9ed1-8aa5-4f46-9acd-04e9be1f88ae"
+                        }
+                    },
+                    {
+                        "deviceId": "d20be232-4b70-46c0-b9df-690f984bca0e",
+                        "deviceName": "Light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "ceebedbb-d1d5-4310-bd93-47411c93ca96",
+                            "roomName": "guest Room",
+                            "roomId": "ceebedbb-d1d5-4310-bd93-47411c93ca96"
+                        }
+                    },
+                    {
+                        "deviceId": "44b1bf90-1d53-4725-8892-a0c24d7f3761",
+                        "deviceName": "Washer",
+                        "deviceType": "washer",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "7f8a813b-1881-4a44-a914-762a66e93ea5",
+                            "roomName": "kitchen",
+                            "roomId": "7f8a813b-1881-4a44-a914-762a66e93ea5"
+                        }
+                    },
+                    {
+                        "deviceId": "a8134709-2efc-4938-91ea-39934be680ab",
+                        "deviceName": "Hood",
+                        "deviceType": "Hood",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "da1617b7-c279-45f4-b579-a1353adcce21",
+                            "roomName": "utility Room",
+                            "roomId": "da1617b7-c279-45f4-b579-a1353adcce21"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Let me know the BMI value of the washer in the kitchen"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "bmi_getValue",
+                            "arguments": {
+                                "device": "44b1bf90-1d53-4725-8892-a0c24d7f3761",
+                                "room": "kitchen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The BMI value of the washer in the kitchen is displayed"
+        }
+    ],
+    "tools": []
+}

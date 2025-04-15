@@ -1,0 +1,120 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "p1",
+                        "deviceName": "office projector",
+                        "deviceType": "projector",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "meeting room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "ac1",
+                        "deviceName": "AC",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "meeting room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "m1",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "meeting room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "l1",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "meeting room",
+                            "roomId": "r1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Make the room ready for a meeting with my boss at 9 AM."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "media_play",
+                            "arguments": {
+                                "device": "p1"
+                            }
+                        },
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "m1"
+                            }
+                        },
+                        {
+                            "name": "airConditioningMode_setValue",
+                            "arguments": {
+                                "device": "ac1",
+                                "mode": "WindFree"
+                            }
+                        },
+                        {
+                            "name": "colorMode_setValue",
+                            "arguments": {
+                                "device": "l1",
+                                "mode": "day"
+                            }
+                        },
+                        {
+                            "name": "condition_scheduleOnce",
+                            "arguments": {
+                                "cron": "0 9 23 9 *"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can play the projector, start the monitor, set the air conditioner to WindFree mode and set light to day mode. Would you like me to proceed with these actions?"
+        }
+    ],
+    "tools": []
+}

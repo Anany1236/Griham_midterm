@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "washingRinseCycle_decrease",
+            "description": "This function is used to decrease the number of rinse cycles on a washing machine.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to decrease the rinse cycles."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment to decrease the rinse cycles for."
+                    },
+                    "rinseCycleDelta": {
+                        "type": "number",
+                        "description": "The amount by which to decrease the rinse cycles."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

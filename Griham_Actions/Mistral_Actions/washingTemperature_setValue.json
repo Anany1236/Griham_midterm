@@ -1,0 +1,35 @@
+{
+    "type": "function",
+    "function": [
+        {
+            "name": "washingTemperature_setValue",
+            "description": "This function is used to set the water temperature of a washing machine to a specific temperature.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The location where the device is located."
+                    },
+                    "room": {
+                        "type": "string",
+                        "description": "The room where the device is located."
+                    },
+                    "device": {
+                        "type": "string",
+                        "description": "The name or type of the device to adjust the water temperature."
+                    },
+                    "predefinedCompartment": {
+                        "type": "string",
+                        "description": "The predefined compartment for adjusting the water temperature."
+                    },
+                    "washingTemperature": {
+                        "type": "integer",
+                        "description": "The specific temperature to which the water temperature should be set."
+                    }
+                },
+                "required": []
+            }
+        }
+    ]
+}

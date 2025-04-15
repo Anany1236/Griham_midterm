@@ -1,0 +1,50 @@
+{
+    "name": "waterPurifyingMode_setValue",
+    "description": "This function is used to change the mode of the water purifier and adjust water output for specific needs.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to change the water purifying mode.",
+            "optional": true
+        },
+        {
+            "name": "foodRecipeName",
+            "type": "string",
+            "description": "The name of the food recipe to be prepared using the water purifier.",
+            "optional": true
+        },
+        {
+            "name": "waterAmount",
+            "type": "string",
+            "description": "The amount of water to be dispensed.",
+            "optional": true
+        },
+        {
+            "name": "predefinedWaterAmountUnit",
+            "type": "string",
+            "description": "The unit of the predefined water amount.",
+            "optional": true
+        },
+        {
+            "name": "predefinedWaterPurifyingMode",
+            "type": "string",
+            "description": "The predefined water purifying mode to be set.",
+            "optional": false
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}

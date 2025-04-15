@@ -1,0 +1,71 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "f78be0d0-f65f-4587-b71d-2121ccd7ef6d",
+                        "deviceName": "light",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "bedroom",
+                            "locationId": "f5310e02-11ed-4e7c-a849-ce621c4b5f8d",
+                            "roomName": "bedroom",
+                            "roomId": "f5310e02-11ed-4e7c-a849-ce621c4b5f8d"
+                        }
+                    },
+                    {
+                        "deviceId": "151f808d-bd12-445f-8486-8d33f83b8f32",
+                        "deviceName": "lamp",
+                        "deviceType": "light",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "living room",
+                            "locationId": "465959cb-dc0b-472d-8c68-afd9beff4ac3",
+                            "roomName": "living room",
+                            "roomId": "465959cb-dc0b-472d-8c68-afd9beff4ac3"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Adjust the color temperature to cool mode on the light."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "colorTemperatureMode_setValue",
+                            "arguments": {
+                                "device": "f78be0d0-f65f-4587-b71d-2121ccd7ef6d",
+                                "room": "bedroom"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The color temperature on the light is now set to cool mode."
+        }
+    ],
+    "tools": []
+}

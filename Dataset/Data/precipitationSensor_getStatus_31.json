@@ -1,0 +1,83 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "857da2ae-1b79-458a-bfd0-1490425be855",
+                        "deviceName": "precipitation sensor",
+                        "deviceType": "precipitation sensor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "outdoor",
+                            "locationId": "c2d1af07-f422-4290-b83b-4ffd0b705056",
+                            "roomName": "outdoor",
+                            "roomId": "c2d1af07-f422-4290-b83b-4ffd0b705056"
+                        }
+                    },
+                    {
+                        "deviceId": "1b29cd1c-3daa-4f64-842c-a5d04d462e52",
+                        "deviceName": "rain gauge",
+                        "deviceType": "rain gauge",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "terrace",
+                            "locationId": "c9907a58-dcdd-4307-9fbb-511fd08e58f4",
+                            "roomName": "terrace",
+                            "roomId": "c9907a58-dcdd-4307-9fbb-511fd08e58f4"
+                        }
+                    },
+                    {
+                        "deviceId": "05dc4f1d-75b4-451f-bdbb-57e34b0b06bb",
+                        "deviceName": "rain gauge",
+                        "deviceType": "rain gauge",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "backyard",
+                            "locationId": "8f16fdbe-5210-473d-8201-1a38157dcf7d",
+                            "roomName": "backyard",
+                            "roomId": "8f16fdbe-5210-473d-8201-1a38157dcf7d"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "What is the status of the precipitation sensor?"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "precipitationSensor_getStatus",
+                            "arguments": {
+                                "device": "857da2ae-1b79-458a-bfd0-1490425be855",
+                                "room": "outdoor"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "The precipitation sensor is {status}."
+        }
+    ],
+    "tools": []
+}

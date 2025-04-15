@@ -1,0 +1,138 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant with access to the following functions to help the user. You can use the functions if needed."
+        },
+        {
+            "role": "context",
+            "content": {
+                "homecontext": [
+                    {
+                        "deviceId": "tv1",
+                        "deviceName": "TV",
+                        "deviceType": "tv",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "office room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "ac1",
+                        "deviceName": "AC",
+                        "deviceType": "ac",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "office room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "rvc1",
+                        "deviceName": "Robo Vaccum Cleaner",
+                        "deviceType": "rvc",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "office room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "l1",
+                        "deviceName": "Light 1",
+                        "deviceType": "light",
+                        "deviceStatus": "on",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "office room",
+                            "roomId": "r1"
+                        }
+                    },
+                    {
+                        "deviceId": "m1",
+                        "deviceName": "monitor",
+                        "deviceType": "monitor",
+                        "deviceStatus": "off",
+                        "location": {
+                            "locationName": "house",
+                            "locationId": "l1",
+                            "roomName": "office room",
+                            "roomId": "r1"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "role": "user",
+            "content": "Set atmosphere for office meeting at 9 AM every friday"
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "type": "function",
+                    "function": [
+                        {
+                            "name": "device_turnOff",
+                            "arguments": {
+                                "device": "tv1"
+                            }
+                        },
+                        {
+                            "name": "cleaning_pause",
+                            "arguments": {
+                                "device": "rvc1"
+                            }
+                        },
+                        {
+                            "name": "deviceTemperatureSetting_setValue",
+                            "arguments": {
+                                "device": "ac1",
+                                "temperature": "24"
+                            }
+                        },
+                        {
+                            "name": "colorMode_setValue",
+                            "arguments": {
+                                "device": "l1",
+                                "mode": "study"
+                            }
+                        },
+                        {
+                            "name": "device_turnOn",
+                            "arguments": {
+                                "device": "m1"
+                            }
+                        },
+                        {
+                            "name": "condition_scheduleRepeat",
+                            "arguments": {
+                                "cron": "0 9 * * 5"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "content": {
+                "status": "success"
+            }
+        },
+        {
+            "role": "assistant",
+            "content": "I can turn off the tv, pause the rvc, start the monitor, set the temperature of ac to 24, set the lights to study mode. Do you wish to proceed?"
+        }
+    ],
+    "tools": []
+}

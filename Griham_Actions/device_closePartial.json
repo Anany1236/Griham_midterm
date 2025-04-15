@@ -1,0 +1,32 @@
+{
+    "name": "device_closePartial",
+    "description": "This function is used to partially close a SmartThings device with an open/close function.",
+    "parameters": [
+        {
+            "name": "location",
+            "type": "string",
+            "description": "The location where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "room",
+            "type": "string",
+            "description": "The room where the device is located.",
+            "optional": true
+        },
+        {
+            "name": "device",
+            "type": "string",
+            "description": "The name or type of the device to partially close.",
+            "optional": true
+        },
+        {
+            "name": "groupAction",
+            "type": "string",
+            "description": "The group action to perform on the device.",
+            "optional": true
+        }
+    ],
+    "depends_upon": [],
+    "output": []
+}
